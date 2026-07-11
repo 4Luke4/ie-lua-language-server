@@ -33,9 +33,9 @@ This project publishes a VSIX to GitLab and, when approved, to the Visual Studio
 
 ## GitLab Prerelease
 
-The tag pipeline exposes three relevant manual jobs:
+The prerelease tag pipeline exposes these jobs:
 
-- `package_prerelease_vsix`: builds `vsce package --pre-release` and keeps the VSIX as a short-lived artifact.
+- `package_prerelease_vsix`: automatically builds `vsce package --pre-release` and keeps the VSIX as a short-lived artifact.
 - `gitlab_prerelease`: creates a GitLab release entry for the prerelease tag.
 - `publish_marketplace_prerelease`: publishes the prerelease VSIX to the Visual Studio Marketplace.
 
@@ -43,7 +43,7 @@ Recommended GitLab flow:
 
 1. Push a prerelease tag that matches the CI pattern.
 2. Open the tag pipeline.
-3. Run `package_prerelease_vsix`.
+3. Wait for `package_prerelease_vsix` to finish.
 4. Download and test the VSIX artifact if it was not already tested locally.
 5. Run `gitlab_prerelease`.
 6. If Marketplace publication is approved, run `publish_marketplace_prerelease`.

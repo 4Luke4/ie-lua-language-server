@@ -10,8 +10,8 @@ stages:
   - install
   - check
   - test
-  - package
   - security
+  - package
   - publish
 
 .node_job:
@@ -79,12 +79,7 @@ unit_tests:
 package_vsix:
   stage: package
   extends: .node_job
-  needs:
-    - install
-    - job: compile
-      artifacts: false
-    - job: unit_tests
-      artifacts: false
+  dependencies: []
   script:
     - npm run package
     - npm run package:audit
@@ -96,16 +91,12 @@ package_vsix:
     - if: '$CI_COMMIT_TAG =~ /^v[0-9]+\.[0-9]+\.[0-9]+$/'
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
       when: manual
+      allow_failure: true
 
 package_prerelease_vsix:
   stage: package
   extends: .node_job
-  needs:
-    - install
-    - job: compile
-      artifacts: false
-    - job: unit_tests
-      artifacts: false
+  dependencies: []
   script:
     - npm run package:pre-release
     - npm run package:audit
@@ -117,6 +108,7 @@ package_prerelease_vsix:
     - if: '$CI_COMMIT_TAG =~ /^v[0-9]+\.[0-9]+\.[0-9]+-(alpha|beta|rc|pre|preview)\.[0-9]+$/'
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
       when: manual
+      allow_failure: true
 
 include:
   - template: Security/SAST.gitlab-ci.yml
@@ -148,6 +140,7 @@ publish_marketplace:
   rules:
     - if: '$CI_COMMIT_TAG =~ /^v[0-9]+\.[0-9]+\.[0-9]+$/'
       when: manual
+      allow_failure: true
 
 publish_marketplace_prerelease:
   stage: publish
@@ -159,6 +152,7 @@ publish_marketplace_prerelease:
   rules:
     - if: '$CI_COMMIT_TAG =~ /^v[0-9]+\.[0-9]+\.[0-9]+-(alpha|beta|rc|pre|preview)\.[0-9]+$/'
       when: manual
+      allow_failure: true
 
 gitlab_prerelease:
   stage: publish
@@ -175,3 +169,4 @@ gitlab_prerelease:
   rules:
     - if: '$CI_COMMIT_TAG =~ /^v[0-9]+\.[0-9]+\.[0-9]+-(alpha|beta|rc|pre|preview)\.[0-9]+$/'
       when: manual
+      allow_failure: true
