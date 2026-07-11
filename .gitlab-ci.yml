@@ -14,7 +14,7 @@ stages:
   - security
   - publish
 
-default:
+.node_job:
   image: node:24-bookworm-slim
   interruptible: true
   cache:
@@ -26,18 +26,14 @@ default:
       - .npm/
     policy: pull-push
   before_script:
-    - npm config set cache .npm --global
+    - npm ci --cache .npm --prefer-offline --no-audit --progress=false
 
 install:
   stage: install
+  extends: .node_job
   script:
-    - npm install --prefer-offline --no-audit
-  artifacts:
-    expire_in: 1 day
-    paths:
-      - node_modules/
-      - packages/*/node_modules/
-      - package-lock.json
+    - node --version
+    - npm --version
   rules:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
@@ -46,6 +42,7 @@ install:
 
 compile:
   stage: check
+  extends: .node_job
   needs:
     - install
   script:
@@ -57,6 +54,7 @@ compile:
 
 lint:
   stage: check
+  extends: .node_job
   needs:
     - install
   script:
@@ -65,9 +63,11 @@ lint:
 
 unit_tests:
   stage: test
+  extends: .node_job
   needs:
     - install
-    - compile
+    - job: compile
+      artifacts: false
   script:
     - npm test
   artifacts:
@@ -78,10 +78,13 @@ unit_tests:
 
 package_vsix:
   stage: package
+  extends: .node_job
   needs:
     - install
-    - compile
-    - unit_tests
+    - job: compile
+      artifacts: false
+    - job: unit_tests
+      artifacts: false
   script:
     - npm run package
     - npm run package:audit
@@ -96,10 +99,13 @@ package_vsix:
 
 package_prerelease_vsix:
   stage: package
+  extends: .node_job
   needs:
     - install
-    - compile
-    - unit_tests
+    - job: compile
+      artifacts: false
+    - job: unit_tests
+      artifacts: false
   script:
     - npm run package:pre-release
     - npm run package:audit
@@ -134,6 +140,7 @@ secret_detection:
 
 publish_marketplace:
   stage: publish
+  extends: .node_job
   needs:
     - package_vsix
   script:
@@ -144,6 +151,7 @@ publish_marketplace:
 
 publish_marketplace_prerelease:
   stage: publish
+  extends: .node_job
   needs:
     - package_prerelease_vsix
   script:
