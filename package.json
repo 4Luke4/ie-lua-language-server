@@ -3,12 +3,12 @@
   "displayName": "IE Lua Language Server",
   "description": "Professional Lua and Infinity Engine .menu language support for VS Code and stdio LSP clients.",
   "version": "0.1.0",
-  "publisher": "extensions-for-visual-studio-code",
+  "publisher": "infinity-engine-tools",
   "license": "SEE LICENSE IN LICENSE.md",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://gitlab.com/extensions-for-visual-studio-code/ie-lua-language-server.git"
+    "url": "https://gitlab.com/infinity-engine-tools/ie-lua-language-server.git"
   },
   "engines": {
     "vscode": "^1.100.0",

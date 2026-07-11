@@ -104,7 +104,7 @@ Then open **Settings** -> **Configure Kate** -> **Plugins**, enable **LSP Client
         "--stdio"
       ],
       "rootIndicationFileNames": [".git"],
-      "url": "https://gitlab.com/extensions-for-visual-studio-code/ie-lua-language-server",
+      "url": "https://gitlab.com/infinity-engine-tools/ie-lua-language-server",
       "highlightingModeRegex": "^Lua$",
       "settings": {
         "ieLua": {
@@ -121,7 +121,7 @@ Then open **Settings** -> **Configure Kate** -> **Plugins**, enable **LSP Client
         "--stdio"
       ],
       "rootIndicationFileNames": [".git"],
-      "url": "https://gitlab.com/extensions-for-visual-studio-code/ie-lua-language-server",
+      "url": "https://gitlab.com/infinity-engine-tools/ie-lua-language-server",
       "highlightingModeRegex": "^IE Menu$",
       "settings": {
         "ieLua": {

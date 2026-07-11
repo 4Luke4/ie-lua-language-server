@@ -7,7 +7,7 @@
   section="Scripts"
   extensions="*.menu"
   priority="10"
-  author="extensions-for-visual-studio-code"
+  author="Infinity Engine Tools"
   license="Proprietary"
   style="lua"
   indenter="lua">

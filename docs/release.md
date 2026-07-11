@@ -1,6 +1,6 @@
 # Release and Prerelease Publishing
 
-This project publishes a VSIX to GitLab and, when approved, to the Visual Studio Marketplace.
+This project builds a VSIX in GitLab CI. Marketplace publication is currently handled manually from the Visual Studio Marketplace publisher page.
 
 ## Versioning Rules
 
@@ -33,11 +33,12 @@ This project publishes a VSIX to GitLab and, when approved, to the Visual Studio
 
 ## GitLab Prerelease
 
-The prerelease tag pipeline exposes these jobs:
+The prerelease tag pipeline exposes these active jobs:
 
 - `package_prerelease_vsix`: automatically builds `vsce package --pre-release` and keeps the VSIX as a short-lived artifact.
-- `gitlab_prerelease`: creates a GitLab release entry for the prerelease tag.
-- `publish_marketplace_prerelease`: publishes the prerelease VSIX to the Visual Studio Marketplace.
+- `gitlab_prerelease`: manually creates the GitLab prerelease entry for the tag.
+
+The `publish_marketplace` and `publish_marketplace_prerelease` CI jobs are intentionally commented out until automated Marketplace publishing is enabled again.
 
 Recommended GitLab flow:
 
@@ -45,8 +46,8 @@ Recommended GitLab flow:
 2. Open the tag pipeline.
 3. Wait for `package_prerelease_vsix` to finish.
 4. Download and test the VSIX artifact if it was not already tested locally.
-5. Run `gitlab_prerelease`.
-6. If Marketplace publication is approved, run `publish_marketplace_prerelease`.
+5. Run `gitlab_prerelease` to create the GitLab release entry.
+6. Upload the VSIX manually through the Visual Studio Marketplace publisher management page.
 
 Manual GitLab UI alternative:
 
@@ -55,19 +56,16 @@ Manual GitLab UI alternative:
 3. Use a title like `IE Lua Language Server v0.1.0-pre.1`.
 4. Paste the changelog notes and attach or link the VSIX artifact from `package_prerelease_vsix`.
 
-## Marketplace Prerelease
+## Manual Marketplace Prerelease
 
-CI publishing requires a protected, masked `VSCE_PAT` variable with Marketplace publish permission.
-
-Local publishing is also possible:
+Build the prerelease VSIX locally or download it from `package_prerelease_vsix`:
 
 ```sh
 npm ci
 npm run package:pre-release
-npx vsce publish --pre-release --packagePath ./ie-lua-language-server-0.1.0.vsix --pat "$VSCE_PAT"
 ```
 
-The package filename uses `package.json.version`, not the Git prerelease tag suffix. Adjust the example path for the current version.
+Then open `https://marketplace.visualstudio.com/manage/publishers/`, choose the `infinity-engine-tools` publisher, and upload `ie-lua-language-server-0.1.0.vsix` manually. The package filename uses `package.json.version`, not the Git prerelease tag suffix.
 
 ## Stable Release
 
@@ -83,7 +81,19 @@ git push origin main
 git push origin v0.2.0
 ```
 
-The stable tag pipeline can run `package_vsix`, then the protected manual `publish_marketplace` job.
+The stable tag pipeline exposes these active jobs:
+
+- `package_vsix`: automatically builds a stable VSIX and keeps it as a short-lived artifact.
+- `gitlab_release`: manually creates the GitLab release entry for the stable tag.
+
+Recommended stable GitLab flow:
+
+1. Push a stable tag that matches the CI pattern.
+2. Open the tag pipeline.
+3. Wait for `package_vsix` to finish.
+4. Download and test the VSIX artifact if it was not already tested locally.
+5. Run `gitlab_release` to create the GitLab release entry.
+6. Upload the VSIX manually through the Marketplace publisher management page.
 
 ## Upstream References
 

@@ -12,7 +12,8 @@ stages:
   - test
   - security
   - package
-  - publish
+  - release
+  # - publish
 
 .node_job:
   image: node:24-bookworm-slim
@@ -114,48 +115,39 @@ include:
   - template: Security/SAST.gitlab-ci.yml
   - template: Security/Secret-Detection.gitlab-ci.yml
 
+# GitLab's `sast` job is a configuration parent for analyzer jobs. It must
+# remain non-runnable; overriding its rules with normal branch rules makes the
+# template fail with "used for configuration only".
 sast:
   stage: security
   rules:
-    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
-    - if: '$CI_COMMIT_TAG'
-    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+    - when: never
 
-secret_detection:
+.secret-analyzer:
   stage: security
-  variables:
-    SECRET_DETECTION_ENABLED: 'true'
-  rules:
-    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
-    - if: '$CI_COMMIT_TAG'
-    - if: '$CI_PIPELINE_SOURCE == "schedule"'
 
-publish_marketplace:
-  stage: publish
-  extends: .node_job
+# GitLab release automation remains active because it only creates a GitLab
+# release entry. Marketplace publishing remains disabled while VSIX uploads are
+# handled manually.
+gitlab_release:
+  stage: release
+  image: registry.gitlab.com/gitlab-org/cli:latest
+  before_script: []
   needs:
     - package_vsix
   script:
-    - npx vsce publish --packagePath ./*.vsix --pat "$VSCE_PAT"
+    - echo "Creating GitLab release ${CI_COMMIT_TAG}"
+  release:
+    tag_name: '$CI_COMMIT_TAG'
+    name: 'IE Lua Language Server $CI_COMMIT_TAG'
+    description: 'Stable release build. Download the VSIX from this tag pipeline package_vsix job artifacts.'
   rules:
     - if: '$CI_COMMIT_TAG =~ /^v[0-9]+\.[0-9]+\.[0-9]+$/'
       when: manual
       allow_failure: true
 
-publish_marketplace_prerelease:
-  stage: publish
-  extends: .node_job
-  needs:
-    - package_prerelease_vsix
-  script:
-    - npx vsce publish --pre-release --packagePath ./*.vsix --pat "$VSCE_PAT"
-  rules:
-    - if: '$CI_COMMIT_TAG =~ /^v[0-9]+\.[0-9]+\.[0-9]+-(alpha|beta|rc|pre|preview)\.[0-9]+$/'
-      when: manual
-      allow_failure: true
-
 gitlab_prerelease:
-  stage: publish
+  stage: release
   image: registry.gitlab.com/gitlab-org/cli:latest
   before_script: []
   needs:
@@ -170,3 +162,31 @@ gitlab_prerelease:
     - if: '$CI_COMMIT_TAG =~ /^v[0-9]+\.[0-9]+\.[0-9]+-(alpha|beta|rc|pre|preview)\.[0-9]+$/'
       when: manual
       allow_failure: true
+
+# Marketplace publish automation is intentionally disabled while VSIX uploads
+# are handled manually. Keep package_vsix/package_prerelease_vsix active; their
+# artifacts are the files to upload through the Marketplace UI.
+#
+# publish_marketplace:
+#   stage: publish
+#   extends: .node_job
+#   needs:
+#     - package_vsix
+#   script:
+#     - npx vsce publish --packagePath ./*.vsix --pat "$VSCE_PAT"
+#   rules:
+#     - if: '$CI_COMMIT_TAG =~ /^v[0-9]+\.[0-9]+\.[0-9]+$/'
+#       when: manual
+#       allow_failure: true
+#
+# publish_marketplace_prerelease:
+#   stage: publish
+#   extends: .node_job
+#   needs:
+#     - package_prerelease_vsix
+#   script:
+#     - npx vsce publish --pre-release --packagePath ./*.vsix --pat "$VSCE_PAT"
+#   rules:
+#     - if: '$CI_COMMIT_TAG =~ /^v[0-9]+\.[0-9]+\.[0-9]+-(alpha|beta|rc|pre|preview)\.[0-9]+$/'
+#       when: manual
+#       allow_failure: true
