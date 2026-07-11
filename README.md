@@ -1,93 +1,217 @@
 # IE Lua Language Server
 
+Professional language support for Enhanced Edition Infinity Engine Lua and `.menu` files.
 
+This repository ships:
 
-## Getting started
+- A Visual Studio Code extension.
+- A stdio-capable Language Server Protocol server for editors such as Kate.
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+This extension targets:
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+- Lua 5.2 with the base globals and the `bit32`, `debug`, `math`, `string`, and `table` libraries.
+- LuaJIT compatibility mode.
+- Infinity Engine `.lua` files.
+- Infinity Engine `.menu` files with embedded Lua regions.
 
-## Add your files
+## Features
 
-* [Create](https://docs.gitlab.com/user/project/repository/web_editor/#create-a-file) or [upload](https://docs.gitlab.com/user/project/repository/web_editor/#upload-a-file) files
-* [Add files using the command line](https://docs.gitlab.com/topics/git/add_files/#add-files-to-a-git-repository) or push an existing Git repository with the following command:
+- Completion, hover, signature help, go to definition, find references, same-file rename, diagnostics, formatting, document symbols, workspace symbols, semantic tokens, and folding.
+- Scope-aware Lua analysis backed by a parser plus tolerant fallback scanning for incomplete buffers.
+- Embedded Lua analysis in `.menu` files for backtick chunks, `lua "..."` expressions, action/open/close/escape blocks, and `enabled`/`clickable` expressions.
+- Permission-gated generated API data from official sources only.
 
+## Screenshots
+
+The screenshots below use non-proprietary fixture snippets.
+
+### Completion and Official Help Text
+
+![Completion and official help text](docs/screenshots/completion-help.png)
+
+### Embedded `.menu` Diagnostics
+
+![Embedded menu diagnostics](docs/screenshots/menu-diagnostics.png)
+
+### Symbols, Folding, and Rename
+
+![Symbols, folding, and rename](docs/screenshots/symbols-folding.png)
+
+### Kate LSP Client Setup
+
+![Kate LSP setup](docs/screenshots/kate-lsp.png)
+
+## Runtime Dependencies
+
+Visual Studio Code users do **not** need to install `luaparse`, Node.js, npm, or any other npm package to use validation. The published Marketplace extension and generated VSIX bundle the language server runtime dependencies.
+
+Kate users do not need `luaparse` or npm packages, but they do need Node.js 24 LTS available on `PATH` because Kate starts the bundled server as an external stdio process.
+
+## Using with Visual Studio Code
+
+For Windows, macOS, and Linux:
+
+1. Install **IE Lua Language Server** from the Visual Studio Code Marketplace, or install the generated `.vsix`.
+2. Reload Visual Studio Code if prompted.
+3. Open an Infinity Engine `.lua` or `.menu` file.
+
+Settings can be changed from the Visual Studio Code Settings UI or `settings.json`:
+
+```json
+{
+  "ieLua.dialect": "lua52",
+  "ieLua.validation.mode": "save",
+  "ieLua.diagnostics.unknownGlobals": "off"
+}
 ```
-cd existing_repo
-git remote add origin https://gitlab.com/extensions-for-visual-studio-code/ie-lua-language-server.git
-git branch -M main
-git push -uf origin main
+
+The extension activates automatically for `.lua` and `.menu` files and exposes the commands listed below.
+
+## Using with Kate
+
+Kate integration uses the same bundled LSP server over stdin/stdout. This is useful when you want completion, hover, diagnostics, definitions, references, symbols, and formatting outside Visual Studio Code.
+
+Requirements:
+
+- Kate with the **LSP Client** plugin enabled.
+- Node.js 24 LTS on `PATH`.
+- A built checkout or unpacked VSIX containing `dist/server/server.js` and `resources/api/api-index.json`.
+
+Build from source:
+
+```sh
+npm install
+npm run bundle
 ```
 
-## Integrate with your tools
+Install the optional `.menu` syntax definition so Kate can map `*.menu` files to the `ie-menu` LSP language id:
 
-* [Set up project integrations](https://gitlab.com/extensions-for-visual-studio-code/ie-lua-language-server/-/settings/integrations)
+```sh
+install -D editors/kate/syntax/ie-menu.xml ~/.local/share/org.kde.syntax-highlighting/syntax/ie-menu.xml
+```
 
-## Collaborate with your team
+For Flatpak, Snap, Windows, or custom KDE paths, use the syntax-definition directory reported by Kate/KDE. KDE documents the generic user location as `org.kde.syntax-highlighting/syntax/` under a `qtpaths --paths GenericDataLocation` directory, and the Windows user location as `%USERPROFILE%\AppData\Local\org.kde.syntax-highlighting\syntax`.
 
-* [Invite team members and collaborators](https://docs.gitlab.com/user/project/members/)
-* [Create a new merge request](https://docs.gitlab.com/user/project/merge_requests/creating_merge_requests/)
-* [Automatically close issues from merge requests](https://docs.gitlab.com/user/project/issues/managing_issues/#closing-issues-automatically)
-* [Enable merge request approvals](https://docs.gitlab.com/user/project/merge_requests/approvals/)
-* [Set auto-merge](https://docs.gitlab.com/user/project/merge_requests/auto_merge/)
+Then open **Settings** -> **Configure Kate** -> **Plugins**, enable **LSP Client**, and add this to **LSP Client** -> **User Server Settings**. Replace `/absolute/path/to/ie-lua-language-server` with this checkout or unpacked VSIX extension directory:
 
-## Test and Deploy
+```json
+{
+  "servers": {
+    "ie-lua": {
+      "command": [
+        "node",
+        "/absolute/path/to/ie-lua-language-server/dist/server/server.js",
+        "--stdio"
+      ],
+      "rootIndicationFileNames": [".git"],
+      "url": "https://gitlab.com/extensions-for-visual-studio-code/ie-lua-language-server",
+      "highlightingModeRegex": "^Lua$",
+      "settings": {
+        "ieLua": {
+          "validation": {
+            "mode": "save"
+          }
+        }
+      }
+    },
+    "ie-menu": {
+      "command": [
+        "node",
+        "/absolute/path/to/ie-lua-language-server/dist/server/server.js",
+        "--stdio"
+      ],
+      "rootIndicationFileNames": [".git"],
+      "url": "https://gitlab.com/extensions-for-visual-studio-code/ie-lua-language-server",
+      "highlightingModeRegex": "^IE Menu$",
+      "settings": {
+        "ieLua": {
+          "validation": {
+            "mode": "save"
+          }
+        }
+      }
+    }
+  }
+}
+```
 
-Use the built-in continuous integration in GitLab.
+The same JSON is available as `editors/kate/lsp-client.example.json`.
 
-* [Get started with GitLab CI/CD](https://docs.gitlab.com/ci/quick_start/)
-* [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/user/application_security/sast/)
-* [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/topics/autodevops/requirements/)
-* [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/user/clusters/agent/)
-* [Set up protected environments](https://docs.gitlab.com/ci/environments/protected_environments/)
+Kate's LSP Client plugin communicates with configured servers over stdin/stdout and uses `highlightingModeRegex` to map Kate highlighting modes to server entries. See the official Kate LSP Client documentation: `https://docs.kde.org/stable5/en/kate/kate/kate-application-plugin-lspclient.html`.
 
-***
+Node.js and npm are only required when building/testing this repository or when launching the stdio server from a non-VS Code editor.
 
-# Editing this README
+## Validation Modes
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+`ieLua.validation.mode` controls when diagnostics run:
 
-## Suggestions for a good README
+- `manual`: only through `IE Lua: Validate Document` or `IE Lua: Validate Workspace`.
+- `save`: on save. This is the default.
+- `type`: while editing, debounced at 300 ms.
+- `saveAndType`: on save and while editing, with edit validation debounced at 300 ms.
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+## Commands
 
-## Name
-Choose a self-explaining name for your project.
+- `IE Lua: Validate Document`
+- `IE Lua: Validate Workspace`
+- `IE Lua: Reload API Data`
+- `IE Lua: Show API Source`
+- `IE Lua: Open Server Log`
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+## Development
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+Node.js 24 LTS and npm are required. This repository is structured as a TypeScript npm workspace.
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+```sh
+npm install
+npm run compile
+npm test
+npm run package
+```
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+The language server runs as a separate process over IPC from the VS Code extension client.
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+Generate API metadata with:
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+```sh
+npm run compile
+npm run ingest:docs
+```
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+The docs-ingestion step fetches allowed official Lua 5.2 and LuaJIT documentation at build time and stores exact source wording as Markdown for hover, completion, and signature-help previews. Permission-gated sources are indexed only for names and provenance unless their license or explicit permission is recorded in `THIRD_PARTY_NOTICES.md`.
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+Generated API data is split by source section for auditability. `resources/api/api-index.json` is only a manifest; symbols live in these six files:
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+- `resources/api/sections/ee-game-lua-functions.json`
+- `resources/api/sections/eeex-functions.json`
+- `resources/api/sections/ee-game-structures-x64.json`
+- `resources/api/sections/lua52.json`
+- `resources/api/sections/luajit.json`
+- `resources/api/sections/ee-utility-functions.json`
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+Set `IE_LUA_FETCH_EEEX=1` when running `npm run ingest:docs` to fetch EEex symbol names from the pinned upstream commit. EEex prose remains permission-gated and is not bundled.
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+Local game files under `samples/` are ignored because they may contain proprietary official content. Set `IE_LUA_SCAN_LOCAL_UTIL=1` only when you intentionally want a local docs-ingestion run to derive EE Utility Function metadata from an untracked `samples/util.lua` file.
+
+## Release Process
+
+Stable and prerelease publishing instructions are maintained in `docs/release.md`.
+
+Use `npm run package` for a stable VSIX and `npm run package:pre-release` for a Marketplace prerelease VSIX. The prerelease path uses VS Code's `--pre-release` flag; do not put a SemVer prerelease suffix in `package.json.version`.
+
+## Documentation Provenance
+
+The shipped API index is generated from these official sources:
+
+- EE Game Lua Functions: `https://github.com/Bubb13/EEex-Docs/tree/dev/source/EE%20Game%20Lua%20Functions`
+- EEex Functions: `https://github.com/Bubb13/EEex-Docs/tree/dev/source/EEex%20Functions`
+- EE Game Structures (x64): `https://github.com/Bubb13/EEex-Docs/tree/dev/source/EE%20Game%20Structures%20(x64)`
+- Lua 5.2: `https://www.lua.org/manual/5.2/`
+- LuaJIT: `https://luajit.org/`
+- EE Utility Functions: local, untracked `samples/util.lua` only when explicitly enabled for docs ingestion.
+
+External documentation text is not bundled unless its license or explicit permission is recorded in `THIRD_PARTY_NOTICES.md`.
 
 ## License
-For open source projects, say how it is licensed.
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+This project is proprietary software. See `LICENSE.md`.

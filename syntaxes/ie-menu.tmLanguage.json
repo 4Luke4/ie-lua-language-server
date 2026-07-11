@@ -1,0 +1,43 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "IE Menu",
+  "scopeName": "source.ie-menu",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#embeddedLuaBacktick" },
+    { "include": "#embeddedLuaAttribute" },
+    { "include": "#strings" },
+    { "include": "#keywords" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-dash.ie-menu",
+          "match": "--.*$"
+        }
+      ]
+    },
+    "embeddedLuaBacktick": {
+      "name": "meta.embedded.block.lua.ie-menu",
+      "begin": "`",
+      "end": "`",
+      "patterns": [{ "include": "source.ie-lua" }]
+    },
+    "embeddedLuaAttribute": {
+      "name": "meta.embedded.expression.lua.ie-menu",
+      "begin": "\\b(?:[A-Za-z][A-Za-z0-9_ ]*\\s+)?lua\\s+\"",
+      "end": "\"",
+      "patterns": [{ "include": "source.ie-lua" }]
+    },
+    "strings": {
+      "name": "string.quoted.double.ie-menu",
+      "begin": "\"",
+      "end": "\""
+    },
+    "keywords": {
+      "name": "keyword.control.ie-menu",
+      "match": "\\b(menu|button|label|text|area|action|onOpen|onopen|onClose|onclose|enabled|clickable|tooltip|modal)\\b"
+    }
+  }
+}

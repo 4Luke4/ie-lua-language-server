@@ -1,0 +1,37 @@
+import type { ApiIndex, ApiSymbol, IeLuaSettings } from './types';
+
+export const emptyApiIndex: ApiIndex = {
+  schemaVersion: 1,
+  generatedAt: '1970-01-01T00:00:00.000Z',
+  sources: [],
+  symbols: [],
+};
+
+export function filterApiSymbols(index: ApiIndex, settings: IeLuaSettings): ApiSymbol[] {
+  const enabled = new Set(settings.symbolSources.enabled);
+  return index.symbols.filter((symbol) => enabled.has(symbol.sourceSection));
+}
+
+export function findApiSymbol(
+  index: ApiIndex,
+  settings: IeLuaSettings,
+  name: string,
+): ApiSymbol | undefined {
+  return filterApiSymbols(index, settings).find((symbol) => symbol.name === name);
+}
+
+export function makeDocumentation(symbol: ApiSymbol): string {
+  const chunks: string[] = [`### \`${symbol.name}\``];
+  if (symbol.signature) {
+    chunks.push('```lua', symbol.signature, '```');
+  }
+  if (symbol.documentationState === 'undocumented') {
+    chunks.push('Undocumented in official source.');
+  } else if (symbol.documentationState === 'permission-gated') {
+    chunks.push('Documentation text is permission-gated and is not bundled.');
+  } else if (symbol.documentationMarkdown) {
+    chunks.push(symbol.documentationMarkdown);
+  }
+  chunks.push('---', `Source: [${symbol.upstreamUrl}](${symbol.upstreamUrl})`);
+  return chunks.join('\n\n');
+}

@@ -1,0 +1,284 @@
+{
+  "name": "ie-lua-language-server",
+  "displayName": "IE Lua Language Server",
+  "description": "Professional Lua and Infinity Engine .menu language support for VS Code and stdio LSP clients.",
+  "version": "0.1.0",
+  "publisher": "extensions-for-visual-studio-code",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/extensions-for-visual-studio-code/ie-lua-language-server.git"
+  },
+  "engines": {
+    "vscode": "^1.100.0",
+    "node": ">=24.0.0 <25"
+  },
+  "categories": [
+    "Programming Languages",
+    "Formatters",
+    "Linters"
+  ],
+  "keywords": [
+    "lua",
+    "luajit",
+    "infinity-engine",
+    "baldurs-gate",
+    "icewind-dale",
+    "language-server"
+  ],
+  "main": "./dist/client/extension.js",
+  "workspaces": [
+    "packages/client",
+    "packages/server",
+    "packages/shared",
+    "packages/tools"
+  ],
+  "activationEvents": [
+    "onLanguage:ie-lua",
+    "onLanguage:ie-menu",
+    "onCommand:ieLua.validateDocument",
+    "onCommand:ieLua.validateWorkspace",
+    "onCommand:ieLua.reloadApiData",
+    "onCommand:ieLua.showApiSource",
+    "onCommand:ieLua.openServerLog"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "ie-lua",
+        "aliases": [
+          "IE Lua",
+          "ie-lua"
+        ],
+        "extensions": [
+          ".lua"
+        ],
+        "configuration": "./language-configuration.json"
+      },
+      {
+        "id": "ie-menu",
+        "aliases": [
+          "IE Menu",
+          "ie-menu"
+        ],
+        "extensions": [
+          ".menu"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "ie-lua",
+        "scopeName": "source.ie-lua",
+        "path": "./syntaxes/ie-lua.tmLanguage.json"
+      },
+      {
+        "language": "ie-menu",
+        "scopeName": "source.ie-menu",
+        "path": "./syntaxes/ie-menu.tmLanguage.json",
+        "embeddedLanguages": {
+          "meta.embedded.block.lua.ie-menu": "ie-lua",
+          "meta.embedded.expression.lua.ie-menu": "ie-lua"
+        }
+      }
+    ],
+    "configuration": {
+      "title": "IE Lua",
+      "properties": {
+        "ieLua.dialect": {
+          "scope": "resource",
+          "type": "string",
+          "enum": [
+            "lua52",
+            "luajit"
+          ],
+          "default": "lua52",
+          "description": "Controls which Lua dialect the language server parses and validates."
+        },
+        "ieLua.validation.mode": {
+          "scope": "resource",
+          "type": "string",
+          "enum": [
+            "manual",
+            "save",
+            "type",
+            "saveAndType"
+          ],
+          "default": "save",
+          "description": "Controls when diagnostics are produced. Type-based modes are debounced at 300 ms."
+        },
+        "ieLua.symbolSources.enabled": {
+          "scope": "resource",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "ee-game-lua-functions",
+              "eeex-functions",
+              "ee-game-structures-x64",
+              "lua52",
+              "luajit",
+              "ee-utility-functions"
+            ]
+          },
+          "default": [
+            "ee-game-lua-functions",
+            "eeex-functions",
+            "ee-game-structures-x64",
+            "lua52",
+            "luajit",
+            "ee-utility-functions"
+          ],
+          "description": "Controls which generated API symbol sections are enabled."
+        },
+        "ieLua.diagnostics.unknownGlobals": {
+          "scope": "resource",
+          "type": "string",
+          "enum": [
+            "off",
+            "hint",
+            "warning"
+          ],
+          "default": "off",
+          "description": "Controls diagnostics for unknown global identifiers."
+        },
+        "ieLua.formatter.configPath": {
+          "scope": "resource",
+          "type": "string",
+          "default": ".stylua.toml",
+          "description": "Path to the formatter configuration file, relative to the workspace folder."
+        },
+        "ieLua.menu.blockKeys": {
+          "scope": "resource",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "action",
+            "onOpen",
+            "onopen",
+            "onClose",
+            "onclose",
+            "on escape"
+          ],
+          "description": "Menu DSL keys whose quoted values are parsed as Lua blocks."
+        },
+        "ieLua.menu.expressionKeys": {
+          "scope": "resource",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "enabled",
+            "clickable"
+          ],
+          "description": "Menu DSL keys whose quoted values are parsed as Lua expressions."
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "ieLua.validateDocument",
+        "title": "IE Lua: Validate Document"
+      },
+      {
+        "command": "ieLua.validateWorkspace",
+        "title": "IE Lua: Validate Workspace"
+      },
+      {
+        "command": "ieLua.reloadApiData",
+        "title": "IE Lua: Reload API Data"
+      },
+      {
+        "command": "ieLua.showApiSource",
+        "title": "IE Lua: Show API Source"
+      },
+      {
+        "command": "ieLua.openServerLog",
+        "title": "IE Lua: Open Server Log"
+      }
+    ],
+    "semanticTokenTypes": [
+      {
+        "id": "namespace",
+        "description": "API namespace or table"
+      },
+      {
+        "id": "function",
+        "description": "Function"
+      },
+      {
+        "id": "method",
+        "description": "Method"
+      },
+      {
+        "id": "parameter",
+        "description": "Parameter"
+      },
+      {
+        "id": "variable",
+        "description": "Variable"
+      },
+      {
+        "id": "property",
+        "description": "Property"
+      }
+    ],
+    "semanticTokenModifiers": [
+      {
+        "id": "declaration",
+        "description": "Declaration"
+      },
+      {
+        "id": "readonly",
+        "description": "Read-only symbol"
+      },
+      {
+        "id": "deprecated",
+        "description": "Deprecated symbol"
+      }
+    ]
+  },
+  "scripts": {
+    "clean": "tsc -b --clean",
+    "compile": "tsc -b",
+    "bundle": "npm run compile && npm run bundle:client && npm run bundle:server",
+    "bundle:client": "esbuild packages/client/src/extension.ts --bundle --platform=node --format=cjs --external:vscode --sourcemap --outfile=dist/client/extension.js",
+    "bundle:server": "esbuild packages/server/src/server.ts --bundle --platform=node --format=cjs --sourcemap --outfile=dist/server/server.js",
+    "watch": "tsc -b --watch",
+    "lint": "eslint . --ext .ts",
+    "format:check": "prettier --check .",
+    "format": "prettier --write .",
+    "test": "npm run compile && node --test dist/**/*.test.js",
+    "ingest:docs": "node dist/tools/ingest-docs.js",
+    "package": "npm run bundle && vsce package --no-dependencies",
+    "package:pre-release": "npm run bundle && vsce package --pre-release --no-dependencies",
+    "package:audit": "node dist/tools/audit-package.js",
+    "publish:marketplace": "vsce publish --packagePath ./*.vsix",
+    "publish:marketplace:pre-release": "vsce publish --pre-release --packagePath ./*.vsix",
+    "verify": "npm run compile && npm run lint && npm run format:check && npm test && npm run bundle && npm run package:audit"
+  },
+  "dependencies": {
+    "luaparse": "^0.3.1",
+    "vscode-languageclient": "^9.0.1",
+    "vscode-languageserver": "^9.0.1",
+    "vscode-languageserver-textdocument": "^1.0.12",
+    "vscode-uri": "^3.0.8"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/vscode": "^1.100.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "@vscode/test-electron": "^2.5.0",
+    "@vscode/vsce": "^3.0.0",
+    "esbuild": "^0.25.12",
+    "eslint": "^9.0.0",
+    "prettier": "^3.3.0",
+    "typescript": "^5.8.0"
+  }
+}

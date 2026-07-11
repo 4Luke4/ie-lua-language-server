@@ -1,0 +1,67 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "IE Lua",
+  "scopeName": "source.ie-lua",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#keywords" },
+    { "include": "#numbers" },
+    { "include": "#functions" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.block.lua",
+          "begin": "--\\[\\[",
+          "end": "\\]\\]"
+        },
+        {
+          "name": "comment.line.double-dash.lua",
+          "match": "--.*$"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.lua",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [{ "name": "constant.character.escape.lua", "match": "\\\\." }]
+        },
+        {
+          "name": "string.quoted.single.lua",
+          "begin": "'",
+          "end": "'",
+          "patterns": [{ "name": "constant.character.escape.lua", "match": "\\\\." }]
+        },
+        {
+          "name": "string.quoted.other.multiline.lua",
+          "begin": "\\[\\[",
+          "end": "\\]\\]"
+        }
+      ]
+    },
+    "keywords": {
+      "name": "keyword.control.lua",
+      "match": "\\b(and|break|do|else|elseif|end|false|for|function|goto|if|in|local|nil|not|or|repeat|return|then|true|until|while)\\b"
+    },
+    "numbers": {
+      "name": "constant.numeric.lua",
+      "match": "\\b(0x[0-9A-Fa-f]+|\\d+(?:\\.\\d+)?)\\b"
+    },
+    "functions": {
+      "patterns": [
+        {
+          "name": "entity.name.function.lua",
+          "match": "\\bfunction\\s+([A-Za-z_][A-Za-z0-9_]*(?:(?:\\.|:)[A-Za-z_][A-Za-z0-9_]*)*)",
+          "captures": {
+            "1": { "name": "entity.name.function.lua" }
+          }
+        }
+      ]
+    }
+  }
+}

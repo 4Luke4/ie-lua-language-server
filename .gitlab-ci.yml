@@ -1,19 +1,169 @@
-# You can override the included template(s) by including variable overrides
-# SAST customization: https://docs.gitlab.com/user/application_security/sast/#available-cicd-variables
-# Secret Detection customization: https://docs.gitlab.com/user/application_security/secret_detection/pipeline/configure/
-# Dependency Scanning customization: https://docs.gitlab.com/user/application_security/dependency_scanning/dependency_scanning_sbom/#customizing-analyzer-behavior
-# Container Scanning customization: https://docs.gitlab.com/user/application_security/container_scanning/#customizing-analyzer-behavior
-# Note that environment variables can be set in several places
-# See https://docs.gitlab.com/ci/variables/#cicd-variable-precedence
+workflow:
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+    - if: '$CI_COMMIT_TAG'
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+    - when: never
+
 stages:
-- test
-- secret-detection
-sast:
+  - install
+  - check
+  - test
+  - package
+  - security
+  - publish
+
+default:
+  image: node:24-bookworm-slim
+  interruptible: true
+  cache:
+    key:
+      files:
+        - package-lock.json
+      prefix: npm
+    paths:
+      - .npm/
+    policy: pull-push
+  before_script:
+    - npm config set cache .npm --global
+
+install:
+  stage: install
+  script:
+    - npm install --prefer-offline --no-audit
+  artifacts:
+    expire_in: 1 day
+    paths:
+      - node_modules/
+      - packages/*/node_modules/
+      - package-lock.json
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+    - if: '$CI_COMMIT_TAG'
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+
+compile:
+  stage: check
+  needs:
+    - install
+  script:
+    - npm run compile
+  artifacts:
+    expire_in: 1 day
+    paths:
+      - dist/
+
+lint:
+  stage: check
+  needs:
+    - install
+  script:
+    - npm run lint
+    - npm run format:check
+
+unit_tests:
   stage: test
+  needs:
+    - install
+    - compile
+  script:
+    - npm test
+  artifacts:
+    when: always
+    expire_in: 1 week
+    paths:
+      - coverage/
+
+package_vsix:
+  stage: package
+  needs:
+    - install
+    - compile
+    - unit_tests
+  script:
+    - npm run package
+    - npm run package:audit
+  artifacts:
+    expire_in: 1 week
+    paths:
+      - '*.vsix'
+  rules:
+    - if: '$CI_COMMIT_TAG =~ /^v[0-9]+\.[0-9]+\.[0-9]+$/'
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+      when: manual
+
+package_prerelease_vsix:
+  stage: package
+  needs:
+    - install
+    - compile
+    - unit_tests
+  script:
+    - npm run package:pre-release
+    - npm run package:audit
+  artifacts:
+    expire_in: 1 week
+    paths:
+      - '*.vsix'
+  rules:
+    - if: '$CI_COMMIT_TAG =~ /^v[0-9]+\.[0-9]+\.[0-9]+-(alpha|beta|rc|pre|preview)\.[0-9]+$/'
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+      when: manual
+
 include:
-- template: Security/SAST.gitlab-ci.yml
-- template: Security/Secret-Detection.gitlab-ci.yml
-variables:
-  SECRET_DETECTION_ENABLED: 'true'
+  - template: Security/SAST.gitlab-ci.yml
+  - template: Security/Secret-Detection.gitlab-ci.yml
+
+sast:
+  stage: security
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+    - if: '$CI_COMMIT_TAG'
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+
 secret_detection:
-  stage: secret-detection
+  stage: security
+  variables:
+    SECRET_DETECTION_ENABLED: 'true'
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+    - if: '$CI_COMMIT_TAG'
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+
+publish_marketplace:
+  stage: publish
+  needs:
+    - package_vsix
+  script:
+    - npx vsce publish --packagePath ./*.vsix --pat "$VSCE_PAT"
+  rules:
+    - if: '$CI_COMMIT_TAG =~ /^v[0-9]+\.[0-9]+\.[0-9]+$/'
+      when: manual
+
+publish_marketplace_prerelease:
+  stage: publish
+  needs:
+    - package_prerelease_vsix
+  script:
+    - npx vsce publish --pre-release --packagePath ./*.vsix --pat "$VSCE_PAT"
+  rules:
+    - if: '$CI_COMMIT_TAG =~ /^v[0-9]+\.[0-9]+\.[0-9]+-(alpha|beta|rc|pre|preview)\.[0-9]+$/'
+      when: manual
+
+gitlab_prerelease:
+  stage: publish
+  image: registry.gitlab.com/gitlab-org/cli:latest
+  before_script: []
+  needs:
+    - package_prerelease_vsix
+  script:
+    - echo "Creating GitLab prerelease ${CI_COMMIT_TAG}"
+  release:
+    tag_name: '$CI_COMMIT_TAG'
+    name: 'IE Lua Language Server $CI_COMMIT_TAG'
+    description: 'Prerelease build. Download the VSIX from this tag pipeline package_prerelease_vsix job artifacts.'
+  rules:
+    - if: '$CI_COMMIT_TAG =~ /^v[0-9]+\.[0-9]+\.[0-9]+-(alpha|beta|rc|pre|preview)\.[0-9]+$/'
+      when: manual

@@ -1,0 +1,11 @@
+{
+  "name": "@ie-lua/client",
+  "version": "0.1.0",
+  "private": true,
+  "type": "commonjs",
+  "main": "../../dist/client/extension.js",
+  "types": "../../dist/client/extension.d.ts",
+  "dependencies": {
+    "@ie-lua/shared": "0.1.0"
+  }
+}

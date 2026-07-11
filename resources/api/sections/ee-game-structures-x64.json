@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-09T17:33:28.781Z",
+  "source": {
+    "id": "ee-game-structures-x64",
+    "title": "EE Game Structures (x64)",
+    "url": "https://github.com/Bubb13/EEex-Docs/tree/dev/source/EE%20Game%20Structures%20(x64)",
+    "commit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+    "licenseStatus": "permission-gated"
+  },
+  "symbols": []
+}

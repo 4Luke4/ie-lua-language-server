@@ -1,0 +1,8 @@
+{
+  "name": "@ie-lua/shared",
+  "version": "0.1.0",
+  "private": true,
+  "type": "commonjs",
+  "main": "../../dist/shared/index.js",
+  "types": "../../dist/shared/index.d.ts"
+}

@@ -1,0 +1,38 @@
+{
+  "servers": {
+    "ie-lua": {
+      "command": [
+        "node",
+        "/absolute/path/to/ie-lua-language-server/dist/server/server.js",
+        "--stdio"
+      ],
+      "rootIndicationFileNames": [".git"],
+      "url": "https://gitlab.com/extensions-for-visual-studio-code/ie-lua-language-server",
+      "highlightingModeRegex": "^Lua$",
+      "settings": {
+        "ieLua": {
+          "validation": {
+            "mode": "save"
+          }
+        }
+      }
+    },
+    "ie-menu": {
+      "command": [
+        "node",
+        "/absolute/path/to/ie-lua-language-server/dist/server/server.js",
+        "--stdio"
+      ],
+      "rootIndicationFileNames": [".git"],
+      "url": "https://gitlab.com/extensions-for-visual-studio-code/ie-lua-language-server",
+      "highlightingModeRegex": "^IE Menu$",
+      "settings": {
+        "ieLua": {
+          "validation": {
+            "mode": "save"
+          }
+        }
+      }
+    }
+  }
+}

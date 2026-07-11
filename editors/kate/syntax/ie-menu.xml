@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "language.dtd">
+<language
+  name="IE Menu"
+  version="1"
+  kateversion="5.0"
+  section="Scripts"
+  extensions="*.menu"
+  priority="10"
+  author="extensions-for-visual-studio-code"
+  license="Proprietary"
+  style="lua"
+  indenter="lua">
+  <highlighting>
+    <list name="menuKeys">
+      <item>action</item>
+      <item>enabled</item>
+      <item>clickable</item>
+      <item>onOpen</item>
+      <item>onopen</item>
+      <item>onClose</item>
+      <item>onclose</item>
+      <item>lua</item>
+    </list>
+    <contexts>
+      <context name="Normal" attribute="Normal Text" lineEndContext="#stay">
+        <RegExpr attribute="Comment" context="#stay" String="//.*$"/>
+        <keyword attribute="Keyword" context="#stay" String="menuKeys"/>
+        <DetectChar attribute="Lua Chunk" context="Backtick Lua" char="`"/>
+        <DetectChar attribute="String" context="String" char="&quot;"/>
+      </context>
+      <context name="Backtick Lua" attribute="Lua Chunk" lineEndContext="#stay">
+        <DetectChar attribute="Lua Chunk" context="#pop" char="`"/>
+        <RegExpr attribute="Comment" context="#stay" String="--.*$"/>
+        <keyword attribute="Keyword" context="#stay" String="menuKeys"/>
+      </context>
+      <context name="String" attribute="String" lineEndContext="#pop">
+        <RegExpr attribute="Special Character" context="#stay" String="\\."/>
+        <DetectChar attribute="String" context="#pop" char="&quot;"/>
+      </context>
+    </contexts>
+    <itemDatas>
+      <itemData name="Normal Text" defStyleNum="dsNormal"/>
+      <itemData name="Keyword" defStyleNum="dsKeyword"/>
+      <itemData name="String" defStyleNum="dsString"/>
+      <itemData name="Lua Chunk" defStyleNum="dsSpecialString"/>
+      <itemData name="Special Character" defStyleNum="dsSpecialChar"/>
+      <itemData name="Comment" defStyleNum="dsComment"/>
+    </itemDatas>
+  </highlighting>
+  <general>
+    <comments>
+      <comment name="singleLine" start="//"/>
+    </comments>
+    <keywords casesensitive="1"/>
+    <folding indentationsensitive="1"/>
+  </general>
+</language>

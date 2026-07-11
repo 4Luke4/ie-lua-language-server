@@ -1,0 +1,18 @@
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
+
+# Types:
+# feat, fix, docs, style, refactor, perf, test, build, ci, chore, revert
+#
+# Breaking changes:
+# feat(api)!: remove legacy setting
+#
+# Or:
+# BREAKING CHANGE: describe the incompatible change.
+#
+# References:
+# Refs: #123
+# Closes: #123

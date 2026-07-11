@@ -1,0 +1,8 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.formatOnSave": true,
+  "files.trimTrailingWhitespace": true,
+  "[ie-menu]": {
+    "editor.formatOnSave": false
+  }
+}
