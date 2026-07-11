@@ -15,6 +15,11 @@ stages:
   - release
   # - publish
 
+variables:
+  SECRET_DETECTION_ENABLED: 'true'
+  SAST_EXCLUDED_PATHS: 'spec, test, tests, tmp, node_modules, dist, coverage, resources/api'
+  SECRET_DETECTION_EXCLUDED_PATHS: 'node_modules, dist, coverage, resources/api'
+
 .node_job:
   image: node:24-bookworm-slim
   interruptible: true
@@ -115,15 +120,12 @@ include:
   - template: Security/SAST.gitlab-ci.yml
   - template: Security/Secret-Detection.gitlab-ci.yml
 
-# GitLab's `sast` job is a configuration parent for analyzer jobs. It must
-# remain non-runnable; overriding its rules with normal branch rules makes the
-# template fail with "used for configuration only".
+# Stage-only overrides mirror GitLab's template customization pattern. Do not
+# override `sast.rules`; the template parent is configuration-only.
 sast:
   stage: security
-  rules:
-    - when: never
 
-.secret-analyzer:
+secret_detection:
   stage: security
 
 # GitLab release automation remains active because it only creates a GitLab
