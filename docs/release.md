@@ -65,7 +65,7 @@ npm ci
 npm run package:pre-release
 ```
 
-Then open `https://marketplace.visualstudio.com/manage/publishers/`, choose the `infinity-engine-tools` publisher, and upload `ie-lua-language-server-0.1.0.vsix` manually. The package filename uses `package.json.version`, not the Git prerelease tag suffix.
+Then open `https://marketplace.visualstudio.com/manage/publishers/`, choose the `infinity-engine-tools` publisher, and upload the generated `ie-lua-language-server-<package.json.version>.vsix` file manually. The package filename uses `package.json.version`, not the Git prerelease tag suffix.
 
 ## Stable Release
 

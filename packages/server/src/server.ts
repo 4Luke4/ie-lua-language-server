@@ -97,15 +97,8 @@ connection.onInitialize((params: InitializeParams): InitializeResult => {
         legend: semanticLegend,
         full: true,
       },
-      executeCommandProvider: {
-        commands: [
-          'ieLua.validateDocument',
-          'ieLua.validateWorkspace',
-          'ieLua.reloadApiData',
-          'ieLua.showApiSource',
-          'ieLua.openServerLog',
-        ],
-      },
+      // The VS Code client owns these command IDs and forwards them explicitly.
+      // Advertising them here makes vscode-languageclient register duplicates.
     },
   };
 });
