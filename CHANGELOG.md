@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a Changelog, and this project adheres to Semantic Versioning.
 
+## [v0.1.3]
+
+### Fixed
+
+- Use the GitLab CLI already present in the release job image to upload VSIX release assets when `curl` is unavailable.
+
 ## [v0.1.2]
 
 ### Added

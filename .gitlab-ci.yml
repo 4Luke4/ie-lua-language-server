@@ -140,10 +140,6 @@ secret_detection:
   script:
     - |
       set -eu
-      if ! command -v curl >/dev/null 2>&1; then
-        echo "curl is required to upload the VSIX to the GitLab package registry."
-        exit 1
-      fi
 
       vsix_file="$(find . -maxdepth 1 -name '*.vsix' -type f | sort | head -n 1)"
       if [ -z "$vsix_file" ]; then
@@ -153,8 +149,22 @@ secret_detection:
 
       release_vsix="ie-lua-language-server-${CI_COMMIT_TAG}.vsix"
       package_url="${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/ie-lua-language-server/${CI_COMMIT_TAG}/${release_vsix}"
+      package_endpoint="projects/${CI_PROJECT_ID}/packages/generic/ie-lua-language-server/${CI_COMMIT_TAG}/${release_vsix}"
       cp "$vsix_file" "$release_vsix"
-      curl --fail --location --header "JOB-TOKEN: ${CI_JOB_TOKEN}" --upload-file "$release_vsix" "$package_url"
+
+      if command -v glab >/dev/null 2>&1; then
+        GITLAB_TOKEN="${CI_JOB_TOKEN}" GLAB_TOKEN="${CI_JOB_TOKEN}" glab api \
+          --hostname "${CI_SERVER_HOST}" \
+          --method PUT \
+          --header "JOB-TOKEN: ${CI_JOB_TOKEN}" \
+          --input "$release_vsix" \
+          "$package_endpoint"
+      elif command -v curl >/dev/null 2>&1; then
+        curl --fail --location --header "JOB-TOKEN: ${CI_JOB_TOKEN}" --upload-file "$release_vsix" "$package_url"
+      else
+        echo "glab or curl is required to upload the VSIX to the GitLab package registry."
+        exit 1
+      fi
       echo "Uploaded ${release_vsix} to the GitLab generic package registry."
 
 gitlab_release:
