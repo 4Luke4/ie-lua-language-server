@@ -2,8 +2,13 @@
   "name": "ie-lua-language-server",
   "displayName": "IE Lua Language Server",
   "description": "Professional Lua and Infinity Engine .menu language support for VS Code and stdio LSP clients.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "publisher": "infinity-engine-tools",
+  "icon": "assets/icon.png",
+  "galleryBanner": {
+    "color": "#071A2F",
+    "theme": "dark"
+  },
   "license": "SEE LICENSE IN LICENSE.md",
   "private": true,
   "repository": {

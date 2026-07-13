@@ -35,8 +35,8 @@ This project builds a VSIX in GitLab CI. Marketplace publication is currently ha
 
 The prerelease tag pipeline exposes these active jobs:
 
-- `package_prerelease_vsix`: automatically builds `vsce package --pre-release` and keeps the VSIX as a short-lived artifact.
-- `gitlab_prerelease`: manually creates the GitLab prerelease entry for the tag.
+- `package_prerelease_vsix`: automatically builds `vsce package --pre-release` and keeps a hidden, short-lived VSIX artifact for the release job.
+- `gitlab_prerelease`: manually uploads that VSIX to the GitLab Generic Package Registry and creates the GitLab prerelease entry with a single VSIX release asset link.
 
 The `publish_marketplace` and `publish_marketplace_prerelease` CI jobs are intentionally commented out until automated Marketplace publishing is enabled again.
 
@@ -45,20 +45,20 @@ Recommended GitLab flow:
 1. Push a prerelease tag that matches the CI pattern.
 2. Open the tag pipeline.
 3. Wait for `package_prerelease_vsix` to finish.
-4. Download and test the VSIX artifact if it was not already tested locally.
-5. Run `gitlab_prerelease` to create the GitLab release entry.
-6. Upload the VSIX manually through the Visual Studio Marketplace publisher management page.
+4. Run `gitlab_prerelease` to create the GitLab prerelease entry and VSIX release asset.
+5. Download the VSIX from the GitLab prerelease asset and test it if it was not already tested locally.
+6. Upload the same VSIX manually through the Visual Studio Marketplace publisher management page.
 
 Manual GitLab UI alternative:
 
 1. Go to **Deploy** -> **Releases** -> **New release**.
 2. Select the prerelease tag or create it from the desired commit.
 3. Use a title like `IE Lua Language Server v0.1.0-pre.1`.
-4. Paste the changelog notes and attach or link the VSIX artifact from `package_prerelease_vsix`.
+4. Prefer the CI `gitlab_prerelease` job so the release asset points at the GitLab package registry. If creating the release by hand, first publish the VSIX somewhere durable and link only that VSIX file.
 
 ## Manual Marketplace Prerelease
 
-Build the prerelease VSIX locally or download it from `package_prerelease_vsix`:
+Build the prerelease VSIX locally or download it from the GitLab prerelease asset:
 
 ```sh
 npm ci
@@ -83,19 +83,20 @@ git push origin v0.2.0
 
 The stable tag pipeline exposes these active jobs:
 
-- `package_vsix`: automatically builds a stable VSIX and keeps it as a short-lived artifact.
-- `gitlab_release`: manually creates the GitLab release entry for the stable tag.
+- `package_vsix`: automatically builds a stable VSIX and keeps a hidden, short-lived VSIX artifact for the release job.
+- `gitlab_release`: manually uploads that VSIX to the GitLab Generic Package Registry and creates the GitLab release entry with a single VSIX release asset link.
 
 Recommended stable GitLab flow:
 
 1. Push a stable tag that matches the CI pattern.
 2. Open the tag pipeline.
 3. Wait for `package_vsix` to finish.
-4. Download and test the VSIX artifact if it was not already tested locally.
-5. Run `gitlab_release` to create the GitLab release entry.
-6. Upload the VSIX manually through the Marketplace publisher management page.
+4. Run `gitlab_release` to create the GitLab release entry and VSIX release asset.
+5. Download the VSIX from the GitLab release asset and test it if it was not already tested locally.
+6. Upload the same VSIX manually through the Marketplace publisher management page.
 
 ## Upstream References
 
 - Visual Studio Code Marketplace prereleases use `vsce package --pre-release` or `vsce publish --pre-release`, and Marketplace extension versions must remain `major.minor.patch`: `https://code.visualstudio.com/api/working-with-extensions/publishing-extension#pre-release-extensions`
 - GitLab releases can be created from the Releases page or by a CI/CD job using the `release` keyword: `https://docs.gitlab.com/user/project/releases/`
+- GitLab Generic Package Registry uploads are used for release VSIX assets: `https://docs.gitlab.com/user/packages/generic_packages/`

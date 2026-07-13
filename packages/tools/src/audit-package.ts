@@ -16,6 +16,7 @@ function main(): void {
   if (!fs.existsSync(apiIndexPath)) {
     throw new Error('Missing resources/api/api-index.json. Run npm run ingest:docs first.');
   }
+  auditMarketplaceIcon();
 
   const apiIndex = JSON.parse(fs.readFileSync(apiIndexPath, 'utf8')) as {
     symbols?: unknown[];
@@ -64,6 +65,42 @@ function main(): void {
   const vsixFiles = fs.readdirSync(repoRoot).filter((entry) => entry.endsWith('.vsix'));
   if (vsixFiles.length > 1) {
     throw new Error('Package audit expected at most one VSIX artifact in the repository root.');
+  }
+}
+
+function auditMarketplaceIcon(): void {
+  const packageJsonPath = path.resolve(repoRoot, 'package.json');
+  const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8')) as {
+    icon?: string;
+  };
+  if (!packageJson.icon) {
+    throw new Error('package.json must declare a Marketplace icon.');
+  }
+
+  const iconPath = path.resolve(repoRoot, packageJson.icon);
+  const relativeIconPath = path.relative(repoRoot, iconPath);
+  if (relativeIconPath.startsWith('..') || path.isAbsolute(relativeIconPath)) {
+    throw new Error(`Marketplace icon must be inside the repository: ${packageJson.icon}`);
+  }
+  if (!fs.existsSync(iconPath)) {
+    throw new Error(`Missing Marketplace icon: ${packageJson.icon}`);
+  }
+
+  const icon = fs.readFileSync(iconPath);
+  const pngSignature = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
+  if (!icon.subarray(0, pngSignature.length).equals(pngSignature)) {
+    throw new Error(`Marketplace icon must be a PNG file: ${packageJson.icon}`);
+  }
+  if (icon.subarray(12, 16).toString('ascii') !== 'IHDR') {
+    throw new Error(`Marketplace icon PNG is missing an IHDR chunk: ${packageJson.icon}`);
+  }
+
+  const width = icon.readUInt32BE(16);
+  const height = icon.readUInt32BE(20);
+  if (width < 256 || height < 256) {
+    throw new Error(
+      `Marketplace icon must be at least 256x256 pixels: ${packageJson.icon} is ${width}x${height}.`,
+    );
   }
 }
 

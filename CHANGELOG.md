@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a Changelog, and this project adheres to Semantic Versioning.
 
+## [v0.1.2]
+
+### Added
+
+- Add a generated Marketplace icon and matching gallery banner metadata.
+
+### Changed
+
+- Publish GitLab release and prerelease VSIX downloads as release asset links backed by the Generic Package Registry.
+- Hide intermediate package-job VSIX artifacts from direct UI/API download while still passing them to release jobs.
+
 ## [v0.1.1]
 
 ### Fixed
