@@ -1,6 +1,5 @@
 .git/**
-.gitlab/**
-.gitlab-ci.yml
+.github/**
 .vscode/**
 .agents/**
 .codex/**

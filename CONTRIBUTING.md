@@ -13,14 +13,14 @@ This repository is proprietary unless maintainers state otherwise in writing.
 
 1. Create a focused branch.
 2. Use Conventional Commits for commit messages.
-3. Run `npm run verify` before opening a merge request.
+3. Run `npm run verify` before opening a pull request.
 4. Keep generated API data provenance intact.
 5. Do not add undocumented or guessed API help text.
-6. Follow `docs/release.md` for GitLab and Marketplace release or prerelease work.
+6. Follow `docs/release.md` for GitHub and Marketplace release or prerelease work.
 
-## Merge Requests
+## Pull Requests
 
-Merge requests should describe:
+Pull requests should describe:
 
 - User-facing behavior.
 - Validation performed.

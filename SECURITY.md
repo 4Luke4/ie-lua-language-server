@@ -6,7 +6,7 @@ Only the latest released version is supported with security updates.
 
 ## Reporting a Vulnerability
 
-Report suspected vulnerabilities privately through the project maintainers. Do not disclose security issues in public issues or merge requests until a fix is available.
+Report suspected vulnerabilities privately through the project maintainers. Do not disclose security issues in public issues or pull requests until a fix is available.
 
 Include:
 

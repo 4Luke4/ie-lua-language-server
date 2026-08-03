@@ -13,7 +13,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://gitlab.com/infinity-engine-tools/ie-lua-language-server.git"
+    "url": "https://github.com/4Luke4/ie-lua-language-server.git"
   },
   "engines": {
     "vscode": "^1.100.0",
