@@ -17,7 +17,25 @@ export function findApiSymbol(
   settings: IeLuaSettings,
   name: string,
 ): ApiSymbol | undefined {
-  return filterApiSymbols(index, settings).find((symbol) => symbol.name === name);
+  const symbols = filterApiSymbols(index, settings);
+  const exactMatch = symbols.find((symbol) => symbol.name === name);
+  if (exactMatch) {
+    return exactMatch;
+  }
+
+  const methodCall = name.match(/^(.+):([A-Za-z_][A-Za-z0-9_]*)$/u);
+  if (!methodCall) {
+    return undefined;
+  }
+
+  const [, receiver, methodName] = methodCall;
+  const receiverMatch = symbols.find((symbol) => symbol.name === `${receiver}.${methodName}`);
+  if (receiverMatch) {
+    return receiverMatch;
+  }
+
+  const methodMatches = symbols.filter((symbol) => symbol.name.endsWith(`.${methodName}`));
+  return methodMatches.length === 1 ? methodMatches[0] : undefined;
 }
 
 export function makeDocumentation(symbol: ApiSymbol): string {
