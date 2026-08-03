@@ -1,0 +1,105 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    name: Build draft release
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out tagged source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          cache: npm
+      - name: Validate tag and package version
+        id: release
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          tag="${GITHUB_REF_NAME}"
+          if [[ "$tag" =~ ^v([0-9]+\.[0-9]+\.[0-9]+)$ ]]; then
+            version="${BASH_REMATCH[1]}"
+            channel="stable"
+          elif [[ "$tag" =~ ^v([0-9]+\.[0-9]+\.[0-9]+)-(alpha|beta|rc|pre|preview)\.([0-9]+)$ ]]; then
+            version="${BASH_REMATCH[1]}"
+            channel="prerelease"
+          else
+            echo "Unsupported release tag: $tag" >&2
+            exit 1
+          fi
+
+          package_version="$(node -p "require('./package.json').version")"
+          if [[ "$package_version" != "$version" ]]; then
+            echo "Tag version $version does not match package.json version $package_version." >&2
+            exit 1
+          fi
+
+          echo "channel=$channel" >> "$GITHUB_OUTPUT"
+      - name: Install dependencies
+        run: npm ci --no-audit --progress=false
+      - name: Verify
+        run: npm run verify
+      - name: Build VSIX
+        id: package
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [[ "${{ steps.release.outputs.channel }}" == "prerelease" ]]; then
+            npm run package:pre-release
+          else
+            npm run package
+          fi
+          npm run package:audit
+
+          mapfile -t vsix_files < <(find . -maxdepth 1 -type f -name '*.vsix' -printf '%f\n' | sort)
+          if [[ "${#vsix_files[@]}" -ne 1 ]]; then
+            echo "Expected exactly one VSIX artifact; found ${#vsix_files[@]}." >&2
+            exit 1
+          fi
+
+          release_asset="ie-lua-language-server-${GITHUB_REF_NAME}.vsix"
+          mv "${vsix_files[0]}" "$release_asset"
+          echo "asset=$release_asset" >> "$GITHUB_OUTPUT"
+      - name: Create draft prerelease
+        if: steps.release.outputs.channel == 'prerelease'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: >-
+          gh release create "$GITHUB_REF_NAME"
+          "${{ steps.package.outputs.asset }}"
+          --repo "$GITHUB_REPOSITORY"
+          --verify-tag
+          --draft
+          --prerelease
+          --generate-notes
+          --title "IE Lua Language Server $GITHUB_REF_NAME"
+      - name: Create draft stable release
+        if: steps.release.outputs.channel == 'stable'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: >-
+          gh release create "$GITHUB_REF_NAME"
+          "${{ steps.package.outputs.asset }}"
+          --repo "$GITHUB_REPOSITORY"
+          --verify-tag
+          --draft
+          --generate-notes
+          --title "IE Lua Language Server $GITHUB_REF_NAME"
