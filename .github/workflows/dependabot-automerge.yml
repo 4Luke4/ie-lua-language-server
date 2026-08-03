@@ -1,0 +1,72 @@
+name: Dependabot auto-merge
+
+on:
+  pull_request_target:
+    types:
+      - opened
+      - reopened
+      - synchronize
+
+permissions:
+  actions: read
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: dependabot-automerge-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  merge-patch-update:
+    name: Merge verified patch update
+    if: github.event.pull_request.user.login == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Read and verify Dependabot metadata
+        id: metadata
+        uses: dependabot/fetch-metadata@25dd0e34f4fe68f24cc83900b1fe3fe149efef98 # v3.1.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Wait for required validation workflows
+        if: steps.metadata.outputs.update-type == 'version-update:semver-patch'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          for workflow in ci.yml codeql.yml; do
+            run_id=""
+            for _ in {1..30}; do
+              run_id="$(
+                gh run list \
+                  --repo "$GITHUB_REPOSITORY" \
+                  --workflow "$workflow" \
+                  --event pull_request \
+                  --commit "$PR_HEAD_SHA" \
+                  --limit 1 \
+                  --json databaseId \
+                  --jq '.[0].databaseId // empty'
+              )"
+              if [[ -n "$run_id" ]]; then
+                break
+              fi
+              sleep 10
+            done
+
+            if [[ -z "$run_id" ]]; then
+              echo "No $workflow run found for commit $PR_HEAD_SHA." >&2
+              exit 1
+            fi
+
+            gh run watch "$run_id" --repo "$GITHUB_REPOSITORY" --exit-status
+          done
+      - name: Squash-merge verified patch update
+        if: steps.metadata.outputs.update-type == 'version-update:semver-patch'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+        run: gh pr merge "$PR_URL" --squash --match-head-commit "$PR_HEAD_SHA"

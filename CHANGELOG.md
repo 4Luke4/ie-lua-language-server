@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a Changelog, and this project adheres to Semantic Versioning.
 
+## [v0.3.0]
+
+### Added
+
+- Add a conservative Dependabot auto-merge policy for verified patch updates after CI and CodeQL succeed for the exact pull request commit.
+- Resolve unambiguous colon-method calls such as `value:upper()` in hover, signature help, and API definitions while preserving exact dotted-name lookup.
+
+### Changed
+
+- Replace the retired dynamic Visual Studio Marketplace badge with a stable Marketplace install badge.
+
 ## [v0.2.0]
 
 ### Added

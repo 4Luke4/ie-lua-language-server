@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/4Luke4/ie-lua-language-server/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/4Luke4/ie-lua-language-server/actions/workflows/ci.yml)
 [![CodeQL](https://github.com/4Luke4/ie-lua-language-server/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/4Luke4/ie-lua-language-server/actions/workflows/codeql.yml)
-[![Visual Studio Marketplace](https://img.shields.io/visual-studio-marketplace/v/infinity-engine-tools.ie-lua-language-server?label=VS%20Marketplace)](https://marketplace.visualstudio.com/items?itemName=infinity-engine-tools.ie-lua-language-server)
+[![Visual Studio Marketplace](https://img.shields.io/badge/VS%20Marketplace-Install-0078D4)](https://marketplace.visualstudio.com/items?itemName=infinity-engine-tools.ie-lua-language-server)
 
 Professional language support for Enhanced Edition Infinity Engine Lua and `.menu` files.
 

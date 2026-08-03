@@ -1,11 +1,11 @@
 {
   "name": "@ie-lua/server",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "type": "commonjs",
   "main": "../../dist/server/server.js",
   "types": "../../dist/server/server.d.ts",
   "dependencies": {
-    "@ie-lua/shared": "0.2.0"
+    "@ie-lua/shared": "0.3.0"
   }
 }
