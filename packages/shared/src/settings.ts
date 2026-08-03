@@ -6,10 +6,14 @@ import type {
   ValidationMode,
 } from './types';
 
+export const DEFAULT_VALIDATION_DEBOUNCE_MS = 300;
+export const MAX_VALIDATION_DEBOUNCE_MS = 2_147_483_647;
+
 export interface SettingsInput {
   dialect?: LuaDialect;
   validation?: {
     mode?: ValidationMode;
+    debounceMs?: number;
   };
   symbolSources?: {
     enabled?: SourceSectionId[];
@@ -39,6 +43,7 @@ export const defaultSettings: IeLuaSettings = {
   dialect: 'lua52',
   validation: {
     mode: 'save',
+    debounceMs: DEFAULT_VALIDATION_DEBOUNCE_MS,
   },
   symbolSources: {
     enabled: allSourceSections,
@@ -60,6 +65,7 @@ export function normalizeSettings(input: SettingsInput | undefined): IeLuaSettin
     dialect: input?.dialect ?? defaultSettings.dialect,
     validation: {
       mode: input?.validation?.mode ?? defaultSettings.validation.mode,
+      debounceMs: normalizeValidationDebounceMs(input?.validation?.debounceMs),
     },
     symbolSources: {
       enabled: input?.symbolSources?.enabled ?? defaultSettings.symbolSources.enabled,
@@ -76,6 +82,18 @@ export function normalizeSettings(input: SettingsInput | undefined): IeLuaSettin
       expressionKeys: input?.menu?.expressionKeys ?? defaultSettings.menu.expressionKeys,
     },
   };
+}
+
+function normalizeValidationDebounceMs(value: number | undefined): number {
+  if (
+    typeof value !== 'number' ||
+    !Number.isInteger(value) ||
+    value < 1 ||
+    value > MAX_VALIDATION_DEBOUNCE_MS
+  ) {
+    return DEFAULT_VALIDATION_DEBOUNCE_MS;
+  }
+  return value;
 }
 
 export function mergeSettings(...inputs: Array<SettingsInput | undefined>): SettingsInput {

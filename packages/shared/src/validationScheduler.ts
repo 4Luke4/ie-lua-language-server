@@ -21,14 +21,12 @@ export function shouldValidate(mode: ValidationMode, trigger: ValidationTrigger)
 export class DebouncedValidationScheduler {
   private readonly timers = new Map<string, NodeJS.Timeout>();
 
-  constructor(private readonly delayMs = 300) {}
-
-  schedule(key: string, callback: () => void): void {
+  schedule(key: string, callback: () => void, delayMs: number): void {
     this.cancel(key);
     const timer = setTimeout(() => {
       this.timers.delete(key);
       callback();
-    }, this.delayMs);
+    }, delayMs);
     this.timers.set(key, timer);
   }
 

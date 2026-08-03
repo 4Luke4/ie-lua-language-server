@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a Changelog, and this project adheres to Semantic Versioning.
 
+## [v0.2.0]
+
+### Added
+
+- Allow users to configure the type-validation debounce delay, with a 300 ms default and guidance about responsiveness and CPU usage tradeoffs.
+- Add weekly Dependabot updates for npm packages and GitHub Actions.
+- Add CI, CodeQL, and Visual Studio Marketplace badges to the README.
+
 ## [v0.1.4]
 
 ### Changed

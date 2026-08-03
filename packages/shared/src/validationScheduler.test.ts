@@ -18,14 +18,37 @@ void test('validation mode trigger matrix matches the public contract', () => {
 });
 
 void test('type validation scheduler debounces repeated edits', async () => {
-  const scheduler = new DebouncedValidationScheduler(30);
+  const scheduler = new DebouncedValidationScheduler();
   let count = 0;
-  scheduler.schedule('file', () => {
-    count += 1;
-  });
-  scheduler.schedule('file', () => {
-    count += 1;
-  });
+  scheduler.schedule(
+    'file',
+    () => {
+      count += 1;
+    },
+    30,
+  );
+  scheduler.schedule(
+    'file',
+    () => {
+      count += 1;
+    },
+    30,
+  );
   await new Promise((resolve) => setTimeout(resolve, 60));
   assert.equal(count, 1);
+});
+
+void test('type validation scheduler accepts a per-validation delay', async () => {
+  const scheduler = new DebouncedValidationScheduler();
+  let called = false;
+  scheduler.schedule(
+    'file',
+    () => {
+      called = true;
+    },
+    20,
+  );
+
+  await new Promise((resolve) => setTimeout(resolve, 50));
+  assert.equal(called, true);
 });
