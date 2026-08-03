@@ -27,6 +27,7 @@ export interface IeLuaSettings {
   dialect: LuaDialect;
   validation: {
     mode: ValidationMode;
+    debounceMs: number;
   };
   symbolSources: {
     enabled: SourceSectionId[];

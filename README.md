@@ -1,5 +1,9 @@
 # IE Lua Language Server
 
+[![CI](https://github.com/4Luke4/ie-lua-language-server/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/4Luke4/ie-lua-language-server/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/4Luke4/ie-lua-language-server/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/4Luke4/ie-lua-language-server/actions/workflows/codeql.yml)
+[![Visual Studio Marketplace](https://img.shields.io/visual-studio-marketplace/v/infinity-engine-tools.ie-lua-language-server?label=VS%20Marketplace)](https://marketplace.visualstudio.com/items?itemName=infinity-engine-tools.ie-lua-language-server)
+
 Professional language support for Enhanced Edition Infinity Engine Lua and `.menu` files.
 
 This repository ships:
@@ -61,6 +65,7 @@ Settings can be changed from the Visual Studio Code Settings UI or `settings.jso
 {
   "ieLua.dialect": "lua52",
   "ieLua.validation.mode": "save",
+  "ieLua.validation.debounceMs": 300,
   "ieLua.diagnostics.unknownGlobals": "off"
 }
 ```
@@ -109,7 +114,8 @@ Then open **Settings** -> **Configure Kate** -> **Plugins**, enable **LSP Client
       "settings": {
         "ieLua": {
           "validation": {
-            "mode": "save"
+            "mode": "save",
+            "debounceMs": 300
           }
         }
       }
@@ -126,7 +132,8 @@ Then open **Settings** -> **Configure Kate** -> **Plugins**, enable **LSP Client
       "settings": {
         "ieLua": {
           "validation": {
-            "mode": "save"
+            "mode": "save",
+            "debounceMs": 300
           }
         }
       }
@@ -147,8 +154,10 @@ Node.js and npm are only required when building/testing this repository or when 
 
 - `manual`: only through `IE Lua: Validate Document` or `IE Lua: Validate Workspace`.
 - `save`: on save. This is the default.
-- `type`: while editing, debounced at 300 ms.
-- `saveAndType`: on save and while editing, with edit validation debounced at 300 ms.
+- `type`: while editing, using the configured debounce delay.
+- `saveAndType`: on save and while editing, using the configured debounce delay for edits.
+
+`ieLua.validation.debounceMs` controls the type-validation delay in milliseconds and defaults to `300`. Lower values make diagnostics appear sooner but may increase CPU usage during rapid edits. Higher values coalesce more edits and reduce repeated validation work, but diagnostics take longer to appear.
 
 ## Commands
 

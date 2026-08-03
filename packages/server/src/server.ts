@@ -52,7 +52,7 @@ import {
 const connection = createConnection(ProposedFeatures.all);
 const documents = new TextDocuments(TextDocument);
 const analyses = new Map<string, AnalyzedDocument>();
-const scheduler = new DebouncedValidationScheduler(300);
+const scheduler = new DebouncedValidationScheduler();
 
 let hasConfigurationCapability = false;
 let initializationSettings: SettingsInput | undefined;
@@ -408,9 +408,13 @@ async function onDocumentChanged(document: TextDocument): Promise<void> {
   if (!shouldValidate(settings.validation.mode, 'type')) {
     return;
   }
-  scheduler.schedule(document.uri, () => {
-    void validateDocument(document);
-  });
+  scheduler.schedule(
+    document.uri,
+    () => {
+      void validateDocument(document);
+    },
+    settings.validation.debounceMs,
+  );
 }
 
 function toMarkdownDocumentation(symbol: ApiSymbol): { kind: 'markdown'; value: string } {

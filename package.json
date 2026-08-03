@@ -2,7 +2,7 @@
   "name": "ie-lua-language-server",
   "displayName": "IE Lua Language Server",
   "description": "Professional Lua and Infinity Engine .menu language support for VS Code and stdio LSP clients.",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "publisher": "infinity-engine-tools",
   "icon": "assets/icon.png",
   "galleryBanner": {
@@ -112,7 +112,15 @@
             "saveAndType"
           ],
           "default": "save",
-          "description": "Controls when diagnostics are produced. Type-based modes are debounced at 300 ms."
+          "description": "Controls when diagnostics are produced. Type-based modes use the configured validation debounce delay."
+        },
+        "ieLua.validation.debounceMs": {
+          "scope": "resource",
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2147483647,
+          "default": 300,
+          "markdownDescription": "Controls the delay in milliseconds before diagnostics run after typing when `#ieLua.validation.mode#` is `type` or `saveAndType`. The default is 300 ms. Lower values make diagnostics appear sooner but may increase CPU usage during rapid edits; higher values reduce repeated work but delay diagnostic feedback."
         },
         "ieLua.symbolSources.enabled": {
           "scope": "resource",

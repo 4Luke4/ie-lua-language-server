@@ -12,7 +12,8 @@
       "settings": {
         "ieLua": {
           "validation": {
-            "mode": "save"
+            "mode": "save",
+            "debounceMs": 300
           }
         }
       }
@@ -29,7 +30,8 @@
       "settings": {
         "ieLua": {
           "validation": {
-            "mode": "save"
+            "mode": "save",
+            "debounceMs": 300
           }
         }
       }
