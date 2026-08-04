@@ -9,7 +9,7 @@ updates:
       # Remove when the TypeScript ESLint toolchain supports TypeScript 7.
       - dependency-name: typescript
         versions:
-          - ">=7.0.0 <8.0.0"
+          - '>=7.0.0 <8.0.0'
 
   - package-ecosystem: github-actions
     directory: /
