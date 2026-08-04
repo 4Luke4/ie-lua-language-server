@@ -11,6 +11,7 @@ let client: LanguageClient | undefined;
 let outputChannel: vscode.LogOutputChannel | undefined;
 
 export async function activate(context: vscode.ExtensionContext): Promise<void> {
+  // vscode-languageclient 10 requires a log-capable channel for custom client output.
   outputChannel = vscode.window.createOutputChannel('IE Lua Language Server', { log: true });
   context.subscriptions.push(outputChannel);
 
