@@ -8,10 +8,10 @@ import {
 } from 'vscode-languageclient/node';
 
 let client: LanguageClient | undefined;
-let outputChannel: vscode.OutputChannel | undefined;
+let outputChannel: vscode.LogOutputChannel | undefined;
 
 export async function activate(context: vscode.ExtensionContext): Promise<void> {
-  outputChannel = vscode.window.createOutputChannel('IE Lua Language Server');
+  outputChannel = vscode.window.createOutputChannel('IE Lua Language Server', { log: true });
   context.subscriptions.push(outputChannel);
 
   const serverModule = context.asAbsolutePath(path.join('dist', 'server', 'server.js'));
