@@ -6,9 +6,14 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 ## [v0.3.1]
 
+### Added
+
+- Add Codex-assisted remediation for open CodeQL alerts after successful default-branch scans, with read-only alert collection, isolated patch generation, and reviewable pull requests.
+
 ### Changed
 
 - Make VSIX packaging and release publication manually initiated, with explicit release-type and tag inputs, strict version/channel validation, and automated publication of the same audited package to the Visual Studio Marketplace and GitHub Releases.
+- Verify that `VSCE_PAT` has publish rights for the configured Marketplace publisher before creating a draft GitHub release.
 
 ## [v0.3.0]
 
