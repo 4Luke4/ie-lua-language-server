@@ -3,6 +3,7 @@
     "target": "ES2022",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
+    "types": ["node"],
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -14,10 +15,9 @@
     "sourceMap": true,
     "declaration": true,
     "declarationMap": true,
-    "baseUrl": ".",
     "paths": {
-      "@ie-lua/shared": ["packages/shared/src/index.ts"],
-      "@ie-lua/shared/*": ["packages/shared/src/*"]
+      "@ie-lua/shared": ["./packages/shared/src/index.ts"],
+      "@ie-lua/shared/*": ["./packages/shared/src/*"]
     },
     "rootDir": ".",
     "outDir": "dist"
