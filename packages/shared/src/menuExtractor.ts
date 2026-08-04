@@ -53,7 +53,7 @@ function extractBacktickChunks(text: string): EmbeddedLuaRegion[] {
 
 function extractMenuQuotedLua(text: string, settings: IeLuaSettings): EmbeddedLuaRegion[] {
   const regions: EmbeddedLuaRegion[] = [];
-  const luaKeywordPattern = /\b([A-Za-z][A-Za-z0-9_ ]*?)\s+lua\s*/g;
+  const luaKeywordPattern = /\b([A-Za-z][A-Za-z0-9_]*(?:\s+[A-Za-z][A-Za-z0-9_]*)*)\s+lua\s*/g;
   let expressionCount = 0;
 
   for (const match of text.matchAll(luaKeywordPattern)) {
