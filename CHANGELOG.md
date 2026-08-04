@@ -8,7 +8,7 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 ### Added
 
-- Add Codex-assisted remediation for open CodeQL alerts after successful default-branch scans, with read-only alert collection, isolated patch generation, and reviewable pull requests.
+- Add automatic, deduplicated GitHub issue tracking for open default-branch CodeQL alerts, including severity-aware labels and automatic resolution when no findings remain.
 
 ### Changed
 

@@ -19,17 +19,14 @@ Include:
 
 Maintainers triage reports, confirm impact, prepare a fix, and publish a security release when warranted.
 
-## Automated CodeQL Remediation
+## Automated CodeQL Issue Tracking
 
-The `Codex CodeQL remediation` workflow runs only after the `CodeQL` workflow succeeds for a push to the default branch. It reads the branch's open CodeQL alerts with `security-events: read`, gives Codex a minimized alert record and a read-only repository token, and serializes any proposed changes as a patch artifact. A separate job with no OpenAI credential applies that patch and opens a pull request.
+The `Track CodeQL findings` workflow runs only after `CodeQL` succeeds for a push or manual scan of the default branch. It uses the repository-scoped `GITHUB_TOKEN` with only `security-events: read` and `issues: write` permissions; it does not use an OpenAI API key, personal access token, or checked-out repository code.
 
-The workflow never runs against pull-request code, dismisses CodeQL alerts, merges its own changes, or grants a repository write token to Codex. Maintainers must review the generated patch and approve CI and CodeQL checks before merging it.
+When open CodeQL alerts exist, the workflow creates or updates one issue authored by `github-actions[bot]`. The issue summarizes every open finding, links to the authoritative Code scanning alert, and applies `security`, `codeql`, and a `severity: <level>` label reflecting the highest current CodeQL severity. It preserves unrelated labels, reopens the issue when findings recur, and closes it when a later successful scan has no open findings.
 
-Repository setup requires:
+No repository secret or pull-request permission setting is required. The workflow does not dismiss alerts or change source code. Maintainers remain responsible for validating findings, preparing fixes, and confirming CI and CodeQL results.
 
-1. An Actions secret named `OPENAI_API_KEY` containing an API key authorized to use Codex.
-2. **Settings** -> **Actions** -> **General** -> **Workflow permissions** -> **Allow GitHub Actions to create and approve pull requests** enabled so the isolated publication job can open the remediation pull request.
-
-Pull-request workflows created with the repository `GITHUB_TOKEN` may wait for a maintainer to approve their first run. This is an intentional GitHub security boundary, not a reason to bypass review with a broader personal access token.
+Because this repository is public, the generated tracking issue is also public. Do not add exploit instructions, secrets, or confidential reproduction material to it; use private vulnerability reporting for sensitive details.
 
 Dependabot remains responsible only for dependency version and vulnerability updates. It does not remediate CodeQL source-code findings.
