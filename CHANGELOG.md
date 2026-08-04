@@ -12,8 +12,9 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 ### Changed
 
-- Make VSIX packaging and release publication manually initiated, with explicit release-type and tag inputs, strict version/channel validation, and automated publication of the same audited package to the Visual Studio Marketplace and GitHub Releases.
-- Verify that `VSCE_PAT` has publish rights for the configured Marketplace publisher before creating a draft GitHub release.
+- Make VSIX packaging and GitHub release publication manually initiated, with explicit release-type and tag inputs, strict version/channel validation, and publication of the selected audited package on GitHub Releases.
+- Keep Visual Studio Marketplace publication separate and manually managed by removing Marketplace credentials and publishing from GitHub Actions.
+- Remove the redundant standalone Package workflow.
 
 ## [v0.3.0]
 
