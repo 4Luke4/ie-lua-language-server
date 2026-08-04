@@ -16,7 +16,7 @@ This repository is proprietary unless maintainers state otherwise in writing.
 3. Run `npm run verify` before opening a pull request.
 4. Keep generated API data provenance intact.
 5. Do not add undocumented or guessed API help text.
-6. Follow `docs/release.md` for GitHub and Marketplace release or prerelease work.
+6. Follow `docs/release.md` for VSIX packaging and GitHub release or prerelease work.
 
 ## Pull Requests
 
