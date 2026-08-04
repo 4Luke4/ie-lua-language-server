@@ -1,0 +1,312 @@
+name: Track CodeQL findings
+
+on:
+  workflow_run:
+    workflows:
+      - CodeQL
+    types:
+      - completed
+
+permissions: {}
+
+concurrency:
+  group: codeql-issue-tracker-${{ github.event.repository.id }}
+  cancel-in-progress: false
+
+jobs:
+  synchronize-issue:
+    name: Synchronize findings issue
+    if: >-
+      github.event.workflow_run.conclusion == 'success' &&
+      (github.event.workflow_run.event == 'push' ||
+       github.event.workflow_run.event == 'workflow_dispatch') &&
+      github.event.workflow_run.head_branch == github.event.repository.default_branch
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      issues: write
+      security-events: read
+    steps:
+      - name: Create or update CodeQL findings issue
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const marker = '<!-- codeql-findings-tracker -->';
+            const { owner, repo } = context.repo;
+            const workflowRun = context.payload.workflow_run;
+            const defaultBranch = context.payload.repository.default_branch;
+            const analyzedRef = `refs/heads/${defaultBranch}`;
+
+            const alerts = await github.paginate(
+              github.rest.codeScanning.listAlertsForRepo,
+              {
+                owner,
+                repo,
+                state: 'open',
+                tool_name: 'CodeQL',
+                ref: analyzedRef,
+                per_page: 100,
+              },
+            );
+
+            // GitHub displays a security severity in preference to a problem
+            // severity, so security levels lead the issue-label ordering.
+            const severityOrder = [
+              'critical',
+              'high',
+              'medium',
+              'low',
+              'error',
+              'warning',
+              'note',
+              'unknown',
+            ];
+            const severityFor = (alert) =>
+              alert.rule.security_severity_level ??
+              alert.rule.severity ??
+              'unknown';
+            const severities = alerts.map(severityFor);
+            const highestSeverity =
+              severityOrder.find((severity) => severities.includes(severity)) ??
+              'unknown';
+
+            const countBySeverity = Object.fromEntries(
+              severityOrder.map((severity) => [
+                severity,
+                severities.filter((value) => value === severity).length,
+              ]),
+            );
+
+            const escapeTableCell = (value) =>
+              String(value ?? '')
+                .replaceAll('\\', '\\\\')
+                .replaceAll('|', '\\|')
+                .replaceAll('`', '\\`')
+                .replaceAll('\r', ' ')
+                .replaceAll('\n', ' ');
+            const shortSha = workflowRun.head_sha.slice(0, 7);
+            const sourceRunUrl = workflowRun.html_url;
+            const commitUrl = `${context.serverUrl}/${owner}/${repo}/commit/${workflowRun.head_sha}`;
+            const alertsUrl = `${context.serverUrl}/${owner}/${repo}/security/code-scanning?query=is%3Aopen+branch%3A${encodeURIComponent(defaultBranch)}+tool%3ACodeQL`;
+
+            const severityRows = severityOrder
+              .filter((severity) => countBySeverity[severity] > 0)
+              .map(
+                (severity) =>
+                  `| ${severity} | ${countBySeverity[severity]} |`,
+              )
+              .join('\n');
+
+            const findingRows = alerts
+              .sort((left, right) => {
+                const severityDifference =
+                  severityOrder.indexOf(severityFor(left)) -
+                  severityOrder.indexOf(severityFor(right));
+                return severityDifference || left.number - right.number;
+              })
+              .map((alert) => {
+                const location = alert.most_recent_instance?.location;
+                const locationText = location
+                  ? `${location.path}:${location.start_line}`
+                  : 'Location unavailable';
+                const ruleName = alert.rule.name || alert.rule.id;
+                const ruleText =
+                  ruleName === alert.rule.id
+                    ? alert.rule.id
+                    : `${alert.rule.id} — ${ruleName}`;
+                return `| [#${alert.number}](${alert.html_url}) | ${escapeTableCell(severityFor(alert))} | ${escapeTableCell(ruleText)} | ${escapeTableCell(locationText)} |`;
+              })
+              .join('\n');
+
+            const body = alerts.length
+              ? `${marker}
+            ## Automated CodeQL findings
+
+            > [!IMPORTANT]
+            > This issue is synchronized by GitHub Actions after successful CodeQL analysis of the default branch. Edit alert status in the Code scanning interface; manual edits to the generated sections below will be replaced.
+
+            > [!CAUTION]
+            > This repository and issue are public. Do not add exploit instructions, secrets, or confidential reproduction material here. Follow [SECURITY.md](${context.serverUrl}/${owner}/${repo}/blob/${defaultBranch}/SECURITY.md) for private reporting.
+
+            ### Scan
+
+            | Property | Value |
+            | --- | --- |
+            | Branch | \`${escapeTableCell(defaultBranch)}\` |
+            | Commit | [\`${shortSha}\`](${commitUrl}) |
+            | CodeQL run | [${workflowRun.id}](${sourceRunUrl}) |
+            | Open findings | **${alerts.length}** |
+            | Highest severity | **${highestSeverity}** |
+
+            ### Severity summary
+
+            | Severity | Open findings |
+            | --- | ---: |
+            ${severityRows}
+
+            ### Findings
+
+            | Alert | Severity | Query | Location |
+            | --- | --- | --- | --- |
+            ${findingRows}
+
+            Review the complete alerts and data-flow paths in the [Code scanning dashboard](${alertsUrl}).
+
+            ### Triage checklist
+
+            - [ ] Validate each finding against the current default-branch source.
+            - [ ] Prioritize remediation according to severity and exploitability.
+            - [ ] Add focused regression coverage for confirmed findings.
+            - [ ] Confirm CI and CodeQL pass before merging a fix.
+
+            _Last synchronized by [workflow run ${context.runId}](${context.serverUrl}/${owner}/${repo}/actions/runs/${context.runId})._
+            `
+              : `${marker}
+            ## Automated CodeQL findings
+
+            The successful [CodeQL run ${workflowRun.id}](${sourceRunUrl}) found no open CodeQL alerts on \`${escapeTableCell(defaultBranch)}\` at [\`${shortSha}\`](${commitUrl}).
+
+            This tracking issue was closed automatically. It will be reopened if a later successful default-branch scan reports an open finding.
+
+            _Last synchronized by [workflow run ${context.runId}](${context.serverUrl}/${owner}/${repo}/actions/runs/${context.runId})._
+            `;
+
+            if (body.length > 65000) {
+              core.setFailed(
+                `The generated issue body is ${body.length} characters, which exceeds GitHub's issue-body limit. No partial report was published.`,
+              );
+              return;
+            }
+
+            const repositoryIssues = await github.paginate(
+              github.rest.issues.listForRepo,
+              { owner, repo, state: 'all', per_page: 100 },
+            );
+            const trackerIssues = repositoryIssues.filter(
+              (issue) =>
+                !issue.pull_request && (issue.body ?? '').includes(marker),
+            );
+
+            if (trackerIssues.length > 1) {
+              core.setFailed(
+                `Found ${trackerIssues.length} issues containing the CodeQL tracker marker; refusing to update an ambiguous target.`,
+              );
+              return;
+            }
+
+            const trackerIssue = trackerIssues[0];
+            if (!alerts.length && !trackerIssue) {
+              core.info('No open CodeQL alerts and no existing tracking issue.');
+              return;
+            }
+
+            const labelDefinitions = {
+              security: {
+                color: 'D93F0B',
+                description: 'Security-related maintenance',
+              },
+              codeql: {
+                color: '5319E7',
+                description: 'Automated CodeQL finding tracking',
+              },
+              'severity: critical': {
+                color: 'B60205',
+                description: 'Highest current CodeQL severity is critical',
+              },
+              'severity: high': {
+                color: 'D93F0B',
+                description: 'Highest current CodeQL severity is high',
+              },
+              'severity: medium': {
+                color: 'FBCA04',
+                description: 'Highest current CodeQL severity is medium',
+              },
+              'severity: low': {
+                color: '0E8A16',
+                description: 'Highest current CodeQL severity is low',
+              },
+              'severity: error': {
+                color: 'B60205',
+                description: 'Highest current CodeQL problem severity is error',
+              },
+              'severity: warning': {
+                color: 'FBCA04',
+                description: 'Highest current CodeQL problem severity is warning',
+              },
+              'severity: note': {
+                color: 'C5DEF5',
+                description: 'Highest current CodeQL problem severity is note',
+              },
+              'severity: unknown': {
+                color: 'EDEDED',
+                description: 'CodeQL did not provide a recognized severity',
+              },
+            };
+            const requiredLabels = [
+              'security',
+              'codeql',
+              ...(alerts.length ? [`severity: ${highestSeverity}`] : []),
+            ];
+            const existingLabels = await github.paginate(
+              github.rest.issues.listLabelsForRepo,
+              { owner, repo, per_page: 100 },
+            );
+            const existingLabelNames = new Set(
+              existingLabels.map((label) => label.name.toLowerCase()),
+            );
+
+            for (const name of requiredLabels) {
+              if (existingLabelNames.has(name.toLowerCase())) continue;
+              await github.rest.issues.createLabel({
+                owner,
+                repo,
+                name,
+                ...labelDefinitions[name],
+              });
+            }
+
+            const unmanagedLabels = (trackerIssue?.labels ?? [])
+              .map((label) =>
+                typeof label === 'string' ? label : label.name,
+              )
+              .filter((name) => {
+                const normalized = name?.toLowerCase();
+                return (
+                  normalized &&
+                  normalized !== 'security' &&
+                  normalized !== 'codeql' &&
+                  !normalized.startsWith('severity: ')
+                );
+              });
+            const labels = [...new Set([...unmanagedLabels, ...requiredLabels])];
+
+            if (!trackerIssue) {
+              const title = `CodeQL: ${alerts.length} open ${alerts.length === 1 ? 'finding' : 'findings'} on ${defaultBranch} (${highestSeverity})`;
+              const { data: createdIssue } = await github.rest.issues.create({
+                owner,
+                repo,
+                title,
+                body,
+                labels,
+              });
+              core.info(`Created CodeQL tracking issue #${createdIssue.number}.`);
+              return;
+            }
+
+            const title = alerts.length
+              ? `CodeQL: ${alerts.length} open ${alerts.length === 1 ? 'finding' : 'findings'} on ${defaultBranch} (${highestSeverity})`
+              : `CodeQL: no open findings on ${defaultBranch}`;
+            await github.rest.issues.update({
+              owner,
+              repo,
+              issue_number: trackerIssue.number,
+              title,
+              body,
+              labels,
+              state: alerts.length ? 'open' : 'closed',
+              state_reason: alerts.length ? undefined : 'completed',
+            });
+            core.info(
+              `${alerts.length ? 'Updated' : 'Resolved'} CodeQL tracking issue #${trackerIssue.number}.`,
+            );
