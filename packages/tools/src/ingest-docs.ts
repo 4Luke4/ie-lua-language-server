@@ -560,7 +560,13 @@ function htmlInlineToText(html: string): string {
 }
 
 function stripTags(html: string): string {
-  return html.replace(/<[^>]+>/gu, '');
+  let previous: string;
+  let result = html;
+  do {
+    previous = result;
+    result = result.replace(/<[^>]+>/gu, '');
+  } while (result !== previous);
+  return result;
 }
 
 function normalizePreText(html: string): string {
