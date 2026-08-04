@@ -1,8 +1,8 @@
-# Release and Prerelease Packaging
+# Release and Prerelease Publishing
 
-The `Package` and `Release` GitHub Actions workflows are initiated only through their manual dispatch forms. `Package` performs a dry-run build and retains the audited VSIX as a workflow artifact. `Release` runs the same validation and packaging sequence and publishes that exact VSIX on the GitHub release page.
+The `Release` GitHub Actions workflow is initiated only through its manual dispatch form. It validates and packages the selected release type, then publishes that exact VSIX on the GitHub release page.
 
-The workflows do not publish to the Visual Studio Marketplace and do not require Marketplace credentials. The automatically provided `GITHUB_TOKEN` creates the tag and GitHub release; no separate GitHub secret is required.
+The workflow does not publish to the Visual Studio Marketplace and does not require Marketplace credentials. The automatically provided `GITHUB_TOKEN` creates the tag and GitHub release; no separate GitHub secret is required.
 
 ## Versioning Rules
 
@@ -10,7 +10,7 @@ The workflows do not publish to the Visual Studio Marketplace and do not require
 - Use odd minor versions for Marketplace prereleases and even minor versions for stable releases. Example: `0.3.1` is a prerelease version and `0.4.0` is a stable version.
 - Prerelease Git tags must use `v<major>.<minor>.<patch>-<channel>.<number>`, where `<channel>` is `alpha`, `beta`, `rc`, `pre`, or `preview`.
 - Stable Git tags must use `v<major>.<minor>.<patch>`.
-- The numeric version in the Git tag must exactly match the root `package.json` version. The packaging workflow rejects mismatched versions, mismatched release types, and incorrect odd/even release channels.
+- The numeric version in the Git tag must exactly match the root `package.json` version. The release workflow rejects mismatched versions, mismatched release types, and incorrect odd/even release channels.
 - Release tags must be new. The release workflow rejects an existing tag or GitHub release instead of replacing it.
 - Keep README and CHANGELOG images Marketplace-safe. Use PNG/JPEG assets rather than user-provided SVG screenshots.
 
@@ -24,11 +24,8 @@ The workflows do not publish to the Visual Studio Marketplace and do not require
    npm run verify
    ```
 
-3. Run the `Package` workflow from the GitHub Actions page against the commit intended for release.
-4. Select `prerelease` or `stable` and enter the intended tag name.
-5. Download the retained VSIX artifact and smoke-test `.lua` and `.menu` files in Visual Studio Code.
-
-The `Package` workflow does not create a tag or publish externally. Its artifact is retained for seven days.
+3. Build the intended package with `npm run package:pre-release` or `npm run package`.
+4. Smoke-test the generated VSIX with `.lua` and `.menu` files in Visual Studio Code.
 
 ## GitHub Publishing
 
