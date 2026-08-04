@@ -507,10 +507,18 @@ function firstParagraph(html: string): string {
   return match?.[0] ?? html;
 }
 
+function stripHtmlComments(input: string): string {
+  let previous: string;
+  do {
+    previous = input;
+    input = input.replace(/<!--[\s\S]*?-->/gu, '');
+  } while (input !== previous);
+  return input;
+}
+
 function htmlToMarkdown(html: string): string {
   const codeBlocks: string[] = [];
-  let markdown = html
-    .replace(/<!--[\s\S]*?-->/gu, '')
+  let markdown = stripHtmlComments(html)
     .replace(/<pre(?:\s+[^>]*)?>([\s\S]*?)<\/pre>/giu, (_match, code: string) => {
       const index = codeBlocks.length;
       codeBlocks.push(`\n\n\`\`\`lua\n${normalizePreText(code)}\n\`\`\`\n\n`);
