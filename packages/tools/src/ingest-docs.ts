@@ -546,21 +546,20 @@ function htmlToMarkdown(html: string): string {
 }
 
 function inlineMarkdown(html: string): string {
-  return decodeHtml(
-    html
-      .replace(/<a\s+[^>]*>\s*<code>([\s\S]*?)<\/code>\s*<\/a>/giu, (_match, code: string) =>
-        codeSpan(code),
-      )
-      .replace(/<a\s+[^>]*>\s*<tt>([\s\S]*?)<\/tt>\s*<\/a>/giu, (_match, code: string) =>
-        codeSpan(code),
-      )
-      .replace(/<code>([\s\S]*?)<\/code>/giu, (_match, code: string) => codeSpan(code))
-      .replace(/<tt>([\s\S]*?)<\/tt>/giu, (_match, code: string) => codeSpan(code))
-      .replace(/<em>([\s\S]*?)<\/em>/giu, (_match, value: string) => `*${stripTags(value)}*`)
-      .replace(/<b>([\s\S]*?)<\/b>/giu, (_match, value: string) => `**${stripTags(value)}**`)
-      .replace(/<a\s+[^>]*>([\s\S]*?)<\/a>/giu, (_match, value: string) => stripTags(value))
-      .replace(/<[^>]+>/gu, ''),
-  );
+  let result = html
+    .replace(/<a\s+[^>]*>\s*<code>([\s\S]*?)<\/code>\s*<\/a>/giu, (_match, code: string) =>
+      codeSpan(code),
+    )
+    .replace(/<a\s+[^>]*>\s*<tt>([\s\S]*?)<\/tt>\s*<\/a>/giu, (_match, code: string) =>
+      codeSpan(code),
+    )
+    .replace(/<code>([\s\S]*?)<\/code>/giu, (_match, code: string) => codeSpan(code))
+    .replace(/<tt>([\s\S]*?)<\/tt>/giu, (_match, code: string) => codeSpan(code))
+    .replace(/<em>([\s\S]*?)<\/em>/giu, (_match, value: string) => `*${stripTags(value)}*`)
+    .replace(/<b>([\s\S]*?)<\/b>/giu, (_match, value: string) => `**${stripTags(value)}**`)
+    .replace(/<a\s+[^>]*>([\s\S]*?)<\/a>/giu, (_match, value: string) => stripTags(value));
+  result = stripTags(result);
+  return decodeHtml(result);
 }
 
 function htmlInlineToText(html: string): string {
@@ -568,7 +567,13 @@ function htmlInlineToText(html: string): string {
 }
 
 function stripTags(html: string): string {
-  return html.replace(/<[^>]+>/gu, '');
+  let result = html;
+  let previous: string;
+  do {
+    previous = result;
+    result = result.replace(/<[^>]+>/gu, '');
+  } while (result !== previous);
+  return result;
 }
 
 function normalizePreText(html: string): string {
