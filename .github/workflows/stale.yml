@@ -1,0 +1,78 @@
+name: Manage inactive issues and pull requests
+
+on:
+  schedule:
+    # Run weekly rather than daily to keep maintenance traffic proportionate
+    # to this repository's activity level.
+    - cron: '17 4 * * 1'
+  workflow_dispatch:
+    inputs:
+      debug-only:
+        description: Preview actions without modifying issues or pull requests
+        required: true
+        default: true
+        type: boolean
+
+permissions:
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: stale-maintenance
+  cancel-in-progress: false
+
+jobs:
+  stale:
+    name: Process inactive items
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Ensure the stale label exists
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # actions/stale needs a durable marker to distinguish items it has
+          # already processed. Create that marker once, without overwriting an
+          # existing maintainer-customized label.
+          if ! gh label view stale --repo "${GITHUB_REPOSITORY}" >/dev/null 2>&1; then
+            gh label create stale \
+              --repo "${GITHUB_REPOSITORY}" \
+              --color ededed \
+              --description "Inactive issue or pull request awaiting renewed activity"
+          fi
+
+      - name: Mark and close inactive items
+        uses: actions/stale@4391f3da665fdf50b6810c1a66712fb9ba21aa93 # v11.0.0
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          # Issues generally represent longer-lived work than pull requests.
+          days-before-issue-stale: 90
+          days-before-issue-close: 30
+          days-before-pr-stale: 45
+          days-before-pr-close: 14
+          stale-issue-label: stale
+          stale-pr-label: stale
+          stale-issue-message: >-
+            This issue has had no activity for 90 days. It will be closed in
+            30 days unless new information or discussion is added.
+          close-issue-message: >-
+            This issue was closed after 120 days without activity. If the
+            problem remains relevant, please open a new issue with current
+            reproduction details and context.
+          stale-pr-message: >-
+            This pull request has had no activity for 45 days. It will be
+            closed in 14 days unless it is updated or new discussion is added.
+          close-pr-message: >-
+            This pull request was closed after 59 days without activity. It
+            can be reopened if work resumes and the branch is brought up to date.
+          # Security findings and automated CodeQL tracking have their own
+          # lifecycle and must never be closed by generic inactivity policy.
+          exempt-issue-labels: security,codeql
+          exempt-pr-labels: security
+          exempt-draft-pr: true
+          exempt-all-assignees: true
+          remove-stale-when-updated: true
+          close-issue-reason: not_planned
+          operations-per-run: 30
+          debug-only: ${{ github.event_name == 'workflow_dispatch' && inputs.debug-only || false }}
