@@ -1,0 +1,30 @@
+# Every key below is an existing repository label. Keep path rules factual:
+# semantic labels such as bug or enhancement require human judgment.
+github_actions:
+  - changed-files:
+      - any-glob-to-any-file:
+          - .github/dependabot.yml
+          - .github/workflows/**
+
+dependencies:
+  - changed-files:
+      - any-glob-to-any-file:
+          - package.json
+          - package-lock.json
+
+documentation:
+  - changed-files:
+      - any-glob-to-any-file:
+          - CHANGELOG.md
+          - CONTRIBUTING.md
+          - README.md
+          - SECURITY.md
+          - THIRD_PARTY_NOTICES.md
+          - docs/**
+
+javascript:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/*.cjs'
+          - '**/*.js'
+          - '**/*.mjs'
