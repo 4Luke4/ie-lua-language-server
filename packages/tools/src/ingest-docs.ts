@@ -7,12 +7,12 @@ import type {
   ApiSource,
   SourceSectionId,
 } from '@ie-lua/shared';
+import { parseEeexStructureSymbols } from './eeex-structures';
 
 const repoRoot = path.resolve(__dirname, '../..');
 const outputDirectory = path.resolve(repoRoot, 'resources/api');
 const outputPath = path.resolve(outputDirectory, 'api-index.json');
 const sectionDirectory = path.resolve(outputDirectory, 'sections');
-const eeexCommit = 'b4d0acd776f5d3b8337afbd038d6128efce51cfd';
 const lua52ManualUrl = 'https://www.lua.org/manual/5.2/manual.html';
 const luaJitExtensionUrls = [
   'https://luajit.org/extensions.html',
@@ -28,47 +28,50 @@ const lua52ModuleSections = {
   '6.10': 'debug',
 } satisfies Record<string, string>;
 
-const sources: ApiSource[] = [
-  {
-    id: 'ee-game-lua-functions',
-    title: 'EE Game Lua Functions',
-    url: 'https://github.com/Bubb13/EEex-Docs/tree/dev/source/EE%20Game%20Lua%20Functions',
-    commit: eeexCommit,
-    licenseStatus: 'permission-gated',
-  },
-  {
-    id: 'eeex-functions',
-    title: 'EEex Functions',
-    url: 'https://github.com/Bubb13/EEex-Docs/tree/dev/source/EEex%20Functions',
-    commit: eeexCommit,
-    licenseStatus: 'permission-gated',
-  },
-  {
-    id: 'ee-game-structures-x64',
-    title: 'EE Game Structures (x64)',
-    url: 'https://github.com/Bubb13/EEex-Docs/tree/dev/source/EE%20Game%20Structures%20(x64)',
-    commit: eeexCommit,
-    licenseStatus: 'permission-gated',
-  },
-  {
-    id: 'lua52',
-    title: 'Lua 5.2',
-    url: 'https://www.lua.org/manual/5.2/',
-    licenseStatus: 'allowed',
-  },
-  {
-    id: 'luajit',
-    title: 'LuaJIT',
-    url: 'https://luajit.org/',
-    licenseStatus: 'allowed',
-  },
-  {
-    id: 'ee-utility-functions',
-    title: 'EE Utility Functions',
-    url: 'local-untracked:samples/util.lua',
-    licenseStatus: 'permission-gated',
-  },
-];
+function makeSources(eeexCommit: string | undefined): ApiSource[] {
+  const eeexRef = eeexCommit ?? 'dev';
+  return [
+    {
+      id: 'ee-game-lua-functions',
+      title: 'EE Game Lua Functions',
+      url: `https://github.com/Bubb13/EEex-Docs/tree/${eeexRef}/source/EE%20Game%20Lua%20Functions`,
+      ...(eeexCommit ? { commit: eeexCommit } : {}),
+      licenseStatus: 'permission-gated',
+    },
+    {
+      id: 'eeex-functions',
+      title: 'EEex Functions',
+      url: `https://github.com/Bubb13/EEex-Docs/tree/${eeexRef}/source/EEex%20Functions`,
+      ...(eeexCommit ? { commit: eeexCommit } : {}),
+      licenseStatus: 'permission-gated',
+    },
+    {
+      id: 'ee-game-structures-x64',
+      title: 'EE Game Structures (x64)',
+      url: `https://github.com/Bubb13/EEex-Docs/tree/${eeexRef}/source/EE%20Game%20Structures%20(x64)`,
+      ...(eeexCommit ? { commit: eeexCommit } : {}),
+      licenseStatus: 'permission-gated',
+    },
+    {
+      id: 'lua52',
+      title: 'Lua 5.2',
+      url: 'https://www.lua.org/manual/5.2/',
+      licenseStatus: 'allowed',
+    },
+    {
+      id: 'luajit',
+      title: 'LuaJIT',
+      url: 'https://luajit.org/',
+      licenseStatus: 'allowed',
+    },
+    {
+      id: 'ee-utility-functions',
+      title: 'EE Utility Functions',
+      url: 'local-untracked:samples/util.lua',
+      licenseStatus: 'permission-gated',
+    },
+  ];
+}
 
 const sectionFiles = {
   'ee-game-lua-functions': 'sections/ee-game-lua-functions.json',
@@ -80,21 +83,25 @@ const sectionFiles = {
 } satisfies Record<SourceSectionId, string>;
 
 async function main(): Promise<void> {
+  const shouldFetchEeex = process.env.IE_LUA_FETCH_EEEX === '1';
+  const eeexCommit = shouldFetchEeex ? await resolveEeexCommit() : readExistingEeexCommit();
   const symbols: ApiSymbol[] = [
     ...(process.env.IE_LUA_SCAN_LOCAL_UTIL === '1'
       ? scanUtilityFunctions(path.resolve(repoRoot, 'samples/util.lua'))
       : []),
     ...(await makeLua52Symbols()),
     ...(await makeLuaJitSymbols()),
+    ...(!shouldFetchEeex ? loadExistingEeexSymbols() : []),
   ];
 
-  if (process.env.IE_LUA_FETCH_EEEX === '1') {
-    symbols.push(...(await fetchEeexSymbols()));
+  if (shouldFetchEeex && eeexCommit) {
+    symbols.push(...(await fetchEeexSymbols(eeexCommit)));
   }
 
+  const sources = makeSources(eeexCommit);
   const generatedAt = new Date().toISOString();
   const dedupedSymbols = dedupeSymbols(symbols);
-  const symbolsBySection = groupSymbolsBySection(dedupedSymbols);
+  const symbolsBySection = groupSymbolsBySection(dedupedSymbols, sources);
   const index: ApiIndexManifest = {
     schemaVersion: 1,
     generatedAt,
@@ -306,43 +313,104 @@ function extractLuaJitSymbolNames(signature: string): string[] {
   return [...names];
 }
 
-async function fetchEeexSymbols(): Promise<ApiSymbol[]> {
+async function fetchEeexSymbols(eeexCommit: string): Promise<ApiSymbol[]> {
+  const gitCommit = await fetchJson<GitCommit>(
+    `https://api.github.com/repos/Bubb13/EEex-Docs/git/commits/${eeexCommit}`,
+  );
+  const rootTree = await fetchJson<GitTree>(
+    `https://api.github.com/repos/Bubb13/EEex-Docs/git/trees/${gitCommit.tree.sha}?recursive=1`,
+  );
+  if (rootTree.truncated) {
+    throw new Error('EEex repository tree response was truncated.');
+  }
+
   const [gameLua, eeexFunctions, structures] = await Promise.all([
     fetchTreeSymbols({
       sourceSection: 'ee-game-lua-functions',
-      treeSha: '5115bcd4b74da9f1b55d438c922509af0a7023df',
+      tree: treeForSection(rootTree, 'ee-game-lua-functions'),
+      commit: eeexCommit,
       kind: 'function',
       symbolFromPath: (entryPath) => path.basename(entryPath, '.rst'),
-      includePath: (entryPath) => entryPath.endsWith('.rst') && !entryPath.endsWith('/index.rst'),
+      includePath: (entryPath) =>
+        entryPath.endsWith('.rst') && path.basename(entryPath) !== 'index.rst',
     }),
     fetchRstAnchorSymbols({
       sourceSection: 'eeex-functions',
-      treeSha: '2ab24e58e147c66f931e2496a78e674059135b94',
+      tree: treeForSection(rootTree, 'eeex-functions'),
+      commit: eeexCommit,
       kind: 'function',
       includeAnchor: (anchor) => anchor.startsWith('EEex_'),
     }),
-    fetchRstAnchorSymbols({
-      sourceSection: 'ee-game-structures-x64',
-      treeSha: '3250a9a44a1502785708eb27d0ff1b34d5e8ffdf',
-      kind: 'structure',
-      includeAnchor: (anchor) => !anchor.endsWith(' Structures') && !anchor.includes(' '),
-    }),
+    fetchEeexStructureSymbols(treeForSection(rootTree, 'ee-game-structures-x64'), eeexCommit),
   ]);
 
   return [...gameLua, ...eeexFunctions, ...structures];
 }
 
+async function resolveEeexCommit(): Promise<string> {
+  const configuredCommit = process.env.IE_LUA_EEEX_COMMIT?.trim();
+  if (configuredCommit) {
+    return validateEeexCommit(configuredCommit);
+  }
+
+  const latest = await fetchJson<{ sha: string }>(
+    'https://api.github.com/repos/Bubb13/EEex-Docs/commits/dev',
+  );
+  return validateEeexCommit(latest.sha);
+}
+
+function validateEeexCommit(commit: string): string {
+  if (!/^[0-9a-f]{40}$/iu.test(commit)) {
+    throw new Error(`Invalid EEex commit SHA: ${commit}`);
+  }
+  return commit.toLowerCase();
+}
+
+function readExistingEeexCommit(): string | undefined {
+  if (!fs.existsSync(outputPath)) {
+    return undefined;
+  }
+  const existing = JSON.parse(fs.readFileSync(outputPath, 'utf8')) as ApiIndexManifest;
+  return existing.sources.find((source) => source.id === 'ee-game-structures-x64')?.commit;
+}
+
+function loadExistingEeexSymbols(): ApiSymbol[] {
+  const eeexSections: SourceSectionId[] = [
+    'ee-game-lua-functions',
+    'eeex-functions',
+    'ee-game-structures-x64',
+  ];
+  return eeexSections.flatMap((sourceSection) => {
+    const filePath = path.resolve(outputDirectory, sectionFiles[sourceSection]);
+    if (!fs.existsSync(filePath)) {
+      return [];
+    }
+    const section = JSON.parse(fs.readFileSync(filePath, 'utf8')) as ApiSectionFile;
+    return section.symbols;
+  });
+}
+
+function treeForSection(rootTree: GitTree, sourceSection: SourceSectionId): GitTree {
+  const prefix = `source/${sectionPath(sourceSection)}/`;
+  return {
+    tree: rootTree.tree
+      .filter((entry) => entry.path.startsWith(prefix))
+      .map((entry) => ({
+        ...entry,
+        path: entry.path.slice(prefix.length),
+      })),
+  };
+}
+
 async function fetchTreeSymbols(options: {
   sourceSection: SourceSectionId;
-  treeSha: string;
+  tree: GitTree;
+  commit: string;
   kind: ApiSymbol['kind'];
   includePath: (entryPath: string) => boolean;
   symbolFromPath: (entryPath: string) => string;
 }): Promise<ApiSymbol[]> {
-  const tree = await fetchJson<GitTree>(
-    `https://api.github.com/repos/Bubb13/EEex-Docs/git/trees/${options.treeSha}?recursive=1`,
-  );
-  return tree.tree
+  return options.tree.tree
     .filter((entry) => entry.type === 'blob' && options.includePath(entry.path))
     .map((entry) => {
       const name = options.symbolFromPath(entry.path);
@@ -352,10 +420,10 @@ async function fetchTreeSymbols(options: {
         kind: options.kind,
         sourceSection: options.sourceSection,
         documentationState: 'permission-gated',
-        upstreamUrl: `https://github.com/Bubb13/EEex-Docs/blob/dev/source/${encodePath(
+        upstreamUrl: `https://github.com/Bubb13/EEex-Docs/blob/${options.commit}/source/${encodePath(
           sectionPath(options.sourceSection),
         )}/${encodePath(entry.path)}`,
-        upstreamCommit: eeexCommit,
+        upstreamCommit: options.commit,
         licenseStatus: 'permission-gated',
       } satisfies ApiSymbol;
     });
@@ -363,41 +431,36 @@ async function fetchTreeSymbols(options: {
 
 async function fetchRstAnchorSymbols(options: {
   sourceSection: SourceSectionId;
-  treeSha: string;
+  tree: GitTree;
+  commit: string;
   kind: ApiSymbol['kind'];
   includeAnchor: (anchor: string) => boolean;
 }): Promise<ApiSymbol[]> {
-  const tree = await fetchJson<GitTree>(
-    `https://api.github.com/repos/Bubb13/EEex-Docs/git/trees/${options.treeSha}?recursive=1`,
-  );
-  const indexPaths = tree.tree
+  const indexPaths = options.tree.tree
     .filter((entry) => entry.type === 'blob' && entry.path.endsWith('index.rst'))
     .map((entry) => entry.path);
   const symbols: ApiSymbol[] = [];
 
   for (const indexPath of indexPaths) {
-    const rawUrl = `https://raw.githubusercontent.com/Bubb13/EEex-Docs/dev/source/${encodePath(
+    const rawUrl = `https://raw.githubusercontent.com/Bubb13/EEex-Docs/${options.commit}/source/${encodePath(
       sectionPath(options.sourceSection),
     )}/${encodePath(indexPath)}`;
     const text = await fetchText(rawUrl);
-    const anchors = [...text.matchAll(/^\.\. _([^:\n]+):/gm)]
+    const anchors = [...text.matchAll(/^\.\. _([^:\n]+):/gmu)]
       .map((match) => match[1] ?? '')
       .filter(options.includeAnchor);
     for (const anchor of anchors) {
-      const block = getAnchorBlock(text, anchor);
       symbols.push({
         id: `${options.sourceSection}:${anchor}`,
         name: anchor,
         kind: options.kind,
         sourceSection: options.sourceSection,
-        documentationState: block.includes('currently undocumented')
-          ? 'undocumented'
-          : 'permission-gated',
+        documentationState: 'permission-gated',
         upstreamUrl: rawUrl.replace(
-          'https://raw.githubusercontent.com/Bubb13/EEex-Docs/dev/',
-          'https://github.com/Bubb13/EEex-Docs/blob/dev/',
+          `https://raw.githubusercontent.com/Bubb13/EEex-Docs/${options.commit}/`,
+          `https://github.com/Bubb13/EEex-Docs/blob/${options.commit}/`,
         ),
-        upstreamCommit: eeexCommit,
+        upstreamCommit: options.commit,
         licenseStatus: 'permission-gated',
       });
     }
@@ -406,7 +469,33 @@ async function fetchRstAnchorSymbols(options: {
   return symbols;
 }
 
+async function fetchEeexStructureSymbols(tree: GitTree, commit: string): Promise<ApiSymbol[]> {
+  const indexPaths = tree.tree
+    .filter((entry) => entry.type === 'blob' && entry.path.endsWith('index.rst'))
+    .map((entry) => entry.path);
+  const symbols = await Promise.all(
+    indexPaths.map(async (indexPath) => {
+      const rawUrl = `https://raw.githubusercontent.com/Bubb13/EEex-Docs/${commit}/source/${encodePath(
+        sectionPath('ee-game-structures-x64'),
+      )}/${encodePath(indexPath)}`;
+      return parseEeexStructureSymbols({
+        commit,
+        indexPath,
+        text: await fetchText(rawUrl),
+      });
+    }),
+  );
+  return symbols.flat();
+}
+
+interface GitCommit {
+  tree: {
+    sha: string;
+  };
+}
+
 interface GitTree {
+  truncated?: boolean;
   tree: Array<{
     path: string;
     type: 'blob' | 'tree';
@@ -435,16 +524,6 @@ async function fetchText(url: string): Promise<string> {
     throw new Error(`Failed to fetch ${url}: ${response.status} ${response.statusText}`);
   }
   return response.text();
-}
-
-function getAnchorBlock(text: string, anchor: string): string {
-  const marker = `.. _${anchor}:`;
-  const start = text.indexOf(marker);
-  if (start === -1) {
-    return '';
-  }
-  const next = text.indexOf('\n.. _', start + marker.length);
-  return text.slice(start, next === -1 ? text.length : next);
 }
 
 function sectionPath(sourceSection: SourceSectionId): string {
@@ -672,7 +751,10 @@ function dedupeSymbols(symbols: ApiSymbol[]): ApiSymbol[] {
   return [...byId.values()].sort((left, right) => left.id.localeCompare(right.id));
 }
 
-function groupSymbolsBySection(symbols: ApiSymbol[]): Map<SourceSectionId, ApiSymbol[]> {
+function groupSymbolsBySection(
+  symbols: ApiSymbol[],
+  sources: ApiSource[],
+): Map<SourceSectionId, ApiSymbol[]> {
   const grouped = new Map<SourceSectionId, ApiSymbol[]>();
   for (const source of sources) {
     grouped.set(source.id, []);

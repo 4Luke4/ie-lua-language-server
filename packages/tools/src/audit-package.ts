@@ -126,6 +126,15 @@ function auditSectionFile(
     };
     symbols?: Array<{
       id?: string;
+      name?: string;
+      kind?: string;
+      instanceName?: string;
+      containerName?: string;
+      dataType?: string;
+      byteOffset?: string;
+      byteSize?: number;
+      sizeExpression?: string;
+      memberCount?: number;
       sourceSection?: string;
       licenseStatus?: string;
       documentationMarkdown?: string;
@@ -141,10 +150,61 @@ function auditSectionFile(
   if (expectedSymbolCount !== undefined && section.symbols.length !== expectedSymbolCount) {
     throw new Error(`API section symbol count mismatch: ${relativeFile}`);
   }
+  const symbolIds = new Set<string>();
+  for (const symbol of section.symbols) {
+    if (!symbol.id) {
+      throw new Error(`API section contains a symbol without an id: ${relativeFile}`);
+    }
+    if (symbolIds.has(symbol.id)) {
+      throw new Error(`API section contains duplicate symbol id: ${symbol.id}`);
+    }
+    symbolIds.add(symbol.id);
+  }
+
+  if (expectedSection === 'ee-game-structures-x64') {
+    const structures = section.symbols.filter((symbol) => symbol.kind === 'structure');
+    const fields = section.symbols.filter((symbol) => symbol.kind === 'field');
+    if (structures.length === 0 || fields.length === 0) {
+      throw new Error('EE Game Structures (x64) must ship structure and field metadata.');
+    }
+
+    const fieldCounts = new Map<string, number>();
+    for (const field of fields) {
+      if (
+        !field.containerName ||
+        !field.instanceName ||
+        !field.dataType ||
+        !field.byteOffset ||
+        (field.byteSize === undefined && !field.sizeExpression) ||
+        field.name !== `${field.containerName}.${field.instanceName}`
+      ) {
+        throw new Error(
+          `EE Game Structures (x64) field has incomplete layout metadata: ${field.id ?? '?'}`,
+        );
+      }
+      fieldCounts.set(field.containerName, (fieldCounts.get(field.containerName) ?? 0) + 1);
+    }
+
+    for (const structure of structures) {
+      if (
+        structure.memberCount === undefined ||
+        structure.memberCount !== (fieldCounts.get(structure.name ?? '') ?? 0)
+      ) {
+        throw new Error(`EE Game Structures (x64) member count mismatch: ${structure.id ?? '?'}`);
+      }
+    }
+  }
 
   for (const symbol of section.symbols) {
     if (symbol.sourceSection !== expectedSection) {
       throw new Error(`API symbol is in the wrong section file: ${symbol.id ?? '?'}`);
+    }
+    if (
+      expectedSection === 'ee-game-structures-x64' &&
+      symbol.kind !== 'structure' &&
+      symbol.kind !== 'field'
+    ) {
+      throw new Error(`EE Game Structures (x64) symbol has wrong kind: ${symbol.id ?? '?'}`);
     }
     if (symbol.licenseStatus === 'permission-gated' && symbol.documentationMarkdown) {
       throw new Error('Permission-gated documentation text must not be bundled.');

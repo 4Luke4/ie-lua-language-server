@@ -1,25 +1,25 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-09T17:33:28.781Z",
+  "generatedAt": "2026-08-24T13:22:09.045Z",
   "sources": [
     {
       "id": "ee-game-lua-functions",
       "title": "EE Game Lua Functions",
-      "url": "https://github.com/Bubb13/EEex-Docs/tree/dev/source/EE%20Game%20Lua%20Functions",
+      "url": "https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions",
       "commit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
       "licenseStatus": "permission-gated"
     },
     {
       "id": "eeex-functions",
       "title": "EEex Functions",
-      "url": "https://github.com/Bubb13/EEex-Docs/tree/dev/source/EEex%20Functions",
+      "url": "https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions",
       "commit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
       "licenseStatus": "permission-gated"
     },
     {
       "id": "ee-game-structures-x64",
       "title": "EE Game Structures (x64)",
-      "url": "https://github.com/Bubb13/EEex-Docs/tree/dev/source/EE%20Game%20Structures%20(x64)",
+      "url": "https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)",
       "commit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
       "licenseStatus": "permission-gated"
     },
@@ -47,21 +47,21 @@
       "id": "ee-game-lua-functions",
       "title": "EE Game Lua Functions",
       "file": "sections/ee-game-lua-functions.json",
-      "symbolCount": 0,
+      "symbolCount": 392,
       "licenseStatus": "permission-gated"
     },
     {
       "id": "eeex-functions",
       "title": "EEex Functions",
       "file": "sections/eeex-functions.json",
-      "symbolCount": 0,
+      "symbolCount": 295,
       "licenseStatus": "permission-gated"
     },
     {
       "id": "ee-game-structures-x64",
       "title": "EE Game Structures (x64)",
       "file": "sections/ee-game-structures-x64.json",
-      "symbolCount": 0,
+      "symbolCount": 8235,
       "licenseStatus": "permission-gated"
     },
     {

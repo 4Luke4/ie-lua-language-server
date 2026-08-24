@@ -32,7 +32,10 @@ import {
   DebouncedValidationScheduler,
   emptyApiIndex,
   filterApiSymbols,
+  filterGlobalApiSymbols,
+  findApiStructureMembers,
   findApiSymbol,
+  findApiSymbolForExpression,
   makeDocumentation,
   mergeSettings,
   normalizeSettings,
@@ -128,14 +131,24 @@ documents.onDidClose((event) => {
 connection.onCompletion(async (params) => {
   const document = documents.get(params.textDocument.uri);
   const settings = await getSettings(params.textDocument.uri);
-  const apiSymbols = filterApiSymbols(apiIndex, settings);
-  const analysis = document ? await getOrAnalyze(document) : undefined;
+  const memberReceiver = document ? getMemberReceiverAt(document, params.position) : undefined;
+  const apiSymbols =
+    document && memberReceiver
+      ? findApiStructureMembers(
+          apiIndex,
+          settings,
+          memberReceiver,
+          document.getText(),
+          document.offsetAt(params.position),
+        )
+      : filterGlobalApiSymbols(apiIndex, settings);
+  const analysis = document && !memberReceiver ? await getOrAnalyze(document) : undefined;
   const workspaceNames = new Set(analysis?.symbols.map((symbol) => symbol.name) ?? []);
 
   return [
     ...apiSymbols.map((symbol): CompletionItem => {
       const item: CompletionItem = {
-        label: symbol.name,
+        label: symbol.instanceName ?? symbol.name,
         kind: toCompletionKind(symbol.kind),
         documentation: toMarkdownDocumentation(symbol),
         data: {
@@ -171,7 +184,13 @@ connection.onHover(async (params) => {
   }
 
   const settings = await getSettings(document.uri);
-  const apiSymbol = findApiSymbol(apiIndex, settings, name);
+  const apiSymbol = findApiSymbolForExpression(
+    apiIndex,
+    settings,
+    name,
+    document.getText(),
+    document.offsetAt(params.position),
+  );
   if (apiSymbol) {
     return {
       contents: {
@@ -255,7 +274,13 @@ connection.onDefinition(async (params) => {
   }
 
   const settings = await getSettings(document.uri);
-  const apiSymbol = findApiSymbol(apiIndex, settings, name);
+  const apiSymbol = findApiSymbolForExpression(
+    apiIndex,
+    settings,
+    name,
+    document.getText(),
+    document.offsetAt(params.position),
+  );
   if (!apiSymbol) {
     return null;
   }
@@ -574,6 +599,16 @@ function toCompletionKind(kind: string): CompletionItemKind {
     default:
       return CompletionItemKind.Variable;
   }
+}
+
+function getMemberReceiverAt(
+  document: TextDocument,
+  position: { line: number; character: number },
+): string | undefined {
+  const beforeCursor = document.getText().slice(0, document.offsetAt(position));
+  return beforeCursor.match(
+    /([A-Za-z_][A-Za-z0-9_:]*(?:\.[A-Za-z_][A-Za-z0-9_]*)*)\.[A-Za-z0-9_]*$/u,
+  )?.[1];
 }
 
 function getWordAt(
