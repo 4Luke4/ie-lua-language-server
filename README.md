@@ -3,6 +3,9 @@
 [![CI](https://github.com/4Luke4/ie-lua-language-server/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/4Luke4/ie-lua-language-server/actions/workflows/ci.yml)
 [![CodeQL](https://github.com/4Luke4/ie-lua-language-server/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/4Luke4/ie-lua-language-server/actions/workflows/codeql.yml)
 [![Visual Studio Marketplace](https://img.shields.io/badge/VS%20Marketplace-Install-0078D4)](https://marketplace.visualstudio.com/items?itemName=infinity-engine-tools.ie-lua-language-server)
+[![Latest release](https://img.shields.io/github/v/release/4Luke4/ie-lua-language-server?display_name=tag&sort=semver)](https://github.com/4Luke4/ie-lua-language-server/releases/latest)
+[![Total release downloads](https://img.shields.io/github/downloads/4Luke4/ie-lua-language-server/total)](https://github.com/4Luke4/ie-lua-language-server/releases)
+[![Latest release downloads](https://img.shields.io/github/downloads/4Luke4/ie-lua-language-server/latest/total)](https://github.com/4Luke4/ie-lua-language-server/releases/latest)
 
 Professional language support for Enhanced Edition Infinity Engine Lua and `.menu` files.
 
@@ -24,26 +27,32 @@ This extension targets:
 - Scope-aware Lua analysis backed by a parser plus tolerant fallback scanning for incomplete buffers.
 - Embedded Lua analysis in `.menu` files for backtick chunks, `lua "..."` expressions, action/open/close/escape blocks, and `enabled`/`clickable` expressions.
 - Permission-gated generated API data from official sources only.
+- Full EE Game Structures (x64) layout metadata: structure and field completion, annotation-aware member resolution, chained field hover, exact source definitions, types, offsets, and byte sizes.
 
 ## Screenshots
 
-The screenshots below use non-proprietary fixture snippets.
+The screenshots below were captured from a real Visual Studio Code Extension Development Host using non-proprietary fixture snippets.
 
-### Completion and Official Help Text
+<details>
+<summary><strong>View Visual Studio Code screenshots</strong></summary>
 
-![Completion and official help text](docs/screenshots/completion-help.png)
+### Completion
+
+![Visual Studio Code completion suggestions](docs/screenshots/completion.png)
+
+### Hover
+
+![Visual Studio Code hover information](docs/screenshots/hover.png)
 
 ### Embedded `.menu` Diagnostics
 
-![Embedded menu diagnostics](docs/screenshots/menu-diagnostics.png)
+![Visual Studio Code embedded menu diagnostics](docs/screenshots/menu-diagnostics.png)
 
-### Symbols, Folding, and Rename
+### Document Symbols
 
-![Symbols, folding, and rename](docs/screenshots/symbols-folding.png)
+![Visual Studio Code document symbols](docs/screenshots/symbols.png)
 
-### Kate LSP Client Setup
-
-![Kate LSP setup](docs/screenshots/kate-lsp.png)
+</details>
 
 ## Runtime Dependencies
 
@@ -198,7 +207,9 @@ Generated API data is split by source section for auditability. `resources/api/a
 - `resources/api/sections/luajit.json`
 - `resources/api/sections/ee-utility-functions.json`
 
-Set `IE_LUA_FETCH_EEEX=1` when running `npm run ingest:docs` to fetch EEex symbol names from the pinned upstream commit. EEex prose remains permission-gated and is not bundled.
+Set `IE_LUA_FETCH_EEEX=1` when running `npm run ingest:docs` to refresh EEex metadata. The generator resolves the latest `dev` revision by default; set `IE_LUA_EEEX_COMMIT` to a full commit SHA for a reproducible run. Structure layouts include names, fields, types, offsets, byte sizes, and pinned source lines. Narrative EEex prose remains permission-gated and is not bundled.
+
+The scheduled **Update EEex API data** workflow checks the upstream repository daily. When its revision changes, the workflow regenerates and verifies the API data on a dedicated branch and opens a pull request for review; it never executes upstream code.
 
 Local game files under `samples/` are ignored because they may contain proprietary official content. Set `IE_LUA_SCAN_LOCAL_UTIL=1` only when you intentionally want a local docs-ingestion run to derive EE Utility Function metadata from an untracked `samples/util.lua` file.
 

@@ -1,0 +1,134 @@
+name: Update EEex API data
+
+on:
+  schedule:
+    - cron: '23 4 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: update-eeex-api-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    name: Generate reviewable API update
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Check out default branch
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Check upstream revision
+        id: source
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          upstream_commit="$(gh api repos/Bubb13/EEex-Docs/commits/dev --jq '.sha')"
+          if [[ ! "$upstream_commit" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "Upstream returned an invalid commit SHA: $upstream_commit" >&2
+            exit 1
+          fi
+
+          current_commit="$(
+            node -e "
+              const index = require('./resources/api/api-index.json');
+              const source = index.sources.find(
+                (candidate) => candidate.id === 'ee-game-structures-x64',
+              );
+              process.stdout.write(source?.commit ?? '');
+            "
+          )"
+          if [[ "$current_commit" == "$upstream_commit" ]]; then
+            echo "should_update=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          short_commit="${upstream_commit:0:12}"
+          branch_name="automation/eeex-api-${short_commit}"
+          pr_query_args=(
+            --repo "$GITHUB_REPOSITORY"
+            --head "$branch_name"
+            --state all
+            --json url
+            --jq '.[0].url // ""'
+          )
+          existing_pr="$(gh pr list "${pr_query_args[@]}")"
+          if [[ -n "$existing_pr" ]]; then
+            echo "An update pull request already exists: $existing_pr"
+            echo "should_update=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "commit=$upstream_commit" >> "$GITHUB_OUTPUT"
+          echo "branch=$branch_name" >> "$GITHUB_OUTPUT"
+          echo "should_update=true" >> "$GITHUB_OUTPUT"
+      - name: Set up Node.js
+        if: steps.source.outputs.should_update == 'true'
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - name: Install dependencies
+        if: steps.source.outputs.should_update == 'true'
+        run: npm ci --no-audit --progress=false
+      - name: Generate API data
+        if: steps.source.outputs.should_update == 'true'
+        env:
+          IE_LUA_EEEX_COMMIT: ${{ steps.source.outputs.commit }}
+          IE_LUA_FETCH_EEEX: '1'
+        run: |
+          npm run compile
+          npm run ingest:docs
+      - name: Verify generated package
+        if: steps.source.outputs.should_update == 'true'
+        run: npm run verify
+      - name: Open update pull request
+        if: steps.source.outputs.should_update == 'true'
+        env:
+          BRANCH_NAME: ${{ steps.source.outputs.branch }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          UPSTREAM_COMMIT: ${{ steps.source.outputs.commit }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch --create "$BRANCH_NAME"
+          git add resources/api
+          if git diff --cached --quiet; then
+            echo "The upstream revision changed without changing generated API data." >&2
+            exit 1
+          fi
+
+          git commit --message "chore(data): update EEex API index"
+          git push origin "HEAD:$BRANCH_NAME"
+
+          body_file="$RUNNER_TEMP/eeex-update-body.md"
+          {
+            echo "## Summary"
+            echo
+            echo "- regenerate permission-safe EEex API metadata from `$UPSTREAM_COMMIT`"
+            echo "- update structure names, fields, types, offsets, byte sizes, and source locations"
+            echo "- retain pinned provenance and omit permission-gated narrative prose"
+            echo
+            echo "## Validation"
+            echo
+            echo "- `npm run verify`"
+          } > "$body_file"
+
+          pr_create_args=(
+            --repo "$GITHUB_REPOSITORY"
+            --base main
+            --head "$BRANCH_NAME"
+            --title "chore(data): update EEex API index"
+            --body-file "$body_file"
+          )
+          gh pr create "${pr_create_args[@]}"

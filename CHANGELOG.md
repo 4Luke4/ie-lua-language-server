@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a Changelog, and this project adheres to Semantic Versioning.
 
+## [v0.4.0]
+
+### Added
+
+- Ship full permission-safe EE Game Structures (x64) layouts with 1,040 structures and 7,195 fields, including annotation-aware and chained member completion, hover, source definitions, types, offsets, and byte sizes.
+- Add a scheduled, manually dispatchable workflow that detects new EEex upstream revisions, regenerates and verifies API metadata without executing upstream code, and opens a reviewable pull request.
+- Enforce Conventional Commit headers across every commit in a pull request.
+
+### Changed
+
+- Reconcile every path-labeler label from trusted base-branch definitions before applying labels.
+- Audit GitHub Actions responsibilities, retain the distinct non-redundant workflows, and declare the package-lock cache input explicitly for npm-based CI and release builds.
+- Configure Dependabot commit prefixes to remain compatible with Conventional Commits.
+- Replace illustrative screenshot assets with genuine Visual Studio Code captures in a collapsed README section.
+- Add latest-release, all-release download, and latest-release download badges.
+- Resolve EEex revisions dynamically for automated updates while recording immutable commit and line-level provenance in every generated symbol.
+
 ## [v0.3.1]
 
 ### Added

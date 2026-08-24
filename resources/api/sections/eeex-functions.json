@@ -1,12 +1,2963 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-09T17:33:28.781Z",
+  "generatedAt": "2026-08-24T13:10:47.087Z",
   "source": {
     "id": "eeex-functions",
     "title": "EEex Functions",
-    "url": "https://github.com/Bubb13/EEex-Docs/tree/dev/source/EEex%20Functions",
+    "url": "https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions",
     "commit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
     "licenseStatus": "permission-gated"
   },
-  "symbols": []
+  "symbols": [
+    {
+      "id": "eeex-functions:EEex_Action_AddEnabledSpriteStartedActionListener",
+      "name": "EEex_Action_AddEnabledSpriteStartedActionListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Action/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Action_AddSpriteStartedActionListener",
+      "name": "EEex_Action_AddSpriteStartedActionListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Action/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Action_AddSpriteStartedNextActionListener",
+      "name": "EEex_Action_AddSpriteStartedNextActionListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Action/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Action_ExecuteResponseStringOnAIBaseInstantly",
+      "name": "EEex_Action_ExecuteResponseStringOnAIBaseInstantly",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Action/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Action_ExecuteScriptFileResponseAsAIBaseInstantly",
+      "name": "EEex_Action_ExecuteScriptFileResponseAsAIBaseInstantly",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Action/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Action_FreeScriptFile",
+      "name": "EEex_Action_FreeScriptFile",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Action/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Action_NextSpellToPoint",
+      "name": "EEex_Action_NextSpellToPoint",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Action/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Action_ParseResponseString",
+      "name": "EEex_Action_ParseResponseString",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Action/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Action_QueueResponseStringOnAIBase",
+      "name": "EEex_Action_QueueResponseStringOnAIBase",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Action/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Action_QueueScriptFileResponseOnAIBase",
+      "name": "EEex_Action_QueueScriptFileResponseOnAIBase",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Action/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Actionbar_AddButtonsUpdatedListener",
+      "name": "EEex_Actionbar_AddButtonsUpdatedListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Actionbar/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Actionbar_AddListener",
+      "name": "EEex_Actionbar_AddListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Actionbar/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Actionbar_GetArray",
+      "name": "EEex_Actionbar_GetArray",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Actionbar/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Actionbar_GetLastState",
+      "name": "EEex_Actionbar_GetLastState",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Actionbar/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Actionbar_GetOp214ButtonDataIterator",
+      "name": "EEex_Actionbar_GetOp214ButtonDataIterator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Actionbar/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Actionbar_GetSpellButtonData",
+      "name": "EEex_Actionbar_GetSpellButtonData",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Actionbar/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Actionbar_GetSpellButtonDataIterator",
+      "name": "EEex_Actionbar_GetSpellButtonDataIterator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Actionbar/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Actionbar_GetState",
+      "name": "EEex_Actionbar_GetState",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Actionbar/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Actionbar_IsThievingHotkeyOpeningSpecialAbilities",
+      "name": "EEex_Actionbar_IsThievingHotkeyOpeningSpecialAbilities",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Actionbar/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Actionbar_RestoreLastState",
+      "name": "EEex_Actionbar_RestoreLastState",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Actionbar/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Actionbar_RunWithListenersSuppressed",
+      "name": "EEex_Actionbar_RunWithListenersSuppressed",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Actionbar/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Actionbar_SetButton",
+      "name": "EEex_Actionbar_SetButton",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Actionbar/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Actionbar_SetState",
+      "name": "EEex_Actionbar_SetState",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Actionbar/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Actionbar_SuppressListeners",
+      "name": "EEex_Actionbar_SuppressListeners",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Actionbar/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_AIBase_AddScriptingObjectUpdatedListener",
+      "name": "EEex_AIBase_AddScriptingObjectUpdatedListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/AIBase/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_AIBase_GetScriptLevel",
+      "name": "EEex_AIBase_GetScriptLevel",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/AIBase/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_AIBase_GetScriptLevelResRef",
+      "name": "EEex_AIBase_GetScriptLevelResRef",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/AIBase/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_AIBase_GetStoredScriptingTarget",
+      "name": "EEex_AIBase_GetStoredScriptingTarget",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/AIBase/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_AIBase_SetScriptLevel",
+      "name": "EEex_AIBase_SetScriptLevel",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/AIBase/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_AIBase_SetScriptLevelResRef",
+      "name": "EEex_AIBase_SetScriptLevelResRef",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/AIBase/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_AIBase_SetStoredScriptingTarget",
+      "name": "EEex_AIBase_SetStoredScriptingTarget",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/AIBase/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Area_CountAllOfTypeInRange",
+      "name": "EEex_Area_CountAllOfTypeInRange",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Area/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Area_CountAllOfTypeStringInRange",
+      "name": "EEex_Area_CountAllOfTypeStringInRange",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Area/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Area_CreateVisualEffect",
+      "name": "EEex_Area_CreateVisualEffect",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Area/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Area_ForAllOfTypeInRange",
+      "name": "EEex_Area_ForAllOfTypeInRange",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Area/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Area_ForAllOfTypeStringInRange",
+      "name": "EEex_Area_ForAllOfTypeStringInRange",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Area/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Area_GetAllOfTypeInRange",
+      "name": "EEex_Area_GetAllOfTypeInRange",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Area/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Area_GetAllOfTypeStringInRange",
+      "name": "EEex_Area_GetAllOfTypeStringInRange",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Area/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Area_GetNearestOpenPosition",
+      "name": "EEex_Area_GetNearestOpenPosition",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Area/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Area_GetVariableInt",
+      "name": "EEex_Area_GetVariableInt",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Area/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Area_GetVariableString",
+      "name": "EEex_Area_GetVariableString",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Area/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Area_GetVisible",
+      "name": "EEex_Area_GetVisible",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Area/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Area_SetVariableInt",
+      "name": "EEex_Area_SetVariableInt",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Area/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Area_SetVariableString",
+      "name": "EEex_Area_SetVariableString",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Area/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Debug_DumpScriptEncoding",
+      "name": "EEex_Debug_DumpScriptEncoding",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Debug/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_GameObject_ApplyEffect",
+      "name": "EEex_GameObject_ApplyEffect",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameObject/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_GameObject_AttachVisualEffect",
+      "name": "EEex_GameObject_AttachVisualEffect",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameObject/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_GameObject_CastUserType",
+      "name": "EEex_GameObject_CastUserType",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameObject/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_GameObject_Get",
+      "name": "EEex_GameObject_Get",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameObject/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_GameObject_GetAllSelectedIDs",
+      "name": "EEex_GameObject_GetAllSelectedIDs",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameObject/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_GameObject_GetClass",
+      "name": "EEex_GameObject_GetClass",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameObject/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_GameObject_GetSelected",
+      "name": "EEex_GameObject_GetSelected",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameObject/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_GameObject_GetSelectedID",
+      "name": "EEex_GameObject_GetSelectedID",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameObject/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_GameObject_GetUnderCursor",
+      "name": "EEex_GameObject_GetUnderCursor",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameObject/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_GameObject_GetUnderCursorID",
+      "name": "EEex_GameObject_GetUnderCursorID",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameObject/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_GameObject_IsSprite",
+      "name": "EEex_GameObject_IsSprite",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameObject/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_GameObject_IsSpriteID",
+      "name": "EEex_GameObject_IsSpriteID",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameObject/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_GameObject_IterateSelected",
+      "name": "EEex_GameObject_IterateSelected",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameObject/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_GameObject_IterateSelectedIDs",
+      "name": "EEex_GameObject_IterateSelectedIDs",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameObject/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_GameState_AddAfterIncludesListener",
+      "name": "EEex_GameState_AddAfterIncludesListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameState/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_GameState_AddBeforeIncludesListener",
+      "name": "EEex_GameState_AddBeforeIncludesListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameState/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_GameState_AddDestroyedListener",
+      "name": "EEex_GameState_AddDestroyedListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameState/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_GameState_AddInitializedListener",
+      "name": "EEex_GameState_AddInitializedListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameState/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_GameState_AddShutdownListener",
+      "name": "EEex_GameState_AddShutdownListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameState/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_GameState_GetGlobalInt",
+      "name": "EEex_GameState_GetGlobalInt",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameState/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_GameState_GetGlobalString",
+      "name": "EEex_GameState_GetGlobalString",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameState/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_GameState_SetGlobalInt",
+      "name": "EEex_GameState_SetGlobalInt",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameState/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_GameState_SetGlobalString",
+      "name": "EEex_GameState_SetGlobalString",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameState/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Key_AddPressedListener",
+      "name": "EEex_Key_AddPressedListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Key/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Key_AddReleasedListener",
+      "name": "EEex_Key_AddReleasedListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Key/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Key_EnterCaptureMode",
+      "name": "EEex_Key_EnterCaptureMode",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Key/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Key_ExitCaptureMode",
+      "name": "EEex_Key_ExitCaptureMode",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Key/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Key_GetFromName",
+      "name": "EEex_Key_GetFromName",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Key/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Key_GetName",
+      "name": "EEex_Key_GetName",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Key/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Key_GetPressedCount",
+      "name": "EEex_Key_GetPressedCount",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Key/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Key_GetPressedStack",
+      "name": "EEex_Key_GetPressedStack",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Key/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Key_IsDown",
+      "name": "EEex_Key_IsDown",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Key/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Keybinds_Cast",
+      "name": "EEex_Keybinds_Cast",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Keybinds/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Keybinds_CastTwoStep",
+      "name": "EEex_Keybinds_CastTwoStep",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Keybinds/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Keybinds_Get",
+      "name": "EEex_Keybinds_Get",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Keybinds/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Keybinds_SelectPortrait",
+      "name": "EEex_Keybinds_SelectPortrait",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Keybinds/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Keybinds_Update",
+      "name": "EEex_Keybinds_Update",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Keybinds/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Menu_AddAfterMainFileLoadedListener",
+      "name": "EEex_Menu_AddAfterMainFileLoadedListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Menu_AddAfterMainFileReloadedListener",
+      "name": "EEex_Menu_AddAfterMainFileReloadedListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Menu_AddBeforeListRendersItemListener",
+      "name": "EEex_Menu_AddBeforeListRendersItemListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Menu_AddBeforeMainFileLoadedListener",
+      "name": "EEex_Menu_AddBeforeMainFileLoadedListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Menu_AddBeforeMainFileReloadedListener",
+      "name": "EEex_Menu_AddBeforeMainFileReloadedListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Menu_AddBeforeUIItemRenderListener",
+      "name": "EEex_Menu_AddBeforeUIItemRenderListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Menu_AddMainFileLoadedListener",
+      "name": "EEex_Menu_AddMainFileLoadedListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Menu_AddTranslationLoadedListener",
+      "name": "EEex_Menu_AddTranslationLoadedListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Menu_AddWindowSizeChangedListener",
+      "name": "EEex_Menu_AddWindowSizeChangedListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Menu_DestroyAllTemplates",
+      "name": "EEex_Menu_DestroyAllTemplates",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Menu_DestroyInjectedTemplate",
+      "name": "EEex_Menu_DestroyInjectedTemplate",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Menu_Eval",
+      "name": "EEex_Menu_Eval",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Menu_Find",
+      "name": "EEex_Menu_Find",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Menu_GetArea",
+      "name": "EEex_Menu_GetArea",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Menu_GetItem",
+      "name": "EEex_Menu_GetItem",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Menu_GetItemArea",
+      "name": "EEex_Menu_GetItemArea",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Menu_GetItemFunction",
+      "name": "EEex_Menu_GetItemFunction",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Menu_GetItemVariant",
+      "name": "EEex_Menu_GetItemVariant",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Menu_GetMousePos",
+      "name": "EEex_Menu_GetMousePos",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Menu_GetUIItemArea",
+      "name": "EEex_Menu_GetUIItemArea",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Menu_GetUIMenuArea",
+      "name": "EEex_Menu_GetUIMenuArea",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Menu_InjectTemplate",
+      "name": "EEex_Menu_InjectTemplate",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Menu_InjectTemplateInstance",
+      "name": "EEex_Menu_InjectTemplateInstance",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Menu_IsCursorWithin",
+      "name": "EEex_Menu_IsCursorWithin",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Menu_IsCursorWithinRect",
+      "name": "EEex_Menu_IsCursorWithinRect",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Menu_IsNative",
+      "name": "EEex_Menu_IsNative",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Menu_LoadFile",
+      "name": "EEex_Menu_LoadFile",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Menu_SetForceScrollbarRender",
+      "name": "EEex_Menu_SetForceScrollbarRender",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Menu_SetItemExtraScrollbarPad",
+      "name": "EEex_Menu_SetItemExtraScrollbarPad",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Menu_SetItemFunction",
+      "name": "EEex_Menu_SetItemFunction",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Menu_SetItemVariant",
+      "name": "EEex_Menu_SetItemVariant",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Menu_SetTemplateArea",
+      "name": "EEex_Menu_SetTemplateArea",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Menu_StoreTemplateInstance",
+      "name": "EEex_Menu_StoreTemplateInstance",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Menu_TranslateXYFromGame",
+      "name": "EEex_Menu_TranslateXYFromGame",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Object_AddToArea",
+      "name": "EEex_Object_AddToArea",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Object/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Object_EvalAsAIBase",
+      "name": "EEex_Object_EvalAsAIBase",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Object/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Object_EvalStringAsAIBase",
+      "name": "EEex_Object_EvalStringAsAIBase",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Object/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Object_ParseString",
+      "name": "EEex_Object_ParseString",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Object/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Opcode_AddListsResolvedListener",
+      "name": "EEex_Opcode_AddListsResolvedListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Opcode/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Options_AddTab",
+      "name": "EEex_Options_AddTab",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Options/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Options_Check",
+      "name": "EEex_Options_Check",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Options/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Options_Close",
+      "name": "EEex_Options_Close",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Options/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Options_Get",
+      "name": "EEex_Options_Get",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Options/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Options_MarshalKeybind",
+      "name": "EEex_Options_MarshalKeybind",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Options/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Options_Open",
+      "name": "EEex_Options_Open",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Options/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Options_Option",
+      "name": "EEex_Options_Option",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Options/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Options_Option.new",
+      "name": "EEex_Options_Option.new",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Options/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Options_Register",
+      "name": "EEex_Options_Register",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Options/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Options_UnmarshalKeybind",
+      "name": "EEex_Options_UnmarshalKeybind",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Options/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Projectile_CastUserType",
+      "name": "EEex_Projectile_CastUserType",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Projectile/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Projectile_GetStartingPos",
+      "name": "EEex_Projectile_GetStartingPos",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Projectile/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Projectile_GetStartingPosForID",
+      "name": "EEex_Projectile_GetStartingPosForID",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Projectile/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Projectile_GetType",
+      "name": "EEex_Projectile_GetType",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Projectile/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Projectile_IsOfType",
+      "name": "EEex_Projectile_IsOfType",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Projectile/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Projectile_RegisterGlobalMutator",
+      "name": "EEex_Projectile_RegisterGlobalMutator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Projectile/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_Demand",
+      "name": "EEex_Resource_Demand",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_ExtToType",
+      "name": "EEex_Resource_ExtToType",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_ExtToUserType",
+      "name": "EEex_Resource_ExtToUserType",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_Fetch",
+      "name": "EEex_Resource_Fetch",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_Find2DAColumnIndex",
+      "name": "EEex_Resource_Find2DAColumnIndex",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_Find2DAColumnLabel",
+      "name": "EEex_Resource_Find2DAColumnLabel",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_Find2DARowIndex",
+      "name": "EEex_Resource_Find2DARowIndex",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_Find2DARowLabel",
+      "name": "EEex_Resource_Find2DARowLabel",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_Free2DA",
+      "name": "EEex_Resource_Free2DA",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_FreeIDS",
+      "name": "EEex_Resource_FreeIDS",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_FreeScript",
+      "name": "EEex_Resource_FreeScript",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_Get2DAColumnLabel",
+      "name": "EEex_Resource_Get2DAColumnLabel",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_Get2DADefault",
+      "name": "EEex_Resource_Get2DADefault",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_Get2DADimensions",
+      "name": "EEex_Resource_Get2DADimensions",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_Get2DARowColumnsByLabelIterator",
+      "name": "EEex_Resource_Get2DARowColumnsByLabelIterator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_Get2DARowColumnsIterator",
+      "name": "EEex_Resource_Get2DARowColumnsIterator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_Get2DARowLabel",
+      "name": "EEex_Resource_Get2DARowLabel",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_Get2DARowTableIterator",
+      "name": "EEex_Resource_Get2DARowTableIterator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_Get2DARowValuesIterator",
+      "name": "EEex_Resource_Get2DARowValuesIterator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_GetAt2DALabels",
+      "name": "EEex_Resource_GetAt2DALabels",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_GetAt2DAPoint",
+      "name": "EEex_Resource_GetAt2DAPoint",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_GetCItemAbility",
+      "name": "EEex_Resource_GetCItemAbility",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_GetIDSCount",
+      "name": "EEex_Resource_GetIDSCount",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_GetIDSEntry",
+      "name": "EEex_Resource_GetIDSEntry",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_GetIDSLine",
+      "name": "EEex_Resource_GetIDSLine",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_GetIDSStart",
+      "name": "EEex_Resource_GetIDSStart",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_GetItemAbility",
+      "name": "EEex_Resource_GetItemAbility",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_GetMax2DAIndices",
+      "name": "EEex_Resource_GetMax2DAIndices",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_GetSpellAbility",
+      "name": "EEex_Resource_GetSpellAbility",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_GetSpellAbilityForLevel",
+      "name": "EEex_Resource_GetSpellAbilityForLevel",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_GetValidSpellsIterator",
+      "name": "EEex_Resource_GetValidSpellsIterator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_IDSHasID",
+      "name": "EEex_Resource_IDSHasID",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_ItemCategoryIDSToSymbol",
+      "name": "EEex_Resource_ItemCategoryIDSToSymbol",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_ItemCategorySymbolToIDS",
+      "name": "EEex_Resource_ItemCategorySymbolToIDS",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_Iterate2DAColumnIndex",
+      "name": "EEex_Resource_Iterate2DAColumnIndex",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_Iterate2DAColumnLabel",
+      "name": "EEex_Resource_Iterate2DAColumnLabel",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_Iterate2DARowIndex",
+      "name": "EEex_Resource_Iterate2DARowIndex",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_Iterate2DARowLabel",
+      "name": "EEex_Resource_Iterate2DARowLabel",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_IterateIDSEntries",
+      "name": "EEex_Resource_IterateIDSEntries",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_IterateUnpackedIDSEntries",
+      "name": "EEex_Resource_IterateUnpackedIDSEntries",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_KitIDSToSymbol",
+      "name": "EEex_Resource_KitIDSToSymbol",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_KitSymbolToIDS",
+      "name": "EEex_Resource_KitSymbolToIDS",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_Load2DA",
+      "name": "EEex_Resource_Load2DA",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_LoadIDS",
+      "name": "EEex_Resource_LoadIDS",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_LoadScript",
+      "name": "EEex_Resource_LoadScript",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Script_GetResRef",
+      "name": "EEex_Script_GetResRef",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Script/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Script_IsPlayerScript",
+      "name": "EEex_Script_IsPlayerScript",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Script/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_AddAlterBaseWeaponDamageListener",
+      "name": "EEex_Sprite_AddAlterBaseWeaponDamageListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_AddBlockWeaponHitListener",
+      "name": "EEex_Sprite_AddBlockWeaponHitListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_AddLoadedListener",
+      "name": "EEex_Sprite_AddLoadedListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_AddMarshalHandlers",
+      "name": "EEex_Sprite_AddMarshalHandlers",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_AddQuickListCountsResetListener",
+      "name": "EEex_Sprite_AddQuickListCountsResetListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_AddQuickListNotifyRemovedListener",
+      "name": "EEex_Sprite_AddQuickListNotifyRemovedListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_AddQuickListsCheckedListener",
+      "name": "EEex_Sprite_AddQuickListsCheckedListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_AddSpellDisableStateChangedListener",
+      "name": "EEex_Sprite_AddSpellDisableStateChangedListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_CountAllOfTypeInRange",
+      "name": "EEex_Sprite_CountAllOfTypeInRange",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_CountAllOfTypeStringInRange",
+      "name": "EEex_Sprite_CountAllOfTypeStringInRange",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_CreateCopy",
+      "name": "EEex_Sprite_CreateCopy",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_CreateFromResref",
+      "name": "EEex_Sprite_CreateFromResref",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_DisplayTextRef",
+      "name": "EEex_Sprite_DisplayTextRef",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_ForAllOfTypeInRange",
+      "name": "EEex_Sprite_ForAllOfTypeInRange",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_ForAllOfTypeStringInRange",
+      "name": "EEex_Sprite_ForAllOfTypeStringInRange",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetActiveStats",
+      "name": "EEex_Sprite_GetActiveStats",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetAllOfTypeInRange",
+      "name": "EEex_Sprite_GetAllOfTypeInRange",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetAllOfTypeStringInRange",
+      "name": "EEex_Sprite_GetAllOfTypeStringInRange",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetAllSelectedIDs",
+      "name": "EEex_Sprite_GetAllSelectedIDs",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetCasterLevelForSpell",
+      "name": "EEex_Sprite_GetCasterLevelForSpell",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetCastTimer",
+      "name": "EEex_Sprite_GetCastTimer",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetCastTimerPercentage",
+      "name": "EEex_Sprite_GetCastTimerPercentage",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetCharacterIndex",
+      "name": "EEex_Sprite_GetCharacterIndex",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetContingencyTimer",
+      "name": "EEex_Sprite_GetContingencyTimer",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetContingencyTimerPercentage",
+      "name": "EEex_Sprite_GetContingencyTimerPercentage",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetExtendedStat",
+      "name": "EEex_Sprite_GetExtendedStat",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetFromUUID",
+      "name": "EEex_Sprite_GetFromUUID",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetInPortrait",
+      "name": "EEex_Sprite_GetInPortrait",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetInPortraitID",
+      "name": "EEex_Sprite_GetInPortraitID",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetKnownInnateSpellsIterator",
+      "name": "EEex_Sprite_GetKnownInnateSpellsIterator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetKnownInnateSpellsWithAbilityIterator",
+      "name": "EEex_Sprite_GetKnownInnateSpellsWithAbilityIterator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetKnownMageSpellsIterator",
+      "name": "EEex_Sprite_GetKnownMageSpellsIterator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetKnownMageSpellsWithAbilityIterator",
+      "name": "EEex_Sprite_GetKnownMageSpellsWithAbilityIterator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetKnownPriestSpellsIterator",
+      "name": "EEex_Sprite_GetKnownPriestSpellsIterator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetKnownPriestSpellsWithAbilityIterator",
+      "name": "EEex_Sprite_GetKnownPriestSpellsWithAbilityIterator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetLauncher",
+      "name": "EEex_Sprite_GetLauncher",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetLocalInt",
+      "name": "EEex_Sprite_GetLocalInt",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetLocalString",
+      "name": "EEex_Sprite_GetLocalString",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetModalState",
+      "name": "EEex_Sprite_GetModalState",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetModalTimer",
+      "name": "EEex_Sprite_GetModalTimer",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetModalTimerPercentage",
+      "name": "EEex_Sprite_GetModalTimerPercentage",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetName",
+      "name": "EEex_Sprite_GetName",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetNameRef",
+      "name": "EEex_Sprite_GetNameRef",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetNumCharacters",
+      "name": "EEex_Sprite_GetNumCharacters",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetPersonalSpace",
+      "name": "EEex_Sprite_GetPersonalSpace",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetPortraitIndex",
+      "name": "EEex_Sprite_GetPortraitIndex",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetSelected",
+      "name": "EEex_Sprite_GetSelected",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetSelectedID",
+      "name": "EEex_Sprite_GetSelectedID",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetSpellButtonDataIteratorFrom2DA",
+      "name": "EEex_Sprite_GetSpellButtonDataIteratorFrom2DA",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetSpellState",
+      "name": "EEex_Sprite_GetSpellState",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetSpellsWithAbilityIterator",
+      "name": "EEex_Sprite_GetSpellsWithAbilityIterator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetStat",
+      "name": "EEex_Sprite_GetStat",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetState",
+      "name": "EEex_Sprite_GetState",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetUUID",
+      "name": "EEex_Sprite_GetUUID",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetValidKnownInnateSpellsIterator",
+      "name": "EEex_Sprite_GetValidKnownInnateSpellsIterator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetValidKnownMageSpellsIterator",
+      "name": "EEex_Sprite_GetValidKnownMageSpellsIterator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetValidKnownPriestSpellsIterator",
+      "name": "EEex_Sprite_GetValidKnownPriestSpellsIterator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetValidSpellsWithAbilityIterator",
+      "name": "EEex_Sprite_GetValidSpellsWithAbilityIterator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_IterateSelected",
+      "name": "EEex_Sprite_IterateSelected",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_IterateSelectedIDs",
+      "name": "EEex_Sprite_IterateSelectedIDs",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_LoadedWithUUIDCallback",
+      "name": "EEex_Sprite_LoadedWithUUIDCallback",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_OpenOp214Interface",
+      "name": "EEex_Sprite_OpenOp214Interface",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_SetLocalInt",
+      "name": "EEex_Sprite_SetLocalInt",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_SetLocalString",
+      "name": "EEex_Sprite_SetLocalString",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Test_2DAFunctions",
+      "name": "EEex_Test_2DAFunctions",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Test/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Test_IDSFunctions",
+      "name": "EEex_Test_IDSFunctions",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Test/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Trigger_EvalConditionalStringAsAIBase",
+      "name": "EEex_Trigger_EvalConditionalStringAsAIBase",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Trigger/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Trigger_EvalScriptFileConditionalAsAIBase",
+      "name": "EEex_Trigger_EvalScriptFileConditionalAsAIBase",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Trigger/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Trigger_ParseConditionalString",
+      "name": "EEex_Trigger_ParseConditionalString",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Trigger/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Utility_AlphanumericCompare",
+      "name": "EEex_Utility_AlphanumericCompare",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Utility_AlphanumericSortTable",
+      "name": "EEex_Utility_AlphanumericSortTable",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Utility_ApplyIterator",
+      "name": "EEex_Utility_ApplyIterator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Utility_AugmentIterator",
+      "name": "EEex_Utility_AugmentIterator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Utility_CallIfExists",
+      "name": "EEex_Utility_CallIfExists",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Utility_CallSuper",
+      "name": "EEex_Utility_CallSuper",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Utility_ChainIteratorGenerators",
+      "name": "EEex_Utility_ChainIteratorGenerators",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Utility_ChainIteratorGeneratorsTable",
+      "name": "EEex_Utility_ChainIteratorGeneratorsTable",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Utility_ChainIterators",
+      "name": "EEex_Utility_ChainIterators",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Utility_ChainIteratorsTable",
+      "name": "EEex_Utility_ChainIteratorsTable",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Utility_CollectIteratorValue",
+      "name": "EEex_Utility_CollectIteratorValue",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Utility_CollectIteratorValues",
+      "name": "EEex_Utility_CollectIteratorValues",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Utility_DeepCopy",
+      "name": "EEex_Utility_DeepCopy",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Utility_Default",
+      "name": "EEex_Utility_Default",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Utility_Eval",
+      "name": "EEex_Utility_Eval",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Utility_FilterIterator",
+      "name": "EEex_Utility_FilterIterator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Utility_Find",
+      "name": "EEex_Utility_Find",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Utility_FreeCPtrList",
+      "name": "EEex_Utility_FreeCPtrList",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Utility_GetOrCreate",
+      "name": "EEex_Utility_GetOrCreate",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Utility_GetOrCreateTable",
+      "name": "EEex_Utility_GetOrCreateTable",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Utility_IterateCPtrList",
+      "name": "EEex_Utility_IterateCPtrList",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Utility_IterateMapAsSorted",
+      "name": "EEex_Utility_IterateMapAsSorted",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Utility_MapIteratorValues",
+      "name": "EEex_Utility_MapIteratorValues",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Utility_MapToSortedTable",
+      "name": "EEex_Utility_MapToSortedTable",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Utility_Merge",
+      "name": "EEex_Utility_Merge",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Utility_MutateIterator",
+      "name": "EEex_Utility_MutateIterator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Utility_NewScope",
+      "name": "EEex_Utility_NewScope",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Utility_ProcessIteratorValues",
+      "name": "EEex_Utility_ProcessIteratorValues",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Utility_RangeIterator",
+      "name": "EEex_Utility_RangeIterator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Utility_SelectIterator",
+      "name": "EEex_Utility_SelectIterator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Utility_Split",
+      "name": "EEex_Utility_Split",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Utility_Switch",
+      "name": "EEex_Utility_Switch",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Utility_TableIterator",
+      "name": "EEex_Utility_TableIterator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Utility_Ternary",
+      "name": "EEex_Utility_Ternary",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Utility_TryFinally",
+      "name": "EEex_Utility_TryFinally",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Utility_ValuesIterator",
+      "name": "EEex_Utility_ValuesIterator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Variable_Find",
+      "name": "EEex_Variable_Find",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Variable/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Variable_GetInt",
+      "name": "EEex_Variable_GetInt",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Variable/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Variable_GetOrCreate",
+      "name": "EEex_Variable_GetOrCreate",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Variable/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Variable_GetString",
+      "name": "EEex_Variable_GetString",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Variable/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Variable_SetInt",
+      "name": "EEex_Variable_SetInt",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Variable/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "eeex-functions:EEex_Variable_SetString",
+      "name": "EEex_Variable_SetString",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Variable/index.rst",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    }
+  ]
 }

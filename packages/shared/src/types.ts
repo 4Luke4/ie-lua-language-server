@@ -53,6 +53,12 @@ export interface ApiSymbol {
   parameters?: ApiParameter[];
   returns?: ApiReturn[];
   instanceName?: string;
+  containerName?: string;
+  dataType?: string;
+  byteOffset?: string;
+  byteSize?: number;
+  sizeExpression?: string;
+  memberCount?: number;
   documentationMarkdown?: string;
   documentationState: DocumentationState;
   upstreamUrl: string;

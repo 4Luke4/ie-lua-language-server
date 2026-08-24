@@ -9,6 +9,7 @@ on:
 
 permissions:
   contents: read
+  issues: write
   pull-requests: write
 
 concurrency:
@@ -22,7 +23,71 @@ jobs:
     timeout-minutes: 5
     steps:
       # Do not check out pull-request code in a pull_request_target workflow.
-      # Labeler reads this configuration from the trusted base branch instead.
+      # Labels and labeler configuration are reconciled from the trusted base branch.
+      - name: Reconcile label definitions
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        with:
+          script: |
+            const desiredLabels = [
+              {
+                name: 'github_actions',
+                color: '2088FF',
+                description: 'Changes to GitHub Actions or Dependabot configuration',
+              },
+              {
+                name: 'dependencies',
+                color: '0366D6',
+                description: 'Changes to dependency manifests or lockfiles',
+              },
+              {
+                name: 'documentation',
+                color: '0075CA',
+                description: 'Documentation-only or documentation-affecting changes',
+              },
+              {
+                name: 'javascript',
+                color: 'F1E05A',
+                description: 'JavaScript or TypeScript source changes',
+              },
+            ];
+            const existingLabels = await github.paginate(
+              github.rest.issues.listLabelsForRepo,
+              {
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                per_page: 100,
+              },
+            );
+            const existingByName = new Map(
+              existingLabels.map((label) => [label.name.toLowerCase(), label]),
+            );
+
+            for (const desired of desiredLabels) {
+              const existing = existingByName.get(desired.name.toLowerCase());
+              if (!existing) {
+                await github.rest.issues.createLabel({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  ...desired,
+                });
+                continue;
+              }
+
+              if (
+                existing.name !== desired.name ||
+                existing.color.toUpperCase() !== desired.color ||
+                (existing.description ?? '') !== desired.description
+              ) {
+                await github.rest.issues.updateLabel({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  name: existing.name,
+                  new_name: desired.name,
+                  color: desired.color,
+                  description: desired.description,
+                });
+              }
+            }
       - name: Apply labels
         uses: actions/labeler@bf12e9b00b37c5c0ca2b87b79b2daf7891dbda13 # v7.0.0
         with:
