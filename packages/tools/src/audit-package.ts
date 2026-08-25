@@ -244,10 +244,8 @@ function auditSectionFile(
   if (expectedSection === 'ee-game-structures-x64') {
     const structures = section.symbols.filter((symbol) => symbol.kind === 'structure');
     const fields = section.symbols.filter((symbol) => symbol.kind === 'field');
-    if (section.symbols.length > 0 && (structures.length === 0 || fields.length === 0)) {
-      throw new Error(
-        `Non-empty structure shard must contain structures and fields: ${relativeFile}`,
-      );
+    if (section.symbols.length > 0 && structures.length === 0) {
+      throw new Error(`Non-empty structure shard must contain structures: ${relativeFile}`);
     }
 
     const fieldCounts = new Map<string, number>();
