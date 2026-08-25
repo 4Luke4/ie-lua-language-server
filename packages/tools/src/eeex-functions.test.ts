@@ -118,6 +118,8 @@ void test('game category indexes emit every anchored function with absolute prov
       'Infinity_First',
       '^^^^^^^^^^^^^^',
       '',
+      'First body.',
+      '',
       '::',
       '',
       '   Infinity_First(value)',
@@ -137,9 +139,9 @@ void test('game category indexes emit every anchored function with absolute prov
     symbols.map((symbol) => symbol.name),
     ['Infinity_First', 'Infinity_Second'],
   );
-  assert.match(symbols[0]?.documentationMarkdown ?? '', /First wording\./u);
-  assert.match(symbols[0]?.upstreamUrl ?? '', /index\.rst#L18$/u);
-  assert.match(symbols[1]?.upstreamUrl ?? '', /index\.rst#L27$/u);
+  assert.match(symbols[0]?.documentationMarkdown ?? '', /First body\./u);
+  assert.match(symbols[0]?.upstreamUrl ?? '', /index\.rst#L20$/u);
+  assert.match(symbols[1]?.upstreamUrl ?? '', /index\.rst#L29$/u);
 });
 
 void test('game functions normalize explicit upstream unknown parameters positionally', () => {
