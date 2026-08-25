@@ -111,13 +111,18 @@ jobs:
           git commit --message "chore(data): update EEex API index"
           git push origin "HEAD:$BRANCH_NAME"
 
+          game_function_count="$(node -p "require('./resources/api/sections/ee-game-lua-functions.json').symbols.length")"
+          eeex_function_count="$(node -p "require('./resources/api/sections/eeex-functions.json').symbols.length")"
+          structure_symbol_count="$(node -p "require('./resources/api/sections/ee-game-structures-x64.json').symbols.length")"
+
           body_file="$RUNNER_TEMP/eeex-update-body.md"
           {
             echo "## Summary"
             echo
-            echo "- regenerate permission-safe EEex API metadata from `$UPSTREAM_COMMIT`"
-            echo "- update structure names, fields, types, offsets, byte sizes, and source locations"
-            echo "- retain pinned provenance and omit permission-gated narrative prose"
+            echo "- regenerate complete EE/EEex API data from resolved commit \`$UPSTREAM_COMMIT\`"
+            echo "- emit $game_function_count EE Game function symbols and $eeex_function_count EEex function symbols with documentation"
+            echo "- emit $structure_symbol_count structure/layout symbols with pinned source locations"
+            echo "- retain exact commit-and-line provenance for every generated upstream symbol"
             echo
             echo "## Validation"
             echo
