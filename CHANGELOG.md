@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a Changelog, and this project adheres to Semantic Versioning.
 
+## [v0.5.0]
+
+### Added
+
+- Ship complete, source-discovered EE Game Lua and EEex function metadata with canonical callable names, signatures, typed parameters, defaults, returns, documented instance aliases, hover help, signature help, completion, and pinned definitions.
+- Preserve official function documentation formatting as VS Code Markdown, including paragraphs, emphasis, lists, tables, summaries, warnings, notes, references, raw line breaks, and code examples.
+- Add strict parser fixtures, schema-v2 compatibility coverage, source-to-output completeness checks, and stronger package auditing for function metadata and provenance.
+
+### Changed
+
+- Correct filename-style game function aliases such as `C_AddGold` to callable identities such as `C:AddGold`, and keep colon-delimited EEex methods distinct.
+- Extend scheduled EEex updates to regenerate and report complete function documentation alongside structure metadata.
+- Document a reproducible 1440x900 capture recipe for README completion, hover, diagnostics, and symbols screenshots using Visual Studio Code's built-in Monokai theme.
+
 ## [v0.4.0]
 
 ### Added
