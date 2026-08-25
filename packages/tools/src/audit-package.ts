@@ -19,6 +19,7 @@ function main(): void {
   auditMarketplaceIcon();
 
   const apiIndex = JSON.parse(fs.readFileSync(apiIndexPath, 'utf8')) as {
+    schemaVersion?: number;
     symbols?: unknown[];
     sections?: Array<{
       id?: string;
@@ -26,6 +27,9 @@ function main(): void {
       symbolCount?: number;
     }>;
   };
+  if (apiIndex.schemaVersion !== 2) {
+    throw new Error('Generated API manifest must use schema version 2.');
+  }
   if (apiIndex.symbols) {
     throw new Error(
       'resources/api/api-index.json must be a manifest and must not contain symbols.',
@@ -120,6 +124,7 @@ function auditSectionFile(
   }
 
   const section = JSON.parse(fs.readFileSync(sectionPath, 'utf8')) as {
+    schemaVersion?: number;
     source?: {
       id?: string;
       licenseStatus?: string;
@@ -139,8 +144,26 @@ function auditSectionFile(
       licenseStatus?: string;
       documentationMarkdown?: string;
       documentationState?: string;
+      signature?: string;
+      parameters?: Array<{
+        name?: string;
+        type?: string;
+        defaultValue?: string;
+        description?: string;
+      }>;
+      returns?: Array<{ type?: string; description?: string }>;
+      callableAliases?: Array<{
+        name?: string;
+        receiverType?: string;
+        consumesFirstParameter?: boolean;
+      }>;
+      upstreamUrl?: string;
+      upstreamCommit?: string;
     }>;
   };
+  if (section.schemaVersion !== 2) {
+    throw new Error(`Generated API section must use schema version 2: ${relativeFile}`);
+  }
   if (section.source?.id !== expectedSection) {
     throw new Error(`API section file has wrong source id: ${relativeFile}`);
   }
@@ -195,6 +218,15 @@ function auditSectionFile(
     }
   }
 
+  if (expectedSection === 'ee-game-lua-functions' || expectedSection === 'eeex-functions') {
+    if (section.source?.licenseStatus !== 'allowed' || section.symbols.length === 0) {
+      throw new Error(`${expectedSection} must ship distributable function documentation.`);
+    }
+    for (const symbol of section.symbols) {
+      auditFunctionSymbol(symbol, relativeFile);
+    }
+  }
+
   for (const symbol of section.symbols) {
     if (symbol.sourceSection !== expectedSection) {
       throw new Error(`API symbol is in the wrong section file: ${symbol.id ?? '?'}`);
@@ -216,6 +248,98 @@ function auditSectionFile(
     ) {
       throw new Error(`Allowed documented symbol is missing source Markdown: ${symbol.id ?? '?'}`);
     }
+  }
+}
+
+function auditFunctionSymbol(
+  symbol: {
+    id?: string;
+    name?: string;
+    kind?: string;
+    signature?: string;
+    parameters?: Array<{
+      name?: string;
+      type?: string;
+      defaultValue?: string;
+      description?: string;
+    }>;
+    returns?: Array<{ type?: string; description?: string }>;
+    callableAliases?: Array<{
+      name?: string;
+      receiverType?: string;
+      consumesFirstParameter?: boolean;
+    }>;
+    containerName?: string;
+    instanceName?: string;
+    documentationMarkdown?: string;
+    upstreamUrl?: string;
+    upstreamCommit?: string;
+  },
+  relativeFile: string,
+): void {
+  const label = symbol.id ?? '?';
+  if (
+    !symbol.name ||
+    !/^[A-Za-z_][A-Za-z0-9_]*(?:[.:][A-Za-z_][A-Za-z0-9_]*)?$/u.test(symbol.name) ||
+    (symbol.kind !== 'function' && symbol.kind !== 'method')
+  ) {
+    throw new Error(`Function section has an invalid canonical callable: ${label}`);
+  }
+  const separator = Math.max(symbol.name.lastIndexOf('.'), symbol.name.lastIndexOf(':'));
+  if (
+    (separator === -1 && (symbol.containerName || symbol.instanceName)) ||
+    (separator !== -1 &&
+      (symbol.containerName !== symbol.name.slice(0, separator) ||
+        symbol.instanceName !== symbol.name.slice(separator + 1)))
+  ) {
+    throw new Error(`Function section has inconsistent container/member metadata: ${label}`);
+  }
+  if (!symbol.signature?.startsWith(`${symbol.name}(`) || !symbol.signature.endsWith(')')) {
+    throw new Error(`Function section has an invalid signature: ${label}`);
+  }
+  const signatureNames = symbol.signature
+    .slice(symbol.name.length + 1, -1)
+    .split(',')
+    .map((name) => name.trim())
+    .filter(Boolean);
+  const parameterNames = (symbol.parameters ?? []).map((parameter) => parameter.name);
+  if (
+    parameterNames.some((name) => !name || !/^[A-Za-z_][A-Za-z0-9_]*$/u.test(name)) ||
+    signatureNames.join('\0') !== parameterNames.join('\0')
+  ) {
+    throw new Error(`Function section has inconsistent parameters: ${label}`);
+  }
+  if (symbol.returns?.some((value) => !value.type && !value.description)) {
+    throw new Error(`Function section has an empty return record: ${label}`);
+  }
+  const aliasNames = new Set<string>();
+  for (const alias of symbol.callableAliases ?? []) {
+    if (
+      !alias.name ||
+      !/^[A-Za-z_][A-Za-z0-9_]*$/u.test(alias.name) ||
+      typeof alias.consumesFirstParameter !== 'boolean' ||
+      aliasNames.has(alias.name)
+    ) {
+      throw new Error(`Function section has an invalid callable alias: ${label}`);
+    }
+    aliasNames.add(alias.name);
+    if (
+      alias.consumesFirstParameter &&
+      (!alias.receiverType || alias.receiverType !== symbol.parameters?.[0]?.type)
+    ) {
+      throw new Error(`Function section alias has an inconsistent receiver: ${label}`);
+    }
+  }
+  if (
+    !symbol.documentationMarkdown ||
+    !symbol.upstreamCommit ||
+    !/^[0-9a-f]{40}$/u.test(symbol.upstreamCommit) ||
+    !symbol.upstreamUrl?.includes(symbol.upstreamCommit) ||
+    !/#L\d+$/u.test(symbol.upstreamUrl)
+  ) {
+    throw new Error(
+      `Function section is missing documentation or pinned provenance: ${label} in ${relativeFile}`,
+    );
   }
 }
 

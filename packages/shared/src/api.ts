@@ -1,7 +1,7 @@
 import type { ApiIndex, ApiSymbol, IeLuaSettings } from './types';
 
 export const emptyApiIndex: ApiIndex = {
-  schemaVersion: 1,
+  schemaVersion: 2,
   generatedAt: '1970-01-01T00:00:00.000Z',
   sources: [],
   symbols: [],
@@ -27,6 +27,13 @@ export function findApiSymbol(
     return exactMatch;
   }
 
+  const aliasMatches = symbols.filter((symbol) =>
+    symbol.callableAliases?.some((alias) => !alias.receiverType && alias.name === name),
+  );
+  if (aliasMatches.length === 1) {
+    return aliasMatches[0];
+  }
+
   const methodCall = name.match(/^(.+):([A-Za-z_][A-Za-z0-9_]*)$/u);
   if (!methodCall) {
     return undefined;
@@ -37,13 +44,20 @@ export function findApiSymbol(
     (symbol) => symbol.kind === 'function' || symbol.kind === 'method',
   );
   const receiverMatch = callableSymbols.find(
-    (symbol) => symbol.name === `${receiver}.${methodName}`,
+    (symbol) =>
+      (symbol.containerName === receiver && symbol.instanceName === methodName) ||
+      symbol.name === `${receiver}.${methodName}`,
   );
   if (receiverMatch) {
     return receiverMatch;
   }
 
-  const methodMatches = callableSymbols.filter((symbol) => symbol.name.endsWith(`.${methodName}`));
+  const methodMatches = callableSymbols.filter(
+    (symbol) =>
+      symbol.instanceName === methodName ||
+      symbol.name.endsWith(`.${methodName}`) ||
+      symbol.callableAliases?.some((alias) => alias.name === methodName),
+  );
   return methodMatches.length === 1 ? methodMatches[0] : undefined;
 }
 
@@ -59,13 +73,17 @@ export function findApiSymbolForExpression(
     return direct;
   }
 
-  const separator = expression.lastIndexOf('.');
+  const separator = Math.max(expression.lastIndexOf('.'), expression.lastIndexOf(':'));
   if (separator === -1) {
     return undefined;
   }
   const receiver = expression.slice(0, separator);
   const memberName = expression.slice(separator + 1);
   const symbols = filterApiSymbols(index, settings);
+  const callableMatch = findCallableMember(symbols, receiver, memberName, documentText, offset);
+  if (callableMatch) {
+    return callableMatch;
+  }
   const structureName = resolveStructureName(symbols, receiver, documentText, offset);
   return structureName
     ? symbols.find(
@@ -85,10 +103,46 @@ export function findApiStructureMembers(
   offset: number,
 ): ApiSymbol[] {
   const symbols = filterApiSymbols(index, settings);
+  const directMembers = symbols.filter(
+    (symbol) => symbol.containerName === receiver && symbol.instanceName,
+  );
   const structureName = resolveStructureName(symbols, receiver, documentText, offset);
-  return structureName
-    ? symbols.filter((symbol) => symbol.kind === 'field' && symbol.containerName === structureName)
+  const annotatedType = inferAnnotationType(receiver, documentText, offset);
+  const resolvedType = annotatedType ?? structureName;
+  const typedMembers = resolvedType
+    ? symbols.filter(
+        (symbol) =>
+          (symbol.kind === 'field' && symbol.containerName === structureName) ||
+          symbol.callableAliases?.some(
+            (alias) => alias.receiverType && typesMatch(alias.receiverType, resolvedType),
+          ),
+      )
     : [];
+  return uniqueSymbols([...directMembers, ...typedMembers]);
+}
+
+export interface ApiCallableView {
+  signature: string;
+  parameters: NonNullable<ApiSymbol['parameters']>;
+}
+
+export function makeApiCallableView(
+  symbol: ApiSymbol,
+  expression: string,
+): ApiCallableView | undefined {
+  if (!symbol.signature) return undefined;
+  const separator = Math.max(expression.lastIndexOf('.'), expression.lastIndexOf(':'));
+  const member = separator === -1 ? expression : expression.slice(separator + 1);
+  const alias = symbol.callableAliases?.find(
+    (candidate) => candidate.name === member || candidate.name === expression,
+  );
+  const parameters = symbol.parameters ?? [];
+  if (!alias) return { signature: symbol.signature, parameters };
+  const visibleParameters = alias.consumesFirstParameter ? parameters.slice(1) : parameters;
+  return {
+    signature: `${expression}(${visibleParameters.map((parameter) => parameter.name).join(', ')})`,
+    parameters: visibleParameters,
+  };
 }
 
 export function makeDocumentation(symbol: ApiSymbol): string {
@@ -116,12 +170,12 @@ export function makeDocumentation(symbol: ApiSymbol): string {
     chunks.push(layoutFacts.join('  \\n'));
   }
 
-  if (symbol.documentationState === 'undocumented') {
+  if (symbol.documentationMarkdown) {
+    chunks.push(symbol.documentationMarkdown);
+  } else if (symbol.documentationState === 'undocumented') {
     chunks.push('Undocumented in official source.');
   } else if (symbol.documentationState === 'permission-gated') {
     chunks.push('Narrative upstream documentation is permission-gated and is not bundled.');
-  } else if (symbol.documentationMarkdown) {
-    chunks.push(symbol.documentationMarkdown);
   }
   chunks.push('---', `Source: [${symbol.upstreamUrl}](${symbol.upstreamUrl})`);
   return chunks.join('\\n\\n');
@@ -164,8 +218,48 @@ function resolveStructureName(
   return structureName;
 }
 
+function findCallableMember(
+  symbols: ApiSymbol[],
+  receiver: string,
+  memberName: string,
+  documentText: string,
+  offset: number,
+): ApiSymbol | undefined {
+  const direct = symbols.find(
+    (symbol) => symbol.containerName === receiver && symbol.instanceName === memberName,
+  );
+  if (direct) return direct;
+
+  const annotatedType = inferAnnotationType(receiver, documentText, offset);
+  const aliasMatches = symbols.filter((symbol) =>
+    symbol.callableAliases?.some(
+      (alias) =>
+        alias.name === memberName &&
+        (!annotatedType || !alias.receiverType || typesMatch(alias.receiverType, annotatedType)),
+    ),
+  );
+  return aliasMatches.length === 1 ? aliasMatches[0] : undefined;
+}
+
+function uniqueSymbols(symbols: ApiSymbol[]): ApiSymbol[] {
+  return [...new Map(symbols.map((symbol) => [symbol.id, symbol])).values()];
+}
+
+function typesMatch(left: string, right: string): boolean {
+  return normalizeStructureType(left) === normalizeStructureType(right);
+}
+
 function inferAnnotatedStructureName(
   symbols: ApiSymbol[],
+  receiver: string,
+  documentText: string,
+  offset: number,
+): string | undefined {
+  const annotatedType = inferAnnotationType(receiver, documentText, offset);
+  return annotatedType ? findReferencedStructureName(symbols, annotatedType) : undefined;
+}
+
+function inferAnnotationType(
   receiver: string,
   documentText: string,
   offset: number,
@@ -199,7 +293,7 @@ function inferAnnotatedStructureName(
     }
   }
 
-  return annotatedType ? findReferencedStructureName(symbols, annotatedType) : undefined;
+  return annotatedType;
 }
 
 function annotationPayload(line: string, directive: string): string | undefined {

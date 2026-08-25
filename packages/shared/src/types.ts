@@ -52,6 +52,7 @@ export interface ApiSymbol {
   signature?: string;
   parameters?: ApiParameter[];
   returns?: ApiReturn[];
+  callableAliases?: ApiCallableAlias[];
   instanceName?: string;
   containerName?: string;
   dataType?: string;
@@ -64,6 +65,12 @@ export interface ApiSymbol {
   upstreamUrl: string;
   upstreamCommit?: string;
   licenseStatus: LicenseStatus;
+}
+
+export interface ApiCallableAlias {
+  name: string;
+  receiverType?: string;
+  consumesFirstParameter: boolean;
 }
 
 export interface ApiParameter {
@@ -79,14 +86,14 @@ export interface ApiReturn {
 }
 
 export interface ApiIndex {
-  schemaVersion: 1;
+  schemaVersion: 1 | 2;
   generatedAt: string;
   sources: ApiSource[];
   symbols: ApiSymbol[];
 }
 
 export interface ApiIndexManifest {
-  schemaVersion: 1;
+  schemaVersion: 1 | 2;
   generatedAt: string;
   sources: ApiSource[];
   sections: ApiSectionReference[];
@@ -101,7 +108,7 @@ export interface ApiSectionReference {
 }
 
 export interface ApiSectionFile {
-  schemaVersion: 1;
+  schemaVersion: 1 | 2;
   generatedAt: string;
   source: ApiSource;
   symbols: ApiSymbol[];

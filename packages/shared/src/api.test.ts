@@ -5,6 +5,7 @@ import {
   findApiStructureMembers,
   findApiSymbol,
   findApiSymbolForExpression,
+  makeApiCallableView,
   makeDocumentation,
 } from './api';
 import { defaultSettings } from './settings';
@@ -18,6 +19,30 @@ const symbols: ApiSymbol[] = [
   makeStructure('CDerivedStats', 3240),
   makeField('CGameSprite', 'm_derivedStats', 'const struct CDerivedStats **', '0x1120', 3240),
   makeField('CDerivedStats', 'm_nSTR', '__int16', '0x0', 2),
+  makeCallable('ee-game-lua-functions:C:AddGold', 'C:AddGold', 'C', 'AddGold', [
+    { name: 'Gold', type: 'string', description: 'numeric amount' },
+  ]),
+  makeCallable(
+    'eeex-functions:EEex_Options_Option:get',
+    'EEex_Options_Option:get',
+    'EEex_Options_Option',
+    'get',
+  ),
+  makeCallable(
+    'eeex-functions:EEex_Options_Option:getDefault',
+    'EEex_Options_Option:getDefault',
+    'EEex_Options_Option',
+    'getDefault',
+  ),
+  makeCallable(
+    'eeex-functions:EEex_Options_Option:set',
+    'EEex_Options_Option:set',
+    'EEex_Options_Option',
+    'set',
+    [{ name: 'newValue', type: '<any>', description: 'new value' }],
+  ),
+  makeAliasCallable('eeex-functions:EEex_Test_RunThing', 'EEex_Test_RunThing', 'run', 'CThing'),
+  makeAliasCallable('eeex-functions:EEex_Test_RunOther', 'EEex_Test_RunOther', 'run', 'COther'),
 ];
 
 const index: ApiIndex = {
@@ -41,6 +66,45 @@ void test('API lookup resolves a colon call when the method name is unique', () 
 
 void test('API lookup does not guess when a colon-call method name is ambiguous', () => {
   assert.equal(findApiSymbol(index, defaultSettings, 'value:new'), undefined);
+});
+
+void test('game namespaces complete canonical members after colon syntax', () => {
+  assert.deepEqual(
+    findApiStructureMembers(index, defaultSettings, 'C', '', 0).map(
+      (symbol) => symbol.instanceName,
+    ),
+    ['AddGold'],
+  );
+  assert.equal(findApiSymbol(index, defaultSettings, 'C:AddGold')?.signature, 'C:AddGold(Gold)');
+});
+
+void test('colon-delimited EEex methods remain distinct', () => {
+  assert.deepEqual(
+    findApiStructureMembers(index, defaultSettings, 'EEex_Options_Option', '', 0).map(
+      (symbol) => symbol.instanceName,
+    ),
+    ['get', 'getDefault', 'set'],
+  );
+});
+
+void test('typed instance aliases resolve and consume the receiver in signature help', () => {
+  const documentText = ['---@type CThing', 'local thing', 'thing:run(1)'].join('\n');
+  const symbol = findApiSymbolForExpression(
+    index,
+    defaultSettings,
+    'thing:run',
+    documentText,
+    documentText.length,
+  );
+  assert.equal(symbol?.name, 'EEex_Test_RunThing');
+  assert.deepEqual(makeApiCallableView(symbol!, 'thing:run'), {
+    signature: 'thing:run(value)',
+    parameters: [{ name: 'value', type: 'integer', description: 'value to use' }],
+  });
+});
+
+void test('ambiguous untyped instance aliases produce no guessed lookup', () => {
+  assert.equal(findApiSymbolForExpression(index, defaultSettings, 'thing:run', '', 0), undefined);
 });
 
 void test('structure-qualified completion returns unqualified field symbols', () => {
@@ -154,5 +218,53 @@ function makeField(
     documentationState: 'permission-gated',
     upstreamUrl: `https://example.com/${name}#L1`,
     licenseStatus: 'permission-gated',
+  };
+}
+
+function makeCallable(
+  id: string,
+  name: string,
+  containerName: string,
+  instanceName: string,
+  parameters: NonNullable<ApiSymbol['parameters']> = [],
+): ApiSymbol {
+  return {
+    id,
+    name,
+    kind: 'method',
+    sourceSection: id.startsWith('eeex-functions:') ? 'eeex-functions' : 'ee-game-lua-functions',
+    signature: `${name}(${parameters.map((parameter) => parameter.name).join(', ')})`,
+    ...(parameters.length > 0 ? { parameters } : {}),
+    containerName,
+    instanceName,
+    documentationMarkdown: 'Official wording.',
+    documentationState: 'documented',
+    upstreamUrl: `https://example.com/${id}#L1`,
+    licenseStatus: 'allowed',
+  };
+}
+
+function makeAliasCallable(
+  id: string,
+  name: string,
+  aliasName: string,
+  receiverType: string,
+): ApiSymbol {
+  const parameters = [
+    { name: 'receiver', type: receiverType, description: 'receiver value' },
+    { name: 'value', type: 'integer', description: 'value to use' },
+  ];
+  return {
+    id,
+    name,
+    kind: 'function',
+    sourceSection: 'eeex-functions',
+    signature: `${name}(receiver, value)`,
+    parameters,
+    callableAliases: [{ name: aliasName, receiverType, consumesFirstParameter: true }],
+    documentationMarkdown: 'Official wording.',
+    documentationState: 'documented',
+    upstreamUrl: `https://example.com/${id}#L1`,
+    licenseStatus: 'allowed',
   };
 }

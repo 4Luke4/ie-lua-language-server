@@ -8,6 +8,11 @@ import type {
   SourceSectionId,
 } from '@ie-lua/shared';
 import { parseEeexStructureSymbols } from './eeex-structures';
+import {
+  parseEeexFunctionSymbols,
+  parseGameFunctionSymbol,
+  parseGameIndexDescriptions,
+} from './eeex-functions';
 
 const repoRoot = path.resolve(__dirname, '../..');
 const outputDirectory = path.resolve(repoRoot, 'resources/api');
@@ -36,14 +41,14 @@ function makeSources(eeexCommit: string | undefined): ApiSource[] {
       title: 'EE Game Lua Functions',
       url: `https://github.com/Bubb13/EEex-Docs/tree/${eeexRef}/source/EE%20Game%20Lua%20Functions`,
       ...(eeexCommit ? { commit: eeexCommit } : {}),
-      licenseStatus: 'permission-gated',
+      licenseStatus: 'allowed',
     },
     {
       id: 'eeex-functions',
       title: 'EEex Functions',
       url: `https://github.com/Bubb13/EEex-Docs/tree/${eeexRef}/source/EEex%20Functions`,
       ...(eeexCommit ? { commit: eeexCommit } : {}),
-      licenseStatus: 'permission-gated',
+      licenseStatus: 'allowed',
     },
     {
       id: 'ee-game-structures-x64',
@@ -100,10 +105,10 @@ async function main(): Promise<void> {
 
   const sources = makeSources(eeexCommit);
   const generatedAt = new Date().toISOString();
-  const dedupedSymbols = dedupeSymbols(symbols);
+  const dedupedSymbols = validateAndSortSymbols(symbols);
   const symbolsBySection = groupSymbolsBySection(dedupedSymbols, sources);
   const index: ApiIndexManifest = {
-    schemaVersion: 1,
+    schemaVersion: 2,
     generatedAt,
     sources,
     sections: sources.map((source) => ({
@@ -118,7 +123,7 @@ async function main(): Promise<void> {
   fs.mkdirSync(sectionDirectory, { recursive: true });
   for (const source of sources) {
     const section: ApiSectionFile = {
-      schemaVersion: 1,
+      schemaVersion: 2,
       generatedAt,
       source,
       symbols: symbolsBySection.get(source.id) ?? [],
@@ -324,25 +329,17 @@ async function fetchEeexSymbols(eeexCommit: string): Promise<ApiSymbol[]> {
     throw new Error('EEex repository tree response was truncated.');
   }
 
+  const gameTree = treeForSection(rootTree, 'ee-game-lua-functions');
+  const eeexTree = treeForSection(rootTree, 'eeex-functions');
   const [gameLua, eeexFunctions, structures] = await Promise.all([
-    fetchTreeSymbols({
-      sourceSection: 'ee-game-lua-functions',
-      tree: treeForSection(rootTree, 'ee-game-lua-functions'),
-      commit: eeexCommit,
-      kind: 'function',
-      symbolFromPath: (entryPath) => path.basename(entryPath, '.rst'),
-      includePath: (entryPath) =>
-        entryPath.endsWith('.rst') && path.basename(entryPath) !== 'index.rst',
-    }),
-    fetchRstAnchorSymbols({
-      sourceSection: 'eeex-functions',
-      tree: treeForSection(rootTree, 'eeex-functions'),
-      commit: eeexCommit,
-      kind: 'function',
-      includeAnchor: (anchor) => anchor.startsWith('EEex_'),
-    }),
+    fetchGameFunctionSymbols(gameTree, eeexCommit),
+    fetchEeexFunctionSymbols(eeexTree, eeexCommit),
     fetchEeexStructureSymbols(treeForSection(rootTree, 'ee-game-structures-x64'), eeexCommit),
   ]);
+
+  console.log(
+    `EEex-Docs ${eeexCommit}: generated ${gameLua.length} EE Game functions, ${eeexFunctions.length} EEex functions, and ${structures.length} structure symbols.`,
+  );
 
   return [...gameLua, ...eeexFunctions, ...structures];
 }
@@ -402,71 +399,104 @@ function treeForSection(rootTree: GitTree, sourceSection: SourceSectionId): GitT
   };
 }
 
-async function fetchTreeSymbols(options: {
-  sourceSection: SourceSectionId;
-  tree: GitTree;
-  commit: string;
-  kind: ApiSymbol['kind'];
-  includePath: (entryPath: string) => boolean;
-  symbolFromPath: (entryPath: string) => string;
-}): Promise<ApiSymbol[]> {
-  return options.tree.tree
-    .filter((entry) => entry.type === 'blob' && options.includePath(entry.path))
-    .map((entry) => {
-      const name = options.symbolFromPath(entry.path);
-      return {
-        id: `${options.sourceSection}:${name}`,
-        name,
-        kind: options.kind,
-        sourceSection: options.sourceSection,
-        documentationState: 'permission-gated',
-        upstreamUrl: `https://github.com/Bubb13/EEex-Docs/blob/${options.commit}/source/${encodePath(
-          sectionPath(options.sourceSection),
-        )}/${encodePath(entry.path)}`,
-        upstreamCommit: options.commit,
-        licenseStatus: 'permission-gated',
-      } satisfies ApiSymbol;
-    });
-}
-
-async function fetchRstAnchorSymbols(options: {
-  sourceSection: SourceSectionId;
-  tree: GitTree;
-  commit: string;
-  kind: ApiSymbol['kind'];
-  includeAnchor: (anchor: string) => boolean;
-}): Promise<ApiSymbol[]> {
-  const indexPaths = options.tree.tree
+async function fetchGameFunctionSymbols(tree: GitTree, commit: string): Promise<ApiSymbol[]> {
+  const pagePaths = tree.tree
+    .filter(
+      (entry) =>
+        entry.type === 'blob' &&
+        entry.path.endsWith('.rst') &&
+        path.basename(entry.path) !== 'index.rst',
+    )
+    .map((entry) => entry.path)
+    .sort();
+  const indexPaths = tree.tree
     .filter((entry) => entry.type === 'blob' && entry.path.endsWith('index.rst'))
     .map((entry) => entry.path);
-  const symbols: ApiSymbol[] = [];
-
-  for (const indexPath of indexPaths) {
-    const rawUrl = `https://raw.githubusercontent.com/Bubb13/EEex-Docs/${options.commit}/source/${encodePath(
-      sectionPath(options.sourceSection),
-    )}/${encodePath(indexPath)}`;
-    const text = await fetchText(rawUrl);
-    const anchors = [...text.matchAll(/^\.\. _([^:\n]+):/gmu)]
-      .map((match) => match[1] ?? '')
-      .filter(options.includeAnchor);
-    for (const anchor of anchors) {
-      symbols.push({
-        id: `${options.sourceSection}:${anchor}`,
-        name: anchor,
-        kind: options.kind,
-        sourceSection: options.sourceSection,
-        documentationState: 'permission-gated',
-        upstreamUrl: rawUrl.replace(
-          `https://raw.githubusercontent.com/Bubb13/EEex-Docs/${options.commit}/`,
-          `https://github.com/Bubb13/EEex-Docs/blob/${options.commit}/`,
-        ),
-        upstreamCommit: options.commit,
-        licenseStatus: 'permission-gated',
-      });
-    }
+  if (pagePaths.length === 0 || indexPaths.length === 0) {
+    throw new Error('EE Game Lua Functions tree is incomplete.');
   }
 
+  const descriptionsByDirectory = new Map<string, Map<string, string>>();
+  await Promise.all(
+    indexPaths.map(async (indexPath) => {
+      const sourcePath = `source/${sectionPath('ee-game-lua-functions')}/${indexPath}`;
+      descriptionsByDirectory.set(
+        path.dirname(indexPath),
+        parseGameIndexDescriptions(
+          await fetchEeexSourceText('ee-game-lua-functions', indexPath, commit),
+          sourcePath,
+        ),
+      );
+    }),
+  );
+
+  const symbols = await Promise.all(
+    pagePaths.map(async (pagePath) => {
+      const sourcePath = `source/${sectionPath('ee-game-lua-functions')}/${pagePath}`;
+      const anchor = path.basename(pagePath, '.rst');
+      const indexDescription = descriptionsByDirectory.get(path.dirname(pagePath))?.get(anchor);
+      return parseGameFunctionSymbol({
+        commit,
+        sourcePath,
+        text: await fetchEeexSourceText('ee-game-lua-functions', pagePath, commit),
+        ...(indexDescription !== undefined ? { indexDescription } : {}),
+      });
+    }),
+  );
+  if (symbols.length !== pagePaths.length) {
+    throw new Error(
+      `EE Game function completeness failure: ${pagePaths.length} sources, ${symbols.length} symbols.`,
+    );
+  }
   return symbols;
+}
+
+async function fetchEeexFunctionSymbols(tree: GitTree, commit: string): Promise<ApiSymbol[]> {
+  const indexPaths = tree.tree
+    .filter((entry) => entry.type === 'blob' && entry.path.endsWith('index.rst'))
+    .map((entry) => entry.path)
+    .sort();
+  if (indexPaths.length === 0) throw new Error('EEex Functions tree is incomplete.');
+  const symbols = (
+    await Promise.all(
+      indexPaths.map(async (indexPath) => {
+        const sourcePath = `source/${sectionPath('eeex-functions')}/${indexPath}`;
+        return parseEeexFunctionSymbols({
+          commit,
+          sourcePath,
+          text: await fetchEeexSourceText('eeex-functions', indexPath, commit),
+        });
+      }),
+    )
+  ).flat();
+  const expectedAnchors = (
+    await Promise.all(
+      indexPaths.map((indexPath) => fetchEeexSourceText('eeex-functions', indexPath, commit)),
+    )
+  ).reduce((count, text) => count + [...text.matchAll(/^\.\. _EEex_.+:\s*$/gmu)].length, 0);
+  if (symbols.length !== expectedAnchors) {
+    throw new Error(
+      `EEex function completeness failure: ${expectedAnchors} anchors, ${symbols.length} symbols.`,
+    );
+  }
+  return symbols;
+}
+
+async function fetchEeexSourceText(
+  sourceSection: SourceSectionId,
+  relativePath: string,
+  commit: string,
+): Promise<string> {
+  const localRoot = process.env.IE_LUA_EEEX_DOCS_ROOT?.trim();
+  if (localRoot) {
+    const sourcePath = path.resolve(localRoot, 'source', sectionPath(sourceSection), relativePath);
+    return fs.readFileSync(sourcePath, 'utf8');
+  }
+  return fetchText(
+    `https://raw.githubusercontent.com/Bubb13/EEex-Docs/${commit}/source/${encodePath(
+      sectionPath(sourceSection),
+    )}/${encodePath(relativePath)}`,
+  );
 }
 
 async function fetchEeexStructureSymbols(tree: GitTree, commit: string): Promise<ApiSymbol[]> {
@@ -475,13 +505,10 @@ async function fetchEeexStructureSymbols(tree: GitTree, commit: string): Promise
     .map((entry) => entry.path);
   const symbols = await Promise.all(
     indexPaths.map(async (indexPath) => {
-      const rawUrl = `https://raw.githubusercontent.com/Bubb13/EEex-Docs/${commit}/source/${encodePath(
-        sectionPath('ee-game-structures-x64'),
-      )}/${encodePath(indexPath)}`;
       return parseEeexStructureSymbols({
         commit,
         indexPath,
-        text: await fetchText(rawUrl),
+        text: await fetchEeexSourceText('ee-game-structures-x64', indexPath, commit),
       });
     }),
   );
@@ -740,10 +767,17 @@ function decodeHtml(value: string): string {
   });
 }
 
-function dedupeSymbols(symbols: ApiSymbol[]): ApiSymbol[] {
+function validateAndSortSymbols(symbols: ApiSymbol[]): ApiSymbol[] {
   const byId = new Map<string, ApiSymbol>();
   for (const symbol of symbols) {
     const existing = byId.get(symbol.id);
+    if (
+      existing &&
+      (symbol.sourceSection === 'ee-game-lua-functions' ||
+        symbol.sourceSection === 'eeex-functions')
+    ) {
+      throw new Error(`Generated duplicate API symbol id: ${symbol.id}`);
+    }
     if (!existing || existing.documentationState !== 'documented') {
       byId.set(symbol.id, symbol);
     }

@@ -34,8 +34,8 @@ import {
   filterApiSymbols,
   filterGlobalApiSymbols,
   findApiStructureMembers,
-  findApiSymbol,
   findApiSymbolForExpression,
+  makeApiCallableView,
   makeDocumentation,
   mergeSettings,
   normalizeSettings,
@@ -145,17 +145,31 @@ connection.onCompletion(async (params) => {
   const analysis = document && !memberReceiver ? await getOrAnalyze(document) : undefined;
   const workspaceNames = new Set(analysis?.symbols.map((symbol) => symbol.name) ?? []);
 
+  const completionSymbols = apiSymbols.flatMap((symbol) => {
+    const primary = { symbol, label: completionLabel(symbol, memberReceiver) };
+    if (memberReceiver) return [primary];
+    return [
+      primary,
+      ...(symbol.callableAliases ?? [])
+        .filter((alias) => !alias.receiverType)
+        .map((alias) => ({ symbol, label: alias.name })),
+    ];
+  });
+
   return [
-    ...apiSymbols.map((symbol): CompletionItem => {
+    ...completionSymbols.map(({ symbol, label }): CompletionItem => {
       const item: CompletionItem = {
-        label: symbol.instanceName ?? symbol.name,
+        label,
         kind: toCompletionKind(symbol.kind),
         documentation: toMarkdownDocumentation(symbol),
         data: {
           apiSymbolId: symbol.id,
         },
       };
-      if (symbol.signature) {
+      const callableView = makeApiCallableView(symbol, label);
+      if (callableView) {
+        item.detail = callableView.signature;
+      } else if (symbol.signature) {
         item.detail = symbol.signature;
       }
       return item;
@@ -230,19 +244,20 @@ connection.onSignatureHelp(async (params) => {
   }
 
   const settings = await getSettings(document.uri);
-  const apiSymbol = findApiSymbol(apiIndex, settings, name);
-  if (!apiSymbol?.signature) {
+  const apiSymbol = findApiSymbolForExpression(apiIndex, settings, name, text, offset);
+  const callableView = apiSymbol ? makeApiCallableView(apiSymbol, name) : undefined;
+  if (!apiSymbol || !callableView) {
     return null;
   }
 
   const signature = {
-    label: apiSymbol.signature,
+    label: callableView.signature,
     documentation: {
       kind: 'markdown' as const,
       value: makeDocumentation(apiSymbol),
     },
   };
-  const parameters = apiSymbol.parameters?.map((parameter) => ({
+  const parameters = callableView.parameters.map((parameter) => ({
     label: parameter.name,
     ...(parameter.description ? { documentation: parameter.description } : {}),
   }));
@@ -601,13 +616,23 @@ function toCompletionKind(kind: string): CompletionItemKind {
   }
 }
 
+function completionLabel(symbol: ApiSymbol, memberReceiver: string | undefined): string {
+  if (!memberReceiver) return symbol.name;
+  if (symbol.containerName === memberReceiver && symbol.instanceName) return symbol.instanceName;
+  return (
+    symbol.callableAliases?.find((alias) => alias.receiverType)?.name ??
+    symbol.instanceName ??
+    symbol.name
+  );
+}
+
 function getMemberReceiverAt(
   document: TextDocument,
   position: { line: number; character: number },
 ): string | undefined {
   const beforeCursor = document.getText().slice(0, document.offsetAt(position));
   return beforeCursor.match(
-    /([A-Za-z_][A-Za-z0-9_:]*(?:\.[A-Za-z_][A-Za-z0-9_]*)*)\.[A-Za-z0-9_]*$/u,
+    /([A-Za-z_][A-Za-z0-9_]*(?:[.:][A-Za-z_][A-Za-z0-9_]*)*)[.:][A-Za-z0-9_]*$/u,
   )?.[1];
 }
 
