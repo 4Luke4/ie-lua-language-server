@@ -1242,6 +1242,11 @@
       "kind": "function",
       "sourceSection": "ee-game-lua-functions",
       "signature": "Infinity_JoinMultiplayerGame(id)",
+      "parameters": [
+        {
+          "name": "id"
+        }
+      ],
       "documentationMarkdown": "**Notes**\n\n**Example**\n\n---",
       "documentationState": "documented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L2857",

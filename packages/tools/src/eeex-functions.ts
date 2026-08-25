@@ -417,7 +417,8 @@ function parseEeexTable(body: string, heading: string, sourcePath: string): stri
 
 function parseGameParameters(text: string, signatureNames: string[]): ApiParameter[] {
   const section = extractBoldSection(text, 'Parameters');
-  if (!section || /^\s*None\s*$/u.test(section)) return [];
+  if (!section) return signatureNames.map((name) => ({ name }));
+  if (/^\s*None\s*$/u.test(section)) return [];
   if (/^\s*\(?\?+\)?\s*$/u.test(section)) {
     return signatureNames.map((name) => ({ name }));
   }
