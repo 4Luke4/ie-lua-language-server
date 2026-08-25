@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 3,
+  "generatedAt": "2026-08-25T18:10:55.136Z",
+  "source": {
+    "id": "eeex-functions",
+    "title": "EEex Functions",
+    "url": "https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions",
+    "commit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+    "licenseStatus": "allowed"
+  },
+  "title": "Script",
+  "upstreamPath": "source/EEex Functions/Script/index.rst",
+  "symbols": [
+    {
+      "id": "eeex-functions:EEex_Script_GetResRef",
+      "name": "EEex_Script_GetResRef",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Script_GetResRef()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Script/index.rst#L16",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Script_IsPlayerScript",
+      "name": "EEex_Script_IsPlayerScript",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Script_IsPlayerScript()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Script/index.rst#L24",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    }
+  ]
+}

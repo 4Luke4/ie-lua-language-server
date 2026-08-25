@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 3,
+  "generatedAt": "2026-08-25T18:10:55.136Z",
+  "source": {
+    "id": "ee-game-lua-functions",
+    "title": "EE Game Lua Functions",
+    "url": "https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions",
+    "commit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+    "licenseStatus": "allowed"
+  },
+  "title": "chapterScreen",
+  "upstreamPath": "source/EE Game Lua Functions/chapterScreen/index.rst",
+  "symbols": [
+    {
+      "id": "ee-game-lua-functions:chapterScreen:IsDoneButtonClickable",
+      "name": "chapterScreen:IsDoneButtonClickable",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "chapterScreen:IsDoneButtonClickable()",
+      "returns": [
+        {
+          "description": "Returns true `1` if successful or false `0` otherwise.\n\nPushes onto lua stack a lua boolean `true` if button is clickable or a lua boolean `false` otherwise."
+        }
+      ],
+      "containerName": "chapterScreen",
+      "instanceName": "IsDoneButtonClickable",
+      "documentationMarkdown": "Determines if the `Done` button is enabled and clickable by user\n\n**Parameters**\n\nNone\n\n**Returns**\n\nReturns true `1` if successful or false `0` otherwise.\n\nPushes onto lua stack a lua boolean `true` if button is clickable or a lua boolean `false` otherwise.\n\n**Notes**\n\nThe lua `action` occurs if the button is enabled (clickable) and is clicked\n\nCalls the tolua_BaldurLUA_CScreenChapter_IsDoneButtonClickable00 function\n\n**Example**\n\nThe `Done` button as defined in `UI.MENU`:\n\n```lua\nbutton\n{\n    area 532 714 234 44\n    bam GUIOSTUR\n    text \"DONE_BUTTON\"\n    text style \"button\"\n    clickable lua \"chapterScreen:IsDoneButtonClickable()\"\n    action\n    \"\n        chapterScreen:OnDoneButtonClick()\n    \"\n}\n```\n\n**See Also**\n\n[chapterScreen:OnDoneButtonClick](#chapterScreen_OnDoneButtonClick)",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/chapterScreen/chapterScreen_IsDoneButtonClickable.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:chapterScreen:IsReplayButtonClickable",
+      "name": "chapterScreen:IsReplayButtonClickable",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "chapterScreen:IsReplayButtonClickable()",
+      "returns": [
+        {
+          "description": "Returns true `1` if successful or false `0` otherwise.\n\nPushes onto lua stack a lua boolean `true` if button is clickable or a lua boolean `false` otherwise."
+        }
+      ],
+      "containerName": "chapterScreen",
+      "instanceName": "IsReplayButtonClickable",
+      "documentationMarkdown": "Determines if the `Replay` button is enabled and clickable by user\n\n**Parameters**\n\nNone\n\n**Returns**\n\nReturns true `1` if successful or false `0` otherwise.\n\nPushes onto lua stack a lua boolean `true` if button is clickable or a lua boolean `false` otherwise.\n\n**Notes**\n\nThe lua `action` occurs if the button is enabled (clickable) and is clicked\n\nCalls the tolua_BaldurLUA_CScreenChapter_IsReplayButtonClickable00 function which calls the [CScreenChapter::IsReplayButtonClickable](#CScreenChapterIsReplayButtonClickable) method\n\n**Example**\n\nThe `Replay` button as defined in `UI.MENU`:\n\n```lua\nbutton\n{\n    area 280 714 234 44\n    bam GUIOSTUL\n    text \"REPLAY_BUTTON\"\n    text style \"button\"\n    clickable lua \"chapterScreen:IsReplayButtonClickable()\"\n    action\n    \"\n        chapterScreen:OnReplayButtonClick()\n    \"\n}\n```\n\n**See Also**\n\n[chapterScreen:OnReplayButtonClick](#chapterScreen_OnReplayButtonClick)",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/chapterScreen/chapterScreen_IsReplayButtonClickable.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:chapterScreen:OnDoneButtonClick",
+      "name": "chapterScreen:OnDoneButtonClick",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "chapterScreen:OnDoneButtonClick()",
+      "containerName": "chapterScreen",
+      "instanceName": "OnDoneButtonClick",
+      "documentationMarkdown": "Event action for when the `Done` button is clicked\n\n**Parameters**\n\nNone\n\n**Returns**\n\nNone\n\n**Notes**\n\nExits the chapter text screen when this button is clicked\n\nThe lua `action` occurs if the button is enabled (clickable) and is clicked\n\nCalls the tolua_BaldurLUA_CScreenChapter_OnDoneButtonClick00 function which calls the [CScreenChapter::OnDoneButtonClick](#CScreenChapterOnDoneButtonClick) method\n\n**Example**\n\nThe `Done` button as defined in `UI.MENU`:\n\n```lua\nbutton\n{\n    area 532 714 234 44\n    bam GUIOSTUR\n    text \"DONE_BUTTON\"\n    text style \"button\"\n    clickable lua \"chapterScreen:IsDoneButtonClickable()\"\n    action\n    \"\n        chapterScreen:OnDoneButtonClick()\n    \"\n}\n```\n\n**See Also**\n\n[chapterScreen:IsDoneButtonClickable](#chapterScreen_IsDoneButtonClickable)",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/chapterScreen/chapterScreen_OnDoneButtonClick.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:chapterScreen:OnReplayButtonClick",
+      "name": "chapterScreen:OnReplayButtonClick",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "chapterScreen:OnReplayButtonClick()",
+      "containerName": "chapterScreen",
+      "instanceName": "OnReplayButtonClick",
+      "documentationMarkdown": "Event action for when the `Replay` button is clicked\n\n**Parameters**\n\nNone\n\n**Returns**\n\nNone\n\n**Notes**\n\nThe lua `action` occurs if the button is enabled (clickable) and is clicked\n\nCalls the tolua_BaldurLUA_CScreenChapter_OnReplayButtonClick00 function which calls the [CScreenChapter::OnReplayButtonClick](#CScreenChapterOnReplayButtonClick) method\n\n**Example**\n\nThe `Replay` button as defined in `UI.MENU`:\n\n```lua\nbutton\n{\n    area 280 714 234 44\n    bam GUIOSTUL\n    text \"REPLAY_BUTTON\"\n    text style \"button\"\n    clickable lua \"chapterScreen:IsReplayButtonClickable()\"\n    action\n    \"\n        chapterScreen:OnReplayButtonClick()\n    \"\n}\n```\n\n**See Also**\n\n[chapterScreen:IsReplayButtonClickable](#chapterScreen_IsReplayButtonClickable)",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/chapterScreen/chapterScreen_OnReplayButtonClick.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:chapterScreen:StartTextScreen",
+      "name": "chapterScreen:StartTextScreen",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "chapterScreen:StartTextScreen()",
+      "containerName": "chapterScreen",
+      "instanceName": "StartTextScreen",
+      "documentationMarkdown": "Load chapter text into UI elements\n\n**Parameters**\n\n- `string` *textscreenOverride* - unknown, process custom 2DA?\n\n**Returns**\n\nNone\n\n**Notes**\n\nProcesses string references (StrRef) stored in `CHPTXT?.2DA` (where `?` is the chapter number). For the `DEFAULT` row in the 2DA file, column 0 stores the StrRef of the chapter number: *\"Chapter 1\"* and column 1 stores the StrRef of the chapter text: *\"Disaster comes on the heels of your victory in Baldur's Gate\"...*\n\nAssigns the strings loaded to UI elements.\n\nLoads chapter backgrounds, starts music and the scrolling text (? - to be confirmed)\n\nCalls the tolua_BaldurLUA_CScreenChapter_StartTextScreen00 function which calls the [CScreenChapter:StartTextScreen](#CScreenChapterStartTextScreen) method\n\n**Example**\n\n```lua\nchapterScreen:StartTextScreen()\n```",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/chapterScreen/chapterScreen_StartTextScreen.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    }
+  ]
+}

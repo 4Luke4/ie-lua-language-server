@@ -11,6 +11,12 @@ const expectedSections = [
   'ee-utility-functions',
 ] as const;
 
+const splitSections = new Set([
+  'ee-game-lua-functions',
+  'eeex-functions',
+  'ee-game-structures-x64',
+]);
+
 function main(): void {
   const apiIndexPath = path.resolve(repoRoot, 'resources/api/api-index.json');
   if (!fs.existsSync(apiIndexPath)) {
@@ -23,12 +29,17 @@ function main(): void {
     symbols?: unknown[];
     sections?: Array<{
       id?: string;
-      file?: string;
+      files?: Array<{
+        title?: string;
+        file?: string;
+        symbolCount?: number;
+        upstreamPath?: string;
+      }>;
       symbolCount?: number;
     }>;
   };
-  if (apiIndex.schemaVersion !== 2) {
-    throw new Error('Generated API manifest must use schema version 2.');
+  if (apiIndex.schemaVersion !== 3) {
+    throw new Error('Generated API manifest must use schema version 3.');
   }
   if (apiIndex.symbols) {
     throw new Error(
@@ -41,17 +52,56 @@ function main(): void {
 
   const seenSections = new Set<string>();
   const expectedFiles = new Set<string>();
+  const seenSymbolIds = new Set<string>();
   for (const expectedSection of expectedSections) {
-    const sectionReference = apiIndex.sections.find((section) => section.id === expectedSection);
-    if (!sectionReference?.file) {
-      throw new Error(`API manifest is missing section file reference: ${expectedSection}`);
+    const matchingSections = apiIndex.sections.filter((section) => section.id === expectedSection);
+    if (matchingSections.length !== 1) {
+      throw new Error(`API manifest must reference section exactly once: ${expectedSection}`);
     }
     if (seenSections.has(expectedSection)) {
       throw new Error(`API manifest has duplicate section reference: ${expectedSection}`);
     }
     seenSections.add(expectedSection);
-    expectedFiles.add(sectionReference.file);
-    auditSectionFile(expectedSection, sectionReference.file, sectionReference.symbolCount);
+    const sectionReference = matchingSections[0]!;
+    if (!sectionReference.files || sectionReference.files.length === 0) {
+      throw new Error(`API manifest is missing shard references: ${expectedSection}`);
+    }
+    if (splitSections.has(expectedSection) && sectionReference.files.length < 2) {
+      throw new Error(
+        `API manifest section must be split into category shards: ${expectedSection}`,
+      );
+    }
+
+    let aggregateCount = 0;
+    for (const fileReference of sectionReference.files) {
+      if (
+        !fileReference.title ||
+        !fileReference.file?.endsWith('.json') ||
+        !Number.isSafeInteger(fileReference.symbolCount) ||
+        fileReference.symbolCount! < 0
+      ) {
+        throw new Error(`API manifest has an incomplete shard reference: ${expectedSection}`);
+      }
+      if (expectedFiles.has(fileReference.file)) {
+        throw new Error(`API manifest references a shard more than once: ${fileReference.file}`);
+      }
+      if (splitSections.has(expectedSection) && !fileReference.upstreamPath) {
+        throw new Error(`API category shard is missing its upstream path: ${fileReference.file}`);
+      }
+      expectedFiles.add(fileReference.file);
+      aggregateCount += fileReference.symbolCount ?? 0;
+      auditSectionFile(
+        expectedSection,
+        fileReference.title,
+        fileReference.file,
+        fileReference.upstreamPath,
+        fileReference.symbolCount,
+        seenSymbolIds,
+      );
+    }
+    if (aggregateCount !== sectionReference.symbolCount) {
+      throw new Error(`API manifest aggregate symbol count mismatch: ${expectedSection}`);
+    }
   }
   auditNoExtraSectionFiles(expectedFiles);
 
@@ -110,8 +160,11 @@ function auditMarketplaceIcon(): void {
 
 function auditSectionFile(
   expectedSection: string,
+  expectedTitle: string,
   relativeFile: string,
+  expectedUpstreamPath: string | undefined,
   expectedSymbolCount: number | undefined,
+  seenSymbolIds: Set<string>,
 ): void {
   const sectionPath = path.resolve(repoRoot, 'resources/api', relativeFile);
   const sectionRoot = path.resolve(repoRoot, 'resources/api/sections');
@@ -125,6 +178,8 @@ function auditSectionFile(
 
   const section = JSON.parse(fs.readFileSync(sectionPath, 'utf8')) as {
     schemaVersion?: number;
+    title?: string;
+    upstreamPath?: string;
     source?: {
       id?: string;
       licenseStatus?: string;
@@ -161,11 +216,14 @@ function auditSectionFile(
       upstreamCommit?: string;
     }>;
   };
-  if (section.schemaVersion !== 2) {
-    throw new Error(`Generated API section must use schema version 2: ${relativeFile}`);
+  if (section.schemaVersion !== 3) {
+    throw new Error(`Generated API section must use schema version 3: ${relativeFile}`);
   }
   if (section.source?.id !== expectedSection) {
     throw new Error(`API section file has wrong source id: ${relativeFile}`);
+  }
+  if (section.title !== expectedTitle || section.upstreamPath !== expectedUpstreamPath) {
+    throw new Error(`API shard metadata does not match its manifest reference: ${relativeFile}`);
   }
   if (!Array.isArray(section.symbols)) {
     throw new Error(`API section file is missing symbols array: ${relativeFile}`);
@@ -173,22 +231,23 @@ function auditSectionFile(
   if (expectedSymbolCount !== undefined && section.symbols.length !== expectedSymbolCount) {
     throw new Error(`API section symbol count mismatch: ${relativeFile}`);
   }
-  const symbolIds = new Set<string>();
   for (const symbol of section.symbols) {
     if (!symbol.id) {
       throw new Error(`API section contains a symbol without an id: ${relativeFile}`);
     }
-    if (symbolIds.has(symbol.id)) {
-      throw new Error(`API section contains duplicate symbol id: ${symbol.id}`);
+    if (seenSymbolIds.has(symbol.id)) {
+      throw new Error(`Generated API data contains duplicate symbol id: ${symbol.id}`);
     }
-    symbolIds.add(symbol.id);
+    seenSymbolIds.add(symbol.id);
   }
 
   if (expectedSection === 'ee-game-structures-x64') {
     const structures = section.symbols.filter((symbol) => symbol.kind === 'structure');
     const fields = section.symbols.filter((symbol) => symbol.kind === 'field');
-    if (structures.length === 0 || fields.length === 0) {
-      throw new Error('EE Game Structures (x64) must ship structure and field metadata.');
+    if (section.symbols.length > 0 && (structures.length === 0 || fields.length === 0)) {
+      throw new Error(
+        `Non-empty structure shard must contain structures and fields: ${relativeFile}`,
+      );
     }
 
     const fieldCounts = new Map<string, number>();
@@ -219,7 +278,7 @@ function auditSectionFile(
   }
 
   if (expectedSection === 'ee-game-lua-functions' || expectedSection === 'eeex-functions') {
-    if (section.source?.licenseStatus !== 'allowed' || section.symbols.length === 0) {
+    if (section.source?.licenseStatus !== 'allowed') {
       throw new Error(`${expectedSection} must ship distributable function documentation.`);
     }
     for (const symbol of section.symbols) {
@@ -345,11 +404,16 @@ function auditFunctionSymbol(
 
 function auditNoExtraSectionFiles(expectedFiles: Set<string>): void {
   const sectionRoot = path.resolve(repoRoot, 'resources/api/sections');
-  const actualFiles = fs
-    .readdirSync(sectionRoot)
-    .filter((entry) => entry.endsWith('.json'))
-    .map((entry) => `sections/${entry}`);
-  for (const actualFile of actualFiles) {
+  const visit = (directory: string): string[] =>
+    fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
+      const entryPath = path.resolve(directory, entry.name);
+      if (entry.isDirectory()) return visit(entryPath);
+      if (!entry.isFile() || !entry.name.endsWith('.json')) return [];
+      return [
+        path.relative(path.resolve(repoRoot, 'resources/api'), entryPath).split(path.sep).join('/'),
+      ];
+    });
+  for (const actualFile of visit(sectionRoot)) {
     if (!expectedFiles.has(actualFile)) {
       throw new Error(`Unexpected API section file: ${actualFile}`);
     }

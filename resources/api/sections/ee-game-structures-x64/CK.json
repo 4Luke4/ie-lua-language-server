@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 3,
+  "generatedAt": "2026-08-25T18:10:55.136Z",
+  "source": {
+    "id": "ee-game-structures-x64",
+    "title": "EE Game Structures (x64)",
+    "url": "https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)",
+    "commit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+    "licenseStatus": "permission-gated"
+  },
+  "title": "CK",
+  "upstreamPath": "source/EE Game Structures (x64)/CK/index.rst",
+  "symbols": [
+    {
+      "id": "ee-game-structures-x64:CKeyInfo",
+      "name": "CKeyInfo",
+      "kind": "structure",
+      "sourceSection": "ee-game-structures-x64",
+      "signature": "struct CKeyInfo (12 bytes)",
+      "byteSize": 12,
+      "memberCount": 4,
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CK/index.rst#L14",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "ee-game-structures-x64:CKeyInfo.m_keyCode",
+      "name": "CKeyInfo.m_keyCode",
+      "kind": "field",
+      "sourceSection": "ee-game-structures-x64",
+      "signature": "m_keyCode: int",
+      "instanceName": "m_keyCode",
+      "containerName": "CKeyInfo",
+      "dataType": "int",
+      "byteOffset": "0x4",
+      "byteSize": 4,
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CK/index.rst#L24",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "ee-game-structures-x64:CKeyInfo.m_repeatCount",
+      "name": "CKeyInfo.m_repeatCount",
+      "kind": "field",
+      "sourceSection": "ee-game-structures-x64",
+      "signature": "m_repeatCount: unsigned int",
+      "instanceName": "m_repeatCount",
+      "containerName": "CKeyInfo",
+      "dataType": "unsigned int",
+      "byteOffset": "0x0",
+      "byteSize": 4,
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CK/index.rst#L22",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "ee-game-structures-x64:CKeyInfo.m_repeatDelay",
+      "name": "CKeyInfo.m_repeatDelay",
+      "kind": "field",
+      "sourceSection": "ee-game-structures-x64",
+      "signature": "m_repeatDelay: unsigned __int8",
+      "instanceName": "m_repeatDelay",
+      "containerName": "CKeyInfo",
+      "dataType": "unsigned __int8",
+      "byteOffset": "0x8",
+      "byteSize": 1,
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CK/index.rst#L26",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    },
+    {
+      "id": "ee-game-structures-x64:CKeyInfo.m_repeatRate",
+      "name": "CKeyInfo.m_repeatRate",
+      "kind": "field",
+      "sourceSection": "ee-game-structures-x64",
+      "signature": "m_repeatRate: unsigned __int8",
+      "instanceName": "m_repeatRate",
+      "containerName": "CKeyInfo",
+      "dataType": "unsigned __int8",
+      "byteOffset": "0x9",
+      "byteSize": 1,
+      "documentationState": "permission-gated",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CK/index.rst#L28",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "permission-gated"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 3,
+  "generatedAt": "2026-08-25T18:10:55.136Z",
+  "source": {
+    "id": "eeex-functions",
+    "title": "EEex Functions",
+    "url": "https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions",
+    "commit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+    "licenseStatus": "allowed"
+  },
+  "title": "Object",
+  "upstreamPath": "source/EEex Functions/Object/index.rst",
+  "symbols": [
+    {
+      "id": "eeex-functions:EEex_Object_AddToArea",
+      "name": "EEex_Object_AddToArea",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Object_AddToArea()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Object/index.rst#L16",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Object_EvalAsAIBase",
+      "name": "EEex_Object_EvalAsAIBase",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Object_EvalAsAIBase()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Object/index.rst#L24",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Object_EvalStringAsAIBase",
+      "name": "EEex_Object_EvalStringAsAIBase",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Object_EvalStringAsAIBase()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Object/index.rst#L32",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Object_ParseString",
+      "name": "EEex_Object_ParseString",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Object_ParseString()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Object/index.rst#L40",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    }
+  ]
+}

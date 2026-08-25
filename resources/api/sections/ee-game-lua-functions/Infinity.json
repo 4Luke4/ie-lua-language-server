@@ -1,0 +1,2618 @@
+{
+  "schemaVersion": 3,
+  "generatedAt": "2026-08-25T18:10:55.136Z",
+  "source": {
+    "id": "ee-game-lua-functions",
+    "title": "EE Game Lua Functions",
+    "url": "https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions",
+    "commit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+    "licenseStatus": "allowed"
+  },
+  "title": "Infinity",
+  "upstreamPath": "source/EE Game Lua Functions/Infinity/index.rst",
+  "symbols": [
+    {
+      "id": "ee-game-lua-functions:Infinity_ActivateInventory",
+      "name": "Infinity_ActivateInventory",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_ActivateInventory()",
+      "documentationMarkdown": "Opens and activates the inventory screen and updates stats for the character\n\n**Notes**\n\nCalls [CScreenInventory::ResetGroundPile](#CScreenInventoryResetGroundPile) and [CScreenInventory::UpdateLua](#CScreenInventoryUpdateLua), which in turn calls [CGameSprite::UpdateLuaStats](#CGameSpriteUpdateLuaStats)\n\nUpdates ability scores, stats, skills, equiptment, paperdoll and items for display in the inventory screen for the current character\n\n**Example**\n\n```lua\nInfinity_ActivateInventory()\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L311",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_ActivateRecord",
+      "name": "Infinity_ActivateRecord",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_ActivateRecord(index)",
+      "parameters": [
+        {
+          "type": "integer",
+          "name": "index",
+          "description": "0 based index of the character to level up"
+        }
+      ],
+      "documentationMarkdown": "Opens and activates the level up dialog\n\n**Parameters**\n\n- `integer` *index* - 0 based index of the character to level up\n\n**Notes**\n\nCalls [CScreenCharacter::OnLevelUpButtonClick](#CScreenCharacterOnLevelUpButtonClick) to open and activate the level up dialog\n\n**Example**\n\nEnables the level up button if character 5 (index 4) can level up, and on clicking the enabled button, the `action` opens the level up dialog via [Infinity_ActivateRecord](#Infinity_ActivateRecord):\n\n```lua\nbutton\n{\n    enabled \"Infinity_CanLevelUp(4)\"\n    bam GUIOSW\n    area 0 382 44 44\n    sequence 0\n    action \"Infinity_ActivateRecord(4)\"\n    pulse 1\n}\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L338",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_AddDLC",
+      "name": "Infinity_AddDLC",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_AddDLC(name, image, title, description, ios_name, purchased, android_name)",
+      "parameters": [
+        {
+          "type": "string",
+          "name": "name",
+          "description": "text or ResRef ?"
+        },
+        {
+          "type": "string",
+          "name": "image",
+          "description": "DLC image - ResRef to image ?"
+        },
+        {
+          "type": "integer",
+          "name": "title",
+          "description": "long pointer to string or StrRef ?"
+        },
+        {
+          "type": "integer",
+          "name": "description",
+          "description": "long pointer to string or StrRef ?"
+        },
+        {
+          "type": "string",
+          "name": "ios_name",
+          "description": "text or ResRef ?"
+        },
+        {
+          "type": "integer",
+          "name": "purchased",
+          "description": "date time stamp ?"
+        },
+        {
+          "type": "string",
+          "name": "android_name",
+          "description": "text or ResRef ?"
+        }
+      ],
+      "documentationMarkdown": "Add DLC to game\n\n**Parameters**\n\n- `string` *name* - text or ResRef ?\n- `string` *image* - DLC image - ResRef to image ?\n- `integer` *title* - long pointer to string or StrRef ?\n- `integer` *description* - long pointer to string or StrRef ?\n- `string` *ios_name* - text or ResRef ?\n- `integer` *purchased* - date time stamp ?\n- `string` *android_name* - text or ResRef ?\n\n**Notes**\n\nFills in a [CDLC](#CDLC) structure from the parameters passed and calls the DLCInsert function, which is defined as:\n\n```lua\nvoid __cdecl DLCInsert(CDLC toInsert);\n```\n\nOnly available on ios or android builds ?\n\nSee also [Infinity_AddDLCContent](#Infinity_AddDLCContent)\n\n**Example**\n\nNo known example\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L376",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_AddDLCContent",
+      "name": "Infinity_AddDLCContent",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_AddDLCContent(name, dlc_id)",
+      "parameters": [
+        {
+          "type": "string",
+          "name": "name",
+          "description": "text or ResRef ?"
+        },
+        {
+          "type": "integer",
+          "name": "dlc_id",
+          "description": "dlc id"
+        }
+      ],
+      "documentationMarkdown": "Add DLC content to game\n\n**Parameters**\n\n- `string` *name* - text or ResRef ?\n- `integer` *dlc_id* - dlc id\n\n**Notes**\n\nFills in a [CDLC_Content](#CDLC_Content) structure from the parameters passed and calls the DLCInsertContent function, which is defined as:\n\n```lua\nvoid __cdecl DLCInsertContent(CDLC_Content toInsert);\n```\n\nOnly available on ios or android builds ?\n\nSee also [Infinity_AddDLC](#Infinity_AddDLC)\n\n**Example**\n\nNo known example\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L416",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_CanCloudSave",
+      "name": "Infinity_CanCloudSave",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_CanCloudSave()",
+      "documentationMarkdown": "Determines if cloud saves are supported by the platform, for example Steam.\n\n**Return Value**\n\nReturns a `boolean` value: `true` if cloud saves are supported on the platform or `false` otherwise\n\n**Notes**\n\nCalls CPlatform::IsPlatformServiceConnected and reads [CBaldurChitin](#CBaldurChitin).m_cChitin => [CChitin](#CChitin).cSteam => CSteam.m_isSteamConnected\n\n**Example**\n\n```lua\nif Infinity_CanCloudSave() == false and (toggleTitles[1][3] == 60 or toggleTitles[2][3] == 60) then\n    removeOptionFromList(toggleTitles,60)\nend\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L452",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_CanLevelUp",
+      "name": "Infinity_CanLevelUp",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_CanLevelUp(index)",
+      "parameters": [
+        {
+          "type": "integer",
+          "name": "index",
+          "description": "0 based index of the character to check if level up is available for"
+        }
+      ],
+      "documentationMarkdown": "Determines if the specified character can level up - has enough experience points to qualify for a level up.\n\n**Parameters**\n\n- `integer` *index* - 0 based index of the character to check if level up is available for\n\n**Return Value**\n\nReturns a `boolean` value: `true` if character can level up or `false` otherwise\n\n**Notes**\n\n**Example**\n\nEnables the level up button if character 5 (index 4) can level up, and on clicking the enabled button, the `action` opens the level up dialog via [Infinity_ActivateRecord](#Infinity_ActivateRecord):\n\n```lua\nbutton\n{\n    enabled \"Infinity_CanLevelUp(4)\"\n    bam GUIOSW\n    area 0 382 44 44\n    sequence 0\n    action \"Infinity_ActivateRecord(4)\"\n    pulse 1\n}\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L482",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_ChangeOption",
+      "name": "Infinity_ChangeOption",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_ChangeOption(option_id, value, panel_id)",
+      "parameters": [
+        {
+          "type": "integer",
+          "name": "option_id",
+          "description": "id of the option to set"
+        },
+        {
+          "type": "integer",
+          "name": "value",
+          "description": "value to set the option to"
+        },
+        {
+          "type": "integer",
+          "name": "panel_id",
+          "description": "id of the panel"
+        }
+      ],
+      "documentationMarkdown": "Set the value of an option in a panel\n\n**Parameters**\n\n- `integer` *option_id* - id of the option to set\n- `integer` *value* - value to set the option to\n- `integer` *panel_id* - id of the panel\n\n**Notes**\n\nCalls CGameOptions::SetOption\n\n**Example**\n\nGet the value of option id `1` in panel id `8` (`panelID` = `8`) to a variable `ttDelaySLDR` and then set option id `1` in panel id `8` (`panelID` = `8`) to the value of the `ttDelaySLDR` variable\n\n```lua\npanelID = 8\nttDelaySLDR = Infinity_GetOption(1, panelID)\nInfinity_ChangeOption( 1, ttDelaySLDR, panelID)\n```\n\nSee also [Infinity_GetOption](#Infinity_GetOption)\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L524",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_CheckItemIdentify",
+      "name": "Infinity_CheckItemIdentify",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_CheckItemIdentify(nSlot)",
+      "parameters": [
+        {
+          "type": "integer",
+          "name": "nSlot",
+          "description": "slot number that item occupies"
+        }
+      ],
+      "documentationMarkdown": "Checks lore skill for identifying an item in an inventory slot\n\n**Parameters**\n\n- `integer` *nSlot* - slot number that item occupies\n\n**Notes**\n\nCalls the [CScreenInventory::CheckItemIdentify](#CScreenInventoryCheckItemIdentify) method.\n\nIf character has a high enough lore skill value then the item specified in the inventory slot *nSlot* is identified, the item's name and description is updated in the inventory slot and in any quick slot buttons that it currently occupies.\n\n**Example**\n\n```lua\nfunction showItemDescriptionInventory(slotName)\n    if(characters[id].equipment[slotName].empty ~= 0) then\n        return\n    end\n    \n    selectedSlot = slotName\n    \n    Infinity_CheckItemIdentify(characters[id].equipment[slotName].id)\n    showItemDescription(characters[id].equipment[slotName].item, 0)\nend\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L560",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_ClickItem",
+      "name": "Infinity_ClickItem",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_ClickItem(arg1)",
+      "parameters": [
+        {
+          "name": "arg1"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n???\n\n**Return Value**\n\n???\n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L599",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_ClickObjectInWorld",
+      "name": "Infinity_ClickObjectInWorld",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_ClickObjectInWorld(ScriptName)",
+      "parameters": [
+        {
+          "type": "string",
+          "name": "ScriptName",
+          "description": "name of the script (for the object) to click the ground at"
+        }
+      ],
+      "documentationMarkdown": "Clicks the ground at the location of the object in the world\n\n**Parameters**\n\n- `string` *ScriptName* - name of the script (for the object) to click the ground at\n\n**Return Value**\n\nNone\n\n**Notes**\n\n**Example**\n\nClick the ground at `MINSC.BS`:\n\n```lua\nInfinity_ClickObjectInWorld(\"Minsc\")\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L629",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_ClickScreen",
+      "name": "Infinity_ClickScreen",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_ClickScreen()",
+      "documentationMarkdown": "Clicks the center of the viewscreen\n\n**Parameters**\n\nNone\n\n**Return Value**\n\nNone\n\n**Example**\n\n```lua\nInfinity_ClickScreen()\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L662",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_ClickWorldAt",
+      "name": "Infinity_ClickWorldAt",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_ClickWorldAt(x, y)",
+      "parameters": [
+        {
+          "type": "integer",
+          "name": "x",
+          "description": "x coordinate to click world at"
+        },
+        {
+          "type": "integer",
+          "name": "y",
+          "description": "y coordinate to click world at"
+        }
+      ],
+      "documentationMarkdown": "Clicks the ground at the specified coordinates, relative to the viewscreen\n\n**Parameters**\n\n- `integer` *x* - x coordinate to click world at\n- `integer` *y* - y coordinate to click world at\n\n**Return Value**\n\nNone\n\n**Notes**\n\n> \"Appears entirely broken. It seems to always click the top-left of the current viewscreen\"\n>\n> --[Bubb](https://forums.beamdog.com/discussion/comment/1065334/#Comment_1065334)\n\nIf your mouse cursor is not in the world (such as on the ActionBar or on a SideBar), it clicks on the world coordinates at `0`, `0`\n\nIf you don't include [Infinity_HoverMouseOver](#Infinity_HoverMouseOver) before [Infinity_ClickWorldAt](#Infinity_ClickWorldAt), it will click at world coordinates `0`, `0` by assuming your cursor is over the interface.\n\nYou can force a click in the game world like so:\n\n```lua\nInfinity_HoverMouseOver(x,y)\nInfinity_ClickWorldAt(x,y)\n```\n\n**Example**\n\n```lua\nInfinity_ClickWorldAt(100,200)\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L690",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_CloseEngine",
+      "name": "Infinity_CloseEngine",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_CloseEngine()",
+      "documentationMarkdown": "Close active engine - unknown\n\n**Parameters**\n\nNone\n\n**Return Value**\n\nNone\n\n**Notes**\n\n- Reads [CBaldurChitin](#CBaldurChitin).m_pEngineJournal => CScreenJournal*\n- Pushes [CBaldurChitin](#CBaldurChitin).m_pEngineWorld => CScreenWorld*\n- Reads [CScreenJournal](#CScreenJournal).m_cBaldurEngine => [CBaldurEngine](#CBaldurEngine).m_cWarp => [CWarp](#CWarp).m_cObject => [CObject](#CObject).vfptr\n- Calls [CObject](#CObject).vfptr + `0x28` = [CWarp::EngineDeactivated](#CWarpEngineDeactivated) ?\n\nUnknown as to the purpose of this function - best leave it alone.\n\n**Example**\n\nNo known examples\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L737",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_DestroyAnimation",
+      "name": "Infinity_DestroyAnimation",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_DestroyAnimation(instanceId, templateName)",
+      "parameters": [
+        {
+          "type": "integer",
+          "name": "instanceId",
+          "description": "instance id"
+        },
+        {
+          "type": "string",
+          "name": "templateName",
+          "description": "name of the template to remove"
+        }
+      ],
+      "documentationMarkdown": "Remove and free memory for the UI items that match the template name and instance id specified\n\n**Parameters**\n\n- `integer` *instanceId* - instance id\n- `string` *templateName* - name of the template to remove\n\n**Return Value**\n\nNone\n\n**Notes**\n\nCalls uiRemoveFromTemplate function, defined as:\n\n```lua\nvoid __cdecl uiRemoveFromTemplate(CString sTemplate, int id);\n```\n\n**Example**\n\nNo known examples\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L773",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_DisplayString",
+      "name": "Infinity_DisplayString",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_DisplayString(arg1)",
+      "parameters": [
+        {
+          "name": "arg1",
+          "description": "special, see notes"
+        }
+      ],
+      "documentationMarkdown": "Displays to the screen the passed content as a string\n\n**Parameters**\n\n- *...* - special, see notes\n\n**Return Value**\n\nNone\n\n**Notes**\n\nSimilar to printf function, this function can accept a variable amount of parameters. Each parameter passed is evaluated, converted to a string if necessary and concatenated to form the final string to display on the screen.\n\nParameters that are:\n\n- Integers - converted to a string.\n- Variables - evaluated and the value of the variable is taken and converted to a string. \n- Functions - evaluated and the result used in other nested functions and/or evaluated to a string.\n\nParamters supports simple math and other lua functions.\n\nYou can inline concatenate strings and variables by using `..` between the string and variable and/or the next parameter, for example the `class` variable is concatenated to the string:\n\n```lua\nInfinity_DisplayString(\"WARNING: unrecognized class argument: \" .. class)\n```\n\n**Examples**\n\nDisplay to screen using inline concatenate using 2 parameters, both using a string and a variable to evaluate:\n\n```lua\nInfinity_DisplayString(\"config: \"..config..\", state: \"..state)\n```\n\nDisplay to screen the result of simple math: (result is displayed as `20000001`):\n\n```lua\nInfinity_DisplayString(20000000 + 1)\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L809",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_DoFile",
+      "name": "Infinity_DoFile",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_DoFile(filename)",
+      "parameters": [
+        {
+          "name": "filename",
+          "description": "full filepath to lua filename to load and process"
+        }
+      ],
+      "documentationMarkdown": "Loads and executes the lua file specified\n\n**Parameters**\n\n- *filename* - full filepath to lua filename to load and process\n\n**Notes**\n\nThe `includes.lua` file used by the game engine uses [Infinity_DoFile](#Infinity_DoFile) to setup the lua environement for the `UI.MENU` and provides support for running any lua file that begins with `M_` found in the games `override` folder. The `M_` lua files are designated for modders.\n\n**Example**\n\nLoad and execute the lua file: `MyLuaFile.lua`:\n\n```lua\nInfinity_DoFile(\"MyLuaFile\")\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L862",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_EnterEdit",
+      "name": "Infinity_EnterEdit",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_EnterEdit(newText, oldText)",
+      "parameters": [
+        {
+          "type": "string",
+          "name": "newText",
+          "description": "string containing the new text content"
+        },
+        {
+          "type": "string",
+          "name": "oldText",
+          "description": "string containing the old text content to replace"
+        }
+      ],
+      "documentationMarkdown": "Enters new text into a UI edit control\n\n**Parameters**\n\n- `string` *newText* - string containing the new text content\n- `string` *oldText* - string containing the old text content to replace\n\n**Return Value**\n\nNone\n\n**Notes**\n\nSearches through all UI edit controls looking for one that has a string containing *oldText* and replaces it with the *newText* string.\n\nReads [uiItem](#uiItem).edit => [uiItem::edit<uiItem::<unnamed_type_edit>>](#uiItem::edit<uiItem::<unnamed_type_edit>>).var to compare against *oldText*, if it matches then it is replaced with *newText*\n\nNot tested or verified\n\n**Example**\n\n```lua\nInfinity_EnterEdit(\"New text to replace\",\"This is a test\")\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L892",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_FetchString",
+      "name": "Infinity_FetchString",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_FetchString(StrRef)",
+      "parameters": [
+        {
+          "type": "integer",
+          "name": "StrRef",
+          "description": "the string reference (StrRef) id to fetch"
+        }
+      ],
+      "documentationMarkdown": "Returns the string for the string reference id specified\n\n**Parameters**\n\n- `integer` *StrRef* - the string reference (StrRef) id to fetch\n\n**Return Value**\n\nReturns the string for the StrRef id specified in the *StrRef* parameter\n\n**Notes**\n\nCalls the [CTlkTable::Fetch](#CTlkTableFetch) method to fetch the StrRef string into a [STR_RES](#STR_RES) structure and pushes [STR_RES](#STR_RES).szText => CString.m_pchData onto the lua stack.\n\n**Example**\n\nReturns the string for StrRef `38848` (*\"Greetings, good customer. A pearl to you.\"*):\n\n> pearl = Infinity_FetchString(38848)\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L930",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_FindItemWithBam",
+      "name": "Infinity_FindItemWithBam",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_FindItemWithBam(BamResRef, Sequence)",
+      "parameters": [
+        {
+          "type": "string",
+          "name": "BamResRef",
+          "description": "the resource reference (ResRef) to search for that matches an existing UI control's bam ResRef"
+        },
+        {
+          "type": "integer",
+          "name": "Sequence",
+          "description": "the bam sequence to match as well (optional)"
+        }
+      ],
+      "documentationMarkdown": "Find a UI control that has the specified bam resource reference\n\n**Parameters**\n\n- `string` - *BamResRef* - the resource reference (ResRef) to search for that matches an existing UI control's bam ResRef\n- `integer` - *Sequence* - the bam sequence to match as well (optional)\n\n**Return Value**\n\nReturns userdata version of the item (a pointer to the [uiItem](#uiItem) structure of the matched UI control or a lua `NIL`)\n\nSee notes for further details.\n\n**Notes**\n\nSearches through all UI controls from the main stack menu and linked list of UI controls:\n\n- Reads [uiMenu](#uiMenu).items for an array of pointers. Each pointer in the array is a [uiItem](#uiItem) structure. \n\n- Reads offset `0x98`: [uiItem](#uiItem).bam => [uiItem::bam<uiItem::<unnamed_type_bam>>](#uiItem::bam<uiItem::<unnamed_type_bam>>).resref\n\n- If the [uiItem::bam<uiItem::<unnamed_type_bam>>](#uiItem::bam<uiItem::<unnamed_type_bam>>).resref field is `0` then the process looks for next uiItem in the linked list to process: reads [uiItem](#uiItem).next field (offset `0x22C`) and repeats the same step above by reading the [uiItem::bam<uiItem::<unnamed_type_bam>>](#uiItem::bam<uiItem::<unnamed_type_bam>>).resref field. If the [uiItem](#uiItem).next field is `0` then the next pointer in the array of pointers from [uiMenu](#uiMenu).items is read and repeats the same step above by reading the [uiItem::bam<uiItem::<unnamed_type_bam>>](#uiItem::bam<uiItem::<unnamed_type_bam>>).resref field.\n\n- If the [uiItem::bam<uiItem::<unnamed_type_bam>>](#uiItem::bam<uiItem::<unnamed_type_bam>>).resref field is not `0` then it converts the field value (a [uiVariant](#uiVariant) type field) to a string. This string is a ResRef. This is then used in comparison with the *BamResRef* ResRef  string parameter.\n\n- If the ResRef strings compared match, and the *Sequence* parameter is **not** specified, then the pointer the [uiItem](#uiItem) structure of the currently matched UI control, is pushed onto the lua stack and the function exits. \n\n- If the ResRef strings compared match, and the *Sequence* parameter is specified and matches the value in the [uiItem::bam<uiItem::<unnamed_type_bam>>](#uiItem::bam<uiItem::<unnamed_type_bam>>).sequence field, then the pointer to the [uiItem](#uiItem) structure of the currently matched UI control, is pushed onto the lua stack and the function exits. \n\n- If the ResRef strings compared match, and the *Sequence* parameter does **not** match the value in the [uiItem::bam<uiItem::<unnamed_type_bam>>](#uiItem::bam<uiItem::<unnamed_type_bam>>).sequence field, then the [uiItem](#uiItem).slot => [uiItem::slot<uiItem::<unnamed_type_slot>>](#uiItem::slot<uiItem::<unnamed_type_slot>>).icon field (a [uiVariant](#uiVariant) type) is read, the value converted to a ResRef string and compared to the *BamResRef* string parameter. If this comparison matches then the pointer to the [uiItem](#uiItem) structure of the currently matched UI control, is pushed onto the lua stack and the function exits.\n\n- If the ResRef strings compared do **not** match, then the [uiItem](#uiItem).slot => [uiItem::slot<uiItem::<unnamed_type_slot>>](#uiItem::slot<uiItem::<unnamed_type_slot>>).icon field (a [uiVariant](#uiVariant) type) is read, the value converted to a ResRef string and compared to the *BamResRef* string parameter. If this comparison matches then the pointer to the [uiItem](#uiItem) structure of the currently matched UI control, is pushed onto the lua stack and the function exits.\n\n- If the ResRef strings compared do **not** match, and there is a valid [uiItem](#uiItem).next then the search and comparison process continues.\n\n- If the ResRef strings compared do **not** match, and there is a no valid [uiItem](#uiItem).next, but there is another pointer in array of pointers found at [uiMenu](#uiMenu).items then the search and comparison process continues.\n\n- If the ResRef strings compared do **not** match and there are no more [uiItem](#uiItem) (via [uiItem](#uiItem).next or [uiMenu](#uiMenu).items) then a lua nil is pushed to the lua stack and the function exits.\n\nIt is unknown how to exactly use this function as there are no known examples.\n\n**Example**\n\nFind the UI control that uses sequence `3` of `GUIOSTLM.BAM` (*which is the reform party button*)\n\n```lua\nreformpartycontrol = Infinity_FindItemWithBam(\"GUIOSTLM\",3)\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L962",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_FindItemWithText",
+      "name": "Infinity_FindItemWithText",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_FindItemWithText(OriginalText)",
+      "parameters": [
+        {
+          "type": "string",
+          "name": "OriginalText",
+          "description": "the text to search for that matches an existing UI control's text"
+        }
+      ],
+      "documentationMarkdown": "Find a UI control that has the specified text\n\n**Parameters**\n\n- `string` *OriginalText* - the text to search for that matches an existing UI control's text\n\n**Return Value**\n\nReturns userdata version of the item (a pointer to the [uiItem](#uiItem) structure of the matched UI control or a lua `NIL`)\n\nSee notes for further details.\n\n**Notes**\n\nSearches through all UI controls from the main stack menu and linked list of UI controls:\n\n- Reads [uiMenu](#uiMenu).items for an array of pointers. Each pointer in the array is a [uiItem](#uiItem) structure. \n\n- Reads 140 bytes of the [uiItem](#uiItem) structure into a local buffer and checks offset `0x70` of the local buffer, which corresponds to the [uiItem](#uiItem).text => [uiItem::text<uiItem::<unnamed_type_text>>](#uiItem::text<uiItem::<unnamed_type_text>>).text field. \n\n- If the [uiItem::text<uiItem::<unnamed_type_text>>](#uiItem::text<uiItem::<unnamed_type_text>>).text field is `0` then the process looks for next uiItem in the linked list to process: reads [uiItem](#uiItem).next field (offset `0x22C`) and repeats the same step above by reading the [uiItem::text<uiItem::<unnamed_type_text>>](#uiItem::text<uiItem::<unnamed_type_text>>).text field. If the [uiItem](#uiItem).next field is `0` then the next pointer in the array of pointers from [uiMenu](#uiMenu).items is read and repeats the same step above by reading the [uiItem::text<uiItem::<unnamed_type_text>>](#uiItem::text<uiItem::<unnamed_type_text>>).text field.\n\n- If the [uiItem::text<uiItem::<unnamed_type_text>>](#uiItem::text<uiItem::<unnamed_type_text>>).text field is not `0` then it converts the field value (a [uiVariant](#uiVariant) type field) to an integer. This integer is a string reference (StrRef) id from the TLK table. The (StrRef) string is loaded into a buffer and this is then used in comparison with the *OriginalText* string parameter.\n\n- If the strings compared match, then the pointer to the [uiItem](#uiItem) structure of the currently matched UI control, is pushed onto the lua stack and the function exits. \n\n- If the strings compared do **not** match, and there is a valid [uiItem](#uiItem).next then the search and comparison process continues.\n\n- If the strings compared do **not** match, and there is a no valid [uiItem](#uiItem).next, but there is another pointer in array of pointers found at [uiMenu](#uiMenu).items then the search and comparison process continues.\n\n- If the strings compared do **not** match and there are no more [uiItem](#uiItem) (via [uiItem](#uiItem).next or [uiMenu](#uiMenu).items) then a lua nil is pushed to the lua stack and the function exits.\n\nIt is unknown how to exactly use this function as there are no known examples.\n\n**Example**\n\n```lua\n--]\nFind the text control that has \"Hello\" \n--[\n\nhellocontrol = Infinity_FindItemWithText(\"Hello\")\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L1024",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_FindUIItemByName",
+      "name": "Infinity_FindUIItemByName",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_FindUIItemByName(UIItemName)",
+      "parameters": [
+        {
+          "type": "string",
+          "name": "UIItemName",
+          "description": "name of the UI item to find"
+        }
+      ],
+      "documentationMarkdown": "Find a UI item by the name specified\n\n**Parameters**\n\n- `string` *UIItemName* - name of the UI item to find\n\n**Return Value**\n\nReturns a pointer to a UI item\n\n**Notes**\n\nReturns the pointer to the item stored in the `nameToItem` array, which is defined internally in the game executable as:\n\n```lua\nnameToItem = {}\n```\n\nItems are stored in the array like so:\n\n```lua\nnameToItem['%s'] = nameToItemPointer\n```\n\nThe `nameToItem` array can be accessed directly in `UI.MENU` or other lua files.\n\nFor example, [Infinity_ClickItem](#Infinity_ClickItem) takes a menuItem userdata type and clicks the center of its area:\n\n```lua\nInfinity_ClickItem(nameToItem[\"whaterNameHere\"])\n```\n\n**Example**\n\nGet the inventory menu item:\n\n```lua\ninventory = Infinity_FindUIItemByName(\"INVENTORY\")\n```\n\nGet the button control for the peasant room to rent at an inn:\n\n```lua\nselectedRoom = Infinity_FindUIItemByName('BUTTON_room_peasant')\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L1080",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_FocusTextEdit",
+      "name": "Infinity_FocusTextEdit",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_FocusTextEdit(element_name)",
+      "parameters": [
+        {
+          "type": "string",
+          "name": "element_name",
+          "description": "name of the text edit control to set the keyboard focus to"
+        }
+      ],
+      "documentationMarkdown": "Set the keyboard focus to the specified text edit contol, so that typing will occur in the text edit control.\n\n**Parameters**\n\n- `string` *element_name* - name of the text edit control to set the keyboard focus to\n\n**Notes**\n\nCalls the uiFocusTextEdit function\n\n**Example**\n\nPartial example of the CLUAConsole cheat text edit control being displayed and the focus moving to it so that typing occurs in that text edit control:\n\n```lua\nname 'cheatConsole'\nalign center bottom\nignoreEsc\n\nonOpen \n\"\n    toolbarTop = 50\n    Infinity_PushMenu('WORLD_MESSAGES')\n    Infinity_PushMenu('cheatMenu', 0, 0);\n    Infinity_FocusTextEdit('luaEditArea'); \n    luaEdit = trim(luaEdit)\n    loadLuaHistory()\n\"\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L1139",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_GetArea",
+      "name": "Infinity_GetArea",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_GetArea(element_name)",
+      "parameters": [
+        {
+          "type": "string",
+          "name": "element_name",
+          "description": "name of the UI Control to return the bounding rectangle for"
+        }
+      ],
+      "documentationMarkdown": "Returns the bounding rectangle (area) for the specified UI Control name\n\n**Parameters**\n\n- `string` *element_name* - name of the UI Control to return the bounding rectangle for\n\n**Return Value**\n\nReturns as `integer` values: x, y, w, h - x coordinate, y coordinate, width and height of rectangle\n\n**Notes**\n\n**Example**\n\nWith a UI Label control named `messagesRect`:\n\n```lua\nlabel\n{\n    name 'messagesRect'\n    area 0 111 863 142\n    rectangle 4\n}\n```\n\nTo get the area of the `messagesRect` label control:\n\n```lua\nlocal x,y,w,h = Infinity_GetArea('messagesRect')\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L1181",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_GetClockTicks",
+      "name": "Infinity_GetClockTicks",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_GetClockTicks()",
+      "documentationMarkdown": "Returns the clock tick count in milliseconds\n\n**Return Value**\n\nReturns an `integer` value of the clock tick in milliseconds\n\n**Notes**\n\nCalls the SDL_GetTicks function, coverts it to a lua number and pushes it onto the lua stack\n\nCan be used to measure the time elapsed between calls to [Infinity_GetClockTicks](#Infinity_GetClockTicks)\n\n**Example**\n\nGet tick count and store it to a variable:\n\n```lua\nchatboxScrollTimeLast = Infinity_GetClockTicks()\n```\n\nLater on, get tick count and use previously stored tick count value (`chatboxScrollTimeLast) to measure time elapsed, and store it to a `dT`` variable:\n\n```lua\nlocal dT = Infinity_GetClockTicks() - chatboxScrollTimeLast\nchatboxScrollTimeLast = Infinity_GetClockTicks()\n```\n\nThe `dT` variable now contains the elapsed time since [Infinity_GetClockTicks](#Infinity_GetClockTicks) was last called.\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L1225",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_GetContainerItemDescription",
+      "name": "Infinity_GetContainerItemDescription",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_GetContainerItemDescription(nSlotNum)",
+      "parameters": [
+        {
+          "type": "integer",
+          "name": "nSlotNum",
+          "description": "slot number to return the item description and and usability text for"
+        }
+      ],
+      "documentationMarkdown": "Updates the description and usability text of an item from a specified slot in a container\n\n**Parameters**\n\n- `integer` *nSlotNum* - slot number to return the item description and and usability text for\n\n**Return Value**\n\nSpecial, see notes\n\n**Notes**\n\nCalls the following class methods: [CGameContainer::GetItem](#CGameContainerGetItem), [CItem::GetUsabilityText](#CItemGetUsabilityText) and [CItem::GetDescription](#CItemGetDescription)\n\nUpdates an existing array named `loot`, which is defined in `UI.MENU` as:\n\n```lua\nloot = \n{\n    containerItems = {},\n    groupItems = {},\n    groundItems = {}\n}\n```\n\nThe `loot` array is updated with the description and usability text of the item occupying the slot *nSlotNum* in the container.\n\n**Example**\n\nUpdate the item description using [Infinity_GetContainerItemDescription](#Infinity_GetContainerItemDescription) and then access the `loot` array via the internal `UI.MENU` function `showItemDescription`:\n\n```lua\nfunction showContainerItemDescription(index)\n    local idxScrolled = index + worldScreen:GetTopContainerItem()\n    if(loot.containerItems[idxScrolled] == nil or loot.containerItems[idxScrolled].item == nil) then\n        return nil\n    end\n    Infinity_GetContainerItemDescription(idxScrolled)\n    showItemDescription(loot.containerItems[idxScrolled].item, 2)\nend\n```\n\nThe `showItemDescription` function, stores some of the `loot` array entries into another array `itemDesc`. `showItemDescription` is defined as:\n\n```lua\nitemDesc = {}\nfunction showItemDescription(item, mode)\n    itemDesc.item = item\n    itemDesc.mode = mode\n    Infinity_PushMenu('ITEM_DESCRIPTION',0,0)\nend\n```\n\nThe `ITEM_DESCRIPTION` menu, which uses the values in the `itemDesc` array is defined as:\n\n```lua\nmenu\n{\n    name 'ITEM_DESCRIPTION'\n    align center center\n    modal\n    label\n    {\n        area 0 0 864 710\n        mosaic GUIINVHI\n    }\n    label\n    {\n        area 81 11 700 44\n        text \"ITEM_TITLE\"\n        text style title\n    }\n    label\n    {\n        area 402 66 52 52\n        icon lua \"itemDesc.item.icon\"\n    }\n    label\n    {\n        area 57 170 295 40\n        text lua \"itemDesc.item.name\"\n        text align center center\n        text style \"label\"\n        text color '5'\n    }\n    text\n    {\n        area 356 180 430 353\n        text lua \"itemDesc.item.description\"\n        scrollbar 'GUISCRC'\n        text style \"normal_parchment\"\n    }\n    label\n    {\n        area 66 210 280 327\n        bam lua \"itemDesc.item.descPicture\"\n        sequence 0\n        frame 0\n        align center center\n    }\n    button\n    {\n        bam         GUIOSTUL\n        sequence    6\n        area        57 638 234 44\n        enabled \"itemDescLeftButtonEnabled()\"\n        text lua \"itemDescLeftButtonText()\"\n        text style \"button\"\n        action\n        \"\n            itemDescLeftButtonAction()\n        \"\n    }\n    button\n    {\n        bam         GUIOSTUM\n        sequence    6\n        area        326 638 204 44\n        text  \"DONE_BUTTON\"\n        text style \"button\"\n        action\n        \"\n            Infinity_PopMenu();\n        \"\n    }\n    button\n    {\n        bam         GUIOSTUR\n        sequence    6\n        area        572 638 234 44\n        enabled \"itemDescRightButtonEnabled()\"\n        text lua \"itemDescRightButtonText()\"\n        text style \"button\"\n        action\n        \"\n            itemDescRightButtonAction()\n        \"\n    }\n}\n```\n\nNote the use of `itemDesc.item.name` and `itemDesc.item.description` etc\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L1265",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_GetContentHeight",
+      "name": "Infinity_GetContentHeight",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_GetContentHeight(font, width, textcontent, point, indent, useFontZoom)",
+      "parameters": [
+        {
+          "type": "string",
+          "name": "font",
+          "description": "string containing resource reference (ResRef) of font"
+        },
+        {
+          "type": "integer",
+          "name": "width",
+          "description": "width of the UI control hosting the content"
+        },
+        {
+          "type": "string",
+          "name": "textcontent",
+          "description": "string containing the text content"
+        },
+        {
+          "type": "integer",
+          "name": "point",
+          "description": "font size"
+        },
+        {
+          "type": "integer",
+          "name": "indent",
+          "description": "a boolean value if indented `1`, or `0` otherwise"
+        },
+        {
+          "type": "integer",
+          "name": "useFontZoom",
+          "description": "boolean value if using font zoom `1`, or `0` otherwise"
+        }
+      ],
+      "documentationMarkdown": "Returns the height of the text content in a UI control\n\n**Parameters**\n\n- `string` *font* - string containing resource reference (ResRef) of font\n- `integer` *width* - width of the UI control hosting the content\n- `string` *textcontent* - string containing the text content\n- `integer` *point* - font size\n- `integer` *indent* - a boolean value if indented `1`, or `0` otherwise\n- `integer` *useFontZoom* - boolean value if using font zoom `1`, or `0` otherwise\n\n**Return Value**\n\nReturns an `integer` of the calculated content height\n\n**Notes**\n\nCalculates the height of the text content in a UI control, taking into account the font used, the font size, word wrapping for the width of the UI control, indentation and/or font zooming.\n\nYou should account for the width of the scrollbar when specifying the *width* parameter\n\n*useFontZoom* is used for font scaling based on the font size (the *point* parameter). If *useFontZoom* is `0`, the text content (the *textcontent* parameter) will always appear at the defined font size, if *useFontZoom* is `1` then font scaling will occur for the text content.\n\n**Example**\n\n```lua\n--Calculate running total of dialog content height\nlocal x,y,w,h = Infinity_GetArea(\"worldPlayerDialogChoicesList\")\nw = w - 18 --account for scrollbar influence on width\nlocal delta = Infinity_GetContentHeight(styles.normal.font, w, text, styles.normal.point, 1, styles.normal.useFontZoom) --1 for indent.\nchatboxContentHeight = chatboxContentHeight + delta\n```\n\nNote: styles are defined in the `BGEE.LUA` file\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L1420",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_GetCurrentGroundPage",
+      "name": "Infinity_GetCurrentGroundPage",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_GetCurrentGroundPage()",
+      "documentationMarkdown": "Returns the current page number of the ground inventory slots\n\n**Return Value**\n\nReturns an `integer` representing the page number of the ground inventory slots\n\n**Notes**\n\nA ground page is a series of inventory slots representing ground items available to pick up or empty slots for items to be dropped into.\n\nGround pages are used to scroll through the groupings of those ground based inventory slots. See also [Infinity_GetMaxGroundPage](#Infinity_GetMaxGroundPage) and [Infinity_GetGroundItemDescription](#Infinity_GetGroundItemDescription)\n\nCalls the [CScreenInventory::GetCurrentGroundPage](#CScreenInventoryGetCurrentGroundPage) method\n\n**Example**\n\n```lua\ncurPage = Infinity_GetCurrentGroundPage()\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L1466",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_GetCurrentMovie",
+      "name": "Infinity_GetCurrentMovie",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_GetCurrentMovie()",
+      "documentationMarkdown": "Returns the current movie\n\n**Parameters**\n\nNone\n\n**Return Value**\n\nReturns a `string` containing the resource reference (ResRef) of the current movie file (WebM file format)\n\n**Notes**\n\nReads CBaldurChitin.m_pEngineProjector => CBaldurProjector.m_pMovie => CResWebM.CRes\n\nCompares active engine (CWarp)\n\nPushes lua string onto stack or lua `nil`\n\nNote: more research required.\n\n**Example**\n\n```lua\ncurMovie = Infinity_GetCurrentMovie()\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L1500",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_GetCurrentScreenName",
+      "name": "Infinity_GetCurrentScreenName",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_GetCurrentScreenName()",
+      "documentationMarkdown": "Returns current menu name\n\n**Parameters**\n\nNone\n\n**Return Value**\n\nReturns a `string` of the current menu name, or an empty string if no menu active\n\n**Notes**\n\nUses getMenuStackTop and getStackMenu functions, and if successful, reads the value at [uiMenu](#uiMenu).name and pushes this value to the lua stack as a lua string.\n\n**Examples**\n\nGet the current menu name:\n\n```lua\ncurMenuName = Infinity_GetCurrentScreenName()\n```\n\nSets the button to clickable only if the current menu equals `CHARGEN`\n\n```lua\nbutton\n{\n    area 770 552 204 44\n    text \"IMPORT_BUTTON\"\n    text style \"button\"\n    bam GUIOSTUM\n    clickable lua \"Infinity_GetCurrentScreenName() == 'CHARGEN'\"\n    action \"createCharScreen:OnImportCharacterButtonClick()\"\n}\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L1541",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_GetFilesOfType",
+      "name": "Infinity_GetFilesOfType",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_GetFilesOfType(extension)",
+      "parameters": [
+        {
+          "type": "string",
+          "name": "extension",
+          "description": "string containing file extension"
+        }
+      ],
+      "documentationMarkdown": "Returns a list of files that match the specified file extension\n\n**Parameters**\n\n- `string` *extension* - string containing file extension\n\n**Return Value**\n\nAn array of filenames that matched the specified file extension\n\n**Notes**\n\nConverts extension to resource file type using the chExtToType function and fetches those filenames that match the resource type and stores them into an array.\n\nThe following extensions are supported:\n\n- \"bmp\"\n- \"mve\"\n- \"tga\"\n- \"wav\"\n- \"wfx\"\n- \"plt\"\n- \"bam\"\n- \"wed\"\n- \"chu\"\n- \"tis\"\n- \"spl\"\n- \"bcs\"\n- \"ids\"\n- \"cre\"\n- \"are\"\n- \"dlg\"\n- \"2da\"\n- \"gam\"\n- \"sto\"\n- \"wmp\"\n- \"chr\"\n- \"bs\"\n- \"eff\"\n- \"vvc\"\n- \"vef\"\n- \"pro\"\n- \"bio\"\n- \"wbm\"\n- \"gui\"\n- \"sql\"\n- \"pvrz\"\n- \"glsl\"\n- \"tot\"\n- \"toh\"\n- \"menu\"\n- \"lua\"\n- \"ttf\"\n- \"png\"\n- \"ini\"\n\n**Example**\n\n```lua\nbamfilelist = Infinity_GetFilesOfType(\"bam\")\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L1589",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_GetFrameCounter",
+      "name": "Infinity_GetFrameCounter",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_GetFrameCounter()",
+      "documentationMarkdown": "Returns frame counter\n\n**Return Value**\n\nReturns an `int` value representing frame counter\n\n**Notes**\n\nReads the value stored at offset `0xC48` of [CChitin](#CChitin): [CChitin](#CChitin).nAUCounter, converts it to a float and pushes it onto the lua stack.\n\n**Example**\n\n```lua\nframcounter = Infinity_GetFrameCounter()\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L1664",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_GetGameTicks",
+      "name": "Infinity_GetGameTicks",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_GetGameTicks()",
+      "documentationMarkdown": "Returns game ticks\n\n**Return Value**\n\nReturns an `int` value representing game ticks\n\n**Notes**\n\nReads [CBaldurChitin](#CBaldurChitin).m_pObjectGame => [CInfGame](#CInfGame).m_worldTime => [CTimerWorld](#CTimerWorld).m_gameTime and multiplies it by the value stored in the variable `TIMER_UPDATES_PER_SECOND`. The result is added together with itself, converted to a float and pushed onto the lua stack.\n\nThe variable `TIMER_UPDATES_PER_SECOND` located at offset `0x00938778` is initially set to `30` (`0x1E`)\n\n**Example**\n\n```lua\nticks = Infinity_GetGameTicks()\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L1693",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_GetGroundItemDescription",
+      "name": "Infinity_GetGroundItemDescription",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_GetGroundItemDescription(item_index, slot_id, container_id)",
+      "parameters": [
+        {
+          "name": "item_index"
+        },
+        {
+          "name": "slot_id"
+        },
+        {
+          "name": "container_id"
+        }
+      ],
+      "documentationMarkdown": "Returns a string containing the item's description as seen on the ground\n\n**Parameters**\n\n- *item_index* - \n- *slot_id* - \n- *container_id* - \n\n**Return Value**\n\nstring\n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L1724",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_GetGroupItemDescription",
+      "name": "Infinity_GetGroupItemDescription",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_GetGroupItemDescription(item_index)",
+      "parameters": [
+        {
+          "name": "item_index"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n- *item_index* - \n\n**Return Value**\n\nstring\n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L1756",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_GetInCutsceneMode",
+      "name": "Infinity_GetInCutsceneMode",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_GetInCutsceneMode(arg1)",
+      "parameters": [
+        {
+          "name": "arg1"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n???\n\n**Return Value**\n\n???\n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L1786",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_GetINIString",
+      "name": "Infinity_GetINIString",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_GetINIString(section_name, value_name, default_value)",
+      "parameters": [
+        {
+          "name": "section_name",
+          "description": "section name in an ini file"
+        },
+        {
+          "name": "value_name",
+          "description": "the key in the section to return the value for"
+        },
+        {
+          "name": "default_value",
+          "description": "the default value to return if key does not exist"
+        }
+      ],
+      "documentationMarkdown": "Returns a string containing an ini section key value\n\n**Parameters**\n\n- *section_name* - section name in an ini file\n- *value_name* - the key in the section to return the value for\n- *default_value* - the default value to return if key does not exist\n\n**Return Value**\n\n`string`\n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L1816",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_GetINIValue",
+      "name": "Infinity_GetINIValue",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_GetINIValue(section_name, value_name, default_value)",
+      "parameters": [
+        {
+          "name": "section_name",
+          "description": "section name in an ini file"
+        },
+        {
+          "name": "value_name",
+          "description": "the key in the section to return the value for"
+        },
+        {
+          "name": "default_value",
+          "description": "the default value to return if key does not exist"
+        }
+      ],
+      "documentationMarkdown": "Returns an integer value containing an ini section key value\n\n**Parameters**\n\n- *section_name* - section name in an ini file\n- *value_name* - the key in the section to return the value for\n- *default_value* - the default value to return if key does not exist\n\n**Return Value**\n\n`int`\n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L1848",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_GetListHeight",
+      "name": "Infinity_GetListHeight",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_GetListHeight(list_name)",
+      "parameters": [
+        {
+          "type": "string",
+          "name": "list_name",
+          "description": "name of the UI List control"
+        }
+      ],
+      "documentationMarkdown": "Returns the height of the sepcified UI List control\n\n**Parameters**\n\n- `string` *list_name* - name of the UI List control\n\n**Return Value**\n\nReturns an `integer` value of the specified list's height\n\n**Notes**\n\n**Example**\n\nGet the height of the `worldPlayerDialogChoicesList` list in `UI.MENU`:\n\n```lua\nlocal choicesHeight = Infinity_GetListHeight('worldPlayerDialogChoicesList')\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L1881",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_GetMaxChapterPage",
+      "name": "Infinity_GetMaxChapterPage",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_GetMaxChapterPage()",
+      "documentationMarkdown": "Returns the chapter number that the game campaign is at currently\n\n**Return Value**\n\nReturns an `integer` containing the current chapter number\n\n**Notes**\n\nReturns the value of the `CHAPTER` token. Calls the [CVariableHash::FindKey](#CVariableHashFindKey) method and reads offset `0x28` of [CVariable](#CVariable): [CVariable](#CVariable).m_cAreaVariable => [CAreaVariable](#CAreaVariable).m_intValue, and pushes that value to the lua stack.\n\n**Example**\n\nUsed in the `JOURNAL` menu in `UI.MENU` to update the current chapter number:\n\n```lua\nmenu\n{\n    name 'JOURNAL'\n    align left top\n    offset 80 0\n    ignoreEsc\n    enabled \"sidebarsGreyed ~= 1\"\n    onopen \"\n        reinitQuests()\n        buildQuestDisplay()\n        chapter = math.max(0,Infinity_GetMaxChapterPage());\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L1915",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_GetMaxGroundPage",
+      "name": "Infinity_GetMaxGroundPage",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_GetMaxGroundPage()",
+      "documentationMarkdown": "Returns maximum ground pages\n\n**Return Value**\n\nReturns an `integer` value of the maximum ground pages\n\n**Notes**\n\nA ground page is a series of inventory slots representing ground items available to pick up or empty slots for items to be dropped into.\n\nGround pages are used to scroll through the groupings of those ground based inventory slots. See also [Infinity_GetCurrentGroundPage](#Infinity_GetCurrentGroundPage) and [Infinity_GetGroundItemDescription](#Infinity_GetGroundItemDescription)\n\nCalls the [CScreenInventory::GetMaxGroundPage](#CScreenInventoryGetMaxGroundPage) method and pushed the value to the lua stack.\n\n**Example**\n\n```lua\nlocal maxPages = Infinity_GetMaxGroundPage()\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L1955",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_GetMenuArea",
+      "name": "Infinity_GetMenuArea",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_GetMenuArea(menu_name)",
+      "parameters": [
+        {
+          "type": "string",
+          "name": "menu_name",
+          "description": "name of the UI Menu to return the bounding rectangle for"
+        }
+      ],
+      "documentationMarkdown": "Returns the bounding rectangle (area) for the specified UI Menu name\n\n**Parameters**\n\n- `string` *menu_name* - name of the UI Menu to return the bounding rectangle for\n\n**Return Value**\n\nReturns as `integer` values: x, y, w, h - x coordinate, y coordinate, width and height of rectangle\n\n**Notes**\n\n**Example**\n\nGet the area of the `JOURNAL` menu:\n\n```lua\nlocal offsetX,offsetY,menuWidth,menuHeight = Infinity_GetMenuArea('JOURNAL')\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L1987",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_GetMenuItemByName",
+      "name": "Infinity_GetMenuItemByName",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_GetMenuItemByName(item_name)",
+      "parameters": [
+        {
+          "type": "string",
+          "name": "item_name",
+          "description": "name of the menu item"
+        }
+      ],
+      "documentationMarkdown": "Returns the UI menu item that has the specified name\n\n**Parameters**\n\n- `string` *item_name* - name of the menu item\n\n**Return Value**\n\nReturns userdata version of the menu item (a pointer to the [uiItem](#uiItem) structure of the matched UI control or a lua `NIL`)\n\n**Notes**\n\n**Example**\n\n```lua\nMenuItem_InvSlot1 = Infinity_GetMenuItemByName(\"slot_inv_1\")\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L2021",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_GetMousePosition",
+      "name": "Infinity_GetMousePosition",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_GetMousePosition()",
+      "documentationMarkdown": "Returns mouse position\n\n**Return Value**\n\nReturns as `integer` x,y = x coordinate and y cooordinate of mouse position\n\n**Notes**\n\n**Example**\n\n```lua\nx,y = Infinity_GetMousePosition();\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L2054",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_GetNumCharacters",
+      "name": "Infinity_GetNumCharacters",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_GetNumCharacters()",
+      "documentationMarkdown": "Returns total number of characters currently in the party\n\n**Return Value**\n\nReturns an `integer` value of the number of characters in the party\n\n**Notes**\n\n**Example**\n\nFrom `UI.MENU` - enable a portrait button for the 4th character, if there is greater than 3 characters in the party:\n\n```lua\nbutton\n{\n    area 11 290 64 90\n    portrait 3\n    bam GUIRSP10\n    enabled \"Infinity_GetNumCharacters() > 3\"\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L2082",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_GetOffset",
+      "name": "Infinity_GetOffset",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_GetOffset(menu_name)",
+      "parameters": [
+        {
+          "type": "string",
+          "name": "menu_name",
+          "description": "name of the menu to return the position for"
+        }
+      ],
+      "documentationMarkdown": "Get the position of a menu on the screen\n\n**Parameters**\n\n- `string` *menu_name* - name of the menu to return the position for\n\n**Return Value**\n\nReturns as `integer` values: x,y - x coordinate and y coordinate of the menu position\n\n**Notes**\n\n**Example**\n\n```lua\nInfinity_GetOffset(\"JOURNAL\")\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L2117",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_GetOption",
+      "name": "Infinity_GetOption",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_GetOption(option_id, panel_id)",
+      "parameters": [
+        {
+          "type": "integer",
+          "name": "option_id",
+          "description": "id of the option to get value for"
+        },
+        {
+          "type": "integer",
+          "name": "panel_id",
+          "description": "id of the panel"
+        }
+      ],
+      "documentationMarkdown": "Get the value of an option in a panel\n\n**Parameters**\n\n- `integer` *option_id* - id of the option to get value for\n- `integer` *panel_id* - id of the panel\n\n**Return Value**\n\nReturns an `integer` value of the option id specified: *option_id* in *panel_id*\n\n**Notes**\n\nSee also [Infinity_ChangeOption](#Infinity_ChangeOption)\n\n**Example**\n\nGet the value of option id `1` in panel id `8` (`panelID` = `8`) to a variable `ttDelaySLDR` and then set option id `1` in panel id `8` (`panelID` = `8`) to the value of the `ttDelaySLDR` variable\n\n```lua\npanelID = 8\nttDelaySLDR = Infinity_GetOption(1, panelID)\nInfinity_ChangeOption( 1, ttDelaySLDR, panelID)\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L2149",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_GetPasswordRequired",
+      "name": "Infinity_GetPasswordRequired",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_GetPasswordRequired(id)",
+      "parameters": [
+        {
+          "type": "integer",
+          "name": "id",
+          "description": "`1` based index of the `mp_sessions` array entry to update"
+        }
+      ],
+      "returns": [
+        {
+          "description": "Special, see notes"
+        }
+      ],
+      "documentationMarkdown": "Updates the `passwordReq` lua variable with the password requirement\n\n**Parameters**\n\n- `integer` *id* - `1` based index of the `mp_sessions` array entry to update\n\n**Returns**\n\nSpecial, see notes\n\n**Notes**\n\nUpdates an existing multidimensional array named `mp_sessions` defined in the EE game executable and an existing lua variable `passwordReq`.\n\n`passwordReq` is defined in `UI.MENU` as:\n\n```lua\npasswordReq = 0\n```\n\nEach entry in `mp_sessions` has the following elements:\n\n- `description`\n- `flags`\n- `max_players`\n- `players`\n- `port`\n- `name`\n- `password`\n\nAfter the `mp_sessions` array has been updated, the `flags` value (which contains amongst other things the password requirement) is placed into the `passwordReq` lua variable as a `boolean` value: `1` true or `0` false.\n\n**Example**\n\nThe `gameHasPassword` function from `UI.MENU`:\n\n```lua\nfunction gameHasPassword(slot)\n    if(mp_sessions[mp_shownSessions[slot][\"actualIndex\"]] == nil) then\n        --if the session isn't loaded don't show anything.\n        return \"\"\n    end\n    Infinity_GetPasswordRequired(mp_shownSessions[slot][\"actualIndex\"])\n    if passwordReq ~= 0 then \n        ret = t(\"YES\")\n    else\n        ret = t(\"NO\")\n    end\n    return ret\nend\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L2186",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_GetPortraitTooltip",
+      "name": "Infinity_GetPortraitTooltip",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_GetPortraitTooltip(index)",
+      "parameters": [
+        {
+          "type": "integer",
+          "name": "index",
+          "description": "a `0` based index of the portrait to return the tooltip text for"
+        }
+      ],
+      "documentationMarkdown": "Returns a string containing the tooltip for a specified portrait index\n\n**Parameters**\n\n- `integer` *index* - a `0` based index of the portrait to return the tooltip text for\n\n**Return Value**\n\nReturns a `string` containing the tooltip for a specified portrait index\n\n**Notes**\n\n**Example**\n\nGet tooltip for portrait of character 1:\n\n```lua\nchar1tooltip = Infinity_GetPortraitTooltip(0)\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L2251",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_GetScreenSize",
+      "name": "Infinity_GetScreenSize",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_GetScreenSize()",
+      "documentationMarkdown": "Returns the width and height of the screen - the screen resolution\n\n**Return Value**\n\nReturns as `integer`: w, h - width and height\n\n**Notes**\n\n**Example**\n\n```lua\nlocal screenWidth, screenHeight = Infinity_GetScreenSize()\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L2285",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_GetScriptVarInt",
+      "name": "Infinity_GetScriptVarInt",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_GetScriptVarInt(ScriptVar)",
+      "parameters": [
+        {
+          "type": "string",
+          "name": "ScriptVar",
+          "description": "the script variable to return the value of"
+        }
+      ],
+      "documentationMarkdown": "Returns the value of a script variable as an `integer`\n\n**Parameters**\n\n- `string` *ScriptVar* - the script variable to return the value of\n\n**Return Value**\n\nReturns the value of a script variable as an `integer`\n\n**Notes**\n\nCalls the [CVariableHash::FindKey](#CVariableHashFindKey) method.\n\n**Example**\n\nNo known example\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L2313",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_GetScrollIdentifyEnabled",
+      "name": "Infinity_GetScrollIdentifyEnabled",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_GetScrollIdentifyEnabled(item_id)",
+      "parameters": [
+        {
+          "type": "integer",
+          "name": "item_id",
+          "description": "item id"
+        }
+      ],
+      "documentationMarkdown": "Determines if the specified item requires identification, and can be identified via an Indentify scroll\n\n**Parameters**\n\n- `integer` *item_id* - item id\n\n**Return Value**\n\nReturns a `boolean` value: `1` true, or `0` false\n\n**Notes**\n\nCalls the [CScreenInventory::GetScrollIdentifyEnabled](#CScreenInventoryGetScrollIdentifyEnabled) method.\n\nSee also [Infinity_GetSpellIdentifyEnabled](#Infinity_GetSpellIdentifyEnabled)\n\n**Example**\n\nThe Indentify via a scroll button is enabled if the item requires identification (and there is an Identify scroll in the character's possession). Defined in `UI.MENU` as:\n\n```lua\nbutton\n{\n    area 52 214 302 44\n    bam GUIOSTCL\n    text style \"button\"\n    text \"SCROLL_BUTTON\"\n    \n    clickable lua \"Infinity_GetScrollIdentifyEnabled(characters[id].equipment[selectedSlot].id)\"\n    action \n    \"\n        Infinity_OnScrollIdentify(characters[id].equipment[selectedSlot].id)\n        Infinity_PopMenu()\n        itemDesc.item = characters[id].equipment[selectedSlot].item --update itemDesc item\n    \"\n}\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L2344",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_GetSelectedCharacterName",
+      "name": "Infinity_GetSelectedCharacterName",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_GetSelectedCharacterName()",
+      "documentationMarkdown": "Returns a string containing the currently selected character's name\n\n**Return Value**\n\nReturns a `string` containing the currently selected character's name\n\n**Notes**\n\n**Example**\n\nSet a label UI control's text with the current characters name:\n\n```lua\nlabel\n{\n    area 467 116 250 30\n    text  lua \"Infinity_GetSelectedCharacterName()\"\n    text style \"label\"\n    align left center\n}\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L2395",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_GetSpellIdentifyEnabled",
+      "name": "Infinity_GetSpellIdentifyEnabled",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_GetSpellIdentifyEnabled(item_id)",
+      "parameters": [
+        {
+          "type": "string",
+          "name": "item_id",
+          "description": "item id"
+        }
+      ],
+      "documentationMarkdown": "Determines if the specified item requires identification, and can be identified via an Indentify spell (or a magical item that can cast an Identify spell)\n\n**Parameters**\n\n- `string` *item_id* -  item id\n\n**Return Value**\n\nReturns a `boolean` value: `1` true, or `0` false\n\n**Notes**\n\nCalls the [CScreenInventory::GetSpellIdentifyEnabled](#CScreenInventoryGetSpellIdentifyEnabled) method.\n\nSee also [Infinity_GetScrollIdentifyEnabled](#Infinity_GetScrollIdentifyEnabled)\n\n**Example**\n\nThe Indentify via a spell button is enabled if the item requires identification (and there is an Identify spell in the character's possession). Defined in `UI.MENU` as:\n\n```lua\nbutton\n{\n    area 52 258 302 44\n    bam GUIOSTCL\n    text style \"button\"\n    text \"SPELL_BUTTON\"\n    \n    clickable lua \"Infinity_GetSpellIdentifyEnabled(characters[id].equipment[selectedSlot].id)\"\n    action \n    \"\n        Infinity_OnSpellIdentify(characters[id].equipment[selectedSlot].id); \n        Infinity_PopMenu()\n        itemDesc.item = characters[id].equipment[selectedSlot].item --update itemDesc item\n    \"\n}\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L2431",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_GetTimeString",
+      "name": "Infinity_GetTimeString",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_GetTimeString()",
+      "documentationMarkdown": "Returns a formatted date and time string\n\n**Return Value**\n\nReturns a `string` containing the date and time - a timestamp\n\n**Notes**\n\nCalls the [CTimerWorld::GetCurrentTimeString](#CTimerWorldGetCurrentTimeString) method.\n\n**Example**\n\nEditing a journal entry will automatically place a date time value, defined in `UI.MENU` as:\n\n```lua\nlabel\n{\n    enabled \"journalMode == const.JOURNAL_MODE_EDIT\"\n    area 58 144 382 42\n    text style \"label\"\n    text color 0 120 0 255\n    text lua \"Infinity_GetTimeString()\"\n}\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L2481",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_GetTransitionInProgress",
+      "name": "Infinity_GetTransitionInProgress",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_GetTransitionInProgress()",
+      "documentationMarkdown": "Returns the transition value\n\n**Parameters**\n\nNone\n\n**Return Value**\n\nPushes the `transition` variable value to the lua stack\n\n**Notes**\n\n`transition` variable located at offset `0x00986720` in BG2EE\n\n`transition` variable value set in [Infinity_TransitionMenu](#Infinity_TransitionMenu), drawTop, and eventMenu functions\n\n**Example**\n\nNo known examples\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L2520",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_GetUseButtonText",
+      "name": "Infinity_GetUseButtonText",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_GetUseButtonText(item_id, mode)",
+      "parameters": [
+        {
+          "type": "integer",
+          "name": "item_id",
+          "description": "item id"
+        },
+        {
+          "type": "integer",
+          "name": "mode",
+          "description": "mode"
+        }
+      ],
+      "documentationMarkdown": "Returns \"Use x\" button text of an item name for an item specified\n\n**Parameters**\n\n- `integer` *item_id* - item id\n- `integer` *mode* - mode\n\n**Return Value**\n\nReturns a `string` containing the \"Use x\" of the item specified\n\n**Notes**\n\nCalls the [CScreenInventory::GetUseButtonText](#CScreenInventoryGetUseButtonText) method\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L2553",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_GooglePlaySignedIn",
+      "name": "Infinity_GooglePlaySignedIn",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_GooglePlaySignedIn()",
+      "documentationMarkdown": "Determines if signed into Google Play\n\n**Return Value**\n\nReturns an `integer` value representing `1` true, or `0` false otherwise\n\n**Notes**\n\nCalls the CPlatform::IsPlatformServiceConnected function\n\nReads [CChitin](#CChitin).cSteam => CSteam.m_isSteamConnected\n\nOn builds that are not android returns `false`\n\n**Example**\n\nA Google Play sign in/out button from `UI.MENU`:\n\n```lua\nfunction getGooglePlaySignInText()\n    if(Infinity_GooglePlaySignedIn() == 1) then\n        return t(\"SIGN_OUT_BUTTON\")\n    else\n        return t(\"SIGN_IN_BUTTON\")\n    end\nend\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L2585",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_HighlightJournalButton",
+      "name": "Infinity_HighlightJournalButton",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_HighlightJournalButton()",
+      "documentationMarkdown": "Unknown purpose\n\n**Notes**\n\nReturns `0` false\n\nCalled from highlightJournalButton function in `UTIL.LUA`\n\n**Example**\n\nSee highlightJournalButton function in `UTIL.LUA`\n\nUnknown purpose\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L2626",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_HoverMouseOver",
+      "name": "Infinity_HoverMouseOver",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_HoverMouseOver(x, y)",
+      "parameters": [
+        {
+          "type": "integer",
+          "name": "x",
+          "description": "x coordinate to click world at"
+        },
+        {
+          "type": "integer",
+          "name": "y",
+          "description": "y coordinate to click world at"
+        }
+      ],
+      "documentationMarkdown": "Moves where your mouse cursor is in the game world\n\n**Parameters**\n\n- `integer` *x* - x coordinate to click world at\n- `integer` *y* - y coordinate to click world at\n\n**Return Value**\n\nNone\n\n**Notes**\n\nIt doesn't actaully move the mouse cursor, but the game engine thinks it does.\n\n[Infinity_HoverMouseOver](#Infinity_HoverMouseOver) will instantly move your mouse into the game world, but it won't move to the proper x,y for one frame (I think?).\n\nIf you don't include [Infinity_HoverMouseOver](#Infinity_HoverMouseOver) before [Infinity_ClickWorldAt](#Infinity_ClickWorldAt), it will click at world coordinates `0`, `0` by assuming your cursor is over the interface.\n\nYou can force a click in the game world like so:\n\n```lua\nInfinity_HoverMouseOver(x,y)\nInfinity_ClickWorldAt(x,y)\n```\n\n**Example**\n\n```lua\nInfinity_HoverMouseOver(100,200)\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L2653",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_HoverMouseOverObject",
+      "name": "Infinity_HoverMouseOverObject",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_HoverMouseOverObject(objectname)",
+      "parameters": [
+        {
+          "type": "string",
+          "name": "objectname",
+          "description": "name of the object"
+        }
+      ],
+      "documentationMarkdown": "Activate AI script file for object that mouse is hovering over (?) - not tested/verified\n\n**Parameters**\n\n- `string` *objectname* - name of the object\n\n**Return Value**\n\n??? - Unknown\n\n**Notes**\n\nCalls the [CAIScriptFile::CAIScriptFile](#CAIScriptFileCAIScriptFile) method\n\n**Example**\n\nNo known examples\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L2699",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_InstanceAnimation",
+      "name": "Infinity_InstanceAnimation",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_InstanceAnimation(Template, BamResRef, x, y, w, h, list, list_index)",
+      "parameters": [
+        {
+          "type": "string",
+          "name": "Template",
+          "description": "UI template name"
+        },
+        {
+          "type": "string",
+          "name": "BamResRef",
+          "description": "resource reference of bam to show/animate"
+        },
+        {
+          "type": "integer",
+          "name": "x",
+          "description": "left position"
+        },
+        {
+          "type": "integer",
+          "name": "y",
+          "description": "top position"
+        },
+        {
+          "type": "integer",
+          "name": "w",
+          "description": "width"
+        },
+        {
+          "type": "integer",
+          "name": "h",
+          "description": "height"
+        },
+        {
+          "type": "string",
+          "name": "list",
+          "description": "list/array"
+        },
+        {
+          "type": "integer",
+          "name": "list_index",
+          "description": "1 based index of entry in *list*"
+        }
+      ],
+      "documentationMarkdown": "Creates a temporary single instance animation of a bam, based on the UI template provided. Once the animation has finished, the UI control that was created and based on the UI template provided, is no longer present or visible.\n\n**Parameters**\n\n- `string` *Template* - UI template name\n- `string` *BamResRef* - resource reference of bam to show/animate\n- `integer` *x* - left position\n- `integer` *y* - top position\n- `integer` *w* - width\n- `integer` *h* - height\n- `string` *list* - list/array\n- `integer` *list_index* - 1 based index of entry in *list*\n\n**Notes**\n\nAs defined in `UI.MENU` on memorizing a spell: is set to play the default `GAM_24.WAV` sound and to play the `FLASHBR.BAM` animation.\n\n**Example**\n\nShows sparkle as user clicks on mage spell to memorize:\n\n```lua\nInfinity_InstanceAnimation(\"TEMPLATE_mageMemorizationSparkle\",\"FLASHBR\",x,y,w,h,fromList,listIndex)\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L2730",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_IsItemEnabled",
+      "name": "Infinity_IsItemEnabled",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_IsItemEnabled(arg1)",
+      "parameters": [
+        {
+          "name": "arg1"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n???\n\n**Return Value**\n\n???\n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L2767",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_IsMenuOnStack",
+      "name": "Infinity_IsMenuOnStack",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_IsMenuOnStack(menu_name)",
+      "parameters": [
+        {
+          "name": "menu_name"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n- *menu_name* - \n\n**Return Value**\n\n`bool`\n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L2797",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_IsPlayerMoving",
+      "name": "Infinity_IsPlayerMoving",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_IsPlayerMoving(arg1)",
+      "parameters": [
+        {
+          "name": "arg1"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n???\n\n**Return Value**\n\n???\n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L2827",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_JoinMultiplayerGame",
+      "name": "Infinity_JoinMultiplayerGame",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_JoinMultiplayerGame(id)",
+      "documentationMarkdown": "**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L2857",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_LaunchURL",
+      "name": "Infinity_LaunchURL",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_LaunchURL(arg1)",
+      "parameters": [
+        {
+          "name": "arg1"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n???\n\n**Return Value**\n\n???\n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L2879",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_LevelUp",
+      "name": "Infinity_LevelUp",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_LevelUp()",
+      "documentationMarkdown": "Opens level up dialog\n\n**Parameters**\n\nNone\n\n**Return Value**\n\nNone\n\n**Notes**\n\nCalls [CScreenCharacter::OnLevelUpButtonClick](#CScreenCharacterOnLevelUpButtonClick) to open the level up dialog.\n\nUnknown if calling this will work without specifying a character like [Infinity_ActivateRecord](#Infinity_ActivateRecord) does.\n\n**Example**\n\nNo known examples\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L2909",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_Log",
+      "name": "Infinity_Log",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_Log(msg)",
+      "parameters": [
+        {
+          "name": "msg"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n- *msg* - \n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L2942",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_LookAtObjectInWorld",
+      "name": "Infinity_LookAtObjectInWorld",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_LookAtObjectInWorld(arg1)",
+      "parameters": [
+        {
+          "name": "arg1"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n???\n\n**Return Value**\n\n???\n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L2968",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_LuaConsoleInput",
+      "name": "Infinity_LuaConsoleInput",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_LuaConsoleInput(arg1, arg2)",
+      "parameters": [
+        {
+          "name": "arg1"
+        },
+        {
+          "name": "arg2"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n- *???* - \n- *???* - \n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L2998",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_OnAddUserEntry",
+      "name": "Infinity_OnAddUserEntry",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_OnAddUserEntry(string)",
+      "parameters": [
+        {
+          "name": "string"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n- *string* - \n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L3025",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_OnCharacterImportItemSelect",
+      "name": "Infinity_OnCharacterImportItemSelect",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_OnCharacterImportItemSelect(table_index)",
+      "parameters": [
+        {
+          "name": "table_index"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n- *table_index* - \n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L3051",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_OnCharacterItemSelect",
+      "name": "Infinity_OnCharacterItemSelect",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_OnCharacterItemSelect(table_index)",
+      "parameters": [
+        {
+          "name": "table_index"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n- *table_index* -  \n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L3077",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_OnEditUserEntry",
+      "name": "Infinity_OnEditUserEntry",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_OnEditUserEntry(string1, string2)",
+      "parameters": [
+        {
+          "name": "string1"
+        },
+        {
+          "name": "string2"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n- *string1* - \n- *string2* - \n\n**Return Value**\n\n???\n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L3103",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_OnGroundPage",
+      "name": "Infinity_OnGroundPage",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_OnGroundPage(increment)",
+      "parameters": [
+        {
+          "name": "increment"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n- *increment* - \n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L3134",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_OnPortraitDblClick",
+      "name": "Infinity_OnPortraitDblClick",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_OnPortraitDblClick(index)",
+      "parameters": [
+        {
+          "name": "index",
+          "description": "index of portrait being double clicked"
+        }
+      ],
+      "documentationMarkdown": "Event action when mouse double clicks a character portrait\n\n**Parameters**\n\n- *index* - index of portrait being double clicked\n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L3160",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_OnPortraitItemSelect",
+      "name": "Infinity_OnPortraitItemSelect",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_OnPortraitItemSelect(arg1)",
+      "parameters": [
+        {
+          "name": "arg1"
+        }
+      ],
+      "documentationMarkdown": "Event action when character portrait is selected\n\n**Parameters**\n\n???\n\n**Return Value**\n\n???\n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L3186",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_OnPortraitLClick",
+      "name": "Infinity_OnPortraitLClick",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_OnPortraitLClick(index)",
+      "parameters": [
+        {
+          "name": "index",
+          "description": "index of portrait being clicked"
+        }
+      ],
+      "documentationMarkdown": "Event action when mouse left clicks a character portrait\n\n**Parameters**\n\n- *index* - index of portrait being clicked\n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L3216",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_OnPortraitRClick",
+      "name": "Infinity_OnPortraitRClick",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_OnPortraitRClick(index)",
+      "parameters": [
+        {
+          "name": "index",
+          "description": "index of portrait being clicked"
+        }
+      ],
+      "documentationMarkdown": "Event action when mouse right clicks a character portrait\n\n**Parameters**\n\n- *index* - index of portrait being clicked\n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L3242",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_OnRemoveUserEntry",
+      "name": "Infinity_OnRemoveUserEntry",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_OnRemoveUserEntry(string)",
+      "parameters": [
+        {
+          "name": "string"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n- *string* - \n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L3268",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_OnRest",
+      "name": "Infinity_OnRest",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_OnRest(arg1)",
+      "parameters": [
+        {
+          "name": "arg1"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n???\n\n**Return Value**\n\n???\n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L3294",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_OnScriptItemSelect",
+      "name": "Infinity_OnScriptItemSelect",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_OnScriptItemSelect(table_index)",
+      "parameters": [
+        {
+          "name": "table_index"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n- *table_index* - \n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L3324",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_OnScrollIdentify",
+      "name": "Infinity_OnScrollIdentify",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_OnScrollIdentify(item_id)",
+      "parameters": [
+        {
+          "type": "integer",
+          "name": "item_id",
+          "description": "id of the item being identified"
+        }
+      ],
+      "documentationMarkdown": "Event action when a scroll identifies an item\n\n**Parameters**\n\n- `integer` *item_id* - id of the item being identified\n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L3351",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_OnSoundItemSelect",
+      "name": "Infinity_OnSoundItemSelect",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_OnSoundItemSelect(table_index)",
+      "parameters": [
+        {
+          "name": "table_index"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n- *table_index* - \n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L3377",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_OnSpellIdentify",
+      "name": "Infinity_OnSpellIdentify",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_OnSpellIdentify(item_id)",
+      "parameters": [
+        {
+          "type": "integer",
+          "name": "item_id",
+          "description": "id of the item being identified"
+        }
+      ],
+      "documentationMarkdown": "Event action when a spell identifies an item\n\n**Parameters**\n\n- `integer` *item_id* - id of the item being identified\n\n**Return Value**\n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L3404",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_OnUseButtonClick",
+      "name": "Infinity_OnUseButtonClick",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_OnUseButtonClick(item_id, mode)",
+      "parameters": [
+        {
+          "type": "integer",
+          "name": "item_id"
+        },
+        {
+          "name": "mode"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n- `integer` *item_id* - \n- *mode* - \n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L3434",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_OpenInventoryContainer",
+      "name": "Infinity_OpenInventoryContainer",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_OpenInventoryContainer(resref)",
+      "parameters": [
+        {
+          "name": "resref",
+          "description": "resource reference of the container being opened"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n- resref* - resource reference of the container being opened\n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L3461",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_PlayMovie",
+      "name": "Infinity_PlayMovie",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_PlayMovie(movie_name, element_name)",
+      "parameters": [
+        {
+          "name": "movie_name",
+          "description": "resource reference of the movie to play"
+        },
+        {
+          "name": "element_name"
+        }
+      ],
+      "documentationMarkdown": "Plays a movie (a WebM file format)\n\n**Parameters**\n\n- *movie_name* - resource reference of the movie to play\n- *element_name* - \n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L3487",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_PlaySound",
+      "name": "Infinity_PlaySound",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_PlaySound(resref)",
+      "parameters": [
+        {
+          "name": "resref",
+          "description": "resource reference of the sound to play"
+        }
+      ],
+      "documentationMarkdown": "Plays a sound\n\n**Parameters**\n\n- resref* - resource reference of the sound to play\n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L3514",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_PopMenu",
+      "name": "Infinity_PopMenu",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_PopMenu(menu_name)",
+      "parameters": [
+        {
+          "name": "menu_name"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n- *menu_name* - \n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L3540",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_PressKeyboardButton",
+      "name": "Infinity_PressKeyboardButton",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_PressKeyboardButton(arg1)",
+      "parameters": [
+        {
+          "name": "arg1"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n(???)\n\n**Return Value**\n\n(???)\n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L3566",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_PushMenu",
+      "name": "Infinity_PushMenu",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_PushMenu(menu_name)",
+      "parameters": [
+        {
+          "name": "menu_name"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n- *menu_name* - \n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L3596",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_RandomNumber",
+      "name": "Infinity_RandomNumber",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_RandomNumber(min, range)",
+      "parameters": [
+        {
+          "name": "min",
+          "description": "minimum value of random number"
+        },
+        {
+          "name": "range",
+          "description": "maximum value of random number"
+        }
+      ],
+      "documentationMarkdown": "Returns an random number\n\n**Parameters**\n\n- *min* - minimum value of random number\n- *range* - maximum value of random number\n\n**Return Value**\n\n`int`\n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L3622",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_RemoveINIEntry",
+      "name": "Infinity_RemoveINIEntry",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_RemoveINIEntry(section_name, value_name)",
+      "parameters": [
+        {
+          "name": "section_name",
+          "description": "ini section name"
+        },
+        {
+          "name": "value_name",
+          "description": "key in the ini section to remove"
+        }
+      ],
+      "documentationMarkdown": "Removes an ini section key value\n\n**Parameters**\n\n- section_name* - ini section name\n- value_name* - key in the ini section to remove\n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L3653",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_RequestMultiplayerGameDetails",
+      "name": "Infinity_RequestMultiplayerGameDetails",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_RequestMultiplayerGameDetails(arg1)",
+      "parameters": [
+        {
+          "name": "arg1"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n???\n\n**Return Value**\n\n???\n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L3680",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_ScaleToText",
+      "name": "Infinity_ScaleToText",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_ScaleToText(element_name)",
+      "parameters": [
+        {
+          "name": "element_name"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n- *element_name* - \n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L3710",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_ScrollLists",
+      "name": "Infinity_ScrollLists",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_ScrollLists(arg1)",
+      "parameters": [
+        {
+          "name": "arg1"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n???\n\n**Return Value**\n\n???\n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L3736",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_SelectDialogueOption",
+      "name": "Infinity_SelectDialogueOption",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_SelectDialogueOption(arg1)",
+      "parameters": [
+        {
+          "name": "arg1"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n???\n\n**Return Value**\n\n???\n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L3766",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_SelectItemAbility",
+      "name": "Infinity_SelectItemAbility",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_SelectItemAbility(ability_index, item_num, item_id)",
+      "parameters": [
+        {
+          "name": "ability_index"
+        },
+        {
+          "name": "item_num"
+        },
+        {
+          "type": "integer",
+          "name": "item_id"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n- *ability_index* - \n- *item_num* - \n- `integer` *item_id* - \n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L3796",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_SelectListItem",
+      "name": "Infinity_SelectListItem",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_SelectListItem(arg1)",
+      "parameters": [
+        {
+          "name": "arg1"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n???\n\n**Return Value**\n\n???\n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L3824",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_SendChatMessage",
+      "name": "Infinity_SendChatMessage",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_SendChatMessage(msg, boolean)",
+      "parameters": [
+        {
+          "name": "msg"
+        },
+        {
+          "name": "boolean"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n- *msg* - \n- *boolean* - \n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L3854",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_SetArea",
+      "name": "Infinity_SetArea",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_SetArea(element_name, x, y, w, h)",
+      "parameters": [
+        {
+          "name": "element_name"
+        },
+        {
+          "name": "x"
+        },
+        {
+          "name": "y"
+        },
+        {
+          "name": "w"
+        },
+        {
+          "name": "h"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n- *element_name* - \n- *x* - \n- *y* - \n- *w* - \n- *h* - \n\n**Return Value**\n\n???\n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L3881",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_SetBackground",
+      "name": "Infinity_SetBackground",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_SetBackground(menu_name)",
+      "parameters": [
+        {
+          "name": "menu_name"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n- *menu_name* - \n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L3915",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_SetCloudEnabled",
+      "name": "Infinity_SetCloudEnabled",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_SetCloudEnabled(arg1)",
+      "parameters": [
+        {
+          "name": "arg1"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n???\n\n**Return Value**\n\n???\n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L3941",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_SetGooglePlaySigninState",
+      "name": "Infinity_SetGooglePlaySigninState",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_SetGooglePlaySigninState(arg1)",
+      "parameters": [
+        {
+          "name": "arg1"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n???\n\n**Return Value**\n\n???\n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L3971",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_SetHairColor",
+      "name": "Infinity_SetHairColor",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_SetHairColor(index)",
+      "parameters": [
+        {
+          "name": "index"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n- *index* - \n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L4001",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_SetHighlightColors",
+      "name": "Infinity_SetHighlightColors",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_SetHighlightColors(lr, lg, lb, la, cr, cg, cb, ca, rr, rg, rb, ra)",
+      "parameters": [
+        {
+          "type": "hexidecimal",
+          "name": "lr",
+          "description": "left color: the intensity of the red color channel"
+        },
+        {
+          "type": "hexidecimal",
+          "name": "lg",
+          "description": "left color: the intensity of the green color channel"
+        },
+        {
+          "type": "hexidecimal",
+          "name": "lb",
+          "description": "left color: the intensity of the blue color channel"
+        },
+        {
+          "type": "hexidecimal",
+          "name": "la",
+          "description": "left color: the transparency level of the alpha channel"
+        },
+        {
+          "type": "hexidecimal",
+          "name": "cr",
+          "description": "center color: the intensity of the red color channel"
+        },
+        {
+          "type": "hexidecimal",
+          "name": "cg",
+          "description": "center color: the intensity of the green color channel"
+        },
+        {
+          "type": "hexidecimal",
+          "name": "cb",
+          "description": "center color: the intensity of the blue color channel"
+        },
+        {
+          "type": "hexidecimal",
+          "name": "ca",
+          "description": "center color: the transparency level of the alpha channel"
+        },
+        {
+          "type": "hexidecimal",
+          "name": "rr",
+          "description": "right color: the intensity of the red color channel"
+        },
+        {
+          "type": "hexidecimal",
+          "name": "rg",
+          "description": "right color: the intensity of the green color channel"
+        },
+        {
+          "type": "hexidecimal",
+          "name": "rb",
+          "description": "right color: the intensity of the blue color channel"
+        },
+        {
+          "type": "hexidecimal",
+          "name": "ra",
+          "description": "right color: the transparency level of the alpha channel"
+        }
+      ],
+      "documentationMarkdown": "Set a color or color gradient for UI elements in the options dialogs that are currently selected\n\n**Parameters**\n\n- `hexidecimal` *lr* - left color: the intensity of the red color channel\n- `hexidecimal` *lg* - left color: the intensity of the green color channel\n- `hexidecimal` *lb* - left color: the intensity of the blue color channel\n- `hexidecimal` *la* - left color: the transparency level of the alpha channel\n- `hexidecimal` *cr* - center color: the intensity of the red color channel\n- `hexidecimal` *cg* - center color: the intensity of the green color channel\n- `hexidecimal` *cb* - center color: the intensity of the blue color channel\n- `hexidecimal` *ca* - center color: the transparency level of the alpha channel\n- `hexidecimal` *rr* - right color: the intensity of the red color channel\n- `hexidecimal` *rg* - right color: the intensity of the green color channel\n- `hexidecimal` *rb* - right color: the intensity of the blue color channel\n- `hexidecimal` *ra* - right color: the transparency level of the alpha channel\n\n**Notes**\n\nUser three color definitions: left, center and right\n\nParameters use **hexidecimal** values (prefixed with `0x`) for each color color and the alpha channel level\n\n**Example**\n\n> Infinity_SetHighlightColors(0x7F,0x00,0x7F,0xff, 0x00,0x7F,0x00,0xff, 0x00,0x00,0x7F,0xff)\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L4027",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_SetINIValue",
+      "name": "Infinity_SetINIValue",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_SetINIValue(section_name, value_name, value)",
+      "parameters": [
+        {
+          "type": "string",
+          "name": "section_name",
+          "description": "ini section to set the key value for"
+        },
+        {
+          "type": "string",
+          "name": "value_name",
+          "description": "the key in the ini section to set the value for"
+        },
+        {
+          "type": "string",
+          "name": "value",
+          "description": "the new value of the key"
+        }
+      ],
+      "documentationMarkdown": "Sets a value of an ini section key\n\n**Parameters**\n\n- `string` *section_name* - ini section to set the key value for\n- `string` *value_name* - the key in the ini section to set the value for\n- `string` *value* - the new value of the key\n\n**Notes**\n\n**Example**\n\nSet the `Player Name` key in `Multiplayer` section to the value of the variable `connectionPlayerNameEdit`\n\n```lua\nif connectionPlayerNameEdit == \"\" then\n    connectionPlayerNameEdit = Infinity_GetINIString('Multiplayer', 'Player Name', player)\n    Infinity_SetINIValue('Multiplayer', 'Player Name', connectionPlayerNameEdit)\nend\n```\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L4067",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_SetKey",
+      "name": "Infinity_SetKey",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_SetKey(value, type)",
+      "parameters": [
+        {
+          "name": "value"
+        },
+        {
+          "name": "type"
+        }
+      ],
+      "documentationMarkdown": "Sets key in C++ memory\n\n**Parameters**\n\n- *value* - \n- *type* - \n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L4102",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_SetLanguage",
+      "name": "Infinity_SetLanguage",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_SetLanguage(lang_id, showSubTitles)",
+      "parameters": [
+        {
+          "name": "lang_id"
+        },
+        {
+          "name": "showSubTitles"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n- *lang_id* - \n- *showSubTitles* - \n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L4129",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_SetMajorColor",
+      "name": "Infinity_SetMajorColor",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_SetMajorColor(index)",
+      "parameters": [
+        {
+          "name": "index"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n- *index* - \n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L4156",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_SetMinorColor",
+      "name": "Infinity_SetMinorColor",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_SetMinorColor(index)",
+      "parameters": [
+        {
+          "name": "index"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n- *index* - \n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L4182",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_SetOffset",
+      "name": "Infinity_SetOffset",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_SetOffset(menu_name, x, y)",
+      "parameters": [
+        {
+          "name": "menu_name"
+        },
+        {
+          "name": "x"
+        },
+        {
+          "name": "y"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n- *menu_name* - \n- *x* - \n- *y* - \n\n**Return Value**\n\n???\n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L4208",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_SetOverlay",
+      "name": "Infinity_SetOverlay",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_SetOverlay(menu_name)",
+      "parameters": [
+        {
+          "name": "menu_name"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n- *menu_name* - \n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L4240",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_SetScreenSize",
+      "name": "Infinity_SetScreenSize",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_SetScreenSize(w, h)",
+      "parameters": [
+        {
+          "name": "w"
+        },
+        {
+          "name": "h"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n- *w* - \n- *h* - \n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L4266",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_SetScrollTop",
+      "name": "Infinity_SetScrollTop",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_SetScrollTop(arg1)",
+      "parameters": [
+        {
+          "name": "arg1"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n???\n\n**Return Value**\n\n???\n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L4293",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_SetSkinColor",
+      "name": "Infinity_SetSkinColor",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_SetSkinColor(index)",
+      "parameters": [
+        {
+          "name": "index"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n- *index* - \n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L4323",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_SetToken",
+      "name": "Infinity_SetToken",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_SetToken(token_name, value)",
+      "parameters": [
+        {
+          "name": "token_name"
+        },
+        {
+          "name": "value"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n- *token_name* - \n- *value* - \n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L4349",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_ShutdownGame",
+      "name": "Infinity_ShutdownGame",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_ShutdownGame()",
+      "documentationMarkdown": "**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L4376",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_SignInOutButtonEnabled",
+      "name": "Infinity_SignInOutButtonEnabled",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_SignInOutButtonEnabled(arg1)",
+      "parameters": [
+        {
+          "name": "arg1"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n???\n\n**Return Value**\n\n???\n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L4398",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_SplitItemStack",
+      "name": "Infinity_SplitItemStack",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_SplitItemStack(item_id, count, slot_name)",
+      "parameters": [
+        {
+          "type": "integer",
+          "name": "item_id"
+        },
+        {
+          "name": "count"
+        },
+        {
+          "name": "slot_name"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n- `integer` *item_id* - \n- *count* - \n- *slot_name* - \n\n**Return Value**\n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L4428",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_StartItemCapture",
+      "name": "Infinity_StartItemCapture",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_StartItemCapture(map_name)",
+      "parameters": [
+        {
+          "name": "map_name"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n- *map_name* - \n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L4460",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_StartKeybind",
+      "name": "Infinity_StartKeybind",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_StartKeybind(action)",
+      "parameters": [
+        {
+          "name": "action"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n- *action* - \n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L4487",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_StopItemCapture",
+      "name": "Infinity_StopItemCapture",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_StopItemCapture(map_name)",
+      "parameters": [
+        {
+          "name": "map_name"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n- *map_name* -  \n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L4513",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_StopKeybind",
+      "name": "Infinity_StopKeybind",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_StopKeybind()",
+      "documentationMarkdown": "**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L4539",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_StopMovie",
+      "name": "Infinity_StopMovie",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_StopMovie(element_name)",
+      "parameters": [
+        {
+          "name": "element_name"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n- *element_name* - \n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L4561",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_SwapSlot",
+      "name": "Infinity_SwapSlot",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_SwapSlot(arg1)",
+      "parameters": [
+        {
+          "name": "arg1"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n???\n\n**Return Value**\n\n???\n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L4587",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_SwapWithAppearance",
+      "name": "Infinity_SwapWithAppearance",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_SwapWithAppearance()",
+      "documentationMarkdown": "**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L4617",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_SwapWithPortrait",
+      "name": "Infinity_SwapWithPortrait",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_SwapWithPortrait(index)",
+      "parameters": [
+        {
+          "name": "index"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n- *index* - \n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L4639",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_TakeScreenshot",
+      "name": "Infinity_TakeScreenshot",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_TakeScreenshot()",
+      "documentationMarkdown": "**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L4665",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_TextEditHasFocus",
+      "name": "Infinity_TextEditHasFocus",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_TextEditHasFocus()",
+      "documentationMarkdown": "**Return Value**\n\n`bool`\n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L4687",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_TransitionMenu",
+      "name": "Infinity_TransitionMenu",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_TransitionMenu(menu_name)",
+      "parameters": [
+        {
+          "name": "menu_name"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n- *menu_name* - \n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L4713",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_UpdateCharacterRecordExportPanel",
+      "name": "Infinity_UpdateCharacterRecordExportPanel",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_UpdateCharacterRecordExportPanel()",
+      "documentationMarkdown": "**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L4739",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_UpdateCloudSaveState",
+      "name": "Infinity_UpdateCloudSaveState",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_UpdateCloudSaveState()",
+      "documentationMarkdown": "**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L4761",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_UpdateInventoryRequesterPanel",
+      "name": "Infinity_UpdateInventoryRequesterPanel",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_UpdateInventoryRequesterPanel(arg1)",
+      "parameters": [
+        {
+          "name": "arg1"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n???\n\n**Return Value**\n\n???\n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L4783",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_UpdateLuaStats",
+      "name": "Infinity_UpdateLuaStats",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_UpdateLuaStats()",
+      "documentationMarkdown": "**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L4813",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_UpdateStoreMainPanel",
+      "name": "Infinity_UpdateStoreMainPanel",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_UpdateStoreMainPanel(arg1)",
+      "parameters": [
+        {
+          "name": "arg1"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n???\n\n**Return Value**\n\n???\n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L4835",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_UpdateStoreRequesterPanel",
+      "name": "Infinity_UpdateStoreRequesterPanel",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_UpdateStoreRequesterPanel(arg1)",
+      "parameters": [
+        {
+          "name": "arg1"
+        }
+      ],
+      "documentationMarkdown": "**Parameters**\n\n???\n\n**Return Value**\n\n???\n\n**Notes**\n\n**Example**\n\n---",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L4865",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:Infinity_WriteINILine",
+      "name": "Infinity_WriteINILine",
+      "kind": "function",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "Infinity_WriteINILine(file_handle, string)",
+      "parameters": [
+        {
+          "name": "file_handle"
+        },
+        {
+          "name": "string",
+          "description": "text to write out to ini file"
+        }
+      ],
+      "documentationMarkdown": "Write a line of text to an ini file\n\n**Parameters**\n\n- *file_handle* - \n- *string* - text to write out to ini file\n\n**Notes**\n\n**Example**",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/Infinity/index.rst#L4895",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    }
+  ]
+}

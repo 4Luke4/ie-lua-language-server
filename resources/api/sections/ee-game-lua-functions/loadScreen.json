@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 3,
+  "generatedAt": "2026-08-25T18:10:55.136Z",
+  "source": {
+    "id": "ee-game-lua-functions",
+    "title": "EE Game Lua Functions",
+    "url": "https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions",
+    "commit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+    "licenseStatus": "allowed"
+  },
+  "title": "loadScreen",
+  "upstreamPath": "source/EE Game Lua Functions/loadScreen/index.rst",
+  "symbols": [
+    {
+      "id": "ee-game-lua-functions:loadScreen:DeleteGame",
+      "name": "loadScreen:DeleteGame",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "loadScreen:DeleteGame()",
+      "containerName": "loadScreen",
+      "instanceName": "DeleteGame",
+      "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nloadScreen:DeleteGame()\n```\n\n**See Also**\n\n,",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/loadScreen/loadScreen_DeleteGame.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:loadScreen:LoadGame",
+      "name": "loadScreen:LoadGame",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "loadScreen:LoadGame()",
+      "containerName": "loadScreen",
+      "instanceName": "LoadGame",
+      "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nloadScreen:LoadGame()\n```\n\n**See Also**\n\n,",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/loadScreen/loadScreen_LoadGame.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:loadScreen:OnMainCancelButtonClick",
+      "name": "loadScreen:OnMainCancelButtonClick",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "loadScreen:OnMainCancelButtonClick()",
+      "containerName": "loadScreen",
+      "instanceName": "OnMainCancelButtonClick",
+      "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nloadScreen:OnMainCancelButtonClick()\n```\n\n**See Also**\n\n,",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/loadScreen/loadScreen_OnMainCancelButtonClick.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    }
+  ]
+}

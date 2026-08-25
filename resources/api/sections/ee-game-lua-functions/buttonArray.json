@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 3,
+  "generatedAt": "2026-08-25T18:10:55.136Z",
+  "source": {
+    "id": "ee-game-lua-functions",
+    "title": "EE Game Lua Functions",
+    "url": "https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions",
+    "commit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+    "licenseStatus": "allowed"
+  },
+  "title": "buttonArray",
+  "upstreamPath": "source/EE Game Lua Functions/buttonArray/index.rst",
+  "symbols": [
+    {
+      "id": "ee-game-lua-functions:buttonArray:GetButtonBam",
+      "name": "buttonArray:GetButtonBam",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "buttonArray:GetButtonBam()",
+      "containerName": "buttonArray",
+      "instanceName": "GetButtonBam",
+      "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nbuttonArray:GetButtonBam()\n```\n\n**See Also**\n\n,",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/buttonArray/buttonArray_GetButtonBam.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:buttonArray:GetButtonEnabled",
+      "name": "buttonArray:GetButtonEnabled",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "buttonArray:GetButtonEnabled()",
+      "containerName": "buttonArray",
+      "instanceName": "GetButtonEnabled",
+      "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nbuttonArray:GetButtonEnabled()\n```\n\n**See Also**\n\n,",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/buttonArray/buttonArray_GetButtonEnabled.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:buttonArray:GetButtonSequence",
+      "name": "buttonArray:GetButtonSequence",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "buttonArray:GetButtonSequence()",
+      "containerName": "buttonArray",
+      "instanceName": "GetButtonSequence",
+      "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nbuttonArray:GetButtonSequence()\n```\n\n**See Also**\n\n,",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/buttonArray/buttonArray_GetButtonSequence.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:buttonArray:GetButtonType",
+      "name": "buttonArray:GetButtonType",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "buttonArray:GetButtonType()",
+      "containerName": "buttonArray",
+      "instanceName": "GetButtonType",
+      "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nbuttonArray:GetButtonType()\n```\n\n**See Also**\n\n,",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/buttonArray/buttonArray_GetButtonType.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:buttonArray:OnLButtonPressed",
+      "name": "buttonArray:OnLButtonPressed",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "buttonArray:OnLButtonPressed()",
+      "containerName": "buttonArray",
+      "instanceName": "OnLButtonPressed",
+      "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nbuttonArray:OnLButtonPressed()\n```\n\n**See Also**\n\n,",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/buttonArray/buttonArray_OnLButtonPressed.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:buttonArray:OnRButtonPressed",
+      "name": "buttonArray:OnRButtonPressed",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "buttonArray:OnRButtonPressed()",
+      "containerName": "buttonArray",
+      "instanceName": "OnRButtonPressed",
+      "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nbuttonArray_OnRButtonPressed()\n```\n\n**See Also**\n\n,",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/buttonArray/buttonArray_OnRButtonPressed.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    }
+  ]
+}

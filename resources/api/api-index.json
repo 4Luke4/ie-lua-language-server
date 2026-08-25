@@ -1,6 +1,6 @@
 {
-  "schemaVersion": 2,
-  "generatedAt": "2026-08-25T10:33:12.468Z",
+  "schemaVersion": 3,
+  "generatedAt": "2026-08-25T18:10:55.136Z",
   "sources": [
     {
       "id": "ee-game-lua-functions",
@@ -46,42 +46,513 @@
     {
       "id": "ee-game-lua-functions",
       "title": "EE Game Lua Functions",
-      "file": "sections/ee-game-lua-functions.json",
-      "symbolCount": 392,
+      "files": [
+        {
+          "title": "buttonArray",
+          "file": "sections/ee-game-lua-functions/buttonArray.json",
+          "symbolCount": 6,
+          "upstreamPath": "source/EE Game Lua Functions/buttonArray/index.rst"
+        },
+        {
+          "title": "C",
+          "file": "sections/ee-game-lua-functions/C.json",
+          "symbolCount": 32,
+          "upstreamPath": "source/EE Game Lua Functions/C/index.rst"
+        },
+        {
+          "title": "chapterScreen",
+          "file": "sections/ee-game-lua-functions/chapterScreen.json",
+          "symbolCount": 5,
+          "upstreamPath": "source/EE Game Lua Functions/chapterScreen/index.rst"
+        },
+        {
+          "title": "characterScreen",
+          "file": "sections/ee-game-lua-functions/characterScreen.json",
+          "symbolCount": 25,
+          "upstreamPath": "source/EE Game Lua Functions/characterScreen/index.rst"
+        },
+        {
+          "title": "connectionScreen",
+          "file": "sections/ee-game-lua-functions/connectionScreen.json",
+          "symbolCount": 13,
+          "upstreamPath": "source/EE Game Lua Functions/connectionScreen/index.rst"
+        },
+        {
+          "title": "createCharScreen",
+          "file": "sections/ee-game-lua-functions/createCharScreen.json",
+          "symbolCount": 53,
+          "upstreamPath": "source/EE Game Lua Functions/createCharScreen/index.rst"
+        },
+        {
+          "title": "createPartyScreen",
+          "file": "sections/ee-game-lua-functions/createPartyScreen.json",
+          "symbolCount": 4,
+          "upstreamPath": "source/EE Game Lua Functions/createPartyScreen/index.rst"
+        },
+        {
+          "title": "dlcScreen",
+          "file": "sections/ee-game-lua-functions/dlcScreen.json",
+          "symbolCount": 17,
+          "upstreamPath": "source/EE Game Lua Functions/dlcScreen/index.rst"
+        },
+        {
+          "title": "e",
+          "file": "sections/ee-game-lua-functions/e.json",
+          "symbolCount": 32,
+          "upstreamPath": "source/EE Game Lua Functions/e/index.rst"
+        },
+        {
+          "title": "game",
+          "file": "sections/ee-game-lua-functions/game.json",
+          "symbolCount": 17,
+          "upstreamPath": "source/EE Game Lua Functions/game/index.rst"
+        },
+        {
+          "title": "Infinity",
+          "file": "sections/ee-game-lua-functions/Infinity.json",
+          "symbolCount": 139,
+          "upstreamPath": "source/EE Game Lua Functions/Infinity/index.rst"
+        },
+        {
+          "title": "inventoryScreen",
+          "file": "sections/ee-game-lua-functions/inventoryScreen.json",
+          "symbolCount": 2,
+          "upstreamPath": "source/EE Game Lua Functions/inventoryScreen/index.rst"
+        },
+        {
+          "title": "journalScreen",
+          "file": "sections/ee-game-lua-functions/journalScreen.json",
+          "symbolCount": 0,
+          "upstreamPath": "source/EE Game Lua Functions/journalScreen/index.rst"
+        },
+        {
+          "title": "loadScreen",
+          "file": "sections/ee-game-lua-functions/loadScreen.json",
+          "symbolCount": 3,
+          "upstreamPath": "source/EE Game Lua Functions/loadScreen/index.rst"
+        },
+        {
+          "title": "mageScreen",
+          "file": "sections/ee-game-lua-functions/mageScreen.json",
+          "symbolCount": 12,
+          "upstreamPath": "source/EE Game Lua Functions/mageScreen/index.rst"
+        },
+        {
+          "title": "mapScreen",
+          "file": "sections/ee-game-lua-functions/mapScreen.json",
+          "symbolCount": 9,
+          "upstreamPath": "source/EE Game Lua Functions/mapScreen/index.rst"
+        },
+        {
+          "title": "mixer",
+          "file": "sections/ee-game-lua-functions/mixer.json",
+          "symbolCount": 1,
+          "upstreamPath": "source/EE Game Lua Functions/mixer/index.rst"
+        },
+        {
+          "title": "moviesScreen",
+          "file": "sections/ee-game-lua-functions/moviesScreen.json",
+          "symbolCount": 5,
+          "upstreamPath": "source/EE Game Lua Functions/moviesScreen/index.rst"
+        },
+        {
+          "title": "multiplayerScreen",
+          "file": "sections/ee-game-lua-functions/multiplayerScreen.json",
+          "symbolCount": 21,
+          "upstreamPath": "source/EE Game Lua Functions/multiplayerScreen/index.rst"
+        },
+        {
+          "title": "optionsScreen",
+          "file": "sections/ee-game-lua-functions/optionsScreen.json",
+          "symbolCount": 4,
+          "upstreamPath": "source/EE Game Lua Functions/optionsScreen/index.rst"
+        },
+        {
+          "title": "priestScreen",
+          "file": "sections/ee-game-lua-functions/priestScreen.json",
+          "symbolCount": 4,
+          "upstreamPath": "source/EE Game Lua Functions/priestScreen/index.rst"
+        },
+        {
+          "title": "projector",
+          "file": "sections/ee-game-lua-functions/projector.json",
+          "symbolCount": 1,
+          "upstreamPath": "source/EE Game Lua Functions/projector/index.rst"
+        },
+        {
+          "title": "saveScreen",
+          "file": "sections/ee-game-lua-functions/saveScreen.json",
+          "symbolCount": 4,
+          "upstreamPath": "source/EE Game Lua Functions/saveScreen/index.rst"
+        },
+        {
+          "title": "startEngine",
+          "file": "sections/ee-game-lua-functions/startEngine.json",
+          "symbolCount": 21,
+          "upstreamPath": "source/EE Game Lua Functions/startEngine/index.rst"
+        },
+        {
+          "title": "storeScreen",
+          "file": "sections/ee-game-lua-functions/storeScreen.json",
+          "symbolCount": 54,
+          "upstreamPath": "source/EE Game Lua Functions/storeScreen/index.rst"
+        },
+        {
+          "title": "timer",
+          "file": "sections/ee-game-lua-functions/timer.json",
+          "symbolCount": 3,
+          "upstreamPath": "source/EE Game Lua Functions/timer/index.rst"
+        },
+        {
+          "title": "Util",
+          "file": "sections/ee-game-lua-functions/Util.json",
+          "symbolCount": 0,
+          "upstreamPath": "source/EE Game Lua Functions/Util/index.rst"
+        },
+        {
+          "title": "worldMapScreen",
+          "file": "sections/ee-game-lua-functions/worldMapScreen.json",
+          "symbolCount": 8,
+          "upstreamPath": "source/EE Game Lua Functions/worldMapScreen/index.rst"
+        },
+        {
+          "title": "worldScreen",
+          "file": "sections/ee-game-lua-functions/worldScreen.json",
+          "symbolCount": 36,
+          "upstreamPath": "source/EE Game Lua Functions/worldScreen/index.rst"
+        }
+      ],
+      "symbolCount": 531,
       "licenseStatus": "allowed"
     },
     {
       "id": "eeex-functions",
       "title": "EEex Functions",
-      "file": "sections/eeex-functions.json",
+      "files": [
+        {
+          "title": "Action",
+          "file": "sections/eeex-functions/Action.json",
+          "symbolCount": 10,
+          "upstreamPath": "source/EEex Functions/Action/index.rst"
+        },
+        {
+          "title": "Actionbar",
+          "file": "sections/eeex-functions/Actionbar.json",
+          "symbolCount": 14,
+          "upstreamPath": "source/EEex Functions/Actionbar/index.rst"
+        },
+        {
+          "title": "AIBase",
+          "file": "sections/eeex-functions/AIBase.json",
+          "symbolCount": 7,
+          "upstreamPath": "source/EEex Functions/AIBase/index.rst"
+        },
+        {
+          "title": "Area",
+          "file": "sections/eeex-functions/Area.json",
+          "symbolCount": 13,
+          "upstreamPath": "source/EEex Functions/Area/index.rst"
+        },
+        {
+          "title": "Debug",
+          "file": "sections/eeex-functions/Debug.json",
+          "symbolCount": 1,
+          "upstreamPath": "source/EEex Functions/Debug/index.rst"
+        },
+        {
+          "title": "GameObject",
+          "file": "sections/eeex-functions/GameObject.json",
+          "symbolCount": 14,
+          "upstreamPath": "source/EEex Functions/GameObject/index.rst"
+        },
+        {
+          "title": "GameState",
+          "file": "sections/eeex-functions/GameState.json",
+          "symbolCount": 9,
+          "upstreamPath": "source/EEex Functions/GameState/index.rst"
+        },
+        {
+          "title": "Key",
+          "file": "sections/eeex-functions/Key.json",
+          "symbolCount": 9,
+          "upstreamPath": "source/EEex Functions/Key/index.rst"
+        },
+        {
+          "title": "Keybinds",
+          "file": "sections/eeex-functions/Keybinds.json",
+          "symbolCount": 5,
+          "upstreamPath": "source/EEex Functions/Keybinds/index.rst"
+        },
+        {
+          "title": "Menu",
+          "file": "sections/eeex-functions/Menu.json",
+          "symbolCount": 34,
+          "upstreamPath": "source/EEex Functions/Menu/index.rst"
+        },
+        {
+          "title": "Object",
+          "file": "sections/eeex-functions/Object.json",
+          "symbolCount": 4,
+          "upstreamPath": "source/EEex Functions/Object/index.rst"
+        },
+        {
+          "title": "Opcode",
+          "file": "sections/eeex-functions/Opcode.json",
+          "symbolCount": 1,
+          "upstreamPath": "source/EEex Functions/Opcode/index.rst"
+        },
+        {
+          "title": "Options",
+          "file": "sections/eeex-functions/Options.json",
+          "symbolCount": 12,
+          "upstreamPath": "source/EEex Functions/Options/index.rst"
+        },
+        {
+          "title": "Projectile",
+          "file": "sections/eeex-functions/Projectile.json",
+          "symbolCount": 6,
+          "upstreamPath": "source/EEex Functions/Projectile/index.rst"
+        },
+        {
+          "title": "Resource",
+          "file": "sections/eeex-functions/Resource.json",
+          "symbolCount": 45,
+          "upstreamPath": "source/EEex Functions/Resource/index.rst"
+        },
+        {
+          "title": "Script",
+          "file": "sections/eeex-functions/Script.json",
+          "symbolCount": 2,
+          "upstreamPath": "source/EEex Functions/Script/index.rst"
+        },
+        {
+          "title": "Sprite",
+          "file": "sections/eeex-functions/Sprite.json",
+          "symbolCount": 64,
+          "upstreamPath": "source/EEex Functions/Sprite/index.rst"
+        },
+        {
+          "title": "Test",
+          "file": "sections/eeex-functions/Test.json",
+          "symbolCount": 2,
+          "upstreamPath": "source/EEex Functions/Test/index.rst"
+        },
+        {
+          "title": "Trigger",
+          "file": "sections/eeex-functions/Trigger.json",
+          "symbolCount": 3,
+          "upstreamPath": "source/EEex Functions/Trigger/index.rst"
+        },
+        {
+          "title": "Utility",
+          "file": "sections/eeex-functions/Utility.json",
+          "symbolCount": 36,
+          "upstreamPath": "source/EEex Functions/Utility/index.rst"
+        },
+        {
+          "title": "Variable",
+          "file": "sections/eeex-functions/Variable.json",
+          "symbolCount": 6,
+          "upstreamPath": "source/EEex Functions/Variable/index.rst"
+        }
+      ],
       "symbolCount": 297,
       "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64",
       "title": "EE Game Structures (x64)",
-      "file": "sections/ee-game-structures-x64.json",
+      "files": [
+        {
+          "title": "C2",
+          "file": "sections/ee-game-structures-x64/C2.json",
+          "symbolCount": 8,
+          "upstreamPath": "source/EE Game Structures (x64)/C2/index.rst"
+        },
+        {
+          "title": "CA",
+          "file": "sections/ee-game-structures-x64/CA.json",
+          "symbolCount": 434,
+          "upstreamPath": "source/EE Game Structures (x64)/CA/index.rst"
+        },
+        {
+          "title": "CB",
+          "file": "sections/ee-game-structures-x64/CB.json",
+          "symbolCount": 167,
+          "upstreamPath": "source/EE Game Structures (x64)/CB/index.rst"
+        },
+        {
+          "title": "CC",
+          "file": "sections/ee-game-structures-x64/CC.json",
+          "symbolCount": 331,
+          "upstreamPath": "source/EE Game Structures (x64)/CC/index.rst"
+        },
+        {
+          "title": "CD",
+          "file": "sections/ee-game-structures-x64/CD.json",
+          "symbolCount": 308,
+          "upstreamPath": "source/EE Game Structures (x64)/CD/index.rst"
+        },
+        {
+          "title": "CE",
+          "file": "sections/ee-game-structures-x64/CE.json",
+          "symbolCount": 13,
+          "upstreamPath": "source/EE Game Structures (x64)/CE/index.rst"
+        },
+        {
+          "title": "CF",
+          "file": "sections/ee-game-structures-x64/CF.json",
+          "symbolCount": 81,
+          "upstreamPath": "source/EE Game Structures (x64)/CF/index.rst"
+        },
+        {
+          "title": "CG",
+          "file": "sections/ee-game-structures-x64/CG.json",
+          "symbolCount": 2425,
+          "upstreamPath": "source/EE Game Structures (x64)/CG/index.rst"
+        },
+        {
+          "title": "CI",
+          "file": "sections/ee-game-structures-x64/CI.json",
+          "symbolCount": 331,
+          "upstreamPath": "source/EE Game Structures (x64)/CI/index.rst"
+        },
+        {
+          "title": "CK",
+          "file": "sections/ee-game-structures-x64/CK.json",
+          "symbolCount": 5,
+          "upstreamPath": "source/EE Game Structures (x64)/CK/index.rst"
+        },
+        {
+          "title": "CL",
+          "file": "sections/ee-game-structures-x64/CL.json",
+          "symbolCount": 24,
+          "upstreamPath": "source/EE Game Structures (x64)/CL/index.rst"
+        },
+        {
+          "title": "CM",
+          "file": "sections/ee-game-structures-x64/CM.json",
+          "symbolCount": 693,
+          "upstreamPath": "source/EE Game Structures (x64)/CM/index.rst"
+        },
+        {
+          "title": "CN",
+          "file": "sections/ee-game-structures-x64/CN.json",
+          "symbolCount": 94,
+          "upstreamPath": "source/EE Game Structures (x64)/CN/index.rst"
+        },
+        {
+          "title": "CO",
+          "file": "sections/ee-game-structures-x64/CO.json",
+          "symbolCount": 26,
+          "upstreamPath": "source/EE Game Structures (x64)/CO/index.rst"
+        },
+        {
+          "title": "CP",
+          "file": "sections/ee-game-structures-x64/CP.json",
+          "symbolCount": 445,
+          "upstreamPath": "source/EE Game Structures (x64)/CP/index.rst"
+        },
+        {
+          "title": "CR",
+          "file": "sections/ee-game-structures-x64/CR.json",
+          "symbolCount": 411,
+          "upstreamPath": "source/EE Game Structures (x64)/CR/index.rst"
+        },
+        {
+          "title": "CS",
+          "file": "sections/ee-game-structures-x64/CS.json",
+          "symbolCount": 1199,
+          "upstreamPath": "source/EE Game Structures (x64)/CS/index.rst"
+        },
+        {
+          "title": "CT",
+          "file": "sections/ee-game-structures-x64/CT.json",
+          "symbolCount": 53,
+          "upstreamPath": "source/EE Game Structures (x64)/CT/index.rst"
+        },
+        {
+          "title": "CU",
+          "file": "sections/ee-game-structures-x64/CU.json",
+          "symbolCount": 2,
+          "upstreamPath": "source/EE Game Structures (x64)/CU/index.rst"
+        },
+        {
+          "title": "CV",
+          "file": "sections/ee-game-structures-x64/CV.json",
+          "symbolCount": 266,
+          "upstreamPath": "source/EE Game Structures (x64)/CV/index.rst"
+        },
+        {
+          "title": "CW",
+          "file": "sections/ee-game-structures-x64/CW.json",
+          "symbolCount": 100,
+          "upstreamPath": "source/EE Game Structures (x64)/CW/index.rst"
+        },
+        {
+          "title": "CZ",
+          "file": "sections/ee-game-structures-x64/CZ.json",
+          "symbolCount": 7,
+          "upstreamPath": "source/EE Game Structures (x64)/CZ/index.rst"
+        },
+        {
+          "title": "UI",
+          "file": "sections/ee-game-structures-x64/UI.json",
+          "symbolCount": 310,
+          "upstreamPath": "source/EE Game Structures (x64)/UI/index.rst"
+        },
+        {
+          "title": "Other",
+          "file": "sections/ee-game-structures-x64/Other.json",
+          "symbolCount": 502,
+          "upstreamPath": "source/EE Game Structures (x64)/Other/index.rst"
+        },
+        {
+          "title": "File Formats",
+          "file": "sections/ee-game-structures-x64/File%20Formats.json",
+          "symbolCount": 0,
+          "upstreamPath": "source/EE Game Structures (x64)/File Formats/index.rst"
+        }
+      ],
       "symbolCount": 8235,
       "licenseStatus": "permission-gated"
     },
     {
       "id": "lua52",
       "title": "Lua 5.2",
-      "file": "sections/lua52.json",
+      "files": [
+        {
+          "title": "Lua 5.2",
+          "file": "sections/lua52.json",
+          "symbolCount": 128
+        }
+      ],
       "symbolCount": 128,
       "licenseStatus": "allowed"
     },
     {
       "id": "luajit",
       "title": "LuaJIT",
-      "file": "sections/luajit.json",
+      "files": [
+        {
+          "title": "LuaJIT",
+          "file": "sections/luajit.json",
+          "symbolCount": 36
+        }
+      ],
       "symbolCount": 36,
       "licenseStatus": "allowed"
     },
     {
       "id": "ee-utility-functions",
       "title": "EE Utility Functions",
-      "file": "sections/ee-utility-functions.json",
+      "files": [
+        {
+          "title": "EE Utility Functions",
+          "file": "sections/ee-utility-functions.json",
+          "symbolCount": 0
+        }
+      ],
       "symbolCount": 0,
       "licenseStatus": "permission-gated"
     }

@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 3,
+  "generatedAt": "2026-08-25T18:10:55.136Z",
+  "source": {
+    "id": "ee-game-lua-functions",
+    "title": "EE Game Lua Functions",
+    "url": "https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions",
+    "commit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+    "licenseStatus": "allowed"
+  },
+  "title": "priestScreen",
+  "upstreamPath": "source/EE Game Lua Functions/priestScreen/index.rst",
+  "symbols": [
+    {
+      "id": "ee-game-lua-functions:priestScreen:GetSpellLevel",
+      "name": "priestScreen:GetSpellLevel",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "priestScreen:GetSpellLevel()",
+      "containerName": "priestScreen",
+      "instanceName": "GetSpellLevel",
+      "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\npriestScreen:GetSpellLevel()\n```\n\n**See Also**\n\n,",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/priestScreen/priestScreen_GetSpellLevel.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:priestScreen:MemorizeSpell",
+      "name": "priestScreen:MemorizeSpell",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "priestScreen:MemorizeSpell()",
+      "containerName": "priestScreen",
+      "instanceName": "MemorizeSpell",
+      "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\npriestScreen:MemorizeSpell()\n```\n\n**See Also**\n\n,",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/priestScreen/priestScreen_MemorizeSpell.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:priestScreen:SetSpellLevel",
+      "name": "priestScreen:SetSpellLevel",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "priestScreen:SetSpellLevel()",
+      "containerName": "priestScreen",
+      "instanceName": "SetSpellLevel",
+      "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\npriestScreen:SetSpellLevel()\n```\n\n**See Also**\n\n,",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/priestScreen/priestScreen_SetSpellLevel.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:priestScreen:UnmemorizeSpell",
+      "name": "priestScreen:UnmemorizeSpell",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "priestScreen:UnmemorizeSpell()",
+      "containerName": "priestScreen",
+      "instanceName": "UnmemorizeSpell",
+      "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\npriestScreen:UnmemorizeSpell()\n```\n\n**See Also**\n\n,",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/priestScreen/priestScreen_UnmemorizeSpell.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    }
+  ]
+}

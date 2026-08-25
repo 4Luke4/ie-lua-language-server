@@ -1,0 +1,233 @@
+{
+  "schemaVersion": 3,
+  "generatedAt": "2026-08-25T18:10:55.136Z",
+  "source": {
+    "id": "eeex-functions",
+    "title": "EEex Functions",
+    "url": "https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions",
+    "commit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+    "licenseStatus": "allowed"
+  },
+  "title": "Actionbar",
+  "upstreamPath": "source/EEex Functions/Actionbar/index.rst",
+  "symbols": [
+    {
+      "id": "eeex-functions:EEex_Actionbar_AddButtonsUpdatedListener",
+      "name": "EEex_Actionbar_AddButtonsUpdatedListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Actionbar_AddButtonsUpdatedListener()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Actionbar/index.rst#L16",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Actionbar_AddListener",
+      "name": "EEex_Actionbar_AddListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Actionbar_AddListener(listener)",
+      "parameters": [
+        {
+          "name": "listener",
+          "type": "function",
+          "description": "The listener to register."
+        }
+      ],
+      "documentationMarkdown": "> **Summary**\n> Registers a function as an actionbar listener. Actionbar listeners are called whenever the actionbar changes state. See [EEex_Actionbar_GetState](#EEex_Actionbar_GetState) for more details.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| listener | function |  | The listener to register. |\n\n---\n\n#### **The listener function**\n\n**Parameters:**\n\n| Name | Type | Description |\n| --- | --- | --- |\n| config | number | Certain actionbar states map to the same button configuration, albeit with different   <br/> functionality. This value represents a unique button configuration; see below for more <br/> details. |\n| state | number | See [EEex_Actionbar_GetState](#EEex_Actionbar_GetState). |\n\n**The following shows what actionbar states each** `config` **encompases:**\n\n| Config | Matching States |\n| --- | --- |\n| 0 | 1 |\n| 1 | 2 |\n| 2 | 3 |\n| 3 | 4 |\n| 4 | 5 |\n| 5 | 6 |\n| 6 | 7 |\n| 7 | 8 |\n| 8 | 9 |\n| 9 | 10 |\n| 10 | 11 |\n| 11 | 12 |\n| 12 | 13 |\n| 13 | 14 |\n| 14 | 15 |\n| 15 | 16 |\n| 16 | 17 |\n| 17 | 18 |\n| 18 | 20 |\n| 19 | 21 |\n| 20 | 101 |\n| 21 | 102, 103 |\n| 22 | 104, 105 |\n| 23 | 106 |\n| 24 | 107 |\n| 25 | 108 |\n| 26 | 109 |\n| 27 | 110 |\n| 28 | 111 |\n| 29 | 112 |\n| 30 | 113, 114 |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Actionbar/index.rst#L24",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Actionbar_GetArray",
+      "name": "EEex_Actionbar_GetArray",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Actionbar_GetArray()",
+      "returns": [
+        {
+          "type": "CInfButtonArray",
+          "description": "See summary."
+        }
+      ],
+      "documentationMarkdown": "> **Summary**\n> Returns the actionbar button array. This structure holds the current state of the actionbar.\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| CInfButtonArray | See summary. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Actionbar/index.rst#L128",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Actionbar_GetLastState",
+      "name": "EEex_Actionbar_GetLastState",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Actionbar_GetLastState()",
+      "returns": [
+        {
+          "type": "number",
+          "description": "See summary."
+        }
+      ],
+      "documentationMarkdown": "> **Summary**\n> Returns the previous actionbar state. See [EEex_Actionbar_GetState](#EEex_Actionbar_GetState) for more details.\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| number | See summary. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Actionbar/index.rst#L147",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Actionbar_GetOp214ButtonDataIterator",
+      "name": "EEex_Actionbar_GetOp214ButtonDataIterator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Actionbar_GetOp214ButtonDataIterator()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Actionbar/index.rst#L166",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Actionbar_GetSpellButtonData",
+      "name": "EEex_Actionbar_GetSpellButtonData",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Actionbar_GetSpellButtonData()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Actionbar/index.rst#L174",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Actionbar_GetSpellButtonDataIterator",
+      "name": "EEex_Actionbar_GetSpellButtonDataIterator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Actionbar_GetSpellButtonDataIterator()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Actionbar/index.rst#L182",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Actionbar_GetState",
+      "name": "EEex_Actionbar_GetState",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Actionbar_GetState()",
+      "returns": [
+        {
+          "type": "number",
+          "description": "See summary."
+        }
+      ],
+      "documentationMarkdown": "> **Summary**\n> Returns the current actionbar state, which is a number that represents what the actionbar is displaying.\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| number | See summary. |\n\n---\n\n#### **Actionbar State Ordinals**\n\n| State | Description |\n| --- | --- |\n| 1 | Mage / Sorcerer |\n| 2 | Fighter |\n| 3 | Cleric |\n| 4 | Thief |\n| 5 | Bard |\n| 6 | Paladin |\n| 7 | Fighter Mage |\n| 8 | Fighter Cleric |\n| 9 | Fighter Thief |\n| 10 | Fighter Mage Thief |\n| 11 | Druid |\n| 12 | Ranger |\n| 13 | Mage Thief |\n| 14 | Cleric Mage |\n| 15 | Cleric Thief |\n| 16 | Fighter Druid |\n| 17 | Fighter Mage Cleric |\n| 18 | Cleric Ranger |\n| 20 | Monk |\n| 21 | Shaman |\n| 101 | Select Weapon Ability |\n| 102 | Spells (Select Quick Spell) |\n| 103 | Spells (Cast) |\n| 104 | Select Quick Item Ability |\n| 105 | Use Item |\n| 106 | Special Abilities |\n| 107 | Select Quick Formation |\n| 108 | Defunct Select Quick Formation (Not used) |\n| 109 | Group Selected |\n| 110 | Unknown (No buttons defined; not used?) |\n| 111 | Internal List (Opcode #214) |\n| 112 | Controlled (Class doesn't have a dedicated state) |\n| 113 | Cleric / Mage Spells (Cast) |\n| 114 | Cleric / Mage Spells (Select Quick Spell) |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Actionbar/index.rst#L190",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Actionbar_IsThievingHotkeyOpeningSpecialAbilities",
+      "name": "EEex_Actionbar_IsThievingHotkeyOpeningSpecialAbilities",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Actionbar_IsThievingHotkeyOpeningSpecialAbilities()",
+      "returns": [
+        {
+          "type": "boolean",
+          "description": "See summary."
+        }
+      ],
+      "documentationMarkdown": "> **Summary**\n> Returns `true` if the thieving hotkey is currently in the middle of opening the special abilities menu. It does this if the thieving button is not a part of the character's main actionbar state. This function allows actionbar listeners to differentiate between a user opening the special abilities menu, and the hotkey automatically doing so.\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| boolean | See summary. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Actionbar/index.rst#L285",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Actionbar_RestoreLastState",
+      "name": "EEex_Actionbar_RestoreLastState",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Actionbar_RestoreLastState()",
+      "documentationMarkdown": "> **Summary**\n> Restores the previous actionbar state. This is useful for exiting sub-states, such as the spell list.",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Actionbar/index.rst#L307",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Actionbar_RunWithListenersSuppressed",
+      "name": "EEex_Actionbar_RunWithListenersSuppressed",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Actionbar_RunWithListenersSuppressed()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Actionbar/index.rst#L318",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Actionbar_SetButton",
+      "name": "EEex_Actionbar_SetButton",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Actionbar_SetButton(index, buttonType)",
+      "parameters": [
+        {
+          "name": "index",
+          "type": "number",
+          "description": "The button index to change. Valid values are [0-11]."
+        },
+        {
+          "name": "buttonType",
+          "type": "EEex_Actionbar_ButtonType",
+          "description": "The button type to set."
+        }
+      ],
+      "documentationMarkdown": "> **Summary**\n> Changes the button at the given `index` to the given `buttonType`. Use this function in combination with an actionbar listener to permanently change a button on the actionbar.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| index | number |  | The button index to change. Valid values are [0-11]. |\n| buttonType | EEex_Actionbar_ButtonType |  | The button type to set. |\n\n---\n\n#### **EEex_Actionbar_ButtonType**\n\n+-------------------+ | Ordinal Name      | +===================+ | BARD_SONG         | +-------------------+ | CAST_SPELL        | +-------------------+ | FIND_TRAPS        | +-------------------+ | TALK              | +-------------------+ | GUARD             | +-------------------+ | ATTACK            | +-------------------+ | SPECIAL_ABILITIES | +-------------------+ | STEALTH           | +-------------------+ | THIEVING          | +-------------------+ | TURN_UNDEAD       | +-------------------+ | USE_ITEM          | +-------------------+ | STOP              | +-------------------+ | QUICK_ITEM_1      | +-------------------+ | QUICK_ITEM_2      | +-------------------+ | QUICK_ITEM_3      | +-------------------+ | QUICK_SPELL_1     | +-------------------+ | QUICK_SPELL_2     | +-------------------+ | QUICK_SPELL_3     | +-------------------+ | QUICK_WEAPON_1    | +-------------------+ | QUICK_WEAPON_2    | +-------------------+ | QUICK_WEAPON_3    | +-------------------+ | QUICK_WEAPON_4    | +-------------------+ | NONE              | +-------------------+",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Actionbar/index.rst#L326",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Actionbar_SetState",
+      "name": "EEex_Actionbar_SetState",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Actionbar_SetState(state)",
+      "parameters": [
+        {
+          "name": "state",
+          "type": "number",
+          "description": "The state to set."
+        }
+      ],
+      "documentationMarkdown": "> **Summary**\n> Sets the current actionbar state. See [EEex_Actionbar_GetState](#EEex_Actionbar_GetState) for more details.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| state | number |  | The state to set. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Actionbar/index.rst#L403",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Actionbar_SuppressListeners",
+      "name": "EEex_Actionbar_SuppressListeners",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Actionbar_SuppressListeners()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Actionbar/index.rst#L422",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    }
+  ]
+}

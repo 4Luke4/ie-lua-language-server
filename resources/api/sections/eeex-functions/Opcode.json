@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 3,
+  "generatedAt": "2026-08-25T18:10:55.136Z",
+  "source": {
+    "id": "eeex-functions",
+    "title": "EEex Functions",
+    "url": "https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions",
+    "commit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+    "licenseStatus": "allowed"
+  },
+  "title": "Opcode",
+  "upstreamPath": "source/EEex Functions/Opcode/index.rst",
+  "symbols": [
+    {
+      "id": "eeex-functions:EEex_Opcode_AddListsResolvedListener",
+      "name": "EEex_Opcode_AddListsResolvedListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Opcode_AddListsResolvedListener()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Opcode/index.rst#L16",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    }
+  ]
+}

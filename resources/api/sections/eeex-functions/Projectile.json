@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 3,
+  "generatedAt": "2026-08-25T18:10:55.136Z",
+  "source": {
+    "id": "eeex-functions",
+    "title": "EEex Functions",
+    "url": "https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions",
+    "commit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+    "licenseStatus": "allowed"
+  },
+  "title": "Projectile",
+  "upstreamPath": "source/EEex Functions/Projectile/index.rst",
+  "symbols": [
+    {
+      "id": "eeex-functions:EEex_Projectile_CastUserType",
+      "name": "EEex_Projectile_CastUserType",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Projectile_CastUserType(projectile)",
+      "parameters": [
+        {
+          "name": "projectile",
+          "type": "CProjectile",
+          "description": "The projectile to cast."
+        }
+      ],
+      "returns": [
+        {
+          "type": ":raw-html:`<pre>` CProjectile | CProjectileAmbiant | CProjectileArea | :raw-html:`<br/>` CProjectileBAM | CProjectileCallLightning | CProjectileCastingGlow | :raw-html:`<br/>` CProjectileChain | CProjectileColorSpray | CProjectileConeOfCold | :raw-html:`<br/>` CProjectileFall | CProjectileFireHands | CProjectileInstant | :raw-html:`<br/>` CProjectileInvisibleTravelling | CProjectileLightningBolt | CProjectileLightningBoltGround | :raw-html:`<br/>` CProjectileLightningBounce | CProjectileLightningStorm | CProjectileMagicMissileMulti | :raw-html:`<br/>` CProjectileMulti | CProjectileMushroom | CProjectileNewScorcher | :raw-html:`<br/>` CProjectileScorcher | CProjectileSegment | CProjectileSkyStrike | :raw-html:`<br/>` CProjectileSkyStrikeBAM | CProjectileSpellHit | CProjectileTravelDoor | nil :raw-html:`</pre>`",
+          "description": "See summary."
+        }
+      ],
+      "callableAliases": [
+        {
+          "name": "EEex_Projectile_CastUT",
+          "consumesFirstParameter": false
+        }
+      ],
+      "documentationMarkdown": "**Aliases:** `EEex_Projectile_CastUT`\n\n> **Summary**\n> Takes the given `projectile` and returns a cast userdata that represents `projectile`'s true type.\n>\n> Most EEex functions will call this function before passing a projectile to the modder API.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| projectile | CProjectile |  | The projectile to cast. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| <pre> CProjectile                    \\| CProjectileAmbiant             \\| CProjectileArea                \\| <br/> CProjectileBAM                 \\| CProjectileCallLightning       \\| CProjectileCastingGlow         \\| <br/> CProjectileChain               \\| CProjectileColorSpray          \\| CProjectileConeOfCold          \\| <br/> CProjectileFall                \\| CProjectileFireHands           \\| CProjectileInstant             \\| <br/> CProjectileInvisibleTravelling \\| CProjectileLightningBolt       \\| CProjectileLightningBoltGround \\| <br/> CProjectileLightningBounce     \\| CProjectileLightningStorm      \\| CProjectileMagicMissileMulti   \\| <br/> CProjectileMulti               \\| CProjectileMushroom            \\| CProjectileNewScorcher         \\| <br/> CProjectileScorcher            \\| CProjectileSegment             \\| CProjectileSkyStrike           \\| <br/> CProjectileSkyStrikeBAM        \\| CProjectileSpellHit            \\| CProjectileTravelDoor          \\| nil </pre> | See summary. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Projectile/index.rst#L16",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Projectile_GetStartingPos",
+      "name": "EEex_Projectile_GetStartingPos",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Projectile_GetStartingPos()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Projectile/index.rst#L46",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Projectile_GetStartingPosForID",
+      "name": "EEex_Projectile_GetStartingPosForID",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Projectile_GetStartingPosForID()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Projectile/index.rst#L54",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Projectile_GetType",
+      "name": "EEex_Projectile_GetType",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Projectile_GetType(projectile)",
+      "parameters": [
+        {
+          "name": "projectile",
+          "type": "CProjectile",
+          "description": "The projectile whose type is being fetched."
+        }
+      ],
+      "returns": [
+        {
+          "type": "EEex_Projectile_Type",
+          "description": "See summary."
+        }
+      ],
+      "callableAliases": [
+        {
+          "name": "getType",
+          "receiverType": "CProjectile",
+          "consumesFirstParameter": true
+        }
+      ],
+      "documentationMarkdown": "**Instance Name:** `getType`\n\n> **Summary**\n> Returns the `EEex_Projectile_Type` of the given `projectile`.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| projectile | CProjectile |  | The projectile whose type is being fetched. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| EEex_Projectile_Type | See summary. |\n\n---\n\n#### **EEex_Projectile_Type**\n\n| Name | Description |\n| --- | --- |\n| Unknown |  |\n| CProjectile |  |\n| CProjectileAmbiant |  |\n| CProjectileArea |  |\n| CProjectileBAM |  |\n| CProjectileChain |  |\n| CProjectileColorSpray |  |\n| CProjectileConeOfCold |  |\n| CProjectileFall |  |\n| CProjectileFireHands |  |\n| CProjectileInstant |  |\n| CProjectileMulti |  |\n| CProjectileMushroom |  |\n| CProjectileNewScorcher |  |\n| CProjectileScorcher |  |\n| CProjectileSegment |  |\n| CProjectileSkyStrike |  |\n| CProjectileSkyStrikeBAM |  |\n| CProjectileSpellHit |  |\n| CProjectileTravelDoor |  |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Projectile/index.rst#L62",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Projectile_IsOfType",
+      "name": "EEex_Projectile_IsOfType",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Projectile_IsOfType(projectile, checkType)",
+      "parameters": [
+        {
+          "name": "projectile",
+          "type": "CProjectile",
+          "description": "The projectile whose type is being checked."
+        },
+        {
+          "name": "checkType",
+          "type": "EEex_Projectile_Type",
+          "description": "The type to check against."
+        }
+      ],
+      "returns": [
+        {
+          "type": "boolean",
+          "description": "See summary."
+        }
+      ],
+      "callableAliases": [
+        {
+          "name": "isOfType",
+          "receiverType": "CProjectile",
+          "consumesFirstParameter": true
+        }
+      ],
+      "documentationMarkdown": "**Instance Name:** `isOfType`\n\n> **Summary**\n> Returns `true` if `projectile` has the type `checkType` or is a derivative thereof.\n>\n> This is useful to ensure that a projectile is of a certain type before accessing members it may or may not have.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| projectile | CProjectile |  | The projectile whose type is being checked. |\n| checkType | EEex_Projectile_Type |  | The type to check against. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| boolean | See summary. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Projectile/index.rst#L137",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Projectile_RegisterGlobalMutator",
+      "name": "EEex_Projectile_RegisterGlobalMutator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Projectile_RegisterGlobalMutator(mutatorTableName)",
+      "parameters": [
+        {
+          "name": "mutatorTableName",
+          "type": "string",
+          "description": "The name of the table to register."
+        }
+      ],
+      "returns": [
+        {
+          "type": "number | nil",
+          "description": "The new projectile type, or `nil` if the type should not be overridden.     <br/> <br/> This is equivalent to the value at `.SPL->Ability Header->[+0x26]`.         <br/> <br/> Subtract one from this value to get the corresponding `PROJECTL.IDS` index."
+        }
+      ],
+      "documentationMarkdown": "> **Summary**\n> Registers a global Lua table as a global (always processed) projectile mutator.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| mutatorTableName | string |  | The name of the table to register. |\n\n---\n\n#### **The Mutator Table**\n\nA mutator table can contain three optional keys, each of which should be assigned a respective mutator function.\n\nThe valid function keys are: `typeMutator`, `projectileMutator`, and `effectMutator`:\n\n---\n\n**typeMutator** \"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\n\n**Parameters:**\n\n| Name | Type | Description |\n| --- | --- | --- |\n| context | table | A table containing the context of the hook. |\n\n`context` **keys:**\n\n| Context Key | Value Type | Description |\n| --- | --- | --- |\n| decodeSource | EEex_Projectile_DecodeSource | The source of the hook, such as `EEex_Projectile_DecodeSource.CGameSprite_Spell`                           <br/> for the `Spell()` action, `EEex_Projectile_DecodeSource.CGameSprite_SpellPoint`                          <br/> for the `SpellPoint()` action, etc. |\n| originatingEffect | CGameEffect \\| nil | The op408 (ProjectileMutator) effect that registered the containing mutator table.                           <br/> <br/> This is always `nil` for global mutator tables registered via `EEex_Projectile_RegisterGlobalMutator()`. |\n| originatingSprite | CGameSprite \\| nil | The sprite that is decoding (creating) the projectile.                                                       <br/> <br/> Global mutator tables registered via `EEex_Projectile_RegisterGlobalMutator()`                             <br/> also run for non-sprite decode sources; in these cases this is `nil`. |\n| projectileType | number | The projectile type about to be decoded.                                                                     <br/> <br/> This is equivalent to the value at `.SPL->Ability Header->[+0x26]`.                                        <br/> <br/> Subtract one from this value to get the corresponding `PROJECTL.IDS` index. |\n\n**Return Values:**\n\n| Type | Description |\n| --- | --- |\n| number \\| nil | The new projectile type, or `nil` if the type should not be overridden.     <br/> <br/> This is equivalent to the value at `.SPL->Ability Header->[+0x26]`.         <br/> <br/> Subtract one from this value to get the corresponding `PROJECTL.IDS` index. |\n\n---\n\n**projectileMutator** \"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\n\n**Parameters:**\n\n| Name | Type | Description |\n| --- | --- | --- |\n| context | table | A table containing the context of the hook. |\n\n`context` **keys:**\n\n| Context Key | Value Type | Description |\n| --- | --- | --- |\n| decodeSource | EEex_Projectile_DecodeSource | The source of the hook, such as `EEex_Projectile_DecodeSource.CGameSprite_Spell`                           <br/> for the `Spell()` action, `EEex_Projectile_DecodeSource.CGameSprite_SpellPoint`                          <br/> for the `SpellPoint()` action, etc. |\n| originatingEffect | CGameEffect \\| nil | The op408 (ProjectileMutator) effect that registered the containing mutator table.                           <br/> <br/> This is always `nil` for global mutator tables registered via `EEex_Projectile_RegisterGlobalMutator()`. |\n| originatingSprite | CGameSprite \\| nil | The sprite that is decoding (creating) the projectile.                                                       <br/> <br/> Global mutator tables registered via `EEex_Projectile_RegisterGlobalMutator()`                             <br/> also run for non-sprite decode sources; in these cases this is `nil`. |\n| projectile | CProjectile | The projectile about to be returned from the decoding process. |\n\n---\n\n**effectMutator** \"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\n\n**Parameters:**\n\n| Name | Type | Description |\n| --- | --- | --- |\n| context | table | A table containing the context of the hook. |\n\n`context` **keys:**\n\n| Context Key | Value Type | Description |\n| --- | --- | --- |\n| addEffectSource | EEex_Projectile_AddEffectSource | The source of the hook, such as `EEex_Projectile_AddEffectSource.CGameSprite_Spell`                           <br/> for the `Spell()` action, `EEex_Projectile_AddEffectSource.CGameSprite_SpellPoint`                          <br/> for the `SpellPoint()` action, etc. |\n| effect | CGameEffect | The effect that is being added to `projectile`. |\n| originatingEffect | CGameEffect \\| nil | The op408 (ProjectileMutator) effect that registered the containing mutator table.                           <br/> <br/> This is always `nil` for global mutator tables registered via `EEex_Projectile_RegisterGlobalMutator()`. |\n| originatingSprite | CGameSprite \\| nil | The sprite that decoded (created) the projectile.                                                            <br/> <br/> Global mutator tables registered via `EEex_Projectile_RegisterGlobalMutator()`                             <br/> also run for non-sprite sources; in these cases this is `nil`. |\n| projectile | CProjectile | The projectile that `effect` is being added to. |\n\n---\n\n**EEex_Projectile_DecodeSource** \"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\n\n| Name | Description |\n| --- | --- |\n| CBounceList_Add |  |\n| CGameAIBase_FireItem |  |\n| CGameAIBase_FireItemPoint |  |\n| CGameAIBase_FireSpell |  |\n| CGameAIBase_FireSpellPoint |  |\n| CGameAIBase_ForceSpell |  |\n| CGameAIBase_ForceSpellPoint |  |\n| CGameEffect_FireSpell |  |\n| CGameEffectCastingGlow_ApplyEffect |  |\n| CGameEffectChangeStatic_ApplyEffect |  |\n| CGameEffectSummon_ApplyVisualEffect |  |\n| CGameEffectVisualSpellHitIWD_ApplyEffect |  |\n| CGameSprite_Spell |  |\n| CGameSprite_SpellPoint |  |\n| CGameSprite_Swing |  |\n| CGameSprite_UpdateAOE |  |\n| CGameSprite_UseItem |  |\n| CGameSprite_UseItemPoint |  |\n| CMessageFireProjectile_Run |  |\n| CProjectile_DecodeProjectile_MultiMagicMissile |  |\n| CProjectile_DecodeProjectile_ChainCallLightning |  |\n| CProjectile_DecodeProjectile_MultiProjectile |  |\n| CProjectileArea_CreateSecondary |  |\n| CProjectileArea_Explode |  |\n| CProjectileChain_AIUpdate |  |\n| CProjectileChain_Fire |  |\n| CProjectileFall_AIUpdate |  |\n\n**EEex_Projectile_AddEffectSource** \"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\n\n| Name | Description |\n| --- | --- |\n| CBounceList_Add |  |\n| CGameAIBase_FireItem |  |\n| CGameAIBase_FireItemPoint |  |\n| CGameAIBase_FireSpell |  |\n| CGameAIBase_FireSpellPoint |  |\n| CGameAIBase_ForceSpell |  |\n| CGameAIBase_ForceSpellPoint |  |\n| CGameEffect_FireSpell |  |\n| CGameSprite_LoadProjectile |  |\n| CGameSprite_Spell |  |\n| CGameSprite_SpellPoint |  |\n| CGameSprite_Swing |  |\n| CGameSprite_UseItem |  |\n| CGameSprite_UseItemPoint |  |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Projectile/index.rst#L170",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    }
+  ]
+}

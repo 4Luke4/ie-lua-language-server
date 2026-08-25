@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 3,
+  "generatedAt": "2026-08-25T18:10:55.136Z",
+  "source": {
+    "id": "eeex-functions",
+    "title": "EEex Functions",
+    "url": "https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions",
+    "commit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+    "licenseStatus": "allowed"
+  },
+  "title": "GameState",
+  "upstreamPath": "source/EEex Functions/GameState/index.rst",
+  "symbols": [
+    {
+      "id": "eeex-functions:EEex_GameState_AddAfterIncludesListener",
+      "name": "EEex_GameState_AddAfterIncludesListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_GameState_AddAfterIncludesListener()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameState/index.rst#L16",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_GameState_AddBeforeIncludesListener",
+      "name": "EEex_GameState_AddBeforeIncludesListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_GameState_AddBeforeIncludesListener()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameState/index.rst#L24",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_GameState_AddDestroyedListener",
+      "name": "EEex_GameState_AddDestroyedListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_GameState_AddDestroyedListener(listener)",
+      "parameters": [
+        {
+          "name": "listener",
+          "type": "function",
+          "description": "The listener to register."
+        }
+      ],
+      "documentationMarkdown": "> **Summary**\n> Registers a listener function that is called immediately after the engine has cleaned up a game session. Examples of when this occurs include the user quitting to the main menu, loading a save, etc.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| listener | function |  | The listener to register. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameState/index.rst#L32",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_GameState_AddInitializedListener",
+      "name": "EEex_GameState_AddInitializedListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_GameState_AddInitializedListener(listener)",
+      "parameters": [
+        {
+          "name": "listener",
+          "type": "function",
+          "description": "The listener to register."
+        }
+      ],
+      "documentationMarkdown": "> **Summary**\n> Registers a listener function that is called immediately after the engine's Lua environment has been initialized. This only occurs once during the engine's early start up process. If the engine has already been initialized, `listener` is called immediately.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| listener | function |  | The listener to register. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameState/index.rst#L52",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_GameState_AddShutdownListener",
+      "name": "EEex_GameState_AddShutdownListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_GameState_AddShutdownListener()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameState/index.rst#L73",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_GameState_GetGlobalInt",
+      "name": "EEex_GameState_GetGlobalInt",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_GameState_GetGlobalInt(variableName)",
+      "parameters": [
+        {
+          "name": "variableName",
+          "type": "string",
+          "description": "The name of the variable to fetch."
+        }
+      ],
+      "returns": [
+        {
+          "type": "number",
+          "description": "See summary."
+        }
+      ],
+      "documentationMarkdown": "> **Summary**\n> Returns the integer value of the `variableName` Global scoped to `GLOBAL`. If no variable named `variableName` exists, returns `0`.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| variableName | string |  | The name of the variable to fetch. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| number | See summary. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameState/index.rst#L81",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_GameState_GetGlobalString",
+      "name": "EEex_GameState_GetGlobalString",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_GameState_GetGlobalString(variableName)",
+      "parameters": [
+        {
+          "name": "variableName",
+          "type": "string",
+          "description": "The name of the variable to fetch."
+        }
+      ],
+      "returns": [
+        {
+          "type": "string",
+          "description": "See summary."
+        }
+      ],
+      "documentationMarkdown": "> **Summary**\n> Returns the string value of the `variableName` Global scoped to `GLOBAL`. If no variable named `variableName` exists, returns `\"\"`.\n\n> **Note**\n> Global string values can only be accessed through EEex functions.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| variableName | string |  | The name of the variable to fetch. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| string | See summary. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameState/index.rst#L109",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_GameState_SetGlobalInt",
+      "name": "EEex_GameState_SetGlobalInt",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_GameState_SetGlobalInt(variableName, value)",
+      "parameters": [
+        {
+          "name": "variableName",
+          "type": "string",
+          "description": "The name of the variable to set."
+        },
+        {
+          "name": "value",
+          "type": "number",
+          "description": "The value to set the variable to."
+        }
+      ],
+      "documentationMarkdown": "> **Summary**\n> Sets the integer value of the `variableName` Global scoped to `GLOBAL` to `value`.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| variableName | string |  | The name of the variable to set. |\n| value | number |  | The value to set the variable to. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameState/index.rst#L141",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_GameState_SetGlobalString",
+      "name": "EEex_GameState_SetGlobalString",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_GameState_SetGlobalString(variableName, value)",
+      "parameters": [
+        {
+          "name": "variableName",
+          "type": "string",
+          "description": "The name of the variable to set."
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "description": "The value to set the variable to."
+        }
+      ],
+      "documentationMarkdown": "> **Summary**\n> Sets the string value of the `variableName` Global scoped to `GLOBAL` to `value`.\n\n> **Note**\n> Global string values can only be accessed through EEex functions.\n\n> **Warning**\n> Global string values can be a maximum of 32 characters. Attempting to set a value that is longer than 32 characters will result in the value being truncated.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| variableName | string |  | The name of the variable to set. |\n| value | string |  | The value to set the variable to. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameState/index.rst#L162",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    }
+  ]
+}

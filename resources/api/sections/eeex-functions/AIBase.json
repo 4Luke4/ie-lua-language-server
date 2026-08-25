@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 3,
+  "generatedAt": "2026-08-25T18:10:55.136Z",
+  "source": {
+    "id": "eeex-functions",
+    "title": "EEex Functions",
+    "url": "https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions",
+    "commit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+    "licenseStatus": "allowed"
+  },
+  "title": "AIBase",
+  "upstreamPath": "source/EEex Functions/AIBase/index.rst",
+  "symbols": [
+    {
+      "id": "eeex-functions:EEex_AIBase_AddScriptingObjectUpdatedListener",
+      "name": "EEex_AIBase_AddScriptingObjectUpdatedListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_AIBase_AddScriptingObjectUpdatedListener()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/AIBase/index.rst#L16",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_AIBase_GetScriptLevel",
+      "name": "EEex_AIBase_GetScriptLevel",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_AIBase_GetScriptLevel(aiBase, scriptLevel)",
+      "parameters": [
+        {
+          "name": "aiBase",
+          "type": "CGameAIBase",
+          "description": "The object whose script is being fetched."
+        },
+        {
+          "name": "scriptLevel",
+          "type": "number",
+          "description": "The level of the script to fetch. Valid values identical to `SCRLEV.IDS`_."
+        }
+      ],
+      "returns": [
+        {
+          "type": "CAIScript",
+          "description": "See summary."
+        }
+      ],
+      "callableAliases": [
+        {
+          "name": "getScriptLevel",
+          "receiverType": "CGameAIBase",
+          "consumesFirstParameter": true
+        }
+      ],
+      "documentationMarkdown": "**Instance Name:** `getScriptLevel`\n\n> **Summary**\n> Returns the `aiBase`'s `CAIScript` for the given `scriptLevel`.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| aiBase | CGameAIBase |  | The object whose script is being fetched. |\n| scriptLevel | number |  | The level of the script to fetch. Valid values identical to `SCRLEV.IDS`_. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| CAIScript | See summary. |\n\n---\n\n#### **SCRLEV.IDS**\n\n| Script Level | Symbolic Name |\n| --- | --- |\n| 0 | OVERRIDE |\n| 1 | AREA |\n| 2 | SPECIFICS |\n| 4 | CLASS |\n| 5 | RACE |\n| 6 | GENERAL |\n| 7 | DEFAULT |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/AIBase/index.rst#L24",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_AIBase_GetScriptLevelResRef",
+      "name": "EEex_AIBase_GetScriptLevelResRef",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_AIBase_GetScriptLevelResRef(aiBase, scriptLevel)",
+      "parameters": [
+        {
+          "name": "aiBase",
+          "type": "CGameAIBase",
+          "description": "The object whose script resref is being fetched."
+        },
+        {
+          "name": "scriptLevel",
+          "type": "number",
+          "description": "The level of the script resref to fetch. Valid values identical to `SCRLEV.IDS`_."
+        }
+      ],
+      "returns": [
+        {
+          "type": "string",
+          "description": "See summary."
+        }
+      ],
+      "callableAliases": [
+        {
+          "name": "getScriptLevelResRef",
+          "receiverType": "CGameAIBase",
+          "consumesFirstParameter": true
+        }
+      ],
+      "documentationMarkdown": "**Instance Name:** `getScriptLevelResRef`\n\n> **Summary**\n> Returns a string that represents the `aiBase`'s `CResRef` for the given `scriptLevel`. If the given `scriptLevel` is not populated, returns `\"\"`.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| aiBase | CGameAIBase |  | The object whose script resref is being fetched. |\n| scriptLevel | number |  | The level of the script resref to fetch. Valid values identical to `SCRLEV.IDS`_. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| string | See summary. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/AIBase/index.rst#L76",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_AIBase_GetStoredScriptingTarget",
+      "name": "EEex_AIBase_GetStoredScriptingTarget",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_AIBase_GetStoredScriptingTarget()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/AIBase/index.rst#L107",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_AIBase_SetScriptLevel",
+      "name": "EEex_AIBase_SetScriptLevel",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_AIBase_SetScriptLevel(aiBase, scriptLevel, script)",
+      "parameters": [
+        {
+          "name": "aiBase",
+          "type": "CGameAIBase",
+          "description": "The object whose script level is being set."
+        },
+        {
+          "name": "scriptLevel",
+          "type": "number",
+          "description": "The level of the script to set. Valid values identical to `SCRLEV.IDS`_."
+        },
+        {
+          "name": "script",
+          "type": "CAIScript",
+          "description": "The script to assign to `scriptLevel`. <br/>  <br/> **Note:** `aiBase` **holds a reference to this parameter; do not free it.**"
+        }
+      ],
+      "callableAliases": [
+        {
+          "name": "setScriptLevel",
+          "receiverType": "CGameAIBase",
+          "consumesFirstParameter": true
+        }
+      ],
+      "documentationMarkdown": "**Instance Name:** `setScriptLevel`\n\n> **Summary**\n> Sets the `aiBase`'s `CAIScript` for the given `scriptLevel` to `script`.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| aiBase | CGameAIBase |  | The object whose script level is being set. |\n| scriptLevel | number |  | The level of the script to set. Valid values identical to `SCRLEV.IDS`_. |\n| script | CAIScript |  | The script to assign to `scriptLevel`. <br/>  <br/> **Note:** `aiBase` **holds a reference to this parameter; do not free it.** |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/AIBase/index.rst#L115",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_AIBase_SetScriptLevelResRef",
+      "name": "EEex_AIBase_SetScriptLevelResRef",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_AIBase_SetScriptLevelResRef(aiBase, scriptLevel, resref, bPlayerScript)",
+      "parameters": [
+        {
+          "name": "aiBase",
+          "type": "CGameAIBase",
+          "description": "The object whose script level is being set."
+        },
+        {
+          "name": "scriptLevel",
+          "type": "number",
+          "description": "The level of the script to set. Valid values identical to `SCRLEV.IDS`_."
+        },
+        {
+          "name": "resref",
+          "type": "string",
+          "description": "The script resref to assign to `scriptLevel`."
+        },
+        {
+          "name": "bPlayerScript",
+          "type": "boolean",
+          "defaultValue": "false",
+          "description": "If `true`, signifies that `resref` has the extension `.BS` instead of `.BCS`. <br/>  <br/> **Note:** Due to the enhanced edition’s use of script caching, the engine has trouble <br/> differentiating between `.BS` and `.BCS` files with the same name. If a script <br/> with the given `resref` has already been loaded by the engine, that script will be <br/> used, regardless of `bPlayerScript`."
+        }
+      ],
+      "callableAliases": [
+        {
+          "name": "setScriptLevelResRef",
+          "receiverType": "CGameAIBase",
+          "consumesFirstParameter": true
+        }
+      ],
+      "documentationMarkdown": "**Instance Name:** `setScriptLevelResRef`\n\n> **Summary**\n> Loads the script with the given `resref` and sets the `aiBase`'s `CAIScript` for the given `scriptLevel` to it.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| aiBase | CGameAIBase |  | The object whose script level is being set. |\n| scriptLevel | number |  | The level of the script to set. Valid values identical to `SCRLEV.IDS`_. |\n| resref | string |  | The script resref to assign to `scriptLevel`. |\n| bPlayerScript | boolean | `false` | If `true`, signifies that `resref` has the extension `.BS` instead of `.BCS`. <br/>  <br/> **Note:** Due to the enhanced edition’s use of script caching, the engine has trouble <br/> differentiating between `.BS` and `.BCS` files with the same name. If a script <br/> with the given `resref` has already been loaded by the engine, that script will be <br/> used, regardless of `bPlayerScript`. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/AIBase/index.rst#L139",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_AIBase_SetStoredScriptingTarget",
+      "name": "EEex_AIBase_SetStoredScriptingTarget",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_AIBase_SetStoredScriptingTarget(aiBase, targetKey, target)",
+      "parameters": [
+        {
+          "name": "aiBase",
+          "type": "CGameAIBase",
+          "description": "The object that the target is being stored on."
+        },
+        {
+          "name": "targetKey",
+          "type": "string",
+          "description": "The name to be used to refer to the target being stored."
+        },
+        {
+          "name": "target",
+          "type": "CGameObject",
+          "description": "The target being stored on `aiBase` as `targetKey`."
+        }
+      ],
+      "callableAliases": [
+        {
+          "name": "setStoredScriptingTarget",
+          "receiverType": "CGameAIBase",
+          "consumesFirstParameter": true
+        }
+      ],
+      "documentationMarkdown": "**Instance Name:** `setStoredScriptingTarget`\n\n> **Summary**\n> Stores `target` on `aiBase` for use with the `EEex_Target` scripting object.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| aiBase | CGameAIBase |  | The object that the target is being stored on. |\n| targetKey | string |  | The name to be used to refer to the target being stored. |\n| target | CGameObject |  | The target being stored on `aiBase` as `targetKey`. |\n\n---\n\n#### **Example**\n\nA combination of `EEex_AIBase_SetStoredScriptingTarget` and `EEex_LuaTrigger` can be used to target specific objects programmatically. The following example shows how you could use this concept to have a creature start dialog once they see the current party leader:\n\n**In M_*.lua file:** \"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\n\n```Lua\nfunction StoreAlivePartyLeader()\n\n    local partyLeader = nil\n\n    for i = 0, 5 do\n        local partyMember = EEex_Sprite_GetInPortrait(i)\n        if partyMember and EEex_BAnd(partyMember.m_baseStats.m_generalState, 0xFC0) == 0 then\n            partyLeader = partyMember\n            break\n        end\n    end\n\n    EEex_LuaTrigger_Object:setStoredScriptingTarget(\"AlivePartyLeader\", partyLeader)\n    return partyLeader ~= nil\nend\n```\n\n**In script:** \"\"\"\"\"\"\"\"\"\"\"\"\"\"\n\n```text\nIF\n    EEex_LuaTrigger(\"return StoreAlivePartyLeader()\")\n    See(EEex_Target(\"AlivePartyLeader\"))\nTHEN\n    RESPONSE #100\n        Dialog(EEex_Target(\"AlivePartyLeader\"))\nEND\n```",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/AIBase/index.rst#L165",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    }
+  ]
+}
