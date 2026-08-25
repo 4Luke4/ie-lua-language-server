@@ -1,6 +1,6 @@
 {
   "name": "@ie-lua/shared",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "private": true,
   "type": "commonjs",
   "main": "../../dist/shared/index.js",

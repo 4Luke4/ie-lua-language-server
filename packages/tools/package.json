@@ -1,11 +1,11 @@
 {
   "name": "@ie-lua/tools",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "private": true,
   "type": "commonjs",
   "main": "../../dist/tools/ingest-docs.js",
   "types": "../../dist/tools/ingest-docs.d.ts",
   "dependencies": {
-    "@ie-lua/shared": "0.5.0"
+    "@ie-lua/shared": "0.5.1"
   }
 }
