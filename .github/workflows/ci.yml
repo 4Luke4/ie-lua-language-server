@@ -34,3 +34,7 @@ jobs:
         run: npm ci --no-audit --progress=false
       - name: Verify
         run: npm run verify
+      - name: Package prerelease VSIX
+        run: npm run package:pre-release
+      - name: Audit prerelease package
+        run: npm run package:audit
