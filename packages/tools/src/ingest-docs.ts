@@ -2,7 +2,9 @@ import * as fs from 'node:fs';
 import * as path from 'node:path';
 import type {
   ApiIndexManifest,
+  ApiIndexManifestV3,
   ApiSectionFile,
+  ApiShardReference,
   ApiSymbol,
   ApiSource,
   SourceSectionId,
@@ -11,6 +13,7 @@ import { parseEeexStructureSymbols } from './eeex-structures';
 import {
   parseEeexFunctionSymbols,
   parseGameFunctionSymbol,
+  parseGameIndexFunctionSymbols,
   parseGameIndexDescriptions,
 } from './eeex-functions';
 
@@ -78,65 +81,138 @@ function makeSources(eeexCommit: string | undefined): ApiSource[] {
   ];
 }
 
-const sectionFiles = {
-  'ee-game-lua-functions': 'sections/ee-game-lua-functions.json',
-  'eeex-functions': 'sections/eeex-functions.json',
-  'ee-game-structures-x64': 'sections/ee-game-structures-x64.json',
+const singletonSectionFiles: Partial<Record<SourceSectionId, string>> = {
   lua52: 'sections/lua52.json',
   luajit: 'sections/luajit.json',
   'ee-utility-functions': 'sections/ee-utility-functions.json',
-} satisfies Record<SourceSectionId, string>;
+};
+
+const eeexSourceSections = new Set<SourceSectionId>([
+  'ee-game-lua-functions',
+  'eeex-functions',
+  'ee-game-structures-x64',
+]);
+
+interface GeneratedShard {
+  sourceSection: SourceSectionId;
+  title: string;
+  symbols: ApiSymbol[];
+  file?: string;
+  upstreamPath?: string;
+}
 
 async function main(): Promise<void> {
   const shouldFetchEeex = process.env.IE_LUA_FETCH_EEEX === '1';
   const eeexCommit = shouldFetchEeex ? await resolveEeexCommit() : readExistingEeexCommit();
-  const symbols: ApiSymbol[] = [
+  const localSymbols: ApiSymbol[] = [
     ...(process.env.IE_LUA_SCAN_LOCAL_UTIL === '1'
       ? scanUtilityFunctions(path.resolve(repoRoot, 'samples/util.lua'))
       : []),
     ...(await makeLua52Symbols()),
     ...(await makeLuaJitSymbols()),
-    ...(!shouldFetchEeex ? loadExistingEeexSymbols() : []),
   ];
-
-  if (shouldFetchEeex && eeexCommit) {
-    symbols.push(...(await fetchEeexSymbols(eeexCommit)));
-  }
-
+  const eeexShards = shouldFetchEeex
+    ? await fetchEeexShards(eeexCommit!)
+    : loadExistingEeexShards();
   const sources = makeSources(eeexCommit);
   const generatedAt = new Date().toISOString();
-  const dedupedSymbols = validateAndSortSymbols(symbols);
-  const symbolsBySection = groupSymbolsBySection(dedupedSymbols, sources);
-  const index: ApiIndexManifest = {
-    schemaVersion: 2,
+  const initialShards: GeneratedShard[] = [
+    ...eeexShards,
+    ...sources
+      .filter((source) => !eeexSourceSections.has(source.id))
+      .map((source) => {
+        const file = singletonSectionFiles[source.id];
+        if (!file) throw new Error(`Missing singleton file mapping: ${source.id}`);
+        return {
+          sourceSection: source.id,
+          title: source.title,
+          file,
+          symbols: localSymbols.filter((symbol) => symbol.sourceSection === source.id),
+        };
+      }),
+  ];
+  const dedupedSymbols = validateAndSortSymbols(initialShards.flatMap((shard) => shard.symbols));
+  const selectedSymbols = new Map(dedupedSymbols.map((symbol) => [symbol.id, symbol]));
+  const shards = initialShards.map((shard) => ({
+    ...shard,
+    symbols: shard.symbols
+      .filter((symbol) => selectedSymbols.get(symbol.id) === symbol)
+      .sort((left, right) => left.id.localeCompare(right.id)),
+  }));
+  const shardFiles = new Map<GeneratedShard, string>();
+  for (const shard of shards) {
+    shardFiles.set(shard, shard.file ?? makeCategoryShardFile(shard.sourceSection, shard.title));
+  }
+
+  const index: ApiIndexManifestV3 = {
+    schemaVersion: 3,
     generatedAt,
     sources,
-    sections: sources.map((source) => ({
-      id: source.id,
-      title: source.title,
-      file: sectionFiles[source.id],
-      symbolCount: symbolsBySection.get(source.id)?.length ?? 0,
-      licenseStatus: source.licenseStatus,
-    })),
+    sections: sources.map((source) => {
+      const sourceShards = shards.filter((shard) => shard.sourceSection === source.id);
+      const files: ApiShardReference[] = sourceShards.map((shard) => ({
+        title: shard.title,
+        file: shardFiles.get(shard)!,
+        symbolCount: shard.symbols.length,
+        ...(shard.upstreamPath ? { upstreamPath: shard.upstreamPath } : {}),
+      }));
+      return {
+        id: source.id,
+        title: source.title,
+        files,
+        symbolCount: files.reduce((total, file) => total + file.symbolCount, 0),
+        licenseStatus: source.licenseStatus,
+      };
+    }),
   };
 
   fs.mkdirSync(sectionDirectory, { recursive: true });
-  for (const source of sources) {
+  const expectedFiles = new Set<string>();
+  for (const shard of shards) {
+    const relativeFile = shardFiles.get(shard)!;
+    expectedFiles.add(relativeFile);
+    const source = sources.find((candidate) => candidate.id === shard.sourceSection);
+    if (!source) throw new Error(`Generated shard has unknown source: ${shard.sourceSection}`);
     const section: ApiSectionFile = {
-      schemaVersion: 2,
+      schemaVersion: 3,
       generatedAt,
       source,
-      symbols: symbolsBySection.get(source.id) ?? [],
+      title: shard.title,
+      ...(shard.upstreamPath ? { upstreamPath: shard.upstreamPath } : {}),
+      symbols: shard.symbols,
     };
-    fs.writeFileSync(
-      path.resolve(outputDirectory, sectionFiles[source.id]),
-      `${JSON.stringify(section, null, 2)}\n`,
-      'utf8',
-    );
+    const filePath = path.resolve(outputDirectory, relativeFile);
+    fs.mkdirSync(path.dirname(filePath), { recursive: true });
+    fs.writeFileSync(filePath, `${JSON.stringify(section, null, 2)}\n`, 'utf8');
   }
+  removeStaleSectionFiles(expectedFiles);
 
   fs.mkdirSync(outputDirectory, { recursive: true });
   fs.writeFileSync(outputPath, `${JSON.stringify(index, null, 2)}\n`, 'utf8');
+}
+
+function makeCategoryShardFile(sourceSection: SourceSectionId, title: string): string {
+  const safeTitle = encodeURIComponent(title).replace(
+    /[!'()*]/gu,
+    (character) => `%${character.codePointAt(0)!.toString(16).toUpperCase()}`,
+  );
+  return `sections/${sourceSection}/${safeTitle}.json`;
+}
+
+function removeStaleSectionFiles(expectedFiles: Set<string>): void {
+  if (!fs.existsSync(sectionDirectory)) return;
+  const visit = (directory: string): void => {
+    for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+      const filePath = path.resolve(directory, entry.name);
+      if (entry.isDirectory()) {
+        visit(filePath);
+      } else if (entry.isFile() && entry.name.endsWith('.json')) {
+        const relativeFile = path.relative(outputDirectory, filePath).split(path.sep).join('/');
+        if (!expectedFiles.has(relativeFile)) fs.unlinkSync(filePath);
+      }
+    }
+  };
+  visit(sectionDirectory);
 }
 
 async function makeLua52Symbols(): Promise<ApiSymbol[]> {
@@ -318,7 +394,7 @@ function extractLuaJitSymbolNames(signature: string): string[] {
   return [...names];
 }
 
-async function fetchEeexSymbols(eeexCommit: string): Promise<ApiSymbol[]> {
+async function fetchEeexShards(eeexCommit: string): Promise<GeneratedShard[]> {
   const gitCommit = await fetchJson<GitCommit>(
     `https://api.github.com/repos/Bubb13/EEex-Docs/git/commits/${eeexCommit}`,
   );
@@ -329,19 +405,19 @@ async function fetchEeexSymbols(eeexCommit: string): Promise<ApiSymbol[]> {
     throw new Error('EEex repository tree response was truncated.');
   }
 
-  const gameTree = treeForSection(rootTree, 'ee-game-lua-functions');
-  const eeexTree = treeForSection(rootTree, 'eeex-functions');
-  const [gameLua, eeexFunctions, structures] = await Promise.all([
-    fetchGameFunctionSymbols(gameTree, eeexCommit),
-    fetchEeexFunctionSymbols(eeexTree, eeexCommit),
-    fetchEeexStructureSymbols(treeForSection(rootTree, 'ee-game-structures-x64'), eeexCommit),
+  const [gameShards, eeexShards, structureShards] = await Promise.all([
+    fetchGameFunctionShards(treeForSection(rootTree, 'ee-game-lua-functions'), eeexCommit),
+    fetchEeexFunctionShards(treeForSection(rootTree, 'eeex-functions'), eeexCommit),
+    fetchEeexStructureShards(treeForSection(rootTree, 'ee-game-structures-x64'), eeexCommit),
   ]);
+  const countSymbols = (shards: GeneratedShard[]): number =>
+    shards.reduce((total, shard) => total + shard.symbols.length, 0);
 
   console.log(
-    `EEex-Docs ${eeexCommit}: generated ${gameLua.length} EE Game functions, ${eeexFunctions.length} EEex functions, and ${structures.length} structure symbols.`,
+    `EEex-Docs ${eeexCommit}: generated ${countSymbols(gameShards)} EE Game functions in ${gameShards.length} shards, ${countSymbols(eeexShards)} EEex functions in ${eeexShards.length} shards, and ${countSymbols(structureShards)} structure symbols in ${structureShards.length} shards.`,
   );
 
-  return [...gameLua, ...eeexFunctions, ...structures];
+  return [...gameShards, ...eeexShards, ...structureShards];
 }
 
 async function resolveEeexCommit(): Promise<string> {
@@ -371,20 +447,41 @@ function readExistingEeexCommit(): string | undefined {
   return existing.sources.find((source) => source.id === 'ee-game-structures-x64')?.commit;
 }
 
-function loadExistingEeexSymbols(): ApiSymbol[] {
-  const eeexSections: SourceSectionId[] = [
-    'ee-game-lua-functions',
-    'eeex-functions',
-    'ee-game-structures-x64',
-  ];
-  return eeexSections.flatMap((sourceSection) => {
-    const filePath = path.resolve(outputDirectory, sectionFiles[sourceSection]);
-    if (!fs.existsSync(filePath)) {
-      return [];
-    }
-    const section = JSON.parse(fs.readFileSync(filePath, 'utf8')) as ApiSectionFile;
-    return section.symbols;
+function loadExistingEeexShards(): GeneratedShard[] {
+  if (!fs.existsSync(outputPath)) return [];
+  const existing = JSON.parse(fs.readFileSync(outputPath, 'utf8')) as ApiIndexManifest;
+  if (existing.schemaVersion !== 3) {
+    throw new Error(
+      'Existing EEex data predates category shards. Set IE_LUA_FETCH_EEEX=1 to migrate it.',
+    );
+  }
+  return [...eeexSourceSections].flatMap((sourceSection) => {
+    const section = existing.sections.find((candidate) => candidate.id === sourceSection);
+    return (section?.files ?? []).map((reference) =>
+      loadExistingShard(sourceSection, reference.title, reference.file, reference.upstreamPath),
+    );
   });
+}
+
+function loadExistingShard(
+  sourceSection: SourceSectionId,
+  title: string,
+  relativeFile: string,
+  upstreamPath: string | undefined,
+): GeneratedShard {
+  const filePath = path.resolve(outputDirectory, relativeFile);
+  if (!fs.existsSync(filePath)) {
+    throw new Error(`Missing existing API shard: ${relativeFile}`);
+  }
+  const section = JSON.parse(fs.readFileSync(filePath, 'utf8')) as ApiSectionFile;
+  const resolvedUpstreamPath = section.upstreamPath ?? upstreamPath;
+  return {
+    sourceSection,
+    title: section.title ?? title,
+    file: relativeFile,
+    symbols: section.symbols,
+    ...(resolvedUpstreamPath ? { upstreamPath: resolvedUpstreamPath } : {}),
+  };
 }
 
 function treeForSection(rootTree: GitTree, sourceSection: SourceSectionId): GitTree {
@@ -399,87 +496,145 @@ function treeForSection(rootTree: GitTree, sourceSection: SourceSectionId): GitT
   };
 }
 
-async function fetchGameFunctionSymbols(tree: GitTree, commit: string): Promise<ApiSymbol[]> {
-  const pagePaths = tree.tree
-    .filter(
-      (entry) =>
-        entry.type === 'blob' &&
-        entry.path.endsWith('.rst') &&
-        path.basename(entry.path) !== 'index.rst',
-    )
-    .map((entry) => entry.path)
-    .sort();
-  const indexPaths = tree.tree
-    .filter((entry) => entry.type === 'blob' && entry.path.endsWith('index.rst'))
-    .map((entry) => entry.path);
-  if (pagePaths.length === 0 || indexPaths.length === 0) {
-    throw new Error('EE Game Lua Functions tree is incomplete.');
-  }
-
-  const descriptionsByDirectory = new Map<string, Map<string, string>>();
-  await Promise.all(
-    indexPaths.map(async (indexPath) => {
-      const sourcePath = `source/${sectionPath('ee-game-lua-functions')}/${indexPath}`;
-      descriptionsByDirectory.set(
-        path.dirname(indexPath),
-        parseGameIndexDescriptions(
-          await fetchEeexSourceText('ee-game-lua-functions', indexPath, commit),
-          sourcePath,
-        ),
-      );
-    }),
-  );
-
-  const symbols = await Promise.all(
-    pagePaths.map(async (pagePath) => {
-      const sourcePath = `source/${sectionPath('ee-game-lua-functions')}/${pagePath}`;
-      const anchor = path.basename(pagePath, '.rst');
-      const indexDescription = descriptionsByDirectory.get(path.dirname(pagePath))?.get(anchor);
-      return parseGameFunctionSymbol({
-        commit,
-        sourcePath,
-        text: await fetchEeexSourceText('ee-game-lua-functions', pagePath, commit),
-        ...(indexDescription !== undefined ? { indexDescription } : {}),
-      });
-    }),
-  );
-  if (symbols.length !== pagePaths.length) {
-    throw new Error(
-      `EE Game function completeness failure: ${pagePaths.length} sources, ${symbols.length} symbols.`,
-    );
-  }
-  return symbols;
+interface UpstreamCategory {
+  title: string;
+  indexPath: string;
+  upstreamPath: string;
 }
 
-async function fetchEeexFunctionSymbols(tree: GitTree, commit: string): Promise<ApiSymbol[]> {
-  const indexPaths = tree.tree
-    .filter((entry) => entry.type === 'blob' && entry.path.endsWith('index.rst'))
-    .map((entry) => entry.path)
-    .sort();
-  if (indexPaths.length === 0) throw new Error('EEex Functions tree is incomplete.');
-  const symbols = (
-    await Promise.all(
-      indexPaths.map(async (indexPath) => {
-        const sourcePath = `source/${sectionPath('eeex-functions')}/${indexPath}`;
-        return parseEeexFunctionSymbols({
-          commit,
-          sourcePath,
-          text: await fetchEeexSourceText('eeex-functions', indexPath, commit),
-        });
-      }),
-    )
-  ).flat();
-  const expectedAnchors = (
-    await Promise.all(
-      indexPaths.map((indexPath) => fetchEeexSourceText('eeex-functions', indexPath, commit)),
-    )
-  ).reduce((count, text) => count + [...text.matchAll(/^\.\. _EEex_.+:\s*$/gmu)].length, 0);
-  if (symbols.length !== expectedAnchors) {
-    throw new Error(
-      `EEex function completeness failure: ${expectedAnchors} anchors, ${symbols.length} symbols.`,
-    );
+async function fetchUpstreamCategories(
+  tree: GitTree,
+  sourceSection: SourceSectionId,
+  commit: string,
+): Promise<UpstreamCategory[]> {
+  if (!tree.tree.some((entry) => entry.type === 'blob' && entry.path === 'index.rst')) {
+    throw new Error(`${sectionPath(sourceSection)} tree is missing its root index.rst.`);
   }
-  return symbols;
+  const text = await fetchEeexSourceText(sourceSection, 'index.rst', commit);
+  return parseRootToctreeCategories(text, sourceSection).map((title) => {
+    const indexPath = `${title}/index.rst`;
+    if (!tree.tree.some((entry) => entry.type === 'blob' && entry.path === indexPath)) {
+      throw new Error(`${sectionPath(sourceSection)} category is missing ${indexPath}.`);
+    }
+    return {
+      title,
+      indexPath,
+      upstreamPath: `source/${sectionPath(sourceSection)}/${indexPath}`,
+    };
+  });
+}
+
+export function parseRootToctreeCategories(text: string, sourceSection: SourceSectionId): string[] {
+  const lines = text.replace(/\r/gu, '').split('\n');
+  const start = lines.findIndex((line) => line.trim() === '.. toctree::');
+  if (start === -1) {
+    throw new Error(`${sectionPath(sourceSection)} root index has no toctree.`);
+  }
+  const categories: string[] = [];
+  const seen = new Set<string>();
+  for (let index = start + 1; index < lines.length; index += 1) {
+    const line = lines[index] ?? '';
+    if (line.trim() && !/^\s/u.test(line)) break;
+    const value = line.trim();
+    if (!value || value.startsWith(':')) continue;
+    const match = value.match(/^([^/\\]+)\/index$/u);
+    if (!match?.[1] || match[1] === '.' || match[1] === '..') {
+      throw new Error(
+        `${sectionPath(sourceSection)} root index has unsupported toctree entry: ${value}`,
+      );
+    }
+    if (seen.has(match[1])) {
+      throw new Error(`${sectionPath(sourceSection)} root index repeats category: ${match[1]}`);
+    }
+    seen.add(match[1]);
+    categories.push(match[1]);
+  }
+  if (categories.length === 0) {
+    throw new Error(`${sectionPath(sourceSection)} root index has no categories.`);
+  }
+  return categories;
+}
+
+async function fetchGameFunctionShards(tree: GitTree, commit: string): Promise<GeneratedShard[]> {
+  const categories = await fetchUpstreamCategories(tree, 'ee-game-lua-functions', commit);
+  return Promise.all(
+    categories.map(async (category) => {
+      const indexText = await fetchEeexSourceText(
+        'ee-game-lua-functions',
+        category.indexPath,
+        commit,
+      );
+      const descriptions = parseGameIndexDescriptions(indexText, category.upstreamPath);
+      const pagePaths = tree.tree
+        .filter(
+          (entry) =>
+            entry.type === 'blob' &&
+            entry.path.startsWith(`${category.title}/`) &&
+            entry.path.endsWith('.rst') &&
+            entry.path !== category.indexPath,
+        )
+        .map((entry) => entry.path)
+        .sort();
+      const pageSymbols = await Promise.all(
+        pagePaths.map(async (pagePath) => {
+          const sourcePath = `source/${sectionPath('ee-game-lua-functions')}/${pagePath}`;
+          const anchor = path.basename(pagePath, '.rst');
+          const indexDescription = descriptions.get(anchor);
+          return parseGameFunctionSymbol({
+            commit,
+            sourcePath,
+            text: await fetchEeexSourceText('ee-game-lua-functions', pagePath, commit),
+            ...(indexDescription !== undefined ? { indexDescription } : {}),
+          });
+        }),
+      );
+      const indexSymbols = parseGameIndexFunctionSymbols({
+        commit,
+        sourcePath: category.upstreamPath,
+        text: indexText,
+      });
+      const definedIndexAnchors = [...indexText.matchAll(/^\.\. _(.+):\s*$/gmu)].filter((match) =>
+        descriptions.has(match[1] ?? ''),
+      ).length;
+      if (indexSymbols.length !== definedIndexAnchors) {
+        throw new Error(
+          `${category.upstreamPath}: expected ${definedIndexAnchors} indexed functions, generated ${indexSymbols.length}.`,
+        );
+      }
+      return {
+        sourceSection: 'ee-game-lua-functions' as const,
+        title: category.title,
+        upstreamPath: category.upstreamPath,
+        symbols: [...pageSymbols, ...indexSymbols],
+      };
+    }),
+  );
+}
+
+async function fetchEeexFunctionShards(tree: GitTree, commit: string): Promise<GeneratedShard[]> {
+  const categories = await fetchUpstreamCategories(tree, 'eeex-functions', commit);
+  return Promise.all(
+    categories.map(async (category) => {
+      const text = await fetchEeexSourceText('eeex-functions', category.indexPath, commit);
+      const symbols = parseEeexFunctionSymbols({
+        commit,
+        sourcePath: category.upstreamPath,
+        text,
+      });
+      const expectedAnchors = [...text.matchAll(/^\.\. _EEex_.+:\s*$/gmu)].length;
+      if (symbols.length !== expectedAnchors) {
+        throw new Error(
+          `${category.upstreamPath}: expected ${expectedAnchors} EEex functions, generated ${symbols.length}.`,
+        );
+      }
+      return {
+        sourceSection: 'eeex-functions' as const,
+        title: category.title,
+        upstreamPath: category.upstreamPath,
+        symbols,
+      };
+    }),
+  );
 }
 
 async function fetchEeexSourceText(
@@ -499,20 +654,20 @@ async function fetchEeexSourceText(
   );
 }
 
-async function fetchEeexStructureSymbols(tree: GitTree, commit: string): Promise<ApiSymbol[]> {
-  const indexPaths = tree.tree
-    .filter((entry) => entry.type === 'blob' && entry.path.endsWith('index.rst'))
-    .map((entry) => entry.path);
-  const symbols = await Promise.all(
-    indexPaths.map(async (indexPath) => {
-      return parseEeexStructureSymbols({
+async function fetchEeexStructureShards(tree: GitTree, commit: string): Promise<GeneratedShard[]> {
+  const categories = await fetchUpstreamCategories(tree, 'ee-game-structures-x64', commit);
+  return Promise.all(
+    categories.map(async (category) => ({
+      sourceSection: 'ee-game-structures-x64' as const,
+      title: category.title,
+      upstreamPath: category.upstreamPath,
+      symbols: parseEeexStructureSymbols({
         commit,
-        indexPath,
-        text: await fetchEeexSourceText('ee-game-structures-x64', indexPath, commit),
-      });
-    }),
+        indexPath: category.indexPath,
+        text: await fetchEeexSourceText('ee-game-structures-x64', category.indexPath, commit),
+      }),
+    })),
   );
-  return symbols.flat();
 }
 
 interface GitCommit {
@@ -785,26 +940,6 @@ function validateAndSortSymbols(symbols: ApiSymbol[]): ApiSymbol[] {
   return [...byId.values()].sort((left, right) => left.id.localeCompare(right.id));
 }
 
-function groupSymbolsBySection(
-  symbols: ApiSymbol[],
-  sources: ApiSource[],
-): Map<SourceSectionId, ApiSymbol[]> {
-  const grouped = new Map<SourceSectionId, ApiSymbol[]>();
-  for (const source of sources) {
-    grouped.set(source.id, []);
-  }
-
-  for (const symbol of symbols) {
-    const section = grouped.get(symbol.sourceSection);
-    if (!section) {
-      throw new Error(`Generated symbol has unknown source section: ${symbol.id}`);
-    }
-    section.push(symbol);
-  }
-
-  return grouped;
-}
-
 function scanUtilityFunctions(filePath: string): ApiSymbol[] {
   if (!fs.existsSync(filePath)) {
     return [];
@@ -837,7 +972,9 @@ function scanUtilityFunctions(filePath: string): ApiSymbol[] {
   return symbols;
 }
 
-void main().catch((error: unknown) => {
-  console.error(error);
-  process.exitCode = 1;
-});
+if (require.main === module) {
+  void main().catch((error: unknown) => {
+    console.error(error);
+    process.exitCode = 1;
+  });
+}

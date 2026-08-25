@@ -1,7 +1,7 @@
 import type { ApiIndex, ApiSymbol, IeLuaSettings } from './types';
 
 export const emptyApiIndex: ApiIndex = {
-  schemaVersion: 2,
+  schemaVersion: 3,
   generatedAt: '1970-01-01T00:00:00.000Z',
   sources: [],
   symbols: [],

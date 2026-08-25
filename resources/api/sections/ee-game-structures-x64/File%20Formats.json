@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 3,
+  "generatedAt": "2026-08-25T18:10:55.136Z",
+  "source": {
+    "id": "ee-game-structures-x64",
+    "title": "EE Game Structures (x64)",
+    "url": "https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)",
+    "commit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+    "licenseStatus": "permission-gated"
+  },
+  "title": "File Formats",
+  "upstreamPath": "source/EE Game Structures (x64)/File Formats/index.rst",
+  "symbols": []
+}

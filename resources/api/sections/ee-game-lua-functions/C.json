@@ -1,0 +1,654 @@
+{
+  "schemaVersion": 3,
+  "generatedAt": "2026-08-25T18:10:55.136Z",
+  "source": {
+    "id": "ee-game-lua-functions",
+    "title": "EE Game Lua Functions",
+    "url": "https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions",
+    "commit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+    "licenseStatus": "allowed"
+  },
+  "title": "C",
+  "upstreamPath": "source/EE Game Lua Functions/C/index.rst",
+  "symbols": [
+    {
+      "id": "ee-game-lua-functions:C:AddGold",
+      "name": "C:AddGold",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "C:AddGold(Gold)",
+      "parameters": [
+        {
+          "type": "string",
+          "name": "Gold",
+          "description": "string containing the numeric amount of gold to add to party"
+        }
+      ],
+      "containerName": "C",
+      "instanceName": "AddGold",
+      "documentationMarkdown": "Adds gold to the party\n\n**Parameters**\n\n- `string` *Gold* - string containing the numeric amount of gold to add to party\n\n**Example**\n\n```lua\nC:AddGold(\"1000\")\n```\n\n**See Also**\n\n[C:AddSpell](#C_AddSpell), [C:CreateItem](#C_CreateItem)",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/C/C_AddGold.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:C:AddSpell",
+      "name": "C:AddSpell",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "C:AddSpell(SpellName)",
+      "parameters": [
+        {
+          "type": "string",
+          "name": "SpellName",
+          "description": "string containing the resource reference (ResRef) of the spell to add to character"
+        }
+      ],
+      "containerName": "C",
+      "instanceName": "AddSpell",
+      "documentationMarkdown": "Adds a spell to the specified character\n\n**Parameters**\n\n- `string` *SpellName* - string containing the resource reference (ResRef) of the spell to add to character\n\n**Notes**\n\nSpell resource reference (ResRef) used in *SpellName* must be 8 characters or less and must be valid.\n\nA character must be selected for this to work.\n\nTo obtain the spell codes (ResRef) required for this command, please use Near Infinity to browse .spl files, or visit the specific spell page from the [BGII Wiki](https://baldursgate.fandom.com/wiki/Spells_(Baldur%27s_Gate_II)) and look for the spell code in the right hand info bar - **exclude** the .spl extension when using the spell code.\n\n**Example**\n\n```lua\nC:AddSpell(\"SPWI112\")\n```\n\n**See Also**\n\n[C:CreateItem](#C_CreateItem), [C:AddGold](#C_AddGold)",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/C/C_AddSpell.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:C:AdvanceRealTime",
+      "name": "C:AdvanceRealTime",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "C:AdvanceRealTime(GameTime)",
+      "parameters": [
+        {
+          "type": "integer",
+          "name": "GameTime",
+          "description": "amount of time in milliseconds to advance"
+        }
+      ],
+      "containerName": "C",
+      "instanceName": "AdvanceRealTime",
+      "documentationMarkdown": "Advance time\n\n**Parameters**\n\n- `integer` *GameTime* - amount of time in milliseconds to advance\n\n**Notes**\n\nCan be used to trigger banters and love talks etc\n\n**Example**\n\nSpeed up 1 hour real time:\n\n```lua\nC:AdvanceRealTime(60000)\n```\n\n**See Also**\n\n[C:GetGlobal](#C_GetGlobal), [C:SetGlobal](#C_SetGlobal)",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/C/C_AdvanceRealTime.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:C:CreateCreature",
+      "name": "C:CreateCreature",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "C:CreateCreature(CreatureName)",
+      "parameters": [
+        {
+          "type": "string",
+          "name": "CreatureName",
+          "description": "string containing resource reference (ResRef) of creature to spawn (create)"
+        }
+      ],
+      "containerName": "C",
+      "instanceName": "CreateCreature",
+      "documentationMarkdown": "Creates the creature specified\n\n**Parameters**\n\n- `string` *CreatureName* - string containing resource reference (ResRef) of creature to spawn (create) \n\n**Notes**\n\nCreature resource reference (ResRef) used in *CreatureName* must be 8 characters or less and must be valid.\n\nThis spawns a creature to the center of the screen (or nearest valid point). If you're spawning a creature you know will be hostile, you may want to pause the game before entering this command for the safety of your party.\n\n**Example**\n\nSpawn a gibberling using `GIBBER.CRE`\n\n```lua\nC:CreateCreature(\"GIBBER\")\n```\n\n**See Also**\n\n[C:CreateItem](#C_CreateItem)",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/C/C_CreateCreature.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:C:CreateEngine",
+      "name": "C:CreateEngine",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "C:CreateEngine(nEngine)",
+      "parameters": [
+        {
+          "type": "integer",
+          "name": "nEngine",
+          "description": "engine id number to create"
+        }
+      ],
+      "containerName": "C",
+      "instanceName": "CreateEngine",
+      "documentationMarkdown": "Unknown - seems to start a new single `0` or multi `1` player game\n\n**Parameters**\n\n- `integer` *nEngine* - engine id number to create\n\n**Notes**\n\nUnknown\n\n**Example**\n\n```lua\nC:CreateEngine(0)\n```\n\n**See Also**\n\n[C:new](#C_new)",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/C/C_CreateEngine.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:C:CreateItem",
+      "name": "C:CreateItem",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "C:CreateItem(ItemName, Usage)",
+      "parameters": [
+        {
+          "type": "string",
+          "name": "ItemName",
+          "description": "string containing resource reference (ResRef) of the item to create"
+        },
+        {
+          "type": "integer",
+          "name": "Usage",
+          "description": "amount / charges (optional parameter)"
+        }
+      ],
+      "containerName": "C",
+      "instanceName": "CreateItem",
+      "documentationMarkdown": "Create an item\n\n**Parameters**\n\n- `string` *ItemName* - string containing resource reference (ResRef) of the item to create\n- `integer` *Usage* - amount / charges (optional parameter)\n\n**Notes**\n\nItem resource reference (ResRef) used in *ItemName* must be 8 characters or less and must be valid.\n\nThis spawns an item, based on its item file name, or a stack of the same item, in the inventory of the current party leader.\n\n**Examples**\n\nCreate a long sword:\n\n```lua\nC:CreateItem(\"SW1H01\")\n```\n\nCreate 10 potions of cure light wounds:\n\n```lua\nC:CreateItem(\"POTN08\", 10)\n```\n\nGreenstone Amulet with 50 charges:\n\n```lua\nC:CreateItem(\"amul17\", 50)\n```\n\n**See Also**\n\n[C:CreateCreature](#C_CreateCreature), [C:AddGold](#C_AddGold), [C:AddSpell](#C_AddSpell)",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/C/C_CreateItem.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:C:CreateVEFVidCell",
+      "name": "C:CreateVEFVidCell",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "C:CreateVEFVidCell(VidCell)",
+      "parameters": [
+        {
+          "type": "string",
+          "name": "VidCell",
+          "description": "string containing resource reference (ResRef) of VEFVidCell to create"
+        }
+      ],
+      "containerName": "C",
+      "instanceName": "CreateVEFVidCell",
+      "documentationMarkdown": "Create VEFVidCell\n\n**Parameters**\n\n- `string` *VidCell* - string containing resource reference (ResRef) of VEFVidCell to create\n\n**Notes**\n\nUnknown\n\n**Example**\n\n```lua\nC:CreateVEFVidCell(\"????????\")\n```\n\n**See Also**\n\n[C:AddSpell](#C_AddSpell), [C:CreateItem](#C_CreateItem)",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/C/C_CreateVEFVidCell.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:C:DisplayAllBAMFiles",
+      "name": "C:DisplayAllBAMFiles",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "C:DisplayAllBAMFiles()",
+      "containerName": "C",
+      "instanceName": "DisplayAllBAMFiles",
+      "documentationMarkdown": "Display all BAM files\n\n**Parameters**\n\nNone\n\n**Notes**\n\nDisplay all BAM files\n\n**Example**\n\n```lua\nC:DisplayAllBAMFiles()\n```\n\n**See Also**\n\n[C:TestAllDialog](#C_TestAllDialog)",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/C/C_DisplayAllBAMFiles.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:C:DisplayText",
+      "name": "C:DisplayText",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "C:DisplayText(text)",
+      "parameters": [
+        {
+          "type": "string",
+          "name": "text",
+          "description": "string containing text to display"
+        }
+      ],
+      "containerName": "C",
+      "instanceName": "DisplayText",
+      "documentationMarkdown": "Displays the specified text on screen\n\n**Parameters**\n\n- `string` *text* - string containing text to display\n\n**Notes**\n\n**Example**\n\n```lua\nC:DisplayText(\"This is some text to display\")\n```\n\n**See Also**\n\n[C:StrrefOn](#C_StrrefOn), [C:StrrefOff](#C_StrrefOff)",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/C/C_DisplayText.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:C:EnableCheatKeys",
+      "name": "C:EnableCheatKeys",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "C:EnableCheatKeys()",
+      "containerName": "C",
+      "instanceName": "EnableCheatKeys",
+      "documentationMarkdown": "Enables cheat keys\n\n**Parameters**\n\nNone\n\n**Notes**\n\nThe following cheat key combination are available once cheat keys has been enabled:\n\n| **Key** | **Notes** |\n| --- | --- |\n| CTRL+1 | Change armor level animation |\n| CTRL+2 | Fade screen to black |\n| CTRL+3 | Fade screen to normal |\n| CTRL+4 | Highlight background-interactive objects |\n| CTRL+5 | Displays animation information |\n| CTRL+6 | Change avatar animation previous |\n| CTRL+7 | Change avatar animation next |\n| CTRL+8 | Highlights the text boxes |\n| CTRL+9 | Highlight the sprites |\n| CTRL+0 | Unknown |\n| CTRL+A | Change Selected Animation Sequence |\n| CTRL+C | Jump to next chapter |\n| CTRL+D | Display some numbers (framerate related?) |\n| CTRL+E | Alters visual range |\n| CTRL+F | Turn the character |\n| CTRL+G | Display loaded area ref |\n| CTRL+I | Play Selected Animation effect |\n| CTRL+J | Teleport to cursor position |\n| CTRL+K | Creature under cursor kick out party |\n| CTRL+L | Play Selected Animation effect |\n| CTRL+M | (Followed by ENTER) Debug Dump |\n| CTRL+N | Freeze screen for 5 seconds |\n| CTRL+O | (Followed by ENTER) Write Debug To Log |\n| CTRL+P | Center screen on selected character |\n| CTRL+Q | Creature under cursor joins party |\n| CTRL+R | Heals character under cursor |\n| CTRL+S | Change Selected Animation Sequence |\n| CTRL+T | Advances game time by 1 hour |\n| CTRL+U | Highlight doors and ground objects |\n| CTRL+X | Extended position information |\n| CTRL+Y | Kills creature under cursor |\n\nIn addition CTRL+8 during character creation will set all attributes to 18 (STR 18/00)\n\nCTRL+SHIFT+Z while hovering over a character will grant every spell file in the game - may crash due to invalid spells\n\n**Example**\n\n```lua\nC:EnableCheatKeys()\n```\n\n**See Also**\n\n[createCharScreen:OnCheatyMcCheaterson](#createCharScreen_OnCheatyMcCheaterson)",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/C/C_EnableCheatKeys.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:C:Eval",
+      "name": "C:Eval",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "C:Eval(Script)",
+      "parameters": [
+        {
+          "type": "string",
+          "name": "Script",
+          "description": "string containing script actions to evaluate"
+        }
+      ],
+      "containerName": "C",
+      "instanceName": "Eval",
+      "documentationMarkdown": "Evaluate a string containing script actions for a character\n\n**Parameters**\n\n- `string` *Script* - string containing script actions to evaluate\n\n**Notes**\n\nThe whole string can be enclosed into single quotes (') so that double quotes can still be used within the script action.\n\nSee [BG(2)EE Script Actions](https://gibberlings3.github.io/iesdp/scripting/actions/bgeeactions.htm) for a list of script actions.\n\n**Example**\n\nMove Cernd to the specified location using evaluated script actions.\n\n```lua\nC:Eval(\"ActionOverride(\\\"Cernd\\\",MoveGlobal(\\\"AR0406\\\",Myself,[1368.1922]))\") \n```\n\n**See Also**\n\n[C:Exec](#C_Exec)",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/C/C_Eval.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:C:Exec",
+      "name": "C:Exec",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "C:Exec(File)",
+      "parameters": [
+        {
+          "type": "string",
+          "name": "File",
+          "description": "string containing filename to execute"
+        }
+      ],
+      "containerName": "C",
+      "instanceName": "Exec",
+      "documentationMarkdown": "Execute console commands contained in the specified file\n\n**Parameters**\n\n- `string` *File* - string containing filename to execute\n\n**Notes**\n\n**Example**\n\nExecute all the commands in the file `test.txt`:\n\n```lua\nC:Eval(\"test.txt\")\n```\n\n**See Also**\n\n[C:Eval](#C_Eval)",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/C/C_Exec.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:C:ExploreArea",
+      "name": "C:ExploreArea",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "C:ExploreArea()",
+      "containerName": "C",
+      "instanceName": "ExploreArea",
+      "documentationMarkdown": "Reveals the entire map for the current area\n\n**Parameters**\n\nNone\n\n**Notes**\n\nThis doesn't remove the fog of war; if a creature is out of your field of vision it will still remain hidden\n\n**Example**\n\n```lua\nC:ExploreArea()\n```\n\n**See Also**\n\n[C:MoveToArea](#C_MoveToArea)",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/C/C_ExploreArea.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:C:GetGlobal",
+      "name": "C:GetGlobal",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "C:GetGlobal(VariableName, AreaName)",
+      "parameters": [
+        {
+          "type": "string",
+          "name": "VariableName",
+          "description": "string containing the name of the global variable to retrieve the value of"
+        },
+        {
+          "type": "string",
+          "name": "AreaName",
+          "description": "string containing the resource reference (ResRef) of the area in which the variable is stored, or `\"GLOBAL\"` for all."
+        }
+      ],
+      "returns": [
+        {
+          "description": "Value of the variable specified"
+        }
+      ],
+      "containerName": "C",
+      "instanceName": "GetGlobal",
+      "documentationMarkdown": "Gets a global variable value\n\n**Parameters**\n\n- `string` *VariableName* - string containing the name of the global variable to retrieve the value of\n- `string` *AreaName* - string containing the resource reference (ResRef) of the area in which the variable is stored, or `\"GLOBAL\"` for all.\n\n**Returns**\n\nValue of the variable specified\n\n**Notes**\n\nArea resource reference (ResRef) used in *AreaName* must be 8 characters or less and must be valid.\n\n**Examples**\n\nReturns the value of `CHAPTER` variable:\n\n```lua\nC:GetGlobal(\"CHAPTER\", \"GLOBAL\") Will display current GLOBAL setting\n```\n\nReturns the value of `TestValue` variable stored in area `AR0600.ARE`:\n\n```lua\nC:GetGlobal(\"TestValue\", \"AR0600\")\n```\n\n**See Also**\n\n[C:SetGlobal](#C_SetGlobal)",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/C/C_GetGlobal.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:C:LogMessages",
+      "name": "C:LogMessages",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "C:LogMessages()",
+      "containerName": "C",
+      "instanceName": "LogMessages",
+      "documentationMarkdown": "Enables logging output to console\n\n**Parameters**\n\nNone\n\n**Notes**\n\nSee [C:LogSet](#C_LogSet) to output logging to a file instead\n\n**Example**\n\n```lua\nC:LogMessages()\n```\n\n**See Also**\n\n[C:LogSet](#C_LogSet)",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/C/C_LogMessages.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:C:LogSet",
+      "name": "C:LogSet",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "C:LogSet(LogFile)",
+      "parameters": [
+        {
+          "type": "string",
+          "name": "LogFile",
+          "description": "string containing log filename"
+        }
+      ],
+      "containerName": "C",
+      "instanceName": "LogSet",
+      "documentationMarkdown": "Sets logging to a file instead of to console if logging is enabled\n\n**Parameters**\n\n- `string` *LogFile* - string containing log filename\n\n**Notes**\n\nSee [C:LogMessages](#C_LogMessages) to enable logging\n\n**Example**\n\n```lua\nC:LogSet(\"output.txt\")\n```\n\n**See Also**\n\n[C:LogMessages](#C_LogMessages)",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/C/C_LogSet.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:C:MoveToArea",
+      "name": "C:MoveToArea",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "C:MoveToArea(Area)",
+      "parameters": [
+        {
+          "type": "string",
+          "name": "Area",
+          "description": "string containing the resource reference (ResRef) of the area to move players to"
+        }
+      ],
+      "containerName": "C",
+      "instanceName": "MoveToArea",
+      "documentationMarkdown": "Move the selected characters to the area specified\n\n**Parameters**\n\n- `string` *Area* - string containing the resource reference (ResRef) of the area to move players to\n\n**Notes**\n\nArea resource reference (ResRef) used in *Area* must be 8 characters or less and must be valid.\n\n**Example**\n\nMove the selected players to the Friendly Arms Inn `AR2300.ARE`:\n\n```lua\nC:MoveToArea(\"AR2300\")\n```\n\n**See Also**\n\n[C:ExploreArea](#C_ExploreArea), [C:Eval](#C_Eval)",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/C/C_MoveToArea.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:C:new",
+      "name": "C:new",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "C:new()",
+      "containerName": "C",
+      "instanceName": "new",
+      "documentationMarkdown": "Create a new instance of the CLUAConsole\n\n**Parameters**\n\nNone\n\n**Notes**\n\nThis is used in the game engine to assign `C:` to CLUAConsole:\n\n```lua\nC = CLUAConsole:new()\n```\n\nNot recommended to use this\n\n**Example**\n\n```lua\nC:new()\n```\n\n**See Also**\n\n[C:CreateEngine](#C_CreateEngine)",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/C/C_new.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:C:PickDialog",
+      "name": "C:PickDialog",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "C:PickDialog(Table)",
+      "parameters": [
+        {
+          "type": "integer",
+          "name": "Table",
+          "description": "Unknown"
+        }
+      ],
+      "containerName": "C",
+      "instanceName": "PickDialog",
+      "documentationMarkdown": "Unknown\n\n**Parameters**\n\n- `integer` *Table* - Unknown\n\n**Notes**\n\nUnknown\n\n**Example**\n\n```lua\nC:PickDialog()\n```\n\n**See Also**",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/C/C_PickDialog.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:C:PlayMovie",
+      "name": "C:PlayMovie",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "C:PlayMovie(Movie)",
+      "parameters": [
+        {
+          "type": "string",
+          "name": "Movie",
+          "description": "string containing resource reference (ResRef) of the movie to play"
+        }
+      ],
+      "containerName": "C",
+      "instanceName": "PlayMovie",
+      "documentationMarkdown": "Plays the specified movie\n\n**Parameters**\n\n- `string` *Movie* - string containing resource reference (ResRef) of the movie to play\n\n**Notes**\n\nMovie resource reference (ResRef) used in *Movie* must be 8 characters or less and must be valid.\n\nPlays WebM file format movies (.wbm)\n\n**Example**\n\nPlays `LOGO.WBM`:\n\n```lua\nC:PlayMovie(\"LOGO\")\n```\n\n**See Also**\n\n[C:PlaySound](#C_PlaySound)",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/C/C_PlayMovie.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:C:PlaySound",
+      "name": "C:PlaySound",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "C:PlaySound(Sound)",
+      "parameters": [
+        {
+          "type": "string",
+          "name": "Sound",
+          "description": "string containing resource reference (ResRef) of the sound, music, voices to play"
+        }
+      ],
+      "containerName": "C",
+      "instanceName": "PlaySound",
+      "documentationMarkdown": "Plays the specified sound\n\n**Parameters**\n\n- `string` *Sound* - string containing resource reference (ResRef) of the sound, music, voices to play\n\n**Notes**\n\nSound resource reference (ResRef) used in *Sound* must be 8 characters or less and must be valid.\n\nPlays WAV file format audio (.wav)\n\n**Example**\n\nPlay cow moo sound `COW01.WAV`:\n\n```lua\nC:PlaySound(\"COW01\")\n```\n\n**See Also**\n\n[C:PlayMovie](#C_PlayMovie)",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/C/C_PlaySound.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:C:ResetAchievements",
+      "name": "C:ResetAchievements",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "C:ResetAchievements()",
+      "containerName": "C",
+      "instanceName": "ResetAchievements",
+      "documentationMarkdown": "Reset achievements\n\n**Parameters**\n\nNone\n\n**Notes**\n\nApplies to Steam installation only\n\n**Example**\n\n```lua\nC:ResetAchievements()\n```",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/C/C_ResetAchievements.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:C:SetCurrentXP",
+      "name": "C:SetCurrentXP",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "C:SetCurrentXP(ExperiencePoints)",
+      "parameters": [
+        {
+          "type": "string",
+          "name": "ExperiencePoints",
+          "description": "string containing the numeric value of experience points to set for selected character"
+        }
+      ],
+      "containerName": "C",
+      "instanceName": "SetCurrentXP",
+      "documentationMarkdown": "Sets the experience points (XP) of the selected character\n\n**Parameters**\n\n- `string` *ExperiencePoints* - string containing the numeric value of experience points to set for selected character\n\n**Notes**\n\nThis sets the total, rather than adding a value to your current experience points. A level up will be triggered for characters that qualify, based on the experince points table for the character's class level.\n\n**Example**\n\nSet current character at 1000 experience points:\n\n```lua\nC:SetCurrentXP(\"1000\")\n```\n\n**See Also**\n\n[C:AddGold](#C_AddGold), [C:AddSpell](#C_AddSpell), [C:CreateItem](#C_CreateItem)",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/C/C_SetCurrentXP.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:C:SetGlobal",
+      "name": "C:SetGlobal",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "C:SetGlobal(VariableName, AreaName, Value)",
+      "parameters": [
+        {
+          "type": "string",
+          "name": "VariableName",
+          "description": "string containing the name of the global variable to set"
+        },
+        {
+          "type": "string",
+          "name": "AreaName",
+          "description": "string containing the resource reference (ResRef) of the area in which the variable is stored, or `\"GLOBAL\"` for all."
+        },
+        {
+          "type": "integer",
+          "name": "Value",
+          "description": "new value to set the variable to"
+        }
+      ],
+      "containerName": "C",
+      "instanceName": "SetGlobal",
+      "documentationMarkdown": "Set a global variable to the specified value\n\n**Parameters**\n\n- `string` *VariableName* - string containing the name of the global variable to set\n- `string` *AreaName* - string containing the resource reference (ResRef) of the area in which the variable is stored, or `\"GLOBAL\"` for all.\n- `integer` *Value* - new value to set the variable to\n\n**Notes**\n\nArea resource reference (ResRef) used in *AreaName* must be 8 characters or less and must be valid.\n\n**Examples**\n\nSet the value of `CHAPTER` to `2` (and advance to Chapter 2):\n\n```lua\nC:SetGlobal(\"CHAPTER\", \"GLOBAL\", 2)\n```\n\nSets the value of `TestValue` variable stored in area `AR0600.ARE` to `16`:\n\n```lua\nC:GetGlobal(\"TestValue\", \"AR0600\", 16)\n```\n\n**See Also**\n\n[C:GetGlobal](#C_GetGlobal)",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/C/C_SetGlobal.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:C:SetWaterAlpha",
+      "name": "C:SetWaterAlpha",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "C:SetWaterAlpha(AlphaLevel)",
+      "parameters": [
+        {
+          "type": "integer",
+          "name": "AlphaLevel",
+          "description": "value to set for alpha blending of water transparency"
+        }
+      ],
+      "containerName": "C",
+      "instanceName": "SetWaterAlpha",
+      "documentationMarkdown": "Sets the alpha blend level for water transparency\n\n**Parameters**\n\n- `integer` *AlphaLevel* - value to set for alpha blending of water transparency\n\n**Notes**\n\nNot tested / verified\n\n**Example**\n\n```lua\nC:SetWaterAlpha(100)\n```\n\n**See Also**\n\n[C:SetWeather](#C_SetWeather)",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/C/C_SetWaterAlpha.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:C:SetWeather",
+      "name": "C:SetWeather",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "C:SetWeather(WeatherID)",
+      "parameters": [
+        {
+          "type": "string",
+          "name": "WeatherID",
+          "description": "string containing the weather id"
+        }
+      ],
+      "containerName": "C",
+      "instanceName": "SetWeather",
+      "documentationMarkdown": "Sets the current weather\n\n**Parameters**\n\n- `string` *WeatherID* - string containing the weather id\n\n**Notes**\n\nNot tester / verified: may be an `integer` value for *WeatherID*\n\nValid values to set can be found in `WEATHER.IDS`:\n\n```lua\n0 NOWEATHER\n1 RAIN\n2 SNOW\n3 FOG\n```\n\n**Example**\n\n```lua\nC:SetWeather(\"1\")\n```\n\n**See Also**\n\n[C:SetWaterAlpha](#C_SetWaterAlpha)",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/C/C_SetWeather.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:C:StartStore",
+      "name": "C:StartStore",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "C:StartStore(StoreName)",
+      "parameters": [
+        {
+          "type": "string",
+          "name": "StoreName",
+          "description": "string containing resource reference (ResRef) of store to start"
+        }
+      ],
+      "containerName": "C",
+      "instanceName": "StartStore",
+      "documentationMarkdown": "Starts the specified store\n\n**Parameters**\n\n- `string` *StoreName* - string containing resource reference (ResRef) of store to start\n\n**Notes**\n\nStore resource reference (ResRef) used in *StoreName* must be 8 characters or less and must be valid.\n\nMay be unstable, leading to crashes.\n\n**Example**\n\n```lua\nC:StartStore(\"INN0103\")\n```",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/C/C_StartStore.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:C:StrrefOff",
+      "name": "C:StrrefOff",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "C:StrrefOff()",
+      "containerName": "C",
+      "instanceName": "StrrefOff",
+      "documentationMarkdown": "Strings are not displayed with their associated string reference (StrRef) id\n\n**Parameters**\n\nNone\n\n**Notes**\n\n**Example**\n\n```lua\nC:StrrefOff()\n```\n\n**See Also**\n\n[C:StrrefOn](#C_StrrefOn), [C:DisplayText](#C_DisplayText)",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/C/C_StrrefOff.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:C:StrrefOn",
+      "name": "C:StrrefOn",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "C:StrrefOn()",
+      "containerName": "C",
+      "instanceName": "StrrefOn",
+      "documentationMarkdown": "Strings are displayed with their associated string reference (StrRef) id\n\n**Parameters**\n\nNone\n\n**Notes**\n\n**Example**\n\n```lua\nC:StrrefOn()\n```\n\n**See Also**\n\n[C:StrrefOff](#C_StrrefOff), [C:DisplayText](#C_DisplayText)",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/C/C_StrrefOn.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:C:TestAllDialog",
+      "name": "C:TestAllDialog",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "C:TestAllDialog()",
+      "containerName": "C",
+      "instanceName": "TestAllDialog",
+      "documentationMarkdown": "Lists all dialog file in the game, and checks for errors\n\n**Parameters**\n\nNone\n\n**Notes**\n\n**Example**\n\n```lua\nC:TestAllDialog()\n```\n\n**See Also**\n\n[C:DisplayAllBAMFiles](#C_DisplayAllBAMFiles)",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/C/C_TestAllDialog.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:C:WorkshopUpload",
+      "name": "C:WorkshopUpload",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "C:WorkshopUpload(ModuleName, ModulePath)",
+      "parameters": [
+        {
+          "type": "string",
+          "name": "ModuleName",
+          "description": "string containing name of the workshop module"
+        },
+        {
+          "type": "string",
+          "name": "ModulePath",
+          "description": "string containing the full filepath to the module to upload"
+        }
+      ],
+      "containerName": "C",
+      "instanceName": "WorkshopUpload",
+      "documentationMarkdown": "Upload a module to the Steam Workshop - Not tested or verified\n\n**Parameters**\n\n- `string` *ModuleName* - string containing name of the workshop module\n- `string` *ModulePath* - string containing the full filepath to the module to upload\n\n**Notes**\n\nApplies to Steam installation only\n\nNot tested or verified\n\n**Example**\n\n```lua\nC:WorkshopUpload()\n```",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/C/C_WorkshopUpload.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:C:WriteScript",
+      "name": "C:WriteScript",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "C:WriteScript(Folder)",
+      "parameters": [
+        {
+          "type": "string",
+          "name": "Folder",
+          "description": "string containing filepath of folder to output scripts to"
+        }
+      ],
+      "containerName": "C",
+      "instanceName": "WriteScript",
+      "documentationMarkdown": "Output scripts to directory\n\n**Parameters**\n\n- `string` *Folder* - string containing filepath of folder to output scripts to\n\n**Notes**\n\nIf the mouse is over a creature, the command will evaluate the scripts attached to that creature. Otherwise it will evaluate the area scripts.\n\n**Example**\n\nOutput the script results to a folder called DebugScripts in the root of your game install:\n\n```lua\nC:WriteScript(\"DebugScripts\")\n```\n\n**See Also**\n\n[C:Exec](#C_Exec)",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/C/C_WriteScript.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    }
+  ]
+}

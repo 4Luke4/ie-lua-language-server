@@ -1,0 +1,621 @@
+{
+  "schemaVersion": 3,
+  "generatedAt": "2026-08-25T18:10:55.136Z",
+  "source": {
+    "id": "eeex-functions",
+    "title": "EEex Functions",
+    "url": "https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions",
+    "commit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+    "licenseStatus": "allowed"
+  },
+  "title": "Area",
+  "upstreamPath": "source/EEex Functions/Area/index.rst",
+  "symbols": [
+    {
+      "id": "eeex-functions:EEex_Area_CountAllOfTypeInRange",
+      "name": "EEex_Area_CountAllOfTypeInRange",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Area_CountAllOfTypeInRange(area, centerX, centerY, aiObjectType, range, bCheckForLineOfSight, bCheckForNonSprites, terrainTable)",
+      "parameters": [
+        {
+          "name": "area",
+          "type": "CGameArea",
+          "description": "The area to search."
+        },
+        {
+          "name": "centerX",
+          "type": "number",
+          "description": "The x coordinate to use as the center of the search radius."
+        },
+        {
+          "name": "centerY",
+          "type": "number",
+          "description": "The y coordinate to use as the center of the search radius."
+        },
+        {
+          "name": "aiObjectType",
+          "type": "CAIObjectType",
+          "description": "The AI object type used to filter the objects passed to `func`. <br/> Most commonly retrieved from `EEex_Object_ParseString()`. Remember to call `:free()`."
+        },
+        {
+          "name": "range",
+          "type": "number",
+          "description": "The radius to search around (`centerX`, `centerY`). `448` is a sprite's default visual range."
+        },
+        {
+          "name": "bCheckForLineOfSight",
+          "type": "boolean",
+          "defaultValue": "true",
+          "description": "Determines whether LOS is required from (`centerX`, `centerY`) to considered objects."
+        },
+        {
+          "name": "bCheckForNonSprites",
+          "type": "boolean",
+          "defaultValue": "false",
+          "description": "Determines whether non-sprite objects in the main objects list are considered."
+        },
+        {
+          "name": "terrainTable",
+          "type": "Array<byte,16>",
+          "defaultValue": "CGameObject.DEFAULT_VISIBLE_TERRAIN_TABLE",
+          "description": "The terrain table to use for determining LOS."
+        }
+      ],
+      "returns": [
+        {
+          "type": "number",
+          "description": "See summary."
+        }
+      ],
+      "callableAliases": [
+        {
+          "name": "countAllOfTypeInRange",
+          "receiverType": "CGameArea",
+          "consumesFirstParameter": true
+        }
+      ],
+      "documentationMarkdown": "**Instance Name:** `countAllOfTypeInRange`\n\n> **Summary**\n> Returns the number of creatures that match `aiObjectType` around (`centerX`, `centerY`) in the given `range`, as per the `NumCreature()` trigger.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| area | CGameArea |  | The area to search. |\n| centerX | number |  | The x coordinate to use as the center of the search radius. |\n| centerY | number |  | The y coordinate to use as the center of the search radius. |\n| aiObjectType | CAIObjectType |  | The AI object type used to filter the objects passed to `func`. <br/> Most commonly retrieved from `EEex_Object_ParseString()`. Remember to call `:free()`. |\n| range | number |  | The radius to search around (`centerX`, `centerY`). `448` is a sprite's default visual range. |\n| bCheckForLineOfSight | boolean | `true` | Determines whether LOS is required from (`centerX`, `centerY`) to considered objects. |\n| bCheckForNonSprites | boolean | `false` | Determines whether non-sprite objects in the main objects list are considered. |\n| terrainTable | Array<byte,16> | `CGameObject.DEFAULT_VISIBLE_TERRAIN_TABLE` | The terrain table to use for determining LOS. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| number | See summary. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Area/index.rst#L16",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Area_CountAllOfTypeStringInRange",
+      "name": "EEex_Area_CountAllOfTypeStringInRange",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Area_CountAllOfTypeStringInRange(area, centerX, centerY, aiObjectTypeString, range, bCheckForLineOfSight, bCheckForNonSprites, terrainTable)",
+      "parameters": [
+        {
+          "name": "area",
+          "type": "CGameArea",
+          "description": "The area to search."
+        },
+        {
+          "name": "centerX",
+          "type": "number",
+          "description": "The x coordinate to use as the center of the search radius."
+        },
+        {
+          "name": "centerY",
+          "type": "number",
+          "description": "The y coordinate to use as the center of the search radius."
+        },
+        {
+          "name": "aiObjectTypeString",
+          "type": "string",
+          "description": "The AI object type string used to filter the objects added to the return table. <br/> Automatically parsed by `EEex_Object_ParseString()`; the resulting object is freed before return."
+        },
+        {
+          "name": "range",
+          "type": "number",
+          "description": "The radius to search around (`centerX`, `centerY`). `448` is a sprite's default visual range."
+        },
+        {
+          "name": "bCheckForLineOfSight",
+          "type": "boolean",
+          "defaultValue": "true",
+          "description": "Determines whether LOS is required from (`centerX`, `centerY`) to considered objects."
+        },
+        {
+          "name": "bCheckForNonSprites",
+          "type": "boolean",
+          "defaultValue": "false",
+          "description": "Determines whether non-sprite objects in the main objects list are considered."
+        },
+        {
+          "name": "terrainTable",
+          "type": "Array<byte,16>",
+          "defaultValue": "CGameObject.DEFAULT_VISIBLE_TERRAIN_TABLE",
+          "description": "The terrain table to use for determining LOS."
+        }
+      ],
+      "returns": [
+        {
+          "type": "number",
+          "description": "See summary."
+        }
+      ],
+      "callableAliases": [
+        {
+          "name": "countAllOfTypeStringInRange",
+          "receiverType": "CGameArea",
+          "consumesFirstParameter": true
+        }
+      ],
+      "documentationMarkdown": "**Instance Name:** `countAllOfTypeStringInRange`\n\n> **Summary**\n> Returns the number of creatures that match `aiObjectTypeString` around (`centerX`, `centerY`) in the given `range`, as per the `NumCreature()` trigger.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| area | CGameArea |  | The area to search. |\n| centerX | number |  | The x coordinate to use as the center of the search radius. |\n| centerY | number |  | The y coordinate to use as the center of the search radius. |\n| aiObjectTypeString | string |  | The AI object type string used to filter the objects added to the return table. <br/> Automatically parsed by `EEex_Object_ParseString()`; the resulting object is freed before return. |\n| range | number |  | The radius to search around (`centerX`, `centerY`). `448` is a sprite's default visual range. |\n| bCheckForLineOfSight | boolean | `true` | Determines whether LOS is required from (`centerX`, `centerY`) to considered objects. |\n| bCheckForNonSprites | boolean | `false` | Determines whether non-sprite objects in the main objects list are considered. |\n| terrainTable | Array<byte,16> | `CGameObject.DEFAULT_VISIBLE_TERRAIN_TABLE` | The terrain table to use for determining LOS. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| number | See summary. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Area/index.rst#L59",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Area_CreateVisualEffect",
+      "name": "EEex_Area_CreateVisualEffect",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Area_CreateVisualEffect()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Area/index.rst#L102",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Area_ForAllOfTypeInRange",
+      "name": "EEex_Area_ForAllOfTypeInRange",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Area_ForAllOfTypeInRange(area, centerX, centerY, aiObjectType, range, func, bCheckForLineOfSight, bCheckForNonSprites, terrainTable)",
+      "parameters": [
+        {
+          "name": "area",
+          "type": "CGameArea",
+          "description": "The area to search."
+        },
+        {
+          "name": "centerX",
+          "type": "number",
+          "description": "The x coordinate to use as the center of the search radius."
+        },
+        {
+          "name": "centerY",
+          "type": "number",
+          "description": "The y coordinate to use as the center of the search radius."
+        },
+        {
+          "name": "aiObjectType",
+          "type": "CAIObjectType",
+          "description": "The AI object type used to filter the objects passed to `func`. <br/> Most commonly retrieved from `EEex_Object_ParseString()`. Remember to call `:free()`."
+        },
+        {
+          "name": "range",
+          "type": "number",
+          "description": "The radius to search around (`centerX`, `centerY`). `448` is a sprite's default visual range."
+        },
+        {
+          "name": "func",
+          "type": "function",
+          "description": "The function to call for every creature in the search area."
+        },
+        {
+          "name": "bCheckForLineOfSight",
+          "type": "boolean",
+          "defaultValue": "true",
+          "description": "Determines whether LOS is required from (`centerX`, `centerY`) to considered objects."
+        },
+        {
+          "name": "bCheckForNonSprites",
+          "type": "boolean",
+          "defaultValue": "false",
+          "description": "Determines whether non-sprite objects in the main objects list are considered."
+        },
+        {
+          "name": "terrainTable",
+          "type": "Array<byte,16>",
+          "defaultValue": "CGameObject.DEFAULT_VISIBLE_TERRAIN_TABLE",
+          "description": "The terrain table to use for determining LOS."
+        }
+      ],
+      "callableAliases": [
+        {
+          "name": "forAllOfTypeInRange",
+          "receiverType": "CGameArea",
+          "consumesFirstParameter": true
+        }
+      ],
+      "documentationMarkdown": "**Instance Name:** `forAllOfTypeInRange`\n\n> **Summary**\n> Calls `func` for every creature that matches `aiObjectType` around (`centerX`, `centerY`) in the given `range`, as per the `NumCreature()` trigger.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| area | CGameArea |  | The area to search. |\n| centerX | number |  | The x coordinate to use as the center of the search radius. |\n| centerY | number |  | The y coordinate to use as the center of the search radius. |\n| aiObjectType | CAIObjectType |  | The AI object type used to filter the objects passed to `func`. <br/> Most commonly retrieved from `EEex_Object_ParseString()`. Remember to call `:free()`. |\n| range | number |  | The radius to search around (`centerX`, `centerY`). `448` is a sprite's default visual range. |\n| func | function |  | The function to call for every creature in the search area. |\n| bCheckForLineOfSight | boolean | `true` | Determines whether LOS is required from (`centerX`, `centerY`) to considered objects. |\n| bCheckForNonSprites | boolean | `false` | Determines whether non-sprite objects in the main objects list are considered. |\n| terrainTable | Array<byte,16> | `CGameObject.DEFAULT_VISIBLE_TERRAIN_TABLE` | The terrain table to use for determining LOS. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Area/index.rst#L110",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Area_ForAllOfTypeStringInRange",
+      "name": "EEex_Area_ForAllOfTypeStringInRange",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Area_ForAllOfTypeStringInRange(area, centerX, centerY, aiObjectTypeString, range, func, bCheckForLineOfSight, bCheckForNonSprites, terrainTable)",
+      "parameters": [
+        {
+          "name": "area",
+          "type": "CGameArea",
+          "description": "The area to search."
+        },
+        {
+          "name": "centerX",
+          "type": "number",
+          "description": "The x coordinate to use as the center of the search radius."
+        },
+        {
+          "name": "centerY",
+          "type": "number",
+          "description": "The y coordinate to use as the center of the search radius."
+        },
+        {
+          "name": "aiObjectTypeString",
+          "type": "string",
+          "description": "The AI object type string used to filter the objects passed to `func`. <br/> Automatically parsed by `EEex_Object_ParseString()`; the resulting object is freed before return."
+        },
+        {
+          "name": "range",
+          "type": "number",
+          "description": "The radius to search around (`centerX`, `centerY`). `448` is a sprite's default visual range."
+        },
+        {
+          "name": "func",
+          "type": "function",
+          "description": "The function to call for every creature in the search area."
+        },
+        {
+          "name": "bCheckForLineOfSight",
+          "type": "boolean",
+          "defaultValue": "true",
+          "description": "Determines whether LOS is required from (`centerX`, `centerY`) to considered objects."
+        },
+        {
+          "name": "bCheckForNonSprites",
+          "type": "boolean",
+          "defaultValue": "false",
+          "description": "Determines whether non-sprite objects in the main objects list are considered."
+        },
+        {
+          "name": "terrainTable",
+          "type": "Array<byte,16>",
+          "defaultValue": "CGameObject.DEFAULT_VISIBLE_TERRAIN_TABLE",
+          "description": "The terrain table to use for determining LOS."
+        }
+      ],
+      "callableAliases": [
+        {
+          "name": "forAllOfTypeStringInRange",
+          "receiverType": "CGameArea",
+          "consumesFirstParameter": true
+        }
+      ],
+      "documentationMarkdown": "**Instance Name:** `forAllOfTypeStringInRange`\n\n> **Summary**\n> Calls `func` for every creature that matches `aiObjectTypeString` around (`centerX`, `centerY`) in the given `range`, as per the `NumCreature()` trigger.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| area | CGameArea |  | The area to search. |\n| centerX | number |  | The x coordinate to use as the center of the search radius. |\n| centerY | number |  | The y coordinate to use as the center of the search radius. |\n| aiObjectTypeString | string |  | The AI object type string used to filter the objects passed to `func`. <br/> Automatically parsed by `EEex_Object_ParseString()`; the resulting object is freed before return. |\n| range | number |  | The radius to search around (`centerX`, `centerY`). `448` is a sprite's default visual range. |\n| func | function |  | The function to call for every creature in the search area. |\n| bCheckForLineOfSight | boolean | `true` | Determines whether LOS is required from (`centerX`, `centerY`) to considered objects. |\n| bCheckForNonSprites | boolean | `false` | Determines whether non-sprite objects in the main objects list are considered. |\n| terrainTable | Array<byte,16> | `CGameObject.DEFAULT_VISIBLE_TERRAIN_TABLE` | The terrain table to use for determining LOS. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Area/index.rst#L147",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Area_GetAllOfTypeInRange",
+      "name": "EEex_Area_GetAllOfTypeInRange",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Area_GetAllOfTypeInRange(area, centerX, centerY, aiObjectType, range, bCheckForLineOfSight, bCheckForNonSprites, terrainTable)",
+      "parameters": [
+        {
+          "name": "area",
+          "type": "CGameArea",
+          "description": "The area to search."
+        },
+        {
+          "name": "centerX",
+          "type": "number",
+          "description": "The x coordinate to use as the center of the search radius."
+        },
+        {
+          "name": "centerY",
+          "type": "number",
+          "description": "The y coordinate to use as the center of the search radius."
+        },
+        {
+          "name": "aiObjectType",
+          "type": "CAIObjectType",
+          "description": "The AI object type used to filter the objects passed to `func`. <br/> Most commonly retrieved from `EEex_Object_ParseString()`. Remember to call `:free()`."
+        },
+        {
+          "name": "range",
+          "type": "number",
+          "description": "The radius to search around (`centerX`, `centerY`). `448` is a sprite's default visual range."
+        },
+        {
+          "name": "bCheckForLineOfSight",
+          "type": "boolean",
+          "defaultValue": "true",
+          "description": "Determines whether LOS is required from (`centerX`, `centerY`) to considered objects."
+        },
+        {
+          "name": "bCheckForNonSprites",
+          "type": "boolean",
+          "defaultValue": "false",
+          "description": "Determines whether non-sprite objects in the main objects list are considered."
+        },
+        {
+          "name": "terrainTable",
+          "type": "Array<byte,16>",
+          "defaultValue": "CGameObject.DEFAULT_VISIBLE_TERRAIN_TABLE",
+          "description": "The terrain table to use for determining LOS."
+        }
+      ],
+      "returns": [
+        {
+          "type": "table",
+          "description": "See summary."
+        }
+      ],
+      "callableAliases": [
+        {
+          "name": "getAllOfTypeInRange",
+          "receiverType": "CGameArea",
+          "consumesFirstParameter": true
+        }
+      ],
+      "documentationMarkdown": "**Instance Name:** `getAllOfTypeInRange`\n\n> **Summary**\n> Returns a table populated by every creature that matches `aiObjectType` around (`centerX`, `centerY`) in the given `range`, as per the `NumCreature()` trigger.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| area | CGameArea |  | The area to search. |\n| centerX | number |  | The x coordinate to use as the center of the search radius. |\n| centerY | number |  | The y coordinate to use as the center of the search radius. |\n| aiObjectType | CAIObjectType |  | The AI object type used to filter the objects passed to `func`. <br/> Most commonly retrieved from `EEex_Object_ParseString()`. Remember to call `:free()`. |\n| range | number |  | The radius to search around (`centerX`, `centerY`). `448` is a sprite's default visual range. |\n| bCheckForLineOfSight | boolean | `true` | Determines whether LOS is required from (`centerX`, `centerY`) to considered objects. |\n| bCheckForNonSprites | boolean | `false` | Determines whether non-sprite objects in the main objects list are considered. |\n| terrainTable | Array<byte,16> | `CGameObject.DEFAULT_VISIBLE_TERRAIN_TABLE` | The terrain table to use for determining LOS. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| table | See summary. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Area/index.rst#L184",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Area_GetAllOfTypeStringInRange",
+      "name": "EEex_Area_GetAllOfTypeStringInRange",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Area_GetAllOfTypeStringInRange(area, centerX, centerY, aiObjectTypeString, range, bCheckForLineOfSight, bCheckForNonSprites, terrainTable)",
+      "parameters": [
+        {
+          "name": "area",
+          "type": "CGameArea",
+          "description": "The area to search."
+        },
+        {
+          "name": "centerX",
+          "type": "number",
+          "description": "The x coordinate to use as the center of the search radius."
+        },
+        {
+          "name": "centerY",
+          "type": "number",
+          "description": "The y coordinate to use as the center of the search radius."
+        },
+        {
+          "name": "aiObjectTypeString",
+          "type": "string",
+          "description": "The AI object type string used to filter the objects added to the return table. <br/> Automatically parsed by `EEex_Object_ParseString()`; the resulting object is freed before return."
+        },
+        {
+          "name": "range",
+          "type": "number",
+          "description": "The radius to search around (`centerX`, `centerY`). `448` is a sprite's default visual range."
+        },
+        {
+          "name": "bCheckForLineOfSight",
+          "type": "boolean",
+          "defaultValue": "true",
+          "description": "Determines whether LOS is required from (`centerX`, `centerY`) to considered objects."
+        },
+        {
+          "name": "bCheckForNonSprites",
+          "type": "boolean",
+          "defaultValue": "false",
+          "description": "Determines whether non-sprite objects in the main objects list are considered."
+        },
+        {
+          "name": "terrainTable",
+          "type": "Array<byte,16>",
+          "defaultValue": "CGameObject.DEFAULT_VISIBLE_TERRAIN_TABLE",
+          "description": "The terrain table to use for determining LOS."
+        }
+      ],
+      "returns": [
+        {
+          "type": "table",
+          "description": "See summary."
+        }
+      ],
+      "callableAliases": [
+        {
+          "name": "getAllOfTypeStringInRange",
+          "receiverType": "CGameArea",
+          "consumesFirstParameter": true
+        }
+      ],
+      "documentationMarkdown": "**Instance Name:** `getAllOfTypeStringInRange`\n\n> **Summary**\n> Returns a table populated by every creature that matches `aiObjectTypeString` around (`centerX`, `centerY`) in the given `range`, as per the `NumCreature()` trigger.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| area | CGameArea |  | The area to search. |\n| centerX | number |  | The x coordinate to use as the center of the search radius. |\n| centerY | number |  | The y coordinate to use as the center of the search radius. |\n| aiObjectTypeString | string |  | The AI object type string used to filter the objects added to the return table. <br/> Automatically parsed by `EEex_Object_ParseString()`; the resulting object is freed before return. |\n| range | number |  | The radius to search around (`centerX`, `centerY`). `448` is a sprite's default visual range. |\n| bCheckForLineOfSight | boolean | `true` | Determines whether LOS is required from (`centerX`, `centerY`) to considered objects. |\n| bCheckForNonSprites | boolean | `false` | Determines whether non-sprite objects in the main objects list are considered. |\n| terrainTable | Array<byte,16> | `CGameObject.DEFAULT_VISIBLE_TERRAIN_TABLE` | The terrain table to use for determining LOS. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| table | See summary. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Area/index.rst#L227",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Area_GetNearestOpenPosition",
+      "name": "EEex_Area_GetNearestOpenPosition",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Area_GetNearestOpenPosition()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Area/index.rst#L270",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Area_GetVariableInt",
+      "name": "EEex_Area_GetVariableInt",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Area_GetVariableInt(area, variableName)",
+      "parameters": [
+        {
+          "name": "area",
+          "type": "CGameArea",
+          "description": "The area that the variable being fetched is scoped to."
+        },
+        {
+          "name": "variableName",
+          "type": "string",
+          "description": "The name of the variable to fetch."
+        }
+      ],
+      "returns": [
+        {
+          "type": "number",
+          "description": "See summary."
+        }
+      ],
+      "callableAliases": [
+        {
+          "name": "getVariableInt",
+          "receiverType": "CGameArea",
+          "consumesFirstParameter": true
+        }
+      ],
+      "documentationMarkdown": "**Instance Name:** `getVariableInt`\n\n> **Summary**\n> Returns the integer value of the `variableName` Global scoped to `area`. If no variable named `variableName` exists, returns `0`.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| area | CGameArea |  | The area that the variable being fetched is scoped to. |\n| variableName | string |  | The name of the variable to fetch. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| number | See summary. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Area/index.rst#L278",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Area_GetVariableString",
+      "name": "EEex_Area_GetVariableString",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Area_GetVariableString(area, variableName)",
+      "parameters": [
+        {
+          "name": "area",
+          "type": "CGameArea",
+          "description": "The area that the variable being fetched is scoped to."
+        },
+        {
+          "name": "variableName",
+          "type": "string",
+          "description": "The name of the variable to fetch."
+        }
+      ],
+      "returns": [
+        {
+          "type": "string",
+          "description": "See summary."
+        }
+      ],
+      "callableAliases": [
+        {
+          "name": "getVariableString",
+          "receiverType": "CGameArea",
+          "consumesFirstParameter": true
+        }
+      ],
+      "documentationMarkdown": "**Instance Name:** `getVariableString`\n\n> **Summary**\n> Returns the string value of the `variableName` Global scoped to `area`. If no variable named `variableName` exists, returns `\"\"`.\n\n> **Note**\n> Global string values can only be accessed through EEex functions.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| area | CGameArea |  | The area that the variable being fetched is scoped to. |\n| variableName | string |  | The name of the variable to fetch. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| string | See summary. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Area/index.rst#L309",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Area_GetVisible",
+      "name": "EEex_Area_GetVisible",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Area_GetVisible()",
+      "returns": [
+        {
+          "type": "CGameArea | nil",
+          "description": "See summary."
+        }
+      ],
+      "documentationMarkdown": "> **Summary**\n> Returns the currently-visible `CGameArea`, or `nil` if the worldscreen is not initialized.\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| CGameArea \\| nil | See summary. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Area/index.rst#L344",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Area_SetVariableInt",
+      "name": "EEex_Area_SetVariableInt",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Area_SetVariableInt(area, variableName, value)",
+      "parameters": [
+        {
+          "name": "area",
+          "type": "CGameArea",
+          "description": "The area that the variable being set is scoped to."
+        },
+        {
+          "name": "variableName",
+          "type": "string",
+          "description": "The name of the variable to set."
+        },
+        {
+          "name": "value",
+          "type": "number",
+          "description": "The value to set the variable to."
+        }
+      ],
+      "callableAliases": [
+        {
+          "name": "setVariableInt",
+          "receiverType": "CGameArea",
+          "consumesFirstParameter": true
+        }
+      ],
+      "documentationMarkdown": "**Instance Name:** `setVariableInt`\n\n> **Summary**\n> Sets the integer value of the `variableName` Global scoped to `area` to `value`.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| area | CGameArea |  | The area that the variable being set is scoped to. |\n| variableName | string |  | The name of the variable to set. |\n| value | number |  | The value to set the variable to. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Area/index.rst#L363",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Area_SetVariableString",
+      "name": "EEex_Area_SetVariableString",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Area_SetVariableString(area, variableName, value)",
+      "parameters": [
+        {
+          "name": "area",
+          "type": "CGameArea",
+          "description": "The area that the variable being set is scoped to."
+        },
+        {
+          "name": "variableName",
+          "type": "string",
+          "description": "The name of the variable to set."
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "description": "The value to set the variable to."
+        }
+      ],
+      "callableAliases": [
+        {
+          "name": "setVariableString",
+          "receiverType": "CGameArea",
+          "consumesFirstParameter": true
+        }
+      ],
+      "documentationMarkdown": "**Instance Name:** `setVariableString`\n\n> **Summary**\n> Sets the string value of the `variableName` Global scoped to `area` to `value`.\n\n> **Note**\n> Global string values can only be accessed through EEex functions.\n\n> **Warning**\n> Global string values can be a maximum of 32 characters. Attempting to set a value that is longer than 32 characters will result in the value being truncated.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| area | CGameArea |  | The area that the variable being set is scoped to. |\n| variableName | string |  | The name of the variable to set. |\n| value | string |  | The value to set the variable to. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Area/index.rst#L387",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    }
+  ]
+}

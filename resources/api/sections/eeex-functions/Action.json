@@ -1,0 +1,224 @@
+{
+  "schemaVersion": 3,
+  "generatedAt": "2026-08-25T18:10:55.136Z",
+  "source": {
+    "id": "eeex-functions",
+    "title": "EEex Functions",
+    "url": "https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions",
+    "commit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+    "licenseStatus": "allowed"
+  },
+  "title": "Action",
+  "upstreamPath": "source/EEex Functions/Action/index.rst",
+  "symbols": [
+    {
+      "id": "eeex-functions:EEex_Action_AddEnabledSpriteStartedActionListener",
+      "name": "EEex_Action_AddEnabledSpriteStartedActionListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Action_AddEnabledSpriteStartedActionListener()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Action/index.rst#L16",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Action_AddSpriteStartedActionListener",
+      "name": "EEex_Action_AddSpriteStartedActionListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Action_AddSpriteStartedActionListener()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Action/index.rst#L24",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Action_AddSpriteStartedNextActionListener",
+      "name": "EEex_Action_AddSpriteStartedNextActionListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Action_AddSpriteStartedNextActionListener()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Action/index.rst#L32",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Action_ExecuteResponseStringOnAIBaseInstantly",
+      "name": "EEex_Action_ExecuteResponseStringOnAIBaseInstantly",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Action_ExecuteResponseStringOnAIBaseInstantly(responseStr, pGameAIBase)",
+      "parameters": [
+        {
+          "name": "responseStr",
+          "type": "string",
+          "description": "The string to parse."
+        },
+        {
+          "name": "pGameAIBase",
+          "type": "CGameAIBase",
+          "description": "The AI base that will execute the actions."
+        }
+      ],
+      "documentationMarkdown": "> **Summary**\n> Has `pGameAIBase` instantly execute the actions contained in `responseStr` without interrupting `pGameAIBase`'s current action / readying `pGameAIBase`.\n>\n> `EEex_Action_ParseResponseString()` is used to compile `responseStr`; prefer using this function in conjunction with `EEex_Action_ExecuteScriptFileResponseAsAIBaseInstantly()` when efficiency is required.\n>\n> ***Running this function with actions not defined in INSTANT.IDS is undefined behavior.***\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| responseStr | string |  | The string to parse. |\n| pGameAIBase | CGameAIBase |  | The AI base that will execute the actions. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Action/index.rst#L40",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Action_ExecuteScriptFileResponseAsAIBaseInstantly",
+      "name": "EEex_Action_ExecuteScriptFileResponseAsAIBaseInstantly",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Action_ExecuteScriptFileResponseAsAIBaseInstantly(pScriptFile, pGameAIBase)",
+      "parameters": [
+        {
+          "name": "pScriptFile",
+          "type": "CAIScriptFile",
+          "description": "The AI script file returned by `EEex_Action_ParseResponseString()`."
+        },
+        {
+          "name": "pGameAIBase",
+          "type": "CGameAIBase",
+          "description": "The AI base that will execute the actions."
+        }
+      ],
+      "callableAliases": [
+        {
+          "name": "executeResponseAsAIBaseInstantly",
+          "receiverType": "CAIScriptFile",
+          "consumesFirstParameter": true
+        }
+      ],
+      "documentationMarkdown": "**Instance Name:** `executeResponseAsAIBaseInstantly`\n\n> **Summary**\n> Has `pGameAIBase` instantly execute compiled actions returned by `EEex_Action_ParseResponseString()` without interrupting `pGameAIBase`'s current action / readying `pGameAIBase`.\n>\n> ***Running this function with actions not defined in INSTANT.IDS is undefined behavior.***\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| pScriptFile | CAIScriptFile |  | The AI script file returned by `EEex_Action_ParseResponseString()`. |\n| pGameAIBase | CGameAIBase |  | The AI base that will execute the actions. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Action/index.rst#L67",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Action_FreeScriptFile",
+      "name": "EEex_Action_FreeScriptFile",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Action_FreeScriptFile(pScriptFile)",
+      "parameters": [
+        {
+          "name": "pScriptFile",
+          "type": "CAIScriptFile",
+          "description": "The AI script file to free."
+        }
+      ],
+      "callableAliases": [
+        {
+          "name": "free",
+          "receiverType": "CAIScriptFile",
+          "consumesFirstParameter": true
+        }
+      ],
+      "documentationMarkdown": "**Instance Name:** `free`\n\n> **Summary**\n> Frees the value returned by `EEex_Action_ParseResponseString()`.\n>\n> ***Attempting to use*** `pScriptFile` ***after calling*** `:free()` ***will result in a crash.***\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| pScriptFile | CAIScriptFile |  | The AI script file to free. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Action/index.rst#L92",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Action_NextSpellToPoint",
+      "name": "EEex_Action_NextSpellToPoint",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Action_NextSpellToPoint()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Action/index.rst#L114",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Action_ParseResponseString",
+      "name": "EEex_Action_ParseResponseString",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Action_ParseResponseString(responseStr)",
+      "parameters": [
+        {
+          "name": "responseStr",
+          "type": "string",
+          "description": "The string to parse."
+        }
+      ],
+      "returns": [
+        {
+          "type": "CAIScriptFile",
+          "description": "See summary."
+        }
+      ],
+      "documentationMarkdown": "> **Summary**\n> Parses `responseStr` as if it was fed through `C:Eval()` and returns the compiled script object, (only filled with actions).\n>\n> ***Remember to call*** `:free()` ***on the returned value when it is no longer being used.***\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| responseStr | string |  | The string to parse. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| CAIScriptFile | See summary. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Action/index.rst#L122",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Action_QueueResponseStringOnAIBase",
+      "name": "EEex_Action_QueueResponseStringOnAIBase",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Action_QueueResponseStringOnAIBase(responseStr, pGameAIBase)",
+      "parameters": [
+        {
+          "name": "responseStr",
+          "type": "string",
+          "description": "The string to parse."
+        },
+        {
+          "name": "pGameAIBase",
+          "type": "CGameAIBase",
+          "description": "The AI base to queue the actions on."
+        }
+      ],
+      "documentationMarkdown": "> **Summary**\n> Adds the actions contained in `responseStr` to the end of `pGameAIBase`'s action queue. Behavior identical to `C:Eval()`.\n>\n> `EEex_Action_ParseResponseString()` is used to compile `responseStr`; prefer using this function in conjunction with `EEex_Action_QueueScriptFileResponseOnAIBase()` when efficiency is required.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| responseStr | string |  | The string to parse. |\n| pGameAIBase | CGameAIBase |  | The AI base to queue the actions on. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Action/index.rst#L152",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Action_QueueScriptFileResponseOnAIBase",
+      "name": "EEex_Action_QueueScriptFileResponseOnAIBase",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Action_QueueScriptFileResponseOnAIBase(pScriptFile, pGameAIBase)",
+      "parameters": [
+        {
+          "name": "pScriptFile",
+          "type": "CAIScriptFile",
+          "description": "The AI script file returned by `EEex_Action_ParseResponseString()`."
+        },
+        {
+          "name": "pGameAIBase",
+          "type": "CGameAIBase",
+          "description": "The AI base to queue the actions on."
+        }
+      ],
+      "callableAliases": [
+        {
+          "name": "queueResponseOnAIBase",
+          "receiverType": "CAIScriptFile",
+          "consumesFirstParameter": true
+        }
+      ],
+      "documentationMarkdown": "**Instance Name:** `queueResponseOnAIBase`\n\n> **Summary**\n> Adds compiled actions returned by `EEex_Action_ParseResponseString()` to the end of `pGameAIBase`'s action queue. Behavior identical to `C:Eval()`.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| pScriptFile | CAIScriptFile |  | The AI script file returned by `EEex_Action_ParseResponseString()`. |\n| pGameAIBase | CGameAIBase |  | The AI base to queue the actions on. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Action/index.rst#L177",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    }
+  ]
+}

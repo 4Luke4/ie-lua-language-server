@@ -1,0 +1,311 @@
+{
+  "schemaVersion": 3,
+  "generatedAt": "2026-08-25T18:10:55.136Z",
+  "source": {
+    "id": "eeex-functions",
+    "title": "EEex Functions",
+    "url": "https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions",
+    "commit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+    "licenseStatus": "allowed"
+  },
+  "title": "GameObject",
+  "upstreamPath": "source/EEex Functions/GameObject/index.rst",
+  "symbols": [
+    {
+      "id": "eeex-functions:EEex_GameObject_ApplyEffect",
+      "name": "EEex_GameObject_ApplyEffect",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_GameObject_ApplyEffect(object, args)",
+      "parameters": [
+        {
+          "name": "object",
+          "type": "CGameObject",
+          "description": "The object to apply the effect to."
+        },
+        {
+          "name": "args",
+          "type": "table",
+          "description": "The table that describes the effect to apply."
+        }
+      ],
+      "callableAliases": [
+        {
+          "name": "applyEffect",
+          "receiverType": "CGameObject",
+          "consumesFirstParameter": true
+        }
+      ],
+      "documentationMarkdown": "**Instance Name:** `applyEffect`\n\n> **Summary**\n> Applies an effect to the given `object` based on the `args` table.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| object | CGameObject |  | The object to apply the effect to. |\n| args | table |  | The table that describes the effect to apply. |\n\nValid keys for the `args` table are as follows:\n\n| **Name** | **Default Value** | **Description** |\n| --- | --- | --- |\n| diceSize | `0` | As per offset [+0x3C] of .EFF v2.0. |\n| duration | `0` | As per offset [+0x28] of .EFF v2.0. |\n| durationType | `0` | As per offset [+0x24] of .EFF v2.0. |\n| dwFlags | `0` | As per offset [+0x20] of .EFF v2.0. |\n| effectAmount | `0` | As per offset [+0x1C] of .EFF v2.0. |\n| effectID | `<ERROR>` | As per offset [+0x10] of .EFF v2.0. |\n| effectList | `1` | If 1, adds the effect to the sprite's timed list. <br/> If 2, adds the effect to the sprite's equipped list. |\n| immediateResolve | `1` | Determines whether the engine immediately applies the effect during the <br/> function call, or the next time the sprite's effect list is processed. |\n| m_casterLevel | `0` | As per offset [+0xC8] of .EFF v2.0. |\n| m_effectAmount2 | `0` | As per offset [+0x60] of .EFF v2.0. |\n| m_effectAmount3 | `0` | As per offset [+0x64] of .EFF v2.0. |\n| m_effectAmount4 | `0` | As per offset [+0x68] of .EFF v2.0. |\n| m_effectAmount5 | `0` | As per offset [+0x6C] of .EFF v2.0. |\n| m_flags | `0` | As per offset [+0x5C] of .EFF v2.0. |\n| m_maxLevel | `0` | As per offset [+0x58] of .EFF v2.0. |\n| m_minLevel | `0` | As per offset [+0x54] of .EFF v2.0. |\n| m_projectileType | `0` | As per offset [+0xA0] of .EFF v2.0. |\n| m_res2 | `\"\"` | As per offset [+0x70] of .EFF v2.0. |\n| m_res3 | `\"\"` | As per offset [+0x78] of .EFF v2.0. |\n| m_school | `0` | As per offset [+0x4C] of .EFF v2.0. |\n| m_scriptName | `\"\"` | As per offset [+0xA8] of .EFF v2.0. |\n| m_secondaryType | `0` | As per offset [+0xD0] of .EFF v2.0. |\n| m_slotNum | `0` | As per offset [+0xA4] of .EFF v2.0. |\n| m_sourceFlags | `0` | As per offset [+0x9C] of .EFF v2.0. |\n| m_sourceRes | `\"\"` | As per offset [+0x94] of .EFF v2.0. |\n| m_sourceType | `0` | As per offset [+0x90] of .EFF v2.0. |\n| noSave | `0` | If true, the effect bypasses any immunities the sprite might have to its application. |\n| numDice | `0` | As per offset [+0x38] of .EFF v2.0. |\n| probabilityLower | `0` | As per offset [+0x2E] of .EFF v2.0. |\n| probabilityUpper | `100` | As per offset [+0x2C] of .EFF v2.0. |\n| res | `\"\"` | As per offset [+0x30] of .EFF v2.0. |\n| saveMod | `0` | As per offset [+0x44] of .EFF v2.0. |\n| savingThrow | `0` | As per offset [+0x40] of .EFF v2.0. |\n| sourceID | `-1` | The object id of the effect's source, as per `CGameEffect.m_sourceId`. |\n| sourceTarget | `-1` | The object id of the source's target, as per `CGameEffect.m_sourceTarget`; <br/> you might need to set this if the opcode applies additional effects. |\n| sourceX | `-1` | As per offset [+0x80] of .EFF v2.0. |\n| sourceY | `-1` | As per offset [+0x84] of .EFF v2.0. |\n| special | `0` | As per offset [+0x48] of .EFF v2.0. |\n| spellLevel | `0` | As per offset [+0x18] of .EFF v2.0. |\n| targetType | `1` | As per offset [+0x14] of .EFF v2.0. |\n| targetX | `-1` | As per offset [+0x88] of .EFF v2.0. |\n| targetY | `-1` | As per offset [+0x8C] of .EFF v2.0. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameObject/index.rst#L16",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_GameObject_AttachVisualEffect",
+      "name": "EEex_GameObject_AttachVisualEffect",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_GameObject_AttachVisualEffect()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameObject/index.rst#L130",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_GameObject_CastUserType",
+      "name": "EEex_GameObject_CastUserType",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_GameObject_CastUserType(object)",
+      "parameters": [
+        {
+          "name": "object",
+          "type": "CGameObject",
+          "description": "The object to cast."
+        }
+      ],
+      "returns": [
+        {
+          "type": ":raw-html:`<pre>` CGameAIArea | CGameAIBase | CGameAIGame | CGameContainer | CGameDoor | CGameFireball3d | CGameSound | :raw-html:`<br/>` CGameSpawning | CGameSprite | CGameStatic | CGameTemporal | CGameTiledObject | CGameTrigger | CObjectMarker | nil :raw-html:`</pre>`",
+          "description": "See summary."
+        }
+      ],
+      "callableAliases": [
+        {
+          "name": "EEex_GameObject_CastUT",
+          "consumesFirstParameter": false
+        }
+      ],
+      "documentationMarkdown": "**Aliases:** `EEex_GameObject_CastUT`\n\n> **Summary**\n> Takes the given `object` and returns a cast userdata that represents `object`'s true type.\n>\n> Most EEex functions will call this function before passing an object to the modder API.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| object | CGameObject |  | The object to cast. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| <pre> CGameAIArea   \\| CGameAIBase \\| CGameAIGame \\| CGameContainer \\| CGameDoor        \\| CGameFireball3d \\| CGameSound    \\| <br/> CGameSpawning \\| CGameSprite \\| CGameStatic \\| CGameTemporal  \\| CGameTiledObject \\| CGameTrigger    \\| CObjectMarker \\| nil </pre> | See summary. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameObject/index.rst#L138",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_GameObject_Get",
+      "name": "EEex_GameObject_Get",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_GameObject_Get(objectID)",
+      "parameters": [
+        {
+          "name": "objectID",
+          "type": "number",
+          "description": "The id of the object to fetch."
+        }
+      ],
+      "returns": [
+        {
+          "type": ":raw-html:`<pre>` CGameAIArea | CGameAIBase | CGameAIGame | CGameContainer | CGameDoor | CGameFireball3d | CGameSound | :raw-html:`<br/>` CGameSpawning | CGameSprite | CGameStatic | CGameTemporal | CGameTiledObject | CGameTrigger | CObjectMarker | nil :raw-html:`</pre>`",
+          "description": "See summary."
+        }
+      ],
+      "documentationMarkdown": "> **Summary**\n> Returns the object associated with `objectID`, or `nil` if `objectID` is invalid.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| objectID | number |  | The id of the object to fetch. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| <pre> CGameAIArea   \\| CGameAIBase \\| CGameAIGame \\| CGameContainer \\| CGameDoor        \\| CGameFireball3d \\| CGameSound    \\| <br/> CGameSpawning \\| CGameSprite \\| CGameStatic \\| CGameTemporal  \\| CGameTiledObject \\| CGameTrigger    \\| CObjectMarker \\| nil </pre> | See summary. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameObject/index.rst#L168",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_GameObject_GetAllSelectedIDs",
+      "name": "EEex_GameObject_GetAllSelectedIDs",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_GameObject_GetAllSelectedIDs()",
+      "documentationMarkdown": "> **Warning**\n> **Deprecated:** Use `EEex_Sprite_GetAllSelectedIDs()` instead.",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameObject/index.rst#L195",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_GameObject_GetClass",
+      "name": "EEex_GameObject_GetClass",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_GameObject_GetClass(object)",
+      "parameters": [
+        {
+          "name": "object",
+          "type": "CGameObject",
+          "description": "The object whose class is being fetched."
+        }
+      ],
+      "returns": [
+        {
+          "type": "number",
+          "description": "See summary."
+        }
+      ],
+      "callableAliases": [
+        {
+          "name": "getClass",
+          "receiverType": "CGameObject",
+          "consumesFirstParameter": true
+        }
+      ],
+      "documentationMarkdown": "**Instance Name:** `getClass`\n\n> **Summary**\n> Returns the given `object`'s class.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| object | CGameObject |  | The object whose class is being fetched. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| number | See summary. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameObject/index.rst#L204",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_GameObject_GetSelected",
+      "name": "EEex_GameObject_GetSelected",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_GameObject_GetSelected()",
+      "documentationMarkdown": "> **Warning**\n> **Deprecated:** Use `EEex_Sprite_GetSelected()` instead.",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameObject/index.rst#L232",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_GameObject_GetSelectedID",
+      "name": "EEex_GameObject_GetSelectedID",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_GameObject_GetSelectedID()",
+      "documentationMarkdown": "> **Warning**\n> **Deprecated:** Use `EEex_Sprite_GetSelectedID()` instead.",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameObject/index.rst#L241",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_GameObject_GetUnderCursor",
+      "name": "EEex_GameObject_GetUnderCursor",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_GameObject_GetUnderCursor()",
+      "returns": [
+        {
+          "type": "CGameContainer | CGameDoor | CGameSprite | CGameTrigger | nil",
+          "description": "See summary."
+        }
+      ],
+      "documentationMarkdown": "> **Summary**\n> Returns the interactable object currently under the cursor, or `nil` if none exists.\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| CGameContainer \\| CGameDoor \\| CGameSprite \\| CGameTrigger \\| nil | See summary. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameObject/index.rst#L250",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_GameObject_GetUnderCursorID",
+      "name": "EEex_GameObject_GetUnderCursorID",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_GameObject_GetUnderCursorID()",
+      "returns": [
+        {
+          "type": "number",
+          "description": "See summary."
+        }
+      ],
+      "documentationMarkdown": "> **Summary**\n> Returns the id of the interactable object currently under the cursor, or `-1` if none exists.\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| number | See summary. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameObject/index.rst#L269",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_GameObject_IsSprite",
+      "name": "EEex_GameObject_IsSprite",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_GameObject_IsSprite(object, allowDead)",
+      "parameters": [
+        {
+          "name": "object",
+          "type": "CGameObject",
+          "description": "The object to check."
+        },
+        {
+          "name": "allowDead",
+          "type": "boolean",
+          "defaultValue": "false",
+          "description": "Determines whether `object` is allowed to be dead."
+        }
+      ],
+      "returns": [
+        {
+          "type": "boolean",
+          "description": "See summary."
+        }
+      ],
+      "callableAliases": [
+        {
+          "name": "isSprite",
+          "receiverType": "CGameObject",
+          "consumesFirstParameter": true
+        }
+      ],
+      "documentationMarkdown": "**Instance Name:** `isSprite`\n\n> **Summary**\n> Returns whether the given `object` is a sprite.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| object | CGameObject |  | The object to check. |\n| allowDead | boolean | `false` | Determines whether `object` is allowed to be dead. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| boolean | See summary. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameObject/index.rst#L288",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_GameObject_IsSpriteID",
+      "name": "EEex_GameObject_IsSpriteID",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_GameObject_IsSpriteID(objectID, allowDead)",
+      "parameters": [
+        {
+          "name": "objectID",
+          "type": "number",
+          "description": "The object id to check."
+        },
+        {
+          "name": "allowDead",
+          "type": "boolean",
+          "defaultValue": "false",
+          "description": "Determines whether the sprite associated with `objectID` is allowed to be dead."
+        }
+      ],
+      "returns": [
+        {
+          "type": "boolean",
+          "description": "See summary."
+        }
+      ],
+      "documentationMarkdown": "> **Summary**\n> Returns whether the given `objectID` is associated with a sprite.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| objectID | number |  | The object id to check. |\n| allowDead | boolean | `false` | Determines whether the sprite associated with `objectID` is allowed to be dead. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| boolean | See summary. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameObject/index.rst#L318",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_GameObject_IterateSelected",
+      "name": "EEex_GameObject_IterateSelected",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_GameObject_IterateSelected()",
+      "documentationMarkdown": "> **Warning**\n> **Deprecated:** Use `EEex_Sprite_IterateSelected()` instead.",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameObject/index.rst#L347",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_GameObject_IterateSelectedIDs",
+      "name": "EEex_GameObject_IterateSelectedIDs",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_GameObject_IterateSelectedIDs()",
+      "documentationMarkdown": "> **Warning**\n> **Deprecated:** Use `EEex_Sprite_IterateSelectedIDs()` instead.",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/GameObject/index.rst#L356",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    }
+  ]
+}

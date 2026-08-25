@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 3,
+  "generatedAt": "2026-08-25T18:10:55.136Z",
+  "source": {
+    "id": "ee-game-lua-functions",
+    "title": "EE Game Lua Functions",
+    "url": "https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions",
+    "commit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+    "licenseStatus": "allowed"
+  },
+  "title": "moviesScreen",
+  "upstreamPath": "source/EE Game Lua Functions/moviesScreen/index.rst",
+  "symbols": [
+    {
+      "id": "ee-game-lua-functions:moviesScreen:IsPlayButtonClickable",
+      "name": "moviesScreen:IsPlayButtonClickable",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "moviesScreen:IsPlayButtonClickable()",
+      "containerName": "moviesScreen",
+      "instanceName": "IsPlayButtonClickable",
+      "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nmoviesScreen:IsPlayButtonClickable()\n```\n\n**See Also**\n\n,",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/moviesScreen/moviesScreen_IsPlayButtonClickable.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:moviesScreen:OnCreditsButtonClick",
+      "name": "moviesScreen:OnCreditsButtonClick",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "moviesScreen:OnCreditsButtonClick()",
+      "containerName": "moviesScreen",
+      "instanceName": "OnCreditsButtonClick",
+      "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nmoviesScreen:OnCreditsButtonClick()\n```\n\n**See Also**\n\n,",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/moviesScreen/moviesScreen_OnCreditsButtonClick.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:moviesScreen:OnDoneButtonClick",
+      "name": "moviesScreen:OnDoneButtonClick",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "moviesScreen:OnDoneButtonClick()",
+      "containerName": "moviesScreen",
+      "instanceName": "OnDoneButtonClick",
+      "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nmoviesScreen:OnDoneButtonClick()\n```\n\n**See Also**\n\n,",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/moviesScreen/moviesScreen_OnDoneButtonClick.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:moviesScreen:OnMovieItemSelect",
+      "name": "moviesScreen:OnMovieItemSelect",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "moviesScreen:OnMovieItemSelect()",
+      "containerName": "moviesScreen",
+      "instanceName": "OnMovieItemSelect",
+      "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nmoviesScreen:OnMovieItemSelect()\n```\n\n**See Also**\n\n,",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/moviesScreen/moviesScreen_OnMovieItemSelect.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:moviesScreen:OnPlayButtonClick",
+      "name": "moviesScreen:OnPlayButtonClick",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "moviesScreen:OnPlayButtonClick()",
+      "containerName": "moviesScreen",
+      "instanceName": "OnPlayButtonClick",
+      "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nmoviesScreen:OnPlayButtonClick()\n```\n\n**See Also**\n\n,",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/moviesScreen/moviesScreen_OnPlayButtonClick.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    }
+  ]
+}

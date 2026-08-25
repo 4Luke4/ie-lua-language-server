@@ -199,16 +199,15 @@ npm run ingest:docs
 
 The docs-ingestion step fetches official Lua 5.2, LuaJIT, EE Game Lua Function, and EEex Function documentation at build time and stores the source wording as Markdown for hover, completion, and signature-help previews. RST presentation is converted to equivalent VS Code Markdown while paragraphs, emphasis, lists, tables, admonitions, links, code blocks, and visible punctuation are retained.
 
-Generated API data is split by source section for auditability. `resources/api/api-index.json` is only a manifest; symbols live in these six files:
+Generated API data uses a schema-v3 manifest for auditability. `resources/api/api-index.json` retains the six logical source sections and lists every data file with its symbol count and, for EE/EEex data, its exact upstream category path. The three EEex-backed sources mirror the top-level categories in the pinned upstream toctrees, including explicit empty shards:
 
-- `resources/api/sections/ee-game-lua-functions.json`
-- `resources/api/sections/eeex-functions.json`
-- `resources/api/sections/ee-game-structures-x64.json`
-- `resources/api/sections/lua52.json`
-- `resources/api/sections/luajit.json`
-- `resources/api/sections/ee-utility-functions.json`
+- `resources/api/sections/ee-game-lua-functions/`
+- `resources/api/sections/eeex-functions/`
+- `resources/api/sections/ee-game-structures-x64/`
 
-Set `IE_LUA_FETCH_EEEX=1` when running `npm run ingest:docs` to refresh EEex metadata. The generator resolves the latest `dev` revision by default; set `IE_LUA_EEEX_COMMIT` to a full commit SHA for a reproducible run. Function ingestion discovers every non-index EE Game function page and every `EEex_*` function anchor from the pinned tree, rejects incomplete or malformed input, and records exact commit-and-line provenance. Structure layouts include names, fields, types, offsets, byte sizes, and pinned source lines; EE Game Structures narrative prose remains permission-gated and is not bundled.
+Lua 5.2, LuaJIT, and optional local utility metadata remain single-file sections under `resources/api/sections/`. Category filenames are derived deterministically from upstream names rather than maintained as a hardcoded list.
+
+Set `IE_LUA_FETCH_EEEX=1` when running `npm run ingest:docs` to refresh EEex metadata. The generator resolves the latest `dev` revision by default; set `IE_LUA_EEEX_COMMIT` to a full commit SHA for a reproducible run. Function ingestion discovers every standalone EE Game function page, every game function defined directly in a category index, and every `EEex_*` function anchor from the pinned tree. It rejects incomplete or malformed input and records exact commit-and-line provenance. Structure layouts include names, fields, types, offsets, byte sizes, and pinned source lines; EE Game Structures narrative prose remains permission-gated and is not bundled.
 
 The scheduled **Update EEex API data** workflow checks the upstream repository daily. When its revision changes, the workflow regenerates and verifies the API data on a dedicated branch and opens a pull request for review; it never executes upstream code.
 

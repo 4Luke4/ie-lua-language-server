@@ -1,0 +1,1193 @@
+{
+  "schemaVersion": 3,
+  "generatedAt": "2026-08-25T18:10:55.136Z",
+  "source": {
+    "id": "eeex-functions",
+    "title": "EEex Functions",
+    "url": "https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions",
+    "commit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+    "licenseStatus": "allowed"
+  },
+  "title": "Sprite",
+  "upstreamPath": "source/EEex Functions/Sprite/index.rst",
+  "symbols": [
+    {
+      "id": "eeex-functions:EEex_Sprite_AddAlterBaseWeaponDamageListener",
+      "name": "EEex_Sprite_AddAlterBaseWeaponDamageListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_AddAlterBaseWeaponDamageListener()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L16",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_AddBlockWeaponHitListener",
+      "name": "EEex_Sprite_AddBlockWeaponHitListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_AddBlockWeaponHitListener()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L24",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_AddLoadedListener",
+      "name": "EEex_Sprite_AddLoadedListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_AddLoadedListener()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L32",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_AddMarshalHandlers",
+      "name": "EEex_Sprite_AddMarshalHandlers",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_AddMarshalHandlers()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L40",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_AddQuickListCountsResetListener",
+      "name": "EEex_Sprite_AddQuickListCountsResetListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_AddQuickListCountsResetListener()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L48",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_AddQuickListNotifyRemovedListener",
+      "name": "EEex_Sprite_AddQuickListNotifyRemovedListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_AddQuickListNotifyRemovedListener()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L56",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_AddQuickListsCheckedListener",
+      "name": "EEex_Sprite_AddQuickListsCheckedListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_AddQuickListsCheckedListener()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L64",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_AddSpellDisableStateChangedListener",
+      "name": "EEex_Sprite_AddSpellDisableStateChangedListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_AddSpellDisableStateChangedListener()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L72",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_CountAllOfTypeInRange",
+      "name": "EEex_Sprite_CountAllOfTypeInRange",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_CountAllOfTypeInRange(sprite, aiObjectType, range, bCheckForLineOfSight, bCheckForNonSprites, terrainTable)",
+      "parameters": [
+        {
+          "name": "sprite",
+          "type": "CGameSprite",
+          "description": "The sprite to search around."
+        },
+        {
+          "name": "aiObjectType",
+          "type": "CAIObjectType",
+          "description": "The AI object type used to filter the objects passed to `func`. <br/> Most commonly retrieved from `EEex_Object_ParseString()`. Remember to call `:free()`."
+        },
+        {
+          "name": "range",
+          "type": "number",
+          "description": "The radius to search around `sprite`. `448` is a sprite's default visual range."
+        },
+        {
+          "name": "bCheckForLineOfSight",
+          "type": "boolean",
+          "defaultValue": "true",
+          "description": "Determines whether LOS is required from `sprite` to considered objects."
+        },
+        {
+          "name": "bCheckForNonSprites",
+          "type": "boolean",
+          "defaultValue": "false",
+          "description": "Determines whether non-sprite objects in the main objects list are considered."
+        },
+        {
+          "name": "terrainTable",
+          "type": "Array<byte,16>",
+          "defaultValue": "sprite:virtual_GetVisibleTerrainTable()",
+          "description": "The terrain table to use for determining LOS."
+        }
+      ],
+      "returns": [
+        {
+          "type": "number",
+          "description": "See summary."
+        }
+      ],
+      "callableAliases": [
+        {
+          "name": "countAllOfTypeInRange",
+          "receiverType": "CGameSprite",
+          "consumesFirstParameter": true
+        }
+      ],
+      "documentationMarkdown": "**Instance Name:** `countAllOfTypeInRange`\n\n> **Summary**\n> Returns the number of creatures that match `aiObjectType` around `sprite` in the given `range`, as per the `NumCreature()` trigger.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| sprite | CGameSprite |  | The sprite to search around. |\n| aiObjectType | CAIObjectType |  | The AI object type used to filter the objects passed to `func`. <br/> Most commonly retrieved from `EEex_Object_ParseString()`. Remember to call `:free()`. |\n| range | number |  | The radius to search around `sprite`. `448` is a sprite's default visual range. |\n| bCheckForLineOfSight | boolean | `true` | Determines whether LOS is required from `sprite` to considered objects. |\n| bCheckForNonSprites | boolean | `false` | Determines whether non-sprite objects in the main objects list are considered. |\n| terrainTable | Array<byte,16> | `sprite:virtual_GetVisibleTerrainTable()` | The terrain table to use for determining LOS. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| number | See summary. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L80",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_CountAllOfTypeStringInRange",
+      "name": "EEex_Sprite_CountAllOfTypeStringInRange",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_CountAllOfTypeStringInRange(sprite, aiObjectTypeString, range, bCheckForLineOfSight, bCheckForNonSprites, terrainTable)",
+      "parameters": [
+        {
+          "name": "sprite",
+          "type": "CGameSprite",
+          "description": "The sprite to search around."
+        },
+        {
+          "name": "aiObjectTypeString",
+          "type": "string",
+          "description": "The AI object type string used to filter the objects added to the return table. <br/> Automatically parsed by `EEex_Object_ParseString()`; the resulting object is freed before return."
+        },
+        {
+          "name": "range",
+          "type": "number",
+          "description": "The radius to search around `sprite`. `448` is a sprite's default visual range."
+        },
+        {
+          "name": "bCheckForLineOfSight",
+          "type": "boolean",
+          "defaultValue": "true",
+          "description": "Determines whether LOS is required from `sprite` to considered objects."
+        },
+        {
+          "name": "bCheckForNonSprites",
+          "type": "boolean",
+          "defaultValue": "false",
+          "description": "Determines whether non-sprite objects in the main objects list are considered."
+        },
+        {
+          "name": "terrainTable",
+          "type": "Array<byte,16>",
+          "defaultValue": "sprite:virtual_GetVisibleTerrainTable()",
+          "description": "The terrain table to use for determining LOS."
+        }
+      ],
+      "returns": [
+        {
+          "type": "number",
+          "description": "See summary."
+        }
+      ],
+      "callableAliases": [
+        {
+          "name": "countAllOfTypeStringInRange",
+          "receiverType": "CGameSprite",
+          "consumesFirstParameter": true
+        }
+      ],
+      "documentationMarkdown": "**Instance Name:** `countAllOfTypeStringInRange`\n\n> **Summary**\n> Returns the number of creatures that match `aiObjectTypeString` around `sprite` in the given `range`, as per the `NumCreature()` trigger.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| sprite | CGameSprite |  | The sprite to search around. |\n| aiObjectTypeString | string |  | The AI object type string used to filter the objects added to the return table. <br/> Automatically parsed by `EEex_Object_ParseString()`; the resulting object is freed before return. |\n| range | number |  | The radius to search around `sprite`. `448` is a sprite's default visual range. |\n| bCheckForLineOfSight | boolean | `true` | Determines whether LOS is required from `sprite` to considered objects. |\n| bCheckForNonSprites | boolean | `false` | Determines whether non-sprite objects in the main objects list are considered. |\n| terrainTable | Array<byte,16> | `sprite:virtual_GetVisibleTerrainTable()` | The terrain table to use for determining LOS. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| number | See summary. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L119",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_CreateCopy",
+      "name": "EEex_Sprite_CreateCopy",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_CreateCopy()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L158",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_CreateFromResref",
+      "name": "EEex_Sprite_CreateFromResref",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_CreateFromResref()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L166",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_DisplayTextRef",
+      "name": "EEex_Sprite_DisplayTextRef",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_DisplayTextRef()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L174",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_ForAllOfTypeInRange",
+      "name": "EEex_Sprite_ForAllOfTypeInRange",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_ForAllOfTypeInRange(sprite, aiObjectType, range, func, bCheckForLineOfSight, bCheckForNonSprites, terrainTable)",
+      "parameters": [
+        {
+          "name": "sprite",
+          "type": "CGameSprite",
+          "description": "The sprite to search around."
+        },
+        {
+          "name": "aiObjectType",
+          "type": "CAIObjectType",
+          "description": "The AI object type used to filter the objects passed to `func`. <br/> Most commonly retrieved from `EEex_Object_ParseString()`. Remember to call `:free()`."
+        },
+        {
+          "name": "range",
+          "type": "number",
+          "description": "The radius to search around `sprite`. `448` is a sprite's default visual range."
+        },
+        {
+          "name": "func",
+          "type": "function",
+          "description": "The function to call for every creature in the search area."
+        },
+        {
+          "name": "bCheckForLineOfSight",
+          "type": "boolean",
+          "defaultValue": "true",
+          "description": "Determines whether LOS is required from `sprite` to considered objects."
+        },
+        {
+          "name": "bCheckForNonSprites",
+          "type": "boolean",
+          "defaultValue": "false",
+          "description": "Determines whether non-sprite objects in the main objects list are considered."
+        },
+        {
+          "name": "terrainTable",
+          "type": "Array<byte,16>",
+          "defaultValue": "sprite:virtual_GetVisibleTerrainTable()",
+          "description": "The terrain table to use for determining LOS."
+        }
+      ],
+      "callableAliases": [
+        {
+          "name": "forAllOfTypeInRange",
+          "receiverType": "CGameSprite",
+          "consumesFirstParameter": true
+        }
+      ],
+      "documentationMarkdown": "**Instance Name:** `forAllOfTypeInRange`\n\n> **Summary**\n> Calls `func` for every creature that matches `aiObjectType` around `sprite` in the given `range`, as per the `NumCreature()` trigger.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| sprite | CGameSprite |  | The sprite to search around. |\n| aiObjectType | CAIObjectType |  | The AI object type used to filter the objects passed to `func`. <br/> Most commonly retrieved from `EEex_Object_ParseString()`. Remember to call `:free()`. |\n| range | number |  | The radius to search around `sprite`. `448` is a sprite's default visual range. |\n| func | function |  | The function to call for every creature in the search area. |\n| bCheckForLineOfSight | boolean | `true` | Determines whether LOS is required from `sprite` to considered objects. |\n| bCheckForNonSprites | boolean | `false` | Determines whether non-sprite objects in the main objects list are considered. |\n| terrainTable | Array<byte,16> | `sprite:virtual_GetVisibleTerrainTable()` | The terrain table to use for determining LOS. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L182",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_ForAllOfTypeStringInRange",
+      "name": "EEex_Sprite_ForAllOfTypeStringInRange",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_ForAllOfTypeStringInRange(sprite, aiObjectTypeString, range, func, bCheckForLineOfSight, bCheckForNonSprites, terrainTable)",
+      "parameters": [
+        {
+          "name": "sprite",
+          "type": "CGameSprite",
+          "description": "The sprite to search around."
+        },
+        {
+          "name": "aiObjectTypeString",
+          "type": "string",
+          "description": "The AI object type string used to filter the objects passed to `func`. <br/> Automatically parsed by `EEex_Object_ParseString()`; the resulting object is freed before return."
+        },
+        {
+          "name": "range",
+          "type": "number",
+          "description": "The radius to search around `sprite`. `448` is a sprite's default visual range."
+        },
+        {
+          "name": "func",
+          "type": "function",
+          "description": "The function to call for every creature in the search area."
+        },
+        {
+          "name": "bCheckForLineOfSight",
+          "type": "boolean",
+          "defaultValue": "true",
+          "description": "Determines whether LOS is required from `sprite` to considered objects."
+        },
+        {
+          "name": "bCheckForNonSprites",
+          "type": "boolean",
+          "defaultValue": "false",
+          "description": "Determines whether non-sprite objects in the main objects list are considered."
+        },
+        {
+          "name": "terrainTable",
+          "type": "Array<byte,16>",
+          "defaultValue": "sprite:virtual_GetVisibleTerrainTable()",
+          "description": "The terrain table to use for determining LOS."
+        }
+      ],
+      "callableAliases": [
+        {
+          "name": "forAllOfTypeStringInRange",
+          "receiverType": "CGameSprite",
+          "consumesFirstParameter": true
+        }
+      ],
+      "documentationMarkdown": "**Instance Name:** `forAllOfTypeStringInRange`\n\n> **Summary**\n> Calls `func` for every creature that matches `aiObjectTypeString` around `sprite` in the given `range`, as per the `NumCreature()` trigger.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| sprite | CGameSprite |  | The sprite to search around. |\n| aiObjectTypeString | string |  | The AI object type string used to filter the objects passed to `func`. <br/> Automatically parsed by `EEex_Object_ParseString()`; the resulting object is freed before return. |\n| range | number |  | The radius to search around `sprite`. `448` is a sprite's default visual range. |\n| func | function |  | The function to call for every creature in the search area. |\n| bCheckForLineOfSight | boolean | `true` | Determines whether LOS is required from `sprite` to considered objects. |\n| bCheckForNonSprites | boolean | `false` | Determines whether non-sprite objects in the main objects list are considered. |\n| terrainTable | Array<byte,16> | `sprite:virtual_GetVisibleTerrainTable()` | The terrain table to use for determining LOS. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L215",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetActiveStats",
+      "name": "EEex_Sprite_GetActiveStats",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetActiveStats(sprite)",
+      "parameters": [
+        {
+          "name": "sprite",
+          "type": "CGameSprite",
+          "description": "The sprite whose stats structure is being fetched."
+        }
+      ],
+      "returns": [
+        {
+          "type": "CDerivedStats",
+          "description": "See summary."
+        }
+      ],
+      "callableAliases": [
+        {
+          "name": "getActiveStats",
+          "receiverType": "CGameSprite",
+          "consumesFirstParameter": true
+        }
+      ],
+      "documentationMarkdown": "**Instance Name:** `getActiveStats`\n\n> **Summary**\n> Returns the given `sprite`'s active stats structure. If the creature is in the middle of an effects list process, using this function ensures that the work-in-progress stats structure isn't used.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| sprite | CGameSprite |  | The sprite whose stats structure is being fetched. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| CDerivedStats | See summary. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L248",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetAllOfTypeInRange",
+      "name": "EEex_Sprite_GetAllOfTypeInRange",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetAllOfTypeInRange(sprite, aiObjectType, range, bCheckForLineOfSight, bCheckForNonSprites, terrainTable)",
+      "parameters": [
+        {
+          "name": "sprite",
+          "type": "CGameSprite",
+          "description": "The sprite to search around."
+        },
+        {
+          "name": "aiObjectType",
+          "type": "CAIObjectType",
+          "description": "The AI object type used to filter the objects passed to `func`. <br/> Most commonly retrieved from `EEex_Object_ParseString()`. Remember to call `:free()`."
+        },
+        {
+          "name": "range",
+          "type": "number",
+          "description": "The radius to search around `sprite`. `448` is a sprite's default visual range."
+        },
+        {
+          "name": "bCheckForLineOfSight",
+          "type": "boolean",
+          "defaultValue": "true",
+          "description": "Determines whether LOS is required from `sprite` to considered objects."
+        },
+        {
+          "name": "bCheckForNonSprites",
+          "type": "boolean",
+          "defaultValue": "false",
+          "description": "Determines whether non-sprite objects in the main objects list are considered."
+        },
+        {
+          "name": "terrainTable",
+          "type": "Array<byte,16>",
+          "defaultValue": "sprite:virtual_GetVisibleTerrainTable()",
+          "description": "The terrain table to use for determining LOS."
+        }
+      ],
+      "returns": [
+        {
+          "type": "table",
+          "description": "See summary."
+        }
+      ],
+      "callableAliases": [
+        {
+          "name": "getAllOfTypeInRange",
+          "receiverType": "CGameSprite",
+          "consumesFirstParameter": true
+        }
+      ],
+      "documentationMarkdown": "**Instance Name:** `getAllOfTypeInRange`\n\n> **Summary**\n> Returns a table populated by every creature that matches `aiObjectType` around `sprite` in the given `range`, as per the `NumCreature()` trigger.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| sprite | CGameSprite |  | The sprite to search around. |\n| aiObjectType | CAIObjectType |  | The AI object type used to filter the objects passed to `func`. <br/> Most commonly retrieved from `EEex_Object_ParseString()`. Remember to call `:free()`. |\n| range | number |  | The radius to search around `sprite`. `448` is a sprite's default visual range. |\n| bCheckForLineOfSight | boolean | `true` | Determines whether LOS is required from `sprite` to considered objects. |\n| bCheckForNonSprites | boolean | `false` | Determines whether non-sprite objects in the main objects list are considered. |\n| terrainTable | Array<byte,16> | `sprite:virtual_GetVisibleTerrainTable()` | The terrain table to use for determining LOS. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| table | See summary. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L277",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetAllOfTypeStringInRange",
+      "name": "EEex_Sprite_GetAllOfTypeStringInRange",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetAllOfTypeStringInRange(sprite, aiObjectTypeString, range, bCheckForLineOfSight, bCheckForNonSprites, terrainTable)",
+      "parameters": [
+        {
+          "name": "sprite",
+          "type": "CGameSprite",
+          "description": "The sprite to search around."
+        },
+        {
+          "name": "aiObjectTypeString",
+          "type": "string",
+          "description": "The AI object type string used to filter the objects added to the return table. <br/> Automatically parsed by `EEex_Object_ParseString()`; the resulting object is freed before return."
+        },
+        {
+          "name": "range",
+          "type": "number",
+          "description": "The radius to search around `sprite`. `448` is a sprite's default visual range."
+        },
+        {
+          "name": "bCheckForLineOfSight",
+          "type": "boolean",
+          "defaultValue": "true",
+          "description": "Determines whether LOS is required from `sprite` to considered objects."
+        },
+        {
+          "name": "bCheckForNonSprites",
+          "type": "boolean",
+          "defaultValue": "false",
+          "description": "Determines whether non-sprite objects in the main objects list are considered."
+        },
+        {
+          "name": "terrainTable",
+          "type": "Array<byte,16>",
+          "defaultValue": "sprite:virtual_GetVisibleTerrainTable()",
+          "description": "The terrain table to use for determining LOS."
+        }
+      ],
+      "returns": [
+        {
+          "type": "table",
+          "description": "See summary."
+        }
+      ],
+      "callableAliases": [
+        {
+          "name": "getAllOfTypeStringInRange",
+          "receiverType": "CGameSprite",
+          "consumesFirstParameter": true
+        }
+      ],
+      "documentationMarkdown": "**Instance Name:** `getAllOfTypeStringInRange`\n\n> **Summary**\n> Returns a table populated by every creature that matches `aiObjectTypeString` around `sprite` in the given `range`, as per the `NumCreature()` trigger.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| sprite | CGameSprite |  | The sprite to search around. |\n| aiObjectTypeString | string |  | The AI object type string used to filter the objects added to the return table. <br/> Automatically parsed by `EEex_Object_ParseString()`; the resulting object is freed before return. |\n| range | number |  | The radius to search around `sprite`. `448` is a sprite's default visual range. |\n| bCheckForLineOfSight | boolean | `true` | Determines whether LOS is required from `sprite` to considered objects. |\n| bCheckForNonSprites | boolean | `false` | Determines whether non-sprite objects in the main objects list are considered. |\n| terrainTable | Array<byte,16> | `sprite:virtual_GetVisibleTerrainTable()` | The terrain table to use for determining LOS. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| table | See summary. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L316",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetAllSelectedIDs",
+      "name": "EEex_Sprite_GetAllSelectedIDs",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetAllSelectedIDs()",
+      "returns": [
+        {
+          "type": "table",
+          "description": "See summary."
+        }
+      ],
+      "documentationMarkdown": "> **Summary**\n> Returns a table populated with the object ids of all the sprites the player currently has selected and is controlling.\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| table | See summary. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L355",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetCasterLevelForSpell",
+      "name": "EEex_Sprite_GetCasterLevelForSpell",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetCasterLevelForSpell()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L374",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetCastTimer",
+      "name": "EEex_Sprite_GetCastTimer",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetCastTimer()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L382",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetCastTimerPercentage",
+      "name": "EEex_Sprite_GetCastTimerPercentage",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetCastTimerPercentage()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L390",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetCharacterIndex",
+      "name": "EEex_Sprite_GetCharacterIndex",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetCharacterIndex()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L398",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetContingencyTimer",
+      "name": "EEex_Sprite_GetContingencyTimer",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetContingencyTimer()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L406",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetContingencyTimerPercentage",
+      "name": "EEex_Sprite_GetContingencyTimerPercentage",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetContingencyTimerPercentage()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L414",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetExtendedStat",
+      "name": "EEex_Sprite_GetExtendedStat",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetExtendedStat(sprite)",
+      "parameters": [
+        {
+          "name": "sprite",
+          "type": "CGameSprite",
+          "description": "The sprite whose extended stat value is being fetched."
+        }
+      ],
+      "returns": [
+        {
+          "type": "number",
+          "description": "See summary."
+        }
+      ],
+      "callableAliases": [
+        {
+          "name": "getExtendedStat",
+          "receiverType": "CGameSprite",
+          "consumesFirstParameter": true
+        }
+      ],
+      "documentationMarkdown": "**Instance Name:** `getExtendedStat`\n\n> **Warning**\n> **Deprecated:** Use `EEex_Sprite_GetStat()` instead.\n\n> **Summary**\n> Returns the value of the extended stat on the given `sprite`.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| sprite | CGameSprite |  | The sprite whose extended stat value is being fetched. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| number | See summary. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L422",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetFromUUID",
+      "name": "EEex_Sprite_GetFromUUID",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetFromUUID()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L453",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetInPortrait",
+      "name": "EEex_Sprite_GetInPortrait",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetInPortrait(portraitIndex)",
+      "parameters": [
+        {
+          "name": "portraitIndex",
+          "type": "number",
+          "description": "The portrait index of the sprite to fetch; valid values are [0-5]."
+        }
+      ],
+      "returns": [
+        {
+          "type": "CGameSprite | nil",
+          "description": "See summary."
+        }
+      ],
+      "documentationMarkdown": "> **Summary**\n> Returns the sprite of the party member in the given `portraitIndex`, or `nil` if none exists.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| portraitIndex | number |  | The portrait index of the sprite to fetch; valid values are [0-5]. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| CGameSprite \\| nil | See summary. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L461",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetInPortraitID",
+      "name": "EEex_Sprite_GetInPortraitID",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetInPortraitID(portraitIndex)",
+      "parameters": [
+        {
+          "name": "portraitIndex",
+          "type": "number",
+          "description": "The portrait index of the sprite to fetch; valid values are [0-5]."
+        }
+      ],
+      "returns": [
+        {
+          "type": "number",
+          "description": "See summary."
+        }
+      ],
+      "documentationMarkdown": "> **Summary**\n> Returns the object id of the party member in the given `portraitIndex`, or `-1` if none exists.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| portraitIndex | number |  | The portrait index of the sprite to fetch; valid values are [0-5]. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| number | See summary. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L488",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetKnownInnateSpellsIterator",
+      "name": "EEex_Sprite_GetKnownInnateSpellsIterator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetKnownInnateSpellsIterator()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L515",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetKnownInnateSpellsWithAbilityIterator",
+      "name": "EEex_Sprite_GetKnownInnateSpellsWithAbilityIterator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetKnownInnateSpellsWithAbilityIterator()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L523",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetKnownMageSpellsIterator",
+      "name": "EEex_Sprite_GetKnownMageSpellsIterator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetKnownMageSpellsIterator()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L531",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetKnownMageSpellsWithAbilityIterator",
+      "name": "EEex_Sprite_GetKnownMageSpellsWithAbilityIterator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetKnownMageSpellsWithAbilityIterator()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L539",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetKnownPriestSpellsIterator",
+      "name": "EEex_Sprite_GetKnownPriestSpellsIterator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetKnownPriestSpellsIterator()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L547",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetKnownPriestSpellsWithAbilityIterator",
+      "name": "EEex_Sprite_GetKnownPriestSpellsWithAbilityIterator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetKnownPriestSpellsWithAbilityIterator()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L555",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetLauncher",
+      "name": "EEex_Sprite_GetLauncher",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetLauncher()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L563",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetLocalInt",
+      "name": "EEex_Sprite_GetLocalInt",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetLocalInt()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L571",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetLocalString",
+      "name": "EEex_Sprite_GetLocalString",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetLocalString()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L579",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetModalState",
+      "name": "EEex_Sprite_GetModalState",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetModalState()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L587",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetModalTimer",
+      "name": "EEex_Sprite_GetModalTimer",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetModalTimer()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L595",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetModalTimerPercentage",
+      "name": "EEex_Sprite_GetModalTimerPercentage",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetModalTimerPercentage()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L603",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetName",
+      "name": "EEex_Sprite_GetName",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetName()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L611",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetNameRef",
+      "name": "EEex_Sprite_GetNameRef",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetNameRef()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L619",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetNumCharacters",
+      "name": "EEex_Sprite_GetNumCharacters",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetNumCharacters()",
+      "returns": [
+        {
+          "type": "number",
+          "description": "See summary."
+        }
+      ],
+      "documentationMarkdown": "> **Summary**\n> Returns the number of characters currently in the party.\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| number | See summary. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L627",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetPersonalSpace",
+      "name": "EEex_Sprite_GetPersonalSpace",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetPersonalSpace()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L646",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetPortraitIndex",
+      "name": "EEex_Sprite_GetPortraitIndex",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetPortraitIndex(sprite)",
+      "parameters": [
+        {
+          "name": "sprite",
+          "type": "CGameSprite",
+          "description": "The sprite whose portrait index is being fetched."
+        }
+      ],
+      "returns": [
+        {
+          "type": "number",
+          "description": "See summary."
+        }
+      ],
+      "callableAliases": [
+        {
+          "name": "getPortraitIndex",
+          "receiverType": "CGameSprite",
+          "consumesFirstParameter": true
+        }
+      ],
+      "documentationMarkdown": "**Instance Name:** `getPortraitIndex`\n\n> **Summary**\n> Returns the given `sprite`'s portrait index, or `-1` if it isn't a party member.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| sprite | CGameSprite |  | The sprite whose portrait index is being fetched. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| number | See summary. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L654",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetSelected",
+      "name": "EEex_Sprite_GetSelected",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetSelected()",
+      "returns": [
+        {
+          "type": "CGameSprite | nil",
+          "description": "See summary."
+        }
+      ],
+      "documentationMarkdown": "> **Summary**\n> Returns the sprite that is the \"leader\" of the sprites the player currently has selected and is controlling.\n>\n> The leader is the party member with the highest portrait slot, (lowest index), or the creature that was selected first.\n>\n> If no creatures are currently selected, returns `nil`.\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| CGameSprite \\| nil | See summary. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L682",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetSelectedID",
+      "name": "EEex_Sprite_GetSelectedID",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetSelectedID()",
+      "returns": [
+        {
+          "type": "number",
+          "description": "See summary."
+        }
+      ],
+      "documentationMarkdown": "> **Summary**\n> Returns the object id associated with the \"leader\" of the sprites the player currently has selected and is controlling.\n>\n> The leader is the party member with the highest portrait slot, (lowest index), or the creature that was selected first.\n>\n> If no creatures are currently selected, returns `-1`.\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| number | See summary. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L706",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetSpellButtonDataIteratorFrom2DA",
+      "name": "EEex_Sprite_GetSpellButtonDataIteratorFrom2DA",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetSpellButtonDataIteratorFrom2DA()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L730",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetSpellState",
+      "name": "EEex_Sprite_GetSpellState",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetSpellState()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L738",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetSpellsWithAbilityIterator",
+      "name": "EEex_Sprite_GetSpellsWithAbilityIterator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetSpellsWithAbilityIterator()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L746",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetStat",
+      "name": "EEex_Sprite_GetStat",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetStat()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L754",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetState",
+      "name": "EEex_Sprite_GetState",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetState()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L762",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetUUID",
+      "name": "EEex_Sprite_GetUUID",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetUUID()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L770",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetValidKnownInnateSpellsIterator",
+      "name": "EEex_Sprite_GetValidKnownInnateSpellsIterator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetValidKnownInnateSpellsIterator()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L778",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetValidKnownMageSpellsIterator",
+      "name": "EEex_Sprite_GetValidKnownMageSpellsIterator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetValidKnownMageSpellsIterator()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L786",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetValidKnownPriestSpellsIterator",
+      "name": "EEex_Sprite_GetValidKnownPriestSpellsIterator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetValidKnownPriestSpellsIterator()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L794",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetValidSpellsWithAbilityIterator",
+      "name": "EEex_Sprite_GetValidSpellsWithAbilityIterator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetValidSpellsWithAbilityIterator()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L802",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_IterateSelected",
+      "name": "EEex_Sprite_IterateSelected",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_IterateSelected(func)",
+      "parameters": [
+        {
+          "name": "func",
+          "type": "function",
+          "description": "The function to call."
+        }
+      ],
+      "documentationMarkdown": "> **Summary**\n> Calls `func` for every sprite the player currently has selected and is controlling, (passing the sprite). Return `true` from `func` to stop iteration.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| func | function |  | The function to call. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L810",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_IterateSelectedIDs",
+      "name": "EEex_Sprite_IterateSelectedIDs",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_IterateSelectedIDs(func)",
+      "parameters": [
+        {
+          "name": "func",
+          "type": "function",
+          "description": "The function to call."
+        }
+      ],
+      "documentationMarkdown": "> **Summary**\n> Calls `func` for every sprite the player currently has selected and is controlling, (passing the sprite's object id). Return `true` from `func` to stop iteration.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| func | function |  | The function to call. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L830",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_LoadedWithUUIDCallback",
+      "name": "EEex_Sprite_LoadedWithUUIDCallback",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_LoadedWithUUIDCallback()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L850",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_OpenOp214Interface",
+      "name": "EEex_Sprite_OpenOp214Interface",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_OpenOp214Interface()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L858",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_SetLocalInt",
+      "name": "EEex_Sprite_SetLocalInt",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_SetLocalInt()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L866",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_SetLocalString",
+      "name": "EEex_Sprite_SetLocalString",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_SetLocalString()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L874",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    }
+  ]
+}

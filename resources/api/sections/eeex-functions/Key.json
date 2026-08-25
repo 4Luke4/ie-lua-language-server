@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 3,
+  "generatedAt": "2026-08-25T18:10:55.136Z",
+  "source": {
+    "id": "eeex-functions",
+    "title": "EEex Functions",
+    "url": "https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions",
+    "commit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+    "licenseStatus": "allowed"
+  },
+  "title": "Key",
+  "upstreamPath": "source/EEex Functions/Key/index.rst",
+  "symbols": [
+    {
+      "id": "eeex-functions:EEex_Key_AddPressedListener",
+      "name": "EEex_Key_AddPressedListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Key_AddPressedListener(func)",
+      "parameters": [
+        {
+          "name": "func",
+          "type": "function",
+          "description": "The listener to register."
+        }
+      ],
+      "documentationMarkdown": "> **Summary**\n> Registers a listener function that is called whenever a key is pressed. See `SDL_Keycode`_ for valid `key` values.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| func | function |  | The listener to register. |\n\n---\n\nThe listener function \"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\n\n**Parameters:**\n\n| Name | Type | Description |\n| --- | --- | --- |\n| key | SDL_Keycode | The key that was pressed. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Key/index.rst#L16",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Key_AddReleasedListener",
+      "name": "EEex_Key_AddReleasedListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Key_AddReleasedListener(func)",
+      "parameters": [
+        {
+          "name": "func",
+          "type": "function",
+          "description": "The listener to register."
+        }
+      ],
+      "documentationMarkdown": "> **Summary**\n> Registers a listener function that is called whenever a key is released. See `SDL_Keycode`_ for valid `key` values.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| func | function |  | The listener to register. |\n\n---\n\nThe listener function \"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\n\n**Parameters:**\n\n| Name | Type | Description |\n| --- | --- | --- |\n| key | SDL_Keycode | The key that was released. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Key/index.rst#L47",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Key_EnterCaptureMode",
+      "name": "EEex_Key_EnterCaptureMode",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Key_EnterCaptureMode()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Key/index.rst#L78",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Key_ExitCaptureMode",
+      "name": "EEex_Key_ExitCaptureMode",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Key_ExitCaptureMode()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Key/index.rst#L86",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Key_GetFromName",
+      "name": "EEex_Key_GetFromName",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Key_GetFromName(keyName)",
+      "parameters": [
+        {
+          "name": "keyName",
+          "type": "string",
+          "description": "The name of the key whose `SDL_Keycode` value is being fetched."
+        }
+      ],
+      "returns": [
+        {
+          "type": "SDL_Keycode",
+          "description": "See summary."
+        }
+      ],
+      "documentationMarkdown": "> **Summary**\n> Returns a `SDL_Keycode` value that represents the given `keyName`.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| keyName | string |  | The name of the key whose `SDL_Keycode` value is being fetched. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| SDL_Keycode | See summary. |\n\n---\n\nRecognized `keyName` values \"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\n\nUTF-8 character encodings are recognized. For example, all of the following lines would be considered valid:\n\n```Lua\nEEex_Key_GetFromName(\"a\")\nEEex_Key_GetFromName(\"$\")\nEEex_Key_GetFromName(\"£\")\nEEex_Key_GetFromName(\"€\")\nEEex_Key_GetFromName(\"𐍈\")\n```\n\nAdditionally, the following table provides a list of all the specially-recognized key names:\n\n+---------------------+ | Recognized Key Name | +=====================+ | Return              | +---------------------+ | Escape              | +---------------------+ | Backspace           | +---------------------+ | Tab                 | +---------------------+ | Space               | +---------------------+ | CapsLock            | +---------------------+ | F1                  | +---------------------+ | F2                  | +---------------------+ | F3                  | +---------------------+ | F4                  | +---------------------+ | F5                  | +---------------------+ | F6                  | +---------------------+ | F7                  | +---------------------+ | F8                  | +---------------------+ | F9                  | +---------------------+ | F10                 | +---------------------+ | F11                 | +---------------------+ | F12                 | +---------------------+ | PrintScreen         | +---------------------+ | ScrollLock          | +---------------------+ | Pause               | +---------------------+ | Insert              | +---------------------+ | Home                | +---------------------+ | PageUp              | +---------------------+ | Delete              | +---------------------+ | End                 | +---------------------+ | PageDown            | +---------------------+ | Right               | +---------------------+ | Left                | +---------------------+ | Down                | +---------------------+ | Up                  | +---------------------+ | Numlock             | +---------------------+ | Keypad /            | +---------------------+ | Keypad *            | +---------------------+ | Keypad -            | +---------------------+ | Keypad +            | +---------------------+ | Keypad Enter        | +---------------------+ | Keypad 1            | +---------------------+ | Keypad 2            | +---------------------+ | Keypad 3            | +---------------------+ | Keypad 4            | +---------------------+ | Keypad 5            | +---------------------+ | Keypad 6            | +---------------------+ | Keypad 7            | +---------------------+ | Keypad 8            | +---------------------+ | Keypad 9            | +---------------------+ | Keypad 0            | +---------------------+ | Keypad .            | +---------------------+ | Menu                | +---------------------+ | Power               | +---------------------+ | Keypad =            | +---------------------+ | F13                 | +---------------------+ | F14                 | +---------------------+ | F15                 | +---------------------+ | F16                 | +---------------------+ | F17                 | +---------------------+ | F18                 | +---------------------+ | F19                 | +---------------------+ | F20                 | +---------------------+ | F21                 | +---------------------+ | F22                 | +---------------------+ | F23                 | +---------------------+ | F24                 | +---------------------+ | Execute             | +---------------------+ | Help                | +---------------------+ | Menu                | +---------------------+ | Select              | +---------------------+ | Stop                | +---------------------+ | Again               | +---------------------+ | Undo                | +---------------------+ | Cut                 | +---------------------+ | Copy                | +---------------------+ | Paste               | +---------------------+ | Find                | +---------------------+ | Mute                | +---------------------+ | VolumeUp            | +---------------------+ | VolumeDown          | +---------------------+ | Keypad ,            | +---------------------+ | Keypad = (AS400)    | +---------------------+ | AltErase            | +---------------------+ | SysReq              | +---------------------+ | Cancel              | +---------------------+ | Clear               | +---------------------+ | Prior               | +---------------------+ | Return              | +---------------------+ | Separator           | +---------------------+ | Out                 | +---------------------+ | Oper                | +---------------------+ | Clear / Again       | +---------------------+ | CrSel               | +---------------------+ | ExSel               | +---------------------+ | Keypad 00           | +---------------------+ | Keypad 000          | +---------------------+ | ThousandsSeparator  | +---------------------+ | DecimalSeparator    | +---------------------+ | CurrencyUnit        | +---------------------+ | CurrencySubUnit     | +---------------------+ | Keypad (            | +---------------------+ | Keypad )            | +---------------------+ | Keypad {            | +---------------------+ | Keypad }            | +---------------------+ | Keypad Tab          | +---------------------+ | Keypad Backspace    | +---------------------+ | Keypad A            | +---------------------+ | Keypad B            | +---------------------+ | Keypad C            | +---------------------+ | Keypad D            | +---------------------+ | Keypad E            | +---------------------+ | Keypad F            | +---------------------+ | Keypad XOR          | +---------------------+ | Keypad ^            | +---------------------+ | Keypad %            | +---------------------+ | Keypad <            | +---------------------+ | Keypad >            | +---------------------+ | Keypad &            | +---------------------+ | Keypad &&           | +---------------------+ | Keypad |            | +---------------------+ | Keypad ||           | +---------------------+ | Keypad :            | +---------------------+ | Keypad #            | +---------------------+ | Keypad Space        | +---------------------+ | Keypad @            | +---------------------+ | Keypad !            | +---------------------+ | Keypad MemStore     | +---------------------+ | Keypad MemRecall    | +---------------------+ | Keypad MemClear     | +---------------------+ | Keypad MemAdd       | +---------------------+ | Keypad MemSubtract  | +---------------------+ | Keypad MemMultiply  | +---------------------+ | Keypad MemDivide    | +---------------------+ | Keypad +/-          | +---------------------+ | Keypad Clear        | +---------------------+ | Keypad ClearEntry   | +---------------------+ | Keypad Binary       | +---------------------+ | Keypad Octal        | +---------------------+ | Keypad Decimal      | +---------------------+ | Keypad Hexadecimal  | +---------------------+ | Left Ctrl           | +---------------------+ | Left Shift          | +---------------------+ | Left Alt            | +---------------------+ | Left Windows        | +---------------------+ | Right Ctrl          | +---------------------+ | Right Shift         | +---------------------+ | Right Alt           | +---------------------+ | Right Windows       | +---------------------+ | ModeSwitch          | +---------------------+ | AudioNext           | +---------------------+ | AudioPrev           | +---------------------+ | AudioStop           | +---------------------+ | AudioPlay           | +---------------------+ | AudioMute           | +---------------------+ | MediaSelect         | +---------------------+ | WWW                 | +---------------------+ | Mail                | +---------------------+ | Calculator          | +---------------------+ | Computer            | +---------------------+ | AC Search           | +---------------------+ | AC Home             | +---------------------+ | AC Back             | +---------------------+ | AC Forward          | +---------------------+ | AC Stop             | +---------------------+ | AC Refresh          | +---------------------+ | AC Bookmarks        | +---------------------+ | BrightnessDown      | +---------------------+ | BrightnessUp        | +---------------------+ | DisplaySwitch       | +---------------------+ | KBDIllumToggle      | +---------------------+ | KBDIllumDown        | +---------------------+ | KBDIllumUp          | +---------------------+ | Eject               | +---------------------+ | Sleep               | +---------------------+",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Key/index.rst#L94",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Key_GetName",
+      "name": "EEex_Key_GetName",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Key_GetName()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Key/index.rst#L483",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Key_GetPressedCount",
+      "name": "EEex_Key_GetPressedCount",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Key_GetPressedCount()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Key/index.rst#L491",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Key_GetPressedStack",
+      "name": "EEex_Key_GetPressedStack",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Key_GetPressedStack()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Key/index.rst#L499",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Key_IsDown",
+      "name": "EEex_Key_IsDown",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Key_IsDown(key)",
+      "parameters": [
+        {
+          "name": "key",
+          "type": "SDL_Keycode",
+          "description": "The key whose pressed status is being checked."
+        }
+      ],
+      "returns": [
+        {
+          "type": "boolean",
+          "description": "See summary."
+        }
+      ],
+      "documentationMarkdown": "> **Summary**\n> Returns `true` if the given `key` is currently pressed. See `SDL_Keycode`_ for valid `key` values.\n>\n> It is recommended to use `EEex_Key_GetFromName`_ if you are unsure which `SDL_Keycode` matches the desired character.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| key | SDL_Keycode |  | The key whose pressed status is being checked. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| boolean | See summary. |\n\n---\n\n**SDL_Keycode** \"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\n\n| Ordinal Name | Value |\n| --- | --- |\n| SDLK_UNKNOWN | 0 |\n| SDLK_BACKSPACE | 8 |\n| SDLK_TAB | 9 |\n| SDLK_RETURN | 13 |\n| SDLK_ESCAPE | 27 |\n| SDLK_SPACE | 32 |\n| SDLK_EXCLAIM | 33 |\n| SDLK_QUOTEDBL | 34 |\n| SDLK_HASH | 35 |\n| SDLK_DOLLAR | 36 |\n| SDLK_PERCENT | 37 |\n| SDLK_AMPERSAND | 38 |\n| SDLK_QUOTE | 39 |\n| SDLK_LEFTPAREN | 40 |\n| SDLK_RIGHTPAREN | 41 |\n| SDLK_ASTERISK | 42 |\n| SDLK_PLUS | 43 |\n| SDLK_COMMA | 44 |\n| SDLK_MINUS | 45 |\n| SDLK_PERIOD | 46 |\n| SDLK_SLASH | 47 |\n| SDLK_0 | 48 |\n| SDLK_1 | 49 |\n| SDLK_2 | 50 |\n| SDLK_3 | 51 |\n| SDLK_4 | 52 |\n| SDLK_5 | 53 |\n| SDLK_6 | 54 |\n| SDLK_7 | 55 |\n| SDLK_8 | 56 |\n| SDLK_9 | 57 |\n| SDLK_COLON | 58 |\n| SDLK_SEMICOLON | 59 |\n| SDLK_LESS | 60 |\n| SDLK_EQUALS | 61 |\n| SDLK_GREATER | 62 |\n| SDLK_QUESTION | 63 |\n| SDLK_AT | 64 |\n| SDLK_LEFTBRACKET | 91 |\n| SDLK_BACKSLASH | 92 |\n| SDLK_RIGHTBRACKET | 93 |\n| SDLK_CARET | 94 |\n| SDLK_UNDERSCORE | 95 |\n| SDLK_BACKQUOTE | 96 |\n| SDLK_a | 97 |\n| SDLK_b | 98 |\n| SDLK_c | 99 |\n| SDLK_d | 100 |\n| SDLK_e | 101 |\n| SDLK_f | 102 |\n| SDLK_g | 103 |\n| SDLK_h | 104 |\n| SDLK_i | 105 |\n| SDLK_j | 106 |\n| SDLK_k | 107 |\n| SDLK_l | 108 |\n| SDLK_m | 109 |\n| SDLK_n | 110 |\n| SDLK_o | 111 |\n| SDLK_p | 112 |\n| SDLK_q | 113 |\n| SDLK_r | 114 |\n| SDLK_s | 115 |\n| SDLK_t | 116 |\n| SDLK_u | 117 |\n| SDLK_v | 118 |\n| SDLK_w | 119 |\n| SDLK_x | 120 |\n| SDLK_y | 121 |\n| SDLK_z | 122 |\n| SDLK_DELETE | 127 |\n| SDLK_CAPSLOCK | 0x40000039 |\n| SDLK_F1 | 0x4000003A |\n| SDLK_F2 | 0x4000003B |\n| SDLK_F3 | 0x4000003C |\n| SDLK_F4 | 0x4000003D |\n| SDLK_F5 | 0x4000003E |\n| SDLK_F6 | 0x4000003F |\n| SDLK_F7 | 0x40000040 |\n| SDLK_F8 | 0x40000041 |\n| SDLK_F9 | 0x40000042 |\n| SDLK_F10 | 0x40000043 |\n| SDLK_F11 | 0x40000044 |\n| SDLK_F12 | 0x40000045 |\n| SDLK_PRINTSCREEN | 0x40000046 |\n| SDLK_SCROLLLOCK | 0x40000047 |\n| SDLK_PAUSE | 0x40000048 |\n| SDLK_INSERT | 0x40000049 |\n| SDLK_HOME | 0x4000004A |\n| SDLK_PAGEUP | 0x4000004B |\n| SDLK_END | 0x4000004D |\n| SDLK_PAGEDOWN | 0x4000004E |\n| SDLK_RIGHT | 0x4000004F |\n| SDLK_LEFT | 0x40000050 |\n| SDLK_DOWN | 0x40000051 |\n| SDLK_UP | 0x40000052 |\n| SDLK_NUMLOCKCLEAR | 0x40000053 |\n| SDLK_KP_DIVIDE | 0x40000054 |\n| SDLK_KP_MULTIPLY | 0x40000055 |\n| SDLK_KP_MINUS | 0x40000056 |\n| SDLK_KP_PLUS | 0x40000057 |\n| SDLK_KP_ENTER | 0x40000058 |\n| SDLK_KP_1 | 0x40000059 |\n| SDLK_KP_2 | 0x4000005A |\n| SDLK_KP_3 | 0x4000005B |\n| SDLK_KP_4 | 0x4000005C |\n| SDLK_KP_5 | 0x4000005D |\n| SDLK_KP_6 | 0x4000005E |\n| SDLK_KP_7 | 0x4000005F |\n| SDLK_KP_8 | 0x40000060 |\n| SDLK_KP_9 | 0x40000061 |\n| SDLK_KP_0 | 0x40000062 |\n| SDLK_KP_PERIOD | 0x40000063 |\n| SDLK_APPLICATION | 0x40000065 |\n| SDLK_POWER | 0x40000066 |\n| SDLK_KP_EQUALS | 0x40000067 |\n| SDLK_F13 | 0x40000068 |\n| SDLK_F14 | 0x40000069 |\n| SDLK_F15 | 0x4000006A |\n| SDLK_F16 | 0x4000006B |\n| SDLK_F17 | 0x4000006C |\n| SDLK_F18 | 0x4000006D |\n| SDLK_F19 | 0x4000006E |\n| SDLK_F20 | 0x4000006F |\n| SDLK_F21 | 0x40000070 |\n| SDLK_F22 | 0x40000071 |\n| SDLK_F23 | 0x40000072 |\n| SDLK_F24 | 0x40000073 |\n| SDLK_EXECUTE | 0x40000074 |\n| SDLK_HELP | 0x40000075 |\n| SDLK_MENU | 0x40000076 |\n| SDLK_SELECT | 0x40000077 |\n| SDLK_STOP | 0x40000078 |\n| SDLK_AGAIN | 0x40000079 |\n| SDLK_UNDO | 0x4000007A |\n| SDLK_CUT | 0x4000007B |\n| SDLK_COPY | 0x4000007C |\n| SDLK_PASTE | 0x4000007D |\n| SDLK_FIND | 0x4000007E |\n| SDLK_MUTE | 0x4000007F |\n| SDLK_VOLUMEUP | 0x40000080 |\n| SDLK_VOLUMEDOWN | 0x40000081 |\n| SDLK_KP_COMMA | 0x40000085 |\n| SDLK_KP_EQUALSAS400 | 0x40000086 |\n| SDLK_ALTERASE | 0x40000099 |\n| SDLK_SYSREQ | 0x4000009A |\n| SDLK_CANCEL | 0x4000009B |\n| SDLK_CLEAR | 0x4000009C |\n| SDLK_PRIOR | 0x4000009D |\n| SDLK_RETURN2 | 0x4000009E |\n| SDLK_SEPARATOR | 0x4000009F |\n| SDLK_OUT | 0x400000A0 |\n| SDLK_OPER | 0x400000A1 |\n| SDLK_CLEARAGAIN | 0x400000A2 |\n| SDLK_CRSEL | 0x400000A3 |\n| SDLK_EXSEL | 0x400000A4 |\n| SDLK_KP_00 | 0x400000B0 |\n| SDLK_KP_000 | 0x400000B1 |\n| SDLK_THOUSANDSSEPARATOR | 0x400000B2 |\n| SDLK_DECIMALSEPARATOR | 0x400000B3 |\n| SDLK_CURRENCYUNIT | 0x400000B4 |\n| SDLK_CURRENCYSUBUNIT | 0x400000B5 |\n| SDLK_KP_LEFTPAREN | 0x400000B6 |\n| SDLK_KP_RIGHTPAREN | 0x400000B7 |\n| SDLK_KP_LEFTBRACE | 0x400000B8 |\n| SDLK_KP_RIGHTBRACE | 0x400000B9 |\n| SDLK_KP_TAB | 0x400000BA |\n| SDLK_KP_BACKSPACE | 0x400000BB |\n| SDLK_KP_A | 0x400000BC |\n| SDLK_KP_B | 0x400000BD |\n| SDLK_KP_C | 0x400000BE |\n| SDLK_KP_D | 0x400000BF |\n| SDLK_KP_E | 0x400000C0 |\n| SDLK_KP_F | 0x400000C1 |\n| SDLK_KP_XOR | 0x400000C2 |\n| SDLK_KP_POWER | 0x400000C3 |\n| SDLK_KP_PERCENT | 0x400000C4 |\n| SDLK_KP_LESS | 0x400000C5 |\n| SDLK_KP_GREATER | 0x400000C6 |\n| SDLK_KP_AMPERSAND | 0x400000C7 |\n| SDLK_KP_DBLAMPERSAND | 0x400000C8 |\n| SDLK_KP_VERTICALBAR | 0x400000C9 |\n| SDLK_KP_DBLVERTICALBAR | 0x400000CA |\n| SDLK_KP_COLON | 0x400000CB |\n| SDLK_KP_HASH | 0x400000CC |\n| SDLK_KP_SPACE | 0x400000CD |\n| SDLK_KP_AT | 0x400000CE |\n| SDLK_KP_EXCLAM | 0x400000CF |\n| SDLK_KP_MEMSTORE | 0x400000D0 |\n| SDLK_KP_MEMRECALL | 0x400000D1 |\n| SDLK_KP_MEMCLEAR | 0x400000D2 |\n| SDLK_KP_MEMADD | 0x400000D3 |\n| SDLK_KP_MEMSUBTRACT | 0x400000D4 |\n| SDLK_KP_MEMMULTIPLY | 0x400000D5 |\n| SDLK_KP_MEMDIVIDE | 0x400000D6 |\n| SDLK_KP_PLUSMINUS | 0x400000D7 |\n| SDLK_KP_CLEAR | 0x400000D8 |\n| SDLK_KP_CLEARENTRY | 0x400000D9 |\n| SDLK_KP_BINARY | 0x400000DA |\n| SDLK_KP_OCTAL | 0x400000DB |\n| SDLK_KP_DECIMAL | 0x400000DC |\n| SDLK_KP_HEXADECIMAL | 0x400000DD |\n| SDLK_LCTRL | 0x400000E0 |\n| SDLK_LSHIFT | 0x400000E1 |\n| SDLK_LALT | 0x400000E2 |\n| SDLK_LGUI | 0x400000E3 |\n| SDLK_RCTRL | 0x400000E4 |\n| SDLK_RSHIFT | 0x400000E5 |\n| SDLK_RALT | 0x400000E6 |\n| SDLK_RGUI | 0x400000E7 |\n| SDLK_MODE | 0x40000101 |\n| SDLK_AUDIONEXT | 0x40000102 |\n| SDLK_AUDIOPREV | 0x40000103 |\n| SDLK_AUDIOSTOP | 0x40000104 |\n| SDLK_AUDIOPLAY | 0x40000105 |\n| SDLK_AUDIOMUTE | 0x40000106 |\n| SDLK_MEDIASELECT | 0x40000107 |\n| SDLK_WWW | 0x40000108 |\n| SDLK_MAIL | 0x40000109 |\n| SDLK_CALCULATOR | 0x4000010A |\n| SDLK_COMPUTER | 0x4000010B |\n| SDLK_AC_SEARCH | 0x4000010C |\n| SDLK_AC_HOME | 0x4000010D |\n| SDLK_AC_BACK | 0x4000010E |\n| SDLK_AC_FORWARD | 0x4000010F |\n| SDLK_AC_STOP | 0x40000110 |\n| SDLK_AC_REFRESH | 0x40000111 |\n| SDLK_AC_BOOKMARKS | 0x40000112 |\n| SDLK_BRIGHTNESSDOWN | 0x40000113 |\n| SDLK_BRIGHTNESSUP | 0x40000114 |\n| SDLK_DISPLAYSWITCH | 0x40000115 |\n| SDLK_KBDILLUMTOGGLE | 0x40000116 |\n| SDLK_KBDILLUMDOWN | 0x40000117 |\n| SDLK_KBDILLUMUP | 0x40000118 |\n| SDLK_EJECT | 0x40000119 |\n| SDLK_SLEEP | 0x4000011A |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Key/index.rst#L507",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    }
+  ]
+}

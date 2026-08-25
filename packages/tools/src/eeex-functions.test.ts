@@ -4,6 +4,7 @@ import {
   parseEeexFunctionSymbols,
   parseGameFunctionSymbol,
   parseGameIndexDescriptions,
+  parseGameIndexFunctionSymbols,
   renderRstMarkdown,
 } from './eeex-functions';
 
@@ -90,6 +91,94 @@ void test('game index descriptions fill placeholders without inventing empty des
     /Index wording\./u,
   );
   assert.equal(makePlaceholder('C_Bar', 'C:Bar').documentationState, 'undocumented');
+});
+
+void test('game category indexes emit every anchored function with absolute provenance', () => {
+  const sourcePath = 'source/EE Game Lua Functions/Infinity/index.rst';
+  const border = `+${'-'.repeat(48)}+${'-'.repeat(20)}+`;
+  const headerBorder = `+${'='.repeat(48)}+${'='.repeat(20)}+`;
+  const row = (left: string, right: string): string =>
+    `| ${left.padEnd(46)} | ${right.padEnd(18)} |`;
+  const symbols = parseGameIndexFunctionSymbols({
+    commit,
+    sourcePath,
+    text: [
+      '.. _Infinity:',
+      '',
+      border,
+      row('**Function**', '**Description**'),
+      headerBorder,
+      row(':ref:`Infinity_First<Infinity_First>`', 'First wording.'),
+      border,
+      row(':ref:`Infinity_Second<Infinity_Second>`', 'Second wording.'),
+      border,
+      '',
+      '.. _Infinity_First:',
+      '',
+      'Infinity_First',
+      '^^^^^^^^^^^^^^',
+      '',
+      'First body.',
+      '',
+      '::',
+      '',
+      '   Infinity_First(value)',
+      '',
+      '.. _Infinity_Second:',
+      '',
+      'Infinity_Second',
+      '^^^^^^^^^^^^^^^',
+      '',
+      '::',
+      '',
+      '   Infinity_Second()',
+    ].join('\n'),
+  });
+
+  assert.deepEqual(
+    symbols.map((symbol) => symbol.name),
+    ['Infinity_First', 'Infinity_Second'],
+  );
+  assert.deepEqual(symbols[0]?.parameters, [{ name: 'value' }]);
+  assert.match(symbols[0]?.documentationMarkdown ?? '', /First body\./u);
+  assert.match(symbols[0]?.upstreamUrl ?? '', /index\.rst#L20$/u);
+  assert.match(symbols[1]?.upstreamUrl ?? '', /index\.rst#L29$/u);
+});
+
+void test('game functions normalize explicit upstream unknown parameters positionally', () => {
+  const symbol = parseGameFunctionSymbol({
+    commit,
+    sourcePath: 'source/EE Game Lua Functions/Infinity/index.rst',
+    text: [
+      '.. _Infinity_Unknown:',
+      '',
+      'Infinity_Unknown',
+      '^^^^^^^^^^^^^^^^',
+      '',
+      '::',
+      '',
+      '   Infinity_Unknown(???,???)',
+      '',
+      '**Parameters**',
+      '',
+      '* *???* -',
+      '* *???* -',
+    ].join('\n'),
+  });
+
+  assert.equal(symbol.signature, 'Infinity_Unknown(arg1, arg2)');
+  assert.deepEqual(symbol.parameters, [{ name: 'arg1' }, { name: 'arg2' }]);
+});
+
+void test('indented RST quotations render as Markdown blockquotes', () => {
+  const markdown = renderRstMarkdown(
+    ['   "Verified upstream quotation."', '', '   --`Bubb <https://example.com/source>`_'].join(
+      '\n',
+    ),
+  );
+
+  assert.match(markdown, /> "Verified upstream quotation\."/u);
+  assert.match(markdown, /> --\[Bubb\]\(https:\/\/example\.com\/source\)/u);
 });
 
 void test('EEex indexes retain colon methods and parse defaults, returns, warnings, and aliases', () => {

@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a Changelog, and this project adheres to Semantic Versioning.
 
+## [v0.5.1]
+
+### Added
+
+- Ship the 139 `Infinity_*` functions defined directly in the upstream category index, with documentation and pinned line-level provenance.
+- Add schema-v3 compatibility coverage for upstream-category shards while retaining schema-v1 and schema-v2 runtime loading.
+
+### Changed
+
+- Split EE Game Lua functions, EEex functions, and EE Game Structures (x64) into auditable JSON shards discovered from the pinned upstream toctrees, including explicit empty-category shards.
+- Strengthen package auditing across recursive shards, aggregate counts, metadata, provenance, global symbol identity, and orphaned generated files.
+- Update scheduled EEex refreshes to report manifest aggregate counts independently of generated shard names.
+
 ## [v0.5.0]
 
 ### Added

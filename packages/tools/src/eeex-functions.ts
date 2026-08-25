@@ -5,6 +5,7 @@ export interface GameFunctionDocument {
   indexDescription?: string;
   sourcePath: string;
   text: string;
+  sourceLineOffset?: number;
 }
 
 export interface EeexFunctionIndex {
@@ -28,8 +29,9 @@ export function parseGameFunctionSymbol(document: GameFunctionDocument): ApiSymb
   const titleIndex = findTitleLine(lines);
   const title = unescapeRst(lines[titleIndex]?.trim() ?? '');
   const signatureBlock = findFirstLiteralBlock(lines, titleIndex + 2);
-  const signature = signatureBlock.lines.join('\n').trim();
-  const callable = parseCallableSignature(signature, document.sourcePath);
+  const sourceSignature = signatureBlock.lines.join('\n').trim();
+  const callable = parseCallableSignature(sourceSignature, document.sourcePath);
+  const signature = `${callable.name}(${callable.parameterNames.join(', ')})`;
   const legacyTitle = document.sourcePath
     .split('/')
     .at(-1)
@@ -53,7 +55,10 @@ export function parseGameFunctionSymbol(document: GameFunctionDocument): ApiSymb
   const parameters = parseGameParameters(text, callable.parameterNames);
   const returns = parseGameReturns(text);
   const { containerName, instanceName } = splitCallableName(callable.name);
-  const sourceLine = lines.findIndex((line) => line.trim() === signature) + 1;
+  const sourceLine =
+    lines.findIndex((line) => line.trim() === sourceSignature) +
+    1 +
+    (document.sourceLineOffset ?? 0);
   const documentationMarkdown = renderRstMarkdown(renderedSource, document.sourcePath);
 
   return {
@@ -92,6 +97,53 @@ export function parseGameIndexDescriptions(text: string, sourcePath: string): Ma
     }
   }
   return result;
+}
+
+export function parseGameIndexFunctionSymbols(document: GameFunctionDocument): ApiSymbol[] {
+  const text = normalize(document.text);
+  const descriptions = parseGameIndexDescriptions(text, document.sourcePath);
+  const anchors = [...text.matchAll(/^\.\. _(.+):\s*$/gmu)];
+  const symbols: ApiSymbol[] = [];
+
+  for (const [index, anchor] of anchors.entries()) {
+    const name = anchor[1] ?? '';
+    const indexDescription = descriptions.get(name);
+    if (!descriptions.has(name)) {
+      continue;
+    }
+    const start = anchor.index ?? 0;
+    const end = anchors[index + 1]?.index ?? text.length;
+    const segment = text.slice(start, end);
+    if (!segment.match(/^\s{3,}[^\n]+\([^\n]*\)\s*$/mu)) {
+      continue;
+    }
+    const sourceLineOffset = text.slice(0, start).split('\n').length - 1;
+    try {
+      symbols.push(
+        parseGameFunctionSymbol({
+          commit: document.commit,
+          sourcePath: document.sourcePath,
+          text: segment,
+          sourceLineOffset,
+          ...(indexDescription !== undefined ? { indexDescription } : {}),
+        }),
+      );
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      throw new Error(
+        `${document.sourcePath}: failed to parse indexed function ${name}: ${message}`,
+      );
+    }
+  }
+
+  const ids = new Set<string>();
+  for (const symbol of symbols) {
+    if (ids.has(symbol.id)) {
+      throw new Error(`${document.sourcePath}: duplicate indexed game function ${symbol.name}`);
+    }
+    ids.add(symbol.id);
+  }
+  return symbols;
 }
 
 export function parseEeexFunctionSymbols(index: EeexFunctionIndex): ApiSymbol[] {
@@ -292,7 +344,15 @@ export function renderRstMarkdown(source: string, sourcePath = '<rst>'): string 
     }
 
     if (/^\s+\S/u.test(line)) {
-      throw new Error(`${sourcePath}:${index + 1}: unsupported non-empty indented construct`);
+      const block = readIndentedBlock(lines, index);
+      const rendered = renderRstMarkdown(block.lines.join('\n'), sourcePath);
+      pushBlank();
+      for (const bodyLine of rendered.split('\n')) {
+        output.push(bodyLine ? `> ${bodyLine}` : '>');
+      }
+      pushBlank();
+      index = block.end;
+      continue;
     }
 
     const paragraph = [line.trim()];
@@ -357,13 +417,23 @@ function parseEeexTable(body: string, heading: string, sourcePath: string): stri
 
 function parseGameParameters(text: string, signatureNames: string[]): ApiParameter[] {
   const section = extractBoldSection(text, 'Parameters');
-  if (!section || /^\s*None\s*$/u.test(section)) return [];
+  if (!section) return signatureNames.map((name) => ({ name }));
+  if (/^\s*None\s*$/u.test(section)) return [];
+  if (/^\s*\(?\?+\)?\s*$/u.test(section)) {
+    return signatureNames.map((name) => ({ name }));
+  }
   const parameters: ApiParameter[] = [];
-  for (const match of section.matchAll(/^\*\s+``([^`]+)``\s+\*([^*]+)\*\s+-\s+(.+)$/gmu)) {
+  for (const match of section.matchAll(
+    /^\*[ \t]+(?:``([^`]+)``[ \t]+)?(?:-[ \t]+)?\*?([^*]+)\*[ \t]+-[ \t]*(.*)$/gmu,
+  )) {
+    const index = parameters.length;
+    const rawName = match[2]?.trim() ?? '';
+    const name = isIdentifier(rawName) ? rawName : (signatureNames[index] ?? rawName);
+    const description = renderInline(match[3]?.trim() ?? '');
     parameters.push({
       ...(match[1]?.trim() ? { type: match[1].trim() } : {}),
-      name: match[2]?.trim() ?? '',
-      description: renderInline(match[3]?.trim() ?? ''),
+      name,
+      ...(description ? { description } : {}),
     });
   }
   // A small number of upstream pages retain legacy parameter prose even though
@@ -406,11 +476,21 @@ function parseCallableSignature(
     /^([A-Za-z_][A-Za-z0-9_]*(?:(?:[.:])[A-Za-z_][A-Za-z0-9_]*)*)\s*\(([^)]*)\)$/u,
   );
   if (!match?.[1]) throw new Error(`${sourcePath}: malformed callable signature ${signature}`);
-  const parameterNames = (match[2] ?? '')
+  const rawParameterNames = (match[2] ?? '')
     .split(',')
     .map((value) => value.trim())
     .filter(Boolean);
+  const usedNames = new Set<string>();
+  const parameterNames = rawParameterNames.map((value, index) => {
+    const name = isIdentifier(value) && !usedNames.has(value) ? value : `arg${index + 1}`;
+    usedNames.add(name);
+    return name;
+  });
   return { name: match[1], parameterNames };
+}
+
+function isIdentifier(value: string): boolean {
+  return /^[A-Za-z_][A-Za-z0-9_]*$/u.test(value);
 }
 
 function splitCallableName(name: string): { containerName?: string; instanceName?: string } {

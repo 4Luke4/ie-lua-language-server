@@ -86,20 +86,29 @@ export interface ApiReturn {
 }
 
 export interface ApiIndex {
-  schemaVersion: 1 | 2;
+  schemaVersion: 1 | 2 | 3;
   generatedAt: string;
   sources: ApiSource[];
   symbols: ApiSymbol[];
 }
 
-export interface ApiIndexManifest {
+export type ApiIndexManifest = ApiIndexManifestV2 | ApiIndexManifestV3;
+
+export interface ApiIndexManifestV2 {
   schemaVersion: 1 | 2;
+  generatedAt: string;
+  sources: ApiSource[];
+  sections: ApiSectionReferenceV2[];
+}
+
+export interface ApiIndexManifestV3 {
+  schemaVersion: 3;
   generatedAt: string;
   sources: ApiSource[];
   sections: ApiSectionReference[];
 }
 
-export interface ApiSectionReference {
+export interface ApiSectionReferenceV2 {
   id: SourceSectionId;
   title: string;
   file: string;
@@ -107,10 +116,27 @@ export interface ApiSectionReference {
   licenseStatus: LicenseStatus;
 }
 
+export interface ApiSectionReference {
+  id: SourceSectionId;
+  title: string;
+  files: ApiShardReference[];
+  symbolCount: number;
+  licenseStatus: LicenseStatus;
+}
+
+export interface ApiShardReference {
+  title: string;
+  file: string;
+  symbolCount: number;
+  upstreamPath?: string;
+}
+
 export interface ApiSectionFile {
-  schemaVersion: 1 | 2;
+  schemaVersion: 1 | 2 | 3;
   generatedAt: string;
   source: ApiSource;
+  title?: string;
+  upstreamPath?: string;
   symbols: ApiSymbol[];
 }
 

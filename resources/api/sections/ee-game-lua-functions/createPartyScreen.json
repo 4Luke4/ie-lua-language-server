@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 3,
+  "generatedAt": "2026-08-25T18:10:55.136Z",
+  "source": {
+    "id": "ee-game-lua-functions",
+    "title": "EE Game Lua Functions",
+    "url": "https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions",
+    "commit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+    "licenseStatus": "allowed"
+  },
+  "title": "createPartyScreen",
+  "upstreamPath": "source/EE Game Lua Functions/createPartyScreen/index.rst",
+  "symbols": [
+    {
+      "id": "ee-game-lua-functions:createPartyScreen:OnBackButtonClick",
+      "name": "createPartyScreen:OnBackButtonClick",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "createPartyScreen:OnBackButtonClick()",
+      "containerName": "createPartyScreen",
+      "instanceName": "OnBackButtonClick",
+      "documentationMarkdown": "Event action for when the `Back` button is clicked\n\n**Parameters**\n\nNone\n\n**Returns**\n\nNone\n\n**Notes**\n\nReturns to previous menu when the back button is clicked\n\nCalls the tolua_BaldurLUA_CScreenCreateParty_OnBackButtonClick00 function which calls the [CScreenCreateParty::OnBackButtonClick](#CScreenCreatePartyOnBackButtonClick) method\n\n**Example**\n\nThe back button as defined in `UI.MENU`:\n\n```lua\nbutton\n{\n\ton escape\n\tarea 306 720 204 44\n\tbam 'GUIOSTUM'\n\tsequence 0\n\ttext \"BACK_BUTTON\" -- Back\n\ttext style 'button'\n\taction \n\t\"\n\t\tcreatePartyScreen:OnBackButtonClick()\n\t\"\n}\n```\n\n**See Also**\n\n[createPartyScreen:OnDoneButtonClick](#createPartyScreen_OnDoneButtonClick), [createPartyScreen:OnCreateDeleteButtonClick](#createPartyScreen_OnCreateDeleteButtonClick), [createPartyScreen:OnPortraitButtonClick](#createPartyScreen_OnPortraitButtonClick)",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createPartyScreen/createPartyScreen_OnBackButtonClick.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:createPartyScreen:OnCreateDeleteButtonClick",
+      "name": "createPartyScreen:OnCreateDeleteButtonClick",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "createPartyScreen:OnCreateDeleteButtonClick()",
+      "containerName": "createPartyScreen",
+      "instanceName": "OnCreateDeleteButtonClick",
+      "documentationMarkdown": "Event action for when the `Delete` button is clicked\n\n**Parameters**\n\n- `integer` *Index* - 0 based index of created character's delete button clicked\n\n**Returns**\n\nNone\n\n**Notes**\n\nThe selected character, that has been previously created, is deleted when this button is clicked\n\nCalls the tolua_BaldurLUA_CScreenCreateParty_OnCreateDeleteButtonClick00 function which calls the [CScreenCreateParty::OnCreateDeleteButtonClick](#CScreenCreatePartyOnCreateDeleteButtonClick) method\n\n**Example**\n\nA delete party member button as defined in `UI.MENU`:\n\n```lua\nbutton\n{\n\tarea 155 452 300 44\n\tbam 'GUIOSTCL'\n\tsequence 1\n\ttext lua \"partyImport.character[3].createdelete\"\n\ttext style \"button\"\n\taction\n\t\"\n\t\tcreatePartyScreen:OnCreateDeleteButtonClick(2)\n\t\"\n}\n```\n\n**See Also**\n\n[createPartyScreen:OnDoneButtonClick](#createPartyScreen_OnDoneButtonClick), :[createPartyScreen:OnBackButtonClick](#createPartyScreen_OnBackButtonClick), [createPartyScreen:OnPortraitButtonClick](#createPartyScreen_OnPortraitButtonClick)",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createPartyScreen/createPartyScreen_OnCreateDeleteButtonClick.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:createPartyScreen:OnDoneButtonClick",
+      "name": "createPartyScreen:OnDoneButtonClick",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "createPartyScreen:OnDoneButtonClick()",
+      "containerName": "createPartyScreen",
+      "instanceName": "OnDoneButtonClick",
+      "documentationMarkdown": "Event action for when the `Done` button is clicked\n\n**Parameters**\n\nNone\n\n**Returns**\n\nNone\n\n**Notes**\n\nFinishes the create party process\n\nCalls the tolua_BaldurLUA_CScreenCreateParty_OnDoneButtonClick00 function  which calls the [CScreenCreateParty::OnDoneButtonClick](#CScreenCreatePartyOnDoneButtonClick) method\n\n**Example**\n\n```lua\ncreatePartyScreen:OnDoneButtonClick()\n```\n\n**See Also**\n\n[createPartyScreen:OnBackButtonClick](#createPartyScreen_OnBackButtonClick), [createPartyScreen:OnCreateDeleteButtonClick](#createPartyScreen_OnCreateDeleteButtonClick), [createPartyScreen:OnPortraitButtonClick](#createPartyScreen_OnPortraitButtonClick)",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createPartyScreen/createPartyScreen_OnDoneButtonClick.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "ee-game-lua-functions:createPartyScreen:OnPortraitButtonClick",
+      "name": "createPartyScreen:OnPortraitButtonClick",
+      "kind": "method",
+      "sourceSection": "ee-game-lua-functions",
+      "signature": "createPartyScreen:OnPortraitButtonClick(Index)",
+      "parameters": [
+        {
+          "type": "integer",
+          "name": "Index",
+          "description": "0 based index of portrait clicked"
+        }
+      ],
+      "containerName": "createPartyScreen",
+      "instanceName": "OnPortraitButtonClick",
+      "documentationMarkdown": "Event action for when a portrait button is clicked\n\n**Parameters**\n\n- `integer` *Index* - 0 based index of portrait clicked\n\n**Returns**\n\nNone\n\n**Notes**\n\nSelects the character for the portrait that is clicked\n\nLua arrays use 1 based index when accessing arrays\n\nCalls the tolua_BaldurLUA_CScreenCreateParty_OnPortraitButtonClick00 function which calls the [CScreenCreateParty::OnPortraitButtonClick](#CScreenCreatePartyOnPortraitButtonClick) method\n\n**Example**\n\nA portrait button as defined in `UI.MENU` for the 5th character:\n\n```lua\nbutton\n{\n    area 561 317 56 86\n    bitmap lua \"partyImport.character[5].portrait\"\n    clickable lua \"partyImport.character[5].name ~= ''\"\n    action\n    \"\n        createPartyScreen:OnPortraitButtonClick(4)\n    \"\n}\n```\n\n**See Also**\n\n[createPartyScreen:OnDoneButtonClick](#createPartyScreen_OnDoneButtonClick), [createPartyScreen:OnBackButtonClick](#createPartyScreen_OnBackButtonClick), [createPartyScreen:OnCreateDeleteButtonClick](#createPartyScreen_OnCreateDeleteButtonClick)",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createPartyScreen/createPartyScreen_OnPortraitButtonClick.rst#L11",
+      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "licenseStatus": "allowed"
+    }
+  ]
+}

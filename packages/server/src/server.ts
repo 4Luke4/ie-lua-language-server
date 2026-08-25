@@ -1,4 +1,3 @@
-import * as fs from 'node:fs';
 import * as path from 'node:path';
 import {
   CompletionItemKind,
@@ -27,6 +26,7 @@ import type {
 } from 'vscode-languageserver/node';
 import { TextDocument } from 'vscode-languageserver-textdocument';
 import * as luaparse from 'luaparse';
+import { loadApiIndexFromManifest } from './apiIndexLoader';
 import {
   analyzeDocument,
   DebouncedValidationScheduler,
@@ -42,8 +42,6 @@ import {
   shouldValidate,
   type AnalyzedDocument,
   type ApiIndex,
-  type ApiIndexManifest,
-  type ApiSectionFile,
   type ApiSymbol,
   type IeLuaSettings,
   type LuaDiagnostic,
@@ -740,28 +738,6 @@ function loadApiIndex(): ApiIndex {
   }
 
   return emptyApiIndex;
-}
-
-function loadApiIndexFromManifest(manifestPath: string): ApiIndex {
-  const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8')) as ApiIndexManifest | ApiIndex;
-  if ('symbols' in manifest) {
-    return manifest;
-  }
-
-  const manifestDirectory = path.dirname(manifestPath);
-  const symbols: ApiSymbol[] = [];
-  for (const sectionReference of manifest.sections) {
-    const sectionPath = path.resolve(manifestDirectory, sectionReference.file);
-    const section = JSON.parse(fs.readFileSync(sectionPath, 'utf8')) as ApiSectionFile;
-    symbols.push(...section.symbols);
-  }
-
-  return {
-    schemaVersion: manifest.schemaVersion,
-    generatedAt: manifest.generatedAt,
-    sources: manifest.sources,
-    symbols,
-  };
 }
 
 function isValidIdentifier(value: string): boolean {
