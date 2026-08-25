@@ -520,7 +520,9 @@ function gridTableToMarkdown(table: GridTable): string[] {
 
 function renderInline(value: string): string {
   const rendered = unescapeRst(value)
-    .replace(/:raw-html:`<br\s*\/>`/giu, '<br/>')
+    .replace(/:raw-html:`(<\/?pre>|<br\s*\/?>)`/giu, (_match, html: string) =>
+      html.toLowerCase().startsWith('<br') ? '<br/>' : html.toLowerCase(),
+    )
     .replace(/:bold-italic:`([^`]+)`/gu, '***$1***')
     .replace(/:underline:`([^`]+)`/gu, '<u>$1</u>')
     .replace(
@@ -528,6 +530,7 @@ function renderInline(value: string): string {
       (_match, label: string, target: string) => `[${label}](#${target})`,
     )
     .replace(/:ref:`([^`]+)`/gu, (_match, label: string) => `[${label}](#${label})`)
+    .replace(/:ref:``/gu, '')
     .replace(/`([^`<]+) <(https?:\/\/[^>]+)>`_/gu, '[$1]($2)')
     .replace(/``([^`]+)``/gu, '`$1`')
     .replace(/\|rarr\|/gu, '→');
@@ -548,11 +551,11 @@ function plainInline(value: string): string {
 }
 
 function escapeTableCell(value: string): string {
-  return value.replace(/\|/gu, '\\|').replace(/\n/gu, '<br/>');
+  return value.replace(/\\/gu, '\\\\').replace(/\|/gu, '\\|').replace(/\n/gu, '<br/>');
 }
 
 function unescapeRst(value: string): string {
-  return value.replace(/\\([:.*_`|])/gu, '$1');
+  return value.replace(/\\(.)/gu, '$1');
 }
 
 function isBlockStart(lines: string[], index: number): boolean {

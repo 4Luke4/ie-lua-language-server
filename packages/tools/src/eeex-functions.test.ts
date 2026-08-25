@@ -166,15 +166,23 @@ void test('RST tables, paragraph boundaries, emphasis, and substitutions survive
       '',
       'Second :bold-italic:`paragraph` |rarr| value.',
       '',
+      ':raw-html:`<pre>` CThing :raw-html:`<br>` \\COther :raw-html:`</pre>`',
+      ':ref:``',
+      '',
       '+-------+----------------+',
       '| Key   | Description    |',
       '+=======+================+',
       '| value | ``a|b``        |',
       '+-------+----------------+',
+      '| slash | ``a\\\\|b``       |',
+      '+-------+----------------+',
     ].join('\n'),
   );
   assert.match(markdown, /First \*paragraph\*\.\n\nSecond \*\*\*paragraph\*\*\* → value\./u);
+  assert.match(markdown, /<pre> CThing <br\/> COther <\/pre>/u);
+  assert.doesNotMatch(markdown, /:ref:/u);
   assert.match(markdown, /\| value \| `a\\\|b` \|/u);
+  assert.ok(markdown.includes(`| slash | \`a${'\\'.repeat(3)}|b\` |`));
 });
 
 void test('unsupported non-empty directives fail ingestion', () => {
