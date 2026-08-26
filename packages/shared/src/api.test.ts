@@ -163,6 +163,8 @@ void test('layout documentation includes factual field metadata and pinned sourc
   assert.match(documentation, /Offset:\*\* `0x1120`/u);
   assert.match(documentation, /Size:\*\* 3240 bytes/u);
   assert.match(documentation, /Narrative upstream documentation is permission-gated/u);
+  assert.match(documentation, /```lua\nm_derivedStats: const struct CDerivedStats \*\*\n```/u);
+  assert.doesNotMatch(documentation, /\\\\n/u);
 });
 
 function makeSymbol(

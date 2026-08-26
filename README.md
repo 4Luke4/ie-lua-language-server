@@ -37,13 +37,21 @@ The screenshots below were captured at 1440x900 from a real Visual Studio Code E
 <details>
 <summary><strong>View Visual Studio Code screenshots</strong></summary>
 
-### Completion
+### EEex Function Completion
 
-![Visual Studio Code completion suggestions](docs/screenshots/completion.png)
+![Visual Studio Code EEex function completion suggestions](docs/screenshots/completion.png)
 
-### Hover
+### EEex Hover Documentation
 
-![Visual Studio Code hover information](docs/screenshots/hover.png)
+![Visual Studio Code EEex hover documentation](docs/screenshots/hover.png)
+
+### Signature Help
+
+![Visual Studio Code EEex signature help](docs/screenshots/signature-help.png)
+
+### EE Game Structures (x64) Member Completion
+
+![Visual Studio Code annotation-aware x64 structure member completion](docs/screenshots/structures.png)
 
 ### Embedded `.menu` Diagnostics
 

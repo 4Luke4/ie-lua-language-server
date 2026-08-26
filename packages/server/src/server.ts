@@ -257,7 +257,12 @@ connection.onSignatureHelp(async (params) => {
   };
   const parameters = callableView.parameters.map((parameter) => ({
     label: parameter.name,
-    ...(parameter.description ? { documentation: parameter.description } : {}),
+    ...(parameter.description
+      ? {
+          // Parameter descriptions contain upstream Markdown such as code spans and links.
+          documentation: { kind: 'markdown' as const, value: parameter.description },
+        }
+      : {}),
   }));
   if (parameters && parameters.length > 0) {
     Object.assign(signature, { parameters });

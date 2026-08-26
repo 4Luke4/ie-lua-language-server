@@ -148,7 +148,7 @@ export function makeApiCallableView(
 export function makeDocumentation(symbol: ApiSymbol): string {
   const chunks: string[] = [`### \`${symbol.name}\``];
   if (symbol.signature) {
-    chunks.push('\\`\\`\\`lua', symbol.signature, '\\`\\`\\`');
+    chunks.push(`\`\`\`lua\n${symbol.signature}\n\`\`\``);
   }
 
   const layoutFacts: string[] = [];
@@ -167,7 +167,8 @@ export function makeDocumentation(symbol: ApiSymbol): string {
     layoutFacts.push(`**Fields:** ${symbol.memberCount}`);
   }
   if (layoutFacts.length > 0) {
-    chunks.push(layoutFacts.join('  \\n'));
+    // VS Code's Markdown renderer needs real line breaks; escaped "\\n" text is shown verbatim.
+    chunks.push(layoutFacts.join('  \n'));
   }
 
   if (symbol.documentationMarkdown) {
@@ -178,7 +179,7 @@ export function makeDocumentation(symbol: ApiSymbol): string {
     chunks.push('Narrative upstream documentation is permission-gated and is not bundled.');
   }
   chunks.push('---', `Source: [${symbol.upstreamUrl}](${symbol.upstreamUrl})`);
-  return chunks.join('\\n\\n');
+  return chunks.join('\n\n');
 }
 
 function resolveStructureName(

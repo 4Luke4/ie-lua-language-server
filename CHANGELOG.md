@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a Changelog, and this project adheres to Semantic Versioning.
 
+## [v0.5.2]
+
+### Added
+
+- Add dedicated README screenshots for EEex signature help and annotation-aware EE Game Structures (x64) member completion.
+
+### Changed
+
+- Refresh all README screenshots in Visual Studio Code's official built-in Monokai theme, with completion and hover now exercising generated EEex metadata.
+- Expand the reproducible capture recipe to verify the exact theme and expected language-server results before capturing all six feature views.
+
+### Fixed
+
+- Render API hover, completion, and signature documentation with real Markdown line breaks instead of displaying escaped newline text.
+- Render signature parameter descriptions as Markdown so code spans and links display correctly.
+
 ## [v0.5.1]
 
 ### Added
