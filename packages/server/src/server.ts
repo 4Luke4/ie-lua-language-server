@@ -2,6 +2,8 @@ import * as path from 'node:path';
 import {
   CompletionItemKind,
   ResponseError,
+  ShowMessageNotification,
+  MessageType,
   LSPErrorCodes,
   createConnection,
   DiagnosticSeverity,
@@ -82,9 +84,10 @@ let apiIndex: ApiIndex = startupApi.index ?? emptyApiIndex;
 connection.onInitialized(() => {
   reportApiLoad(startupApi);
   if (!startupApi.index) {
-    connection.window.showWarningMessage(
-      'IE Lua API data is unavailable. Language editing remains available; see the server log and retry Reload API Data.',
-    );
+    background(connection.sendNotification(ShowMessageNotification.type, {
+      type: MessageType.Warning,
+      message: 'IE Lua API data is unavailable. Language editing remains available; see the server log and retry Reload API Data.',
+    }));
   }
 });
 

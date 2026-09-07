@@ -15,9 +15,13 @@ async function runProfile(vscodeExecutablePath, theme) {
   const reports = path.resolve('reports', profile);
   const userData = path.join(root, 'user'),
     extensions = path.join(root, 'extensions'),
-    workspace = path.join(root, 'workspace');
-  for (const directory of [userData, extensions, workspace])
+    workspace = path.join(root, 'workspace'),
+    secondary = path.join(root, 'secondary');
+  for (const directory of [userData, extensions, workspace, secondary])
     fs.mkdirSync(directory, { recursive: true });
+  // Start in a multi-root workspace; changing workspace mode can restart the test host.
+  const workspaceFile = path.join(root, 'test.code-workspace');
+  fs.writeFileSync(workspaceFile, JSON.stringify({ folders: [{ path: workspace }, { path: secondary }] }));
   fs.mkdirSync(path.join(userData, 'User'), { recursive: true });
   fs.writeFileSync(
     path.join(userData, 'User/settings.json'),
@@ -56,7 +60,7 @@ async function runProfile(vscodeExecutablePath, theme) {
       extensionDevelopmentPath: path.resolve('tests/editor/harness'),
       extensionTestsPath: path.resolve('tests/editor/suite.cjs'),
       launchArgs: [
-        workspace,
+        workspaceFile,
         '--user-data-dir',
         userData,
         '--extensions-dir',
@@ -68,6 +72,7 @@ async function runProfile(vscodeExecutablePath, theme) {
       extensionTestsEnv: {
         IE_TEST_EXTENSIONS: extensions,
         IE_TEST_WORKSPACE: workspace,
+        IE_TEST_SECONDARY: secondary,
         PACKAGE_CHANNEL: process.env.PACKAGE_CHANNEL,
         IE_TEST_REPORTS: reports,
         IE_TEST_THEME: theme,

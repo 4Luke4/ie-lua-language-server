@@ -151,7 +151,10 @@ function validateVerificationGraph(workflows) {
   assert.equal(byFile['release.yml'].jobs.verify.uses, shared);
   assert.deepEqual(Object.keys(byFile['verify.yml'].on), ['workflow_call']);
   assert.equal(byFile['maintenance.yml'].on.pull_request, undefined);
-  assert.ok(byFile['verify.yml'].jobs.responsiveness, 'Responsiveness is required release coverage');
+  assert.ok(
+    byFile['verify.yml'].jobs.responsiveness,
+    'Responsiveness is required release coverage',
+  );
   const gate = byFile['ci.yml'].jobs.verify;
   assert.equal(gate.name, 'Verify');
   assert.equal(gate.needs, 'suite');

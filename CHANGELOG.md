@@ -15,6 +15,7 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Fixed
 
+- Index source line starts once per analysis and avoid fallback scanning after successful parsing, keeping large Lua and menu documents responsive.
 - Prevent stale analysis and diagnostics from crossing document versions, reopened sessions, configuration changes, or API reloads.
 - Preserve Lua string and comment contents, line endings, and final-newline state when removing trailing whitespace.
 - Validate API input before installation, retain the last good index after failed reloads, and report unavailable data through native notifications and protocol logs.

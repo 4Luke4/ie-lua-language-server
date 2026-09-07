@@ -1,3 +1,4 @@
+import { createLocationMapper, createPositionMapper } from './positions';
 import type {
   FoldInfo,
   ReferenceInfo,
@@ -16,6 +17,11 @@ export interface FallbackScanResult {
 }
 
 export function scanLuaFallback(text: string, offsetBase = 0): FallbackScanResult {
+  const mapLocation = createLocationMapper(text);
+  const makeSymbol = (index: number, name: string, kind: SymbolInfo['kind']): SymbolInfo => ({
+    name, kind,
+    location: mapLocation(offsetBase + index, offsetBase + index + name.length),
+  });
   const symbols: SymbolInfo[] = [];
   const references: ReferenceInfo[] = [];
   const semanticTokens: SemanticTokenInfo[] = [];
@@ -33,14 +39,14 @@ export function scanLuaFallback(text: string, offsetBase = 0): FallbackScanResul
     const name = match[1] ?? '';
     const index = (match.index ?? 0) + match[0].indexOf(name);
     symbols.push(
-      makeSymbol(text, offsetBase, index, name, name.includes(':') ? 'method' : 'function'),
+      makeSymbol(index, name, name.includes(':') ? 'method' : 'function'),
     );
   }
 
   for (const match of text.matchAll(localFunctionPattern)) {
     const name = match[1] ?? '';
     const index = (match.index ?? 0) + match[0].indexOf(name);
-    symbols.push(makeSymbol(text, offsetBase, index, name, 'function'));
+    symbols.push(makeSymbol(index, name, 'function'));
   }
 
   for (const match of text.matchAll(localPattern)) {
@@ -50,7 +56,7 @@ export function scanLuaFallback(text: string, offsetBase = 0): FallbackScanResul
         continue;
       }
       const index = (match.index ?? 0) + match[0].indexOf(name);
-      symbols.push(makeSymbol(text, offsetBase, index, name, 'local'));
+      symbols.push(makeSymbol(index, name, 'local'));
     }
   }
 
@@ -60,7 +66,7 @@ export function scanLuaFallback(text: string, offsetBase = 0): FallbackScanResul
       continue;
     }
     const index = (match.index ?? 0) + match[0].lastIndexOf(name);
-    symbols.push(makeSymbol(text, offsetBase, index, name, 'global'));
+    symbols.push(makeSymbol(index, name, 'global'));
   }
 
   const declarationByName = new Map(symbols.map((symbol) => [symbol.name, symbol]));
@@ -70,7 +76,7 @@ export function scanLuaFallback(text: string, offsetBase = 0): FallbackScanResul
       continue;
     }
     const index = match.index ?? 0;
-    const location = makeLocation(text, offsetBase + index, offsetBase + index + name.length);
+    const location = mapLocation(offsetBase + index, offsetBase + index + name.length);
     const resolvedDeclaration = declarationByName.get(name);
     references.push({
       name,
@@ -92,60 +98,20 @@ export function scanLuaFallback(text: string, offsetBase = 0): FallbackScanResul
   return {
     symbols: uniqueSymbols,
     references,
-    folds: findFolds(text, offsetBase),
+    folds: findFolds(text, offsetBase, mapLocation),
     semanticTokens,
   };
 }
 
-function makeSymbol(
-  text: string,
-  offsetBase: number,
-  index: number,
-  name: string,
-  kind: SymbolInfo['kind'],
-): SymbolInfo {
-  return {
-    name,
-    kind,
-    location: makeLocation(text, offsetBase + index, offsetBase + index + name.length),
-  };
-}
-
 export function makeLocation(text: string, startOffset: number, endOffset: number): SourceLocation {
-  return {
-    offsetRange: {
-      start: startOffset,
-      end: endOffset,
-    },
-    range: {
-      start: offsetToPosition(text, startOffset),
-      end: offsetToPosition(text, endOffset),
-    },
-  };
+  return createLocationMapper(text)(startOffset, endOffset);
 }
 
-export function offsetToPosition(
-  text: string,
-  offset: number,
-): { line: number; character: number } {
-  let line = 0;
-  let lineStart = 0;
-  const boundedOffset = Math.max(0, Math.min(offset, text.length));
-
-  for (let index = 0; index < boundedOffset; index += 1) {
-    if (text.charCodeAt(index) === 10) {
-      line += 1;
-      lineStart = index + 1;
-    }
-  }
-
-  return {
-    line,
-    character: boundedOffset - lineStart,
-  };
+export function offsetToPosition(text: string, offset: number): { line: number; character: number } {
+  return createPositionMapper(text)(offset);
 }
 
-function findFolds(text: string, offsetBase: number): FoldInfo[] {
+function findFolds(text: string, offsetBase: number, mapLocation: (start: number, end: number) => SourceLocation): FoldInfo[] {
   const folds: FoldInfo[] = [];
   const stack: Array<{ keyword: string; offset: number }> = [];
   const pattern = /\b(function|do|then|repeat|end|until)\b/g;
@@ -159,7 +125,7 @@ function findFolds(text: string, offsetBase: number): FoldInfo[] {
       const start = stack.pop();
       if (start && offset > start.offset) {
         folds.push({
-          location: makeLocation(text, start.offset, offset + keyword.length),
+          location: mapLocation(start.offset, offset + keyword.length),
           kind: 'region',
         });
       }

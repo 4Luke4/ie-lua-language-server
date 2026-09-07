@@ -1,3 +1,4 @@
+import { createPositionMapper } from './positions';
 import { analyzeBindings, fallbackBindings } from './bindings';
 import { extractEmbeddedLua, getVirtualLuaText, mapVirtualOffsetToHost } from './menuExtractor';
 import { defaultSettings } from './settings';
@@ -40,6 +41,7 @@ export function analyzeDocument(options: AnalyzeOptions): AnalyzedDocument {
   }
 
   const regions = extractEmbeddedLua(options.text, settings);
+  const hostPosition = createPositionMapper(options.text);
   for (const region of regions) {
     const virtualText = getVirtualLuaText(region);
     const analyzedRegion = analyzeLuaText(virtualText, settings.dialect, options.luaparse);
@@ -49,8 +51,8 @@ export function analyzeDocument(options: AnalyzeOptions): AnalyzedDocument {
       return {
         offsetRange: { start, end },
         range: {
-          start: offsetToPosition(options.text, start),
-          end: offsetToPosition(options.text, end),
+          start: hostPosition(start),
+          end: hostPosition(end),
         },
       };
     };
@@ -140,7 +142,7 @@ function analyzeLuaText(
   dialect: 'lua52' | 'luajit',
   luaparse?: LuaparseModule,
 ): Omit<AnalyzedDocument, 'uri' | 'languageId' | 'text' | 'embeddedRegions'> {
-  let scanned = fallbackBindings(text);
+  let scanned: ReturnType<typeof fallbackBindings> | undefined;
   let bindingsComplete = !text.trim();
   const diagnostics: LuaDiagnostic[] = [];
 
@@ -160,6 +162,8 @@ function analyzeLuaText(
     }
   }
 
+  // Tolerant scanning is only needed when parsing is unavailable or fails.
+  scanned ??= fallbackBindings(text);
   return {
     bindingsComplete,
     symbols: scanned.symbols,

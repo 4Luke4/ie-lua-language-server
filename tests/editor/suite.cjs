@@ -19,6 +19,7 @@ async function run() {
   );
   const report = {
     vscode: vscode.version,
+    workspaceFolderCount: vscode.workspace.workspaceFolders.length,
     platform: process.platform,
     arch: process.arch,
     channel: process.env.PACKAGE_CHANNEL,

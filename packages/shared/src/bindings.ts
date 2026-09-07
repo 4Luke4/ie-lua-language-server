@@ -1,4 +1,5 @@
-import { makeLocation, scanLuaFallback } from './fallbackScanner';
+import { scanLuaFallback } from './fallbackScanner';
+import { createLocationMapper } from './positions';
 import type { AnalyzedDocument, ReferenceInfo, SymbolInfo, TextRange } from './types';
 
 type Node = { type: string; range: [number, number]; [key: string]: unknown };
@@ -24,7 +25,8 @@ export function analyzeBindings(text: string, ast: unknown): BindingAnalysis {
   const memberKeys = new Map<ReferenceInfo, string>();
   const lookup = (scope: Scope, name: string): SymbolInfo | undefined =>
     scope.bindings.get(name) ?? (scope.parent ? lookup(scope.parent, name) : globals.get(name));
-  const location = (n: Node) => makeLocation(text, n.range[0], n.range[1]);
+  const mapLocation = createLocationMapper(text);
+  const location = (n: Node) => mapLocation(n.range[0], n.range[1]);
   function reference(n: Node, scope: Scope, declaration?: SymbolInfo) {
     const name = String(n.name);
     const resolved = declaration ?? lookup(scope, name);

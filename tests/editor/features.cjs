@@ -509,8 +509,10 @@ scenario('release-stability', async ({ extension }) => {
     assert.equal(await vscode.workspace.applyEdit(edit), true);
     assert.equal(doc.getText(), 'local s = [=[value  \r\nnext\t]=]\r\nprint(s)');
     assert.deepEqual(
-      (await execute('executeFormatDocumentProvider', doc.uri, { tabSize: 2, insertSpaces: true })) ??
-        [],
+      (await execute('executeFormatDocumentProvider', doc.uri, {
+        tabSize: 2,
+        insertSpaces: true,
+      })) ?? [],
       [],
     );
   }
@@ -531,12 +533,8 @@ scenario('release-stability', async ({ extension }) => {
 });
 
 scenario('resource-settings', async () => {
-  const folder = vscode.Uri.file(path.join(process.env.IE_TEST_WORKSPACE, 'secondary'));
-  fs.mkdirSync(folder.fsPath, { recursive: true });
-  // Keep the first folder unchanged: changing it would restart the extension host.
-  // https://code.visualstudio.com/api/references/vscode-api#workspace.updateWorkspaceFolders
-  assert.equal(vscode.workspace.updateWorkspaceFolders(1, 0, { uri: folder }), true);
-  await eventually(() => vscode.workspace.workspaceFolders?.length, (count) => count === 2);
+  const folder = vscode.Uri.file(process.env.IE_TEST_SECONDARY);
+  assert.equal(vscode.workspace.workspaceFolders.length, 2);
   const first = await document('local value = 1LL');
   const secondUri = vscode.Uri.joinPath(folder, 'resource.lua');
   fs.writeFileSync(secondUri.fsPath, 'local value = 1LL');
@@ -556,8 +554,6 @@ scenario('resource-settings', async () => {
   } finally {
     await firstSettings.update('dialect', undefined, vscode.ConfigurationTarget.WorkspaceFolder);
     await secondSettings.update('dialect', undefined, vscode.ConfigurationTarget.WorkspaceFolder);
-    assert.equal(vscode.workspace.updateWorkspaceFolders(1, 1), true);
-    await eventually(() => vscode.workspace.workspaceFolders?.length, (count) => count === 1);
   }
 });
 
