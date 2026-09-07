@@ -4,6 +4,8 @@
 - The final revision passes `Verify`, CodeQL analysis, dependency review, and commit conventions.
 - CI covers Linux, Windows, and macOS, plus VS Code 1.100.0 and stable. Attach exact run links;
   missing, cancelled, or skipped required coverage is not a pass.
+- Every scenario in the [feature inventory](../verification.md) passes for both package channels
+  and both accessibility profiles. Downloadable reports identify the tested editor versions.
 - Generated API data passes pinned regeneration, source/count audits, and documentation tests.
 - Both package channels pass archive inspection and installed-extension checks. The release's
   selected channel additionally satisfies tag syntax, version matching, and odd/even minor policy.

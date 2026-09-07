@@ -6,6 +6,7 @@ const {
   validateLabels,
   validateVersions,
   validateWorkflows,
+  validateVerificationGraph,
 } = require('./policy.cjs');
 const { validateRelease } = require('./release-policy.cjs');
 
@@ -61,6 +62,20 @@ test('version validation catches stale workspace, lockfile, changelog, and edito
   const changed = structuredClone(pkg);
   changed.devDependencies['@types/vscode'] = '1.134.0';
   assert.throws(() => validateVersions(version, changed, lock, workspaces, changelog));
+});
+test('verification has one owner and an unconditional aggregate gate', () => {
+  const yaml = require('js-yaml');
+  const workflows = fs.readdirSync('.github/workflows').filter(f => f.endsWith('.yml'))
+    .map(f => [f, yaml.load(fs.readFileSync(`.github/workflows/${f}`, 'utf8'))]);
+  validateVerificationGraph(workflows);
+  const change = (edit) => { const copy = structuredClone(workflows); edit(Object.fromEntries(copy)); return copy; };
+  assert.throws(() => validateVerificationGraph(change(w => { w['ci.yml'].jobs.verify.if = 'success()'; })));
+  assert.throws(() => validateVerificationGraph(change(w => { w['verify.yml'].on.push = {}; })));
+  assert.throws(() => validateVerificationGraph(change(w => { w['maintenance.yml'].on.pull_request = {}; })));
+  assert.throws(() => validateVerificationGraph([...workflows, ['duplicate.yml', {jobs: {test: {steps: [{run: 'npm run test:editor'}]}}}]]));
+  const duplicate = structuredClone(workflows);
+  duplicate.push(['another.yml', duplicate[0][1]]);
+  assert.throws(() => validateWorkflows(duplicate), /duplicate workflow name/u);
 });
 test('release validation rejects version, syntax, and channel mismatches', () => {
   validateRelease('stable', 'v0.6.0', '0.6.0');

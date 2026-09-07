@@ -44,9 +44,14 @@ async function run() {
     } finally {
       save();
       // Each scenario owns fresh documents; reset workspace settings after failures too.
-      await vscode.workspace.getConfiguration().update('ieLua', undefined, vscode.ConfigurationTarget.Workspace);
+      await vscode.workspace
+        .getConfiguration()
+        .update('ieLua', undefined, vscode.ConfigurationTarget.Workspace);
     }
   }
-  assert.ok(report.cases.every((entry) => entry.status === 'passed'), 'All feature cases must pass');
+  assert.ok(
+    report.cases.every((entry) => entry.status === 'passed'),
+    'All feature cases must pass',
+  );
 }
 module.exports = { run };

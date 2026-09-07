@@ -89,12 +89,12 @@ function main() {
     fs.readFileSync('CHANGELOG.md', 'utf8'),
   );
   validateLabels(json('.github/labels.json'), readYaml('.github/labeler.yml'));
-  validateWorkflows(
-    fs
+  const workflows = fs
       .readdirSync('.github/workflows')
       .filter((f) => f.endsWith('.yml'))
-      .map((f) => [f, readYaml(`.github/workflows/${f}`)]),
-  );
+      .map((f) => [f, readYaml(`.github/workflows/${f}`)]);
+  validateWorkflows(workflows);
+  validateVerificationGraph(workflows);
   for (const file of [
     'SECURITY.md',
     'docs/architecture/THREAT_MODEL.md',
@@ -144,5 +144,26 @@ function main() {
     assert.ok(fs.existsSync(path.join(directory, 'AGENTS.md')));
   console.log('Repository policy passed');
 }
-module.exports = { validHeader, validateLabels, validateVersions, validateWorkflows };
+function validateVerificationGraph(workflows) {
+  const byFile = Object.fromEntries(workflows);
+  const shared = './.github/workflows/verify.yml';
+  assert.equal(byFile['ci.yml'].jobs.suite.uses, shared);
+  assert.equal(byFile['release.yml'].jobs.verify.uses, shared);
+  assert.deepEqual(Object.keys(byFile['verify.yml'].on), ['workflow_call']);
+  assert.equal(byFile['maintenance.yml'].on.pull_request, undefined);
+  const gate = byFile['ci.yml'].jobs.verify;
+  assert.equal(gate.name, 'Verify');
+  assert.equal(gate.needs, 'suite');
+  assert.equal(gate.if, 'always()');
+  assert.equal(byFile['ci.yml'].on.push.branches.join(','), 'main');
+  for (const [file, workflow] of workflows) {
+    if (file === 'verify.yml') continue;
+    for (const job of Object.values(workflow.jobs)) {
+      for (const step of job.steps ?? []) {
+        assert.ok(!/npm (?:test\b|run test:(?:editor|lsp)\b)|vsce package/u.test(step.run ?? ''), `${file}: verification belongs in the shared suite`);
+      }
+    }
+  }
+}
+module.exports = { validHeader, validateLabels, validateVersions, validateWorkflows, validateVerificationGraph };
 if (require.main === module) main();

@@ -27,7 +27,7 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Removed
 
-- Retired CodeQL issue synchronization and obsolete workflow registrations.
+- Retire obsolete workflow registrations.
 
 ## [0.5.2] - 2026-08-26
 
@@ -76,7 +76,7 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Added
 
-- Ship full permission-safe EE Game Structures (x64) layouts with 1,040 structures and 7,195 fields, including annotation-aware and chained member completion, hover, source definitions, types, offsets, and byte sizes.
+- Ship full EE Game Structures (x64) layouts with 1,040 structures and 7,195 fields, including annotation-aware and chained member completion, hover, source definitions, types, offsets, and byte sizes.
 - Add a scheduled, manually dispatchable workflow that detects new EEex upstream revisions, regenerates and verifies API metadata without executing upstream code, and opens a reviewable pull request.
 - Enforce Conventional Commit headers across every commit in a pull request.
 
@@ -90,10 +90,6 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Resolve EEex revisions dynamically for automated updates while recording immutable commit and line-level provenance in every generated symbol.
 
 ## [0.3.1] - 2026-08-04
-
-### Added
-
-- Add automatic, deduplicated GitHub issue tracking for open default-branch CodeQL alerts, including severity-aware labels and automatic resolution when no findings remain.
 
 ### Changed
 

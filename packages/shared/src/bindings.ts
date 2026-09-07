@@ -68,19 +68,36 @@ export function analyzeBindings(text: string, ast: unknown): BindingAnalysis {
       parts.unshift(String(node(base.identifier)?.name));
       base = node(base.base);
     }
-    if (!field || base?.type !== 'Identifier') { visit(n.base, scope); return; }
+    if (!field || base?.type !== 'Identifier') {
+      visit(n.base, scope);
+      return;
+    }
     const rootName = String(base.name);
     const owner = lookup(scope, rootName)?.bindingId ?? `global:${rootName}`;
     const key = `member:${owner}:${parts.join('.')}`;
     const name = `${rootName}${n.indexer === ':' ? ':' : '.'}${parts.join('.')}`;
     visit(n.base, scope);
     if (declaration && !members.has(key)) {
-      const symbol: SymbolInfo = { name, kind: n.indexer === ':' ? 'method' : 'function',
-        location: location(field), bindingId: key, scopeRange: scope.range, scopeDepth: scope.depth, visibleFrom: 0 };
-      members.set(key, symbol); symbols.push(symbol);
+      const symbol: SymbolInfo = {
+        name,
+        kind: n.indexer === ':' ? 'method' : 'function',
+        location: location(field),
+        bindingId: key,
+        scopeRange: scope.range,
+        scopeDepth: scope.depth,
+        visibleFrom: 0,
+      };
+      members.set(key, symbol);
+      symbols.push(symbol);
     }
-    const ref: ReferenceInfo = { name, member: true, location: location(field), ...(declaration ? { isDeclaration: true } : {}) };
-    references.push(ref); memberKeys.set(ref, key);
+    const ref: ReferenceInfo = {
+      name,
+      member: true,
+      location: location(field),
+      ...(declaration ? { isDeclaration: true } : {}),
+    };
+    references.push(ref);
+    memberKeys.set(ref, key);
   }
   function scoped(n: Node, parent: Scope): Scope {
     return {
@@ -254,7 +271,12 @@ export function referenceAt(analysis: AnalyzedDocument, offset: number): Referen
 
 export function renameLocations(analysis: AnalyzedDocument, offset: number, newName: string) {
   const target = referenceAt(analysis, offset)?.resolvedDeclaration;
-  if (!analysis.bindingsComplete || !target?.bindingId || target.bindingId.startsWith('implicit:') || target.bindingId.startsWith('member:'))
+  if (
+    !analysis.bindingsComplete ||
+    !target?.bindingId ||
+    target.bindingId.startsWith('implicit:') ||
+    target.bindingId.startsWith('member:')
+  )
     return undefined;
   const renamed = {
     ...analysis,

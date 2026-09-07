@@ -706,10 +706,13 @@ function collectUnknownGlobalDiagnostics(
     return [];
   }
 
-  const apiSymbols = new Set(filterApiSymbols(apiIndex, settings).flatMap(symbol => [
-    symbol.name, symbol.name.split(/[.:]/u)[0] ?? symbol.name,
-    ...(symbol.callableAliases ?? []).map(alias => alias.name),
-  ]));
+  const apiSymbols = new Set(
+    filterApiSymbols(apiIndex, settings).flatMap((symbol) => [
+      symbol.name,
+      symbol.name.split(/[.:]/u)[0] ?? symbol.name,
+      ...(symbol.callableAliases ?? []).map((alias) => alias.name),
+    ]),
+  );
   const seen = new Set<string>();
   const diagnostics: LuaDiagnostic[] = [];
 

@@ -79,7 +79,8 @@ export function scanLuaFallback(text: string, offsetBase = 0): FallbackScanResul
     });
   }
 
-  for (const symbol of symbols) {
+  const uniqueSymbols = dedupeSymbols(symbols);
+  for (const symbol of uniqueSymbols) {
     semanticTokens.push({
       location: symbol.location,
       tokenType:
@@ -89,7 +90,7 @@ export function scanLuaFallback(text: string, offsetBase = 0): FallbackScanResul
   }
 
   return {
-    symbols: dedupeSymbols(symbols),
+    symbols: uniqueSymbols,
     references,
     folds: findFolds(text, offsetBase),
     semanticTokens,

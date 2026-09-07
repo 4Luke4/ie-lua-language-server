@@ -18,6 +18,9 @@ Dependencies execute during installation/building in disposable GitHub-hosted ru
 verification has read-only repository access and no publication credentials. Label and merge
 automation uses trusted base configuration without checking out PR code. Publication and branch
 creation have narrowly scoped write jobs; generated artifact contents are not shell commands.
+Caches hold downloaded dependencies, exact editor distributions, and versioned actionlint binaries.
+They contain no editor profiles or publication credentials. Verification rebuilds and tests source
+on every run; publication never executes PR-produced cache contents in a privileged job.
 
 CodeQL and dependency review remain independent gates. Release publication consumes verified
 artifacts from its own run and targets its selected commit. Existing tags/releases are never

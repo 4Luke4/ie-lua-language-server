@@ -355,7 +355,9 @@ scenario('diagnostics-settings', async () => {
   await replace(doc, 'local broken =');
   await diagnostics(doc, (r) => r.length > 0);
   await doc.save();
-  await vscode.commands.executeCommand('workbench.action.closeActiveEditor');
+  // Closing a tab need not dispose its model. Changing language guarantees didClose.
+  // https://code.visualstudio.com/api/references/vscode-api#languages.setTextDocumentLanguage
+  await vscode.languages.setTextDocumentLanguage(doc, 'plaintext');
   await eventually(
     () => vscode.languages.getDiagnostics(doc.uri),
     (r) => r.length === 0,
@@ -409,12 +411,12 @@ scenario('formatting', async () => {
     tabSize: 2,
     insertSpaces: true,
   });
-  assert.equal(edits.length, 1);
-  assert.equal(edits[0].newText, '-- 😀\nlocal value = 1\n');
+  assert.ok(edits.length > 0);
   const change = new vscode.WorkspaceEdit();
   change.set(doc.uri, edits);
   assert.equal(await vscode.workspace.applyEdit(change), true);
-  assert.equal(doc.getText(), '-- 😀\nlocal value = 1\n');
+  // VS Code minimizes provider edits and preserves the model's existing EOL convention.
+  assert.equal(doc.getText(), '-- 😀\r\nlocal value = 1\r\n');
   assert.deepEqual(
     (await execute('executeFormatDocumentProvider', doc.uri, { tabSize: 2, insertSpaces: true })) ??
       [],

@@ -62,6 +62,7 @@ test('incomplete buffers preserve discovery without allowing guessed rename', ()
     false,
   );
   assert.equal(renameLocations(a, text.indexOf('good'), 'better'), undefined);
+  assert.equal(a.semanticTokens.filter(t => t.location.offsetRange.start === text.indexOf('good')).length, 1);
 });
 test('menu analysis excludes DSL and isolates locals while sharing document globals', () => {
   const text =
@@ -85,9 +86,9 @@ test('menu analysis excludes DSL and isolates locals while sharing document glob
 test('qualified function declarations navigate separately from local variables and fields', () => {
   const text = 'local object = {}\nfunction object:run(arg) return self, arg end\nobject:run(1)';
   const a = analyze(text);
-  const declaration = a.symbols.find(s => s.name === 'object:run');
+  const declaration = a.symbols.find((s) => s.name === 'object:run');
   assert.ok(declaration);
   assert.equal(referenceAt(a, text.lastIndexOf('run')).resolvedDeclaration, declaration);
-  assert.equal(a.references.find(r => r.name === 'self').resolvedDeclaration.kind, 'parameter');
+  assert.equal(a.references.find((r) => r.name === 'self').resolvedDeclaration.kind, 'parameter');
   assert.equal(renameLocations(a, text.lastIndexOf('run'), 'other'), undefined);
 });
