@@ -4,7 +4,16 @@ import { createLocationMapper, createPositionMapper } from './positions';
 
 void test('indexed positions retain UTF-16 offsets, CRLF boundaries and EOF clamping', () => {
   const position = createPositionMapper('a😀\r\nb\n');
-  const expected = [[0, 0], [0, 1], [0, 2], [0, 3], [0, 4], [1, 0], [1, 1], [2, 0]];
+  const expected = [
+    [0, 0],
+    [0, 1],
+    [0, 2],
+    [0, 3],
+    [0, 4],
+    [1, 0],
+    [1, 1],
+    [2, 0],
+  ];
   for (const [offset, [line, character]] of expected.entries()) {
     assert.deepEqual(position(offset), { line, character });
   }

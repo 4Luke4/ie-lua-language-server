@@ -84,10 +84,13 @@ let apiIndex: ApiIndex = startupApi.index ?? emptyApiIndex;
 connection.onInitialized(() => {
   reportApiLoad(startupApi);
   if (!startupApi.index) {
-    background(connection.sendNotification(ShowMessageNotification.type, {
-      type: MessageType.Warning,
-      message: 'IE Lua API data is unavailable. Language editing remains available; see the server log and retry Reload API Data.',
-    }));
+    background(
+      connection.sendNotification(ShowMessageNotification.type, {
+        type: MessageType.Warning,
+        message:
+          'IE Lua API data is unavailable. Language editing remains available; see the server log and retry Reload API Data.',
+      }),
+    );
   }
 });
 

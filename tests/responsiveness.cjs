@@ -22,11 +22,12 @@ function measurement(name, times, details = {}) {
     times.length && times.every((time) => Number.isFinite(time) && time >= 0 && time < 30000),
   );
   const sorted = [...times].sort((a, b) => a - b);
+  const middle = (sorted.length - 1) / 2;
   report.measurements.push({
     name,
     ...details,
     rawMs: times,
-    medianMs: sorted[Math.floor(sorted.length / 2)],
+    medianMs: (sorted[Math.floor(middle)] + sorted[Math.ceil(middle)]) / 2,
     p95Ms: sorted[Math.ceil(sorted.length * 0.95) - 1],
   });
 }

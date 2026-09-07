@@ -21,7 +21,10 @@ async function runProfile(vscodeExecutablePath, theme) {
     fs.mkdirSync(directory, { recursive: true });
   // Start in a multi-root workspace; changing workspace mode can restart the test host.
   const workspaceFile = path.join(root, 'test.code-workspace');
-  fs.writeFileSync(workspaceFile, JSON.stringify({ folders: [{ path: workspace }, { path: secondary }] }));
+  fs.writeFileSync(
+    workspaceFile,
+    JSON.stringify({ folders: [{ path: workspace }, { path: secondary }] }),
+  );
   fs.mkdirSync(path.join(userData, 'User'), { recursive: true });
   fs.writeFileSync(
     path.join(userData, 'User/settings.json'),

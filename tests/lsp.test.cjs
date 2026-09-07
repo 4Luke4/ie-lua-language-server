@@ -488,3 +488,33 @@ test(
     );
   },
 );
+
+test('invalid configured API candidates fall back to the bundled index', async (t) => {
+  const client = await connect({ index: path.join(os.tmpdir(), 'missing-api-candidate.json') });
+  t.after(() => client.close());
+  const sources = await client.request('workspace/executeCommand', {
+    command: 'ieLua.showApiSource',
+  });
+  assert.equal(sources.length, 6);
+  await client.waitFor(
+    (m) => m.method === 'window/logMessage' && m.params.message.includes('API data loaded from'),
+  );
+});
+
+test('API reload invalidates pending diagnostics before a new validation trigger', async (t) => {
+  const client = await connect();
+  t.after(() => client.close());
+  client.holdConfiguration();
+  const doc = openWithoutAnalysis(client, 'reload-race.lua', 'Infinity_DisplayString()');
+  const old = await client.waitForConfiguration();
+  const pending = validate(client, doc).catch((error) => error);
+  await client.request('workspace/executeCommand', { command: 'ieLua.reloadApiData' });
+  old.respond({ validation: { mode: 'manual' } });
+  assert.match((await pending).message, /Document changed/);
+  assert.ok(!client.notifications.some((m) => m.method === 'textDocument/publishDiagnostics'));
+  client.holdConfiguration(false);
+  await validate(client, doc);
+  await client.waitFor(
+    (m) => m.method === 'textDocument/publishDiagnostics' && m.params.version === 1,
+  );
+});

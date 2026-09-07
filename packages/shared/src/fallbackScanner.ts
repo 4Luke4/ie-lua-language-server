@@ -19,7 +19,8 @@ export interface FallbackScanResult {
 export function scanLuaFallback(text: string, offsetBase = 0): FallbackScanResult {
   const mapLocation = createLocationMapper(text);
   const makeSymbol = (index: number, name: string, kind: SymbolInfo['kind']): SymbolInfo => ({
-    name, kind,
+    name,
+    kind,
     location: mapLocation(offsetBase + index, offsetBase + index + name.length),
   });
   const symbols: SymbolInfo[] = [];
@@ -38,9 +39,7 @@ export function scanLuaFallback(text: string, offsetBase = 0): FallbackScanResul
   for (const match of text.matchAll(functionPattern)) {
     const name = match[1] ?? '';
     const index = (match.index ?? 0) + match[0].indexOf(name);
-    symbols.push(
-      makeSymbol(index, name, name.includes(':') ? 'method' : 'function'),
-    );
+    symbols.push(makeSymbol(index, name, name.includes(':') ? 'method' : 'function'));
   }
 
   for (const match of text.matchAll(localFunctionPattern)) {
@@ -107,11 +106,18 @@ export function makeLocation(text: string, startOffset: number, endOffset: numbe
   return createLocationMapper(text)(startOffset, endOffset);
 }
 
-export function offsetToPosition(text: string, offset: number): { line: number; character: number } {
+export function offsetToPosition(
+  text: string,
+  offset: number,
+): { line: number; character: number } {
   return createPositionMapper(text)(offset);
 }
 
-function findFolds(text: string, offsetBase: number, mapLocation: (start: number, end: number) => SourceLocation): FoldInfo[] {
+function findFolds(
+  text: string,
+  offsetBase: number,
+  mapLocation: (start: number, end: number) => SourceLocation,
+): FoldInfo[] {
   const folds: FoldInfo[] = [];
   const stack: Array<{ keyword: string; offset: number }> = [];
   const pattern = /\b(function|do|then|repeat|end|until)\b/g;
