@@ -316,10 +316,16 @@ export function fallbackBindings(text: string): BindingAnalysis {
 }
 export function maskLuaTrivia(text: string): string {
   const chars = text.split('');
-  let i = 0;
-  const hide = (start: number, end: number) => {
+  for (const { start, end } of luaProtectedRanges(text)) {
     for (let j = start; j < end; j++) if (chars[j] !== '\n' && chars[j] !== '\r') chars[j] = ' ';
-  };
+  }
+  return chars.join('');
+}
+
+// Unterminated strings/comments protect the remaining buffer, including whitespace.
+export function luaProtectedRanges(text: string): TextRange[] {
+  const ranges: TextRange[] = [];
+  let i = 0;
   while (i < text.length) {
     const start = i;
     const comment = text.startsWith('--', i);
@@ -329,13 +335,12 @@ export function maskLuaTrivia(text: string): string {
       const close = `]${long[1]}]`;
       const end = text.indexOf(close, i + long[0].length);
       i = end < 0 ? text.length : end + close.length;
-      hide(start, i);
+      ranges.push({ start, end: i });
       continue;
     }
     if (comment) {
-      const end = text.indexOf('\n', i);
-      i = end < 0 ? text.length : end;
-      hide(start, i);
+      while (i < text.length && text[i] !== '\n' && text[i] !== '\r') i++;
+      ranges.push({ start, end: i });
       continue;
     }
     if (text[i] === '"' || text[i] === "'") {
@@ -347,10 +352,10 @@ export function maskLuaTrivia(text: string): string {
         }
         if (text[i++] === quote) break;
       }
-      hide(start, Math.min(i, text.length));
+      ranges.push({ start, end: Math.min(i, text.length) });
       continue;
     }
     i++;
   }
-  return chars.join('');
+  return ranges;
 }

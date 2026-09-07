@@ -473,6 +473,47 @@ scenario('commands', async ({ extension }) => {
     'server output channel',
   );
 });
+scenario('release-stability', async ({ extension }) => {
+  await configure({ 'validation.mode': 'manual' });
+  const untitled = await vscode.workspace.openTextDocument({ language: 'ie-lua', content: 'local unfinished =' });
+  await vscode.window.showTextDocument(untitled);
+  await diagnostics(untitled, (r) => r.some((d) => d.code === 'lua-parse'));
+  await replace(untitled, 'local repaired = 1');
+  const plain = await vscode.workspace.openTextDocument({ language: 'plaintext', content: 'not Lua' });
+  await vscode.window.showTextDocument(plain);
+  await vscode.commands.executeCommand('ieLua.validateDocument');
+  // An unsupported active editor must not validate another open document.
+  assert.ok(vscode.languages.getDiagnostics(untitled.uri).some((d) => d.code === 'lua-parse'));
+  await vscode.window.showTextDocument(untitled);
+  await diagnostics(untitled, (r) => r.length === 0);
+  for (const dialect of ['lua52', 'luajit']) {
+    await configure({ dialect });
+    const text = 'local s = [=[value  \r\nnext\t]=]  \r\nprint(s)\t';
+    const doc = await document(text);
+    const edits = await execute('executeFormatDocumentProvider', doc.uri, { tabSize: 2, insertSpaces: true });
+    assert.deepEqual(ranges(edits), [[1, 8, 1, 10], [2, 8, 2, 9]]);
+    const edit = new vscode.WorkspaceEdit();
+    edit.set(doc.uri, edits);
+    assert.equal(await vscode.workspace.applyEdit(edit), true);
+    assert.equal(doc.getText(), 'local s = [=[value  \r\nnext\t]=]\r\nprint(s)');
+    assert.deepEqual(await execute('executeFormatDocumentProvider', doc.uri, { tabSize: 2, insertSpaces: true }), []);
+  }
+  await configure({ dialect: 'lua52' });
+  const api = await document('Infinity_DisplayString');
+  await completion(api, new vscode.Position(0, 0), 'Infinity_DisplayString');
+  const index = path.join(extension.extensionPath, 'resources/api/api-index.json');
+  const original = fs.readFileSync(index, 'utf8');
+  try {
+    fs.writeFileSync(index, '{malformed');
+    await vscode.commands.executeCommand('ieLua.reloadApiData');
+    await completion(api, new vscode.Position(0, 0), 'Infinity_DisplayString');
+  } finally {
+    fs.writeFileSync(index, original);
+    await vscode.commands.executeCommand('ieLua.reloadApiData');
+  }
+  await completion(api, new vscode.Position(0, 0), 'Infinity_DisplayString');
+});
+
 scenario('packaged-grammar', async ({ extension }) => {
   const { Registry, parseRawGrammar } = require('vscode-textmate');
   const { loadWASM, OnigScanner, OnigString } = require('vscode-oniguruma');

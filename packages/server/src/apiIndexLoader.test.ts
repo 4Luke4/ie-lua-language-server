@@ -121,3 +121,40 @@ void test('rejects shard paths outside the manifest directory', () => {
     );
   });
 });
+
+void test('accepts inline legacy indexes and rejects malformed consumed metadata', () => {
+  withFixture((directory) => {
+    const file = path.join(directory, 'index.json');
+    const valid = { schemaVersion: 1, generatedAt, sources: [], symbols: [symbol('legacy')] };
+    fs.writeFileSync(file, JSON.stringify(valid));
+    assert.equal(loadApiIndexFromManifest(file).symbols[0]?.name, 'legacy');
+    for (const invalid of [
+      null, [], { ...valid, schemaVersion: 4 }, { ...valid, sources: [null] },
+      { ...valid, symbols: {} }, { ...valid, symbols: [null] },
+      ...[
+        { name: null }, { kind: 'invalid' }, { sourceSection: 'invalid' },
+        { parameters: [null] }, { parameters: [{ name: 'arg', type: 1 }] },
+        { returns: [{ description: [] }] }, { callableAliases: [{ name: 'alias' }] },
+        { documentationMarkdown: {} }, { byteSize: -1 },
+      ].map((fields) => ({ ...valid, symbols: [{ ...symbol('bad'), ...fields }] })),
+    ]) {
+      fs.writeFileSync(file, JSON.stringify(invalid));
+      assert.throws(() => loadApiIndexFromManifest(file));
+    }
+  });
+});
+
+void test('missing or malformed shards reject the whole candidate', () => {
+  withFixture((directory) => {
+    const file = path.join(directory, 'index.json');
+    fs.writeFileSync(file, JSON.stringify({ schemaVersion: 3, generatedAt, sources: [], sections: [{
+      id: 'lua52', files: [{ file: 'good.json' }, { file: 'bad.json' }],
+    }] }));
+    fs.writeFileSync(path.join(directory, 'good.json'), JSON.stringify({ schemaVersion: 3, generatedAt, symbols: [symbol('good')] }));
+    assert.throws(() => loadApiIndexFromManifest(file));
+    for (const content of ['{broken', JSON.stringify({ schemaVersion: 3, generatedAt, symbols: [null] })]) {
+      fs.writeFileSync(path.join(directory, 'bad.json'), content);
+      assert.throws(() => loadApiIndexFromManifest(file));
+    }
+  });
+});

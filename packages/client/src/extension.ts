@@ -74,15 +74,24 @@ export async function deactivate(): Promise<void> {
 function registerCommands(context: vscode.ExtensionContext): void {
   context.subscriptions.push(
     vscode.commands.registerCommand('ieLua.validateDocument', async () => {
-      const uri = vscode.window.activeTextEditor?.document.uri.toString();
-      await executeServerCommand('ieLua.validateDocument', uri ? [uri] : []);
+      const document = vscode.window.activeTextEditor?.document;
+      if (!document || !['ie-lua', 'ie-menu'].includes(document.languageId) ||
+          !['file', 'untitled'].includes(document.uri.scheme)) {
+        void vscode.window.showInformationMessage('Open an IE Lua or IE Menu document to validate it.');
+        return;
+      }
+      await executeServerCommand('ieLua.validateDocument', [document.uri.toString()]);
     }),
     vscode.commands.registerCommand('ieLua.validateWorkspace', async () => {
       await executeServerCommand('ieLua.validateWorkspace', []);
     }),
     vscode.commands.registerCommand('ieLua.reloadApiData', async () => {
-      await executeServerCommand('ieLua.reloadApiData', []);
-      vscode.window.showInformationMessage('IE Lua API data reloaded.');
+      try {
+        const result = await executeServerCommand('ieLua.reloadApiData', []);
+        if (result === null) void vscode.window.showInformationMessage('IE Lua API data reloaded.');
+      } catch {
+        void vscode.window.showErrorMessage('API reload failed. Previous API data retained. See the IE Lua server log and retry Reload API Data.');
+      }
     }),
     vscode.commands.registerCommand('ieLua.showApiSource', async () => {
       const sources = await executeServerCommand<Array<{ title: string; url: string }>>(

@@ -6,3 +6,4 @@ export * from './settings';
 export * from './types';
 export * from './validationScheduler';
 export * from './bindings';
+export * from './formatting';

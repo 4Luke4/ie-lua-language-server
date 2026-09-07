@@ -220,7 +220,10 @@ test(
       textDocument: lua,
       options: { tabSize: 2, insertSpaces: true },
     });
-    assert.equal(edits[0].newText, '-- 😀\nlocal count = 1\n');
+    assert.deepEqual(edits, [{
+      range: { start: { line: 1, character: 15 }, end: { line: 1, character: 17 } },
+      newText: '',
+    }]);
   },
 );
 
@@ -246,4 +249,136 @@ test('unavailable API candidates fall back to an empty index', { timeout: 30000 
     }),
     [],
   );
+});
+
+function change(client, doc, version, text) {
+  client.notify('textDocument/didChange', { textDocument: { uri: doc.uri, version }, contentChanges: [{ text }] });
+}
+function validate(client, doc) {
+  return client.request('workspace/executeCommand', { command: 'ieLua.validateDocument', arguments: [doc.uri] });
+}
+
+test('delayed configuration cannot publish old versions or resurrect closed sessions', { timeout: 30000 }, async (t) => {
+  const client = await connect();
+  t.after(() => client.close());
+  client.holdConfiguration();
+  const doc = openWithoutAnalysis(client, 'race.lua', 'local obsolete =');
+  const old = await client.waitForConfiguration();
+  const validation = validate(client, doc).catch((error) => error);
+  // A round trip ensures validation has captured the original session before close.
+  await client.request('workspace/executeCommand', { command: 'ieLua.showApiSource' });
+  client.notify('textDocument/didClose', { textDocument: doc });
+  const reopened = openWithoutAnalysis(client, 'race.lua', 'local current = 1');
+  const fresh = await client.waitForConfiguration(1);
+  fresh.respond({ validation: { mode: 'manual' } });
+  await validate(client, reopened);
+  old.respond({ validation: { mode: 'type', debounceMs: 1 } });
+  assert.match((await validation).message, /Document changed/);
+  const symbols = await client.request('workspace/symbol', { query: '' });
+  assert.ok(symbols.some((s) => s.name === 'current'));
+  assert.ok(!symbols.some((s) => s.name === 'obsolete'));
+  assert.ok(!client.notifications.some((m) => m.method === 'textDocument/publishDiagnostics' && m.params.diagnostics.length));
+});
+
+test('out-of-order configuration generations and edits use one current snapshot', { timeout: 30000 }, async (t) => {
+  const client = await connect();
+  t.after(() => client.close());
+  client.holdConfiguration();
+  const doc = openWithoutAnalysis(client, 'configuration-race.lua', 'local obsolete =');
+  const old = await client.waitForConfiguration();
+  client.notify('workspace/didChangeConfiguration', { settings: {} });
+  const fresh = await client.waitForConfiguration(1);
+  change(client, doc, 2, 'local current = 1LL');
+  fresh.respond({ dialect: 'luajit', validation: { mode: 'save' } });
+  client.notify('textDocument/didSave', { textDocument: doc });
+  await client.waitFor((m) => m.method === 'textDocument/publishDiagnostics' && m.params.version === 2 && m.params.diagnostics.length === 0);
+  old.respond({ dialect: 'lua52', validation: { mode: 'type', debounceMs: 1 } });
+  await validate(client, doc);
+  const publications = client.notifications.filter((m) => m.method === 'textDocument/publishDiagnostics');
+  assert.ok(publications.length);
+  assert.ok(publications.every((m) => m.params.version === 2 && m.params.diagnostics.length === 0));
+});
+
+test('configuration failures recover and shutdown does not await suspended analysis', { timeout: 30000 }, async () => {
+  const client = await connect();
+  try {
+    client.holdConfiguration();
+    const doc = openWithoutAnalysis(client, 'failed-configuration.lua', 'local value = 1');
+    (await client.waitForConfiguration()).reject();
+    // Wait until the background failure is observed before retrying.
+    await client.waitFor((m) => m.method === 'window/logMessage' && m.params.message.includes('Background document operation failed'));
+    const pending = validate(client, doc);
+    (await client.waitForConfiguration(1)).respond({ validation: { mode: 'manual' } });
+    await pending;
+    client.notify('workspace/didChangeConfiguration', { settings: {} });
+    await client.waitForConfiguration(2);
+  } finally {
+    await client.close();
+  }
+});
+
+test('formatting preserves literal contents for both dialects over stdio', { timeout: 30000 }, async (t) => {
+  const client = await connect();
+  t.after(() => client.close());
+  for (const dialect of ['lua52', 'luajit']) {
+    await client.setSettings({ dialect });
+    const doc = await open(client, `literal-${dialect}.lua`, 'local s = [=[value  \r\nnext\t]=]  \nprint(s)\t');
+    const edits = await client.request('textDocument/formatting', { textDocument: doc, options: { tabSize: 2, insertSpaces: true } });
+    assert.deepEqual(edits, [
+      { range: { start: { line: 1, character: 8 }, end: { line: 1, character: 10 } }, newText: '' },
+      { range: { start: { line: 2, character: 8 }, end: { line: 2, character: 9 } }, newText: '' },
+    ]);
+  }
+});
+
+function openWithoutAnalysis(client, name, text) {
+  const document = { uri: uri(name), version: 1, languageId: 'ie-lua', text };
+  client.notify('textDocument/didOpen', { textDocument: document });
+  return { uri: document.uri };
+}
+
+test('API reload retains last good data and recovers atomically', { timeout: 30000 }, async (t) => {
+  const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'ie-reload-'));
+  let client;
+  t.after(async () => {
+    try { await client?.close(); }
+    finally { fs.rmSync(directory, { recursive: true, force: true, maxRetries: 5, retryDelay: 100 }); }
+  });
+  const server = path.join(directory, 'server.js');
+  fs.copyFileSync('dist/server/server.js', server);
+  const index = path.join(directory, 'index.json');
+  const makeIndex = (name) => ({ schemaVersion: 1, generatedAt: '2026-09-07', sources: [], symbols: [{
+    id: name, name, kind: 'function', sourceSection: 'lua52', documentationState: 'undocumented',
+    licenseStatus: 'unknown', upstreamUrl: 'https://example.com/',
+  }] });
+  fs.writeFileSync(index, JSON.stringify(makeIndex('first_api')));
+  client = await connect({ server, cwd: directory, index });
+  const doc = await open(client, 'reload.lua', 'first_api()');
+  const completion = () => client.request('textDocument/completion', { textDocument: doc, position: position(0, 0) });
+  assert.ok((await completion()).some((item) => item.label === 'first_api'));
+  fs.writeFileSync(index, '{ secret_fixture_content');
+  await assert.rejects(client.request('workspace/executeCommand', { command: 'ieLua.reloadApiData' }), /Previous API data retained/);
+  assert.ok((await completion()).some((item) => item.label === 'first_api'));
+  assert.ok(!JSON.stringify(client.notifications).includes('secret_fixture_content'));
+  fs.writeFileSync(index, JSON.stringify(makeIndex('second_api')));
+  assert.equal(await client.request('workspace/executeCommand', { command: 'ieLua.reloadApiData' }), null);
+  const updated = await completion();
+  assert.ok(updated.some((item) => item.label === 'second_api'));
+  assert.ok(!updated.some((item) => item.label === 'first_api'));
+});
+
+test('resource settings stay separate and missing validation targets are no-ops', { timeout: 30000 }, async (t) => {
+  const client = await connect({ settingsForResource: (resource) => ({
+    dialect: resource.endsWith('jit-resource.lua') ? 'luajit' : 'lua52', validation: { mode: 'manual' },
+  }) });
+  t.after(() => client.close());
+  const jit = await open(client, 'jit-resource.lua', 'local value = 1LL');
+  const lua = await open(client, 'lua-resource.lua', 'local value = 1LL');
+  await validate(client, jit);
+  await validate(client, lua);
+  await client.waitFor((m) => m.method === 'textDocument/publishDiagnostics' && m.params.uri === lua.uri && m.params.diagnostics.length > 0);
+  assert.ok(client.notifications.some((m) => m.method === 'textDocument/publishDiagnostics' && m.params.uri === jit.uri && m.params.diagnostics.length === 0));
+  const start = client.notifications.length;
+  await client.request('workspace/executeCommand', { command: 'ieLua.validateDocument', arguments: [] });
+  assert.ok(!client.notifications.slice(start).some((m) => m.method === 'textDocument/publishDiagnostics'));
 });

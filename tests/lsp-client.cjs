@@ -19,10 +19,13 @@ async function connect(options = {}) {
   let buffer = Buffer.alloc(0),
     id = 0,
     stderr = '';
-  console.log(`LSP process started: ${child.pid}`);
+  const log = (message) => { if (!options.quiet) console.log(message); };
+  log(`LSP process started: ${child.pid}`);
   const pending = new Map(),
     notifications = [];
   let settings = options.settings ?? {};
+  let holdConfiguration = false;
+  const configurationRequests = [];
   const send = (message) => {
     const body = Buffer.from(JSON.stringify({ jsonrpc: '2.0', ...message }));
     child.stdin.write(`Content-Length: ${body.length}\r\n\r\n`);
@@ -54,15 +57,20 @@ async function connect(options = {}) {
       const message = JSON.parse(buffer.subarray(end + 4, end + 4 + length).toString());
       buffer = buffer.subarray(end + 4 + length);
       if (message.method && message.id !== undefined) {
-        const result =
-          message.method === 'workspace/configuration'
-            ? message.params.items.map(() => settings)
-            : null;
-        send({ id: message.id, result });
+        if (message.method === 'workspace/configuration') {
+          const entry = {
+            items: message.params.items,
+            respond: (value = settings) => send({ id: message.id, result: message.params.items.map((item) =>
+              options.settingsForResource ? options.settingsForResource(item.scopeUri, value) : value) }),
+            reject: () => send({ id: message.id, error: { code: -32603, message: 'Synthetic configuration failure' } }),
+          };
+          configurationRequests.push(entry);
+          if (!holdConfiguration) entry.respond();
+        } else send({ id: message.id, result: null });
       } else if (message.id !== undefined) {
         const entry = pending.get(message.id);
         if (entry) {
-          console.log(`LSP response ${message.id}`);
+          log(`LSP response ${message.id}`);
           clearTimeout(entry.timer);
           pending.delete(message.id);
           if (message.error) entry.reject(new Error(JSON.stringify(message.error)));
@@ -74,17 +82,17 @@ async function connect(options = {}) {
   const request = (method, params) =>
     new Promise((resolve, reject) => {
       const requestId = ++id;
-      console.log(`LSP request ${requestId}: ${method}`);
+      log(`LSP request ${requestId}: ${method}`);
       const timer = setTimeout(() => {
         pending.delete(requestId);
         reject(new Error(`Timed out: ${method}\n${stderr}`));
-      }, 10000);
+      }, options.requestTimeout ?? 10000);
       pending.set(requestId, { resolve, reject, timer });
       send({ id: requestId, method, params });
     });
   const notify = (method, params) => send({ method, params });
   const waitFor = async (predicate, start = 0) => {
-    const deadline = Date.now() + 10000;
+    const deadline = Date.now() + (options.requestTimeout ?? 10000);
     while (Date.now() < deadline) {
       const message = notifications.slice(start).find(predicate);
       if (message) return message;
@@ -133,6 +141,16 @@ async function connect(options = {}) {
     close,
     initialized,
     notifications,
+    configurationRequests,
+    holdConfiguration: (value = true) => { holdConfiguration = value; },
+    waitForConfiguration: async (index = 0) => {
+      const deadline = Date.now() + (options.requestTimeout ?? 10000);
+      while (!configurationRequests[index]) {
+        if (Date.now() > deadline) throw new Error('Expected configuration request');
+        await new Promise((resolve) => setTimeout(resolve, 10));
+      }
+      return configurationRequests[index];
+    },
     setSettings: async (value) => {
       settings = value;
       notify('workspace/didChangeConfiguration', { settings: { ieLua: value } });

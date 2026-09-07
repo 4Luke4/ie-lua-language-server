@@ -143,6 +143,13 @@
       "settings": []
     },
     {
+      "id": "release-stability",
+      "groups": ["language-services", "source-provenance"],
+      "features": ["untitled validation", "unsupported-editor validation no-op", "literal-preserving formatting", "failed API reload recovery"],
+      "commands": ["ieLua.validateDocument", "ieLua.reloadApiData"],
+      "settings": ["ieLua.dialect"]
+    },
+    {
       "id": "packaged-grammar",
       "groups": ["embedded-lua"],
       "features": ["packaged TextMate grammars"],

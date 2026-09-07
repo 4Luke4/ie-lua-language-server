@@ -1,6 +1,8 @@
 import * as path from 'node:path';
 import {
   CompletionItemKind,
+  ResponseError,
+  LSPErrorCodes,
   createConnection,
   DiagnosticSeverity,
   FoldingRangeKind,
@@ -29,6 +31,7 @@ import * as luaparse from 'luaparse';
 import { loadApiIndexFromManifest } from './apiIndexLoader';
 import {
   analyzeDocument,
+  trailingWhitespaceEdits,
   visibleSymbols,
   referenceAt,
   renameLocations,
@@ -56,12 +59,31 @@ import {
 
 const connection = createConnection(ProposedFeatures.all);
 const documents = new TextDocuments(TextDocument);
-const analyses = new Map<string, AnalyzedDocument>();
+interface AnalysisState {
+  document: TextDocument;
+  session: symbol | undefined;
+  generation: number;
+  settings?: IeLuaSettings;
+  result: Promise<AnalyzedDocument>;
+}
+const analyses = new Map<string, AnalysisState>();
+const sessions = new Map<string, symbol>();
+const snapshots = new WeakMap<TextDocument, { session: symbol | undefined; generation: number }>();
+const settingsCache = new Map<string, Promise<IeLuaSettings>>();
+let generation = 0;
+let stopped = false;
 const scheduler = new DebouncedValidationScheduler();
 
 let hasConfigurationCapability = false;
 let initializationSettings: SettingsInput | undefined;
-let apiIndex: ApiIndex = loadApiIndex();
+const startupApi = loadApiIndex();
+let apiIndex: ApiIndex = startupApi.index ?? emptyApiIndex;
+connection.onInitialized(() => {
+  reportApiLoad(startupApi);
+  if (!startupApi.index) {
+    background(connection.window.showWarningMessage('IE Lua API data is unavailable. Language editing remains available; see the server log and retry Reload API Data.'));
+  }
+});
 
 const semanticLegend: SemanticTokensLegend = {
   tokenTypes: ['namespace', 'function', 'method', 'parameter', 'variable', 'property'],
@@ -109,30 +131,42 @@ connection.onInitialize((params: InitializeParams): InitializeResult => {
 });
 
 connection.onDidChangeConfiguration(() => {
-  void refreshAfterConfigurationChange();
+  invalidateAnalyses();
+  background(refreshAfterConfigurationChange());
+});
+
+connection.onShutdown(() => {
+  stopped = true;
+  invalidateAnalyses();
+  sessions.clear();
 });
 
 documents.onDidOpen((event) => {
-  void analyzeOnly(event.document);
+  sessions.set(event.document.uri, Symbol(event.document.uri));
 });
 
 documents.onDidChangeContent((event) => {
-  void onDocumentChanged(event.document);
+  scheduler.cancel(event.document.uri);
+  analyses.delete(event.document.uri);
+  background(onDocumentChanged(snapshot(event.document)));
 });
 
 documents.onDidSave((event) => {
-  void maybeValidate(event.document, 'save');
+  background(maybeValidate(snapshot(event.document), 'save'));
 });
 
 documents.onDidClose((event) => {
   scheduler.cancel(event.document.uri);
+  sessions.delete(event.document.uri);
+  settingsCache.delete(event.document.uri);
   analyses.delete(event.document.uri);
-  void connection.sendDiagnostics({ uri: event.document.uri, diagnostics: [] });
+  background(connection.sendDiagnostics({ uri: event.document.uri, diagnostics: [] }));
 });
 
 connection.onCompletion(async (params) => {
-  const document = documents.get(params.textDocument.uri);
-  const settings = await getSettings(params.textDocument.uri);
+  const document = getOpenDocument(params.textDocument.uri);
+  if (!document) return [];
+  const settings = await getDocumentSettings(document);
   const memberReceiver = document ? getMemberReceiverAt(document, params.position) : undefined;
   const apiSymbols =
     document && memberReceiver
@@ -195,7 +229,7 @@ connection.onCompletion(async (params) => {
 connection.onCompletionResolve((item) => item);
 
 connection.onHover(async (params) => {
-  const document = documents.get(params.textDocument.uri);
+  const document = getOpenDocument(params.textDocument.uri);
   if (!document) {
     return null;
   }
@@ -210,7 +244,7 @@ connection.onHover(async (params) => {
   if (local && local.name === name)
     return { contents: { kind: 'markdown', value: `\`${local.kind} ${local.name}\`` } };
 
-  const settings = await getSettings(document.uri);
+  const settings = await getDocumentSettings(document);
   const apiSymbol = findApiSymbolForExpression(
     apiIndex,
     settings,
@@ -243,7 +277,7 @@ connection.onHover(async (params) => {
 });
 
 connection.onSignatureHelp(async (params) => {
-  const document = documents.get(params.textDocument.uri);
+  const document = getOpenDocument(params.textDocument.uri);
   if (!document) {
     return null;
   }
@@ -257,7 +291,7 @@ connection.onSignatureHelp(async (params) => {
     return null;
   }
 
-  const settings = await getSettings(document.uri);
+  const settings = await getDocumentSettings(document);
   const apiSymbol = findApiSymbolForExpression(apiIndex, settings, name, text, offset);
   const callableView = apiSymbol ? makeApiCallableView(apiSymbol, name) : undefined;
   if (!apiSymbol || !callableView) {
@@ -292,7 +326,7 @@ connection.onSignatureHelp(async (params) => {
 });
 
 connection.onDefinition(async (params) => {
-  const document = documents.get(params.textDocument.uri);
+  const document = getOpenDocument(params.textDocument.uri);
   if (!document) {
     return null;
   }
@@ -307,7 +341,7 @@ connection.onDefinition(async (params) => {
     return Location.create(document.uri, toLspRange(symbol.location));
   }
 
-  const settings = await getSettings(document.uri);
+  const settings = await getDocumentSettings(document);
   const apiSymbol = findApiSymbolForExpression(
     apiIndex,
     settings,
@@ -323,7 +357,7 @@ connection.onDefinition(async (params) => {
 });
 
 connection.onReferences(async (params) => {
-  const document = documents.get(params.textDocument.uri);
+  const document = getOpenDocument(params.textDocument.uri);
   if (!document) {
     return [];
   }
@@ -348,7 +382,7 @@ connection.onReferences(async (params) => {
 });
 
 connection.onRenameRequest(async (params: RenameParams): Promise<WorkspaceEdit | null> => {
-  const document = documents.get(params.textDocument.uri);
+  const document = getOpenDocument(params.textDocument.uri);
   if (!document || !isValidIdentifier(params.newName)) {
     return null;
   }
@@ -366,7 +400,7 @@ connection.onRenameRequest(async (params: RenameParams): Promise<WorkspaceEdit |
 });
 
 connection.onDocumentSymbol(async (params) => {
-  const document = documents.get(params.textDocument.uri);
+  const document = getOpenDocument(params.textDocument.uri);
   if (!document) {
     return [];
   }
@@ -377,14 +411,16 @@ connection.onDocumentSymbol(async (params) => {
 connection.onWorkspaceSymbol(async (params) => {
   const query = params.query.toLowerCase();
   const symbols: SymbolInformation[] = [];
-  for (const [uri, analysis] of analyses.entries()) {
-    for (const symbol of analysis.symbols) {
+  const states = documents.all().map((document) => analysisState(snapshot(document)));
+  const results = await Promise.allSettled(states.map((state) => state.result));
+  for (const [index, state] of states.entries()) {
+    const result = results[index]!;
+    if (!isCurrent(state)) continue;
+    if (result.status === 'rejected') throw result.reason;
+    for (const symbol of result.value.symbols) {
       if (!query || symbol.name.toLowerCase().includes(query)) {
-        symbols.push({
-          name: symbol.name,
-          kind: toSymbolKind(symbol.kind),
-          location: Location.create(uri, toLspRange(symbol.location)),
-        });
+        symbols.push({ name: symbol.name, kind: toSymbolKind(symbol.kind),
+          location: Location.create(state.document.uri, toLspRange(symbol.location)) });
       }
     }
   }
@@ -392,7 +428,7 @@ connection.onWorkspaceSymbol(async (params) => {
 });
 
 connection.languages.semanticTokens.on(async (params) => {
-  const document = documents.get(params.textDocument.uri);
+  const document = getOpenDocument(params.textDocument.uri);
   const builder = new SemanticTokensBuilder();
   if (!document) {
     return builder.build();
@@ -418,7 +454,7 @@ connection.languages.semanticTokens.on(async (params) => {
 });
 
 connection.onFoldingRanges(async (params) => {
-  const document = documents.get(params.textDocument.uri);
+  const document = getOpenDocument(params.textDocument.uri);
   if (!document) {
     return [];
   }
@@ -433,7 +469,7 @@ connection.onFoldingRanges(async (params) => {
 });
 
 connection.onDocumentFormatting(async (params) => {
-  const document = documents.get(params.textDocument.uri);
+  const document = getOpenDocument(params.textDocument.uri);
   if (!document) {
     return [];
   }
@@ -444,7 +480,7 @@ connection.onExecuteCommand(async (params: ExecuteCommandParams) => {
   switch (params.command) {
     case 'ieLua.validateDocument': {
       const uri = typeof params.arguments?.[0] === 'string' ? params.arguments[0] : undefined;
-      const document = uri ? documents.get(uri) : documents.all()[0];
+      const document = uri ? getOpenDocument(uri) : undefined;
       if (document) {
         await validateDocument(document);
       }
@@ -453,9 +489,15 @@ connection.onExecuteCommand(async (params: ExecuteCommandParams) => {
     case 'ieLua.validateWorkspace':
       await validateAllOpenDocuments('manual');
       return null;
-    case 'ieLua.reloadApiData':
-      apiIndex = loadApiIndex();
+    case 'ieLua.reloadApiData': {
+      const loaded = loadApiIndex();
+      reportApiLoad(loaded);
+      if (!loaded.index) throw new ResponseError(-32603, 'API reload failed. Previous API data retained. See the server log and retry Reload API Data.');
+      apiIndex = loaded.index;
+      // Pending unknown-global diagnostics must not cross an API generation boundary.
+      invalidateAnalyses();
       return null;
+    }
     case 'ieLua.showApiSource':
       return apiIndex.sources;
     case 'ieLua.openServerLog':
@@ -468,96 +510,149 @@ connection.onExecuteCommand(async (params: ExecuteCommandParams) => {
   }
 });
 
+function snapshot(document: TextDocument): TextDocument {
+  const copy = TextDocument.create(document.uri, document.languageId, document.version, document.getText());
+  snapshots.set(copy, { session: sessions.get(document.uri), generation });
+  return copy;
+}
+
+function getOpenDocument(uri: string): TextDocument | undefined {
+  const document = documents.get(uri);
+  return document ? snapshot(document) : undefined;
+}
+
+function isCurrent(state: Pick<AnalysisState, 'document' | 'session' | 'generation'>): boolean {
+  return !stopped && state.session !== undefined &&
+    sessions.get(state.document.uri) === state.session &&
+    generation === state.generation &&
+    documents.get(state.document.uri)?.version === state.document.version;
+}
+
+function requireCurrent(state: AnalysisState): void {
+  if (!isCurrent(state)) throw new ResponseError(LSPErrorCodes.ContentModified, 'Document changed');
+}
+
+function isContentModified(error: unknown): boolean {
+  return error instanceof ResponseError && error.code === LSPErrorCodes.ContentModified;
+}
+
+function background(work: Promise<unknown>): void {
+  void work.catch((error: unknown) => {
+    if (!isContentModified(error) && !stopped) connection.console.error('Background document operation failed. Retry the operation.');
+  });
+}
+
+function invalidateAnalyses(): void {
+  generation++;
+  scheduler.clear();
+  analyses.clear();
+  settingsCache.clear();
+}
+
+function analysisState(document: TextDocument): AnalysisState {
+  const identity = snapshots.get(document)!;
+  const cached = analyses.get(document.uri);
+  if (cached && cached.document.version === document.version &&
+      cached.session === identity.session && cached.generation === identity.generation && isCurrent(cached)) return cached;
+  let state: AnalysisState;
+  const result = getSettings(document.uri).then((settings) => {
+    requireCurrent(state);
+    state.settings = settings;
+    return analyzeDocument({
+      uri: document.uri,
+      languageId: document.languageId === 'ie-menu' ? 'ie-menu' : 'ie-lua',
+      text: document.getText(), settings, luaparse,
+    });
+  });
+  state = { document, ...identity, result };
+  if (isCurrent(state)) analyses.set(document.uri, state);
+  void result.catch(() => {
+    if (analyses.get(document.uri) === state) analyses.delete(document.uri);
+  });
+  return state;
+}
+
 async function onDocumentChanged(document: TextDocument): Promise<void> {
-  await analyzeOnly(document);
-  const settings = await getSettings(document.uri);
-  if (!shouldValidate(settings.validation.mode, 'type')) {
-    return;
-  }
-  scheduler.schedule(
-    document.uri,
-    () => {
-      void validateDocument(document);
-    },
-    settings.validation.debounceMs,
-  );
+  const state = analysisState(document);
+  await state.result;
+  requireCurrent(state);
+  const settings = state.settings!;
+  if (!shouldValidate(settings.validation.mode, 'type')) return;
+  scheduler.schedule(document.uri, () => {
+    if (isCurrent(state)) background(validateDocument(document));
+  }, settings.validation.debounceMs);
 }
 
 function toMarkdownDocumentation(symbol: ApiSymbol): { kind: 'markdown'; value: string } {
-  return {
-    kind: 'markdown',
-    value: makeDocumentation(symbol),
-  };
+  return { kind: 'markdown', value: makeDocumentation(symbol) };
 }
 
-async function maybeValidate(
-  document: TextDocument,
-  trigger: 'manual' | 'save' | 'type',
-): Promise<void> {
-  const settings = await getSettings(document.uri);
-  if (shouldValidate(settings.validation.mode, trigger)) {
+async function maybeValidate(document: TextDocument, trigger: 'manual' | 'save' | 'type'): Promise<void> {
+  const state = analysisState(document);
+  await state.result;
+  requireCurrent(state);
+  if (shouldValidate(state.settings!.validation.mode, trigger)) {
+    scheduler.cancel(document.uri);
     await validateDocument(document);
   }
 }
 
 async function validateAllOpenDocuments(trigger: 'manual' | 'save' | 'type'): Promise<void> {
-  await Promise.all(documents.all().map((document) => maybeValidate(document, trigger)));
+  await Promise.all(documents.all().map((document) => maybeValidate(snapshot(document), trigger)));
 }
 
 async function refreshAfterConfigurationChange(): Promise<void> {
-  scheduler.clear();
-  analyses.clear();
-  await Promise.all(documents.all().map((document) => analyzeOnly(document)));
-
-  for (const document of documents.all()) {
-    const settings = await getSettings(document.uri);
-    if (settings.validation.mode === 'manual') {
-      void connection.sendDiagnostics({ uri: document.uri, diagnostics: [] });
+  await Promise.all(documents.all().map(async (current) => {
+    const state = analysisState(snapshot(current));
+    await state.result;
+    requireCurrent(state);
+    if (state.settings!.validation.mode === 'manual') {
+      await connection.sendDiagnostics({ uri: state.document.uri, version: state.document.version, diagnostics: [] });
     }
-  }
+  }));
 }
 
 async function validateDocument(document: TextDocument): Promise<void> {
-  const analysis = await getOrAnalyze(document);
-  const settings = await getSettings(document.uri);
+  const state = analysisState(document);
+  const analysis = await state.result;
+  requireCurrent(state);
+  scheduler.cancel(document.uri);
   const diagnostics = [
     ...analysis.diagnostics,
-    ...collectUnknownGlobalDiagnostics(document, analysis, settings),
+    ...collectUnknownGlobalDiagnostics(document, analysis, state.settings!),
   ];
-  void connection.sendDiagnostics({
-    uri: document.uri,
+  await connection.sendDiagnostics({
+    uri: document.uri, version: document.version,
     diagnostics: diagnostics.map(toDiagnostic),
   });
 }
 
-async function analyzeOnly(document: TextDocument): Promise<AnalyzedDocument> {
-  const settings = await getSettings(document.uri);
-  const analysis = analyzeDocument({
-    uri: document.uri,
-    languageId: document.languageId === 'ie-menu' ? 'ie-menu' : 'ie-lua',
-    text: document.getText(),
-    settings,
-    luaparse,
-  });
-  analyses.set(document.uri, analysis);
+async function getOrAnalyze(document: TextDocument): Promise<AnalyzedDocument> {
+  const state = analysisState(document);
+  const analysis = await state.result;
+  requireCurrent(state);
   return analysis;
 }
 
-async function getOrAnalyze(document: TextDocument): Promise<AnalyzedDocument> {
-  const cached = analyses.get(document.uri);
-  // Change notifications analyze asynchronously; an immediate request must not reuse older text.
-  return cached?.text === document.getText() ? cached : analyzeOnly(document);
+async function getDocumentSettings(document: TextDocument): Promise<IeLuaSettings> {
+  const state = analysisState(document);
+  await state.result;
+  requireCurrent(state);
+  return state.settings!;
 }
 
-async function getSettings(resource: string): Promise<IeLuaSettings> {
-  if (!hasConfigurationCapability) {
-    return normalizeSettings(initializationSettings);
-  }
-  const configuration = await connection.workspace.getConfiguration({
-    scopeUri: resource,
-    section: 'ieLua',
+function getSettings(resource: string): Promise<IeLuaSettings> {
+  const cached = settingsCache.get(resource);
+  if (cached) return cached;
+  const pending = hasConfigurationCapability
+    ? connection.workspace.getConfiguration({ scopeUri: resource, section: 'ieLua' })
+        .then((configuration: SettingsInput) => normalizeSettings(mergeSettings(initializationSettings, configuration)))
+    : Promise.resolve(normalizeSettings(initializationSettings));
+  settingsCache.set(resource, pending);
+  void pending.catch(() => {
+    if (settingsCache.get(resource) === pending) settingsCache.delete(resource);
   });
-  return normalizeSettings(mergeSettings(initializationSettings, configuration as SettingsInput));
+  return pending;
 }
 
 function readInitializationSettings(initializationOptions: unknown): SettingsInput | undefined {
@@ -681,20 +776,9 @@ function formatDocument(document: TextDocument): TextEdit[] {
     return [];
   }
 
-  const text = document.getText();
-  const trimmed = text
-    .split(/\r?\n/)
-    .map((line) => line.replace(/[ \t]+$/u, ''))
-    .join('\n');
-  if (trimmed === text) {
-    return [];
-  }
-  return [
-    TextEdit.replace(
-      Range.create(document.positionAt(0), document.positionAt(text.length)),
-      trimmed.endsWith('\n') ? trimmed : `${trimmed}\n`,
-    ),
-  ];
+  return trailingWhitespaceEdits(document.getText()).map(({ start, end }) =>
+    TextEdit.del(Range.create(document.positionAt(start), document.positionAt(end))),
+  );
 }
 
 function collectUnknownGlobalDiagnostics(
@@ -741,7 +825,18 @@ function collectUnknownGlobalDiagnostics(
   );
 }
 
-function loadApiIndex(): ApiIndex {
+interface ApiLoadResult {
+  index?: ApiIndex;
+  selected?: string;
+  failures: string[];
+}
+
+function reportApiLoad(result: ApiLoadResult): void {
+  for (const failure of result.failures) connection.console.warn(failure);
+  if (result.selected) connection.console.info(`API data loaded from ${result.selected}`);
+}
+
+function loadApiIndex(): ApiLoadResult {
   const configuredPath = process.env.IE_LUA_API_INDEX;
   const candidates = [
     configuredPath,
@@ -749,15 +844,16 @@ function loadApiIndex(): ApiIndex {
     path.resolve(__dirname, '../../resources/api/api-index.json'),
   ].filter((candidate): candidate is string => Boolean(candidate));
 
-  for (const candidate of candidates) {
+  const failures: string[] = [];
+  for (const candidate of new Set(candidates)) {
     try {
-      return loadApiIndexFromManifest(candidate);
+      return { index: loadApiIndexFromManifest(candidate), selected: candidate, failures };
     } catch {
-      continue;
+      // Do not log parser errors: JSON errors can contain excerpts of local input.
+      failures.push(`API candidate could not be read or validated: ${candidate}`);
     }
   }
-
-  return emptyApiIndex;
+  return { failures };
 }
 
 function isValidIdentifier(value: string): boolean {
