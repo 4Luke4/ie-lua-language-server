@@ -2,159 +2,24 @@ const vscode = require('vscode');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
-
-async function eventually(operation, predicate) {
-  const deadline = Date.now() + 20000;
-  while (Date.now() < deadline) {
-    try {
-      const result = await operation();
-      if (predicate(result)) return result;
-    } catch (error) {
-      // VS Code cancels in-flight requests while applying theme/accessibility settings.
-      if (error?.name !== 'Canceled' && error?.name !== 'CancellationError') throw error;
-    }
-    await new Promise((resolve) => setTimeout(resolve, 100));
-  }
-  throw new Error('Timed out waiting for editor feature');
-}
+const {cases} = require('./features.cjs');
+const inventory = require('../feature-inventory.json');
 async function run() {
-  const results = [];
-  try {
-    const extension = vscode.extensions.getExtension(
-      'infinity-engine-tools.ie-lua-language-server',
-    );
-    assert.ok(extension, 'Installed extension exists');
-    assert.ok(
-      path
-        .resolve(extension.extensionPath)
-        .startsWith(path.resolve(process.env.IE_TEST_EXTENSIONS) + path.sep),
-      'Must load installed VSIX, not checkout',
-    );
-    await extension.activate();
-    assert.ok(extension.isActive);
-    results.push('installed VSIX activation');
-    const commands = await vscode.commands.getCommands(true);
-    for (const command of [
-      'validateDocument',
-      'validateWorkspace',
-      'reloadApiData',
-      'showApiSource',
-      'openServerLog',
-    ])
-      assert.equal(commands.filter((c) => c === `ieLua.${command}`).length, 1);
-    const doc = await vscode.workspace.openTextDocument({
-      language: 'ie-lua',
-      content:
-        'Infinity_DisplayString(\nCGameObject\n---@type CGameSprite\nlocal sprite\nsprite.\n',
-    });
-    await vscode.window.showTextDocument(doc);
-    const complete = await eventually(
-      () =>
-        vscode.commands.executeCommand(
-          'vscode.executeCompletionItemProvider',
-          doc.uri,
-          new vscode.Position(0, 0),
-        ),
-      (r) => r?.items.some((i) => i.label === 'Infinity_DisplayString'),
-    );
-    assert.ok(complete.items.length);
-    const hover = await eventually(
-      () =>
-        vscode.commands.executeCommand(
-          'vscode.executeHoverProvider',
-          doc.uri,
-          new vscode.Position(1, 4),
-        ),
-      (r) => r?.length,
-    );
-    assert.ok(hover.some((h) => h.contents.some((c) => (c.value ?? '').includes('m_objectType'))));
-    const signature = await eventually(
-      () =>
-        vscode.commands.executeCommand(
-          'vscode.executeSignatureHelpProvider',
-          doc.uri,
-          new vscode.Position(0, 23),
-        ),
-      (r) => r?.signatures.length,
-    );
-    assert.ok(signature.signatures[0].label.includes('Infinity_DisplayString'));
-    await eventually(
-      () =>
-        vscode.commands.executeCommand(
-          'vscode.executeCompletionItemProvider',
-          doc.uri,
-          new vscode.Position(4, 7),
-        ),
-      (r) => r?.items.some((i) => i.label === 'm_active'),
-    );
-    results.push('completion, narrative hover, signatures, typed fields');
-    for (const command of [
-      'validateDocument',
-      'validateWorkspace',
-      'reloadApiData',
-      'openServerLog',
-    ])
-      await vscode.commands.executeCommand(`ieLua.${command}`);
-    // Opening and cancelling the native picker exercises forwarding without browsing externally.
-    const picker = vscode.commands.executeCommand('ieLua.showApiSource');
-    await new Promise((resolve) => setTimeout(resolve, 300));
-    await vscode.commands.executeCommand('workbench.action.closeQuickOpen');
-    await picker;
-    results.push('five commands');
-    assert.equal(vscode.workspace.getConfiguration('editor').get('accessibilitySupport'), 'on');
-    assert.equal(vscode.workspace.getConfiguration('workbench').get('reduceMotion'), 'on');
-    // Editor versions migrate theme IDs to display names; assert the active theme kind.
-    await eventually(
-      async () => vscode.window.activeColorTheme.kind,
-      (kind) =>
-        kind ===
-        (process.env.IE_TEST_THEME === 'Default High Contrast'
-          ? vscode.ColorThemeKind.HighContrast
-          : vscode.ColorThemeKind.Dark),
-    );
-    results.push('high contrast, accessibility support, reduced motion');
-    const menu = await vscode.workspace.openTextDocument({
-      language: 'ie-menu',
-      content: 'menu { action `local invalid =` }',
-    });
-    await vscode.window.showTextDocument(menu);
-    await vscode.commands.executeCommand('ieLua.validateDocument');
-    await eventually(
-      async () => vscode.languages.getDiagnostics(menu.uri),
-      (r) => r.length > 0,
-    );
-    const formatted = await eventually(
-      () =>
-        vscode.commands.executeCommand('vscode.executeFormatDocumentProvider', menu.uri, {
-          tabSize: 2,
-          insertSpaces: true,
-        }),
-      () => true,
-    );
-    // VS Code normalizes an empty provider result to undefined on some versions.
-    assert.deepEqual(formatted ?? [], []);
-    results.push('embedded menu diagnostics and formatting boundary');
-    // The test host owns shutdown; closing dirty untitled documents prompts to save.
-  } catch (error) {
-    console.error('Editor checks completed before failure:', results, error);
-    throw error;
-  } finally {
-    const reports = process.env.IE_TEST_REPORTS;
-    fs.mkdirSync(reports, { recursive: true });
-    fs.writeFileSync(
-      path.join(reports, 'editor.json'),
-      JSON.stringify(
-        {
-          vscode: vscode.version,
-          platform: process.platform,
-          arch: process.arch,
-          theme: process.env.IE_TEST_THEME,
-          passed: results,
-        },
-        null,
-        2,
-      ),
-    );
+  const extension = vscode.extensions.getExtension('infinity-engine-tools.ie-lua-language-server');
+  assert.ok(extension, 'Installed extension exists');
+  assert.ok(path.resolve(extension.extensionPath).startsWith(path.resolve(process.env.IE_TEST_EXTENSIONS)+path.sep), 'Must test installed VSIX');
+  assert.deepEqual(cases.map(c=>c.id),inventory.cases.map(c=>c.id));
+  const report = {vscode:vscode.version, platform:process.platform, arch:process.arch,
+    channel:process.env.PACKAGE_CHANNEL, theme:process.env.IE_TEST_THEME, cases:[]};
+  const output = path.join(process.env.IE_TEST_REPORTS,'editor.json');
+  fs.mkdirSync(path.dirname(output),{recursive:true});
+  const save = () => fs.writeFileSync(output,JSON.stringify(report,null,2));
+  save();
+  for(const scenario of cases) {
+    const entry={id:scenario.id,status:'running'}; report.cases.push(entry); save();
+    try {await scenario.run({extension}); entry.status='passed'; console.log(`PASS ${scenario.id}`);}
+    catch(error) {entry.status='failed'; entry.error=error?.stack ?? String(error); console.error(`FAIL ${scenario.id}`,error); throw error;}
+    finally {save();}
   }
 }
-module.exports = { run };
+module.exports={run};

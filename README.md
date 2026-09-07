@@ -23,12 +23,12 @@ This extension targets:
 
 ## Features
 
-- Completion, hover, signature help, go to definition, find references, same-file rename, diagnostics, formatting, document symbols, workspace symbols, semantic tokens, and folding.
-- Scope-aware Lua analysis backed by a parser plus tolerant fallback scanning for incomplete buffers.
-- Embedded Lua analysis in `.menu` files for backtick chunks, `lua "..."` expressions, action/open/close/escape blocks, and `enabled`/`clickable` expressions.
-- Source-driven API data from official sources only, with immutable upstream provenance.
-- Full EE Game Lua and EEex function completion, hover, signature help, and source definitions, including namespace members, colon methods, typed instance aliases, parameter defaults, return values, warnings, notes, examples, and tables.
-- Full EE Game Structures (x64) layout metadata: structure and field completion, annotation-aware member resolution, chained field hover, exact source definitions, types, offsets, and byte sizes.
+- Completion, hover, signature help, go to definition, find references, same-file rename, diagnostics, formatting, document symbols, workspace symbols, semantic tokens, and folding. <!-- feature: language-services -->
+- Scope-aware Lua analysis backed by a parser plus tolerant fallback scanning for incomplete buffers. <!-- feature: scope-and-fallback -->
+- Embedded Lua analysis in `.menu` files for backtick chunks, `lua "..."` expressions, action/open/close/escape blocks, and `enabled`/`clickable` expressions. <!-- feature: embedded-lua -->
+- Source-driven API data from official sources only, with immutable upstream provenance. <!-- feature: source-provenance -->
+- Full EE Game Lua and EEex function completion, hover, signature help, and source definitions, including namespace members, colon methods, typed instance aliases, parameter defaults, return values, warnings, notes, examples, and tables. <!-- feature: function-api -->
+- Full EE Game Structures (x64) layout metadata: structure and field completion, annotation-aware member resolution, chained field hover, exact source definitions, types, offsets, and byte sizes. <!-- feature: structure-api -->
 
 ## Screenshots
 

@@ -23,7 +23,11 @@ export interface AnalyzeOptions {
 
 export function analyzeDocument(options: AnalyzeOptions): AnalyzedDocument {
   const settings = options.settings ?? defaultSettings;
-  const base = analyzeLuaText(options.languageId === 'ie-menu' ? '' : options.text, settings.dialect, options.luaparse);
+  const base = analyzeLuaText(
+    options.languageId === 'ie-menu' ? '' : options.text,
+    settings.dialect,
+    options.luaparse,
+  );
 
   if (options.languageId !== 'ie-menu') {
     return {
@@ -51,25 +55,49 @@ export function analyzeDocument(options: AnalyzeOptions): AnalyzedDocument {
       };
     };
 
-    base.bindingsComplete = base.bindingsComplete === true && analyzedRegion.bindingsComplete === true;
-    const remapped = new Map(analyzedRegion.symbols.map(symbol => {
-      const bindingId = symbol.bindingId?.startsWith('local:') ? `${region.id}:${symbol.bindingId}` : symbol.bindingId;
-      return [symbol, {
-        ...symbol,
-        ...(bindingId ? { bindingId } : {}),
-        location: remapLocation(symbol.location),
-        ...(symbol.scopeRange ? { scopeRange: symbol.bindingId?.startsWith('global:')
-          ? { start: 0, end: options.text.length }
-          : { start: mapVirtualOffsetToHost(region, symbol.scopeRange.start), end: mapVirtualOffsetToHost(region, symbol.scopeRange.end) } } : {}),
-        ...(symbol.visibleFrom !== undefined ? { visibleFrom: mapVirtualOffsetToHost(region, symbol.visibleFrom) } : {}),
-      }];
-    }));
+    base.bindingsComplete =
+      base.bindingsComplete === true && analyzedRegion.bindingsComplete === true;
+    const remapped = new Map(
+      analyzedRegion.symbols.map((symbol) => {
+        const bindingId = symbol.bindingId?.startsWith('local:')
+          ? `${region.id}:${symbol.bindingId}`
+          : symbol.bindingId;
+        return [
+          symbol,
+          {
+            ...symbol,
+            ...(bindingId ? { bindingId } : {}),
+            location: remapLocation(symbol.location),
+            ...(symbol.scopeRange
+              ? {
+                  scopeRange: symbol.bindingId?.startsWith('global:')
+                    ? { start: 0, end: options.text.length }
+                    : {
+                        start: mapVirtualOffsetToHost(region, symbol.scopeRange.start),
+                        end: mapVirtualOffsetToHost(region, symbol.scopeRange.end),
+                      },
+                }
+              : {}),
+            ...(symbol.visibleFrom !== undefined
+              ? { visibleFrom: mapVirtualOffsetToHost(region, symbol.visibleFrom) }
+              : {}),
+          },
+        ];
+      }),
+    );
     base.symbols.push(...remapped.values());
-    base.references.push(...analyzedRegion.references.map(reference => ({
-      ...reference,
-      ...(reference.resolvedDeclaration ? { resolvedDeclaration: remapped.get(reference.resolvedDeclaration) ?? reference.resolvedDeclaration } : {}),
-      location: remapLocation(reference.location),
-    })));
+    base.references.push(
+      ...analyzedRegion.references.map((reference) => ({
+        ...reference,
+        ...(reference.resolvedDeclaration
+          ? {
+              resolvedDeclaration:
+                remapped.get(reference.resolvedDeclaration) ?? reference.resolvedDeclaration,
+            }
+          : {}),
+        location: remapLocation(reference.location),
+      })),
+    );
     base.semanticTokens.push(
       ...analyzedRegion.semanticTokens.map((token) => ({
         ...token,
@@ -90,9 +118,12 @@ export function analyzeDocument(options: AnalyzeOptions): AnalyzedDocument {
     );
   }
 
-  const globals = new Map(base.symbols.filter(s => s.bindingId?.startsWith('global:')).map(s => [s.name, s]));
+  const globals = new Map(
+    base.symbols.filter((s) => s.bindingId?.startsWith('global:')).map((s) => [s.name, s]),
+  );
   for (const reference of base.references) {
-    if (!reference.resolvedDeclaration && globals.has(reference.name)) reference.resolvedDeclaration = globals.get(reference.name)!;
+    if (!reference.resolvedDeclaration && globals.has(reference.name))
+      reference.resolvedDeclaration = globals.get(reference.name)!;
   }
 
   return {

@@ -145,7 +145,11 @@ connection.onCompletion(async (params) => {
         )
       : filterGlobalApiSymbols(apiIndex, settings);
   const analysis = document && !memberReceiver ? await getOrAnalyze(document) : undefined;
-  const workspaceNames = new Set(analysis ? visibleSymbols(analysis, document!.offsetAt(params.position)).map(symbol => symbol.name) : []);
+  const workspaceNames = new Set(
+    analysis
+      ? visibleSymbols(analysis, document!.offsetAt(params.position)).map((symbol) => symbol.name)
+      : [],
+  );
 
   const completionSymbols = apiSymbols.flatMap((symbol) => {
     const primary = { symbol, label: completionLabel(symbol, memberReceiver) };
@@ -159,23 +163,25 @@ connection.onCompletion(async (params) => {
   });
 
   return [
-    ...completionSymbols.filter(({ label }) => !workspaceNames.has(label)).map(({ symbol, label }): CompletionItem => {
-      const item: CompletionItem = {
-        label,
-        kind: toCompletionKind(symbol.kind),
-        documentation: toMarkdownDocumentation(symbol),
-        data: {
-          apiSymbolId: symbol.id,
-        },
-      };
-      const callableView = makeApiCallableView(symbol, label);
-      if (callableView) {
-        item.detail = callableView.signature;
-      } else if (symbol.signature) {
-        item.detail = symbol.signature;
-      }
-      return item;
-    }),
+    ...completionSymbols
+      .filter(({ label }) => !workspaceNames.has(label))
+      .map(({ symbol, label }): CompletionItem => {
+        const item: CompletionItem = {
+          label,
+          kind: toCompletionKind(symbol.kind),
+          documentation: toMarkdownDocumentation(symbol),
+          data: {
+            apiSymbolId: symbol.id,
+          },
+        };
+        const callableView = makeApiCallableView(symbol, label);
+        if (callableView) {
+          item.detail = callableView.signature;
+        } else if (symbol.signature) {
+          item.detail = symbol.signature;
+        }
+        return item;
+      }),
     ...[...workspaceNames].map((name) => ({
       label: name,
       kind: CompletionItemKind.Variable,
@@ -201,7 +207,8 @@ connection.onHover(async (params) => {
 
   const analysis = await getOrAnalyze(document);
   const local = referenceAt(analysis, document.offsetAt(params.position))?.resolvedDeclaration;
-  if (local && local.name === name) return { contents: { kind: 'markdown', value: `\`${local.kind} ${local.name}\`` } };
+  if (local && local.name === name)
+    return { contents: { kind: 'markdown', value: `\`${local.kind} ${local.name}\`` } };
 
   const settings = await getSettings(document.uri);
   const apiSymbol = findApiSymbolForExpression(
@@ -220,7 +227,9 @@ connection.onHover(async (params) => {
     };
   }
 
-  const symbol = visibleSymbols(analysis, document.offsetAt(params.position)).find(candidate => candidate.name === name);
+  const symbol = visibleSymbols(analysis, document.offsetAt(params.position)).find(
+    (candidate) => candidate.name === name,
+  );
   if (!symbol) {
     return null;
   }
@@ -327,11 +336,13 @@ connection.onReferences(async (params) => {
   const selected = referenceAt(analysis, document.offsetAt(params.position));
   if (!selected) return [];
   return analysis.references
-    .filter(reference => selected.resolvedDeclaration
-      ? reference.resolvedDeclaration?.bindingId === selected.resolvedDeclaration.bindingId
-      : !reference.resolvedDeclaration && reference.name === selected.name)
-    .filter(reference => params.context.includeDeclaration || !reference.isDeclaration)
-    .map(reference => Location.create(document.uri, toLspRange(reference.location)));
+    .filter((reference) =>
+      selected.resolvedDeclaration
+        ? reference.resolvedDeclaration?.bindingId === selected.resolvedDeclaration.bindingId
+        : !reference.resolvedDeclaration && reference.name === selected.name,
+    )
+    .filter((reference) => params.context.includeDeclaration || !reference.isDeclaration)
+    .map((reference) => Location.create(document.uri, toLspRange(reference.location)));
 });
 
 connection.onRenameRequest(async (params: RenameParams): Promise<WorkspaceEdit | null> => {
@@ -343,7 +354,13 @@ connection.onRenameRequest(async (params: RenameParams): Promise<WorkspaceEdit |
   const analysis = await getOrAnalyze(document);
   const locations = renameLocations(analysis, document.offsetAt(params.position), params.newName);
   if (!locations) return null;
-  return { changes: { [document.uri]: locations.map(location => TextEdit.replace(toLspRange(location), params.newName)) } };
+  return {
+    changes: {
+      [document.uri]: locations.map((location) =>
+        TextEdit.replace(toLspRange(location), params.newName),
+      ),
+    },
+  };
 });
 
 connection.onDocumentSymbol(async (params) => {
@@ -379,7 +396,8 @@ connection.languages.semanticTokens.on(async (params) => {
     return builder.build();
   }
   const analysis = await getOrAnalyze(document);
-  const tokens = analysis.semanticTokens.filter(token => token.location.range.start.line === token.location.range.end.line)
+  const tokens = analysis.semanticTokens
+    .filter((token) => token.location.range.start.line === token.location.range.end.line)
     .sort((a, b) => a.location.offsetRange.start - b.location.offsetRange.start);
   for (const token of tokens) {
     const range = toLspRange(token.location);

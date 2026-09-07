@@ -36,3 +36,4 @@ tests/**
 reports/**
 artifacts/**
 plan.md
+.cache/**

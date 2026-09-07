@@ -67,10 +67,17 @@ async function runProfile(vscodeExecutablePath, theme) {
       ],
       extensionTestsEnv: {
         IE_TEST_EXTENSIONS: extensions,
+        IE_TEST_WORKSPACE: workspace,
+        PACKAGE_CHANNEL: process.env.PACKAGE_CHANNEL,
         IE_TEST_REPORTS: reports,
         IE_TEST_THEME: theme,
       },
     });
+    const report = JSON.parse(fs.readFileSync(path.join(reports, 'editor.json'), 'utf8'));
+    const expected = require('../feature-inventory.json').cases.map(c => c.id);
+    if (JSON.stringify(report.cases.map(c => c.id)) !== JSON.stringify(expected) || report.cases.some(c => c.status !== 'passed')) {
+      throw new Error('Editor exited without completing the feature inventory');
+    }
   } finally {
     const logs = path.join(userData, 'logs');
     if (fs.existsSync(logs)) fs.cpSync(logs, path.join(reports, 'logs'), { recursive: true });
