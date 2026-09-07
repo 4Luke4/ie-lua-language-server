@@ -1,5 +1,6 @@
 const fs = require('node:fs');
 const path = require('node:path');
+const os = require('node:os');
 const { spawnSync } = require('node:child_process');
 const {
   downloadAndUnzipVSCode,
@@ -7,12 +8,11 @@ const {
   runTests,
 } = require('@vscode/test-electron');
 
-async function runProfile(version, vscodeExecutablePath, theme) {
+async function runProfile(vscodeExecutablePath, theme) {
   const profile = theme === 'Default High Contrast' ? 'high-contrast' : 'dark';
-  const root = path.resolve(
-    '.vscode-test',
-    `profile-${version}-${process.env.PACKAGE_CHANNEL}-${profile}`,
-  );
+  // macOS Unix sockets cannot use the checkout's long profile paths.
+  const root = fs.mkdtempSync(path.join(process.env.RUNNER_TEMP ?? os.tmpdir(), 'ie-editor-'));
+  const reports = path.resolve('reports', profile);
   const userData = path.join(root, 'user'),
     extensions = path.join(root, 'extensions'),
     workspace = path.join(root, 'workspace');
@@ -50,32 +50,37 @@ async function runProfile(version, vscodeExecutablePath, theme) {
     { stdio: 'inherit', shell: process.platform === 'win32' },
   );
   if (result.status !== 0) throw new Error(`VSIX installation failed: ${result.status}`);
-  await runTests({
-    vscodeExecutablePath,
-    extensionDevelopmentPath: path.resolve('tests/editor/harness'),
-    extensionTestsPath: path.resolve('tests/editor/suite.cjs'),
-    launchArgs: [
-      workspace,
-      '--user-data-dir',
-      userData,
-      '--extensions-dir',
-      extensions,
-      '--skip-welcome',
-      '--skip-release-notes',
-      '--disable-workspace-trust',
-    ],
-    extensionTestsEnv: {
-      IE_TEST_EXTENSIONS: extensions,
-      IE_TEST_REPORTS: path.resolve('reports', profile),
-      IE_TEST_THEME: theme,
-    },
-  });
+  try {
+    await runTests({
+      vscodeExecutablePath,
+      extensionDevelopmentPath: path.resolve('tests/editor/harness'),
+      extensionTestsPath: path.resolve('tests/editor/suite.cjs'),
+      launchArgs: [
+        workspace,
+        '--user-data-dir',
+        userData,
+        '--extensions-dir',
+        extensions,
+        '--skip-welcome',
+        '--skip-release-notes',
+        '--disable-workspace-trust',
+      ],
+      extensionTestsEnv: {
+        IE_TEST_EXTENSIONS: extensions,
+        IE_TEST_REPORTS: reports,
+        IE_TEST_THEME: theme,
+      },
+    });
+  } finally {
+    const logs = path.join(userData, 'logs');
+    if (fs.existsSync(logs)) fs.cpSync(logs, path.join(reports, 'logs'), { recursive: true });
+  }
 }
 async function main() {
   const version = process.env.VSCODE_VERSION ?? '1.100.0';
   const vscodeExecutablePath = await downloadAndUnzipVSCode(version);
   for (const theme of ['Default High Contrast', 'Default Dark Modern']) {
-    await runProfile(version, vscodeExecutablePath, theme);
+    await runProfile(vscodeExecutablePath, theme);
   }
 }
 main().catch((error) => {

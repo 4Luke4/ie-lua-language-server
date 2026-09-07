@@ -138,9 +138,7 @@ jobs:
         if: always()
         with:
           name: editor-${{ matrix.os }}-${{ matrix.editor }}-${{ matrix.channel }}
-          path: |
-            reports/
-            .vscode-test/profile-*/user/logs/
+          path: reports/
           include-hidden-files: true
           retention-days: 7
 
