@@ -5,7 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project
 adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.5.3] - Unreleased
+## [0.6.0] - Unreleased
+
+### Added
+
+- Establish the first stable channel milestone and a documented 0.6.x compatibility contract.
+- Record reproducible startup, completion, hover, editing, and document-churn measurements in GitHub Actions.
+- Cover delayed configuration responses, close/reopen races, untitled documents, safe formatting, and API reload recovery.
+
+### Fixed
+
+- Prevent stale analysis and diagnostics from crossing document versions, reopened sessions, configuration changes, or API reloads.
+- Preserve Lua string and comment contents, line endings, and final-newline state when removing trailing whitespace.
+- Validate API input before installation, retain the last good index after failed reloads, and report unavailable data through native notifications and protocol logs.
+- Make document validation with an unsupported active editor a clear no-op and report API reload success only after successful replacement.
+
+### Changed
+
+- Document open-document workspace operations, conservative formatting, and the currently unused formatter configuration setting.
+
+## [0.5.3] - 2026-09-07
 
 ### Added
 
@@ -156,6 +175,7 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 Historical dates identify repository preparation milestones; linked tags identify published prereleases where available.
 
+[0.6.0]: https://github.com/4Luke4/ie-lua-language-server/compare/main...release/0.6.0-stabilization
 [0.5.3]: https://github.com/4Luke4/ie-lua-language-server/pull/58
 [0.5.2]: https://github.com/4Luke4/ie-lua-language-server/tree/b5726a321d5d806377e4e5a73041ce1eaa280203
 [0.5.1]: https://github.com/4Luke4/ie-lua-language-server/tree/28d1b1dace7cc2520d5ee68b5dfce7746c2de7a3

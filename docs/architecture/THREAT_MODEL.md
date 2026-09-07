@@ -3,11 +3,15 @@
 The VS Code client starts a bundled Node language server over IPC. Kate and other clients run
 the same bundle over stdio. Document contents, settings, and configured API manifests are inputs;
 the server parses Lua and embedded menu text but does not execute game scripts. Its formatter
-performs whitespace edits without invoking workspace executables.
+performs targeted whitespace deletions outside strings/comments without invoking workspace executables.
+Analysis captures immutable document text, session identity, version, and configuration/API generation;
+closed or superseded work cannot publish diagnostics or repopulate the current analysis cache.
 
 API manifests resolve shards relative to their directory and reject lexical path escapes. This
 is not a filesystem sandbox against symlinks or a malicious local owner. Invalid candidate
-manifests are skipped; if no candidate loads, the server uses an empty API index. Markdown is
+manifests are skipped after runtime shape validation. Startup uses an empty API index if no candidate
+loads; failed reloads retain the last good index. Replacement is atomic, and errors report candidate
+paths without logging JSON excerpts or document contents. Markdown is
 returned as documentation, without enabling trusted command links.
 
 Documentation ingestion reads pinned upstream text and converts it to generated metadata and

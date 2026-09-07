@@ -2,7 +2,7 @@
   "name": "ie-lua-language-server",
   "displayName": "IE Lua Language Server",
   "description": "Professional Lua and Infinity Engine .menu language support for VS Code and stdio LSP clients.",
-  "version": "0.5.3",
+  "version": "0.6.0",
   "publisher": "infinity-engine-tools",
   "icon": "assets/icon.png",
   "galleryBanner": {
@@ -161,7 +161,7 @@
           "scope": "resource",
           "type": "string",
           "default": ".stylua.toml",
-          "description": "Path to the formatter configuration file, relative to the workspace folder."
+          "description": "Reserved for compatibility; currently unused. Formatting only removes trailing spaces and tabs outside Lua strings and comments, and leaves .menu documents unchanged."
         },
         "ieLua.menu.blockKeys": {
           "scope": "resource",

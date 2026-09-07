@@ -30,6 +30,28 @@ This extension targets:
 - Full EE Game Lua and EEex function completion, hover, signature help, and source definitions, including namespace members, colon methods, typed instance aliases, parameter defaults, return values, warnings, notes, examples, and tables. <!-- feature: function-api -->
 - Full EE Game Structures (x64) layout metadata: structure and field completion, annotation-aware member resolution, chained field hover, exact source definitions, types, offsets, and byte sizes. <!-- feature: structure-api -->
 
+## Stable 0.6.x contract and current limits
+
+The prepared 0.6.0 milestone targets the stable channel. Within 0.6.x, documented setting keys,
+command IDs, language IDs, and supported editor/runtime behavior remain compatible; intentional
+correctness fixes are described in the changelog. Publication status is shown in GitHub Releases.
+
+Workspace symbols and Validate Workspace cover **open documents**. Navigation and rename use
+same-document lexical bindings. API-backed member completion is not general-purpose Lua type inference.
+
+Formatting only removes trailing spaces and tabs outside Lua strings and comments. It preserves
+line endings and final-newline state, protects unfinished strings/comments, and leaves `.menu`
+documents unchanged. `ieLua.formatter.configPath` is retained for compatibility but currently unused;
+no external formatter or workspace executable is invoked.
+
+If API data is unavailable at startup, lexical language services remain usable with an empty API
+index. Failed reloads retain the previous index and display an error. Use **IE Lua: Open Server Log**
+to identify unreadable or invalid candidates, restore the data, and retry **IE Lua: Reload API Data**.
+A successful reload refreshes API services immediately; diagnostics update on the next configured
+validation trigger. Validate Document requires a supported active editor, including untitled documents.
+
+The [0.6.0 release record](docs/release/0.6.0.md) describes acceptance criteria and coverage limits.
+
 ## Screenshots
 
 The screenshots below were captured at 1440x900 from a real Visual Studio Code Extension Development Host using non-proprietary fixture snippets and Visual Studio Code's built-in **Monokai** theme. The reproducible capture steps are documented in [`docs/screenshots/README.md`](docs/screenshots/README.md).
