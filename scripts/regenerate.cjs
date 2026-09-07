@@ -1,9 +1,8 @@
 const fs = require('node:fs');
 const { execFileSync } = require('node:child_process');
 const index = JSON.parse(fs.readFileSync('resources/api/api-index.json', 'utf8'));
-const commit =
-  process.env.IE_LUA_EEEX_COMMIT ??
-  index.sources.find((s) => s.id === 'ee-game-structures-x64').commit;
+const currentCommit = index.sources.find((s) => s.id === 'ee-game-structures-x64').commit;
+const commit = process.env.IE_LUA_EEEX_COMMIT ?? currentCommit;
 // Local game metadata stays separate from upstream documentation sources.
 const utilityPath = 'resources/api/sections/ee-utility-functions.json';
 const utility = JSON.parse(fs.readFileSync(utilityPath, 'utf8'));
@@ -17,6 +16,6 @@ execFileSync(process.execPath, ['dist/tools/ingest-docs.js'], {
     IE_LUA_FETCH_EEEX: '1',
     IE_LUA_EEEX_COMMIT: commit,
     IE_LUA_PRESERVE_OTHER_SOURCES: '1',
-    IE_LUA_GENERATED_AT: index.generatedAt,
+    IE_LUA_GENERATED_AT: commit === currentCommit ? index.generatedAt : new Date().toISOString(),
   },
 });

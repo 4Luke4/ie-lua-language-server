@@ -6,8 +6,13 @@ const path = require('node:path');
 async function eventually(operation, predicate) {
   const deadline = Date.now() + 20000;
   while (Date.now() < deadline) {
-    const result = await operation();
-    if (predicate(result)) return result;
+    try {
+      const result = await operation();
+      if (predicate(result)) return result;
+    } catch (error) {
+      // VS Code cancels in-flight requests while applying theme/accessibility settings.
+      if (error?.name !== 'Canceled' && error?.name !== 'CancellationError') throw error;
+    }
     await new Promise((resolve) => setTimeout(resolve, 100));
   }
   throw new Error('Timed out waiting for editor feature');
@@ -97,15 +102,9 @@ async function run() {
     await picker;
     results.push('five commands');
     for (const theme of ['Default High Contrast', 'Default Dark Modern']) {
-      await vscode.workspace
-        .getConfiguration('workbench')
-        .update('colorTheme', theme, vscode.ConfigurationTarget.Global);
-      await vscode.workspace
-        .getConfiguration('editor')
-        .update('accessibilitySupport', 'on', vscode.ConfigurationTarget.Global);
-      await vscode.workspace
-        .getConfiguration('workbench')
-        .update('reduceMotion', 'on', vscode.ConfigurationTarget.Global);
+      await eventually(() => vscode.workspace.getConfiguration('workbench').update('colorTheme', theme, vscode.ConfigurationTarget.Global), () => true);
+      await eventually(() => vscode.workspace.getConfiguration('editor').update('accessibilitySupport', 'on', vscode.ConfigurationTarget.Global), () => true);
+      await eventually(() => vscode.workspace.getConfiguration('workbench').update('reduceMotion', 'on', vscode.ConfigurationTarget.Global), () => true);
       await eventually(
         () =>
           vscode.commands.executeCommand(

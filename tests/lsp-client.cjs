@@ -19,6 +19,7 @@ async function connect(options = {}) {
   let buffer = Buffer.alloc(0),
     id = 0,
     stderr = '';
+  console.log(`LSP process started: ${child.pid}`);
   const pending = new Map(),
     notifications = [];
   let settings = options.settings ?? {};
@@ -61,6 +62,7 @@ async function connect(options = {}) {
       } else if (message.id !== undefined) {
         const entry = pending.get(message.id);
         if (entry) {
+          console.log(`LSP response ${message.id}`);
           clearTimeout(entry.timer);
           pending.delete(message.id);
           if (message.error) entry.reject(new Error(JSON.stringify(message.error)));
@@ -72,6 +74,7 @@ async function connect(options = {}) {
   const request = (method, params) =>
     new Promise((resolve, reject) => {
       const requestId = ++id;
+      console.log(`LSP request ${requestId}: ${method}`);
       const timer = setTimeout(() => {
         pending.delete(requestId);
         reject(new Error(`Timed out: ${method}\n${stderr}`));
@@ -118,7 +121,7 @@ async function connect(options = {}) {
     rootUri: null,
     capabilities: { workspace: { configuration: true } },
     initializationOptions: options.initializationOptions,
-  });
+  }).catch((error) => { child.kill(); throw error; });
   notify('initialized', {});
   return {
     request,
