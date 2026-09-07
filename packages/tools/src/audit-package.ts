@@ -291,7 +291,10 @@ function auditSectionFile(
     if (splitSections.has(expectedSection) && symbol.licenseStatus !== 'allowed') {
       throw new Error(`Upstream symbol metadata is inconsistent: ${symbol.id ?? '?'}`);
     }
-    if (symbol.documentationState !== 'documented' && symbol.documentationState !== 'undocumented') {
+    if (
+      symbol.documentationState !== 'documented' &&
+      symbol.documentationState !== 'undocumented'
+    ) {
       throw new Error(`Unknown documentation state: ${symbol.id ?? '?'}`);
     }
     if (symbol.sourceSection !== expectedSection) {

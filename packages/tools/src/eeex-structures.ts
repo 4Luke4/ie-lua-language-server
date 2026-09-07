@@ -96,10 +96,7 @@ export function parseEeexStructureSymbols(options: EeexStructureParseOptions): A
     const headingIndex = lines.findIndex((line, i) => i > 0 && /^[=^~-]{3,}\s*$/u.test(line));
     let tableStart = headerIndex;
     while (tableStart > 0 && /^\+[+\-=]+\s*$/u.test(lines[tableStart - 1] ?? '')) tableStart -= 1;
-    const narrativeLines = [
-      ...lines.slice(headingIndex + 1, tableStart),
-      ...lines.slice(tableEnd),
-    ];
+    const narrativeLines = [...lines.slice(headingIndex + 1, tableStart), ...lines.slice(tableEnd)];
     while (narrativeLines.length) {
       const last = narrativeLines[narrativeLines.length - 1]?.trim() ?? '';
       if (last && !/^-{3,}$/u.test(last)) break;
