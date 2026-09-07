@@ -5,3 +5,6 @@ coverage/
 *.vsix
 samples/
 specs.md
+reports/
+artifacts/
+plan.md

@@ -12,7 +12,7 @@ The README screenshots are captured from the packaged extension in a real Visual
    }
    ```
 
-3. Build the extension with Node.js 24 using `npm ci --no-audit --progress=false` and `npm run bundle`.
+3. Download the verified VSIX from the CI run for the desired commit. Capture verification screenshots in the Actions editor-host job; do not build or run feature checks locally.
 4. Launch VS Code with `--extensionDevelopmentPath` pointing at this checkout, the temporary profile directories, and a non-proprietary fixture workspace.
 5. Confirm that `workbench.colorTheme` resolves to exactly `Monokai` before capture; do not substitute a similarly named third-party theme.
 6. Set the window to 1440x900. Capture PNG images for EEex function completion, EEex hover documentation, EEex signature help, annotation-aware x64 structure member completion, embedded `.menu` diagnostics, and document symbols.

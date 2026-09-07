@@ -1,4 +1,5 @@
 import type { ApiSymbol } from '@ie-lua/shared';
+import { renderRstMarkdown } from './eeex-functions';
 
 const sourceSection = 'ee-game-structures-x64' as const;
 const sourceDirectory = 'EE Game Structures (x64)';
@@ -12,8 +13,7 @@ export interface EeexStructureParseOptions {
 /**
  * Converts one upstream RST index into structure and field symbols.
  *
- * Narrative paragraphs are intentionally excluded. The generated metadata is limited to
- * layout facts: names, types, offsets, sizes, source locations, and pinned provenance.
+ * Layout rows and surrounding narrative retain independent metadata and pinned provenance.
  */
 export function parseEeexStructureSymbols(options: EeexStructureParseOptions): ApiSymbol[] {
   const anchors = [...options.text.matchAll(/^\.\. _(.+):\s*$/gmu)];
@@ -38,10 +38,12 @@ export function parseEeexStructureSymbols(options: EeexStructureParseOptions): A
     const anchorLine = lineNumberAt(options.text, blockStart);
     const fields: ApiSymbol[] = [];
     let tableStarted = false;
+    let tableEnd = headerIndex + 1;
 
     for (let lineIndex = headerIndex + 1; lineIndex < lines.length; lineIndex += 1) {
       const line = lines[lineIndex] ?? '';
       if (!line.trim() && tableStarted) {
+        tableEnd = lineIndex;
         break;
       }
       if (!line.startsWith('|')) {
@@ -85,12 +87,22 @@ export function parseEeexStructureSymbols(options: EeexStructureParseOptions): A
         dataType,
         byteOffset: offset,
         ...(byteSize === undefined ? { sizeExpression: rawSize } : { byteSize }),
-        documentationState: 'permission-gated',
+        documentationState: 'undocumented',
         upstreamUrl: makeSourceUrl(options.commit, options.indexPath, anchorLine + lineIndex),
         upstreamCommit: options.commit,
-        licenseStatus: 'permission-gated',
+        licenseStatus: 'allowed',
       });
     }
+
+    // Omit the title and layout grid, but retain prose before and after the grid.
+    const headingIndex = lines.findIndex((line, i) => i > 0 && /^[=^~-]{3,}\s*$/u.test(line));
+    let tableStart = headerIndex;
+    while (tableStart > 0 && /^\+[+\-=]+\s*$/u.test(lines[tableStart - 1] ?? '')) tableStart -= 1;
+    const narrative = [
+      ...lines.slice(headingIndex + 1, tableStart),
+      ...lines.slice(tableEnd).filter((line, i, tail) => !(i === tail.length - 1 && /^-{3,}\s*$/u.test(line))),
+    ].join('\n').trim().replace(/(?:\n\s*)*-{3,}\s*$/u, '');
+    const documentationMarkdown = renderRstMarkdown(narrative, options.indexPath);
 
     symbols.push({
       id: `${sourceSection}:${structureName}`,
@@ -109,10 +121,11 @@ export function parseEeexStructureSymbols(options: EeexStructureParseOptions): A
           ? { sizeExpression: rawTotalSize }
           : {}),
       memberCount: fields.length,
-      documentationState: 'permission-gated',
+      ...(documentationMarkdown ? { documentationMarkdown } : {}),
+      documentationState: documentationMarkdown ? 'documented' : 'undocumented',
       upstreamUrl: makeSourceUrl(options.commit, options.indexPath, anchorLine),
       upstreamCommit: options.commit,
-      licenseStatus: 'permission-gated',
+      licenseStatus: 'allowed',
     });
     symbols.push(...fields);
   }

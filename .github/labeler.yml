@@ -3,7 +3,7 @@
 github_actions:
   - changed-files:
       - any-glob-to-any-file:
-          - .github/dependabot.yml
+          - .github/**
           - .github/workflows/**
 
 dependencies:
@@ -11,6 +11,7 @@ dependencies:
       - any-glob-to-any-file:
           - package.json
           - package-lock.json
+          - packages/*/package.json
 
 documentation:
   - changed-files:
@@ -21,6 +22,8 @@ documentation:
           - SECURITY.md
           - THIRD_PARTY_NOTICES.md
           - docs/**
+          - "**/AGENTS.md"
+          - AGENTS.md
 
 javascript:
   - changed-files:

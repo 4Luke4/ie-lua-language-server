@@ -19,7 +19,7 @@ CGameObject
 
 **Notes**
 
-Narrative text must not be copied.
+The object retains its original position.
 
 .. _CGameSprite\\:\\:GroundItem:
 
@@ -33,7 +33,7 @@ CGameSprite::GroundItem
 +------------+---------------------+----------------+-----------+
 `;
 
-void test('parses x64 structure layouts without narrative prose or padding', () => {
+void test('parses x64 layouts and retains narrative without inventing field prose', () => {
   const symbols = parseEeexStructureSymbols({
     commit: '0123456789abcdef0123456789abcdef01234567',
     indexPath: 'CG/index.rst',
@@ -59,10 +59,9 @@ void test('parses x64 structure layouts without narrative prose or padding', () 
     symbols.some((symbol) => symbol.name.includes('padding')),
     false,
   );
-  assert.equal(
-    symbols.some((symbol) => symbol.documentationMarkdown?.includes('Narrative')),
-    false,
-  );
+  assert.match(structure?.documentationMarkdown ?? '', /The object retains its original position/u);
+  assert.equal(structure?.documentationState, 'documented');
+  assert.equal(structure?.licenseStatus, 'allowed');
 });
 
 void test('normalizes escaped nested C++ structure names', () => {

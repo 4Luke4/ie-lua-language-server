@@ -58,7 +58,7 @@ function makeSources(eeexCommit: string | undefined): ApiSource[] {
       title: 'EE Game Structures (x64)',
       url: `https://github.com/Bubb13/EEex-Docs/tree/${eeexRef}/source/EE%20Game%20Structures%20(x64)`,
       ...(eeexCommit ? { commit: eeexCommit } : {}),
-      licenseStatus: 'permission-gated',
+      licenseStatus: 'allowed',
     },
     {
       id: 'lua52',
@@ -76,7 +76,7 @@ function makeSources(eeexCommit: string | undefined): ApiSource[] {
       id: 'ee-utility-functions',
       title: 'EE Utility Functions',
       url: 'local-untracked:samples/util.lua',
-      licenseStatus: 'permission-gated',
+      licenseStatus: 'unknown',
     },
   ];
 }
@@ -104,7 +104,13 @@ interface GeneratedShard {
 async function main(): Promise<void> {
   const shouldFetchEeex = process.env.IE_LUA_FETCH_EEEX === '1';
   const eeexCommit = shouldFetchEeex ? await resolveEeexCommit() : readExistingEeexCommit();
-  const localSymbols: ApiSymbol[] = [
+  const preserveOtherSources = process.env.IE_LUA_PRESERVE_OTHER_SOURCES === '1';
+  const localSymbols: ApiSymbol[] = preserveOtherSources
+    ? ['lua52', 'luajit', 'ee-utility-functions'].flatMap((id) => {
+        const section = JSON.parse(fs.readFileSync(path.resolve(sectionDirectory, `${id}.json`), 'utf8')) as ApiSectionFile;
+        return section.symbols;
+      })
+    : [
     ...(process.env.IE_LUA_SCAN_LOCAL_UTIL === '1'
       ? scanUtilityFunctions(path.resolve(repoRoot, 'samples/util.lua'))
       : []),
@@ -115,7 +121,9 @@ async function main(): Promise<void> {
     ? await fetchEeexShards(eeexCommit!)
     : loadExistingEeexShards();
   const sources = makeSources(eeexCommit);
-  const generatedAt = new Date().toISOString();
+  // A supplied timestamp makes a pinned-source regeneration byte-for-byte reproducible.
+  const generatedAt = process.env.IE_LUA_GENERATED_AT ?? new Date().toISOString();
+  if (!Number.isFinite(Date.parse(generatedAt))) throw new Error('Invalid generation timestamp');
   const initialShards: GeneratedShard[] = [
     ...eeexShards,
     ...sources
@@ -183,7 +191,9 @@ async function main(): Promise<void> {
     };
     const filePath = path.resolve(outputDirectory, relativeFile);
     fs.mkdirSync(path.dirname(filePath), { recursive: true });
-    fs.writeFileSync(filePath, `${JSON.stringify(section, null, 2)}\n`, 'utf8');
+    if (!preserveOtherSources || eeexSourceSections.has(shard.sourceSection)) {
+      fs.writeFileSync(filePath, `${JSON.stringify(section, null, 2)}\n`, 'utf8');
+    }
   }
   removeStaleSectionFiles(expectedFiles);
 
@@ -965,7 +975,7 @@ function scanUtilityFunctions(filePath: string): ApiSymbol[] {
       parameters,
       documentationState: 'undocumented',
       upstreamUrl: 'local-untracked:samples/util.lua',
-      licenseStatus: 'permission-gated',
+      licenseStatus: 'unknown',
     });
   }
 

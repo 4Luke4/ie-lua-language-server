@@ -179,3 +179,7 @@ samples/
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# Actions test outputs
+reports/
+artifacts/

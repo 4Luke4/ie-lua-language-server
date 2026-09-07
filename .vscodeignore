@@ -28,3 +28,11 @@ eslint.config.js
 .gitattributes
 .gitmessage
 .stylua.toml
+
+AGENTS.md
+**/AGENTS.md
+scripts/**
+tests/**
+reports/**
+artifacts/**
+plan.md

@@ -20,8 +20,8 @@ export type SourceSectionId =
 export type ApiSymbolKind =
   'function' | 'method' | 'module' | 'structure' | 'field' | 'variable' | 'keyword' | 'annotation';
 
-export type DocumentationState = 'documented' | 'undocumented' | 'permission-gated';
-export type LicenseStatus = 'allowed' | 'permission-gated' | 'unknown';
+export type DocumentationState = 'documented' | 'undocumented';
+export type LicenseStatus = 'allowed' | 'unknown';
 
 export interface IeLuaSettings {
   dialect: LuaDialect;

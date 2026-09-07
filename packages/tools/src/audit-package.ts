@@ -295,8 +295,8 @@ function auditSectionFile(
     ) {
       throw new Error(`EE Game Structures (x64) symbol has wrong kind: ${symbol.id ?? '?'}`);
     }
-    if (symbol.licenseStatus === 'permission-gated' && symbol.documentationMarkdown) {
-      throw new Error('Permission-gated documentation text must not be bundled.');
+    if (symbol.licenseStatus !== 'allowed' && symbol.documentationMarkdown) {
+      throw new Error('Documentation text requires an identified distributable source.');
     }
     if (
       symbol.licenseStatus === 'allowed' &&

@@ -100,12 +100,7 @@ Requirements:
 - Node.js 24 LTS on `PATH`.
 - A built checkout or unpacked VSIX containing `dist/server/server.js` and `resources/api/api-index.json`.
 
-Build from source:
-
-```sh
-npm install
-npm run bundle
-```
+Download and unpack a verified VSIX from the CI workflow artifacts or GitHub Releases. Source builds run exclusively in GitHub Actions.
 
 Install the optional `.menu` syntax definition so Kate can map `*.menu` files to the `ie-menu` LSP language id:
 
@@ -189,21 +184,9 @@ Node.js and npm are only required when building/testing this repository or when 
 
 Node.js 24 LTS and npm are required. This repository is structured as a TypeScript npm workspace.
 
-```sh
-npm install
-npm run compile
-npm test
-npm run package
-```
-
+Open a draft PR to run CI. Compilation, formatting, tests, packaging, and API generation run
+exclusively in GitHub Actions. Download verified VSIX files and maintenance patches from the run.
 The language server runs as a separate process over IPC from the VS Code extension client.
-
-Generate API metadata with:
-
-```sh
-npm run compile
-npm run ingest:docs
-```
 
 The docs-ingestion step fetches official Lua 5.2, LuaJIT, EE Game Lua Function, and EEex Function documentation at build time and stores the source wording as Markdown for hover, completion, and signature-help previews. RST presentation is converted to equivalent VS Code Markdown while paragraphs, emphasis, lists, tables, admonitions, links, code blocks, and visible punctuation are retained.
 
@@ -215,17 +198,17 @@ Generated API data uses a schema-v3 manifest for auditability. `resources/api/ap
 
 Lua 5.2, LuaJIT, and optional local utility metadata remain single-file sections under `resources/api/sections/`. Category filenames are derived deterministically from upstream names rather than maintained as a hardcoded list.
 
-Set `IE_LUA_FETCH_EEEX=1` when running `npm run ingest:docs` to refresh EEex metadata. The generator resolves the latest `dev` revision by default; set `IE_LUA_EEEX_COMMIT` to a full commit SHA for a reproducible run. Function ingestion discovers every standalone EE Game function page, every game function defined directly in a category index, and every `EEex_*` function anchor from the pinned tree. It rejects incomplete or malformed input and records exact commit-and-line provenance. Structure layouts include names, fields, types, offsets, byte sizes, and pinned source lines; EE Game Structures narrative prose remains permission-gated and is not bundled.
+The Actions ingestion job sets `IE_LUA_FETCH_EEEX=1` to refresh EEex metadata. The generator resolves the latest `dev` revision by default; set `IE_LUA_EEEX_COMMIT` to a full commit SHA for a reproducible run. Function ingestion discovers every standalone EE Game function page, every game function defined directly in a category index, and every `EEex_*` function anchor from the pinned tree. It rejects incomplete or malformed input and records exact commit-and-line provenance. Structure help includes names, fields, types, offsets, byte sizes, upstream narrative, and pinned source lines.
 
 The scheduled **Update EEex API data** workflow checks the upstream repository daily. When its revision changes, the workflow regenerates and verifies the API data on a dedicated branch and opens a pull request for review; it never executes upstream code.
 
-Local game files under `samples/` are ignored because they may contain proprietary official content. Set `IE_LUA_SCAN_LOCAL_UTIL=1` only when you intentionally want a local docs-ingestion run to derive EE Utility Function metadata from an untracked `samples/util.lua` file.
+Local game files under `samples/` are ignored because they may contain proprietary official content. Set `IE_LUA_SCAN_LOCAL_UTIL=1` only when you intentionally want an ingestion run in an approved Actions environment to derive EE Utility Function metadata from an untracked `samples/util.lua` file.
 
 ## Release Process
 
 Stable and prerelease publishing instructions are maintained in `docs/release.md`.
 
-Use `npm run package` for a stable VSIX and `npm run package:pre-release` for a Marketplace prerelease VSIX. The prerelease path uses VS Code's `--pre-release` flag; do not put a SemVer prerelease suffix in `package.json.version`.
+CI audits both stable and prerelease VSIX files; select the intended channel in the Release workflow. The prerelease path uses VS Code's `--pre-release` flag; do not put a SemVer prerelease suffix in `package.json.version`.
 
 ## Documentation Provenance
 

@@ -9,6 +9,9 @@ updates:
       prefix: chore
       include: scope
     ignore:
+      # The extension intentionally supports the VS Code 1.100 API baseline.
+      - dependency-name: "@types/vscode"
+        update-types: [version-update:semver-minor, version-update:semver-major]
       # Remove when the TypeScript ESLint toolchain supports TypeScript 7.
       - dependency-name: typescript
         versions:
@@ -21,3 +24,7 @@ updates:
     commit-message:
       prefix: ci
       include: scope
+    groups:
+      codeql:
+        patterns:
+          - github/codeql-action*

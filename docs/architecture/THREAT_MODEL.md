@@ -1,0 +1,28 @@
+# Architecture and trust boundaries
+
+The VS Code client starts a bundled Node language server over IPC. Kate and other clients run
+the same bundle over stdio. Document contents, settings, and configured API manifests are inputs;
+the server parses Lua and embedded menu text but does not execute game scripts. Its formatter
+performs whitespace edits without invoking workspace executables.
+
+API manifests resolve shards relative to their directory and reject lexical path escapes. This
+is not a filesystem sandbox against symlinks or a malicious local owner. Invalid candidate
+manifests are skipped; if no candidate loads, the server uses an empty API index. Markdown is
+returned as documentation, without enabling trusted command links.
+
+Documentation ingestion reads pinned upstream text and converts it to generated metadata and
+Markdown. It never runs upstream build scripts. Source identity, category counts, source lines,
+and generated-file integrity are audited. Local game samples are excluded from releases.
+
+Dependencies execute during installation/building in disposable GitHub-hosted runners. PR
+verification has read-only repository access and no publication credentials. Label and merge
+automation uses trusted base configuration without checking out PR code. Publication and branch
+creation have narrowly scoped write jobs; generated artifact contents are not shell commands.
+
+CodeQL and dependency review remain independent gates. Release publication consumes verified
+artifacts from its own run and targets its selected commit. Existing tags/releases are never
+replaced. Secrets, local profiles, and raw environment dumps must not enter artifacts.
+
+Residual limits: this is not a sandbox for a compromised editor or local filesystem. Stdio tests
+cover the server contract used by Kate, not Kate GUI interactions. Hosted-runner matrices cover
+their reported OS and architecture, not every operating-system release or CPU architecture.

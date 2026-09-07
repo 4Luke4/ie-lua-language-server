@@ -28,66 +28,18 @@ jobs:
         uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         with:
           script: |
-            const desiredLabels = [
-              {
-                name: 'github_actions',
-                color: '2088FF',
-                description: 'Changes to GitHub Actions or Dependabot configuration',
-              },
-              {
-                name: 'dependencies',
-                color: '0366D6',
-                description: 'Changes to dependency manifests or lockfiles',
-              },
-              {
-                name: 'documentation',
-                color: '0075CA',
-                description: 'Documentation-only or documentation-affecting changes',
-              },
-              {
-                name: 'javascript',
-                color: 'F1E05A',
-                description: 'JavaScript or TypeScript source changes',
-              },
-            ];
-            const existingLabels = await github.paginate(
-              github.rest.issues.listLabelsForRepo,
-              {
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                per_page: 100,
-              },
-            );
-            const existingByName = new Map(
-              existingLabels.map((label) => [label.name.toLowerCase(), label]),
-            );
-
-            for (const desired of desiredLabels) {
-              const existing = existingByName.get(desired.name.toLowerCase());
-              if (!existing) {
-                await github.rest.issues.createLabel({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  ...desired,
-                });
-                continue;
-              }
-
-              if (
-                existing.name !== desired.name ||
-                existing.color.toUpperCase() !== desired.color ||
-                (existing.description ?? '') !== desired.description
-              ) {
-                await github.rest.issues.updateLabel({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  name: existing.name,
-                  new_name: desired.name,
-                  color: desired.color,
-                  description: desired.description,
-                });
-              }
-            }
+            const scope = { owner: context.repo.owner, repo: context.repo.repo };
+            const ref = context.payload.pull_request.base.sha;
+            const read = async (path) => {
+              const { data } = await github.rest.repos.getContent({ ...scope, path, ref });
+              return Buffer.from(data.content, 'base64').toString('utf8');
+            };
+            const definitions = JSON.parse(await read('.github/labels.json'));
+            // Only base-revision code is evaluated; never fetch executable code from the PR head.
+            const implementation = await read('.github/scripts/reconcile-labels.cjs');
+            const trustedModule = { exports: {} };
+            new Function('module', implementation)(trustedModule);
+            await trustedModule.exports(github, context, definitions);
       - name: Apply labels
         uses: actions/labeler@bf12e9b00b37c5c0ca2b87b79b2daf7891dbda13 # v7.0.0
         with:

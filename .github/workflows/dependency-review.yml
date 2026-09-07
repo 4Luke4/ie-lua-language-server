@@ -7,8 +7,6 @@ on:
 
 permissions:
   contents: read
-  # Required only to publish a concise report when the review fails.
-  pull-requests: write
 
 concurrency:
   group: dependency-review-${{ github.event.pull_request.number }}
@@ -32,6 +30,6 @@ jobs:
           # so vulnerabilities in every dependency scope are relevant to this project.
           fail-on-scopes: runtime, development, unknown
           fail-on-severity: moderate
-          comment-summary-in-pr: on-failure
+          comment-summary-in-pr: never
           retry-on-snapshot-warnings: true
           show-patched-versions: true

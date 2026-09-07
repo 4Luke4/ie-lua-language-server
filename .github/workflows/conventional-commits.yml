@@ -6,6 +6,7 @@ on:
       - opened
       - reopened
       - synchronize
+      - edited
 
 permissions:
   contents: read
@@ -25,9 +26,9 @@ jobs:
         uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         with:
           script: |
-            // Conventional Commits permits custom lowercase types in addition to feat and fix.
+            // Squash titles and individual commits follow the same repository policy.
             const conventionalHeader =
-              /^[a-z][a-z0-9-]*(?:\([^()\r\n]+\))?!?: \S.*$/u;
+              /^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(?:\([^()\r\n]+\))?!?: \S.*$/u;
             const commits = await github.paginate(github.rest.pulls.listCommits, {
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -36,10 +37,13 @@ jobs:
             });
             const invalid = commits.flatMap((commit) => {
               const header = commit.commit.message.split(/\r?\n/u, 1)[0] ?? '';
-              return conventionalHeader.test(header)
+              return header.length <= 100 && conventionalHeader.test(header)
                 ? []
                 : [`${commit.sha.slice(0, 7)}  ${header || '<empty message>'}`];
             });
+
+            const title = context.payload.pull_request.title;
+            if (title.length > 100 || !conventionalHeader.test(title)) invalid.push(`PR title: ${title}`);
 
             if (invalid.length > 0) {
               core.setFailed(
