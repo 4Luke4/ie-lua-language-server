@@ -7,9 +7,12 @@ const {
   runTests,
 } = require('@vscode/test-electron');
 
-async function main() {
-  const version = process.env.VSCODE_VERSION ?? '1.100.0';
-  const root = path.resolve('.vscode-test', `profile-${version}-${process.env.PACKAGE_CHANNEL}`);
+async function runProfile(version, vscodeExecutablePath, theme) {
+  const profile = theme === 'Default High Contrast' ? 'high-contrast' : 'dark';
+  const root = path.resolve(
+    '.vscode-test',
+    `profile-${version}-${process.env.PACKAGE_CHANNEL}-${profile}`,
+  );
   const userData = path.join(root, 'user'),
     extensions = path.join(root, 'extensions'),
     workspace = path.join(root, 'workspace');
@@ -25,9 +28,12 @@ async function main() {
       'telemetry.telemetryLevel': 'off',
       'workbench.startupEditor': 'none',
       'window.titleBarStyle': 'custom',
+      // Configure before startup: live accessibility changes can terminate the test host.
+      'workbench.colorTheme': theme,
+      'editor.accessibilitySupport': 'on',
+      'workbench.reduceMotion': 'on',
     }),
   );
-  const vscodeExecutablePath = await downloadAndUnzipVSCode(version);
   const [cli, ...args] = resolveCliArgsFromVSCodeExecutablePath(vscodeExecutablePath);
   const result = spawnSync(
     cli,
@@ -60,9 +66,17 @@ async function main() {
     ],
     extensionTestsEnv: {
       IE_TEST_EXTENSIONS: extensions,
-      IE_TEST_REPORTS: path.resolve('reports'),
+      IE_TEST_REPORTS: path.resolve('reports', profile),
+      IE_TEST_THEME: theme,
     },
   });
+}
+async function main() {
+  const version = process.env.VSCODE_VERSION ?? '1.100.0';
+  const vscodeExecutablePath = await downloadAndUnzipVSCode(version);
+  for (const theme of ['Default High Contrast', 'Default Dark Modern']) {
+    await runProfile(version, vscodeExecutablePath, theme);
+  }
 }
 main().catch((error) => {
   console.error(error);

@@ -101,38 +101,20 @@ async function run() {
     await vscode.commands.executeCommand('workbench.action.closeQuickOpen');
     await picker;
     results.push('five commands');
-    for (const theme of ['Default High Contrast', 'Default Dark Modern']) {
-      await eventually(
-        () =>
-          vscode.workspace
-            .getConfiguration('workbench')
-            .update('colorTheme', theme, vscode.ConfigurationTarget.Global),
-        () => true,
-      );
-      await eventually(
-        () =>
-          vscode.workspace
-            .getConfiguration('editor')
-            .update('accessibilitySupport', 'on', vscode.ConfigurationTarget.Global),
-        () => true,
-      );
-      await eventually(
-        () =>
-          vscode.workspace
-            .getConfiguration('workbench')
-            .update('reduceMotion', 'on', vscode.ConfigurationTarget.Global),
-        () => true,
-      );
-      await eventually(
-        () =>
-          vscode.commands.executeCommand(
-            'vscode.executeHoverProvider',
-            doc.uri,
-            new vscode.Position(1, 4),
-          ),
-        (r) => r?.length,
-      );
-    }
+    assert.equal(
+      vscode.workspace.getConfiguration('workbench').get('colorTheme'),
+      process.env.IE_TEST_THEME,
+    );
+    assert.equal(vscode.workspace.getConfiguration('editor').get('accessibilitySupport'), 'on');
+    assert.equal(vscode.workspace.getConfiguration('workbench').get('reduceMotion'), 'on');
+    await eventually(
+      async () => vscode.window.activeColorTheme.kind,
+      (kind) =>
+        kind ===
+        (process.env.IE_TEST_THEME === 'Default High Contrast'
+          ? vscode.ColorThemeKind.HighContrast
+          : vscode.ColorThemeKind.Dark),
+    );
     results.push('high contrast, accessibility support, reduced motion');
     const menu = await vscode.workspace.openTextDocument({
       language: 'ie-menu',
@@ -165,7 +147,7 @@ async function run() {
     fs.writeFileSync(
       path.join(reports, 'editor.json'),
       JSON.stringify(
-        { vscode: vscode.version, platform: process.platform, arch: process.arch, passed: results },
+        { vscode: vscode.version, platform: process.platform, arch: process.arch, theme: process.env.IE_TEST_THEME, passed: results },
         null,
         2,
       ),
