@@ -90,9 +90,9 @@ function main() {
   );
   validateLabels(json('.github/labels.json'), readYaml('.github/labeler.yml'));
   const workflows = fs
-      .readdirSync('.github/workflows')
-      .filter((f) => f.endsWith('.yml'))
-      .map((f) => [f, readYaml(`.github/workflows/${f}`)]);
+    .readdirSync('.github/workflows')
+    .filter((f) => f.endsWith('.yml'))
+    .map((f) => [f, readYaml(`.github/workflows/${f}`)]);
   validateWorkflows(workflows);
   validateVerificationGraph(workflows);
   for (const file of [
@@ -160,10 +160,19 @@ function validateVerificationGraph(workflows) {
     if (file === 'verify.yml') continue;
     for (const job of Object.values(workflow.jobs)) {
       for (const step of job.steps ?? []) {
-        assert.ok(!/npm (?:test\b|run test:(?:editor|lsp)\b)|vsce package/u.test(step.run ?? ''), `${file}: verification belongs in the shared suite`);
+        assert.ok(
+          !/npm (?:test\b|run test:(?:editor|lsp)\b)|vsce package/u.test(step.run ?? ''),
+          `${file}: verification belongs in the shared suite`,
+        );
       }
     }
   }
 }
-module.exports = { validHeader, validateLabels, validateVersions, validateWorkflows, validateVerificationGraph };
+module.exports = {
+  validHeader,
+  validateLabels,
+  validateVersions,
+  validateWorkflows,
+  validateVerificationGraph,
+};
 if (require.main === module) main();

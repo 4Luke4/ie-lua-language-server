@@ -101,7 +101,10 @@ scenario('activation', async ({ extension }) => {
   const doc = await document('local activated = 1');
   assert.equal(doc.languageId, 'ie-lua');
   await eventually(() => extension.isActive);
-  assert.equal(extension.packageJSON.version, '0.5.3');
+  assert.equal(
+    extension.packageJSON.version,
+    fs.readFileSync(path.join(__dirname, '../../VERSION'), 'utf8').trim(),
+  );
   const commands = await vscode.commands.getCommands(true);
   for (const { command } of extension.packageJSON.contributes.commands)
     assert.equal(commands.filter((c) => c === command).length, 1);

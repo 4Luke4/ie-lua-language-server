@@ -62,7 +62,10 @@ test('incomplete buffers preserve discovery without allowing guessed rename', ()
     false,
   );
   assert.equal(renameLocations(a, text.indexOf('good'), 'better'), undefined);
-  assert.equal(a.semanticTokens.filter(t => t.location.offsetRange.start === text.indexOf('good')).length, 1);
+  assert.equal(
+    a.semanticTokens.filter((t) => t.location.offsetRange.start === text.indexOf('good')).length,
+    1,
+  );
 });
 test('menu analysis excludes DSL and isolates locals while sharing document globals', () => {
   const text =
