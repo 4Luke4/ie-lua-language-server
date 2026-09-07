@@ -244,6 +244,9 @@ test('unavailable API candidates fall back to an empty index', { timeout: 30000 
   fs.copyFileSync('dist/server/server.js', server);
   fs.writeFileSync(path.join(directory, 'bad.json'), '{malformed');
   client = await connect({ server, cwd: directory, index: path.join(directory, 'bad.json') });
+  await client.waitFor((m) =>
+    m.method === 'window/showMessage' && m.params.message.includes('API data is unavailable'),
+  );
   assert.deepEqual(
     await client.request('workspace/executeCommand', {
       command: 'ieLua.showApiSource',

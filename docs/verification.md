@@ -42,7 +42,7 @@ version/session invalidation, configuration failures and recovery, separate reso
 shutdown with suspended work, versioned diagnostics, and atomic API reload recovery. Formatting
 checks assert exact deletions and preserve literal contents, line endings, and missing final newlines.
 Installed-extension cases additionally exercise untitled documents, unsupported-editor command
-behavior, both Lua dialects, and recovery from corrupted installed API data. Native notifications
+behavior, distinct folder settings and their invalidation, both Lua dialects, and recovery from corrupted installed API data. Native notifications
 use VS Code controls; their pixel layout and screen-reader announcement are not certified.
 
 The shared suite's required Responsiveness baseline job measures three fresh startups, twenty

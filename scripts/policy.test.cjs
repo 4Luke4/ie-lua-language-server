@@ -102,6 +102,13 @@ test('verification has one owner and an unconditional aggregate gate', () => {
       ['duplicate.yml', { jobs: { test: { steps: [{ run: 'npm run test:editor' }] } } }],
     ]),
   );
+  assert.throws(() =>
+    validateVerificationGraph(
+      change((w) => {
+        delete w['verify.yml'].jobs.responsiveness;
+      }),
+    ),
+  );
   const duplicate = structuredClone(workflows);
   duplicate.push(['another.yml', duplicate[0][1]]);
   assert.throws(() => validateWorkflows(duplicate), /duplicate workflow name/u);
