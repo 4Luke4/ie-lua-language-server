@@ -160,7 +160,9 @@ jobs:
       - run: node scripts/regenerate.cjs
       - run: npx --no-install prettier --write resources/api
       - name: Require reproducible committed data
-        run: git diff --exit-code -- resources/api
+        run: |
+          git diff --stat -- resources/api
+          git diff --quiet -- resources/api
       - run: npm run bundle
       - run: npm run package:audit
       - name: Save reviewable regeneration patch

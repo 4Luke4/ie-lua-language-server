@@ -6,7 +6,7 @@
     "title": "EE Game Structures (x64)",
     "url": "https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)",
     "commit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-    "licenseStatus": "permission-gated"
+    "licenseStatus": "allowed"
   },
   "title": "CV",
   "upstreamPath": "source/EE Game Structures (x64)/CV/index.rst",
@@ -19,10 +19,10 @@
       "signature": "struct CVariable (84 bytes)",
       "byteSize": 84,
       "memberCount": 1,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L46",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVariable.baseclass_0",
@@ -35,10 +35,10 @@
       "dataType": "CAreaVariable",
       "byteOffset": "0x0",
       "byteSize": 84,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L54",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVariableHash",
@@ -48,10 +48,11 @@
       "signature": "struct CVariableHash (16 bytes)",
       "byteSize": 16,
       "memberCount": 2,
-      "documentationState": "permission-gated",
+      "documentationMarkdown": "Used by the [CVariableHash Class](#CVariableHash Class)",
+      "documentationState": "documented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L60",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVariableHash.m_hashEntries",
@@ -64,10 +65,10 @@
       "dataType": "CVariable*",
       "byteOffset": "0x0",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L70",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVariableHash.m_nTableEntries",
@@ -80,10 +81,10 @@
       "dataType": "int",
       "byteOffset": "0x8",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L72",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFEvent",
@@ -93,10 +94,10 @@
       "signature": "struct CVEFEvent (224 bytes)",
       "byteSize": 224,
       "memberCount": 7,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L80",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFEvent.m_dwFlags",
@@ -109,10 +110,10 @@
       "dataType": "unsigned int",
       "byteOffset": "0x4",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L90",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFEvent.m_nRepeatRate",
@@ -125,10 +126,10 @@
       "dataType": "int",
       "byteOffset": "0x8",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L92",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFEvent.m_nResType",
@@ -141,10 +142,10 @@
       "dataType": "unsigned int",
       "byteOffset": "0xC",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L94",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFEvent.m_nTimeFrame",
@@ -157,10 +158,10 @@
       "dataType": "int",
       "byteOffset": "0x0",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L88",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFEvent.m_pad",
@@ -173,10 +174,10 @@
       "dataType": "Array<unsigned int,49>",
       "byteOffset": "0x1C",
       "byteSize": 196,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L100",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFEvent.m_res",
@@ -189,10 +190,10 @@
       "dataType": "CResRef",
       "byteOffset": "0x10",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L96",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFEvent.m_specialFlags",
@@ -205,10 +206,10 @@
       "dataType": "unsigned int",
       "byteOffset": "0x18",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L98",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCell",
@@ -218,10 +219,11 @@
       "signature": "struct CVEFVidCell (1024 bytes)",
       "byteSize": 1024,
       "memberCount": 17,
-      "documentationState": "permission-gated",
+      "documentationMarkdown": "Used by the [CVEFVidCell Class](#CVEFVidCell Class)",
+      "documentationState": "documented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L106",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCell.baseclass_0",
@@ -234,10 +236,10 @@
       "dataType": "CGameObject",
       "byteOffset": "0x0",
       "byteSize": 96,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L116",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCell.baseclass_1",
@@ -250,10 +252,10 @@
       "dataType": "CVEFVidCellBase",
       "byteOffset": "0x60",
       "byteSize": 484,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L118",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCell.m_cAlphaBam",
@@ -266,10 +268,10 @@
       "dataType": "CVidCell*",
       "byteOffset": "0x3E0",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L138",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCell.m_cShadowVidCell",
@@ -282,10 +284,10 @@
       "dataType": "CVidCell*",
       "byteOffset": "0x250",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L124",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCell.m_cVidCell",
@@ -298,10 +300,10 @@
       "dataType": "CVidCell*",
       "byteOffset": "0x248",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L122",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCell.m_done",
@@ -314,10 +316,10 @@
       "dataType": "int",
       "byteOffset": "0x3A8",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L130",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCell.m_level",
@@ -330,10 +332,10 @@
       "dataType": "unsigned __int8",
       "byteOffset": "0x3E8",
       "byteSize": 1,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L140",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCell.m_myRenderMask",
@@ -346,10 +348,10 @@
       "dataType": "unsigned int",
       "byteOffset": "0x3F4",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L150",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCell.m_nCurSound",
@@ -362,10 +364,10 @@
       "dataType": "unsigned __int8",
       "byteOffset": "0x3E9",
       "byteSize": 1,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L142",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCell.m_newDirection",
@@ -378,10 +380,10 @@
       "dataType": "int",
       "byteOffset": "0x3AC",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L132",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCell.m_newPalette",
@@ -394,10 +396,10 @@
       "dataType": "CVidBitmap",
       "byteOffset": "0x288",
       "byteSize": 288,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L128",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCell.m_palette",
@@ -410,10 +412,10 @@
       "dataType": "CVidPalette",
       "byteOffset": "0x258",
       "byteSize": 48,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L126",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCell.m_priority",
@@ -426,10 +428,10 @@
       "dataType": "int",
       "byteOffset": "0x3F8",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L152",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCell.m_renderMask",
@@ -442,10 +444,10 @@
       "dataType": "unsigned int",
       "byteOffset": "0x3EC",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L146",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCell.m_renderType",
@@ -458,10 +460,10 @@
       "dataType": "unsigned int",
       "byteOffset": "0x3F0",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L148",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCell.m_sound",
@@ -474,10 +476,10 @@
       "dataType": "CSound",
       "byteOffset": "0x3C0",
       "byteSize": 32,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L136",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCell.m_terrainTable",
@@ -490,10 +492,10 @@
       "dataType": "Array<unsigned __int8,16>",
       "byteOffset": "0x3B0",
       "byteSize": 16,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L134",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCellBase",
@@ -503,10 +505,10 @@
       "signature": "struct CVEFVidCellBase (484 bytes)",
       "byteSize": 484,
       "memberCount": 28,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L160",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCellBase.m_animationSpeed",
@@ -519,10 +521,10 @@
       "dataType": "int",
       "byteOffset": "0x2C",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L184",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCellBase.m_bltFlags",
@@ -535,10 +537,10 @@
       "dataType": "unsigned int",
       "byteOffset": "0x10",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L172",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCellBase.m_bltFlagsExtra",
@@ -551,10 +553,10 @@
       "dataType": "unsigned int",
       "byteOffset": "0x18",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L176",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCellBase.m_bltInfo",
@@ -567,10 +569,10 @@
       "dataType": "unsigned int",
       "byteOffset": "0x14",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L174",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCellBase.m_bltInfoExtra",
@@ -583,10 +585,10 @@
       "dataType": "unsigned int",
       "byteOffset": "0x1C",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L178",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCellBase.m_cAlphaBamRef",
@@ -599,10 +601,10 @@
       "dataType": "CResRef",
       "byteOffset": "0x80",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L216",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCellBase.m_cEndSoundRef",
@@ -615,10 +617,10 @@
       "dataType": "CResRef",
       "byteOffset": "0x8C",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L220",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCellBase.m_cLoopSoundRef",
@@ -631,10 +633,10 @@
       "dataType": "CResRef",
       "byteOffset": "0x78",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L214",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCellBase.m_cNewPaletteRef",
@@ -647,10 +649,10 @@
       "dataType": "CResRef",
       "byteOffset": "0x3C",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L192",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCellBase.m_cShadowVidCellRef",
@@ -663,10 +665,10 @@
       "dataType": "CResRef",
       "byteOffset": "0x8",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L170",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCellBase.m_cStartSoundRef",
@@ -679,10 +681,10 @@
       "dataType": "CResRef",
       "byteOffset": "0x70",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L212",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCellBase.m_cVidCellRef",
@@ -695,10 +697,10 @@
       "dataType": "CResRef",
       "byteOffset": "0x0",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L168",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCellBase.m_cVVCResRes",
@@ -711,10 +713,10 @@
       "dataType": "CResRef",
       "byteOffset": "0x58",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L202",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCellBase.m_direction",
@@ -727,10 +729,10 @@
       "dataType": "int",
       "byteOffset": "0x34",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L188",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCellBase.m_directionFlags",
@@ -743,10 +745,10 @@
       "dataType": "unsigned int",
       "byteOffset": "0x38",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L190",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCellBase.m_extra",
@@ -759,10 +761,10 @@
       "dataType": "Array<unsigned int,84>",
       "byteOffset": "0x94",
       "byteSize": 336,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L222",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCellBase.m_glowIntensity",
@@ -775,10 +777,10 @@
       "dataType": "unsigned int",
       "byteOffset": "0x50",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L198",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCellBase.m_glowSize",
@@ -791,10 +793,10 @@
       "dataType": "CPoint",
       "byteOffset": "0x48",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L196",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCellBase.m_height",
@@ -807,10 +809,10 @@
       "dataType": "int",
       "byteOffset": "0x44",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L194",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCellBase.m_nCurrentSequence",
@@ -823,10 +825,10 @@
       "dataType": "int",
       "byteOffset": "0x68",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L208",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCellBase.m_nDuration",
@@ -839,10 +841,10 @@
       "dataType": "int",
       "byteOffset": "0x54",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L200",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCellBase.m_nEndSequence",
@@ -855,10 +857,10 @@
       "dataType": "int",
       "byteOffset": "0x88",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L218",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCellBase.m_nLoopSequence",
@@ -871,10 +873,10 @@
       "dataType": "int",
       "byteOffset": "0x64",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L206",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCellBase.m_nStartSequence",
@@ -887,10 +889,10 @@
       "dataType": "int",
       "byteOffset": "0x60",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L204",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCellBase.m_numDirections",
@@ -903,10 +905,10 @@
       "dataType": "int",
       "byteOffset": "0x30",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L186",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCellBase.m_offset",
@@ -919,10 +921,10 @@
       "dataType": "CPoint",
       "byteOffset": "0x20",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L180",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCellBase.m_offsetFlags",
@@ -935,10 +937,10 @@
       "dataType": "unsigned int",
       "byteOffset": "0x28",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L182",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCellBase.m_sequenceFlags",
@@ -951,10 +953,10 @@
       "dataType": "unsigned int",
       "byteOffset": "0x6C",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L210",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCellFile",
@@ -964,10 +966,10 @@
       "signature": "struct CVEFVidCellFile (16 bytes)",
       "byteSize": 16,
       "memberCount": 1,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L228",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVEFVidCellFile.baseclass_0",
@@ -980,10 +982,10 @@
       "dataType": "CResHelper<CResBinary,1019>",
       "byteOffset": "0x0",
       "byteSize": 16,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L236",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidBitmap",
@@ -993,10 +995,11 @@
       "signature": "struct CVidBitmap (288 bytes)",
       "byteSize": 288,
       "memberCount": 4,
-      "documentationState": "permission-gated",
+      "documentationMarkdown": "Used by the [CVidBitmap Class](#CVidBitmap Class)",
+      "documentationState": "documented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L242",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidBitmap.baseclass_0",
@@ -1009,10 +1012,10 @@
       "dataType": "CVidImage",
       "byteOffset": "0x0",
       "byteSize": 256,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L252",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidBitmap.baseclass_1",
@@ -1025,10 +1028,10 @@
       "dataType": "CResHelper<CResBitmap,1>",
       "byteOffset": "0x100",
       "byteSize": 16,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L254",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidBitmap.m_nBitCount",
@@ -1041,10 +1044,10 @@
       "dataType": "__int16",
       "byteOffset": "0x110",
       "byteSize": 2,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L256",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidBitmap.m_szResFileName",
@@ -1057,10 +1060,10 @@
       "dataType": "CString",
       "byteOffset": "0x118",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L260",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidCell",
@@ -1070,10 +1073,11 @@
       "signature": "struct CVidCell (312 bytes)",
       "byteSize": 312,
       "memberCount": 9,
-      "documentationState": "permission-gated",
+      "documentationMarkdown": "Used by the [CVidCell Class](#CVidCell Class)",
+      "documentationState": "documented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L266",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidCell.baseclass_0",
@@ -1086,10 +1090,10 @@
       "dataType": "CVidImage",
       "byteOffset": "0x8",
       "byteSize": 256,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L278",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidCell.baseclass_1",
@@ -1102,10 +1106,10 @@
       "dataType": "CResHelper<CResCell,1000>",
       "byteOffset": "0x108",
       "byteSize": 16,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L280",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidCell.m_bPaletteChanged",
@@ -1118,10 +1122,10 @@
       "dataType": "int",
       "byteOffset": "0x120",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L288",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidCell.m_bShadowOn",
@@ -1134,10 +1138,10 @@
       "dataType": "unsigned __int8",
       "byteOffset": "0x130",
       "byteSize": 1,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L294",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidCell.m_nAnimType",
@@ -1150,10 +1154,10 @@
       "dataType": "int",
       "byteOffset": "0x11C",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L286",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidCell.m_nCurrentFrame",
@@ -1166,10 +1170,10 @@
       "dataType": "__int16",
       "byteOffset": "0x118",
       "byteSize": 2,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L282",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidCell.m_nCurrentSequence",
@@ -1182,10 +1186,10 @@
       "dataType": "unsigned __int16",
       "byteOffset": "0x11A",
       "byteSize": 2,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L284",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidCell.m_pFrame",
@@ -1198,10 +1202,10 @@
       "dataType": "frameTableEntry_st*",
       "byteOffset": "0x128",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L292",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidCell.vfptr",
@@ -1214,10 +1218,10 @@
       "dataType": "qword",
       "byteOffset": "0x0",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L276",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidCellFont",
@@ -1227,10 +1231,10 @@
       "signature": "struct CVidCellFont (312 bytes)",
       "byteSize": 312,
       "memberCount": 1,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L302",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidCellFont.baseclass_0",
@@ -1243,10 +1247,10 @@
       "dataType": "CVidCell",
       "byteOffset": "0x0",
       "byteSize": 312,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L310",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidDrawable",
@@ -1256,10 +1260,11 @@
       "signature": "struct CVidDrawable (16 bytes)",
       "byteSize": 16,
       "memberCount": 2,
-      "documentationState": "permission-gated",
+      "documentationMarkdown": "Used by the [CVidDrawable Class](#CVidDrawable Class)",
+      "documentationState": "documented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L316",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidDrawable.tex",
@@ -1272,10 +1277,10 @@
       "dataType": "void*",
       "byteOffset": "0x8",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L330",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidDrawable.texType",
@@ -1288,10 +1293,10 @@
       "dataType": "int",
       "byteOffset": "0x0",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L326",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVideo",
@@ -1301,10 +1306,11 @@
       "signature": "struct CVideo (8 bytes)",
       "byteSize": 8,
       "memberCount": 1,
-      "documentationState": "permission-gated",
+      "documentationMarkdown": "Used by the [CVideo Class](#CVideo Class)",
+      "documentationState": "documented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L336",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVideo.pCurrentMode",
@@ -1317,10 +1323,10 @@
       "dataType": "CVidMode*",
       "byteOffset": "0x0",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L346",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidFont",
@@ -1330,10 +1336,11 @@
       "signature": "struct CVidFont (40 bytes)",
       "byteSize": 40,
       "memberCount": 6,
-      "documentationState": "permission-gated",
+      "documentationMarkdown": "Used by the [CVidFont Class](#CVidFont Class)",
+      "documentationState": "documented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L352",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidFont.baseclass_0",
@@ -1346,10 +1353,10 @@
       "dataType": "CResHelper<CResFont,1034>",
       "byteOffset": "0x0",
       "byteSize": 16,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L362",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidFont.foreground",
@@ -1362,10 +1369,10 @@
       "dataType": "unsigned int",
       "byteOffset": "0x18",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L366",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidFont.pointSize",
@@ -1378,10 +1385,10 @@
       "dataType": "int",
       "byteOffset": "0x20",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L370",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidFont.tintcolor",
@@ -1394,10 +1401,10 @@
       "dataType": "unsigned int",
       "byteOffset": "0x1C",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L368",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidFont.vidCellFont",
@@ -1410,10 +1417,10 @@
       "dataType": "CVidCellFont*",
       "byteOffset": "0x10",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L364",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidFont.zoom",
@@ -1426,10 +1433,10 @@
       "dataType": "int",
       "byteOffset": "0x24",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L372",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidImage",
@@ -1439,10 +1446,11 @@
       "signature": "struct CVidImage (256 bytes)",
       "byteSize": 256,
       "memberCount": 2,
-      "documentationState": "permission-gated",
+      "documentationMarkdown": "Used by the [CVidImage Class](#CVidImage Class)",
+      "documentationState": "documented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L378",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidImage.m_cPalette",
@@ -1455,10 +1463,10 @@
       "dataType": "CVidPalette",
       "byteOffset": "0x0",
       "byteSize": 48,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L388",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidImage.mPaletteAffects",
@@ -1471,10 +1479,10 @@
       "dataType": "CVIDIMG_PALETTEAFFECT",
       "byteOffset": "0x30",
       "byteSize": 208,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L390",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVIDIMG_PALETTEAFFECT",
@@ -1484,10 +1492,10 @@
       "signature": "struct CVIDIMG_PALETTEAFFECT (208 bytes)",
       "byteSize": 208,
       "memberCount": 10,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L396",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVIDIMG_PALETTEAFFECT.aRangeAddPeriods",
@@ -1500,10 +1508,10 @@
       "dataType": "Array<unsigned __int8,8>",
       "byteOffset": "0x88",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L418",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVIDIMG_PALETTEAFFECT.aRangeLightPeriods",
@@ -1516,10 +1524,10 @@
       "dataType": "Array<unsigned __int8,7>",
       "byteOffset": "0xC8",
       "byteSize": 7,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L422",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVIDIMG_PALETTEAFFECT.aRangeTintPeriods",
@@ -1532,10 +1540,10 @@
       "dataType": "Array<unsigned __int8,8>",
       "byteOffset": "0x48",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L414",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVIDIMG_PALETTEAFFECT.pRangeAdds",
@@ -1548,10 +1556,10 @@
       "dataType": "Array<unsigned int*,7>",
       "byteOffset": "0x50",
       "byteSize": 56,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L416",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVIDIMG_PALETTEAFFECT.pRangeLights",
@@ -1564,10 +1572,10 @@
       "dataType": "Array<unsigned int*,7>",
       "byteOffset": "0x90",
       "byteSize": 56,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L420",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVIDIMG_PALETTEAFFECT.pRangeTints",
@@ -1580,10 +1588,10 @@
       "dataType": "Array<unsigned int*,7>",
       "byteOffset": "0x10",
       "byteSize": 56,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L412",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVIDIMG_PALETTEAFFECT.rgbAddColor",
@@ -1596,10 +1604,10 @@
       "dataType": "unsigned int",
       "byteOffset": "0x4",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L406",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVIDIMG_PALETTEAFFECT.rgbLightColor",
@@ -1612,10 +1620,10 @@
       "dataType": "unsigned int",
       "byteOffset": "0x8",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L408",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVIDIMG_PALETTEAFFECT.rgbTintColor",
@@ -1628,10 +1636,10 @@
       "dataType": "unsigned int",
       "byteOffset": "0x0",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L404",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVIDIMG_PALETTEAFFECT.suppressTints",
@@ -1644,10 +1652,10 @@
       "dataType": "unsigned __int8",
       "byteOffset": "0xCF",
       "byteSize": 1,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L424",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode",
@@ -1657,10 +1665,11 @@
       "signature": "struct CVidMode (792 bytes)",
       "byteSize": 792,
       "memberCount": 42,
-      "documentationState": "permission-gated",
+      "documentationMarkdown": "Used by the [CVidMode Class](#CVidMode Class)",
+      "documentationState": "documented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L430",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVIDMODE_RETICLE_DESCRIPTION",
@@ -1670,10 +1679,10 @@
       "signature": "struct CVIDMODE_RETICLE_DESCRIPTION (28 bytes)",
       "byteSize": 28,
       "memberCount": 10,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L540",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVIDMODE_RETICLE_DESCRIPTION.cursor",
@@ -1686,10 +1695,10 @@
       "dataType": "__int16",
       "byteOffset": "0x18",
       "byteSize": 2,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L566",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVIDMODE_RETICLE_DESCRIPTION.piePiecePtXOffset",
@@ -1702,10 +1711,10 @@
       "dataType": "__int16",
       "byteOffset": "0xC",
       "byteSize": 2,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L554",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVIDMODE_RETICLE_DESCRIPTION.piePiecePtYOffset",
@@ -1718,10 +1727,10 @@
       "dataType": "__int16",
       "byteOffset": "0xE",
       "byteSize": 2,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L556",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVIDMODE_RETICLE_DESCRIPTION.piePieceXOffset",
@@ -1734,10 +1743,10 @@
       "dataType": "__int16",
       "byteOffset": "0x10",
       "byteSize": 2,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L558",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVIDMODE_RETICLE_DESCRIPTION.piePieceYOffset",
@@ -1750,10 +1759,10 @@
       "dataType": "__int16",
       "byteOffset": "0x12",
       "byteSize": 2,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L560",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVIDMODE_RETICLE_DESCRIPTION.ptCenter",
@@ -1766,10 +1775,10 @@
       "dataType": "CPoint",
       "byteOffset": "0x0",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L548",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVIDMODE_RETICLE_DESCRIPTION.xAxis",
@@ -1782,10 +1791,10 @@
       "dataType": "__int16",
       "byteOffset": "0x8",
       "byteSize": 2,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L550",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVIDMODE_RETICLE_DESCRIPTION.xGap",
@@ -1798,10 +1807,10 @@
       "dataType": "__int16",
       "byteOffset": "0x14",
       "byteSize": 2,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L562",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVIDMODE_RETICLE_DESCRIPTION.yAxis",
@@ -1814,10 +1823,10 @@
       "dataType": "__int16",
       "byteOffset": "0xA",
       "byteSize": 2,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L552",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVIDMODE_RETICLE_DESCRIPTION.yGap",
@@ -1830,10 +1839,10 @@
       "dataType": "__int16",
       "byteOffset": "0x16",
       "byteSize": 2,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L564",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.bHardwareMouseCursor",
@@ -1846,10 +1855,10 @@
       "dataType": "bool",
       "byteOffset": "0x159",
       "byteSize": 1,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L470",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.bPointerEnabled",
@@ -1862,10 +1871,10 @@
       "dataType": "int",
       "byteOffset": "0x19C",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L506",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.bRedrawEntireScreen",
@@ -1878,10 +1887,10 @@
       "dataType": "bool",
       "byteOffset": "0x158",
       "byteSize": 1,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L468",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.m_bFadeTo",
@@ -1894,10 +1903,10 @@
       "dataType": "unsigned __int8",
       "byteOffset": "0x18",
       "byteSize": 1,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L452",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.m_bPrintScreen",
@@ -1910,10 +1919,10 @@
       "dataType": "unsigned __int8",
       "byteOffset": "0x170",
       "byteSize": 1,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L478",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.m_circle",
@@ -1926,10 +1935,10 @@
       "dataType": "CVidBitmap",
       "byteOffset": "0x30",
       "byteSize": 288,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L462",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.m_dwBlueMask",
@@ -1942,10 +1951,10 @@
       "dataType": "unsigned int",
       "byteOffset": "0x14",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L450",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.m_dwCursorRenderFlags",
@@ -1958,10 +1967,10 @@
       "dataType": "unsigned int",
       "byteOffset": "0x8",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L444",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.m_dwGreenMask",
@@ -1974,10 +1983,10 @@
       "dataType": "unsigned int",
       "byteOffset": "0x10",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L448",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.m_dwRedMask",
@@ -1990,10 +1999,10 @@
       "dataType": "unsigned int",
       "byteOffset": "0xC",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L446",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.m_fInputScale",
@@ -2006,10 +2015,10 @@
       "dataType": "float",
       "byteOffset": "0x178",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L484",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.m_glContext",
@@ -2022,10 +2031,10 @@
       "dataType": "void*",
       "byteOffset": "0x28",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L460",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.m_hwCursor",
@@ -2038,10 +2047,10 @@
       "dataType": "SDL_Cursor*",
       "byteOffset": "0x1E0",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L526",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.m_hwCursorSurface",
@@ -2054,10 +2063,10 @@
       "dataType": "SDL_Surface*",
       "byteOffset": "0x1E8",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L528",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.m_lastCursor",
@@ -2070,10 +2079,10 @@
       "dataType": "CVidCell*",
       "byteOffset": "0x1C0",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L512",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.m_lastCursorFlags",
@@ -2086,10 +2095,10 @@
       "dataType": "unsigned int",
       "byteOffset": "0x1D4",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L520",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.m_lastCursorFrame",
@@ -2102,10 +2111,10 @@
       "dataType": "int",
       "byteOffset": "0x1C8",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L514",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.m_lastCursorNumber",
@@ -2118,10 +2127,10 @@
       "dataType": "int",
       "byteOffset": "0x1D0",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L518",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.m_lastCursorResId",
@@ -2134,10 +2143,10 @@
       "dataType": "unsigned int",
       "byteOffset": "0x1D8",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L522",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.m_lastCursorSequence",
@@ -2150,10 +2159,10 @@
       "dataType": "int",
       "byteOffset": "0x1CC",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L516",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.m_nBrightnessCorrection",
@@ -2166,10 +2175,10 @@
       "dataType": "unsigned __int8",
       "byteOffset": "0x181",
       "byteSize": 1,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L490",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.m_nFade",
@@ -2182,10 +2191,10 @@
       "dataType": "unsigned __int8",
       "byteOffset": "0x19",
       "byteSize": 1,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L454",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.m_nGammaCorrection",
@@ -2198,10 +2207,10 @@
       "dataType": "unsigned __int8",
       "byteOffset": "0x180",
       "byteSize": 1,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L488",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.m_nPointerNumber",
@@ -2214,10 +2223,10 @@
       "dataType": "int",
       "byteOffset": "0x4",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L442",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.m_nPrintFile",
@@ -2230,10 +2239,10 @@
       "dataType": "int",
       "byteOffset": "0x0",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L440",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.m_nScreenScrollX",
@@ -2246,10 +2255,10 @@
       "dataType": "int",
       "byteOffset": "0x188",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L496",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.m_nScreenScrollY",
@@ -2262,10 +2271,10 @@
       "dataType": "int",
       "byteOffset": "0x184",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L494",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.m_pWindow",
@@ -2278,10 +2287,10 @@
       "dataType": "SDL_Window*",
       "byteOffset": "0x20",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L458",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.m_rgbMasterBitmap",
@@ -2294,10 +2303,10 @@
       "dataType": "CVidBitmap",
       "byteOffset": "0x1F8",
       "byteSize": 288,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L534",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.m_rLockedRect",
@@ -2310,10 +2319,10 @@
       "dataType": "CRect",
       "byteOffset": "0x1B0",
       "byteSize": 16,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L510",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.nBShift",
@@ -2326,10 +2335,10 @@
       "dataType": "int",
       "byteOffset": "0x194",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L502",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.nGShift",
@@ -2342,10 +2351,10 @@
       "dataType": "int",
       "byteOffset": "0x190",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L500",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.nHeight",
@@ -2358,10 +2367,10 @@
       "dataType": "int",
       "byteOffset": "0x154",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L466",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.nRShift",
@@ -2374,10 +2383,10 @@
       "dataType": "int",
       "byteOffset": "0x18C",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L498",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.nTickCount",
@@ -2390,10 +2399,10 @@
       "dataType": "unsigned int",
       "byteOffset": "0x174",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L482",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.nVRamSurfaces",
@@ -2406,10 +2415,10 @@
       "dataType": "int",
       "byteOffset": "0x1F0",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L530",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.nWidth",
@@ -2422,10 +2431,10 @@
       "dataType": "int",
       "byteOffset": "0x150",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L464",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.pPointerVidCell",
@@ -2438,10 +2447,10 @@
       "dataType": "CVidCell*",
       "byteOffset": "0x160",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L474",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.pTooltipVidCell",
@@ -2454,10 +2463,10 @@
       "dataType": "CVidCell*",
       "byteOffset": "0x168",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L476",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.rgbGlobalTint",
@@ -2470,10 +2479,10 @@
       "dataType": "unsigned int",
       "byteOffset": "0x17C",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L486",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.rgbTint",
@@ -2486,10 +2495,10 @@
       "dataType": "tagRGBQUAD",
       "byteOffset": "0x198",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L504",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMode.rPointerStorage",
@@ -2502,10 +2511,10 @@
       "dataType": "CRect",
       "byteOffset": "0x1A0",
       "byteSize": 16,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L508",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMosaic",
@@ -2515,10 +2524,11 @@
       "signature": "struct CVidMosaic (272 bytes)",
       "byteSize": 272,
       "memberCount": 2,
-      "documentationState": "permission-gated",
+      "documentationMarkdown": "Used by the [CVidMosaic Class](#CVidMosaic Class)",
+      "documentationState": "documented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L574",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMosaic.baseclass_0",
@@ -2531,10 +2541,10 @@
       "dataType": "CVidImage",
       "byteOffset": "0x0",
       "byteSize": 256,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L584",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidMosaic.baseclass_1",
@@ -2547,10 +2557,10 @@
       "dataType": "CResHelper<CResMosaic,1004>",
       "byteOffset": "0x100",
       "byteSize": 16,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L586",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidPalette",
@@ -2560,10 +2570,11 @@
       "signature": "struct CVidPalette (48 bytes)",
       "byteSize": 48,
       "memberCount": 9,
-      "documentationState": "permission-gated",
+      "documentationMarkdown": "Used by the [CVidPalette Class](#CVidPalette Class)",
+      "documentationState": "documented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L592",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVIDPALETTE_COLOR",
@@ -2573,10 +2584,10 @@
       "signature": "struct CVIDPALETTE_COLOR (12 bytes)",
       "byteSize": 12,
       "memberCount": 3,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L694",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVIDPALETTE_COLOR.rgbBlue",
@@ -2589,10 +2600,10 @@
       "dataType": "int",
       "byteOffset": "0x8",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L706",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVIDPALETTE_COLOR.rgbGreen",
@@ -2605,10 +2616,10 @@
       "dataType": "int",
       "byteOffset": "0x4",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L704",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVIDPALETTE_COLOR.rgbRed",
@@ -2621,10 +2632,10 @@
       "dataType": "int",
       "byteOffset": "0x0",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L702",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidPalette.m_bPaletteOwner",
@@ -2637,10 +2648,10 @@
       "dataType": "unsigned __int8",
       "byteOffset": "0x22",
       "byteSize": 1,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L614",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidPalette.m_bSubRangesCalculated",
@@ -2653,10 +2664,10 @@
       "dataType": "int",
       "byteOffset": "0x24",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L618",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidPalette.m_nAUCounter",
@@ -2669,10 +2680,10 @@
       "dataType": "unsigned __int64",
       "byteOffset": "0x0",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L602",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidPalette.m_nAUCounterBase",
@@ -2685,10 +2696,10 @@
       "dataType": "unsigned __int64",
       "byteOffset": "0x8",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L604",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidPalette.m_nEntries",
@@ -2701,10 +2712,10 @@
       "dataType": "int",
       "byteOffset": "0x18",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L608",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidPalette.m_nType",
@@ -2717,10 +2728,10 @@
       "dataType": "unsigned __int16",
       "byteOffset": "0x20",
       "byteSize": 2,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L612",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidPalette.m_pPalette",
@@ -2733,10 +2744,10 @@
       "dataType": "tagRGBQUAD*",
       "byteOffset": "0x10",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L606",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidPalette.m_rangeColors",
@@ -2749,10 +2760,10 @@
       "dataType": "Array<unsigned __int8,7>",
       "byteOffset": "0x28",
       "byteSize": 7,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L620",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidPalette.rgbGlobalTint",
@@ -2765,10 +2776,10 @@
       "dataType": "unsigned int",
       "byteOffset": "0x1C",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L610",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidPng",
@@ -2778,10 +2789,11 @@
       "signature": "struct CVidPng (272 bytes)",
       "byteSize": 272,
       "memberCount": 2,
-      "documentationState": "permission-gated",
+      "documentationMarkdown": "Used by the [CVidPng Class](#CVidPng Class)",
+      "documentationState": "documented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L628",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidPng.baseclass_0",
@@ -2794,10 +2806,10 @@
       "dataType": "CVidImage",
       "byteOffset": "0x0",
       "byteSize": 256,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L638",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidPng.baseclass_1",
@@ -2810,10 +2822,10 @@
       "dataType": "CResHelper<CResPng,1035>",
       "byteOffset": "0x100",
       "byteSize": 16,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L640",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidPoly",
@@ -2823,10 +2835,11 @@
       "signature": "struct CVidPoly (40 bytes)",
       "byteSize": 40,
       "memberCount": 5,
-      "documentationState": "permission-gated",
+      "documentationMarkdown": "Used by the [CVidPoly Class](#CVidPoly Class)",
+      "documentationState": "documented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L646",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVIDPOLY_VERTEX",
@@ -2836,10 +2849,10 @@
       "signature": "struct CVIDPOLY_VERTEX (4 bytes)",
       "byteSize": 4,
       "memberCount": 2,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L712",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVIDPOLY_VERTEX.x",
@@ -2852,10 +2865,10 @@
       "dataType": "unsigned __int16",
       "byteOffset": "0x0",
       "byteSize": 2,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L720",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVIDPOLY_VERTEX.y",
@@ -2868,10 +2881,10 @@
       "dataType": "unsigned __int16",
       "byteOffset": "0x2",
       "byteSize": 2,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L722",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidPoly.m_nVertices",
@@ -2884,10 +2897,10 @@
       "dataType": "int",
       "byteOffset": "0x8",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L658",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidPoly.m_pAET",
@@ -2900,10 +2913,10 @@
       "dataType": "_EdgeDescription*",
       "byteOffset": "0x18",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L664",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidPoly.m_pDrawHLineFunction",
@@ -2916,10 +2929,10 @@
       "dataType": "void (__fastcall *m_pDrawHLineFunction)(CVidPoly*, void*, int, int, unsigned int, const CRect*, const CPoint*);",
       "byteOffset": "0x20",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L666",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidPoly.m_pET",
@@ -2932,10 +2945,10 @@
       "dataType": "_EdgeDescription*",
       "byteOffset": "0x10",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L662",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidPoly.m_pVertices",
@@ -2948,10 +2961,10 @@
       "dataType": "CVIDPOLY_VERTEX*",
       "byteOffset": "0x0",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L656",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidTile",
@@ -2961,10 +2974,11 @@
       "signature": "struct CVidTile (272 bytes)",
       "byteSize": 272,
       "memberCount": 3,
-      "documentationState": "permission-gated",
+      "documentationMarkdown": "Used by the [CVidTile Class](#CVidTile Class)",
+      "documentationState": "documented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L672",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidTile.baseclass_0",
@@ -2977,10 +2991,10 @@
       "dataType": "CVidImage",
       "byteOffset": "0x0",
       "byteSize": 256,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L682",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidTile.m_dwFlags",
@@ -2993,10 +3007,10 @@
       "dataType": "unsigned int",
       "byteOffset": "0x108",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L686",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVidTile.pRes",
@@ -3009,10 +3023,10 @@
       "dataType": "CResTile*",
       "byteOffset": "0x100",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L684",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisibilityMap",
@@ -3022,10 +3036,11 @@
       "signature": "struct CVisibilityMap (112 bytes)",
       "byteSize": 112,
       "memberCount": 8,
-      "documentationState": "permission-gated",
+      "documentationMarkdown": "Used by the [CVisibilityMap Class](#CVisibilityMap Class)",
+      "documentationState": "documented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L728",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisibilityMap.m_aCharacterIds",
@@ -3038,10 +3053,10 @@
       "dataType": "Array<int,15>",
       "byteOffset": "0x20",
       "byteSize": 60,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L752",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisibilityMap.m_bOutDoor",
@@ -3054,10 +3069,10 @@
       "dataType": "unsigned __int8",
       "byteOffset": "0x10",
       "byteSize": 1,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L746",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisibilityMap.m_nHeight",
@@ -3070,10 +3085,10 @@
       "dataType": "__int16",
       "byteOffset": "0xE",
       "byteSize": 2,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L744",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisibilityMap.m_nMapSize",
@@ -3086,10 +3101,10 @@
       "dataType": "int",
       "byteOffset": "0x8",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L740",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisibilityMap.m_nWidth",
@@ -3102,10 +3117,10 @@
       "dataType": "__int16",
       "byteOffset": "0xC",
       "byteSize": 2,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L742",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisibilityMap.m_pMap",
@@ -3118,10 +3133,10 @@
       "dataType": "unsigned __int16*",
       "byteOffset": "0x0",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L738",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisibilityMap.m_pSearchMap",
@@ -3134,10 +3149,10 @@
       "dataType": "CSearchBitmap*",
       "byteOffset": "0x18",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L750",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisibilityMap.m_pVisMapEllipses",
@@ -3150,10 +3165,10 @@
       "dataType": "CVisibilityMapEllipse*",
       "byteOffset": "0x68",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L758",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisibilityMapEllipse",
@@ -3163,10 +3178,10 @@
       "signature": "struct CVisibilityMapEllipse (32 bytes)",
       "byteSize": 32,
       "memberCount": 6,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L764",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisibilityMapEllipse.m_nXExploreRange",
@@ -3179,10 +3194,10 @@
       "dataType": "__int16",
       "byteOffset": "0x0",
       "byteSize": 2,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L772",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisibilityMapEllipse.m_nXPtsSize",
@@ -3195,10 +3210,10 @@
       "dataType": "unsigned __int8",
       "byteOffset": "0x18",
       "byteSize": 1,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L782",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisibilityMapEllipse.m_nYExploreRange",
@@ -3211,10 +3226,10 @@
       "dataType": "__int16",
       "byteOffset": "0x2",
       "byteSize": 2,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L774",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisibilityMapEllipse.m_nYPtsSize",
@@ -3227,10 +3242,10 @@
       "dataType": "unsigned __int8",
       "byteOffset": "0x19",
       "byteSize": 1,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L784",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisibilityMapEllipse.m_pXEllipsePts",
@@ -3243,10 +3258,10 @@
       "dataType": "unsigned __int8*",
       "byteOffset": "0x8",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L778",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisibilityMapEllipse.m_pYEllipsePts",
@@ -3259,10 +3274,10 @@
       "dataType": "unsigned __int8*",
       "byteOffset": "0x10",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L780",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisibilityMapTreeNode",
@@ -3272,10 +3287,10 @@
       "signature": "struct CVisibilityMapTreeNode (20 bytes)",
       "byteSize": 20,
       "memberCount": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L792",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisibilityMapTreeNode.m_aChildren",
@@ -3288,10 +3303,10 @@
       "dataType": "Array<__int16,3>",
       "byteOffset": "0xA",
       "byteSize": 6,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L804",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisibilityMapTreeNode.m_nRange",
@@ -3304,10 +3319,10 @@
       "dataType": "unsigned __int16",
       "byteOffset": "0x8",
       "byteSize": 2,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L802",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisibilityMapTreeNode.m_parent",
@@ -3320,10 +3335,10 @@
       "dataType": "__int16",
       "byteOffset": "0x10",
       "byteSize": 2,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L806",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisibilityMapTreeNode.m_relativePos",
@@ -3336,10 +3351,10 @@
       "dataType": "CPoint",
       "byteOffset": "0x0",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L800",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisualEffect",
@@ -3349,10 +3364,11 @@
       "signature": "struct CVisualEffect (800 bytes)",
       "byteSize": 800,
       "memberCount": 18,
-      "documentationState": "permission-gated",
+      "documentationMarkdown": "Used by the [CVisualEffect Class](#CVisualEffect Class)",
+      "documentationState": "documented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L814",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisualEffect.baseclass_0",
@@ -3365,10 +3381,10 @@
       "dataType": "CGameObject",
       "byteOffset": "0x0",
       "byteSize": 96,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L824",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisualEffect.baseclass_1",
@@ -3381,10 +3397,10 @@
       "dataType": "CVisualEffectBase",
       "byteOffset": "0x60",
       "byteSize": 448,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L826",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisualEffect.m_activeAnimations",
@@ -3397,10 +3413,10 @@
       "dataType": "CTypedPtrList<CPtrList,long*>",
       "byteOffset": "0x220",
       "byteSize": 56,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L828",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisualEffect.m_listPos",
@@ -3413,10 +3429,10 @@
       "dataType": "__POSITION*",
       "byteOffset": "0x310",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L854",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisualEffect.m_nDirection",
@@ -3429,10 +3445,10 @@
       "dataType": "int",
       "byteOffset": "0x2E8",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L844",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisualEffect.m_nExistanceCounter",
@@ -3445,10 +3461,10 @@
       "dataType": "int",
       "byteOffset": "0x2E4",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L842",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisualEffect.m_nNewDirection",
@@ -3461,10 +3477,10 @@
       "dataType": "int",
       "byteOffset": "0x2EC",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L846",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisualEffect.m_nTargetId",
@@ -3477,10 +3493,10 @@
       "dataType": "int",
       "byteOffset": "0x2D0",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L836",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisualEffect.m_posDelta",
@@ -3493,10 +3509,10 @@
       "dataType": "CPoint",
       "byteOffset": "0x2F0",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L848",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisualEffect.m_posExact",
@@ -3509,10 +3525,10 @@
       "dataType": "CPoint",
       "byteOffset": "0x2D4",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L838",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisualEffect.m_posOld",
@@ -3525,10 +3541,10 @@
       "dataType": "CPoint",
       "byteOffset": "0x2DC",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L840",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisualEffect.m_ptTargetPos",
@@ -3541,10 +3557,10 @@
       "dataType": "CPoint",
       "byteOffset": "0x2C8",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L834",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisualEffect.m_renderMask",
@@ -3557,10 +3573,10 @@
       "dataType": "unsigned int",
       "byteOffset": "0x31C",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L858",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisualEffect.m_startedList",
@@ -3573,10 +3589,10 @@
       "dataType": "int",
       "byteOffset": "0x318",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L856",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisualEffect.m_terrainTable",
@@ -3589,10 +3605,10 @@
       "dataType": "Array<unsigned __int8,16>",
       "byteOffset": "0x2F8",
       "byteSize": 16,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L850",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisualEffect.m_timedEvents",
@@ -3605,10 +3621,10 @@
       "dataType": "CTypedPtrList<CPtrList, CVEFEvent*>",
       "byteOffset": "0x258",
       "byteSize": 56,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L830",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisualEffect.m_triggeredEvents",
@@ -3621,10 +3637,10 @@
       "dataType": "CTypedPtrList<CPtrList, CVEFEvent*>",
       "byteOffset": "0x290",
       "byteSize": 56,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L832",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisualEffect.pList",
@@ -3637,10 +3653,10 @@
       "dataType": "CStringList*",
       "byteOffset": "0x308",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L852",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisualEffectBase",
@@ -3650,10 +3666,10 @@
       "signature": "struct CVisualEffectBase (448 bytes)",
       "byteSize": 448,
       "memberCount": 12,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L864",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisualEffectBase.m_extra",
@@ -3666,10 +3682,10 @@
       "dataType": "Array<unsigned int,100>",
       "byteOffset": "0x30",
       "byteSize": 400,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L894",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisualEffectBase.m_flags",
@@ -3682,10 +3698,10 @@
       "dataType": "unsigned int",
       "byteOffset": "0x2C",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L892",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisualEffectBase.m_nDeltaVDec",
@@ -3698,10 +3714,10 @@
       "dataType": "int",
       "byteOffset": "0x24",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L888",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisualEffectBase.m_nDuration",
@@ -3714,10 +3730,10 @@
       "dataType": "int",
       "byteOffset": "0x18",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L884",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisualEffectBase.m_nHeight",
@@ -3730,10 +3746,10 @@
       "dataType": "int",
       "byteOffset": "0x28",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L890",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisualEffectBase.m_nSpeed",
@@ -3746,10 +3762,10 @@
       "dataType": "int",
       "byteOffset": "0x14",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L882",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisualEffectBase.m_nTargetType",
@@ -3762,10 +3778,10 @@
       "dataType": "unsigned int",
       "byteOffset": "0x10",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L880",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisualEffectBase.m_nTimedEventCount",
@@ -3778,10 +3794,10 @@
       "dataType": "unsigned int",
       "byteOffset": "0x4",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L874",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisualEffectBase.m_nTimedEventOffset",
@@ -3794,10 +3810,10 @@
       "dataType": "unsigned int",
       "byteOffset": "0x0",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L872",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisualEffectBase.m_nTriggeredEventCount",
@@ -3810,10 +3826,10 @@
       "dataType": "unsigned int",
       "byteOffset": "0xC",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L878",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisualEffectBase.m_nTriggeredEventOffset",
@@ -3826,10 +3842,10 @@
       "dataType": "unsigned int",
       "byteOffset": "0x8",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L876",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisualEffectBase.m_ptStartDeltaV",
@@ -3842,10 +3858,10 @@
       "dataType": "CPoint",
       "byteOffset": "0x1C",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L886",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisualEffectFile",
@@ -3855,10 +3871,10 @@
       "signature": "struct CVisualEffectFile (16 bytes)",
       "byteSize": 16,
       "memberCount": 1,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L900",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVisualEffectFile.baseclass_0",
@@ -3871,10 +3887,10 @@
       "dataType": "CResHelper<CResBinary,1020>",
       "byteOffset": "0x0",
       "byteSize": 16,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L908",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVoice",
@@ -3884,10 +3900,11 @@
       "signature": "struct CVoice (40 bytes)",
       "byteSize": 40,
       "memberCount": 7,
-      "documentationState": "permission-gated",
+      "documentationMarkdown": "Used by the [CVoice Class](#CVoice Class)",
+      "documentationState": "documented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L914",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVoice.baseclass_0",
@@ -3900,10 +3917,10 @@
       "dataType": "CObject",
       "byteOffset": "0x0",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L924",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVoice.m_bDuckedOthers",
@@ -3916,10 +3933,10 @@
       "dataType": "bool",
       "byteOffset": "0x20",
       "byteSize": 1,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L936",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVoice.m_nBuffer",
@@ -3932,10 +3949,10 @@
       "dataType": "unsigned int",
       "byteOffset": "0x10",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L928",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVoice.m_nChannel",
@@ -3948,10 +3965,10 @@
       "dataType": "int",
       "byteOffset": "0x18",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L932",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVoice.m_nPriority",
@@ -3964,10 +3981,10 @@
       "dataType": "int",
       "byteOffset": "0x1C",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L934",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVoice.m_nSource",
@@ -3980,10 +3997,10 @@
       "dataType": "unsigned int",
       "byteOffset": "0x14",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L930",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVoice.m_pSound",
@@ -3996,10 +4013,10 @@
       "dataType": "CSound*",
       "byteOffset": "0x8",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L926",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVRamPool",
@@ -4009,10 +4026,10 @@
       "signature": "struct CVRamPool (16 bytes)",
       "byteSize": 16,
       "memberCount": 2,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L944",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVRamPool.nVTiles",
@@ -4025,10 +4042,10 @@
       "dataType": "int",
       "byteOffset": "0x0",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L952",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVRamPool.pTileDef",
@@ -4041,10 +4058,10 @@
       "dataType": "st_tiledef*",
       "byteOffset": "0x8",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L956",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVVCHash",
@@ -4054,10 +4071,10 @@
       "signature": "struct CVVCHash (16 bytes)",
       "byteSize": 16,
       "memberCount": 2,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L962",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVVCHash.m_hashEntries",
@@ -4070,10 +4087,10 @@
       "dataType": "CVVCHashEntry*",
       "byteOffset": "0x0",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L970",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVVCHash.m_nTableEntries",
@@ -4086,10 +4103,10 @@
       "dataType": "int",
       "byteOffset": "0x8",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L972",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVVCHashEntry",
@@ -4099,10 +4116,10 @@
       "signature": "struct CVVCHashEntry (20 bytes)",
       "byteSize": 20,
       "memberCount": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L980",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVVCHashEntry.m_name",
@@ -4115,10 +4132,10 @@
       "dataType": "CResRef",
       "byteOffset": "0x0",
       "byteSize": 8,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L988",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVVCHashEntry.m_priority",
@@ -4131,10 +4148,10 @@
       "dataType": "unsigned __int16",
       "byteOffset": "0x8",
       "byteSize": 2,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L990",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVVCHashEntry.m_renderMask",
@@ -4147,10 +4164,10 @@
       "dataType": "unsigned int",
       "byteOffset": "0x10",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L996",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64:CVVCHashEntry.m_renderType",
@@ -4163,10 +4180,10 @@
       "dataType": "unsigned int",
       "byteOffset": "0xC",
       "byteSize": 4,
-      "documentationState": "permission-gated",
+      "documentationState": "undocumented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L994",
       "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
-      "licenseStatus": "permission-gated"
+      "licenseStatus": "allowed"
     }
   ]
 }
