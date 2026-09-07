@@ -58,7 +58,10 @@ async function main() {
       '--skip-release-notes',
       '--disable-workspace-trust',
     ],
-    extensionTestsEnv: { IE_TEST_EXTENSIONS: extensions },
+    extensionTestsEnv: {
+      IE_TEST_EXTENSIONS: extensions,
+      IE_TEST_REPORTS: path.resolve('reports'),
+    },
   });
 }
 main().catch((error) => {

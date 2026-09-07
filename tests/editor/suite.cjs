@@ -144,18 +144,26 @@ async function run() {
       async () => vscode.languages.getDiagnostics(menu.uri),
       (r) => r.length > 0,
     );
-    const formatted = await vscode.commands.executeCommand(
-      'vscode.executeFormatDocumentProvider',
-      menu.uri,
-      { tabSize: 2, insertSpaces: true },
+    const formatted = await eventually(
+      () =>
+        vscode.commands.executeCommand('vscode.executeFormatDocumentProvider', menu.uri, {
+          tabSize: 2,
+          insertSpaces: true,
+        }),
+      () => true,
     );
-    assert.equal(formatted.length, 0);
+    // VS Code normalizes an empty provider result to undefined on some versions.
+    assert.deepEqual(formatted ?? [], []);
     results.push('embedded menu diagnostics and formatting boundary');
-    await vscode.commands.executeCommand('workbench.action.closeAllEditors');
+    // The test host owns shutdown; closing dirty untitled documents prompts to save.
+  } catch (error) {
+    console.error('Editor checks completed before failure:', results, error);
+    throw error;
   } finally {
-    fs.mkdirSync('reports', { recursive: true });
+    const reports = process.env.IE_TEST_REPORTS;
+    fs.mkdirSync(reports, { recursive: true });
     fs.writeFileSync(
-      'reports/editor.json',
+      path.join(reports, 'editor.json'),
       JSON.stringify(
         { vscode: vscode.version, platform: process.platform, arch: process.arch, passed: results },
         null,
