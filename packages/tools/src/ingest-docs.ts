@@ -107,16 +107,18 @@ async function main(): Promise<void> {
   const preserveOtherSources = process.env.IE_LUA_PRESERVE_OTHER_SOURCES === '1';
   const localSymbols: ApiSymbol[] = preserveOtherSources
     ? ['lua52', 'luajit', 'ee-utility-functions'].flatMap((id) => {
-        const section = JSON.parse(fs.readFileSync(path.resolve(sectionDirectory, `${id}.json`), 'utf8')) as ApiSectionFile;
+        const section = JSON.parse(
+          fs.readFileSync(path.resolve(sectionDirectory, `${id}.json`), 'utf8'),
+        ) as ApiSectionFile;
         return section.symbols;
       })
     : [
-    ...(process.env.IE_LUA_SCAN_LOCAL_UTIL === '1'
-      ? scanUtilityFunctions(path.resolve(repoRoot, 'samples/util.lua'))
-      : []),
-    ...(await makeLua52Symbols()),
-    ...(await makeLuaJitSymbols()),
-  ];
+        ...(process.env.IE_LUA_SCAN_LOCAL_UTIL === '1'
+          ? scanUtilityFunctions(path.resolve(repoRoot, 'samples/util.lua'))
+          : []),
+        ...(await makeLua52Symbols()),
+        ...(await makeLuaJitSymbols()),
+      ];
   const eeexShards = shouldFetchEeex
     ? await fetchEeexShards(eeexCommit!)
     : loadExistingEeexShards();

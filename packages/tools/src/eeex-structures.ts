@@ -37,19 +37,17 @@ export function parseEeexStructureSymbols(options: EeexStructureParseOptions): A
     const totalSize = /^\d+$/u.test(rawTotalSize) ? Number.parseInt(rawTotalSize, 10) : undefined;
     const anchorLine = lineNumberAt(options.text, blockStart);
     const fields: ApiSymbol[] = [];
-    let tableStarted = false;
-    let tableEnd = headerIndex + 1;
+    let tableEnd = lines.length;
 
     for (let lineIndex = headerIndex + 1; lineIndex < lines.length; lineIndex += 1) {
       const line = lines[lineIndex] ?? '';
-      if (!line.trim() && tableStarted) {
+      if (!line.trim()) {
         tableEnd = lineIndex;
         break;
       }
       if (!line.startsWith('|')) {
         continue;
       }
-      tableStarted = true;
 
       const cells = line
         .slice(1, -1)
@@ -98,10 +96,16 @@ export function parseEeexStructureSymbols(options: EeexStructureParseOptions): A
     const headingIndex = lines.findIndex((line, i) => i > 0 && /^[=^~-]{3,}\s*$/u.test(line));
     let tableStart = headerIndex;
     while (tableStart > 0 && /^\+[+\-=]+\s*$/u.test(lines[tableStart - 1] ?? '')) tableStart -= 1;
-    const narrative = [
+    const narrativeLines = [
       ...lines.slice(headingIndex + 1, tableStart),
-      ...lines.slice(tableEnd).filter((line, i, tail) => !(i === tail.length - 1 && /^-{3,}\s*$/u.test(line))),
-    ].join('\n').trim().replace(/(?:\n\s*)*-{3,}\s*$/u, '');
+      ...lines.slice(tableEnd),
+    ];
+    while (narrativeLines.length) {
+      const last = narrativeLines[narrativeLines.length - 1]?.trim() ?? '';
+      if (last && !/^-{3,}$/u.test(last)) break;
+      narrativeLines.pop();
+    }
+    const narrative = narrativeLines.join('\n').trim();
     const documentationMarkdown = renderRstMarkdown(narrative, options.indexPath);
 
     symbols.push({

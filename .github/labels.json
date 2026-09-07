@@ -1,6 +1,22 @@
 [
-  {"name":"github_actions","color":"2088FF","description":"Changes to GitHub Actions or Dependabot configuration"},
-  {"name":"dependencies","color":"0366D6","description":"Changes to dependency manifests or lockfiles"},
-  {"name":"documentation","color":"0075CA","description":"Documentation-only or documentation-affecting changes"},
-  {"name":"javascript","color":"F1E05A","description":"JavaScript or TypeScript source changes"}
+  {
+    "name": "github_actions",
+    "color": "2088FF",
+    "description": "Changes to GitHub Actions or Dependabot configuration"
+  },
+  {
+    "name": "dependencies",
+    "color": "0366D6",
+    "description": "Changes to dependency manifests or lockfiles"
+  },
+  {
+    "name": "documentation",
+    "color": "0075CA",
+    "description": "Documentation-only or documentation-affecting changes"
+  },
+  {
+    "name": "javascript",
+    "color": "F1E05A",
+    "description": "JavaScript or TypeScript source changes"
+  }
 ]

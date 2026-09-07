@@ -521,7 +521,9 @@ async function analyzeOnly(document: TextDocument): Promise<AnalyzedDocument> {
 }
 
 async function getOrAnalyze(document: TextDocument): Promise<AnalyzedDocument> {
-  return analyses.get(document.uri) ?? analyzeOnly(document);
+  const cached = analyses.get(document.uri);
+  // Change notifications analyze asynchronously; an immediate request must not reuse older text.
+  return cached?.text === document.getText() ? cached : analyzeOnly(document);
 }
 
 async function getSettings(resource: string): Promise<IeLuaSettings> {

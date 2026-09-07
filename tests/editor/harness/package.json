@@ -2,5 +2,7 @@
   "name": "ie-lua-ci-harness",
   "version": "0.0.0",
   "publisher": "ci",
-  "engines": { "vscode": "^1.100.0" }
+  "engines": {
+    "vscode": "^1.100.0"
+  }
 }

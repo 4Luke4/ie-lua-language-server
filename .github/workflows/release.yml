@@ -1,6 +1,6 @@
 name: Release
 
-run-name: Release ${{ inputs.tag_name }} as ${{ inputs.release_type }}
+run-name: Release ${{ inputs.tag_name }} (${{ inputs.dry_run && 'dry run' || 'publish' }})
 
 on:
   workflow_dispatch:
@@ -10,175 +10,110 @@ on:
         required: true
         default: prerelease
         type: choice
-        options:
-          - prerelease
-          - stable
+        options: [prerelease, stable]
       tag_name:
         description: Stable vX.Y.Z or prerelease vX.Y.Z-{alpha|beta|rc|pre|preview}.N
         required: true
         type: string
+      dry_run:
+        description: Verify everything without creating a tag or release
+        required: true
+        default: true
+        type: boolean
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: release-${{ inputs.tag_name }}
   cancel-in-progress: false
 
 jobs:
-  package:
-    name: Verify and package
-    runs-on: ubuntu-latest
-    timeout-minutes: 20
+  validate:
+    name: Validate release inputs
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
     steps:
-      - name: Check out repository
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - name: Set up Node.js
-        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: 24
           cache: npm
-          cache-dependency-path: package-lock.json
-      - name: Validate release type, tag, and package version
+      - run: npm ci --no-audit --progress=false
+      - run: npm run release:check
         env:
           RELEASE_TYPE: ${{ inputs.release_type }}
           TAG_NAME: ${{ inputs.tag_name }}
-        shell: bash
-        run: |
-          set -euo pipefail
-
-          case "$RELEASE_TYPE" in
-            stable)
-              if [[ ! "$TAG_NAME" =~ ^v([0-9]+)\.([0-9]+)\.([0-9]+)$ ]]; then
-                echo "Stable releases require a vX.Y.Z tag; received: $TAG_NAME" >&2
-                exit 1
-              fi
-              ;;
-            prerelease)
-              if [[ ! "$TAG_NAME" =~ ^v([0-9]+)\.([0-9]+)\.([0-9]+)-(alpha|beta|rc|pre|preview)\.([0-9]+)$ ]]; then
-                echo "Prereleases require a vX.Y.Z-{alpha|beta|rc|pre|preview}.N tag; received: $TAG_NAME" >&2
-                exit 1
-              fi
-              ;;
-            *)
-              echo "Unsupported release type: $RELEASE_TYPE" >&2
-              exit 1
-              ;;
-          esac
-
-          version="${BASH_REMATCH[1]}.${BASH_REMATCH[2]}.${BASH_REMATCH[3]}"
-          minor="${BASH_REMATCH[2]}"
-          if [[ "$RELEASE_TYPE" == "stable" && $((10#$minor % 2)) -ne 0 ]]; then
-            echo "Stable releases require an even minor version; received: $version" >&2
-            exit 1
-          fi
-          if [[ "$RELEASE_TYPE" == "prerelease" && $((10#$minor % 2)) -eq 0 ]]; then
-            echo "Prereleases require an odd minor version; received: $version" >&2
-            exit 1
-          fi
-
-          package_version="$(node -p "require('./package.json').version")"
-          if [[ "$package_version" != "$version" ]]; then
-            echo "Tag version $version does not match package.json version $package_version." >&2
-            exit 1
-          fi
-      - name: Install dependencies
-        run: npm ci --no-audit --progress=false
-      - name: Verify
-        run: npm run verify
-      - name: Build prerelease VSIX
-        if: inputs.release_type == 'prerelease'
-        run: npm run package:pre-release
-      - name: Build stable VSIX
-        if: inputs.release_type == 'stable'
-        run: npm run package
-      - name: Audit package
-        run: npm run package:audit
-      - name: Prepare release asset
+      - name: Check publication prerequisites without mutation
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         env:
           TAG_NAME: ${{ inputs.tag_name }}
-        shell: bash
-        run: |
-          set -euo pipefail
-
-          mapfile -t vsix_files < <(find . -maxdepth 1 -type f -name '*.vsix' -printf '%f\n' | sort)
-          if [[ "${#vsix_files[@]}" -ne 1 ]]; then
-            echo "Expected exactly one VSIX artifact; found ${#vsix_files[@]}." >&2
-            exit 1
-          fi
-
-          mv "${vsix_files[0]}" "ie-lua-language-server-${TAG_NAME}.vsix"
-      - name: Upload VSIX
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: ie-lua-language-server-${{ inputs.tag_name }}
-          path: '*.vsix'
-          if-no-files-found: error
-          retention-days: 7
-
+          script: |
+            const scope = { owner: context.repo.owner, repo: context.repo.repo };
+            for (const lookup of [
+              () => github.rest.repos.getReleaseByTag({ ...scope, tag: process.env.TAG_NAME }),
+              () => github.rest.git.getRef({ ...scope, ref: `tags/${process.env.TAG_NAME}` }),
+            ]) {
+              try { await lookup(); }
+              catch (error) { if (error.status === 404) continue; throw error; }
+              throw new Error('Release tag already exists');
+            }
+  verify:
+    needs: validate
+    uses: ./.github/workflows/verify.yml
   release:
     name: Publish GitHub release
-    needs: package
-    runs-on: ubuntu-latest
-    timeout-minutes: 20
+    needs: [validate, verify]
+    if: inputs.dry_run == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      actions: read
+      checks: read
     steps:
-      - name: Download verified VSIX
-        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
-          name: ie-lua-language-server-${{ inputs.tag_name }}
+          name: vsix-${{ inputs.release_type }}
           path: release-artifact
-      - name: Locate release asset
-        id: asset
-        shell: bash
-        run: |
-          set -euo pipefail
-
-          mapfile -t vsix_files < <(find release-artifact -type f -name '*.vsix' -print | sort)
-          if [[ "${#vsix_files[@]}" -ne 1 ]]; then
-            echo "Expected exactly one downloaded VSIX; found ${#vsix_files[@]}." >&2
-            exit 1
-          fi
-
-          echo "path=${vsix_files[0]}" >> "$GITHUB_OUTPUT"
-      - name: Validate publication prerequisites
+      - name: Require security and PR checks for the selected commit
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        with:
+          script: |
+            const scope = { owner: context.repo.owner, repo: context.repo.repo };
+            const { data: commit } = await github.rest.repos.getCommit({ ...scope, ref: context.sha });
+            const pulls = await github.paginate(github.rest.repos.listPullRequestsAssociatedWithCommit, { ...scope, commit_sha: commit.sha });
+            const merged = pulls.find(pr => pr.merged_at && pr.base.ref === context.payload.repository.default_branch && pr.merge_commit_sha === context.sha);
+            if (!merged) throw new Error('Publication requires a merged default-branch PR commit');
+            const checks = await github.paginate(github.rest.checks.listForRef, { ...scope, ref: merged.head.sha, per_page: 100 });
+            for (const name of ['Verify', 'Analyze JavaScript and TypeScript', 'Review dependency changes', 'Validate commit messages']) {
+              const latest = checks.filter(c => c.name === name && c.app?.slug === 'github-actions').sort((a,b) => b.id-a.id)[0];
+              if (latest?.conclusion !== 'success') throw new Error(`Missing successful ${name}`);
+            }
+      - name: Publish exactly the verified artifact
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TAG_NAME: ${{ inputs.tag_name }}
-        shell: bash
-        run: |
-          set -euo pipefail
-
-          if gh release view "$TAG_NAME" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
-            echo "A GitHub release already exists for $TAG_NAME." >&2
-            exit 1
-          fi
-
-          if gh api "repos/${GITHUB_REPOSITORY}/git/ref/tags/${TAG_NAME}" >/dev/null 2>&1; then
-            echo "Git tag $TAG_NAME already exists." >&2
-            exit 1
-          fi
-      - name: Publish GitHub release
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           RELEASE_TYPE: ${{ inputs.release_type }}
-          TAG_NAME: ${{ inputs.tag_name }}
-        shell: bash
-        run: |
-          set -euo pipefail
-
-          args=(
-            "$TAG_NAME"
-            "${{ steps.asset.outputs.path }}"
-            --repo "$GITHUB_REPOSITORY"
-            --target "$GITHUB_SHA"
-            --generate-notes
-            --title "IE Lua Language Server $TAG_NAME"
-          )
-          if [[ "$RELEASE_TYPE" == "prerelease" ]]; then
-            args+=(--prerelease)
-          else
-            args+=(--latest)
-          fi
-          gh release create "${args[@]}"
+        with:
+          script: |
+            const fs = require('node:fs');
+            const scope = { owner: context.repo.owner, repo: context.repo.repo };
+            const files = fs.readdirSync('release-artifact');
+            if (files.length !== 1 || files[0] !== 'extension.vsix') throw new Error('Expected exactly one verified VSIX');
+            // Recheck immediately before mutation; API errors other than 404 are fatal.
+            for (const lookup of [
+              () => github.rest.repos.getReleaseByTag({ ...scope, tag: process.env.TAG_NAME }),
+              () => github.rest.git.getRef({ ...scope, ref: `tags/${process.env.TAG_NAME}` }),
+            ]) {
+              try { await lookup(); }
+              catch (error) { if (error.status === 404) continue; throw error; }
+              throw new Error('Release tag already exists');
+            }
+            const prerelease = process.env.RELEASE_TYPE === 'prerelease';
+            const { data: release } = await github.rest.repos.createRelease({ ...scope, tag_name: process.env.TAG_NAME, target_commitish: context.sha, name: `IE Lua Language Server ${process.env.TAG_NAME}`, draft: true, prerelease, generate_release_notes: true });
+            await github.rest.repos.uploadReleaseAsset({ ...scope, release_id: release.id, name: `ie-lua-language-server-${process.env.TAG_NAME}.vsix`, data: fs.readFileSync('release-artifact/extension.vsix') });
+            await github.rest.repos.updateRelease({ ...scope, release_id: release.id, draft: false, make_latest: prerelease ? 'false' : 'true' });

@@ -7,9 +7,7 @@
       "request": "attach",
       "port": 6009,
       "restart": true,
-      "outFiles": [
-        "${workspaceFolder}/dist/server/**/*.js"
-      ]
+      "outFiles": ["${workspaceFolder}/dist/server/**/*.js"]
     }
   ]
 }

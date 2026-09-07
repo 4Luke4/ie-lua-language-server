@@ -6,134 +6,110 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
 
 concurrency:
   group: update-eeex-api-data
   cancel-in-progress: false
 
 jobs:
-  update:
-    name: Generate reviewable API update
-    runs-on: ubuntu-latest
+  generate:
+    name: Generate API update without write credentials
+    runs-on: ubuntu-24.04
     timeout-minutes: 25
+    outputs:
+      changed: ${{ steps.revision.outputs.changed }}
+      commit: ${{ steps.revision.outputs.commit }}
     steps:
-      - name: Check out default branch
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - name: Check upstream revision
-        id: source
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Resolve upstream revision
+        id: revision
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        shell: bash
+          GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-
-          upstream_commit="$(gh api repos/Bubb13/EEex-Docs/commits/dev --jq '.sha')"
-          if [[ ! "$upstream_commit" =~ ^[0-9a-f]{40}$ ]]; then
-            echo "Upstream returned an invalid commit SHA: $upstream_commit" >&2
-            exit 1
-          fi
-
-          current_commit="$(
-            node -e "
-              const index = require('./resources/api/api-index.json');
-              const source = index.sources.find(
-                (candidate) => candidate.id === 'ee-game-structures-x64',
-              );
-              process.stdout.write(source?.commit ?? '');
-            "
-          )"
-          if [[ "$current_commit" == "$upstream_commit" ]]; then
-            echo "should_update=false" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-
-          short_commit="${upstream_commit:0:12}"
-          branch_name="automation/eeex-api-${short_commit}"
-          pr_query_args=(
-            --repo "$GITHUB_REPOSITORY"
-            --head "$branch_name"
-            --state all
-            --json url
-            --jq '.[0].url // ""'
-          )
-          existing_pr="$(gh pr list "${pr_query_args[@]}")"
-          if [[ -n "$existing_pr" ]]; then
-            echo "An update pull request already exists: $existing_pr"
-            echo "should_update=false" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-
-          echo "commit=$upstream_commit" >> "$GITHUB_OUTPUT"
-          echo "branch=$branch_name" >> "$GITHUB_OUTPUT"
-          echo "should_update=true" >> "$GITHUB_OUTPUT"
-      - name: Set up Node.js
-        if: steps.source.outputs.should_update == 'true'
-        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+          commit="$(gh api repos/Bubb13/EEex-Docs/commits/dev --jq '.sha')"
+          [[ "$commit" =~ ^[0-9a-f]{40}$ ]]
+          current="$(node -p "require('./resources/api/api-index.json').sources.find(s => s.id === 'ee-game-structures-x64').commit")"
+          echo "commit=$commit" >> "$GITHUB_OUTPUT"
+          if [[ "$commit" == "$current" ]]; then echo 'changed=false' >> "$GITHUB_OUTPUT"; else echo 'changed=true' >> "$GITHUB_OUTPUT"; fi
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        if: steps.revision.outputs.changed == 'true'
         with:
           node-version: 24
           cache: npm
-          cache-dependency-path: package-lock.json
-      - name: Install dependencies
-        if: steps.source.outputs.should_update == 'true'
+      - if: steps.revision.outputs.changed == 'true'
         run: npm ci --no-audit --progress=false
-      - name: Generate API data
-        if: steps.source.outputs.should_update == 'true'
+      - if: steps.revision.outputs.changed == 'true'
+        run: npm run compile
+      - if: steps.revision.outputs.changed == 'true'
         env:
-          IE_LUA_EEEX_COMMIT: ${{ steps.source.outputs.commit }}
-          IE_LUA_FETCH_EEEX: '1'
-        run: |
-          npm run compile
-          npm run ingest:docs
-      - name: Verify generated package
-        if: steps.source.outputs.should_update == 'true'
+          IE_LUA_EEEX_COMMIT: ${{ steps.revision.outputs.commit }}
+        run: node scripts/regenerate.cjs
+      - if: steps.revision.outputs.changed == 'true'
+        run: npx --no-install prettier --write resources/api
+      - if: steps.revision.outputs.changed == 'true'
         run: npm run verify
-      - name: Open update pull request
-        if: steps.source.outputs.should_update == 'true'
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        if: steps.revision.outputs.changed == 'true'
+        with:
+          name: eeex-api-data
+          path: resources/api/
+          if-no-files-found: error
+          retention-days: 7
+  publish:
+    name: Open reviewable API pull request
+    needs: generate
+    if: needs.generate.outputs.changed == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: eeex-api-data
+          path: generated
+      - name: Commit data with the GitHub API
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         env:
-          BRANCH_NAME: ${{ steps.source.outputs.branch }}
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          UPSTREAM_COMMIT: ${{ steps.source.outputs.commit }}
-        shell: bash
-        run: |
-          set -euo pipefail
-
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git switch --create "$BRANCH_NAME"
-          git add resources/api
-          if git diff --cached --quiet; then
-            echo "The upstream revision changed without changing generated API data." >&2
-            exit 1
-          fi
-
-          git commit --message "chore(data): update EEex API index"
-          git push origin "HEAD:$BRANCH_NAME"
-
-          game_function_count="$(node -p "require('./resources/api/api-index.json').sections.find((section) => section.id === 'ee-game-lua-functions').symbolCount")"
-          eeex_function_count="$(node -p "require('./resources/api/api-index.json').sections.find((section) => section.id === 'eeex-functions').symbolCount")"
-          structure_symbol_count="$(node -p "require('./resources/api/api-index.json').sections.find((section) => section.id === 'ee-game-structures-x64').symbolCount")"
-
-          body_file="$RUNNER_TEMP/eeex-update-body.md"
-          {
-            echo "## Summary"
-            echo
-            echo "- regenerate complete EE/EEex API data from resolved commit \`$UPSTREAM_COMMIT\`"
-            echo "- emit $game_function_count EE Game function symbols and $eeex_function_count EEex function symbols in upstream-category shards"
-            echo "- emit $structure_symbol_count structure/layout symbols in upstream-category shards with pinned source locations"
-            echo "- retain exact commit-and-line provenance for every generated upstream symbol"
-            echo
-            echo "## Validation"
-            echo
-            echo "- `npm run verify`"
-          } > "$body_file"
-
-          pr_create_args=(
-            --repo "$GITHUB_REPOSITORY"
-            --base main
-            --head "$BRANCH_NAME"
-            --title "chore(data): update EEex API index"
-            --body-file "$body_file"
-          )
-          gh pr create "${pr_create_args[@]}"
+          UPSTREAM_COMMIT: ${{ needs.generate.outputs.commit }}
+        with:
+          script: |
+            const fs = require('node:fs');
+            const path = require('node:path');
+            const scope = { owner: context.repo.owner, repo: context.repo.repo };
+            const upstream = process.env.UPSTREAM_COMMIT;
+            if (!/^[0-9a-f]{40}$/.test(upstream)) throw new Error('Invalid source revision');
+            const branch = `automation/eeex-api-${upstream.slice(0,12)}`;
+            const previous = await github.rest.pulls.list({ ...scope, head: `${scope.owner}:${branch}`, state: 'all' });
+            if (previous.data.length) { core.info(`Existing update: ${previous.data[0].html_url}`); return; }
+            // The generator used this exact commit; never overwrite newer base-branch data.
+            const { data: base } = await github.rest.git.getCommit({ ...scope, commit_sha: context.sha });
+            const { data: tree } = await github.rest.git.getTree({ ...scope, tree_sha: base.tree.sha, recursive: 'true' });
+            if (tree.truncated) throw new Error('Repository tree truncated');
+            const entries = [];
+            const visit = directory => {
+              for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+                const file = path.join(directory, entry.name);
+                if (entry.isDirectory()) visit(file);
+                else if (entry.isFile() && entry.name.endsWith('.json')) {
+                  const content = fs.readFileSync(file, 'utf8');
+                  JSON.parse(content);
+                  entries.push({ path: `resources/api/${path.relative('generated', file).split(path.sep).join('/')}`, mode: '100644', type: 'blob', content });
+                } else if (entry.name !== 'AGENTS.md') throw new Error(`Unexpected generated file: ${file}`);
+              }
+            };
+            visit('generated');
+            const names = new Set(entries.map(e => e.path));
+            for (const entry of tree.tree) if (entry.type === 'blob' && entry.path.startsWith('resources/api/') && entry.path.endsWith('.json') && !names.has(entry.path)) entries.push({ path: entry.path, mode: '100644', type: 'blob', sha: null });
+            const { data: generatedTree } = await github.rest.git.createTree({ ...scope, base_tree: base.tree.sha, tree: entries });
+            const { data: commit } = await github.rest.git.createCommit({ ...scope, message: 'chore(data): update EEex API index', tree: generatedTree.sha, parents: [context.sha] });
+            await github.rest.git.createRef({ ...scope, ref: `refs/heads/${branch}`, sha: commit.sha });
+            const manifest = JSON.parse(fs.readFileSync('generated/api-index.json', 'utf8'));
+            const counts = manifest.sections.map(s => `- ${s.title}: ${s.symbolCount} symbols`).join('\n');
+            const body = `## Summary\n\nRegenerate EEex data from ${upstream}.\n\n${counts}\n\n## Validation\n\nGeneration and unit/data checks: ${context.serverUrl}/${scope.owner}/${scope.repo}/actions/runs/${context.runId}\n\nFull PR checks are pending. GitHub may require a maintainer to approve workflows to run. Do not merge until all required checks pass.`;
+            await github.rest.pulls.create({ ...scope, base: context.payload.repository.default_branch, head: branch, title: 'chore(data): update EEex API index', body });

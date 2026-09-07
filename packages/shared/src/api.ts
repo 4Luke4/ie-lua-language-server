@@ -175,7 +175,6 @@ export function makeDocumentation(symbol: ApiSymbol): string {
     chunks.push(symbol.documentationMarkdown);
   } else if (symbol.documentationState === 'undocumented') {
     chunks.push('Undocumented in official source.');
-
   }
   chunks.push('---', `Source: [${symbol.upstreamUrl}](${symbol.upstreamUrl})`);
   return chunks.join('\n\n');

@@ -284,7 +284,16 @@ function auditSectionFile(
     }
   }
 
+  if (splitSections.has(expectedSection) && section.source?.licenseStatus !== 'allowed') {
+    throw new Error(`Upstream source metadata is inconsistent: ${expectedSection}`);
+  }
   for (const symbol of section.symbols) {
+    if (splitSections.has(expectedSection) && symbol.licenseStatus !== 'allowed') {
+      throw new Error(`Upstream symbol metadata is inconsistent: ${symbol.id ?? '?'}`);
+    }
+    if (symbol.documentationState !== 'documented' && symbol.documentationState !== 'undocumented') {
+      throw new Error(`Unknown documentation state: ${symbol.id ?? '?'}`);
+    }
     if (symbol.sourceSection !== expectedSection) {
       throw new Error(`API symbol is in the wrong section file: ${symbol.id ?? '?'}`);
     }
