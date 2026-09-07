@@ -147,7 +147,13 @@ async function run() {
     fs.writeFileSync(
       path.join(reports, 'editor.json'),
       JSON.stringify(
-        { vscode: vscode.version, platform: process.platform, arch: process.arch, theme: process.env.IE_TEST_THEME, passed: results },
+        {
+          vscode: vscode.version,
+          platform: process.platform,
+          arch: process.arch,
+          theme: process.env.IE_TEST_THEME,
+          passed: results,
+        },
         null,
         2,
       ),
