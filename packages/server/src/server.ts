@@ -59,6 +59,7 @@ import {
 
 const connection = createConnection(ProposedFeatures.all);
 const documents = new TextDocuments(TextDocument);
+// Versions can repeat after reopening a URI; session identity and generation must also match.
 interface AnalysisState {
   document: TextDocument;
   session: symbol | undefined;
@@ -81,7 +82,9 @@ let apiIndex: ApiIndex = startupApi.index ?? emptyApiIndex;
 connection.onInitialized(() => {
   reportApiLoad(startupApi);
   if (!startupApi.index) {
-    background(connection.window.showWarningMessage('IE Lua API data is unavailable. Language editing remains available; see the server log and retry Reload API Data.'));
+    connection.window.showWarningMessage(
+      'IE Lua API data is unavailable. Language editing remains available; see the server log and retry Reload API Data.',
+    );
   }
 });
 
@@ -419,8 +422,11 @@ connection.onWorkspaceSymbol(async (params) => {
     if (result.status === 'rejected') throw result.reason;
     for (const symbol of result.value.symbols) {
       if (!query || symbol.name.toLowerCase().includes(query)) {
-        symbols.push({ name: symbol.name, kind: toSymbolKind(symbol.kind),
-          location: Location.create(state.document.uri, toLspRange(symbol.location)) });
+        symbols.push({
+          name: symbol.name,
+          kind: toSymbolKind(symbol.kind),
+          location: Location.create(state.document.uri, toLspRange(symbol.location)),
+        });
       }
     }
   }
@@ -492,7 +498,11 @@ connection.onExecuteCommand(async (params: ExecuteCommandParams) => {
     case 'ieLua.reloadApiData': {
       const loaded = loadApiIndex();
       reportApiLoad(loaded);
-      if (!loaded.index) throw new ResponseError(-32603, 'API reload failed. Previous API data retained. See the server log and retry Reload API Data.');
+      if (!loaded.index)
+        throw new ResponseError(
+          -32603,
+          'API reload failed. Previous API data retained. See the server log and retry Reload API Data.',
+        );
       apiIndex = loaded.index;
       // Pending unknown-global diagnostics must not cross an API generation boundary.
       invalidateAnalyses();
@@ -511,7 +521,12 @@ connection.onExecuteCommand(async (params: ExecuteCommandParams) => {
 });
 
 function snapshot(document: TextDocument): TextDocument {
-  const copy = TextDocument.create(document.uri, document.languageId, document.version, document.getText());
+  const copy = TextDocument.create(
+    document.uri,
+    document.languageId,
+    document.version,
+    document.getText(),
+  );
   snapshots.set(copy, { session: sessions.get(document.uri), generation });
   return copy;
 }
@@ -522,10 +537,13 @@ function getOpenDocument(uri: string): TextDocument | undefined {
 }
 
 function isCurrent(state: Pick<AnalysisState, 'document' | 'session' | 'generation'>): boolean {
-  return !stopped && state.session !== undefined &&
+  return (
+    !stopped &&
+    state.session !== undefined &&
     sessions.get(state.document.uri) === state.session &&
     generation === state.generation &&
-    documents.get(state.document.uri)?.version === state.document.version;
+    documents.get(state.document.uri)?.version === state.document.version
+  );
 }
 
 function requireCurrent(state: AnalysisState): void {
@@ -538,7 +556,8 @@ function isContentModified(error: unknown): boolean {
 
 function background(work: Promise<unknown>): void {
   void work.catch((error: unknown) => {
-    if (!isContentModified(error) && !stopped) connection.console.error('Background document operation failed. Retry the operation.');
+    if (!isContentModified(error) && !stopped)
+      connection.console.error('Background document operation failed. Retry the operation.');
   });
 }
 
@@ -552,8 +571,14 @@ function invalidateAnalyses(): void {
 function analysisState(document: TextDocument): AnalysisState {
   const identity = snapshots.get(document)!;
   const cached = analyses.get(document.uri);
-  if (cached && cached.document.version === document.version &&
-      cached.session === identity.session && cached.generation === identity.generation && isCurrent(cached)) return cached;
+  if (
+    cached &&
+    cached.document.version === document.version &&
+    cached.session === identity.session &&
+    cached.generation === identity.generation &&
+    isCurrent(cached)
+  )
+    return cached;
   let state: AnalysisState;
   const result = getSettings(document.uri).then((settings) => {
     requireCurrent(state);
@@ -561,7 +586,9 @@ function analysisState(document: TextDocument): AnalysisState {
     return analyzeDocument({
       uri: document.uri,
       languageId: document.languageId === 'ie-menu' ? 'ie-menu' : 'ie-lua',
-      text: document.getText(), settings, luaparse,
+      text: document.getText(),
+      settings,
+      luaparse,
     });
   });
   state = { document, ...identity, result };
@@ -578,16 +605,23 @@ async function onDocumentChanged(document: TextDocument): Promise<void> {
   requireCurrent(state);
   const settings = state.settings!;
   if (!shouldValidate(settings.validation.mode, 'type')) return;
-  scheduler.schedule(document.uri, () => {
-    if (isCurrent(state)) background(validateDocument(document));
-  }, settings.validation.debounceMs);
+  scheduler.schedule(
+    document.uri,
+    () => {
+      if (isCurrent(state)) background(validateDocument(document));
+    },
+    settings.validation.debounceMs,
+  );
 }
 
 function toMarkdownDocumentation(symbol: ApiSymbol): { kind: 'markdown'; value: string } {
   return { kind: 'markdown', value: makeDocumentation(symbol) };
 }
 
-async function maybeValidate(document: TextDocument, trigger: 'manual' | 'save' | 'type'): Promise<void> {
+async function maybeValidate(
+  document: TextDocument,
+  trigger: 'manual' | 'save' | 'type',
+): Promise<void> {
   const state = analysisState(document);
   await state.result;
   requireCurrent(state);
@@ -602,14 +636,20 @@ async function validateAllOpenDocuments(trigger: 'manual' | 'save' | 'type'): Pr
 }
 
 async function refreshAfterConfigurationChange(): Promise<void> {
-  await Promise.all(documents.all().map(async (current) => {
-    const state = analysisState(snapshot(current));
-    await state.result;
-    requireCurrent(state);
-    if (state.settings!.validation.mode === 'manual') {
-      await connection.sendDiagnostics({ uri: state.document.uri, version: state.document.version, diagnostics: [] });
-    }
-  }));
+  await Promise.all(
+    documents.all().map(async (current) => {
+      const state = analysisState(snapshot(current));
+      await state.result;
+      requireCurrent(state);
+      if (state.settings!.validation.mode === 'manual') {
+        await connection.sendDiagnostics({
+          uri: state.document.uri,
+          version: state.document.version,
+          diagnostics: [],
+        });
+      }
+    }),
+  );
 }
 
 async function validateDocument(document: TextDocument): Promise<void> {
@@ -622,7 +662,8 @@ async function validateDocument(document: TextDocument): Promise<void> {
     ...collectUnknownGlobalDiagnostics(document, analysis, state.settings!),
   ];
   await connection.sendDiagnostics({
-    uri: document.uri, version: document.version,
+    uri: document.uri,
+    version: document.version,
     diagnostics: diagnostics.map(toDiagnostic),
   });
 }
@@ -645,8 +686,11 @@ function getSettings(resource: string): Promise<IeLuaSettings> {
   const cached = settingsCache.get(resource);
   if (cached) return cached;
   const pending = hasConfigurationCapability
-    ? connection.workspace.getConfiguration({ scopeUri: resource, section: 'ieLua' })
-        .then((configuration: SettingsInput) => normalizeSettings(mergeSettings(initializationSettings, configuration)))
+    ? connection.workspace
+        .getConfiguration({ scopeUri: resource, section: 'ieLua' })
+        .then((configuration: SettingsInput) =>
+          normalizeSettings(mergeSettings(initializationSettings, configuration)),
+        )
     : Promise.resolve(normalizeSettings(initializationSettings));
   settingsCache.set(resource, pending);
   void pending.catch(() => {

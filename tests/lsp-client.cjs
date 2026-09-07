@@ -19,7 +19,9 @@ async function connect(options = {}) {
   let buffer = Buffer.alloc(0),
     id = 0,
     stderr = '';
-  const log = (message) => { if (!options.quiet) console.log(message); };
+  const log = (message) => {
+    if (!options.quiet) console.log(message);
+  };
   log(`LSP process started: ${child.pid}`);
   const pending = new Map(),
     notifications = [];
@@ -60,9 +62,20 @@ async function connect(options = {}) {
         if (message.method === 'workspace/configuration') {
           const entry = {
             items: message.params.items,
-            respond: (value = settings) => send({ id: message.id, result: message.params.items.map((item) =>
-              options.settingsForResource ? options.settingsForResource(item.scopeUri, value) : value) }),
-            reject: () => send({ id: message.id, error: { code: -32603, message: 'Synthetic configuration failure' } }),
+            respond: (value = settings) =>
+              send({
+                id: message.id,
+                result: message.params.items.map((item) =>
+                  options.settingsForResource
+                    ? options.settingsForResource(item.scopeUri, value)
+                    : value,
+                ),
+              }),
+            reject: () =>
+              send({
+                id: message.id,
+                error: { code: -32603, message: 'Synthetic configuration failure' },
+              }),
           };
           configurationRequests.push(entry);
           if (!holdConfiguration) entry.respond();
@@ -142,7 +155,9 @@ async function connect(options = {}) {
     initialized,
     notifications,
     configurationRequests,
-    holdConfiguration: (value = true) => { holdConfiguration = value; },
+    holdConfiguration: (value = true) => {
+      holdConfiguration = value;
+    },
     waitForConfiguration: async (index = 0) => {
       const deadline = Date.now() + (options.requestTimeout ?? 10000);
       while (!configurationRequests[index]) {

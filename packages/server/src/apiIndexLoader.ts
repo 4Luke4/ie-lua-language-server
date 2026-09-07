@@ -4,7 +4,8 @@ import { allSourceSections, type ApiIndex, type ApiSymbol } from '@ie-lua/shared
 
 type RecordValue = Record<string, unknown>;
 function record(value: unknown): asserts value is RecordValue {
-  if (!value || typeof value !== 'object' || Array.isArray(value)) throw new Error('Expected API object');
+  if (!value || typeof value !== 'object' || Array.isArray(value))
+    throw new Error('Expected API object');
 }
 function array(value: unknown): asserts value is unknown[] {
   if (!Array.isArray(value)) throw new Error('Expected API array');
@@ -14,7 +15,8 @@ function strings(value: RecordValue, required: string[], optional: string[] = []
     if (typeof value[key] !== 'string') throw new Error(`Expected API string: ${key}`);
   }
   for (const key of optional) {
-    if (value[key] !== undefined && typeof value[key] !== 'string') throw new Error(`Expected API string: ${key}`);
+    if (value[key] !== undefined && typeof value[key] !== 'string')
+      throw new Error(`Expected API string: ${key}`);
   }
 }
 function choice(value: unknown, allowed: readonly unknown[]): void {
@@ -28,16 +30,38 @@ function validateSymbols(value: unknown): asserts value is ApiSymbol[] {
   array(value);
   for (const symbol of value) {
     record(symbol);
-    strings(symbol, ['id', 'name', 'upstreamUrl'], [
-      'signature', 'instanceName', 'containerName', 'dataType', 'byteOffset', 'sizeExpression',
-      'documentationMarkdown', 'upstreamCommit',
+    strings(
+      symbol,
+      ['id', 'name', 'upstreamUrl'],
+      [
+        'signature',
+        'instanceName',
+        'containerName',
+        'dataType',
+        'byteOffset',
+        'sizeExpression',
+        'documentationMarkdown',
+        'upstreamCommit',
+      ],
+    );
+    choice(symbol.kind, [
+      'function',
+      'method',
+      'module',
+      'structure',
+      'field',
+      'variable',
+      'keyword',
+      'annotation',
     ]);
-    choice(symbol.kind, ['function', 'method', 'module', 'structure', 'field', 'variable', 'keyword', 'annotation']);
     choice(symbol.sourceSection, allSourceSections);
     choice(symbol.documentationState, ['documented', 'undocumented']);
     choice(symbol.licenseStatus, ['allowed', 'unknown']);
     for (const key of ['byteSize', 'memberCount']) {
-      if (symbol[key] !== undefined && (!Number.isSafeInteger(symbol[key]) || (symbol[key] as number) < 0)) {
+      if (
+        symbol[key] !== undefined &&
+        (!Number.isSafeInteger(symbol[key]) || (symbol[key] as number) < 0)
+      ) {
         throw new Error(`Expected API nonnegative integer: ${key}`);
       }
     }
@@ -51,7 +75,8 @@ function validateSymbols(value: unknown): asserts value is ApiSymbol[] {
         if (key === 'returns') strings(entry, [], ['type', 'description']);
         if (key === 'callableAliases') {
           strings(entry, ['name'], ['receiverType']);
-          if (typeof entry.consumesFirstParameter !== 'boolean') throw new Error('Expected API alias boolean');
+          if (typeof entry.consumesFirstParameter !== 'boolean')
+            throw new Error('Expected API alias boolean');
         }
       }
     }

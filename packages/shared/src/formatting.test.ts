@@ -42,7 +42,16 @@ void test('formatting protects strings, comments and incomplete constructs', () 
     assert.equal(formatted(text), text, JSON.stringify(text));
     assert.deepEqual(trailingWhitespaceEdits(formatted(text)), []);
   }
-  assert.equal(formatted('local s = [[value  \n]]  \nprint(s)  '), 'local s = [[value  \n]]\nprint(s)');
+  assert.equal(
+    formatted('local s = [[value  \n]]  \nprint(s)  '),
+    'local s = [[value  \n]]\nprint(s)',
+  );
   assert.equal(formatted('-- comment  \rprint(1)  '), '-- comment  \rprint(1)');
   assert.equal(maskLuaTrivia('-- comment\rprint(1)'), '          \rprint(1)');
+});
+
+void test('large indentation before text is preserved without backtracking', () => {
+  const indentation = '\t'.repeat(100_000);
+  assert.deepEqual(trailingWhitespaceEdits(`${indentation}print(1)`), []);
+  assert.equal(formatted(`${indentation}print(1)  `), `${indentation}print(1)`);
 });

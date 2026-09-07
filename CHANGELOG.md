@@ -175,7 +175,7 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 Historical dates identify repository preparation milestones; linked tags identify published prereleases where available.
 
-[0.6.0]: https://github.com/4Luke4/ie-lua-language-server/compare/main...release/0.6.0-stabilization
+[0.6.0]: https://github.com/4Luke4/ie-lua-language-server/pull/65
 [0.5.3]: https://github.com/4Luke4/ie-lua-language-server/pull/58
 [0.5.2]: https://github.com/4Luke4/ie-lua-language-server/tree/b5726a321d5d806377e4e5a73041ce1eaa280203
 [0.5.1]: https://github.com/4Luke4/ie-lua-language-server/tree/28d1b1dace7cc2520d5ee68b5dfce7746c2de7a3

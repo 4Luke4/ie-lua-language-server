@@ -5,14 +5,22 @@ export function trailingWhitespaceEdits(text: string): TextRange[] {
   const protectedRanges = luaProtectedRanges(text);
   const edits: TextRange[] = [];
   let protectedIndex = 0;
-  for (const match of text.matchAll(/[ \t]+(?=\r\n|\r|\n|$)/gu)) {
-    const start = match.index;
-    const end = start + match[0].length;
-    while (protectedRanges[protectedIndex] && protectedRanges[protectedIndex]!.end <= start) {
-      protectedIndex++;
+  let start: number | undefined;
+  // A single pass avoids regex backtracking on long whitespace runs before ordinary text.
+  for (let end = 0; end <= text.length; end++) {
+    const character = text[end];
+    if (character === ' ' || character === '\t') {
+      start ??= end;
+      continue;
     }
-    const protectedRange = protectedRanges[protectedIndex];
-    if (!protectedRange || protectedRange.start >= end) edits.push({ start, end });
+    if (start !== undefined && (character === '\r' || character === '\n' || end === text.length)) {
+      while (protectedRanges[protectedIndex] && protectedRanges[protectedIndex]!.end <= start) {
+        protectedIndex++;
+      }
+      const protectedRange = protectedRanges[protectedIndex];
+      if (!protectedRange || protectedRange.start >= end) edits.push({ start, end });
+    }
+    start = undefined;
   }
   return edits;
 }
