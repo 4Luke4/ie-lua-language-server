@@ -1,6 +1,6 @@
 # Release readiness
 
-- `VERSION`, package/workspace metadata, lockfile metadata, and the released changelog version agree.
+- `VERSION`, package/workspace metadata, lockfile metadata, and the prepared changelog version agree.
 - The final revision passes `Verify`, CodeQL analysis, dependency review, and commit conventions.
 - CI covers Linux, Windows, and macOS, plus VS Code 1.100.0 and stable. Attach exact run links;
   missing, cancelled, or skipped required coverage is not a pass.

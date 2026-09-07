@@ -1,3 +1,10 @@
+# Local-only reference material
+# These files may contain proprietary or closed-source game content and must not be tracked.
+plan.md
+samples/
+
+# https://github.com/github/gitignore/blob/main/Global/Linux.gitignore #
+
 *~
 
 # temporary files which can be created if a process still has a handle open of a deleted file
@@ -15,6 +22,8 @@
 # Log files created by default by the nohup command
 nohup.out
 
+# https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore #
+
 # Visual Studio Code
 .vscode/*
 !.vscode/settings.json
@@ -30,6 +39,8 @@ nohup.out
 # Build output
 dist/
 out/
+
+# https://github.com/github/gitignore/blob/main/Node.gitignore #
 
 # Logs
 logs
@@ -158,11 +169,6 @@ dist
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
 
-# Local-only reference material
-# These files may contain proprietary or closed-source game content and must not be tracked.
-specs.md
-samples/
-
 # pnpm
 .pnpm-store
 
@@ -183,3 +189,6 @@ vite.config.ts.timestamp-*
 # Actions test outputs
 reports/
 artifacts/
+
+# Cached workflow tools
+.cache/

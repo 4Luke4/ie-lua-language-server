@@ -180,6 +180,10 @@ export interface EmbeddedLuaRegion {
 }
 
 export interface SymbolInfo {
+  bindingId?: string;
+  scopeRange?: TextRange;
+  scopeDepth?: number;
+  visibleFrom?: number;
   name: string;
   kind: 'function' | 'method' | 'local' | 'global' | 'parameter' | 'field';
   location: SourceLocation;
@@ -188,6 +192,7 @@ export interface SymbolInfo {
 }
 
 export interface ReferenceInfo {
+  isDeclaration?: boolean;
   name: string;
   location: SourceLocation;
   resolvedDeclaration?: SymbolInfo;
@@ -212,6 +217,7 @@ export interface FoldInfo {
 }
 
 export interface AnalyzedDocument {
+  bindingsComplete?: boolean;
   uri: string;
   languageId: IeLuaLanguageId;
   text: string;

@@ -6,7 +6,7 @@ Download verified VSIX files from a CI run for use with VS Code or stdio clients
 ## Version policy
 
 `VERSION` is authoritative. Root/workspace manifests, internal dependencies, lockfile metadata,
-and the latest released changelog entry must agree. Use numeric `major.minor.patch` versions;
+and the latest prepared changelog entry must agree. Use numeric `major.minor.patch` versions;
 Marketplace prereleases use a package flag, not a version suffix. Odd minor versions are
 prereleases; even minor versions are stable. CI tests both packaging paths independently of
 publication eligibility.

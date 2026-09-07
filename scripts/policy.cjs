@@ -52,7 +52,12 @@ function validateVersions(version, pkg, lock, workspaces, changelog) {
 }
 function validateWorkflows(workflows) {
   const codeqlPins = new Set();
+  const names = new Set();
   for (const [file, workflow] of workflows) {
+    if (workflow.name) {
+      assert.ok(!names.has(workflow.name), `${file}: duplicate workflow name`);
+      names.add(workflow.name);
+    }
     assert.ok(workflow.permissions !== undefined, `${file}: explicit permissions required`);
     for (const job of Object.values(workflow.jobs)) {
       if (job.uses) continue;

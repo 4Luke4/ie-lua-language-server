@@ -27,7 +27,7 @@
 ## Sources of truth
 
 - `VERSION` is the application version source. Keep root/workspace manifests, internal dependency
-  versions, lockfile metadata, and the latest released `CHANGELOG.md` entry consistent with it.
+  versions, lockfile metadata, and the latest prepared `CHANGELOG.md` entry consistent with it.
 - `SECURITY.md`, `docs/architecture/THREAT_MODEL.md`, and `docs/release/READINESS.md` define the
   security and release gates. Update them when a change alters a documented boundary.
 
