@@ -279,12 +279,15 @@ void test('unsupported non-empty directives fail ingestion', () => {
 });
 
 void test('literal examples in notes end at dedented explanatory prose', () => {
-  const result = renderRstMarkdown(`.. note:: An action is called when clicked. For example::
+  const result = renderRstMarkdown(
+    `.. note:: An action is called when clicked. For example::
 
              actionDbl "call(0)"
 
           This calls the action.
-`, 'UI/index.rst');
+`,
+    'UI/index.rst',
+  );
   assert.match(result, /> ```text\n> actionDbl "call\(0\)"\n> ```/u);
   assert.match(result, /> This calls the action\./u);
 });
