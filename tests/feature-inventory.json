@@ -1,0 +1,153 @@
+{
+  "readmeGroups": [
+    "language-services",
+    "scope-and-fallback",
+    "embedded-lua",
+    "source-provenance",
+    "function-api",
+    "structure-api"
+  ],
+  "cases": [
+    {
+      "id": "activation",
+      "groups": [],
+      "features": ["automatic activation", "language associations", "accessibility profiles"],
+      "commands": [],
+      "settings": []
+    },
+    {
+      "id": "lexical-navigation",
+      "groups": ["language-services", "scope-and-fallback"],
+      "features": [
+        "completion",
+        "hover",
+        "definition",
+        "references",
+        "rename",
+        "document symbols",
+        "workspace symbols",
+        "semantic tokens",
+        "folding"
+      ],
+      "commands": [],
+      "settings": []
+    },
+    {
+      "id": "fallback-and-rename-safety",
+      "groups": ["scope-and-fallback"],
+      "features": ["incomplete buffers", "rename rejection"],
+      "commands": [],
+      "settings": []
+    },
+    {
+      "id": "game-api",
+      "groups": ["function-api", "source-provenance"],
+      "features": [
+        "game completion",
+        "game hover",
+        "signature help",
+        "namespace members",
+        "source definitions",
+        "examples",
+        "notes"
+      ],
+      "commands": [],
+      "settings": []
+    },
+    {
+      "id": "eeex-api",
+      "groups": ["function-api"],
+      "features": [
+        "typed aliases",
+        "colon methods",
+        "defaults",
+        "returns",
+        "warnings",
+        "tables",
+        "active parameters"
+      ],
+      "commands": [],
+      "settings": []
+    },
+    {
+      "id": "structures",
+      "groups": ["structure-api", "source-provenance"],
+      "features": [
+        "field completion",
+        "type annotations",
+        "parameter annotations",
+        "chained hover",
+        "layout types, offsets and sizes",
+        "structure narrative",
+        "field definitions"
+      ],
+      "commands": [],
+      "settings": []
+    },
+    {
+      "id": "diagnostics-settings",
+      "groups": ["language-services"],
+      "features": [
+        "diagnostics",
+        "validation modes",
+        "debounce cancellation",
+        "source filtering",
+        "Lua dialects",
+        "close cleanup"
+      ],
+      "commands": ["ieLua.validateDocument"],
+      "settings": [
+        "ieLua.validation.mode",
+        "ieLua.validation.debounceMs",
+        "ieLua.diagnostics.unknownGlobals",
+        "ieLua.symbolSources.enabled",
+        "ieLua.dialect"
+      ]
+    },
+    {
+      "id": "menu",
+      "groups": ["embedded-lua"],
+      "features": [
+        "backtick chunks",
+        "lua expressions",
+        "action/open/close/escape blocks",
+        "enabled/clickable expressions",
+        "custom keys",
+        "host ranges"
+      ],
+      "commands": [],
+      "settings": ["ieLua.menu.blockKeys", "ieLua.menu.expressionKeys"]
+    },
+    {
+      "id": "formatting",
+      "groups": ["language-services"],
+      "features": ["formatting", "idempotence", "CRLF and Unicode", "menu formatting boundary"],
+      "commands": [],
+      "settings": ["ieLua.formatter.configPath"]
+    },
+    {
+      "id": "commands",
+      "groups": [],
+      "features": [
+        "open-document validation",
+        "API reload",
+        "source picker cancellation",
+        "server output"
+      ],
+      "commands": [
+        "ieLua.validateWorkspace",
+        "ieLua.reloadApiData",
+        "ieLua.showApiSource",
+        "ieLua.openServerLog"
+      ],
+      "settings": []
+    },
+    {
+      "id": "packaged-grammar",
+      "groups": ["embedded-lua"],
+      "features": ["packaged TextMate grammars"],
+      "commands": [],
+      "settings": []
+    }
+  ]
+}

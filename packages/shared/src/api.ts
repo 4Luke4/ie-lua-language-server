@@ -175,8 +175,6 @@ export function makeDocumentation(symbol: ApiSymbol): string {
     chunks.push(symbol.documentationMarkdown);
   } else if (symbol.documentationState === 'undocumented') {
     chunks.push('Undocumented in official source.');
-  } else if (symbol.documentationState === 'permission-gated') {
-    chunks.push('Narrative upstream documentation is permission-gated and is not bundled.');
   }
   chunks.push('---', `Source: [${symbol.upstreamUrl}](${symbol.upstreamUrl})`);
   return chunks.join('\n\n');

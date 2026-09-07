@@ -162,7 +162,7 @@ void test('layout documentation includes factual field metadata and pinned sourc
   assert.match(documentation, /Type:\*\* `const struct CDerivedStats \*\*`/u);
   assert.match(documentation, /Offset:\*\* `0x1120`/u);
   assert.match(documentation, /Size:\*\* 3240 bytes/u);
-  assert.match(documentation, /Narrative upstream documentation is permission-gated/u);
+  assert.match(documentation, /Undocumented in official source/u);
   assert.match(documentation, /```lua\nm_derivedStats: const struct CDerivedStats \*\*\n```/u);
   assert.doesNotMatch(documentation, /\\\\n/u);
 });
@@ -192,9 +192,9 @@ function makeStructure(name: string, byteSize: number): ApiSymbol {
     signature: `struct ${name} (${byteSize} bytes)`,
     byteSize,
     memberCount: 1,
-    documentationState: 'permission-gated',
+    documentationState: 'undocumented',
     upstreamUrl: `https://example.com/${name}#L1`,
-    licenseStatus: 'permission-gated',
+    licenseStatus: 'allowed',
   };
 }
 
@@ -217,9 +217,9 @@ function makeField(
     dataType,
     byteOffset,
     byteSize,
-    documentationState: 'permission-gated',
+    documentationState: 'undocumented',
     upstreamUrl: `https://example.com/${name}#L1`,
-    licenseStatus: 'permission-gated',
+    licenseStatus: 'allowed',
   };
 }
 

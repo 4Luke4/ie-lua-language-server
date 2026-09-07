@@ -20,8 +20,8 @@ export type SourceSectionId =
 export type ApiSymbolKind =
   'function' | 'method' | 'module' | 'structure' | 'field' | 'variable' | 'keyword' | 'annotation';
 
-export type DocumentationState = 'documented' | 'undocumented' | 'permission-gated';
-export type LicenseStatus = 'allowed' | 'permission-gated' | 'unknown';
+export type DocumentationState = 'documented' | 'undocumented';
+export type LicenseStatus = 'allowed' | 'unknown';
 
 export interface IeLuaSettings {
   dialect: LuaDialect;
@@ -180,6 +180,10 @@ export interface EmbeddedLuaRegion {
 }
 
 export interface SymbolInfo {
+  bindingId?: string;
+  scopeRange?: TextRange;
+  scopeDepth?: number;
+  visibleFrom?: number;
   name: string;
   kind: 'function' | 'method' | 'local' | 'global' | 'parameter' | 'field';
   location: SourceLocation;
@@ -188,6 +192,8 @@ export interface SymbolInfo {
 }
 
 export interface ReferenceInfo {
+  member?: boolean;
+  isDeclaration?: boolean;
   name: string;
   location: SourceLocation;
   resolvedDeclaration?: SymbolInfo;
@@ -212,6 +218,7 @@ export interface FoldInfo {
 }
 
 export interface AnalyzedDocument {
+  bindingsComplete?: boolean;
   uri: string;
   languageId: IeLuaLanguageId;
   text: string;

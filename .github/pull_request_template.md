@@ -1,15 +1,22 @@
 ## Summary
 
-## Validation
+Describe the resulting behavior and any compatibility or generated-data changes.
 
-- [ ] `npm run compile`
-- [ ] `npm run lint`
-- [ ] `npm test`
-- [ ] `npm run package`
+## GitHub Actions evidence
 
-## Checklist
+- Tested commit:
+- CI / Verify run:
+- CodeQL analysis:
+- Dependency review:
+- Commit-policy check:
+- VSIX and test-report artifacts:
+- Missing or intentionally skipped coverage:
 
-- [ ] User-facing behavior is documented.
-- [ ] Generated API data has provenance.
-- [ ] No unlicensed external help text is bundled.
-- [ ] Security or marketplace impact is called out.
+Do not run installation, tests, formatters, generation, builds, or packaging locally.
+
+## Review checklist
+
+- [ ] User-facing behavior and source provenance are documented.
+- [ ] Version metadata and release-readiness requirements agree.
+- [ ] Runtime notices and changed security boundaries are reviewed.
+- [ ] Required checks pass on the final revision; skipped checks are not reported as verified.

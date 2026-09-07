@@ -259,7 +259,7 @@ export function renderRstMarkdown(source: string, sourcePath = '<rst>'): string 
       const title = kind === 'admonition' ? argument || 'Note' : capitalize(kind);
       const block = readIndentedBlock(lines, index + 1);
       const bodyLines =
-        kind !== 'admonition' && argument ? [argument, ...block.lines] : block.lines;
+        kind !== 'admonition' && argument ? [argument, '', ...block.lines] : block.lines;
       pushBlank();
       output.push(`> **${renderInline(title)}**`);
       for (const bodyLine of renderRstMarkdown(bodyLines.join('\n'), sourcePath).split('\n')) {
@@ -272,7 +272,7 @@ export function renderRstMarkdown(source: string, sourcePath = '<rst>'): string 
 
     const codeBlock = line.match(/^\.\. code-block::\s*([A-Za-z0-9_-]*)\s*$/u);
     if (codeBlock) {
-      const block = readIndentedBlock(lines, index + 1);
+      const block = readIndentedBlock(lines, index + 1, true);
       pushBlank();
       output.push(`\`\`\`${codeBlock[1] || 'text'}`, ...block.lines, '\`\`\`', '');
       index = block.end;
@@ -284,7 +284,7 @@ export function renderRstMarkdown(source: string, sourcePath = '<rst>'): string 
     }
 
     if (line.trim() === '::') {
-      const block = readIndentedBlock(lines, index + 1);
+      const block = readIndentedBlock(lines, index + 1, true);
       if (block.lines.length === 0) {
         throw new Error(`${sourcePath}:${index + 1}: empty literal block`);
       }
@@ -364,7 +364,22 @@ export function renderRstMarkdown(source: string, sourcePath = '<rst>'): string 
       paragraph.push(lines[index]?.trim() ?? '');
       index += 1;
     }
-    output.push(renderInline(paragraph.join(' ')));
+    const paragraphText = paragraph.join(' ');
+    if (paragraphText.endsWith('::')) {
+      const block = readIndentedBlock(lines, index, true);
+      if (!block.lines.length) throw new Error(`${sourcePath}:${index}: empty literal block`);
+      output.push(
+        renderInline(paragraphText.slice(0, -1)),
+        '',
+        '```text',
+        ...block.lines,
+        '```',
+        '',
+      );
+      index = block.end;
+    } else {
+      output.push(renderInline(paragraphText));
+    }
   }
 
   return output
@@ -519,17 +534,30 @@ function findFirstLiteralBlock(
   return { start: marker, end: block.end, lines: block.lines };
 }
 
-function readIndentedBlock(lines: string[], start: number): { end: number; lines: string[] } {
+function readIndentedBlock(
+  lines: string[],
+  start: number,
+  literal = false,
+): { end: number; lines: string[] } {
   let index = start;
   while (index < lines.length && !lines[index]?.trim()) index += 1;
   const blockStart = index;
-  while (index < lines.length && (!lines[index]?.trim() || /^\s/u.test(lines[index] ?? '')))
+  const firstIndent = lines[index]?.match(/^[ \t]*/u)?.[0].length ?? 0;
+  if (literal && firstIndent === 0) return { end: index, lines: [] };
+  // Literal blocks end on dedent; following prose must not become part of the code example.
+  while (index < lines.length) {
+    const line = lines[index] ?? '';
+    const indent = line.match(/^[ \t]*/u)?.[0].length ?? 0;
+    if (line.trim() && (literal ? indent < firstIndent : indent === 0)) break;
     index += 1;
+  }
   const raw = lines.slice(blockStart, index);
   while (raw.length > 0 && !raw.at(-1)?.trim()) raw.pop();
   const nonEmpty = raw.filter((line) => line.trim());
   if (nonEmpty.length === 0) return { end: index, lines: [] };
-  const indent = Math.min(...nonEmpty.map((line) => line.match(/^\s*/u)?.[0].length ?? 0));
+  const indent = literal
+    ? firstIndent
+    : Math.min(...nonEmpty.map((line) => line.match(/^\s*/u)?.[0].length ?? 0));
   return { end: index, lines: raw.map((line) => line.slice(Math.min(indent, line.length))) };
 }
 

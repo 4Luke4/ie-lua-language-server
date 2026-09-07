@@ -19,7 +19,7 @@ CGameObject
 
 **Notes**
 
-Narrative text must not be copied.
+The object retains its original position.
 
 .. _CGameSprite\\:\\:GroundItem:
 
@@ -33,7 +33,7 @@ CGameSprite::GroundItem
 +------------+---------------------+----------------+-----------+
 `;
 
-void test('parses x64 structure layouts without narrative prose or padding', () => {
+void test('parses x64 layouts and retains narrative without inventing field prose', () => {
   const symbols = parseEeexStructureSymbols({
     commit: '0123456789abcdef0123456789abcdef01234567',
     indexPath: 'CG/index.rst',
@@ -59,10 +59,9 @@ void test('parses x64 structure layouts without narrative prose or padding', () 
     symbols.some((symbol) => symbol.name.includes('padding')),
     false,
   );
-  assert.equal(
-    symbols.some((symbol) => symbol.documentationMarkdown?.includes('Narrative')),
-    false,
-  );
+  assert.match(structure?.documentationMarkdown ?? '', /The object retains its original position/u);
+  assert.equal(structure?.documentationState, 'documented');
+  assert.equal(structure?.licenseStatus, 'allowed');
 });
 
 void test('normalizes escaped nested C++ structure names', () => {
@@ -74,4 +73,42 @@ void test('normalizes escaped nested C++ structure names', () => {
 
   const field = symbols.find((symbol) => symbol.name === 'CGameSprite::GroundItem.data');
   assert.equal(field?.sizeExpression, 'sizeof(TYPE)');
+});
+
+void test('empty layouts retain introductory text and notes without parsing a phantom table', () => {
+  const symbols = parseEeexStructureSymbols({
+    commit: '0123456789abcdef0123456789abcdef01234567',
+    indexPath: 'CL/index.rst',
+    text: `.. _CLUAConsole:
+
+CLUAConsole
+^^^^^^^^^^^
+
+See the console class.
+
++------------+---------------------+----------+-----------+
+| **Offset** | **Size (Total: 0)** | **Type** | **Field** |
++------------+---------------------+----------+-----------+
+
+**Notes**
+
+No fields are exposed.
+
+----
+`,
+  });
+  assert.equal(symbols.length, 1);
+  assert.equal(symbols[0]?.memberCount, 0);
+  assert.match(symbols[0]?.documentationMarkdown ?? '', /See the console class/u);
+  assert.match(symbols[0]?.documentationMarkdown ?? '', /No fields are exposed/u);
+  assert.doesNotMatch(symbols[0]?.documentationMarkdown ?? '', /Offset/u);
+});
+
+void test('long trailing whitespace is handled without recursive regular expressions', () => {
+  const symbols = parseEeexStructureSymbols({
+    commit: '0123456789abcdef0123456789abcdef01234567',
+    indexPath: 'CG/index.rst',
+    text: fixture + '\n'.repeat(50000),
+  });
+  assert.equal(symbols.filter((symbol) => symbol.kind === 'structure').length, 2);
 });

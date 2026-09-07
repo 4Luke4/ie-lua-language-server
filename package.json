@@ -2,7 +2,7 @@
   "name": "ie-lua-language-server",
   "displayName": "IE Lua Language Server",
   "description": "Professional Lua and Infinity Engine .menu language support for VS Code and stdio LSP clients.",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "publisher": "infinity-engine-tools",
   "icon": "assets/icon.png",
   "galleryBanner": {
@@ -266,14 +266,19 @@
     "lint": "eslint . --ext .ts",
     "format:check": "prettier --check .",
     "format": "prettier --write .",
-    "test": "npm run compile && node --test dist/**/*.test.js",
+    "test": "npm run compile && node scripts/run-tests.cjs",
     "ingest:docs": "node dist/tools/ingest-docs.js",
     "package": "npm run bundle && vsce package --no-dependencies",
     "package:pre-release": "npm run bundle && vsce package --pre-release --no-dependencies",
     "package:audit": "node dist/tools/audit-package.js",
     "publish:marketplace": "vsce publish --packagePath ./*.vsix",
     "publish:marketplace:pre-release": "vsce publish --pre-release --packagePath ./*.vsix",
-    "verify": "npm run compile && npm run lint && npm run format:check && npm test && npm run bundle && npm run package:audit"
+    "verify": "npm run compile && npm run lint && npm run format:check && npm test && npm run bundle && npm run package:audit",
+    "test:lsp": "node --test tests/lsp.test.cjs",
+    "test:editor": "node tests/editor/run.cjs",
+    "policy:check": "node scripts/policy.cjs",
+    "package:audit:vsix": "node scripts/audit-vsix.cjs",
+    "release:check": "node scripts/release-policy.cjs"
   },
   "dependencies": {
     "luaparse": "^0.3.1",
@@ -292,6 +297,11 @@
     "esbuild": "^0.28.2",
     "eslint": "^10.9.1",
     "prettier": "^3.9.6",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "js-yaml": "4.3.1",
+    "jszip": "3.10.1",
+    "semver": "7.8.5",
+    "vscode-textmate": "9.3.2",
+    "vscode-oniguruma": "2.0.1"
   }
 }

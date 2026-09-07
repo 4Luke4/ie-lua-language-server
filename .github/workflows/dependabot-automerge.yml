@@ -21,7 +21,7 @@ jobs:
     name: Merge verified patch update
     if: github.event.pull_request.user.login == 'dependabot[bot]'
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 60
     steps:
       - name: Read and verify Dependabot metadata
         id: metadata
@@ -37,7 +37,7 @@ jobs:
         run: |
           set -euo pipefail
 
-          for workflow in ci.yml codeql.yml; do
+          for workflow in ci.yml codeql.yml dependency-review.yml conventional-commits.yml; do
             run_id=""
             for _ in {1..30}; do
               run_id="$(
@@ -69,4 +69,8 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
           PR_URL: ${{ github.event.pull_request.html_url }}
-        run: gh pr merge "$PR_URL" --squash --match-head-commit "$PR_HEAD_SHA"
+        run: |
+          set -euo pipefail
+          current_head="$(gh pr view "$PR_URL" --json headRefOid --jq '.headRefOid')"
+          test "$current_head" = "$PR_HEAD_SHA"
+          gh pr merge "$PR_URL" --squash --match-head-commit "$PR_HEAD_SHA"

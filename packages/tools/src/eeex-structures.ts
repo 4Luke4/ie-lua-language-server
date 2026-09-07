@@ -1,4 +1,5 @@
 import type { ApiSymbol } from '@ie-lua/shared';
+import { renderRstMarkdown } from './eeex-functions';
 
 const sourceSection = 'ee-game-structures-x64' as const;
 const sourceDirectory = 'EE Game Structures (x64)';
@@ -12,8 +13,7 @@ export interface EeexStructureParseOptions {
 /**
  * Converts one upstream RST index into structure and field symbols.
  *
- * Narrative paragraphs are intentionally excluded. The generated metadata is limited to
- * layout facts: names, types, offsets, sizes, source locations, and pinned provenance.
+ * Layout rows and surrounding narrative retain independent metadata and pinned provenance.
  */
 export function parseEeexStructureSymbols(options: EeexStructureParseOptions): ApiSymbol[] {
   const anchors = [...options.text.matchAll(/^\.\. _(.+):\s*$/gmu)];
@@ -37,17 +37,17 @@ export function parseEeexStructureSymbols(options: EeexStructureParseOptions): A
     const totalSize = /^\d+$/u.test(rawTotalSize) ? Number.parseInt(rawTotalSize, 10) : undefined;
     const anchorLine = lineNumberAt(options.text, blockStart);
     const fields: ApiSymbol[] = [];
-    let tableStarted = false;
+    let tableEnd = lines.length;
 
     for (let lineIndex = headerIndex + 1; lineIndex < lines.length; lineIndex += 1) {
       const line = lines[lineIndex] ?? '';
-      if (!line.trim() && tableStarted) {
+      if (!line.trim()) {
+        tableEnd = lineIndex;
         break;
       }
       if (!line.startsWith('|')) {
         continue;
       }
-      tableStarted = true;
 
       const cells = line
         .slice(1, -1)
@@ -85,12 +85,25 @@ export function parseEeexStructureSymbols(options: EeexStructureParseOptions): A
         dataType,
         byteOffset: offset,
         ...(byteSize === undefined ? { sizeExpression: rawSize } : { byteSize }),
-        documentationState: 'permission-gated',
+        documentationState: 'undocumented',
         upstreamUrl: makeSourceUrl(options.commit, options.indexPath, anchorLine + lineIndex),
         upstreamCommit: options.commit,
-        licenseStatus: 'permission-gated',
+        licenseStatus: 'allowed',
       });
     }
+
+    // Omit the title and layout grid, but retain prose before and after the grid.
+    const headingIndex = lines.findIndex((line, i) => i > 0 && /^[=^~-]{3,}\s*$/u.test(line));
+    let tableStart = headerIndex;
+    while (tableStart > 0 && /^\+[+\-=]+\s*$/u.test(lines[tableStart - 1] ?? '')) tableStart -= 1;
+    const narrativeLines = [...lines.slice(headingIndex + 1, tableStart), ...lines.slice(tableEnd)];
+    while (narrativeLines.length) {
+      const last = narrativeLines[narrativeLines.length - 1]?.trim() ?? '';
+      if (last && !/^-{3,}$/u.test(last)) break;
+      narrativeLines.pop();
+    }
+    const narrative = narrativeLines.join('\n').trim();
+    const documentationMarkdown = renderRstMarkdown(narrative, options.indexPath);
 
     symbols.push({
       id: `${sourceSection}:${structureName}`,
@@ -109,10 +122,11 @@ export function parseEeexStructureSymbols(options: EeexStructureParseOptions): A
           ? { sizeExpression: rawTotalSize }
           : {}),
       memberCount: fields.length,
-      documentationState: 'permission-gated',
+      ...(documentationMarkdown ? { documentationMarkdown } : {}),
+      documentationState: documentationMarkdown ? 'documented' : 'undocumented',
       upstreamUrl: makeSourceUrl(options.commit, options.indexPath, anchorLine),
       upstreamCommit: options.commit,
-      licenseStatus: 'permission-gated',
+      licenseStatus: 'allowed',
     });
     symbols.push(...fields);
   }

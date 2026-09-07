@@ -29,6 +29,10 @@ import * as luaparse from 'luaparse';
 import { loadApiIndexFromManifest } from './apiIndexLoader';
 import {
   analyzeDocument,
+  visibleSymbols,
+  referenceAt,
+  renameLocations,
+  luaKeywords,
   DebouncedValidationScheduler,
   emptyApiIndex,
   filterApiSymbols,
@@ -141,7 +145,11 @@ connection.onCompletion(async (params) => {
         )
       : filterGlobalApiSymbols(apiIndex, settings);
   const analysis = document && !memberReceiver ? await getOrAnalyze(document) : undefined;
-  const workspaceNames = new Set(analysis?.symbols.map((symbol) => symbol.name) ?? []);
+  const workspaceNames = new Set(
+    analysis
+      ? visibleSymbols(analysis, document!.offsetAt(params.position)).map((symbol) => symbol.name)
+      : [],
+  );
 
   const completionSymbols = apiSymbols.flatMap((symbol) => {
     const primary = { symbol, label: completionLabel(symbol, memberReceiver) };
@@ -155,23 +163,25 @@ connection.onCompletion(async (params) => {
   });
 
   return [
-    ...completionSymbols.map(({ symbol, label }): CompletionItem => {
-      const item: CompletionItem = {
-        label,
-        kind: toCompletionKind(symbol.kind),
-        documentation: toMarkdownDocumentation(symbol),
-        data: {
-          apiSymbolId: symbol.id,
-        },
-      };
-      const callableView = makeApiCallableView(symbol, label);
-      if (callableView) {
-        item.detail = callableView.signature;
-      } else if (symbol.signature) {
-        item.detail = symbol.signature;
-      }
-      return item;
-    }),
+    ...completionSymbols
+      .filter(({ label }) => !workspaceNames.has(label))
+      .map(({ symbol, label }): CompletionItem => {
+        const item: CompletionItem = {
+          label,
+          kind: toCompletionKind(symbol.kind),
+          documentation: toMarkdownDocumentation(symbol),
+          data: {
+            apiSymbolId: symbol.id,
+          },
+        };
+        const callableView = makeApiCallableView(symbol, label);
+        if (callableView) {
+          item.detail = callableView.signature;
+        } else if (symbol.signature) {
+          item.detail = symbol.signature;
+        }
+        return item;
+      }),
     ...[...workspaceNames].map((name) => ({
       label: name,
       kind: CompletionItemKind.Variable,
@@ -195,6 +205,11 @@ connection.onHover(async (params) => {
     return null;
   }
 
+  const analysis = await getOrAnalyze(document);
+  const local = referenceAt(analysis, document.offsetAt(params.position))?.resolvedDeclaration;
+  if (local && local.name === name)
+    return { contents: { kind: 'markdown', value: `\`${local.kind} ${local.name}\`` } };
+
   const settings = await getSettings(document.uri);
   const apiSymbol = findApiSymbolForExpression(
     apiIndex,
@@ -212,8 +227,9 @@ connection.onHover(async (params) => {
     };
   }
 
-  const analysis = await getOrAnalyze(document);
-  const symbol = analysis.symbols.find((candidate) => candidate.name === name);
+  const symbol = visibleSymbols(analysis, document.offsetAt(params.position)).find(
+    (candidate) => candidate.name === name,
+  );
   if (!symbol) {
     return null;
   }
@@ -286,7 +302,7 @@ connection.onDefinition(async (params) => {
   }
 
   const analysis = await getOrAnalyze(document);
-  const symbol = findNearestSymbol(analysis, name, document.offsetAt(params.position));
+  const symbol = referenceAt(analysis, document.offsetAt(params.position))?.resolvedDeclaration;
   if (symbol) {
     return Location.create(document.uri, toLspRange(symbol.location));
   }
@@ -317,8 +333,17 @@ connection.onReferences(async (params) => {
   }
 
   const analysis = await getOrAnalyze(document);
+  const selected = referenceAt(analysis, document.offsetAt(params.position));
+  if (!selected) return [];
   return analysis.references
-    .filter((reference) => reference.name === name)
+    .filter((reference) =>
+      selected.resolvedDeclaration
+        ? selected.resolvedDeclaration.bindingId
+          ? reference.resolvedDeclaration?.bindingId === selected.resolvedDeclaration.bindingId
+          : reference.resolvedDeclaration === selected.resolvedDeclaration
+        : !reference.resolvedDeclaration && reference.name === selected.name,
+    )
+    .filter((reference) => params.context.includeDeclaration || !reference.isDeclaration)
     .map((reference) => Location.create(document.uri, toLspRange(reference.location)));
 });
 
@@ -328,19 +353,14 @@ connection.onRenameRequest(async (params: RenameParams): Promise<WorkspaceEdit |
     return null;
   }
 
-  const oldName = getWordAt(document, params.position);
-  if (!oldName) {
-    return null;
-  }
-
   const analysis = await getOrAnalyze(document);
-  const edits = analysis.references
-    .filter((reference) => reference.name === oldName)
-    .map((reference) => TextEdit.replace(toLspRange(reference.location), params.newName));
-
+  const locations = renameLocations(analysis, document.offsetAt(params.position), params.newName);
+  if (!locations) return null;
   return {
     changes: {
-      [document.uri]: edits,
+      [document.uri]: locations.map((location) =>
+        TextEdit.replace(toLspRange(location), params.newName),
+      ),
     },
   };
 });
@@ -378,7 +398,10 @@ connection.languages.semanticTokens.on(async (params) => {
     return builder.build();
   }
   const analysis = await getOrAnalyze(document);
-  for (const token of analysis.semanticTokens) {
+  const tokens = analysis.semanticTokens
+    .filter((token) => token.location.range.start.line === token.location.range.end.line)
+    .sort((a, b) => a.location.offsetRange.start - b.location.offsetRange.start);
+  for (const token of tokens) {
     const range = toLspRange(token.location);
     builder.push(
       range.start.line,
@@ -521,7 +544,9 @@ async function analyzeOnly(document: TextDocument): Promise<AnalyzedDocument> {
 }
 
 async function getOrAnalyze(document: TextDocument): Promise<AnalyzedDocument> {
-  return analyses.get(document.uri) ?? analyzeOnly(document);
+  const cached = analyses.get(document.uri);
+  // Change notifications analyze asynchronously; an immediate request must not reuse older text.
+  return cached?.text === document.getText() ? cached : analyzeOnly(document);
 }
 
 async function getSettings(resource: string): Promise<IeLuaSettings> {
@@ -651,21 +676,6 @@ function getWordAt(
   return word.length > 0 ? word : undefined;
 }
 
-function findNearestSymbol(
-  analysis: AnalyzedDocument,
-  name: string,
-  offset: number,
-): SymbolInfo | undefined {
-  const candidates = analysis.symbols.filter((symbol) => symbol.name === name);
-  return candidates
-    .sort(
-      (a, b) =>
-        Math.abs(a.location.offsetRange.start - offset) -
-        Math.abs(b.location.offsetRange.start - offset),
-    )
-    .at(0);
-}
-
 function formatDocument(document: TextDocument): TextEdit[] {
   if (document.languageId === 'ie-menu') {
     return [];
@@ -696,15 +706,20 @@ function collectUnknownGlobalDiagnostics(
     return [];
   }
 
-  const declarations = new Set(analysis.symbols.map((symbol) => symbol.name));
-  const apiSymbols = new Set(filterApiSymbols(apiIndex, settings).map((symbol) => symbol.name));
+  const apiSymbols = new Set(
+    filterApiSymbols(apiIndex, settings).flatMap((symbol) => [
+      symbol.name,
+      symbol.name.split(/[.:]/u)[0] ?? symbol.name,
+      ...(symbol.callableAliases ?? []).map((alias) => alias.name),
+    ]),
+  );
   const seen = new Set<string>();
   const diagnostics: LuaDiagnostic[] = [];
 
   for (const reference of analysis.references) {
     if (
       reference.resolvedDeclaration ||
-      declarations.has(reference.name) ||
+      reference.member ||
       apiSymbols.has(reference.name) ||
       reference.name.includes('.') ||
       seen.has(`${reference.name}:${reference.location.offsetRange.start}`)
@@ -746,7 +761,7 @@ function loadApiIndex(): ApiIndex {
 }
 
 function isValidIdentifier(value: string): boolean {
-  return /^[A-Za-z_][A-Za-z0-9_]*$/u.test(value);
+  return /^[A-Za-z_][A-Za-z0-9_]*$/u.test(value) && !luaKeywords.has(value);
 }
 
 documents.listen(connection);

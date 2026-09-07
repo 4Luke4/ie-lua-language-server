@@ -1,54 +1,41 @@
-# Release and Prerelease Publishing
+# Release and prerelease publishing
 
-The `Release` GitHub Actions workflow is initiated only through its manual dispatch form. It validates and packages the selected release type, then publishes that exact VSIX on the GitHub release page.
+All installation, verification, generation, formatting, and packaging run in GitHub Actions.
+Download verified VSIX files from a CI run for use with VS Code or stdio clients.
 
-The workflow does not publish to the Visual Studio Marketplace and does not require Marketplace credentials. The automatically provided `GITHUB_TOKEN` creates the tag and GitHub release; no separate GitHub secret is required.
+## Version policy
 
-## Versioning Rules
+`VERSION` is authoritative. Root/workspace manifests, internal dependencies, lockfile metadata,
+and the latest prepared changelog entry must agree. Use numeric `major.minor.patch` versions;
+Marketplace prereleases use a package flag, not a version suffix. Odd minor versions are
+prereleases; even minor versions are stable. CI tests both packaging paths independently of
+publication eligibility.
 
-- Keep every workspace `package.json` and `package-lock.json` version in `major.minor.patch` form. Visual Studio Marketplace prereleases do not support SemVer suffixes in the extension version.
-- Use odd minor versions for Marketplace prereleases and even minor versions for stable releases. Example: `0.3.1` is a prerelease version and `0.4.0` is a stable version.
-- Prerelease Git tags must use `v<major>.<minor>.<patch>-<channel>.<number>`, where `<channel>` is `alpha`, `beta`, `rc`, `pre`, or `preview`.
-- Stable Git tags must use `v<major>.<minor>.<patch>`.
-- The numeric version in the Git tag must exactly match the root `package.json` version. The release workflow rejects mismatched versions, mismatched release types, and incorrect odd/even release channels.
-- Release tags must be new. The release workflow rejects an existing tag or GitHub release instead of replacing it.
-- Keep README and CHANGELOG images Marketplace-safe. Use PNG/JPEG assets rather than user-provided SVG screenshots.
+Stable tags use `vX.Y.Z`. Prerelease tags use `vX.Y.Z-{alpha|beta|rc|pre|preview}.N`. Tags must match
+`VERSION` and their channel. Existing tags and releases are rejected rather than replaced.
 
-## Verification Before Release
+## Verification and publication
 
-1. Update all workspace versions, `package-lock.json`, and `CHANGELOG.md`.
-2. Run the full local verification:
+1. Prepare changes on a branch and open a draft PR. Inspect CI, CodeQL, dependency review, and
+   commit-policy results for its final revision. Download maintenance artifacts to review/apply
+   formatting, lockfile, or generated-data changes; rerun Actions after applying them.
+2. Follow `release/READINESS.md`. Verify installed VSIX results across the supported runner/editor
+   matrix and record any unavailable coverage explicitly.
+3. Run **Actions → Release → Run workflow**, choose the branch, release type, matching tag, and
+   leave **dry_run** enabled. This validates prerequisites and runs the shared complete suite,
+   without creating a tag or release.
+4. Merge the verified PR. Run Release on that merged default-branch commit with **dry_run** disabled
+   only when publication is intended. Publication checks the merged PR's validation and publishes
+   the exact artifact produced by that run. A failed upload leaves a draft for maintainer inspection;
+   the workflow does not overwrite or delete a previous release.
 
-   ```sh
-   npm ci
-   npm run verify
-   ```
+Publication uses the repository `GITHUB_TOKEN`; no Marketplace credentials are used. Marketplace
+publication is a separate maintainer operation and is not performed by these workflows.
 
-3. Build the intended package with `npm run package:pre-release` or `npm run package`.
-4. Smoke-test the generated VSIX with `.lua` and `.menu` files in Visual Studio Code.
+## Upstream refreshes
 
-## GitHub Publishing
-
-1. Merge the verified release commit to the branch that should receive the tag, normally `main`.
-2. Open **Actions** -> **Release** -> **Run workflow**.
-3. Select the branch containing the release commit.
-4. Select `prerelease` or `stable`.
-5. Enter a matching tag name, such as `v0.3.1-pre.1` for a prerelease or `v0.4.0` for a stable release.
-6. Run the workflow.
-
-The workflow:
-
-1. Validates the selected release type, tag syntax, odd/even channel policy, and root package version.
-2. Runs `npm ci`, the full verification suite, the matching VSIX packaging command, and the package audit.
-3. Renames and uploads exactly one `ie-lua-language-server-<tag>.vsix` artifact.
-4. Rejects an existing tag or GitHub release.
-5. Publishes a GitHub release targeting the exact commit selected when the workflow was dispatched. Stable releases are marked as the latest release; prereleases are marked accordingly.
-
-Marketplace publication, if needed, must be performed separately from these workflows.
-
-## Upstream References
-
-- Visual Studio Code Marketplace prereleases use `vsce package --pre-release`: `https://code.visualstudio.com/api/working-with-extensions/publishing-extension#pre-release-extensions`
-- GitHub manual workflows use `workflow_dispatch` inputs: `https://docs.github.com/actions/using-workflows/events-that-trigger-workflows#workflow_dispatch`
-- GitHub releases can include binary assets: `https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository`
-- GitHub CLI creates releases and uploads assets with `gh release create`: `https://cli.github.com/manual/gh_release_create`
+**Update EEex API data** resolves upstream once, generates without write credentials, and passes
+JSON data to a separate publisher job. The resulting PR includes source counts and run evidence.
+GitHub can require approval before workflows run on a PR created by `GITHUB_TOKEN`; use the PR's
+**Approve workflows to run** control and wait for all checks. Generation success alone is not
+full PR validation.

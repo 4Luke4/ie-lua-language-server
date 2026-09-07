@@ -5,3 +5,4 @@ export * from './menuExtractor';
 export * from './settings';
 export * from './types';
 export * from './validationScheduler';
+export * from './bindings';

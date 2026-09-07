@@ -66,9 +66,8 @@ jobs:
           close-pr-message: >-
             This pull request was closed after 59 days without activity. It
             can be reopened if work resumes and the branch is brought up to date.
-          # Security findings and automated CodeQL tracking have their own
-          # lifecycle and must never be closed by generic inactivity policy.
-          exempt-issue-labels: security,codeql
+          # Security findings have their own lifecycle and are exempt from inactivity closure.
+          exempt-issue-labels: security
           exempt-pr-labels: security
           exempt-draft-pr: true
           exempt-all-assignees: true

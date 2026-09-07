@@ -284,7 +284,19 @@ function auditSectionFile(
     }
   }
 
+  if (splitSections.has(expectedSection) && section.source?.licenseStatus !== 'allowed') {
+    throw new Error(`Upstream source metadata is inconsistent: ${expectedSection}`);
+  }
   for (const symbol of section.symbols) {
+    if (splitSections.has(expectedSection) && symbol.licenseStatus !== 'allowed') {
+      throw new Error(`Upstream symbol metadata is inconsistent: ${symbol.id ?? '?'}`);
+    }
+    if (
+      symbol.documentationState !== 'documented' &&
+      symbol.documentationState !== 'undocumented'
+    ) {
+      throw new Error(`Unknown documentation state: ${symbol.id ?? '?'}`);
+    }
     if (symbol.sourceSection !== expectedSection) {
       throw new Error(`API symbol is in the wrong section file: ${symbol.id ?? '?'}`);
     }
@@ -295,8 +307,8 @@ function auditSectionFile(
     ) {
       throw new Error(`EE Game Structures (x64) symbol has wrong kind: ${symbol.id ?? '?'}`);
     }
-    if (symbol.licenseStatus === 'permission-gated' && symbol.documentationMarkdown) {
-      throw new Error('Permission-gated documentation text must not be bundled.');
+    if (symbol.licenseStatus !== 'allowed' && symbol.documentationMarkdown) {
+      throw new Error('Documentation text requires an identified distributable source.');
     }
     if (
       symbol.licenseStatus === 'allowed' &&
