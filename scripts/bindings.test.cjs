@@ -19,7 +19,7 @@ test('lexical bindings separate shadowed variables and exclude comments, strings
     [6, text.lastIndexOf('print(x)') + 6],
   );
   assert.equal(a.references.filter((r) => r.name === 'x').length, 4);
-  assert.equal(referenceAt(a, text.indexOf('t.x') + 2), undefined);
+  assert.equal(referenceAt(a, text.indexOf('t.x') + 2)?.resolvedDeclaration, undefined);
 });
 test('initializers, recursion, closure capture, loop scopes and repeat conditions resolve correctly', () => {
   const text =
@@ -80,4 +80,14 @@ test('menu analysis excludes DSL and isolates locals while sharing document glob
     [text.indexOf('x = 1'), text.indexOf('x)')],
   );
   assert.equal(referenceAt(a, text.indexOf('shared()')).resolvedDeclaration.name, 'shared');
+});
+
+test('qualified function declarations navigate separately from local variables and fields', () => {
+  const text = 'local object = {}\nfunction object:run(arg) return self, arg end\nobject:run(1)';
+  const a = analyze(text);
+  const declaration = a.symbols.find(s => s.name === 'object:run');
+  assert.ok(declaration);
+  assert.equal(referenceAt(a, text.lastIndexOf('run')).resolvedDeclaration, declaration);
+  assert.equal(a.references.find(r => r.name === 'self').resolvedDeclaration.kind, 'parameter');
+  assert.equal(renameLocations(a, text.lastIndexOf('run'), 'other'), undefined);
 });

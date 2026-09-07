@@ -192,6 +192,7 @@ export interface SymbolInfo {
 }
 
 export interface ReferenceInfo {
+  member?: boolean;
   isDeclaration?: boolean;
   name: string;
   location: SourceLocation;

@@ -20,6 +20,8 @@ export function analyzeBindings(text: string, ast: unknown): BindingAnalysis {
   const folds: BindingAnalysis['folds'] = [];
   const root: Scope = { range: { start: 0, end: text.length }, depth: 0, bindings: new Map() };
   const globals = new Map<string, SymbolInfo>();
+  const members = new Map<string, SymbolInfo>();
+  const memberKeys = new Map<ReferenceInfo, string>();
   const lookup = (scope: Scope, name: string): SymbolInfo | undefined =>
     scope.bindings.get(name) ?? (scope.parent ? lookup(scope.parent, name) : globals.get(name));
   const location = (n: Node) => makeLocation(text, n.range[0], n.range[1]);
@@ -57,6 +59,28 @@ export function analyzeBindings(text: string, ast: unknown): BindingAnalysis {
     }
     reference(n, scope, symbol);
     return symbol;
+  }
+  function memberReference(n: Node, scope: Scope, declaration = false) {
+    const field = node(n.identifier);
+    let base = node(n.base);
+    const parts = [String(field?.name)];
+    while (base?.type === 'MemberExpression') {
+      parts.unshift(String(node(base.identifier)?.name));
+      base = node(base.base);
+    }
+    if (!field || base?.type !== 'Identifier') { visit(n.base, scope); return; }
+    const rootName = String(base.name);
+    const owner = lookup(scope, rootName)?.bindingId ?? `global:${rootName}`;
+    const key = `member:${owner}:${parts.join('.')}`;
+    const name = `${rootName}${n.indexer === ':' ? ':' : '.'}${parts.join('.')}`;
+    visit(n.base, scope);
+    if (declaration && !members.has(key)) {
+      const symbol: SymbolInfo = { name, kind: n.indexer === ':' ? 'method' : 'function',
+        location: location(field), bindingId: key, scopeRange: scope.range, scopeDepth: scope.depth, visibleFrom: 0 };
+      members.set(key, symbol); symbols.push(symbol);
+    }
+    const ref: ReferenceInfo = { name, member: true, location: location(field), ...(declaration ? { isDeclaration: true } : {}) };
+    references.push(ref); memberKeys.set(ref, key);
   }
   function scoped(n: Node, parent: Scope): Scope {
     return {
@@ -99,7 +123,7 @@ export function analyzeBindings(text: string, ast: unknown): BindingAnalysis {
               reference(identifier, scope);
             } else declare(identifier, scope, 'function', false, 0);
           }
-        } else visit(identifier, scope);
+        } else if (identifier) memberReference(identifier, scope, true);
         const inner = scoped(n, scope);
         for (const parameter of nodes(n.parameters)) {
           if (parameter.type === 'Identifier')
@@ -162,8 +186,8 @@ export function analyzeBindings(text: string, ast: unknown): BindingAnalysis {
         fold(n);
         return;
       case 'MemberExpression':
-        // Dot/colon field names are not references to lexically scoped variables.
-        visit(n.base, scope);
+        // Track field navigation separately from lexically scoped variable references.
+        memberReference(n, scope);
         return;
       case 'TableKeyString':
         visit(n.value, scope);
@@ -185,7 +209,7 @@ export function analyzeBindings(text: string, ast: unknown): BindingAnalysis {
   for (const comment of nodes(chunk?.comments)) fold(comment, 'comment');
   // A global can be declared later in a chunk or in another embedded region.
   for (const ref of references) {
-    const global = globals.get(ref.name);
+    const global = ref.member ? members.get(memberKeys.get(ref) ?? '') : globals.get(ref.name);
     if (!ref.resolvedDeclaration && global) ref.resolvedDeclaration = global;
   }
   const semanticTokens = references.flatMap((ref) => {
@@ -197,7 +221,7 @@ export function analyzeBindings(text: string, ast: unknown): BindingAnalysis {
         tokenType:
           symbol.kind === 'parameter'
             ? ('parameter' as const)
-            : symbol.kind === 'function'
+            : symbol.kind === 'function' || symbol.kind === 'method'
               ? ('function' as const)
               : ('variable' as const),
         tokenModifiers: ref.isDeclaration ? ['declaration' as const] : [],
@@ -230,7 +254,7 @@ export function referenceAt(analysis: AnalyzedDocument, offset: number): Referen
 
 export function renameLocations(analysis: AnalyzedDocument, offset: number, newName: string) {
   const target = referenceAt(analysis, offset)?.resolvedDeclaration;
-  if (!analysis.bindingsComplete || !target?.bindingId || target.bindingId.startsWith('implicit:'))
+  if (!analysis.bindingsComplete || !target?.bindingId || target.bindingId.startsWith('implicit:') || target.bindingId.startsWith('member:'))
     return undefined;
   const renamed = {
     ...analysis,
@@ -278,7 +302,7 @@ export function maskLuaTrivia(text: string): string {
     const start = i;
     const comment = text.startsWith('--', i);
     if (comment) i += 2;
-    const long = text.slice(i).match(/^\[(=*)\[/u);
+    const long = text[i] === '[' ? text.slice(i).match(/^\[(=*)\[/u) : null;
     if (long) {
       const close = `]${long[1]}]`;
       const end = text.indexOf(close, i + long[0].length);

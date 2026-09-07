@@ -109,12 +109,26 @@ function main() {
     if (file.endsWith('.yml')) readYaml(file);
   }
   const inventory = json('tests/feature-inventory.json');
-  const groups = [...fs.readFileSync('README.md', 'utf8').matchAll(/<!-- feature: ([a-z-]+) -->/gu)].map(m => m[1]);
+  const groups = [
+    ...fs.readFileSync('README.md', 'utf8').matchAll(/<!-- feature: ([a-z-]+) -->/gu),
+  ].map((m) => m[1]);
   assert.deepEqual(groups, inventory.readmeGroups, 'README feature inventory drift');
-  assert.equal(new Set(inventory.cases.map(c => c.id)).size, inventory.cases.length);
-  for (const group of groups) assert.ok(inventory.cases.some(c => c.groups.includes(group)), group);
-  for (const { command } of pkg.contributes.commands) assert.ok(inventory.cases.some(c => c.commands.includes(command)), command);
-  for (const setting of Object.keys(pkg.contributes.configuration.properties)) assert.ok(inventory.cases.some(c => c.settings.includes(setting)), setting);
+  assert.equal(new Set(inventory.cases.map((c) => c.id)).size, inventory.cases.length);
+  for (const group of groups)
+    assert.ok(
+      inventory.cases.some((c) => c.groups.includes(group)),
+      group,
+    );
+  for (const { command } of pkg.contributes.commands)
+    assert.ok(
+      inventory.cases.some((c) => c.commands.includes(command)),
+      command,
+    );
+  for (const setting of Object.keys(pkg.contributes.configuration.properties))
+    assert.ok(
+      inventory.cases.some((c) => c.settings.includes(setting)),
+      setting,
+    );
   assert.equal(json('.vscode/tasks.json').tasks.length, 0);
   assert.equal(json('.vscode/settings.json')['editor.formatOnSave'], false);
   for (const config of json('.vscode/launch.json').configurations)

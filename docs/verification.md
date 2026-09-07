@@ -11,17 +11,17 @@ outcome. Missing cases and incomplete reports fail verification. The suite asser
 edit sets, source locations, documentation, and configuration effects through the installed extension;
 unit tests and real stdio requests provide additional algorithm and protocol coverage.
 
-| Scenario | Main evidence |
-| --- | --- |
-| Lexical navigation | Exact definitions, references, rename edits, symbols, token types, folds, and visible completion |
-| Fallback and rename safety | Useful incomplete-buffer discovery and rejection of ambiguous or unsafe edits |
-| Game and EEex APIs | Namespaces, typed methods, signatures, defaults, returns, rich Markdown and pinned source links |
-| Structures | Annotations, chained fields, narrative, source locations, offsets and byte sizes |
-| Diagnostics and settings | Every validation mode, debounce cancellation, severity, source filters, dialects, close cleanup |
-| Menu | Every advertised embedding form, custom keys, and CRLF/Unicode host ranges |
-| Formatting | Exact text edits, idempotence, current config-path behavior and unchanged menu text |
-| Commands and activation | Real files, open-document validation, reloading changed installed data, picker cancellation and output |
-| Packaged grammars | Tokenization using the grammar files actually shipped in the VSIX |
+| Scenario                   | Main evidence                                                                                          |
+| -------------------------- | ------------------------------------------------------------------------------------------------------ |
+| Lexical navigation         | Exact definitions, references, rename edits, symbols, token types, folds, and visible completion       |
+| Fallback and rename safety | Useful incomplete-buffer discovery and rejection of ambiguous or unsafe edits                          |
+| Game and EEex APIs         | Namespaces, typed methods, signatures, defaults, returns, rich Markdown and pinned source links        |
+| Structures                 | Annotations, chained fields, narrative, source locations, offsets and byte sizes                       |
+| Diagnostics and settings   | Every validation mode, debounce cancellation, severity, source filters, dialects, close cleanup        |
+| Menu                       | Every advertised embedding form, custom keys, and CRLF/Unicode host ranges                             |
+| Formatting                 | Exact text edits, idempotence, current config-path behavior and unchanged menu text                    |
+| Commands and activation    | Real files, open-document validation, reloading changed installed data, picker cancellation and output |
+| Packaged grammars          | Tokenization using the grammar files actually shipped in the VSIX                                      |
 
 Caches contain npm downloads, exact editor distributions, and versioned actionlint binaries. They
 never substitute for compilation, tests, regeneration, archive audits, or fresh editor profiles.

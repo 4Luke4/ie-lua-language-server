@@ -338,7 +338,9 @@ connection.onReferences(async (params) => {
   return analysis.references
     .filter((reference) =>
       selected.resolvedDeclaration
-        ? reference.resolvedDeclaration?.bindingId === selected.resolvedDeclaration.bindingId
+        ? selected.resolvedDeclaration.bindingId
+          ? reference.resolvedDeclaration?.bindingId === selected.resolvedDeclaration.bindingId
+          : reference.resolvedDeclaration === selected.resolvedDeclaration
         : !reference.resolvedDeclaration && reference.name === selected.name,
     )
     .filter((reference) => params.context.includeDeclaration || !reference.isDeclaration)
@@ -704,13 +706,17 @@ function collectUnknownGlobalDiagnostics(
     return [];
   }
 
-  const apiSymbols = new Set(filterApiSymbols(apiIndex, settings).map((symbol) => symbol.name));
+  const apiSymbols = new Set(filterApiSymbols(apiIndex, settings).flatMap(symbol => [
+    symbol.name, symbol.name.split(/[.:]/u)[0] ?? symbol.name,
+    ...(symbol.callableAliases ?? []).map(alias => alias.name),
+  ]));
   const seen = new Set<string>();
   const diagnostics: LuaDiagnostic[] = [];
 
   for (const reference of analysis.references) {
     if (
       reference.resolvedDeclaration ||
+      reference.member ||
       apiSymbols.has(reference.name) ||
       reference.name.includes('.') ||
       seen.has(`${reference.name}:${reference.location.offsetRange.start}`)

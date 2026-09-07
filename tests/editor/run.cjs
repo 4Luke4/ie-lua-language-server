@@ -74,8 +74,11 @@ async function runProfile(vscodeExecutablePath, theme) {
       },
     });
     const report = JSON.parse(fs.readFileSync(path.join(reports, 'editor.json'), 'utf8'));
-    const expected = require('../feature-inventory.json').cases.map(c => c.id);
-    if (JSON.stringify(report.cases.map(c => c.id)) !== JSON.stringify(expected) || report.cases.some(c => c.status !== 'passed')) {
+    const expected = require('../feature-inventory.json').cases.map((c) => c.id);
+    if (
+      JSON.stringify(report.cases.map((c) => c.id)) !== JSON.stringify(expected) ||
+      report.cases.some((c) => c.status !== 'passed')
+    ) {
       throw new Error('Editor exited without completing the feature inventory');
     }
   } finally {
