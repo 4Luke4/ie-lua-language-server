@@ -121,7 +121,10 @@ async function connect(options = {}) {
     rootUri: null,
     capabilities: { workspace: { configuration: true } },
     initializationOptions: options.initializationOptions,
-  }).catch((error) => { child.kill(); throw error; });
+  }).catch((error) => {
+    child.kill();
+    throw error;
+  });
   notify('initialized', {});
   return {
     request,

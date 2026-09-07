@@ -102,9 +102,27 @@ async function run() {
     await picker;
     results.push('five commands');
     for (const theme of ['Default High Contrast', 'Default Dark Modern']) {
-      await eventually(() => vscode.workspace.getConfiguration('workbench').update('colorTheme', theme, vscode.ConfigurationTarget.Global), () => true);
-      await eventually(() => vscode.workspace.getConfiguration('editor').update('accessibilitySupport', 'on', vscode.ConfigurationTarget.Global), () => true);
-      await eventually(() => vscode.workspace.getConfiguration('workbench').update('reduceMotion', 'on', vscode.ConfigurationTarget.Global), () => true);
+      await eventually(
+        () =>
+          vscode.workspace
+            .getConfiguration('workbench')
+            .update('colorTheme', theme, vscode.ConfigurationTarget.Global),
+        () => true,
+      );
+      await eventually(
+        () =>
+          vscode.workspace
+            .getConfiguration('editor')
+            .update('accessibilitySupport', 'on', vscode.ConfigurationTarget.Global),
+        () => true,
+      );
+      await eventually(
+        () =>
+          vscode.workspace
+            .getConfiguration('workbench')
+            .update('reduceMotion', 'on', vscode.ConfigurationTarget.Global),
+        () => true,
+      );
       await eventually(
         () =>
           vscode.commands.executeCommand(

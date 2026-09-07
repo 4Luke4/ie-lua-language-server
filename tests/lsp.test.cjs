@@ -226,12 +226,19 @@ test(
 
 test('unavailable API candidates fall back to an empty index', { timeout: 30000 }, async (t) => {
   const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'ie-empty-'));
-  t.after(() => fs.rmSync(directory, { recursive: true, force: true }));
+  let client;
+  t.after(async () => {
+    // Windows cannot remove the current directory of a running server process.
+    try {
+      await client?.close();
+    } finally {
+      fs.rmSync(directory, { recursive: true, force: true, maxRetries: 5, retryDelay: 100 });
+    }
+  });
   const server = path.join(directory, 'server.js');
   fs.copyFileSync('dist/server/server.js', server);
   fs.writeFileSync(path.join(directory, 'bad.json'), '{malformed');
-  const client = await connect({ server, cwd: directory, index: path.join(directory, 'bad.json') });
-  t.after(() => client.close());
+  client = await connect({ server, cwd: directory, index: path.join(directory, 'bad.json') });
   assert.deepEqual(
     await client.request('workspace/executeCommand', {
       command: 'ieLua.showApiSource',
