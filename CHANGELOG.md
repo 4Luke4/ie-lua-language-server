@@ -5,7 +5,28 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project
 adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.5.3] - Unreleased
+## [0.6.0] - 2026-09-08
+
+### Added
+
+- Establish the first stable channel milestone and a documented 0.6.x compatibility contract.
+- Record reproducible startup, completion, hover, editing, and document-churn measurements in GitHub Actions.
+- Cover delayed configuration responses, close/reopen races, untitled documents, safe formatting, and API reload recovery.
+
+### Fixed
+
+- Index source line starts once per analysis and avoid fallback scanning after successful parsing, keeping large Lua and menu documents responsive.
+- Prevent stale analysis and diagnostics from crossing document versions, reopened sessions, configuration changes, or API reloads.
+- Preserve Lua string and comment contents, line endings, and final-newline state when removing trailing whitespace.
+- Validate API input before installation, retain the last good index after failed reloads, and report unavailable data through native notifications and protocol logs.
+- Make document validation with an unsupported active editor a clear no-op and report API reload success only after successful replacement.
+
+### Changed
+
+- Document open-document workspace operations, conservative formatting, and the currently unused formatter configuration setting.
+- Require a dated changelog entry and matching tag comparison before publication; allow explicit preparation dry runs with a warning.
+
+## [0.5.3] - 2026-09-07
 
 ### Added
 
@@ -154,18 +175,22 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Sectioned API data manifest with six auditable source files and source-attributed documentation.
 - Kate LSP setup files, screenshots, package audit tooling, and GitLab CI packaging/publishing jobs.
 
-Historical dates identify repository preparation milestones; linked tags identify published prereleases where available.
+Historical dates identify repository preparation milestones, not necessarily publication dates.
+Comparisons use adjacent recorded milestones: existing alpha tags where available and commits
+otherwise. These tags do not imply stable releases. The first milestone links to its tagged tree.
+The 0.6.0 comparison targets the intended release tag, which publication creates after verification.
 
-[0.5.3]: https://github.com/4Luke4/ie-lua-language-server/pull/58
-[0.5.2]: https://github.com/4Luke4/ie-lua-language-server/tree/b5726a321d5d806377e4e5a73041ce1eaa280203
-[0.5.1]: https://github.com/4Luke4/ie-lua-language-server/tree/28d1b1dace7cc2520d5ee68b5dfce7746c2de7a3
-[0.5.0]: https://github.com/4Luke4/ie-lua-language-server/tree/v0.5.0-alpha.5
-[0.4.0]: https://github.com/4Luke4/ie-lua-language-server/tree/a043758d7965644cc19f3d15981cc94b20a20fb4
-[0.3.1]: https://github.com/4Luke4/ie-lua-language-server/tree/v0.3.1-alpha.3
-[0.3.0]: https://github.com/4Luke4/ie-lua-language-server/tree/246a90cc19483491562024c174e8f36284fbd76a
-[0.2.0]: https://github.com/4Luke4/ie-lua-language-server/tree/e0d337a88eff11e7cd27cfca36f742860ef36786
-[0.1.4]: https://github.com/4Luke4/ie-lua-language-server/tree/12e67a01ae0bc29088b06904b48c8531ae469e32
-[0.1.3]: https://github.com/4Luke4/ie-lua-language-server/tree/v0.1.3-alpha.1
-[0.1.2]: https://github.com/4Luke4/ie-lua-language-server/tree/v0.1.2-alpha.1
-[0.1.1]: https://github.com/4Luke4/ie-lua-language-server/tree/v0.1.1-alpha.1
+[0.6.0]: https://github.com/4Luke4/ie-lua-language-server/compare/f39d45540a0b9d019c407cdd2761fcc429747d0b...v0.6.0
+[0.5.3]: https://github.com/4Luke4/ie-lua-language-server/compare/b5726a321d5d806377e4e5a73041ce1eaa280203...f39d45540a0b9d019c407cdd2761fcc429747d0b
+[0.5.2]: https://github.com/4Luke4/ie-lua-language-server/compare/28d1b1dace7cc2520d5ee68b5dfce7746c2de7a3...b5726a321d5d806377e4e5a73041ce1eaa280203
+[0.5.1]: https://github.com/4Luke4/ie-lua-language-server/compare/v0.5.0-alpha.5...28d1b1dace7cc2520d5ee68b5dfce7746c2de7a3
+[0.5.0]: https://github.com/4Luke4/ie-lua-language-server/compare/a043758d7965644cc19f3d15981cc94b20a20fb4...v0.5.0-alpha.5
+[0.4.0]: https://github.com/4Luke4/ie-lua-language-server/compare/v0.3.1-alpha.3...a043758d7965644cc19f3d15981cc94b20a20fb4
+[0.3.1]: https://github.com/4Luke4/ie-lua-language-server/compare/246a90cc19483491562024c174e8f36284fbd76a...v0.3.1-alpha.3
+[0.3.0]: https://github.com/4Luke4/ie-lua-language-server/compare/e0d337a88eff11e7cd27cfca36f742860ef36786...246a90cc19483491562024c174e8f36284fbd76a
+[0.2.0]: https://github.com/4Luke4/ie-lua-language-server/compare/12e67a01ae0bc29088b06904b48c8531ae469e32...e0d337a88eff11e7cd27cfca36f742860ef36786
+[0.1.4]: https://github.com/4Luke4/ie-lua-language-server/compare/v0.1.3-alpha.1...12e67a01ae0bc29088b06904b48c8531ae469e32
+[0.1.3]: https://github.com/4Luke4/ie-lua-language-server/compare/v0.1.2-alpha.1...v0.1.3-alpha.1
+[0.1.2]: https://github.com/4Luke4/ie-lua-language-server/compare/v0.1.1-alpha.1...v0.1.2-alpha.1
+[0.1.1]: https://github.com/4Luke4/ie-lua-language-server/compare/v0.1.0-alpha.1...v0.1.1-alpha.1
 [0.1.0]: https://github.com/4Luke4/ie-lua-language-server/tree/v0.1.0-alpha.1

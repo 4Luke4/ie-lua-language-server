@@ -34,3 +34,22 @@ standalone Maintenance workflow can also be dispatched. All executable work runs
 This coverage does not certify every possible Lua input, pixel-level rendering, or human screen-reader
 usability. Workspace operations cover open documents; rename remains within one document. Runtime
 inference of arbitrary table aliases and metatable behavior is outside lexical binding analysis.
+
+## Stable-release regressions and responsiveness
+
+The stdio harness can suspend and reorder configuration responses. Regression cases exercise
+version/session invalidation, configuration failures and recovery, separate resource settings,
+shutdown with suspended work, versioned diagnostics, and atomic API reload recovery. Formatting
+checks assert exact deletions and preserve literal contents, line endings, and missing final newlines.
+Installed-extension cases additionally exercise untitled documents, unsupported-editor command
+behavior, distinct folder settings and their invalidation, both Lua dialects, and recovery from corrupted installed API data. Native notifications
+use VS Code controls; their pixel layout and screen-reader announcement are not certified.
+
+The shared suite's required Responsiveness baseline job measures three fresh startups, twenty
+completion and hover requests after warmup for each 100/1,000/10,000-line Lua and menu fixture,
+three edit-to-diagnostic samples per fixture, and 100 open/change/close cycles. It records raw
+milliseconds, median/p95, fixture sizes, commit, Node version, OS and architecture in
+`responsiveness-baseline/responsiveness.json`. This Linux stdio baseline measures synthetic workloads;
+it is not a memory-leak assessment or a latency promise for arbitrary projects. Correctness, report
+completeness, clean shutdown, and a 30-second operation timeout are required; percentile values
+are reported without a separate speed threshold. No workspace Lua code is executed.

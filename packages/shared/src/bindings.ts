@@ -1,4 +1,5 @@
-import { makeLocation, scanLuaFallback } from './fallbackScanner';
+import { scanLuaFallback } from './fallbackScanner';
+import { createLocationMapper } from './positions';
 import type { AnalyzedDocument, ReferenceInfo, SymbolInfo, TextRange } from './types';
 
 type Node = { type: string; range: [number, number]; [key: string]: unknown };
@@ -24,7 +25,8 @@ export function analyzeBindings(text: string, ast: unknown): BindingAnalysis {
   const memberKeys = new Map<ReferenceInfo, string>();
   const lookup = (scope: Scope, name: string): SymbolInfo | undefined =>
     scope.bindings.get(name) ?? (scope.parent ? lookup(scope.parent, name) : globals.get(name));
-  const location = (n: Node) => makeLocation(text, n.range[0], n.range[1]);
+  const mapLocation = createLocationMapper(text);
+  const location = (n: Node) => mapLocation(n.range[0], n.range[1]);
   function reference(n: Node, scope: Scope, declaration?: SymbolInfo) {
     const name = String(n.name);
     const resolved = declaration ?? lookup(scope, name);
@@ -316,10 +318,16 @@ export function fallbackBindings(text: string): BindingAnalysis {
 }
 export function maskLuaTrivia(text: string): string {
   const chars = text.split('');
-  let i = 0;
-  const hide = (start: number, end: number) => {
+  for (const { start, end } of luaProtectedRanges(text)) {
     for (let j = start; j < end; j++) if (chars[j] !== '\n' && chars[j] !== '\r') chars[j] = ' ';
-  };
+  }
+  return chars.join('');
+}
+
+// Unterminated strings/comments protect the remaining buffer, including whitespace.
+export function luaProtectedRanges(text: string): TextRange[] {
+  const ranges: TextRange[] = [];
+  let i = 0;
   while (i < text.length) {
     const start = i;
     const comment = text.startsWith('--', i);
@@ -329,13 +337,12 @@ export function maskLuaTrivia(text: string): string {
       const close = `]${long[1]}]`;
       const end = text.indexOf(close, i + long[0].length);
       i = end < 0 ? text.length : end + close.length;
-      hide(start, i);
+      ranges.push({ start, end: i });
       continue;
     }
     if (comment) {
-      const end = text.indexOf('\n', i);
-      i = end < 0 ? text.length : end;
-      hide(start, i);
+      while (i < text.length && text[i] !== '\n' && text[i] !== '\r') i++;
+      ranges.push({ start, end: i });
       continue;
     }
     if (text[i] === '"' || text[i] === "'") {
@@ -347,10 +354,10 @@ export function maskLuaTrivia(text: string): string {
         }
         if (text[i++] === quote) break;
       }
-      hide(start, Math.min(i, text.length));
+      ranges.push({ start, end: Math.min(i, text.length) });
       continue;
     }
     i++;
   }
-  return chars.join('');
+  return ranges;
 }
