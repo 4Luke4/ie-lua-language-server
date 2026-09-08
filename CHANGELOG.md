@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project
 adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.6.0] - Unreleased
+## [0.6.0] - 2026-09-08
 
 ### Added
 
@@ -177,10 +177,10 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 Historical dates identify repository preparation milestones, not necessarily publication dates.
 Comparisons use adjacent recorded milestones: existing alpha tags where available and commits
-otherwise. These tags do not imply stable releases. The first milestone links to its tagged tree;
-the unreleased 0.6.0 entry links to its preparation PR until its release date and tag link are finalized.
+otherwise. These tags do not imply stable releases. The first milestone links to its tagged tree.
+The 0.6.0 comparison targets the intended release tag, which publication creates after verification.
 
-[0.6.0]: https://github.com/4Luke4/ie-lua-language-server/pull/65
+[0.6.0]: https://github.com/4Luke4/ie-lua-language-server/compare/f39d45540a0b9d019c407cdd2761fcc429747d0b...v0.6.0
 [0.5.3]: https://github.com/4Luke4/ie-lua-language-server/compare/b5726a321d5d806377e4e5a73041ce1eaa280203...f39d45540a0b9d019c407cdd2761fcc429747d0b
 [0.5.2]: https://github.com/4Luke4/ie-lua-language-server/compare/28d1b1dace7cc2520d5ee68b5dfce7746c2de7a3...b5726a321d5d806377e4e5a73041ce1eaa280203
 [0.5.1]: https://github.com/4Luke4/ie-lua-language-server/compare/v0.5.0-alpha.5...28d1b1dace7cc2520d5ee68b5dfce7746c2de7a3
