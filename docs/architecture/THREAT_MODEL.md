@@ -27,8 +27,11 @@ They contain no editor profiles or publication credentials. Verification rebuild
 on every run; publication never executes PR-produced cache contents in a privileged job.
 
 CodeQL and dependency review remain independent gates. Release publication consumes verified
-artifacts from its own run and targets its selected commit. Existing tags/releases are never
-replaced. Secrets, local profiles, and raw environment dumps must not enter artifacts.
+artifacts from its own run and targets its selected commit. Its prerequisite validation rejects
+publication until the latest changelog entry matches VERSION, has a real calendar date, and links
+to a repository comparison ending in the selected tag. Only an explicit dry run may accept an
+unreleased entry, with a preparation warning. Existing tags/releases are never replaced. Secrets,
+local profiles, and raw environment dumps must not enter artifacts.
 
 Residual limits: this is not a sandbox for a compromised editor or local filesystem. Stdio tests
 cover the server contract used by Kate, not Kate GUI interactions. Hosted-runner matrices cover

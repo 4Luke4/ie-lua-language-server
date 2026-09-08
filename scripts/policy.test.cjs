@@ -8,7 +8,7 @@ const {
   validateWorkflows,
   validateVerificationGraph,
 } = require('./policy.cjs');
-const { validateRelease } = require('./release-policy.cjs');
+const { validateRelease, parseDryRun, validateChangelog } = require('./release-policy.cjs');
 
 test('commit policy enforces types, syntax, and 100-character limit', () => {
   for (const header of [
@@ -124,4 +124,121 @@ test('release validation rejects version, syntax, and channel mismatches', () =>
     ['other', 'v0.5.2', '0.5.2'],
   ])
     assert.throws(() => validateRelease(type, tag, version));
+});
+
+const releaseRepository = 'https://github.com/4Luke4/ie-lua-language-server';
+function releaseChangelog({
+  version = '0.6.0',
+  date = '2026-09-07',
+  link = `${releaseRepository}/compare/v0.5.0-alpha.5...v0.6.0`,
+} = {}) {
+  return `# Changelog\n\n## [${version}] - ${date}\n\n### Fixed\n\n- A release fix.\n\n[${version}]: ${link}\n`;
+}
+
+test('release dry-run input is explicit and defaults to publication checks', () => {
+  assert.equal(parseDryRun(undefined), false);
+  assert.equal(parseDryRun('false'), false);
+  assert.equal(parseDryRun('true'), true);
+  for (const value of ['', 'TRUE', 'False', '1', ' true ', true, false, null]) {
+    assert.throws(() => parseDryRun(value), /Invalid DRY_RUN/u);
+  }
+  const yaml = require('js-yaml');
+  const workflow = yaml.load(fs.readFileSync('.github/workflows/release.yml', 'utf8'));
+  const check = workflow.jobs.validate.steps.find((step) => step.run === 'npm run release:check');
+  assert.equal(check.env.DRY_RUN, '${{ inputs.dry_run }}');
+  assert.ok(workflow.jobs.verify.needs.includes('validate'));
+  assert.ok(workflow.jobs.release.needs.includes('validate'));
+});
+
+test('unreleased changelogs allow preparation dry runs but block publication', () => {
+  const changelog = releaseChangelog({ date: 'Unreleased', link: `${releaseRepository}/pull/65` });
+  assert.deepEqual(validateChangelog(changelog, '0.6.0', 'v0.6.0', true), { finalized: false });
+  for (const dryRun of [false, undefined]) {
+    assert.throws(
+      () => validateChangelog(changelog, '0.6.0', 'v0.6.0', dryRun),
+      /Publication requires a dated changelog/u,
+    );
+  }
+  assert.throws(() => validateChangelog(changelog, '0.6.0', 'v0.6.0', 'false'), /boolean/u);
+});
+
+test('finalized stable and prerelease changelogs pass both release modes', () => {
+  for (const [version, tag] of [
+    ['0.6.0', 'v0.6.0'],
+    ['0.5.4', 'v0.5.4-rc.1'],
+  ]) {
+    const changelog = releaseChangelog({
+      version,
+      date: '2024-02-29',
+      link: `${releaseRepository}/compare/v0.5.0-alpha.5...${tag}`,
+    });
+    for (const dryRun of [true, false]) {
+      assert.deepEqual(validateChangelog(changelog, version, tag, dryRun), { finalized: true });
+      assert.deepEqual(validateChangelog(changelog.replaceAll('\n', '\r\n'), version, tag, dryRun), {
+        finalized: true,
+      });
+    }
+  }
+});
+
+test('release changelog rejects invalid dates in both release modes', () => {
+  for (const date of ['', 'unreleased', '2026-9-07', '2026-02-29', '2026-04-31', '2026-13-01']) {
+    for (const dryRun of [true, false]) {
+      assert.throws(
+        () => validateChangelog(releaseChangelog({ date }), '0.6.0', 'v0.6.0', dryRun),
+        /Changelog date/u,
+      );
+    }
+  }
+});
+
+test('release changelog requires a unique latest version and corresponding link', () => {
+  const valid = releaseChangelog();
+  for (const changelog of [
+    '# Changelog\n',
+    releaseChangelog({ version: '0.5.3' }),
+    `## [0.6.1] - Unreleased\n${valid}`,
+    `${valid}\n## [0.6.0] - Unreleased\n`,
+    valid.replace(/^\[0\.6\.0\]:.*$/mu, ''),
+    `${valid}\n[0.6.0]: ${releaseRepository}/pull/65\n`,
+    valid.replace('[0.6.0]:', '[v0.6.0]:'),
+    releaseChangelog({ link: '' }),
+  ]) {
+    for (const dryRun of [true, false]) {
+      assert.throws(() => validateChangelog(changelog, '0.6.0', 'v0.6.0', dryRun));
+    }
+  }
+  const unreleased = releaseChangelog({ date: 'Unreleased' });
+  assert.throws(() =>
+    validateChangelog(unreleased.replace(/^\[0\.6\.0\]:.*$/mu, ''), '0.6.0', 'v0.6.0', true),
+  );
+});
+
+test('finalized release links must compare this repository to the exact requested tag', () => {
+  for (const link of [
+    `${releaseRepository}/pull/65`,
+    `${releaseRepository}/releases/tag/v0.6.0`,
+    `${releaseRepository}/compare/v0.5.0-alpha.5...v0.6.1`,
+    `${releaseRepository}/compare/v0.5.0-alpha.5...v0.6.0-rc.1`,
+    `${releaseRepository}/compare/v0.5.0-alpha.5...v0.6.0?expand=1`,
+    `${releaseRepository}/compare/...v0.6.0`,
+    'https://github.com/another/repository/compare/v0.5.0...v0.6.0',
+  ]) {
+    for (const dryRun of [true, false]) {
+      assert.throws(() => validateChangelog(releaseChangelog({ link }), '0.6.0', 'v0.6.0', dryRun));
+    }
+  }
+  assert.throws(
+    () =>
+      validateChangelog(
+        releaseChangelog({
+          version: '0.5.4',
+          link: `${releaseRepository}/compare/v0.5.0-alpha.5...v0.5.4-rc.1`,
+        }),
+        '0.5.4',
+        'v0.5.4-rc.2',
+        true,
+      ),
+    /requested release tag/u,
+  );
 });

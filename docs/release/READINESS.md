@@ -12,7 +12,11 @@
 - Generated API data passes pinned regeneration, source/count audits, and documentation tests.
 - Both package channels pass archive inspection and installed-extension checks. The release's
   selected channel additionally satisfies tag syntax, version matching, and odd/even minor policy.
-- Release dry-run succeeds for the selected revision before publication. Only the audited artifact
+- Before publication, the latest changelog entry has the intended release date in `YYYY-MM-DD`
+  format and a repository comparison link ending in the exact selected tag. Commit both changes
+  and rerun required PR checks and the release dry run on that finalized revision. An `Unreleased`
+  preparation dry run warns about this outstanding gate and is not publication readiness.
+- Release dry-run succeeds for the finalized revision before publication. Only the audited artifact
   is published; publication remains manual and never targets an existing tag or release.
 - Runtime dependency notice obligations and any changed boundaries in SECURITY.md and the threat
   model are reviewed. Local game samples, development files, and secrets are absent from the VSIX.

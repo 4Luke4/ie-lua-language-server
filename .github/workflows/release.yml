@@ -47,6 +47,7 @@ jobs:
         env:
           RELEASE_TYPE: ${{ inputs.release_type }}
           TAG_NAME: ${{ inputs.tag_name }}
+          DRY_RUN: ${{ inputs.dry_run }}
       - name: Check publication prerequisites without mutation
         uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         env:
