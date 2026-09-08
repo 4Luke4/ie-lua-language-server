@@ -288,14 +288,14 @@
     "vscode-uri": "^3.2.0"
   },
   "devDependencies": {
-    "@types/node": "^26.4.0",
+    "@types/node": "^26.4.1",
     "@types/vscode": "1.100.0",
-    "@typescript-eslint/eslint-plugin": "^8.68.0",
+    "@typescript-eslint/eslint-plugin": "^8.69.0",
     "@typescript-eslint/parser": "^8.69.0",
     "@vscode/test-electron": "^3.1.0",
     "@vscode/vsce": "^3.0.0",
     "esbuild": "^0.28.2",
-    "eslint": "^10.9.1",
+    "eslint": "^10.10.0",
     "prettier": "^3.9.6",
     "typescript": "^6.0.3",
     "js-yaml": "5.4.1",
