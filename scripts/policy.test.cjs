@@ -174,9 +174,12 @@ test('finalized stable and prerelease changelogs pass both release modes', () =>
     });
     for (const dryRun of [true, false]) {
       assert.deepEqual(validateChangelog(changelog, version, tag, dryRun), { finalized: true });
-      assert.deepEqual(validateChangelog(changelog.replaceAll('\n', '\r\n'), version, tag, dryRun), {
-        finalized: true,
-      });
+      assert.deepEqual(
+        validateChangelog(changelog.replaceAll('\n', '\r\n'), version, tag, dryRun),
+        {
+          finalized: true,
+        },
+      );
     }
   }
 });

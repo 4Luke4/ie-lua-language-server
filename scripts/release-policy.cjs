@@ -30,9 +30,9 @@ function validateChangelog(changelog, version, tag, dryRun = false) {
     1,
     'Expected one changelog entry for VERSION',
   );
-  const definitions = [
-    ...changelog.matchAll(/^\[(v?(\d+\.\d+\.\d+))\]:[^\S\r\n]*(.*)$/gmu),
-  ].filter((definition) => definition[2] === version);
+  const definitions = [...changelog.matchAll(/^\[(v?(\d+\.\d+\.\d+))\]:[^\S\r\n]*(.*)$/gmu)].filter(
+    (definition) => definition[2] === version,
+  );
   assert.equal(definitions.length, 1, 'Expected one changelog link for VERSION');
   assert.equal(definitions[0][1], entries[0][1], 'Changelog link label must match its heading');
   const link = definitions[0][3].trim();
