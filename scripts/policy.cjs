@@ -23,6 +23,27 @@ function validateLabels(definitions, rules) {
       `Missing label definition: ${name}`,
     );
 }
+function validateDeclaredLanguageServices(readme, inventory) {
+  // The README language-services bullet is the published list of individually named services. It is
+  // prose, so it is parsed back into names here: the six group markers alone would let a named
+  // service disappear from either the README or the verification inventory unnoticed.
+  const bullet = readme.match(/^- (.+?)\.\s*<!-- feature: language-services -->$/mu);
+  assert.ok(bullet, 'README must declare the language services it provides');
+  const declared = bullet[1]
+    .split(/,\s*(?:and\s+)?/u)
+    .map((service) => service.trim().toLowerCase())
+    .filter(Boolean);
+  assert.deepEqual(
+    declared,
+    inventory.declaredLanguageServices,
+    'README language services and the verification inventory disagree',
+  );
+  for (const service of inventory.declaredLanguageServices)
+    assert.ok(
+      inventory.cases.some((c) => c.features.includes(service)),
+      `Declared language service without a verification case: ${service}`,
+    );
+}
 function validateVersions(version, pkg, lock, workspaces, changelog) {
   assert.match(version, /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$/u);
   assert.equal(pkg.version, version);
@@ -118,6 +139,7 @@ function main() {
       inventory.cases.some((c) => c.groups.includes(group)),
       group,
     );
+  validateDeclaredLanguageServices(readme, inventory);
   for (const { command } of pkg.contributes.commands)
     assert.ok(
       inventory.cases.some((c) => c.commands.includes(command)),
@@ -163,6 +185,10 @@ function validateVerificationGraph(workflows) {
     byFile['verify.yml'].jobs.responsiveness,
     'Responsiveness is required release coverage',
   );
+  assert.ok(
+    byFile['verify.yml'].jobs.features,
+    'Declared feature coverage is required release coverage',
+  );
   const gate = byFile['ci.yml'].jobs.verify;
   assert.equal(gate.name, 'Verify');
   assert.equal(gate.needs, 'suite');
@@ -173,7 +199,7 @@ function validateVerificationGraph(workflows) {
     for (const job of Object.values(workflow.jobs)) {
       for (const step of job.steps ?? []) {
         assert.ok(
-          !/npm (?:test\b|run test:(?:editor|lsp)\b)|vsce package/u.test(step.run ?? ''),
+          !/npm (?:test\b|run test:(?:editor|lsp|features)\b)|vsce package/u.test(step.run ?? ''),
           `${file}: verification belongs in the shared suite`,
         );
       }

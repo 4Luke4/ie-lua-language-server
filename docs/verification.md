@@ -6,6 +6,10 @@ resolved once at run start. Both package channels run in separate, fresh dark an
 profiles with accessibility support and reduced motion enabled.
 
 `tests/feature-inventory.json` maps README claims, commands, and settings to named editor scenarios.
+It also holds `declaredLanguageServices`, the twelve services the README names individually. The
+policy check parses that README sentence back into names and requires it to match the inventory, and
+requires every name to appear in a verification case, so a service cannot be renamed, dropped, or
+left unverified without failing CI.
 Each profile's `editor.json` records exact editor/platform/channel information and each scenario's
 outcome. Missing cases and incomplete reports fail verification. The suite asserts provider results,
 edit sets, source locations, documentation, and configuration effects through the installed extension;
@@ -22,6 +26,13 @@ unit tests and real stdio requests provide additional algorithm and protocol cov
 | Formatting                 | Exact text edits, idempotence, current config-path behavior and unchanged menu text                    |
 | Commands and activation    | Real files, open-document validation, reloading changed installed data, picker cancellation and output |
 | Packaged grammars          | Tokenization using the grammar files actually shipped in the VSIX                                      |
+
+The required **Declared feature coverage** job runs one named case per declared service against the
+bundled stdio server on Linux, Windows, and macOS, and records each outcome with its evidence in
+`features-<os>/features-stdio.json`. It is a coverage gate, not a second regression suite: it proves
+each named service still answers with a real result on the transport non-VS Code editors use, while
+behavioural regressions stay in the stdio and installed-extension suites. A missing or failed
+service fails the job.
 
 Caches contain npm downloads, exact editor distributions, and versioned actionlint binaries. They
 never substitute for compilation, tests, regeneration, archive audits, or fresh editor profiles.

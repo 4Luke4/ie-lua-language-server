@@ -1,0 +1,76 @@
+name: Dependabot rebase
+
+# The main ruleset requires branches to be up to date before merging, and Dependabot only rebases on
+# its own when an update conflicts. A pull request that merely falls behind therefore stays
+# unmergeable until it is asked to rebase, which is what this workflow does when main moves.
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '41 5 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: dependabot-rebase
+  cancel-in-progress: false
+
+jobs:
+  request-rebase:
+    name: Request a rebase for out-of-date updates
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Ask out-of-date Dependabot pull requests to rebase
+        # Dependabot rejects commands from github-actions[bot] ("only users with push access can use
+        # that command"), so the default GITHUB_TOKEN would post a comment that is silently ignored.
+        # A dedicated token is required, and its absence is reported rather than failing the run.
+        env:
+          GH_TOKEN: ${{ secrets.DEPENDABOT_REBASE_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [[ -z "${GH_TOKEN:-}" ]]; then
+            echo "::notice::DEPENDABOT_REBASE_TOKEN is not configured. Dependabot only honours rebase requests from an account with push access, so no rebase was requested."
+            exit 0
+          fi
+
+          # mergeStateStatus is computed lazily and reports UNKNOWN while GitHub is still working it
+          # out; only a confirmed BEHIND is actionable, and a later run retries the rest.
+          candidates="$(
+            gh pr list \
+              --repo "$GITHUB_REPOSITORY" \
+              --state open \
+              --limit 100 \
+              --json number,author,mergeStateStatus,headRefOid \
+              --jq '.[]
+                | select(.author.login == "dependabot[bot]")
+                | select(.mergeStateStatus == "BEHIND")
+                | "\(.number) \(.headRefOid)"'
+          )"
+
+          if [[ -z "$candidates" ]]; then
+            echo "No Dependabot pull request is behind the base branch."
+            exit 0
+          fi
+
+          while read -r number head; do
+            [[ -n "$number" ]] || continue
+            pushed="$(gh api "repos/$GITHUB_REPOSITORY/commits/$head" --jq '.commit.committer.date')"
+            # Asking again for a head that has already been asked about would comment on every push
+            # to main. A request that postdates the current head has not been acted on yet.
+            asked="$(
+              gh api "repos/$GITHUB_REPOSITORY/issues/$number/comments" --paginate \
+                --jq '[.[] | select(.body | test("^@dependabot rebase[[:space:]]*$")) | .created_at] | max // ""'
+            )"
+            if [[ -n "$asked" && "$asked" > "$pushed" ]]; then
+              echo "#$number: a rebase was already requested for $head"
+              continue
+            fi
+            gh pr comment "$number" --repo "$GITHUB_REPOSITORY" --body '@dependabot rebase'
+            echo "#$number: requested a rebase of $head"
+          done <<< "$candidates"
