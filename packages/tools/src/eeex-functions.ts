@@ -388,6 +388,29 @@ export function renderRstMarkdown(source: string, sourcePath = '<rst>'): string 
     .trim();
 }
 
+const aliasIdentifier = /^[A-Za-z_][A-Za-z0-9_]*$/u;
+
+// A single upstream alias literal may declare several interchangeable names separated by pipes, for
+// example ``getItemsIterator | getItemsItr``. Each alternative is an independent callable alias, so
+// the literal is split here instead of being carried through as one unusable name. Validation fails
+// while the source page is still known, rather than leaving the packaging audit to reject a
+// generated shard with no upstream location to point at.
+function parseAliasNames(literal: string, sourcePath: string, kind: string): string[] {
+  const names = literal
+    .split('|')
+    .map((name) => name.trim())
+    .filter(Boolean);
+  if (names.length === 0) {
+    throw new Error(`${sourcePath}: empty ${kind} alias declaration`);
+  }
+  for (const name of names) {
+    if (!aliasIdentifier.test(name)) {
+      throw new Error(`${sourcePath}: ${kind} alias ${name} is not a Lua identifier`);
+    }
+  }
+  return names;
+}
+
 function parseCallableAliases(
   body: string,
   parameters: ApiParameter[],
@@ -400,19 +423,25 @@ function parseCallableAliases(
     if (!receiverType) {
       throw new Error(`${sourcePath}: instance alias ${instanceMatch[1]} has no typed receiver`);
     }
-    aliases.push({
-      name: instanceMatch[1],
-      receiverType,
-      consumesFirstParameter: true,
-    });
+    aliases.push(
+      ...parseAliasNames(instanceMatch[1], sourcePath, 'instance').map((name) => ({
+        name,
+        receiverType,
+        consumesFirstParameter: true,
+      })),
+    );
   }
   const globalMatch = body.match(/^\*\*Aliases:\*\*\s+(.+)$/mu);
   if (globalMatch?.[1]) {
-    const names = [...globalMatch[1].matchAll(/``([^`]+)``/gu)].map((match) => match[1] ?? '');
-    if (names.length === 0) {
+    const literals = [...globalMatch[1].matchAll(/``([^`]+)``/gu)].map((match) => match[1] ?? '');
+    if (literals.length === 0) {
       throw new Error(`${sourcePath}: malformed global aliases declaration`);
     }
-    aliases.push(...names.map((name) => ({ name, consumesFirstParameter: false })));
+    aliases.push(
+      ...literals
+        .flatMap((literal) => parseAliasNames(literal, sourcePath, 'global'))
+        .map((name) => ({ name, consumesFirstParameter: false })),
+    );
   }
   return aliases;
 }
