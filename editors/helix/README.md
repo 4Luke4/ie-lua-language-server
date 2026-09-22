@@ -7,10 +7,10 @@ Node.js and install-path requirements shared by every editor.
 
 Copy the entries from `languages.toml` in this directory into your user file:
 
-| Platform      | Path                              |
-| ------------- | --------------------------------- |
-| Linux, macOS  | `~/.config/helix/languages.toml`  |
-| Windows       | `%APPDATA%\helix\languages.toml`  |
+| Platform     | Path                             |
+| ------------ | -------------------------------- |
+| Linux, macOS | `~/.config/helix/languages.toml` |
+| Windows      | `%APPDATA%\helix\languages.toml` |
 
 A project-local `.helix/languages.toml` works the same way and keeps the server scoped to one
 project, which is usually what you want.

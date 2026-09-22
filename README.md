@@ -119,17 +119,17 @@ The same bundled server runs over stdin/stdout for editors outside Visual Studio
 server, one API index and one set of behaviours; only the client configuration differs. Shipped
 configurations and per-editor guides live in [`editors/`](editors/README.md).
 
-| Editor         | Client              | Ships a config | Guide                                       |
-| -------------- | ------------------- | -------------- | ------------------------------------------- |
-| Sublime Text   | LSP package         | yes            | [editors/sublime](editors/sublime/README.md) |
-| Neovim         | built-in `vim.lsp`  | yes            | [editors/neovim](editors/neovim/README.md)   |
-| Emacs          | Eglot               | yes            | [editors/emacs](editors/emacs/README.md)     |
-| JetBrains IDEs | LSP4IJ              | yes            | [editors/jetbrains](editors/jetbrains/README.md) |
-| Helix          | built in            | yes            | [editors/helix](editors/helix/README.md)     |
-| Kate           | LSP Client plugin   | yes            | [editors/kate](editors/kate/README.md)       |
-| Geany          | LSP Client plugin   | yes            | [editors/geany](editors/geany/README.md)     |
-| Zed            | extension required  | **no**         | [editors/zed](editors/zed/README.md)         |
-| Notepad++      | third-party plugin  | **no**         | [editors/notepadpp](editors/notepadpp/README.md) |
+| Editor         | Client             | Ships a config | Guide                                            |
+| -------------- | ------------------ | -------------- | ------------------------------------------------ |
+| Sublime Text   | LSP package        | yes            | [editors/sublime](editors/sublime/README.md)     |
+| Neovim         | built-in `vim.lsp` | yes            | [editors/neovim](editors/neovim/README.md)       |
+| Emacs          | Eglot              | yes            | [editors/emacs](editors/emacs/README.md)         |
+| JetBrains IDEs | LSP4IJ             | yes            | [editors/jetbrains](editors/jetbrains/README.md) |
+| Helix          | built in           | yes            | [editors/helix](editors/helix/README.md)         |
+| Kate           | LSP Client plugin  | yes            | [editors/kate](editors/kate/README.md)           |
+| Geany          | LSP Client plugin  | yes            | [editors/geany](editors/geany/README.md)         |
+| Zed            | extension required | **no**         | [editors/zed](editors/zed/README.md)             |
+| Notepad++      | third-party plugin | **no**         | [editors/notepadpp](editors/notepadpp/README.md) |
 
 Zed registers a language server only from a compiled extension, and Notepad++ ships no LSP client at
 all. Those two guides describe what each actually requires instead of offering a configuration that

@@ -8,7 +8,7 @@ Node.js and install-path requirements shared by every editor.
 
 JetBrains has its own LSP client API, and since the 2026.2 cycle its client API is open source.
 Using it still means writing and building an IDE plugin, because it is an API for plugin developers,
-not a configuration surface. LSP4IJ exposes the same capability as a *user-defined language server*
+not a configuration surface. LSP4IJ exposes the same capability as a _user-defined language server_
 you configure in the IDE, which is why this repository ships an LSP4IJ template instead of a plugin.
 
 ## 1. Install LSP4IJ

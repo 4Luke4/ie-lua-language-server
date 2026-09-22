@@ -16,33 +16,33 @@
     "command": [
       "node",
       "/absolute/path/to/ie-lua-language-server/dist/server/server.js",
-      "--stdio"
+      "--stdio",
     ],
     "selector": "source.lua",
     "settings": {
       "ieLua": {
         "validation": {
           "mode": "save",
-          "debounceMs": 300
-        }
-      }
-    }
+          "debounceMs": 300,
+        },
+      },
+    },
   },
   "ie-menu": {
     "enabled": true,
     "command": [
       "node",
       "/absolute/path/to/ie-lua-language-server/dist/server/server.js",
-      "--stdio"
+      "--stdio",
     ],
     "selector": "source.ie-menu",
     "settings": {
       "ieLua": {
         "validation": {
           "mode": "save",
-          "debounceMs": 300
-        }
-      }
-    }
-  }
+          "debounceMs": 300,
+        },
+      },
+    },
+  },
 }

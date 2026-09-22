@@ -1,6 +1,10 @@
 {
   "install": {
-    "command": ["node", "/absolute/path/to/ie-lua-language-server/dist/server/server.js", "--stdio"],
+    "command": [
+      "node",
+      "/absolute/path/to/ie-lua-language-server/dist/server/server.js",
+      "--stdio"
+    ],
     "apiIndexEnvironmentVariable": "IE_LUA_API_INDEX",
     "languageIds": { "lua": "ie-lua", "menu": "ie-menu" }
   },
