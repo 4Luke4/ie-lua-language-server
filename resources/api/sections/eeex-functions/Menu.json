@@ -1,11 +1,11 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-08-25T18:10:55.136Z",
+  "generatedAt": "2026-09-22T13:41:25.745Z",
   "source": {
     "id": "eeex-functions",
     "title": "EEex Functions",
-    "url": "https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions",
-    "commit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+    "url": "https://github.com/Bubb13/EEex-Docs/tree/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions",
+    "commit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
     "licenseStatus": "allowed"
   },
   "title": "Menu",
@@ -19,8 +19,8 @@
       "signature": "EEex_Menu_AddAfterMainFileLoadedListener()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst#L16",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Menu/index.rst#L16",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -31,8 +31,20 @@
       "signature": "EEex_Menu_AddAfterMainFileReloadedListener()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst#L24",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Menu/index.rst#L24",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Menu_AddAfterUtilLoadedListener",
+      "name": "EEex_Menu_AddAfterUtilLoadedListener",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Menu_AddAfterUtilLoadedListener()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Menu/index.rst#L32",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -43,8 +55,8 @@
       "signature": "EEex_Menu_AddBeforeListRendersItemListener()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst#L32",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Menu/index.rst#L40",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -55,8 +67,8 @@
       "signature": "EEex_Menu_AddBeforeMainFileLoadedListener()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst#L40",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Menu/index.rst#L48",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -67,8 +79,8 @@
       "signature": "EEex_Menu_AddBeforeMainFileReloadedListener()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst#L48",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Menu/index.rst#L56",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -79,8 +91,8 @@
       "signature": "EEex_Menu_AddBeforeUIItemRenderListener()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst#L56",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Menu/index.rst#L64",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -91,8 +103,8 @@
       "signature": "EEex_Menu_AddMainFileLoadedListener()",
       "documentationMarkdown": "> **Warning**\n> **Deprecated:** Use `EEex_Menu_AddAfterMainFileLoadedListener()` instead.",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst#L64",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Menu/index.rst#L72",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -103,8 +115,8 @@
       "signature": "EEex_Menu_AddTranslationLoadedListener()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst#L73",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Menu/index.rst#L81",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -115,8 +127,43 @@
       "signature": "EEex_Menu_AddWindowSizeChangedListener()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst#L81",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Menu/index.rst#L89",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Menu_CreateTemplateFromCopy",
+      "name": "EEex_Menu_CreateTemplateFromCopy",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Menu_CreateTemplateFromCopy(menuName, templateName, item)",
+      "parameters": [
+        {
+          "name": "menuName",
+          "type": "string",
+          "description": "The name of the menu where the newly created template is stored."
+        },
+        {
+          "name": "templateName",
+          "type": "string",
+          "description": "The name the newly created template is stored under."
+        },
+        {
+          "name": "item",
+          "type": "uiItem",
+          "description": "The UI item to copy and store as a template."
+        }
+      ],
+      "returns": [
+        {
+          "type": "uiItem",
+          "description": "The newly created template."
+        }
+      ],
+      "documentationMarkdown": "> **Summary**\n> Copies and stores `item` as a UI template in `menuName` under `templateName`.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| menuName | string |  | The name of the menu where the newly created template is stored. |\n| templateName | string |  | The name the newly created template is stored under. |\n| item | uiItem |  | The UI item to copy and store as a template. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| uiItem | The newly created template. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Menu/index.rst#L97",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -127,8 +174,8 @@
       "signature": "EEex_Menu_DestroyAllTemplates()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst#L89",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Menu/index.rst#L128",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -139,8 +186,8 @@
       "signature": "EEex_Menu_DestroyInjectedTemplate()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst#L97",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Menu/index.rst#L136",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -151,8 +198,8 @@
       "signature": "EEex_Menu_Eval()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst#L105",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Menu/index.rst#L144",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -163,8 +210,8 @@
       "signature": "EEex_Menu_Find()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst#L113",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Menu/index.rst#L152",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -175,8 +222,8 @@
       "signature": "EEex_Menu_GetArea()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst#L121",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Menu/index.rst#L160",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -187,8 +234,8 @@
       "signature": "EEex_Menu_GetItem()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst#L129",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Menu/index.rst#L168",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -199,8 +246,8 @@
       "signature": "EEex_Menu_GetItemArea()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst#L137",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Menu/index.rst#L176",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -211,8 +258,8 @@
       "signature": "EEex_Menu_GetItemFunction()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst#L145",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Menu/index.rst#L184",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -223,8 +270,8 @@
       "signature": "EEex_Menu_GetItemVariant()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst#L153",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Menu/index.rst#L192",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -235,8 +282,57 @@
       "signature": "EEex_Menu_GetMousePos()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst#L161",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Menu/index.rst#L200",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Menu_GetTextWidthHeight",
+      "name": "EEex_Menu_GetTextWidthHeight",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Menu_GetTextWidthHeight(sText, sFont, nPointSize, bUseFontZoom, nWidth)",
+      "parameters": [
+        {
+          "name": "sText",
+          "type": "string",
+          "description": "The text whose dimensions are to be calculated."
+        },
+        {
+          "name": "sFont",
+          "type": "string",
+          "description": "The font of the text."
+        },
+        {
+          "name": "nPointSize",
+          "type": "number",
+          "description": "The point size of the text."
+        },
+        {
+          "name": "bUseFontZoom",
+          "type": "boolean",
+          "description": "Determines if `nPointSize` is scaled by the game's 'font zoom' option."
+        },
+        {
+          "name": "nWidth",
+          "type": "number",
+          "description": "The width available to the text. Text wrapping will occur if the text overruns this width. A value of `nil` signifies unlimited width."
+        }
+      ],
+      "returns": [
+        {
+          "type": "number",
+          "description": "The calculated width of the text."
+        },
+        {
+          "type": "number",
+          "description": "The calculated height of the text."
+        }
+      ],
+      "documentationMarkdown": "> **Summary**\n> Calculates the minimum width and height needed to render `sText`.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| sText | string |  | The text whose dimensions are to be calculated. |\n| sFont | string |  | The font of the text. |\n| nPointSize | number |  | The point size of the text. |\n| bUseFontZoom | boolean |  | Determines if `nPointSize` is scaled by the game's 'font zoom' option. |\n| nWidth | number |  | The width available to the text. Text wrapping will occur if the text overruns this width. A value of `nil` signifies unlimited width. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| number | The calculated width of the text. |\n| number | The calculated height of the text. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Menu/index.rst#L208",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -247,8 +343,8 @@
       "signature": "EEex_Menu_GetUIItemArea()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst#L169",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Menu/index.rst#L245",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -259,8 +355,8 @@
       "signature": "EEex_Menu_GetUIMenuArea()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst#L177",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Menu/index.rst#L253",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -271,8 +367,8 @@
       "signature": "EEex_Menu_InjectTemplate()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst#L185",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Menu/index.rst#L261",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -283,8 +379,8 @@
       "signature": "EEex_Menu_InjectTemplateInstance()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst#L193",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Menu/index.rst#L269",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -295,8 +391,8 @@
       "signature": "EEex_Menu_IsCursorWithin()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst#L201",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Menu/index.rst#L277",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -307,8 +403,8 @@
       "signature": "EEex_Menu_IsCursorWithinRect()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst#L209",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Menu/index.rst#L285",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -319,8 +415,8 @@
       "signature": "EEex_Menu_IsNative()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst#L217",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Menu/index.rst#L293",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -331,8 +427,8 @@
       "signature": "EEex_Menu_LoadFile()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst#L225",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Menu/index.rst#L301",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -343,8 +439,8 @@
       "signature": "EEex_Menu_SetForceScrollbarRender()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst#L233",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Menu/index.rst#L309",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -355,8 +451,8 @@
       "signature": "EEex_Menu_SetItemExtraScrollbarPad()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst#L241",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Menu/index.rst#L317",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -367,8 +463,20 @@
       "signature": "EEex_Menu_SetItemFunction()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst#L249",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Menu/index.rst#L325",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Menu_SetItemScrollbarPadCollapses",
+      "name": "EEex_Menu_SetItemScrollbarPadCollapses",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Menu_SetItemScrollbarPadCollapses()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Menu/index.rst#L333",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -379,8 +487,8 @@
       "signature": "EEex_Menu_SetItemVariant()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst#L257",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Menu/index.rst#L341",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -391,8 +499,8 @@
       "signature": "EEex_Menu_SetTemplateArea()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst#L265",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Menu/index.rst#L349",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -403,8 +511,8 @@
       "signature": "EEex_Menu_StoreTemplateInstance()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst#L273",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Menu/index.rst#L357",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -415,8 +523,8 @@
       "signature": "EEex_Menu_TranslateXYFromGame()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Menu/index.rst#L281",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Menu/index.rst#L365",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     }
   ]

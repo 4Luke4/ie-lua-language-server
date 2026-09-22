@@ -1,11 +1,11 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-08-25T18:10:55.136Z",
+  "generatedAt": "2026-09-22T13:41:25.745Z",
   "source": {
     "id": "eeex-functions",
     "title": "EEex Functions",
-    "url": "https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions",
-    "commit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+    "url": "https://github.com/Bubb13/EEex-Docs/tree/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions",
+    "commit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
     "licenseStatus": "allowed"
   },
   "title": "Sprite",
@@ -19,8 +19,8 @@
       "signature": "EEex_Sprite_AddAlterBaseWeaponDamageListener()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L16",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L16",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -31,8 +31,8 @@
       "signature": "EEex_Sprite_AddBlockWeaponHitListener()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L24",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L24",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -43,8 +43,8 @@
       "signature": "EEex_Sprite_AddLoadedListener()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L32",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L32",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -55,8 +55,8 @@
       "signature": "EEex_Sprite_AddMarshalHandlers()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L40",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L40",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -67,8 +67,8 @@
       "signature": "EEex_Sprite_AddQuickListCountsResetListener()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L48",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L48",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -79,8 +79,8 @@
       "signature": "EEex_Sprite_AddQuickListNotifyRemovedListener()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L56",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L56",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -91,8 +91,8 @@
       "signature": "EEex_Sprite_AddQuickListsCheckedListener()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L64",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L64",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -103,8 +103,8 @@
       "signature": "EEex_Sprite_AddSpellDisableStateChangedListener()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L72",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L72",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -163,8 +163,8 @@
       ],
       "documentationMarkdown": "**Instance Name:** `countAllOfTypeInRange`\n\n> **Summary**\n> Returns the number of creatures that match `aiObjectType` around `sprite` in the given `range`, as per the `NumCreature()` trigger.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| sprite | CGameSprite |  | The sprite to search around. |\n| aiObjectType | CAIObjectType |  | The AI object type used to filter the objects passed to `func`. <br/> Most commonly retrieved from `EEex_Object_ParseString()`. Remember to call `:free()`. |\n| range | number |  | The radius to search around `sprite`. `448` is a sprite's default visual range. |\n| bCheckForLineOfSight | boolean | `true` | Determines whether LOS is required from `sprite` to considered objects. |\n| bCheckForNonSprites | boolean | `false` | Determines whether non-sprite objects in the main objects list are considered. |\n| terrainTable | Array<byte,16> | `sprite:virtual_GetVisibleTerrainTable()` | The terrain table to use for determining LOS. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| number | See summary. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L80",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L80",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -223,8 +223,8 @@
       ],
       "documentationMarkdown": "**Instance Name:** `countAllOfTypeStringInRange`\n\n> **Summary**\n> Returns the number of creatures that match `aiObjectTypeString` around `sprite` in the given `range`, as per the `NumCreature()` trigger.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| sprite | CGameSprite |  | The sprite to search around. |\n| aiObjectTypeString | string |  | The AI object type string used to filter the objects added to the return table. <br/> Automatically parsed by `EEex_Object_ParseString()`; the resulting object is freed before return. |\n| range | number |  | The radius to search around `sprite`. `448` is a sprite's default visual range. |\n| bCheckForLineOfSight | boolean | `true` | Determines whether LOS is required from `sprite` to considered objects. |\n| bCheckForNonSprites | boolean | `false` | Determines whether non-sprite objects in the main objects list are considered. |\n| terrainTable | Array<byte,16> | `sprite:virtual_GetVisibleTerrainTable()` | The terrain table to use for determining LOS. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| number | See summary. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L119",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L119",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -235,8 +235,8 @@
       "signature": "EEex_Sprite_CreateCopy()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L158",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L158",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -247,8 +247,8 @@
       "signature": "EEex_Sprite_CreateFromResref()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L166",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L166",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -259,8 +259,8 @@
       "signature": "EEex_Sprite_DisplayTextRef()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L174",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L174",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -318,8 +318,8 @@
       ],
       "documentationMarkdown": "**Instance Name:** `forAllOfTypeInRange`\n\n> **Summary**\n> Calls `func` for every creature that matches `aiObjectType` around `sprite` in the given `range`, as per the `NumCreature()` trigger.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| sprite | CGameSprite |  | The sprite to search around. |\n| aiObjectType | CAIObjectType |  | The AI object type used to filter the objects passed to `func`. <br/> Most commonly retrieved from `EEex_Object_ParseString()`. Remember to call `:free()`. |\n| range | number |  | The radius to search around `sprite`. `448` is a sprite's default visual range. |\n| func | function |  | The function to call for every creature in the search area. |\n| bCheckForLineOfSight | boolean | `true` | Determines whether LOS is required from `sprite` to considered objects. |\n| bCheckForNonSprites | boolean | `false` | Determines whether non-sprite objects in the main objects list are considered. |\n| terrainTable | Array<byte,16> | `sprite:virtual_GetVisibleTerrainTable()` | The terrain table to use for determining LOS. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L182",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L182",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -377,8 +377,8 @@
       ],
       "documentationMarkdown": "**Instance Name:** `forAllOfTypeStringInRange`\n\n> **Summary**\n> Calls `func` for every creature that matches `aiObjectTypeString` around `sprite` in the given `range`, as per the `NumCreature()` trigger.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| sprite | CGameSprite |  | The sprite to search around. |\n| aiObjectTypeString | string |  | The AI object type string used to filter the objects passed to `func`. <br/> Automatically parsed by `EEex_Object_ParseString()`; the resulting object is freed before return. |\n| range | number |  | The radius to search around `sprite`. `448` is a sprite's default visual range. |\n| func | function |  | The function to call for every creature in the search area. |\n| bCheckForLineOfSight | boolean | `true` | Determines whether LOS is required from `sprite` to considered objects. |\n| bCheckForNonSprites | boolean | `false` | Determines whether non-sprite objects in the main objects list are considered. |\n| terrainTable | Array<byte,16> | `sprite:virtual_GetVisibleTerrainTable()` | The terrain table to use for determining LOS. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L215",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L215",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -409,8 +409,8 @@
       ],
       "documentationMarkdown": "**Instance Name:** `getActiveStats`\n\n> **Summary**\n> Returns the given `sprite`'s active stats structure. If the creature is in the middle of an effects list process, using this function ensures that the work-in-progress stats structure isn't used.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| sprite | CGameSprite |  | The sprite whose stats structure is being fetched. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| CDerivedStats | See summary. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L248",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L248",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -469,8 +469,8 @@
       ],
       "documentationMarkdown": "**Instance Name:** `getAllOfTypeInRange`\n\n> **Summary**\n> Returns a table populated by every creature that matches `aiObjectType` around `sprite` in the given `range`, as per the `NumCreature()` trigger.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| sprite | CGameSprite |  | The sprite to search around. |\n| aiObjectType | CAIObjectType |  | The AI object type used to filter the objects passed to `func`. <br/> Most commonly retrieved from `EEex_Object_ParseString()`. Remember to call `:free()`. |\n| range | number |  | The radius to search around `sprite`. `448` is a sprite's default visual range. |\n| bCheckForLineOfSight | boolean | `true` | Determines whether LOS is required from `sprite` to considered objects. |\n| bCheckForNonSprites | boolean | `false` | Determines whether non-sprite objects in the main objects list are considered. |\n| terrainTable | Array<byte,16> | `sprite:virtual_GetVisibleTerrainTable()` | The terrain table to use for determining LOS. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| table | See summary. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L277",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L277",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -529,8 +529,26 @@
       ],
       "documentationMarkdown": "**Instance Name:** `getAllOfTypeStringInRange`\n\n> **Summary**\n> Returns a table populated by every creature that matches `aiObjectTypeString` around `sprite` in the given `range`, as per the `NumCreature()` trigger.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| sprite | CGameSprite |  | The sprite to search around. |\n| aiObjectTypeString | string |  | The AI object type string used to filter the objects added to the return table. <br/> Automatically parsed by `EEex_Object_ParseString()`; the resulting object is freed before return. |\n| range | number |  | The radius to search around `sprite`. `448` is a sprite's default visual range. |\n| bCheckForLineOfSight | boolean | `true` | Determines whether LOS is required from `sprite` to considered objects. |\n| bCheckForNonSprites | boolean | `false` | Determines whether non-sprite objects in the main objects list are considered. |\n| terrainTable | Array<byte,16> | `sprite:virtual_GetVisibleTerrainTable()` | The terrain table to use for determining LOS. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| table | See summary. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L316",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L316",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Sprite_GetAllSelected",
+      "name": "EEex_Sprite_GetAllSelected",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Sprite_GetAllSelected()",
+      "returns": [
+        {
+          "type": "table",
+          "description": "See summary."
+        }
+      ],
+      "documentationMarkdown": "> **Summary**\n> Returns a table populated with all the sprites the player currently has selected and is controlling.\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| table | See summary. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L355",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -547,8 +565,8 @@
       ],
       "documentationMarkdown": "> **Summary**\n> Returns a table populated with the object ids of all the sprites the player currently has selected and is controlling.\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| table | See summary. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L355",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L374",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -559,8 +577,8 @@
       "signature": "EEex_Sprite_GetCasterLevelForSpell()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L374",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L393",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -571,8 +589,8 @@
       "signature": "EEex_Sprite_GetCastTimer()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L382",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L401",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -583,8 +601,8 @@
       "signature": "EEex_Sprite_GetCastTimerPercentage()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L390",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L409",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -595,8 +613,8 @@
       "signature": "EEex_Sprite_GetCharacterIndex()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L398",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L417",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -607,8 +625,8 @@
       "signature": "EEex_Sprite_GetContingencyTimer()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L406",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L425",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -619,8 +637,8 @@
       "signature": "EEex_Sprite_GetContingencyTimerPercentage()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L414",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L433",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -651,8 +669,8 @@
       ],
       "documentationMarkdown": "**Instance Name:** `getExtendedStat`\n\n> **Warning**\n> **Deprecated:** Use `EEex_Sprite_GetStat()` instead.\n\n> **Summary**\n> Returns the value of the extended stat on the given `sprite`.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| sprite | CGameSprite |  | The sprite whose extended stat value is being fetched. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| number | See summary. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L422",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L441",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -663,8 +681,8 @@
       "signature": "EEex_Sprite_GetFromUUID()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L453",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L472",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -688,8 +706,8 @@
       ],
       "documentationMarkdown": "> **Summary**\n> Returns the sprite of the party member in the given `portraitIndex`, or `nil` if none exists.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| portraitIndex | number |  | The portrait index of the sprite to fetch; valid values are [0-5]. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| CGameSprite \\| nil | See summary. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L461",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L480",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -713,8 +731,8 @@
       ],
       "documentationMarkdown": "> **Summary**\n> Returns the object id of the party member in the given `portraitIndex`, or `-1` if none exists.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| portraitIndex | number |  | The portrait index of the sprite to fetch; valid values are [0-5]. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| number | See summary. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L488",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L507",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -725,8 +743,8 @@
       "signature": "EEex_Sprite_GetKnownInnateSpellsIterator()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L515",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L534",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -737,8 +755,8 @@
       "signature": "EEex_Sprite_GetKnownInnateSpellsWithAbilityIterator()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L523",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L542",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -749,8 +767,8 @@
       "signature": "EEex_Sprite_GetKnownMageSpellsIterator()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L531",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L550",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -761,8 +779,8 @@
       "signature": "EEex_Sprite_GetKnownMageSpellsWithAbilityIterator()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L539",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L558",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -773,8 +791,8 @@
       "signature": "EEex_Sprite_GetKnownPriestSpellsIterator()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L547",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L566",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -785,8 +803,8 @@
       "signature": "EEex_Sprite_GetKnownPriestSpellsWithAbilityIterator()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L555",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L574",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -797,8 +815,8 @@
       "signature": "EEex_Sprite_GetLauncher()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L563",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L582",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -809,8 +827,8 @@
       "signature": "EEex_Sprite_GetLocalInt()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L571",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L590",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -821,8 +839,8 @@
       "signature": "EEex_Sprite_GetLocalString()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L579",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L598",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -833,8 +851,8 @@
       "signature": "EEex_Sprite_GetModalState()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L587",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L606",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -845,8 +863,8 @@
       "signature": "EEex_Sprite_GetModalTimer()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L595",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L614",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -857,8 +875,8 @@
       "signature": "EEex_Sprite_GetModalTimerPercentage()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L603",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L622",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -869,8 +887,8 @@
       "signature": "EEex_Sprite_GetName()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L611",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L630",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -881,8 +899,8 @@
       "signature": "EEex_Sprite_GetNameRef()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L619",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L638",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -899,8 +917,8 @@
       ],
       "documentationMarkdown": "> **Summary**\n> Returns the number of characters currently in the party.\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| number | See summary. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L627",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L646",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -911,8 +929,8 @@
       "signature": "EEex_Sprite_GetPersonalSpace()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L646",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L665",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -943,8 +961,8 @@
       ],
       "documentationMarkdown": "**Instance Name:** `getPortraitIndex`\n\n> **Summary**\n> Returns the given `sprite`'s portrait index, or `-1` if it isn't a party member.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| sprite | CGameSprite |  | The sprite whose portrait index is being fetched. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| number | See summary. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L654",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L673",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -961,8 +979,8 @@
       ],
       "documentationMarkdown": "> **Summary**\n> Returns the sprite that is the \"leader\" of the sprites the player currently has selected and is controlling.\n>\n> The leader is the party member with the highest portrait slot, (lowest index), or the creature that was selected first.\n>\n> If no creatures are currently selected, returns `nil`.\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| CGameSprite \\| nil | See summary. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L682",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L701",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -979,8 +997,8 @@
       ],
       "documentationMarkdown": "> **Summary**\n> Returns the object id associated with the \"leader\" of the sprites the player currently has selected and is controlling.\n>\n> The leader is the party member with the highest portrait slot, (lowest index), or the creature that was selected first.\n>\n> If no creatures are currently selected, returns `-1`.\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| number | See summary. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L706",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L725",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -991,8 +1009,8 @@
       "signature": "EEex_Sprite_GetSpellButtonDataIteratorFrom2DA()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L730",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L749",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1003,8 +1021,8 @@
       "signature": "EEex_Sprite_GetSpellState()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L738",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L757",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1015,8 +1033,8 @@
       "signature": "EEex_Sprite_GetSpellsWithAbilityIterator()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L746",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L765",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1027,8 +1045,8 @@
       "signature": "EEex_Sprite_GetStat()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L754",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L773",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1039,8 +1057,8 @@
       "signature": "EEex_Sprite_GetState()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L762",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L781",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1051,8 +1069,8 @@
       "signature": "EEex_Sprite_GetUUID()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L770",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L789",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1063,8 +1081,8 @@
       "signature": "EEex_Sprite_GetValidKnownInnateSpellsIterator()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L778",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L797",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1075,8 +1093,8 @@
       "signature": "EEex_Sprite_GetValidKnownMageSpellsIterator()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L786",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L805",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1087,8 +1105,8 @@
       "signature": "EEex_Sprite_GetValidKnownPriestSpellsIterator()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L794",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L813",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1099,8 +1117,8 @@
       "signature": "EEex_Sprite_GetValidSpellsWithAbilityIterator()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L802",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L821",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1118,8 +1136,8 @@
       ],
       "documentationMarkdown": "> **Summary**\n> Calls `func` for every sprite the player currently has selected and is controlling, (passing the sprite). Return `true` from `func` to stop iteration.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| func | function |  | The function to call. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L810",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L829",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1137,8 +1155,8 @@
       ],
       "documentationMarkdown": "> **Summary**\n> Calls `func` for every sprite the player currently has selected and is controlling, (passing the sprite's object id). Return `true` from `func` to stop iteration.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| func | function |  | The function to call. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L830",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L849",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1149,8 +1167,8 @@
       "signature": "EEex_Sprite_LoadedWithUUIDCallback()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L850",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L869",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1161,8 +1179,8 @@
       "signature": "EEex_Sprite_OpenOp214Interface()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L858",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L877",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1173,8 +1191,8 @@
       "signature": "EEex_Sprite_SetLocalInt()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L866",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L885",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1185,8 +1203,8 @@
       "signature": "EEex_Sprite_SetLocalString()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Sprite/index.rst#L874",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Sprite/index.rst#L893",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     }
   ]

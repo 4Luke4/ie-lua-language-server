@@ -1,11 +1,11 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-08-25T18:10:55.136Z",
+  "generatedAt": "2026-09-22T13:41:25.745Z",
   "source": {
     "id": "eeex-functions",
     "title": "EEex Functions",
-    "url": "https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions",
-    "commit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+    "url": "https://github.com/Bubb13/EEex-Docs/tree/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions",
+    "commit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
     "licenseStatus": "allowed"
   },
   "title": "Resource",
@@ -19,8 +19,8 @@
       "signature": "EEex_Resource_Demand()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L16",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L16",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -31,8 +31,8 @@
       "signature": "EEex_Resource_ExtToType()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L24",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L24",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -43,8 +43,8 @@
       "signature": "EEex_Resource_ExtToUserType()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L32",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L32",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -55,8 +55,8 @@
       "signature": "EEex_Resource_Fetch()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L40",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L40",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -97,8 +97,8 @@
       ],
       "documentationMarkdown": "**Instance Name:** `findColumnIndex`\n\n> **Summary**\n> Searches the values of the row specified by `rowIndex` and returns the first column index that matches `toSearchFor`.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| array | C2DArray |  | The .2DA file being operated on. This is usually the object returned by `EEex_Resource_Load2DA()`. |\n| rowIndex | number |  | The index of the row to be searched. |\n| toSearchFor | string |  | The value to search for. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| number | See summary. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L48",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L48",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -134,8 +134,8 @@
       ],
       "documentationMarkdown": "**Instance Name:** `findColumnLabel`\n\n> **Summary**\n> Searches the .2DA's column labels and returns the first column index that matches `toSearchFor`.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| array | C2DArray |  | The .2DA file being operated on. This is usually the object returned by `EEex_Resource_Load2DA()`. |\n| toSearchFor | string |  | The label to search for. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| number | See summary. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L80",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L80",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -176,8 +176,8 @@
       ],
       "documentationMarkdown": "**Instance Name:** `findRowIndex`\n\n> **Summary**\n> Searches the values of the column specified by `columnIndex` and returns the first row index that matches `toSearchFor`.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| array | C2DArray |  | The .2DA file being operated on. This is usually the object returned by `EEex_Resource_Load2DA()`. |\n| columnIndex | number |  | The index of the column to be searched. |\n| toSearchFor | string |  | The value to search for. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| number | See summary. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L110",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L110",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -213,8 +213,8 @@
       ],
       "documentationMarkdown": "**Instance Name:** `findRowLabel`\n\n> **Summary**\n> Searches the .2DA's row labels and returns the first row index that matches `toSearchFor`.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| array | C2DArray |  | The .2DA file being operated on. This is usually the object returned by `EEex_Resource_Load2DA()`. |\n| toSearchFor | string |  | The label to search for. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| number | See summary. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L142",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L142",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -239,8 +239,8 @@
       ],
       "documentationMarkdown": "**Instance Name:** `free`\n\n> **Summary**\n> Frees the memory associated with `array`. ***Only use this if you know what you are doing!***\n\n> **Note**\n> `C2DArray` objects returned by `EEex_Resource_Load2DA()` are subject to garbage-collection – meaning `EEex_Resource_Free2DA()` should ***not*** be called on these instances.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| array | C2DArray |  | The .2DA file being operated on. This is usually the object returned by `EEex_Resource_Load2DA()`. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L172",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L172",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -265,8 +265,8 @@
       ],
       "documentationMarkdown": "**Instance Name:** `free`\n\n> **Summary**\n> Frees the memory associated with `ids`. ***Only use this if you know what you are doing!***\n\n> **Note**\n> `CAIIdList` objects returned by `EEex_Resource_LoadIDS()` are subject to garbage-collection – meaning `EEex_Resource_FreeIDS()` should ***not*** be called on these instances.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| ids | CAIIdList |  | The .IDS file being operated on. This is usually the object returned by `EEex_Resource_LoadIDS()`. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L197",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L197",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -291,8 +291,8 @@
       ],
       "documentationMarkdown": "**Instance Name:** `free`\n\n> **Summary**\n> Frees the memory associated with `script`. ***Only use this if you know what you are doing!***\n\n> **Note**\n> `CAIScript` objects returned by `EEex_Resource_LoadScript()` are subject to garbage-collection – meaning `EEex_Resource_FreeScript()` should ***not*** be called on these instances.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| script | CAIScript |  | The .BCS / .BS file being operated on. This is usually the object returned by `EEex_Resource_LoadScript()`. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L222",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L222",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -328,8 +328,8 @@
       ],
       "documentationMarkdown": "**Instance Name:** `getColumnLabel`\n\n> **Summary**\n> Returns the label of the column specified by `columnIndex`.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| array | C2DArray |  | The .2DA file being operated on. This is usually the object returned by `EEex_Resource_Load2DA()`. |\n| columnIndex | number |  | The column index of the label to be fetched. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| string | See summary. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L247",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L247",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -360,8 +360,8 @@
       ],
       "documentationMarkdown": "**Instance Name:** `getDefault`\n\n> **Summary**\n> Returns the \"default\" value of the .2DA.\n\n> **Note**\n> A .2DA's default value is defined by the line directly below the version header – it is usually an asterisk ('*').\n\n> **Note**\n> If the engine (or any EEex function) indexes a .2DA out-of-bounds, the default value is returned instead.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| array | C2DArray |  | The .2DA file being operated on. This is usually the object returned by `EEex_Resource_Load2DA()`. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| string | See summary. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L277",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L277",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -396,8 +396,8 @@
       ],
       "documentationMarkdown": "**Instance Name:** `getDimensions`\n\n> **Summary**\n> Returns the x and y dimensions of the .2DA. That is the number of columns, and the number of rows respectively.\n\n> **Note**\n> - The returned 'x' dimension **includes** the row labels, (that is to say, its value is 1 more than expected).\n> - The returned 'y' dimension **excludes** the column labels.\n>\n> When indexing a .2DA, column / row labels **are always excluded**.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| array | C2DArray |  | The .2DA file being operated on. This is usually the object returned by `EEex_Resource_Load2DA()`. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| number | The .2DA's 'x' dimension. |\n| number | The .2DA's 'y' dimension. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L313",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L313",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -408,8 +408,8 @@
       "signature": "EEex_Resource_Get2DARowColumnsByLabelIterator()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L350",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L350",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -420,8 +420,8 @@
       "signature": "EEex_Resource_Get2DARowColumnsIterator()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L358",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L358",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -457,8 +457,8 @@
       ],
       "documentationMarkdown": "**Instance Name:** `getRowLabel`\n\n> **Summary**\n> Returns the label of the row specified by `rowIndex`.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| array | C2DArray |  | The .2DA file being operated on. This is usually the object returned by `EEex_Resource_Load2DA()`. |\n| rowIndex | number |  | The row index of the label to be fetched. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| string | See summary. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L366",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L366",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -469,8 +469,8 @@
       "signature": "EEex_Resource_Get2DARowTableIterator()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L396",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L396",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -481,8 +481,8 @@
       "signature": "EEex_Resource_Get2DARowValuesIterator()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L404",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L404",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -523,8 +523,8 @@
       ],
       "documentationMarkdown": "**Instance Name:** `getAtLabels`\n\n> **Summary**\n> Returns the value at the intersection of `columnLabel` and `rowLabel`. If either label is missing, returns the .2DA's default value, (see `EEex_Resource_Get2DADefault()`).\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| array | C2DArray |  | The .2DA file being operated on. This is usually the object returned by `EEex_Resource_Load2DA()`. |\n| columnLabel | string |  | The column label of the value to be fetched. |\n| rowLabel | string |  | The row label of the value to be fetched. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| string | See summary. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L412",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L412",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -565,8 +565,8 @@
       ],
       "documentationMarkdown": "**Instance Name:** `getAtPoint`\n\n> **Summary**\n> Returns the value at the intersection of `columnIndex` and `rowIndex`. If either index exceeds the .2DA's dimensions, returns the .2DA's default value, (see `EEex_Resource_Get2DADefault()`).\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| array | C2DArray |  | The .2DA file being operated on. This is usually the object returned by `EEex_Resource_Load2DA()`. |\n| columnIndex | number |  | The column index of the value to be fetched. |\n| rowIndex | number |  | The row index of the value to be fetched. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| string | See summary. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L445",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L445",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -577,8 +577,8 @@
       "signature": "EEex_Resource_GetCItemAbility()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L478",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L478",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -609,8 +609,8 @@
       ],
       "documentationMarkdown": "**Instance Name:** `getCount`\n\n> **Summary**\n> Returns the size of `ids`'s backing cache array.\n\n> **Warning**\n> This function is only valid if the .IDS was loaded with `cacheAsArray=true`.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| ids | CAIIdList |  | The .IDS file being operated on. This is usually the object returned by `EEex_Resource_LoadIDS()`. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| number | See summary. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L486",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L486",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -646,8 +646,8 @@
       ],
       "documentationMarkdown": "**Instance Name:** `getEntry`\n\n> **Summary**\n> Returns the `CAIId` entry with the given `id`, or `nil` if `id` is not present in the .IDS.\n\n> **Note**\n> This function performs a linear search unless the .IDS was loaded with `cacheAsArray=true`.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| ids | CAIIdList |  | The .IDS file being operated on. This is usually the object returned by `EEex_Resource_LoadIDS()`. |\n| id | number |  | The id of the entry to be fetched. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| CAIId | See summary. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L518",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L518",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -683,8 +683,8 @@
       ],
       "documentationMarkdown": "**Instance Name:** `getLine`\n\n> **Summary**\n> Returns the symbol associated with the given `id`, or `nil` if `id` is not present in the .IDS.\n\n> **Note**\n> This function performs a linear search unless the .IDS was loaded with `cacheAsArray=true`.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| ids | CAIIdList |  | The .IDS file being operated on. This is usually the object returned by `EEex_Resource_LoadIDS()`. |\n| id | number |  | The id of the symbol to be fetched. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| string | See summary. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L552",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L552",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -720,8 +720,8 @@
       ],
       "documentationMarkdown": "**Instance Name:** `getStart`\n\n> **Summary**\n> Returns the symbol value associated with the given `id` up until (and not including) the first '(' character, or `nil` if `id` is not present in the .IDS.\n\n> **Note**\n> This function performs a linear search unless the .IDS was loaded with `cacheAsArray=true`.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| ids | CAIIdList |  | The .IDS file being operated on. This is usually the object returned by `EEex_Resource_LoadIDS()`. |\n| id | number |  | The id of the symbol to be fetched. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| string | See summary. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L586",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L586",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -732,8 +732,8 @@
       "signature": "EEex_Resource_GetItemAbility()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L621",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L621",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -768,8 +768,8 @@
       ],
       "documentationMarkdown": "**Instance Name:** `getMaxIndices`\n\n> **Summary**\n> Returns the maximum x and y indices of the .2DA. That is the maximum indexable column, and the maximum indexable row respectively.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| array | C2DArray |  | The .2DA file being operated on. This is usually the object returned by `EEex_Resource_Load2DA()`. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| number | The .2DA's maximum 'x' index. |\n| number | The .2DA's maximum 'y' index. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L629",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L629",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -780,8 +780,8 @@
       "signature": "EEex_Resource_GetSpellAbility()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L659",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L659",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -792,8 +792,45 @@
       "signature": "EEex_Resource_GetSpellAbilityForLevel()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L667",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L667",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Resource_GetStoreItemsIterator",
+      "name": "EEex_Resource_GetStoreItemsIterator",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Resource_GetStoreItemsIterator(storeHeader)",
+      "parameters": [
+        {
+          "name": "storeHeader",
+          "type": "CStoreFileHeader",
+          "description": "The header of the .STO file whose items are to be iterated."
+        }
+      ],
+      "returns": [
+        {
+          "type": "function() -> CStoreFileItem",
+          "description": "See summary."
+        }
+      ],
+      "callableAliases": [
+        {
+          "name": "getItemsIterator",
+          "receiverType": "CStoreFileHeader",
+          "consumesFirstParameter": true
+        },
+        {
+          "name": "getItemsItr",
+          "receiverType": "CStoreFileHeader",
+          "consumesFirstParameter": true
+        }
+      ],
+      "documentationMarkdown": "**Instance Name:** `getItemsIterator | getItemsItr`\n\n> **Summary**\n> Returns an iterator that traverses the `CStoreFileItem` entries pointed to by `storeHeader`.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| storeHeader | CStoreFileHeader |  | The header of the .STO file whose items are to be iterated. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| function() -> CStoreFileItem | See summary. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L675",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -804,8 +841,8 @@
       "signature": "EEex_Resource_GetValidSpellsIterator()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L675",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L703",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -841,8 +878,8 @@
       ],
       "documentationMarkdown": "**Instance Name:** `hasID`\n\n> **Summary**\n> Returns `true` if the given `id` is present in the .IDS.\n\n> **Note**\n> This function performs a linear search unless the .IDS was loaded with `cacheAsArray=true`.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| ids | CAIIdList |  | The .IDS file being operated on. This is usually the object returned by `EEex_Resource_LoadIDS()`. |\n| id | number |  | The id to search for. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| boolean | See summary. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L683",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L711",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -853,8 +890,8 @@
       "signature": "EEex_Resource_ItemCategoryIDSToSymbol()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L717",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L745",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -865,8 +902,8 @@
       "signature": "EEex_Resource_ItemCategorySymbolToIDS()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L725",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L753",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -901,8 +938,8 @@
       ],
       "documentationMarkdown": "**Instance Name:** `iterateColumnIndex`\n\n> **Summary**\n> Calls `func` for every value in the column specified by `columnIndex`. If `func` returns `true` the iteration ends early.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| array | C2DArray |  | The .2DA file being operated on. This is usually the object returned by `EEex_Resource_Load2DA()`. |\n| columnIndex | number |  | The index of the column whose values are to be iterated. |\n| func | function(i: number, value: string) -> boolean |  | The function to be called. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L733",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L761",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -937,8 +974,8 @@
       ],
       "documentationMarkdown": "**Instance Name:** `iterateColumnLabel`\n\n> **Summary**\n> Calls `func` for every value in the column specified by `columnLabel`. If `func` returns `true` the iteration ends early.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| array | C2DArray |  | The .2DA file being operated on. This is usually the object returned by `EEex_Resource_Load2DA()`. |\n| columnLabel | string |  | The label of the column whose values are to be iterated. |\n| func | function(i: number, value: string) -> boolean |  | The function to be called. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L757",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L785",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -973,8 +1010,8 @@
       ],
       "documentationMarkdown": "**Instance Name:** `iterateRowIndex`\n\n> **Summary**\n> Calls `func` for every value in the row specified by `rowIndex`. If `func` returns `true` the iteration ends early.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| array | C2DArray |  | The .2DA file being operated on. This is usually the object returned by `EEex_Resource_Load2DA()`. |\n| rowIndex | number |  | The index of the row whose values are to be iterated. |\n| func | function(i: number, value: string) -> boolean |  | The function to be called. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L781",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L809",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1009,8 +1046,8 @@
       ],
       "documentationMarkdown": "**Instance Name:** `iterateRowLabel`\n\n> **Summary**\n> Calls `func` for every value in the row specified by `rowLabel`. If `func` returns `true` the iteration ends early.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| array | C2DArray |  | The .2DA file being operated on. This is usually the object returned by `EEex_Resource_Load2DA()`. |\n| rowLabel | string |  | The label of the row whose values are to be iterated. |\n| func | function(i: number, value: string) -> boolean |  | The function to be called. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L805",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L833",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1040,8 +1077,8 @@
       ],
       "documentationMarkdown": "**Instance Name:** `iterateEntries`\n\n> **Summary**\n> Calls `func` for every `CAIId` entry of the .IDS. If `func` returns `true` the iteration ends early.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| ids | CAIIdList |  | The .IDS file being operated on. This is usually the object returned by `EEex_Resource_LoadIDS()`. |\n| func | function(entry: CAIId) -> boolean |  | The function to be called. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L829",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L857",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1071,8 +1108,8 @@
       ],
       "documentationMarkdown": "**Instance Name:** `iterateUnpackedEntries`\n\n> **Summary**\n> Calls `func` for every `CAIId` entry of the .IDS, unpacking the entry's members for convenience. If `func` returns `true` the iteration ends early.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| ids | CAIIdList |  | The .IDS file being operated on. This is usually the object returned by `EEex_Resource_LoadIDS()`. |\n| func | function(id: number, line: string, start: string) -> boolean |  | The function to be called. <br/>  <br/> `id` – the entry's numerical value. <br/> `line` – the entry's complete symbol value. <br/> `start` – the entry's symbol value up until (and not including) the first '(' character. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L851",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L879",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1083,8 +1120,8 @@
       "signature": "EEex_Resource_KitIDSToSymbol()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L874",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L902",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1095,8 +1132,8 @@
       "signature": "EEex_Resource_KitSymbolToIDS()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L882",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L910",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1120,8 +1157,8 @@
       ],
       "documentationMarkdown": "> **Summary**\n> Returns a `C2DArray` instance that represents the .2DA with `resref`.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| resref | string |  | The resref of the .2DA to be loaded – (should omit the file extension). |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| C2DArray | See summary. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L890",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L918",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1151,8 +1188,8 @@
       ],
       "documentationMarkdown": "> **Summary**\n> Returns a `CAIIdList` instance that represents the .IDS with `resref`.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| resref | string |  | The resref of the .IDS to be loaded – (should omit the file extension). |\n| cacheAsArray | boolean | `false` | If `true`, internally builds an array that maps every id of the .IDS to its corresponding `CAIId` entry in the <br/> range [0, <max id in .IDS>]. <br/>  <br/> Setting this parameter to `true` can speed up entry lookups for the returned `CAIIdList` instance – ***however***, <br/> care must be taken that the given .IDS does not have a large max id value. <br/>  <br/> For example, it would be a bad idea to load `KIT.IDS` with `cacheAsArray=true`, as the max id of `KIT.IDS`, <br/> `0x80000000`, would cause the `CAIIdList` instance to attempt to allocate an array that has a size of <br/> `(0x80000000 + 1) * 8 bytes` ***= ~16 gigabytes!*** |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| CAIIdList | See summary. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L917",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L945",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1182,8 +1219,8 @@
       ],
       "documentationMarkdown": "> **Summary**\n> Returns a `CAIScript` instance that represents the .BCS / .BS with `resref`.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| resref | string |  | The resref of the .BCS / .BS to be loaded – (should omit the file extension). |\n| bPlayerScript | boolean | `false` | If `true`, signifies that `resref` has the extension `.BS` instead of `.BCS`. <br/>  <br/> **Note:** Due to the enhanced edition’s use of script caching, the engine has trouble <br/> differentiating between `.BS` and `.BCS` files with the same name. If a script <br/> with the given `resref` has already been loaded by the engine, that script will be <br/> used, regardless of `bPlayerScript`. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| CAIScript | See summary. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Resource/index.rst#L946",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Resource/index.rst#L974",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     }
   ]

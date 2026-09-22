@@ -1,11 +1,11 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-08-25T18:10:55.136Z",
+  "generatedAt": "2026-09-22T13:41:25.745Z",
   "source": {
     "id": "ee-game-lua-functions",
     "title": "EE Game Lua Functions",
-    "url": "https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions",
-    "commit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+    "url": "https://github.com/Bubb13/EEex-Docs/tree/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions",
+    "commit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
     "licenseStatus": "allowed"
   },
   "title": "createCharScreen",
@@ -21,8 +21,8 @@
       "instanceName": "AcceptCharacter",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:AcceptCharacter()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_AcceptCharacter.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_AcceptCharacter.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -35,8 +35,8 @@
       "instanceName": "DecCurrentPortrait",
       "documentationMarkdown": "Decrement the current portrait selection for character\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:DecCurrentPortrait()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_DecCurrentPortrait.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_DecCurrentPortrait.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -49,8 +49,8 @@
       "instanceName": "GetCurrentPortrait",
       "documentationMarkdown": "Returns the current portrait set for the character\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:GetCurrentPortrait()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_GetCurrentPortrait.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_GetCurrentPortrait.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -63,8 +63,8 @@
       "instanceName": "GetCurrentStep",
       "documentationMarkdown": "Returns current stage of the character generation\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:GetCurrentStep()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_GetCurrentStep.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_GetCurrentStep.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -77,8 +77,8 @@
       "instanceName": "GetEngineState",
       "documentationMarkdown": "Get the character creation engine state\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:GetEngineState()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_GetEngineState.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_GetEngineState.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -91,8 +91,8 @@
       "instanceName": "GetImportableCharacters",
       "documentationMarkdown": "Returns a list of character that can be imported\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:GetImportableCharacters()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_GetImportableCharacters.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_GetImportableCharacters.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -105,8 +105,8 @@
       "instanceName": "GetImportState",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:GetImportState()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_GetImportState.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_GetImportState.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -119,8 +119,8 @@
       "instanceName": "HasMoreMageLevels",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:HasMoreMageLevels()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_HasMoreMageLevels.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_HasMoreMageLevels.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -133,8 +133,8 @@
       "instanceName": "IncCurrentPortrait",
       "documentationMarkdown": "Increment the current portrait selected for character\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:IncCurrentPortrait()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_IncCurrentPortrait.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_IncCurrentPortrait.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -147,8 +147,8 @@
       "instanceName": "IsAbilityRecallButtonClickable",
       "documentationMarkdown": "Determines if **Recall** button is clickable\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:IsAbilityRecallButtonClickable()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_IsAbilityRecallButtonClickable.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_IsAbilityRecallButtonClickable.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -161,8 +161,8 @@
       "instanceName": "IsAdvancedButtonClickable",
       "documentationMarkdown": "Determines if **Advanced** button is clickable\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:IsAdvancedButtonClickable()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_IsAdvancedButtonClickable.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_IsAdvancedButtonClickable.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -175,8 +175,8 @@
       "instanceName": "IsChargenComplete",
       "documentationMarkdown": "Determines if character generation is complete\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:IsChargenComplete()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_IsChargenComplete.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_IsChargenComplete.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -189,8 +189,8 @@
       "instanceName": "IsDoneButtonClickable",
       "documentationMarkdown": "Determines if **Done** button is clickable\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:IsDoneButtonClickable()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_IsDoneButtonClickable.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_IsDoneButtonClickable.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -203,8 +203,8 @@
       "instanceName": "IsHighLevelAbilitiesButtonClickable",
       "documentationMarkdown": "Determines if HLA button is clickable\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:IsHighLevelAbilitiesButtonClickable()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_IsHighLevelAbilitiesButtonClickable.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_IsHighLevelAbilitiesButtonClickable.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -217,8 +217,8 @@
       "instanceName": "IsMainBackButtonClickable",
       "documentationMarkdown": "Determines if main screen Back button is clickable\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:IsMainBackButtonClickable()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_IsMainBackButtonClickable.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_IsMainBackButtonClickable.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -231,8 +231,8 @@
       "instanceName": "IsThiefSkillPlusMinusButtonClickable",
       "documentationMarkdown": "Determines if Thief **+** or **-** buttons are clickable\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:IsThiefSkillPlusMinusButtonClickable()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_IsThiefSkillPlusMinusButtonClickable.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_IsThiefSkillPlusMinusButtonClickable.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -245,8 +245,8 @@
       "instanceName": "OnAbilityPlusMinusButtonClick",
       "documentationMarkdown": "Event action when ability + and - buttons clicked\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:OnAbilityPlusMinusButtonClick()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnAbilityPlusMinusButtonClick.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnAbilityPlusMinusButtonClick.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -259,8 +259,8 @@
       "instanceName": "OnAbilityRecallButtonClick",
       "documentationMarkdown": "Event action when **Recall** button is clicked\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:OnAbilityRecallButtonClick()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnAbilityRecallButtonClick.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnAbilityRecallButtonClick.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -273,8 +273,8 @@
       "instanceName": "OnAbilityReRollButtonClick",
       "documentationMarkdown": "Event action when **Reroll** button is clicked\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:OnAbilityReRollButtonClick()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnAbilityReRollButtonClick.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnAbilityReRollButtonClick.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -287,8 +287,8 @@
       "instanceName": "OnAbilityStoreButtonClick",
       "documentationMarkdown": "Event action when **Store** button is clicked\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:OnAbilityStoreButtonClick()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnAbilityStoreButtonClick.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnAbilityStoreButtonClick.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -301,8 +301,8 @@
       "instanceName": "OnAdvancedButtonClick",
       "documentationMarkdown": "Event action when **Advanced** button is clicked\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:OnAdvancedButtonClick()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnAdvancedButtonClick.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnAdvancedButtonClick.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -315,8 +315,8 @@
       "instanceName": "OnAlignmentSelectButtonClick",
       "documentationMarkdown": "Event action when an alignment is selected\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:OnAlignmentSelectButtonClick()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnAlignmentSelectButtonClick.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnAlignmentSelectButtonClick.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -329,8 +329,8 @@
       "instanceName": "OnBiographyButtonClick",
       "documentationMarkdown": "Event action when **Biography** button is clicked\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:OnBiographyButtonClick()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnBiographyButtonClick.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnBiographyButtonClick.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -343,8 +343,8 @@
       "instanceName": "OnCancelButtonClick",
       "documentationMarkdown": "Event action when **Cancel** button is clicked\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:OnCancelButtonClick()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnCancelButtonClick.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnCancelButtonClick.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -357,8 +357,8 @@
       "instanceName": "OnCharacterExportItemSelect",
       "documentationMarkdown": "Event action when **Export** Item button is clicked\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:OnCharacterExportItemSelect()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnCharacterExportItemSelect.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnCharacterExportItemSelect.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -371,8 +371,8 @@
       "instanceName": "OnCheatyMcCheaterson",
       "documentationMarkdown": "Event action when CTRL+8 cheat keys are pressed\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:OnCheatyMcCheaterson()\n```\n\n**See Also**\n\n[C:EnableCheatKeys](#C_EnableCheatKeys)",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnCheatyMcCheaterson.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnCheatyMcCheaterson.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -385,8 +385,8 @@
       "instanceName": "OnClassSelectButtonClick",
       "documentationMarkdown": "Event action when a class button is selected\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:OnClassSelectButtonClick()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnClassSelectButtonClick.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnClassSelectButtonClick.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -399,8 +399,8 @@
       "instanceName": "OnDoneButtonClick",
       "documentationMarkdown": "Event action when **Done** button is clicked\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:OnDoneButtonClick()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnDoneButtonClick.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnDoneButtonClick.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -413,8 +413,8 @@
       "instanceName": "OnGenderSelectButtonClick",
       "documentationMarkdown": "Event action when a gender button is selected\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:OnGenderSelectButtonClick()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnGenderSelectButtonClick.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnGenderSelectButtonClick.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -427,8 +427,8 @@
       "instanceName": "OnHighLevelAbilitiesButtonClick",
       "documentationMarkdown": "Event action when a HLA ability button is clicked\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:OnHighLevelAbilitiesButtonClick()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnHighLevelAbilitiesButtonClick.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnHighLevelAbilitiesButtonClick.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -441,8 +441,8 @@
       "instanceName": "OnHLAButtonClick",
       "documentationMarkdown": "Event action when HLA button is clicked\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:OnHLAButtonClick()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnHLAButtonClick.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnHLAButtonClick.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -455,8 +455,8 @@
       "instanceName": "OnImportCharacterButtonClick",
       "documentationMarkdown": "Event action when **Import** Char button is clicked\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:OnImportCharacterButtonClick()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnImportCharacterButtonClick.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnImportCharacterButtonClick.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -469,8 +469,8 @@
       "instanceName": "OnImportCharacterFileButtonClick",
       "documentationMarkdown": "Event action when import file button is clicked\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:OnImportCharacterFileButtonClick()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnImportCharacterFileButtonClick.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnImportCharacterFileButtonClick.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -483,8 +483,8 @@
       "instanceName": "OnImportSaveButtonClick",
       "documentationMarkdown": "Event action when import **Save** button is clicked\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:OnImportSaveButtonClick()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnImportSaveButtonClick.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnImportSaveButtonClick.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -497,8 +497,8 @@
       "instanceName": "OnKitSelectButtonClick",
       "documentationMarkdown": "Event action when a kit is selected\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:OnKitSelectButtonClick()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnKitSelectButtonClick.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnKitSelectButtonClick.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -511,8 +511,8 @@
       "instanceName": "OnLearnMageSpellButtonClick",
       "documentationMarkdown": "Event action when a mage learn spell button is clicked\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:OnLearnMageSpellButtonClick()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnLearnMageSpellButtonClick.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnLearnMageSpellButtonClick.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -525,8 +525,8 @@
       "instanceName": "OnMainBackButtonClick",
       "documentationMarkdown": "Event action when main **Back** button is clicked\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:OnMainBackButtonClick()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnMainBackButtonClick.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnMainBackButtonClick.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -539,8 +539,8 @@
       "instanceName": "OnMainCancelButtonClick",
       "documentationMarkdown": "Event action when main **Cancel** button is clicked\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:OnMainCancelButtonClick()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnMainCancelButtonClick.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnMainCancelButtonClick.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -553,8 +553,8 @@
       "instanceName": "OnMemorizeMageSpellButtonClick",
       "documentationMarkdown": "Event action when a mage spell button is clicked\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:OnMemorizeMageSpellButtonClick()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnMemorizeMageSpellButtonClick.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnMemorizeMageSpellButtonClick.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -567,8 +567,8 @@
       "instanceName": "OnMemorizePriestSpellButtonClick",
       "documentationMarkdown": "Event action when a priest spell button is clicked\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:OnMemorizePriestSpellButtonClick()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnMemorizePriestSpellButtonClick.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnMemorizePriestSpellButtonClick.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -581,8 +581,8 @@
       "instanceName": "OnMenuButtonClick",
       "documentationMarkdown": "Event action when a menu button is clicked\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:OnMenuButtonClick()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnMenuButtonClick.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnMenuButtonClick.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -595,8 +595,8 @@
       "instanceName": "OnPlayButtonClick",
       "documentationMarkdown": "Event action when **Play** button is clicked\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:OnPlayButtonClick()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnPlayButtonClick.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnPlayButtonClick.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -609,8 +609,8 @@
       "instanceName": "OnPrerollCancelButtonClick",
       "documentationMarkdown": "Event action when preroll Cancel button is clicked\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:OnPrerollCancelButtonClick()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnPrerollCancelButtonClick.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnPrerollCancelButtonClick.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -623,8 +623,8 @@
       "instanceName": "OnPrerollCharacterPick",
       "documentationMarkdown": "Event action when preroll character is selected\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:OnPrerollCharacterPick()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnPrerollCharacterPick.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnPrerollCharacterPick.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -637,8 +637,8 @@
       "instanceName": "OnProficiencyPlusMinusButtonClick",
       "documentationMarkdown": "Event action when proficiency **+** or **-** button clicked\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:OnProficiencyPlusMinusButtonClick()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnProficiencyPlusMinusButtonClick.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnProficiencyPlusMinusButtonClick.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -651,8 +651,8 @@
       "instanceName": "OnRaceSelectButtonClick",
       "documentationMarkdown": "Event action when a race is selected\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:OnRaceSelectButtonClick()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnRaceSelectButtonClick.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnRaceSelectButtonClick.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -665,8 +665,8 @@
       "instanceName": "OnRacialEnemySelectButtonClick",
       "documentationMarkdown": "Event action when a hated race is selected\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:OnRacialEnemySelectButtonClick()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnRacialEnemySelectButtonClick.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnRacialEnemySelectButtonClick.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -679,8 +679,8 @@
       "instanceName": "OnSoundItemSelect",
       "documentationMarkdown": "Event action when a soundset item is selected\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:OnSoundItemSelect()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnSoundItemSelect.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnSoundItemSelect.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -693,8 +693,8 @@
       "instanceName": "OnThiefSkillPlusMinusButtonClick",
       "documentationMarkdown": "Event action when thief skill **+** or **-** button clicked\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:OnThiefSkillPlusMinusButtonClick()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnThiefSkillPlusMinusButtonClick.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_OnThiefSkillPlusMinusButtonClick.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -714,8 +714,8 @@
       "instanceName": "SetAbilityHelpInfo",
       "documentationMarkdown": "Set tokens for ability score information\n\n**Parameters**\n\n- `integer` *stat* - value representing the ability score to set token information for\n\n**Returns**\n\nNone\n\n**Notes**\n\nSets ability score tokens `<MINIMUM>` and `<MAXIMUM>` for the panel that displays the specifics of each ability score, recommended scores and minimum required scores for specific classes.\n\n> **Note**\n> The full text and description for the ability score help information is fetched outside of this function. By using the [Infinity_FetchString](#Infinity_FetchString) function in `UI.MENU` to fetch a string reference (StrRef) and combining with the ability score tokens fetched by [createCharScreen:SetAbilityHelpInfo](#createCharScreen_SetAbilityHelpInfo), this full text is then output into the help panel.\n\nThe *stat* parameter can be one of the following values, which equate to the ability score to set information for:\n\n| **Stat** | **Ability** |\n| --- | --- |\n| 1 | Strength |\n| 2 | Dexterity |\n| 3 | Constitution |\n| 4 | Intelligence |\n| 5 | Wisdom |\n| 6 | Charisma |\n\n**Examples**\n\nSet ability score help info for Dexterity:\n\n```lua\ncreateCharScreen:SetAbilityHelpInfo(2)\nDexterityAbilityInfo = Infinity_FetchString(9584)\n```\n\nUsing a lua function and an array to dynamically set text for ability score information in `UI.MENU`:\n\n```lua\n`\nchargen.ability = {\n    {name = 'STRENGTH_LABEL', desc = 9582},\n    {name = 'DEXTERITY_LABEL', desc = 9584},\n    {name = 'CONSTITUTION_LABEL', desc = 9583},\n    {name = 'INTELLIGENCE_LABEL', desc = 9585},\n    {name = 'WISDOM_LABEL', desc = 9586},\n    {name = 'CHARISMA_LABEL', desc = 9587},\n}\n\nfunction abilityOrGeneralHelp()\n    ability = chargen.ability[currentChargenAbility]\n    if ability and ability.desc ~= -1 then\n        createCharScreen:SetAbilityHelpInfo(currentChargenAbility)\n        return Infinity_FetchString(ability.desc)\n    else\n        return Infinity_FetchString(17247)\n    end\nend\n`\n\n--[[\n   This is a comment. Part of the code is excluded for example purposes\n   Later on the function is used to fetch the ability score description\n   The ability score description is stored as a ResRef in the array above\n   The text of the UI control is set via the lua abilityOrGeneralHelp\n--]]\n\n text\n {\n     area 582 196 404 400\n     text lua \"abilityOrGeneralHelp()\"\n     text style \"normal\"\n     scrollbar   'GUISCRC'\n }\n```",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_SetAbilityHelpInfo.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_SetAbilityHelpInfo.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -728,8 +728,8 @@
       "instanceName": "SetEngineState",
       "documentationMarkdown": "Set the character creation engine state\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:SetEngineState()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_SetEngineState.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_SetEngineState.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -742,8 +742,8 @@
       "instanceName": "SetSpriteId",
       "documentationMarkdown": "Set the paperdoll and avatar for character\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:SetSpriteId()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_SetSpriteId.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_SetSpriteId.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -756,8 +756,8 @@
       "instanceName": "ShowPortraitPanel",
       "documentationMarkdown": "Show portrait selection panel\n\n**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ncreateCharScreen:ShowPortraitPanel()\n```\n\n**See Also**\n\n,",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_ShowPortraitPanel.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/createCharScreen/createCharScreen_ShowPortraitPanel.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     }
   ]

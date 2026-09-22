@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 3,
+  "generatedAt": "2026-09-22T13:41:25.745Z",
+  "source": {
+    "id": "eeex-functions",
+    "title": "EEex Functions",
+    "url": "https://github.com/Bubb13/EEex-Docs/tree/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions",
+    "commit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
+    "licenseStatus": "allowed"
+  },
+  "title": "UncapFPS",
+  "upstreamPath": "source/EEex Functions/UncapFPS/index.rst",
+  "symbols": [
+    {
+      "id": "eeex-functions:EEex_UncapFPS_SetVSyncEnabled",
+      "name": "EEex_UncapFPS_SetVSyncEnabled",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_UncapFPS_SetVSyncEnabled(enabled)",
+      "parameters": [
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "description": "Enables VSync if `true`; disables VSync if `false`."
+        }
+      ],
+      "documentationMarkdown": "> **Summary**\n> Enables / disables VSync.\n\n> **Warning**\n> Calling this function during engine startup will crash the game.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| enabled | boolean |  | Enables VSync if `true`; disables VSync if `false`. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/UncapFPS/index.rst#L16",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
+      "licenseStatus": "allowed"
+    }
+  ]
+}
