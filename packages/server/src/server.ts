@@ -240,7 +240,6 @@ connection.onCompletion(async (params) => {
   ];
 });
 
-
 connection.onHover(async (params) => {
   const document = getOpenDocument(params.textDocument.uri);
   if (!document) {
