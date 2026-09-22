@@ -35,6 +35,41 @@ function sharedStringArray(source, name) {
   const body = source.slice(start + marker.length, end);
   return [...body.matchAll(/'([^']+)'/gu)].map((entry) => entry[1]);
 }
+function validateEditorIntegrations() {
+  const manifest = json('editors/manifest.json');
+  const ids = manifest.editors.map((editor) => editor.id);
+  assert.equal(new Set(ids).size, ids.length, 'Duplicate editor id');
+  const directories = fs
+    .readdirSync('editors', { withFileTypes: true })
+    .filter((entry) => entry.isDirectory())
+    .map((entry) => entry.name);
+  assert.deepEqual(
+    [...directories].sort(),
+    [...ids].sort(),
+    'editors/ and its manifest list different editors',
+  );
+  for (const editor of manifest.editors) {
+    assert.ok(fs.existsSync(editor.guide), `Missing editor guide: ${editor.id}`);
+    if (!editor.config) {
+      // An editor with no shippable configuration must record why, so the gap stays documented
+      // rather than looking like an omission.
+      assert.ok(editor.limitation, `Unsupported editor without a stated limitation: ${editor.id}`);
+      continue;
+    }
+    assert.ok(fs.existsSync(editor.config), `Missing editor configuration: ${editor.id}`);
+    const config = fs.readFileSync(editor.config, 'utf8');
+    // Every client starts the same bundle over stdio and must name both language ids. A
+    // configuration that omits ie-menu leaves .menu documents without embedded Lua analysis.
+    for (const token of ['--stdio', 'ie-lua', 'ie-menu'])
+      assert.ok(config.includes(token), `${editor.config} does not declare ${token}`);
+  }
+  // Kate's example is JSON and Sublime's syntax is YAML, so both are parsed rather than only
+  // scanned; each editor would fail quietly on a malformed file.
+  const kate = json('editors/kate/lsp-client.example.json');
+  for (const language of ['ie-lua', 'ie-menu'])
+    assert.equal(kate.servers[language].command.at(-1), '--stdio');
+  readYaml('editors/sublime/IE Menu.sublime-syntax');
+}
 function validateSharedContributions(pkg, sharedTypes, apiIndex) {
   const sections = sharedStringArray(sharedTypes, 'sourceSectionIds');
   const sources = pkg.contributes.configuration.properties['ieLua.symbolSources.enabled'];
@@ -204,9 +239,7 @@ function main() {
       `README provenance does not match the API manifest: ${source.id}`,
     );
   }
-  const kate = json('editors/kate/lsp-client.example.json');
-  for (const language of ['ie-lua', 'ie-menu'])
-    assert.equal(kate.servers[language].command.at(-1), '--stdio');
+  validateEditorIntegrations();
   for (const directory of ['.github', 'packages', 'resources/api'])
     assert.ok(fs.existsSync(path.join(directory, 'CLAUDE.md')));
   console.log('Repository policy passed');

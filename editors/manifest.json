@@ -1,0 +1,74 @@
+{
+  "install": {
+    "command": ["node", "/absolute/path/to/ie-lua-language-server/dist/server/server.js", "--stdio"],
+    "apiIndexEnvironmentVariable": "IE_LUA_API_INDEX",
+    "languageIds": { "lua": "ie-lua", "menu": "ie-menu" }
+  },
+  "editors": [
+    {
+      "id": "sublime",
+      "title": "Sublime Text",
+      "client": "LSP package",
+      "guide": "editors/sublime/README.md",
+      "config": "editors/sublime/LanguageServers.sublime-settings"
+    },
+    {
+      "id": "neovim",
+      "title": "Neovim",
+      "client": "built-in vim.lsp",
+      "guide": "editors/neovim/README.md",
+      "config": "editors/neovim/lsp/ie_lua.lua"
+    },
+    {
+      "id": "emacs",
+      "title": "Emacs",
+      "client": "Eglot",
+      "guide": "editors/emacs/README.md",
+      "config": "editors/emacs/ie-lua-eglot.el"
+    },
+    {
+      "id": "jetbrains",
+      "title": "JetBrains IDEs",
+      "client": "LSP4IJ",
+      "guide": "editors/jetbrains/README.md",
+      "config": "editors/jetbrains/lsp4ij-template/template.json"
+    },
+    {
+      "id": "helix",
+      "title": "Helix",
+      "client": "built-in",
+      "guide": "editors/helix/README.md",
+      "config": "editors/helix/languages.toml"
+    },
+    {
+      "id": "zed",
+      "title": "Zed",
+      "client": "extension required",
+      "guide": "editors/zed/README.md",
+      "config": null,
+      "limitation": "Zed registers a language server only from a compiled extension, so no configuration file can enable this server."
+    },
+    {
+      "id": "kate",
+      "title": "Kate",
+      "client": "LSP Client plugin",
+      "guide": "editors/kate/README.md",
+      "config": "editors/kate/lsp-client.example.json"
+    },
+    {
+      "id": "notepadpp",
+      "title": "Notepad++",
+      "client": "third-party plugin",
+      "guide": "editors/notepadpp/README.md",
+      "config": null,
+      "limitation": "Notepad++ ships no Language Server Protocol client, so support depends on a third-party plugin this project does not maintain."
+    },
+    {
+      "id": "geany",
+      "title": "Geany",
+      "client": "LSP Client plugin",
+      "guide": "editors/geany/README.md",
+      "config": "editors/geany/lsp.conf"
+    }
+  ]
+}

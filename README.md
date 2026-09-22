@@ -12,7 +12,8 @@ Professional language support for Enhanced Edition Infinity Engine Lua and `.men
 This repository ships:
 
 - A Visual Studio Code extension.
-- A stdio-capable Language Server Protocol server for editors such as Kate.
+- A stdio-capable Language Server Protocol server for Sublime Text, Neovim, Emacs, JetBrains
+  IDEs, Helix, Kate, Geany and any other editor with a Language Server Protocol client.
 
 This extension targets:
 
@@ -89,7 +90,7 @@ The screenshots below were captured at 1440x900 from a real Visual Studio Code E
 
 Visual Studio Code users do **not** need to install `luaparse`, Node.js, npm, or any other npm package to use validation. The published Marketplace extension and generated VSIX bundle the language server runtime dependencies.
 
-Kate users do not need `luaparse` or npm packages, but they do need Node.js 24 LTS available on `PATH` because Kate starts the bundled server as an external stdio process.
+Users of the other editors do not need `luaparse` or npm packages either, but they do need Node.js 24 LTS available on `PATH`, because those editors start the bundled server as an external stdio process.
 
 ## Using with Visual Studio Code
 
@@ -112,76 +113,46 @@ Settings can be changed from the Visual Studio Code Settings UI or `settings.jso
 
 The extension activates automatically for `.lua` and `.menu` files and exposes the commands listed below.
 
-## Using with Kate
+## Using with other editors
 
-Kate integration uses the same bundled LSP server over stdin/stdout. This is useful when you want completion, hover, diagnostics, definitions, references, symbols, and formatting outside Visual Studio Code.
+The same bundled server runs over stdin/stdout for editors outside Visual Studio Code. There is one
+server, one API index and one set of behaviours; only the client configuration differs. Shipped
+configurations and per-editor guides live in [`editors/`](editors/README.md).
 
-Requirements:
+| Editor         | Client              | Ships a config | Guide                                       |
+| -------------- | ------------------- | -------------- | ------------------------------------------- |
+| Sublime Text   | LSP package         | yes            | [editors/sublime](editors/sublime/README.md) |
+| Neovim         | built-in `vim.lsp`  | yes            | [editors/neovim](editors/neovim/README.md)   |
+| Emacs          | Eglot               | yes            | [editors/emacs](editors/emacs/README.md)     |
+| JetBrains IDEs | LSP4IJ              | yes            | [editors/jetbrains](editors/jetbrains/README.md) |
+| Helix          | built in            | yes            | [editors/helix](editors/helix/README.md)     |
+| Kate           | LSP Client plugin   | yes            | [editors/kate](editors/kate/README.md)       |
+| Geany          | LSP Client plugin   | yes            | [editors/geany](editors/geany/README.md)     |
+| Zed            | extension required  | **no**         | [editors/zed](editors/zed/README.md)         |
+| Notepad++      | third-party plugin  | **no**         | [editors/notepadpp](editors/notepadpp/README.md) |
 
-- Kate with the **LSP Client** plugin enabled.
-- Node.js 24 LTS on `PATH`.
-- A built checkout or unpacked VSIX containing `dist/server/server.js` and `resources/api/api-index.json`.
+Zed registers a language server only from a compiled extension, and Notepad++ ships no LSP client at
+all. Those two guides describe what each actually requires instead of offering a configuration that
+would not work.
 
-Download and unpack a verified VSIX from the CI workflow artifacts or GitHub Releases. Source builds run exclusively in GitHub Actions.
-
-Install the optional `.menu` syntax definition so Kate can map `*.menu` files to the `ie-menu` LSP language id:
+Every one of these needs Node.js 24 on `PATH` and a built server — this repository after
+`npm run bundle`, or an unpacked `.vsix` — because the editor starts the server as a subprocess. The
+server is invoked the same way everywhere:
 
 ```sh
-install -D editors/kate/syntax/ie-menu.xml ~/.local/share/org.kde.syntax-highlighting/syntax/ie-menu.xml
+node /absolute/path/to/ie-lua-language-server/dist/server/server.js --stdio
 ```
 
-For Flatpak, Snap, Windows, or custom KDE paths, use the syntax-definition directory reported by Kate/KDE. KDE documents the generic user location as `org.kde.syntax-highlighting/syntax/` under a `qtpaths --paths GenericDataLocation` directory, and the Windows user location as `%USERPROFILE%\AppData\Local\org.kde.syntax-highlighting\syntax`.
+`.lua` documents use the `ie-lua` language id and `.menu` documents use `ie-menu`. Editors that
+cannot set an id are still handled: the server recognises a `.menu` document by its file extension.
 
-Then open **Settings** -> **Configure Kate** -> **Plugins**, enable **LSP Client**, and add this to **LSP Client** -> **User Server Settings**. Replace `/absolute/path/to/ie-lua-language-server` with this checkout or unpacked VSIX extension directory:
+Two behaviours differ from Visual Studio Code and belong to the server rather than to any editor. Go
+to Definition on an API symbol answers with the pinned upstream documentation URL rather than a file
+location, so editors that cannot open a URL will report that; the same URL is always in the symbol's
+hover. Workspace symbols and Validate Workspace cover open documents.
 
-```json
-{
-  "servers": {
-    "ie-lua": {
-      "command": [
-        "node",
-        "/absolute/path/to/ie-lua-language-server/dist/server/server.js",
-        "--stdio"
-      ],
-      "rootIndicationFileNames": [".git"],
-      "url": "https://github.com/4Luke4/ie-lua-language-server",
-      "highlightingModeRegex": "^Lua$",
-      "settings": {
-        "ieLua": {
-          "validation": {
-            "mode": "save",
-            "debounceMs": 300
-          }
-        }
-      }
-    },
-    "ie-menu": {
-      "command": [
-        "node",
-        "/absolute/path/to/ie-lua-language-server/dist/server/server.js",
-        "--stdio"
-      ],
-      "rootIndicationFileNames": [".git"],
-      "url": "https://github.com/4Luke4/ie-lua-language-server",
-      "highlightingModeRegex": "^IE Menu$",
-      "settings": {
-        "ieLua": {
-          "validation": {
-            "mode": "save",
-            "debounceMs": 300
-          }
-        }
-      }
-    }
-  }
-}
-```
-
-The same JSON is available as `editors/kate/lsp-client.example.json`.
-
-Kate's LSP Client plugin communicates with configured servers over stdin/stdout and uses `highlightingModeRegex` to map Kate highlighting modes to server entries. See the official Kate LSP Client documentation: `https://docs.kde.org/stable5/en/kate/kate/kate-application-plugin-lspclient.html`.
-
-Node.js and npm are only required when building/testing this repository or when launching the stdio server from a non-VS Code editor.
+Node.js and npm are only required when building or testing this repository, or when launching the
+stdio server from a non-Visual Studio Code editor.
 
 ## Validation Modes
 

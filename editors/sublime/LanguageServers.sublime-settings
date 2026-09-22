@@ -1,0 +1,48 @@
+// Sublime Text server configurations for the IE Lua language server.
+//
+// Copy the two entries below into Packages/User/LanguageServers.sublime-settings, reachable from
+// "Preferences > Package Settings > LSP > Server Configurations", and replace
+// /absolute/path/to/ie-lua-language-server with your install directory.
+//
+// The LSP package derives the LSP language id from a view's base scope, so the entries below are
+// selected by scope rather than by an explicit language id:
+//   .lua  -> Sublime's built-in Lua syntax, scope source.lua, language id "lua", which this server
+//            treats as ie-lua.
+//   .menu -> the IE Menu syntax shipped next to this file, scope source.ie-menu, language id
+//            "ie-menu", which is exactly what the server expects for embedded Lua.
+{
+  "ie-lua": {
+    "enabled": true,
+    "command": [
+      "node",
+      "/absolute/path/to/ie-lua-language-server/dist/server/server.js",
+      "--stdio"
+    ],
+    "selector": "source.lua",
+    "settings": {
+      "ieLua": {
+        "validation": {
+          "mode": "save",
+          "debounceMs": 300
+        }
+      }
+    }
+  },
+  "ie-menu": {
+    "enabled": true,
+    "command": [
+      "node",
+      "/absolute/path/to/ie-lua-language-server/dist/server/server.js",
+      "--stdio"
+    ],
+    "selector": "source.ie-menu",
+    "settings": {
+      "ieLua": {
+        "validation": {
+          "mode": "save",
+          "debounceMs": 300
+        }
+      }
+    }
+  }
+}
