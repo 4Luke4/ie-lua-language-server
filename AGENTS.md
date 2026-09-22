@@ -9,8 +9,8 @@
   properties. Use authoritative project files and upstream primary documentation.
 - Preserve unrelated worktree changes. Do not rewrite, delete, or reformat files outside the
   requested scope.
-- Add concise inline comments for non-obvious security boundaries, lifecycle behavior, compatibility
-  decisions, and workflow constraints. Do not add comments that merely restate the code.
+- Add detailed, accurate inline comments for non-obvious security boundaries, lifecycle behavior, compatibility
+  decisions, workflow constraints, and **all** source code files (TypeScript, JavaScript, YAML and the like). Do not add comments that merely restate the code.
 - Keep changes focused and reviewable. Avoid unrelated cleanup, premature abstractions, and copied
   implementations whose licensing or provenance is unclear.
 
