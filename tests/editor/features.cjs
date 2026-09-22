@@ -2,8 +2,20 @@ const vscode = require('vscode');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
-const upstream =
-  'https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/';
+// The pinned upstream revision belongs to the shipped API data, not to this test. Reading it back
+// from the installed extension keeps definition assertions exact while letting a data refresh move
+// the revision without editing expectations here.
+function upstream(extension, sourceId) {
+  const manifest = JSON.parse(
+    fs.readFileSync(
+      path.join(extension.extensionPath, 'resources', 'api', 'api-index.json'),
+      'utf8',
+    ),
+  );
+  const source = manifest.sources.find((entry) => entry.id === sourceId);
+  assert.ok(source?.commit, `Installed API data must pin ${sourceId}`);
+  return `https://github.com/Bubb13/EEex-Docs/blob/${source.commit}/source/`;
+}
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 async function eventually(operation, predicate = Boolean, description = 'editor result') {
   const deadline = Date.now() + 20000;
@@ -229,7 +241,7 @@ scenario('fallback-and-rename-safety', async () => {
   await reject('safe', 'bad name');
   await reject('safe', 'end');
 });
-scenario('game-api', async () => {
+scenario('game-api', async ({ extension }) => {
   const doc = await document('Infinity_DisplayString(\nC:AddGold(\n');
   const completions = await completion(doc, new vscode.Position(0, 0), 'Infinity_DisplayString');
   const item = completions.items.find((i) => label(i) === 'Infinity_DisplayString');
@@ -250,7 +262,8 @@ scenario('game-api', async () => {
   );
   assert.equal(
     (definitions[0].uri ?? definitions[0].targetUri).toString(),
-    upstream + 'EE%20Game%20Lua%20Functions/C/C_AddGold.rst#L11',
+    upstream(extension, 'ee-game-lua-functions') +
+      'EE%20Game%20Lua%20Functions/C/C_AddGold.rst#L11',
   );
 });
 scenario('eeex-api', async () => {
@@ -278,7 +291,7 @@ scenario('eeex-api', async () => {
   );
   assert.equal(second.activeParameter, 1);
 });
-scenario('structures', async () => {
+scenario('structures', async ({ extension }) => {
   const doc = await document(
     '---@type CGameSprite\nlocal sprite\nsprite.m_derivedStats.baseclass_0\nCGameObject\n',
   );
@@ -294,7 +307,10 @@ scenario('structures', async () => {
   );
   assert.equal(
     (definitions[0].uri ?? definitions[0].targetUri).toString(),
-    vscode.Uri.parse(upstream + 'EE%20Game%20Structures%20(x64)/CD/index.rst#L131').toString(),
+    vscode.Uri.parse(
+      upstream(extension, 'ee-game-structures-x64') +
+        'EE%20Game%20Structures%20(x64)/CD/index.rst#L131',
+    ).toString(),
   );
   await replace(doc, '---@param sprite CGameSprite\nlocal function inspect(sprite)\n sprite.\nend');
   await completion(doc, new vscode.Position(2, 8), 'm_active');

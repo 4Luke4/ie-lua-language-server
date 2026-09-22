@@ -291,3 +291,66 @@ void test('literal examples in notes end at dedented explanatory prose', () => {
   assert.match(result, /> ```text\n> actionDbl "call\(0\)"\n> ```/u);
   assert.match(result, /> This calls the action\./u);
 });
+
+void test('piped instance names become one callable alias per alternative', () => {
+  const text = [
+    '.. _EEex_Test_GetItemsIterator:',
+    '',
+    'EEex_Test_GetItemsIterator',
+    '^^^^^^^^^^^^^^^^^^^^^^^^^^',
+    '',
+    '**Instance Name:** ``getItemsIterator | getItemsItr``',
+    '',
+    '.. admonition:: Summary',
+    '',
+    '   Returns an iterator over the entries.',
+    '',
+    '**Parameters:**',
+    '',
+    '+----------+----------+-------------------+------------------+',
+    '| **Name** | **Type** | **Default Value** | **Description**  |',
+    '+==========+==========+===================+==================+',
+    '| header   | CStore   |                   | The header.      |',
+    '+----------+----------+-------------------+------------------+',
+  ].join('\n');
+
+  const symbols = parseEeexFunctionSymbols({
+    commit,
+    sourcePath: 'source/EEex Functions/Test/index.rst',
+    text,
+  });
+
+  assert.deepEqual(symbols[0]?.callableAliases, [
+    { name: 'getItemsIterator', receiverType: 'CStore', consumesFirstParameter: true },
+    { name: 'getItemsItr', receiverType: 'CStore', consumesFirstParameter: true },
+  ]);
+});
+
+void test('alias names that are not Lua identifiers fail with their source location', () => {
+  const text = [
+    '.. _EEex_Test_Broken:',
+    '',
+    'EEex_Test_Broken',
+    '^^^^^^^^^^^^^^^^',
+    '',
+    '**Instance Name:** ``not an identifier``',
+    '',
+    '**Parameters:**',
+    '',
+    '+----------+----------+-------------------+------------------+',
+    '| **Name** | **Type** | **Default Value** | **Description**  |',
+    '+==========+==========+===================+==================+',
+    '| header   | CStore   |                   | The header.      |',
+    '+----------+----------+-------------------+------------------+',
+  ].join('\n');
+
+  assert.throws(
+    () =>
+      parseEeexFunctionSymbols({
+        commit,
+        sourcePath: 'source/EEex Functions/Test/index.rst',
+        text,
+      }),
+    /source\/EEex Functions\/Test\/index\.rst: instance alias not an identifier is not a Lua identifier/u,
+  );
+});

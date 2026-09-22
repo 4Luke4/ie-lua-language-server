@@ -236,9 +236,9 @@ CI audits both stable and prerelease VSIX files; select the intended channel in 
 
 The shipped API index is generated from these official sources:
 
-- EE Game Lua Functions: `https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions`
-- EEex Functions: `https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions`
-- EE Game Structures (x64): `https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)`
+- EE Game Lua Functions: `https://github.com/Bubb13/EEex-Docs/tree/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions`
+- EEex Functions: `https://github.com/Bubb13/EEex-Docs/tree/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions`
+- EE Game Structures (x64): `https://github.com/Bubb13/EEex-Docs/tree/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)`
 - Lua 5.2: `https://www.lua.org/manual/5.2/`
 - LuaJIT: `https://luajit.org/`
 - EE Utility Functions: local, untracked `samples/util.lua` only when explicitly enabled for docs ingestion.

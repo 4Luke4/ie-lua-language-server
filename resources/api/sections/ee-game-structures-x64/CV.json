@@ -1,11 +1,11 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-08-25T18:10:55.136Z",
+  "generatedAt": "2026-09-22T13:41:25.745Z",
   "source": {
     "id": "ee-game-structures-x64",
     "title": "EE Game Structures (x64)",
-    "url": "https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)",
-    "commit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+    "url": "https://github.com/Bubb13/EEex-Docs/tree/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)",
+    "commit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
     "licenseStatus": "allowed"
   },
   "title": "CV",
@@ -20,8 +20,8 @@
       "byteSize": 84,
       "memberCount": 1,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L46",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L46",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -36,8 +36,8 @@
       "byteOffset": "0x0",
       "byteSize": 84,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L54",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L54",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -50,8 +50,8 @@
       "memberCount": 2,
       "documentationMarkdown": "Used by the [CVariableHash Class](#CVariableHash Class)",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L60",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L60",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -66,8 +66,8 @@
       "byteOffset": "0x0",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L70",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L70",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -82,8 +82,8 @@
       "byteOffset": "0x8",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L72",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L72",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -95,8 +95,8 @@
       "byteSize": 224,
       "memberCount": 7,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L80",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L80",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -111,8 +111,8 @@
       "byteOffset": "0x4",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L90",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L90",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -127,8 +127,8 @@
       "byteOffset": "0x8",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L92",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L92",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -143,8 +143,8 @@
       "byteOffset": "0xC",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L94",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L94",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -159,8 +159,8 @@
       "byteOffset": "0x0",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L88",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L88",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -175,8 +175,8 @@
       "byteOffset": "0x1C",
       "byteSize": 196,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L100",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L100",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -191,8 +191,8 @@
       "byteOffset": "0x10",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L96",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L96",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -207,8 +207,8 @@
       "byteOffset": "0x18",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L98",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L98",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -221,8 +221,8 @@
       "memberCount": 17,
       "documentationMarkdown": "Used by the [CVEFVidCell Class](#CVEFVidCell Class)",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L106",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L106",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -237,8 +237,8 @@
       "byteOffset": "0x0",
       "byteSize": 96,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L116",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L116",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -253,8 +253,8 @@
       "byteOffset": "0x60",
       "byteSize": 484,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L118",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L118",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -269,8 +269,8 @@
       "byteOffset": "0x3E0",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L138",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L138",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -285,8 +285,8 @@
       "byteOffset": "0x250",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L124",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L124",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -301,8 +301,8 @@
       "byteOffset": "0x248",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L122",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L122",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -317,8 +317,8 @@
       "byteOffset": "0x3A8",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L130",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L130",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -333,8 +333,8 @@
       "byteOffset": "0x3E8",
       "byteSize": 1,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L140",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L140",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -349,8 +349,8 @@
       "byteOffset": "0x3F4",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L150",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L150",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -365,8 +365,8 @@
       "byteOffset": "0x3E9",
       "byteSize": 1,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L142",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L142",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -381,8 +381,8 @@
       "byteOffset": "0x3AC",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L132",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L132",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -397,8 +397,8 @@
       "byteOffset": "0x288",
       "byteSize": 288,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L128",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L128",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -413,8 +413,8 @@
       "byteOffset": "0x258",
       "byteSize": 48,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L126",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L126",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -429,8 +429,8 @@
       "byteOffset": "0x3F8",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L152",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L152",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -445,8 +445,8 @@
       "byteOffset": "0x3EC",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L146",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L146",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -461,8 +461,8 @@
       "byteOffset": "0x3F0",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L148",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L148",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -477,8 +477,8 @@
       "byteOffset": "0x3C0",
       "byteSize": 32,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L136",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L136",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -493,8 +493,8 @@
       "byteOffset": "0x3B0",
       "byteSize": 16,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L134",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L134",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -506,8 +506,8 @@
       "byteSize": 484,
       "memberCount": 28,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L160",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L160",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -522,8 +522,8 @@
       "byteOffset": "0x2C",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L184",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L184",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -538,8 +538,8 @@
       "byteOffset": "0x10",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L172",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L172",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -554,8 +554,8 @@
       "byteOffset": "0x18",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L176",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L176",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -570,8 +570,8 @@
       "byteOffset": "0x14",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L174",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L174",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -586,8 +586,8 @@
       "byteOffset": "0x1C",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L178",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L178",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -602,8 +602,8 @@
       "byteOffset": "0x80",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L216",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L216",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -618,8 +618,8 @@
       "byteOffset": "0x8C",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L220",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L220",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -634,8 +634,8 @@
       "byteOffset": "0x78",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L214",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L214",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -650,8 +650,8 @@
       "byteOffset": "0x3C",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L192",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L192",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -666,8 +666,8 @@
       "byteOffset": "0x8",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L170",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L170",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -682,8 +682,8 @@
       "byteOffset": "0x70",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L212",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L212",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -698,8 +698,8 @@
       "byteOffset": "0x0",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L168",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L168",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -714,8 +714,8 @@
       "byteOffset": "0x58",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L202",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L202",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -730,8 +730,8 @@
       "byteOffset": "0x34",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L188",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L188",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -746,8 +746,8 @@
       "byteOffset": "0x38",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L190",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L190",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -762,8 +762,8 @@
       "byteOffset": "0x94",
       "byteSize": 336,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L222",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L222",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -778,8 +778,8 @@
       "byteOffset": "0x50",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L198",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L198",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -794,8 +794,8 @@
       "byteOffset": "0x48",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L196",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L196",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -810,8 +810,8 @@
       "byteOffset": "0x44",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L194",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L194",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -826,8 +826,8 @@
       "byteOffset": "0x68",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L208",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L208",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -842,8 +842,8 @@
       "byteOffset": "0x54",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L200",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L200",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -858,8 +858,8 @@
       "byteOffset": "0x88",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L218",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L218",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -874,8 +874,8 @@
       "byteOffset": "0x64",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L206",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L206",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -890,8 +890,8 @@
       "byteOffset": "0x60",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L204",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L204",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -906,8 +906,8 @@
       "byteOffset": "0x30",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L186",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L186",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -922,8 +922,8 @@
       "byteOffset": "0x20",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L180",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L180",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -938,8 +938,8 @@
       "byteOffset": "0x28",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L182",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L182",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -954,8 +954,8 @@
       "byteOffset": "0x6C",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L210",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L210",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -967,8 +967,8 @@
       "byteSize": 16,
       "memberCount": 1,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L228",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L228",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -983,8 +983,8 @@
       "byteOffset": "0x0",
       "byteSize": 16,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L236",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L236",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -997,8 +997,8 @@
       "memberCount": 4,
       "documentationMarkdown": "Used by the [CVidBitmap Class](#CVidBitmap Class)",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L242",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L242",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1013,8 +1013,8 @@
       "byteOffset": "0x0",
       "byteSize": 256,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L252",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L252",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1029,8 +1029,8 @@
       "byteOffset": "0x100",
       "byteSize": 16,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L254",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L254",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1045,8 +1045,8 @@
       "byteOffset": "0x110",
       "byteSize": 2,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L256",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L256",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1061,8 +1061,8 @@
       "byteOffset": "0x118",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L260",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L260",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1075,8 +1075,8 @@
       "memberCount": 9,
       "documentationMarkdown": "Used by the [CVidCell Class](#CVidCell Class)",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L266",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L266",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1091,8 +1091,8 @@
       "byteOffset": "0x8",
       "byteSize": 256,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L278",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L278",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1107,8 +1107,8 @@
       "byteOffset": "0x108",
       "byteSize": 16,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L280",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L280",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1123,8 +1123,8 @@
       "byteOffset": "0x120",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L288",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L288",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1139,8 +1139,8 @@
       "byteOffset": "0x130",
       "byteSize": 1,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L294",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L294",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1155,8 +1155,8 @@
       "byteOffset": "0x11C",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L286",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L286",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1171,8 +1171,8 @@
       "byteOffset": "0x118",
       "byteSize": 2,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L282",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L282",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1187,8 +1187,8 @@
       "byteOffset": "0x11A",
       "byteSize": 2,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L284",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L284",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1203,8 +1203,8 @@
       "byteOffset": "0x128",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L292",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L292",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1219,8 +1219,8 @@
       "byteOffset": "0x0",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L276",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L276",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1232,8 +1232,8 @@
       "byteSize": 312,
       "memberCount": 1,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L302",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L302",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1248,8 +1248,8 @@
       "byteOffset": "0x0",
       "byteSize": 312,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L310",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L310",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1262,8 +1262,8 @@
       "memberCount": 2,
       "documentationMarkdown": "Used by the [CVidDrawable Class](#CVidDrawable Class)",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L316",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L316",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1278,8 +1278,8 @@
       "byteOffset": "0x8",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L330",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L330",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1294,8 +1294,8 @@
       "byteOffset": "0x0",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L326",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L326",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1308,8 +1308,8 @@
       "memberCount": 1,
       "documentationMarkdown": "Used by the [CVideo Class](#CVideo Class)",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L336",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L336",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1324,8 +1324,8 @@
       "byteOffset": "0x0",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L346",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L346",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1338,8 +1338,8 @@
       "memberCount": 6,
       "documentationMarkdown": "Used by the [CVidFont Class](#CVidFont Class)",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L352",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L352",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1354,8 +1354,8 @@
       "byteOffset": "0x0",
       "byteSize": 16,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L362",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L362",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1370,8 +1370,8 @@
       "byteOffset": "0x18",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L366",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L366",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1386,8 +1386,8 @@
       "byteOffset": "0x20",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L370",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L370",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1402,8 +1402,8 @@
       "byteOffset": "0x1C",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L368",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L368",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1418,8 +1418,8 @@
       "byteOffset": "0x10",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L364",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L364",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1434,8 +1434,8 @@
       "byteOffset": "0x24",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L372",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L372",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1448,8 +1448,8 @@
       "memberCount": 2,
       "documentationMarkdown": "Used by the [CVidImage Class](#CVidImage Class)",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L378",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L378",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1464,8 +1464,8 @@
       "byteOffset": "0x0",
       "byteSize": 48,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L388",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L388",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1480,8 +1480,8 @@
       "byteOffset": "0x30",
       "byteSize": 208,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L390",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L390",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1493,8 +1493,8 @@
       "byteSize": 208,
       "memberCount": 10,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L396",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L396",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1509,8 +1509,8 @@
       "byteOffset": "0x88",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L418",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L418",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1525,8 +1525,8 @@
       "byteOffset": "0xC8",
       "byteSize": 7,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L422",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L422",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1541,8 +1541,8 @@
       "byteOffset": "0x48",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L414",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L414",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1557,8 +1557,8 @@
       "byteOffset": "0x50",
       "byteSize": 56,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L416",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L416",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1573,8 +1573,8 @@
       "byteOffset": "0x90",
       "byteSize": 56,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L420",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L420",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1589,8 +1589,8 @@
       "byteOffset": "0x10",
       "byteSize": 56,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L412",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L412",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1605,8 +1605,8 @@
       "byteOffset": "0x4",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L406",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L406",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1621,8 +1621,8 @@
       "byteOffset": "0x8",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L408",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L408",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1637,8 +1637,8 @@
       "byteOffset": "0x0",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L404",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L404",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1653,8 +1653,8 @@
       "byteOffset": "0xCF",
       "byteSize": 1,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L424",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L424",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1667,8 +1667,8 @@
       "memberCount": 42,
       "documentationMarkdown": "Used by the [CVidMode Class](#CVidMode Class)",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L430",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L430",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1680,8 +1680,8 @@
       "byteSize": 28,
       "memberCount": 10,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L540",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L540",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1696,8 +1696,8 @@
       "byteOffset": "0x18",
       "byteSize": 2,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L566",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L566",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1712,8 +1712,8 @@
       "byteOffset": "0xC",
       "byteSize": 2,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L554",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L554",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1728,8 +1728,8 @@
       "byteOffset": "0xE",
       "byteSize": 2,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L556",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L556",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1744,8 +1744,8 @@
       "byteOffset": "0x10",
       "byteSize": 2,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L558",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L558",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1760,8 +1760,8 @@
       "byteOffset": "0x12",
       "byteSize": 2,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L560",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L560",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1776,8 +1776,8 @@
       "byteOffset": "0x0",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L548",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L548",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1792,8 +1792,8 @@
       "byteOffset": "0x8",
       "byteSize": 2,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L550",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L550",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1808,8 +1808,8 @@
       "byteOffset": "0x14",
       "byteSize": 2,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L562",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L562",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1824,8 +1824,8 @@
       "byteOffset": "0xA",
       "byteSize": 2,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L552",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L552",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1840,8 +1840,8 @@
       "byteOffset": "0x16",
       "byteSize": 2,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L564",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L564",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1856,8 +1856,8 @@
       "byteOffset": "0x159",
       "byteSize": 1,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L470",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L470",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1872,8 +1872,8 @@
       "byteOffset": "0x19C",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L506",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L506",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1888,8 +1888,8 @@
       "byteOffset": "0x158",
       "byteSize": 1,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L468",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L468",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1904,8 +1904,8 @@
       "byteOffset": "0x18",
       "byteSize": 1,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L452",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L452",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1920,8 +1920,8 @@
       "byteOffset": "0x170",
       "byteSize": 1,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L478",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L478",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1936,8 +1936,8 @@
       "byteOffset": "0x30",
       "byteSize": 288,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L462",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L462",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1952,8 +1952,8 @@
       "byteOffset": "0x14",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L450",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L450",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1968,8 +1968,8 @@
       "byteOffset": "0x8",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L444",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L444",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -1984,8 +1984,8 @@
       "byteOffset": "0x10",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L448",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L448",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2000,8 +2000,8 @@
       "byteOffset": "0xC",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L446",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L446",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2016,8 +2016,8 @@
       "byteOffset": "0x178",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L484",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L484",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2032,8 +2032,8 @@
       "byteOffset": "0x28",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L460",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L460",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2048,8 +2048,8 @@
       "byteOffset": "0x1E0",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L526",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L526",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2064,8 +2064,8 @@
       "byteOffset": "0x1E8",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L528",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L528",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2080,8 +2080,8 @@
       "byteOffset": "0x1C0",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L512",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L512",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2096,8 +2096,8 @@
       "byteOffset": "0x1D4",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L520",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L520",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2112,8 +2112,8 @@
       "byteOffset": "0x1C8",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L514",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L514",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2128,8 +2128,8 @@
       "byteOffset": "0x1D0",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L518",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L518",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2144,8 +2144,8 @@
       "byteOffset": "0x1D8",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L522",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L522",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2160,8 +2160,8 @@
       "byteOffset": "0x1CC",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L516",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L516",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2176,8 +2176,8 @@
       "byteOffset": "0x181",
       "byteSize": 1,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L490",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L490",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2192,8 +2192,8 @@
       "byteOffset": "0x19",
       "byteSize": 1,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L454",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L454",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2208,8 +2208,8 @@
       "byteOffset": "0x180",
       "byteSize": 1,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L488",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L488",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2224,8 +2224,8 @@
       "byteOffset": "0x4",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L442",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L442",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2240,8 +2240,8 @@
       "byteOffset": "0x0",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L440",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L440",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2256,8 +2256,8 @@
       "byteOffset": "0x188",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L496",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L496",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2272,8 +2272,8 @@
       "byteOffset": "0x184",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L494",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L494",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2288,8 +2288,8 @@
       "byteOffset": "0x20",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L458",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L458",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2304,8 +2304,8 @@
       "byteOffset": "0x1F8",
       "byteSize": 288,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L534",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L534",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2320,8 +2320,8 @@
       "byteOffset": "0x1B0",
       "byteSize": 16,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L510",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L510",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2336,8 +2336,8 @@
       "byteOffset": "0x194",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L502",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L502",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2352,8 +2352,8 @@
       "byteOffset": "0x190",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L500",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L500",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2368,8 +2368,8 @@
       "byteOffset": "0x154",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L466",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L466",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2384,8 +2384,8 @@
       "byteOffset": "0x18C",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L498",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L498",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2400,8 +2400,8 @@
       "byteOffset": "0x174",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L482",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L482",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2416,8 +2416,8 @@
       "byteOffset": "0x1F0",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L530",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L530",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2432,8 +2432,8 @@
       "byteOffset": "0x150",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L464",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L464",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2448,8 +2448,8 @@
       "byteOffset": "0x160",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L474",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L474",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2464,8 +2464,8 @@
       "byteOffset": "0x168",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L476",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L476",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2480,8 +2480,8 @@
       "byteOffset": "0x17C",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L486",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L486",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2496,8 +2496,8 @@
       "byteOffset": "0x198",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L504",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L504",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2512,8 +2512,8 @@
       "byteOffset": "0x1A0",
       "byteSize": 16,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L508",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L508",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2526,8 +2526,8 @@
       "memberCount": 2,
       "documentationMarkdown": "Used by the [CVidMosaic Class](#CVidMosaic Class)",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L574",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L574",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2542,8 +2542,8 @@
       "byteOffset": "0x0",
       "byteSize": 256,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L584",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L584",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2558,8 +2558,8 @@
       "byteOffset": "0x100",
       "byteSize": 16,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L586",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L586",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2572,8 +2572,8 @@
       "memberCount": 9,
       "documentationMarkdown": "Used by the [CVidPalette Class](#CVidPalette Class)",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L592",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L592",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2585,8 +2585,8 @@
       "byteSize": 12,
       "memberCount": 3,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L694",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L694",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2601,8 +2601,8 @@
       "byteOffset": "0x8",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L706",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L706",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2617,8 +2617,8 @@
       "byteOffset": "0x4",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L704",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L704",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2633,8 +2633,8 @@
       "byteOffset": "0x0",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L702",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L702",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2649,8 +2649,8 @@
       "byteOffset": "0x22",
       "byteSize": 1,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L614",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L614",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2665,8 +2665,8 @@
       "byteOffset": "0x24",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L618",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L618",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2681,8 +2681,8 @@
       "byteOffset": "0x0",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L602",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L602",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2697,8 +2697,8 @@
       "byteOffset": "0x8",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L604",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L604",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2713,8 +2713,8 @@
       "byteOffset": "0x18",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L608",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L608",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2729,8 +2729,8 @@
       "byteOffset": "0x20",
       "byteSize": 2,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L612",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L612",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2745,8 +2745,8 @@
       "byteOffset": "0x10",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L606",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L606",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2761,8 +2761,8 @@
       "byteOffset": "0x28",
       "byteSize": 7,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L620",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L620",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2777,8 +2777,8 @@
       "byteOffset": "0x1C",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L610",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L610",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2791,8 +2791,8 @@
       "memberCount": 2,
       "documentationMarkdown": "Used by the [CVidPng Class](#CVidPng Class)",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L628",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L628",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2807,8 +2807,8 @@
       "byteOffset": "0x0",
       "byteSize": 256,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L638",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L638",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2823,8 +2823,8 @@
       "byteOffset": "0x100",
       "byteSize": 16,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L640",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L640",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2837,8 +2837,8 @@
       "memberCount": 5,
       "documentationMarkdown": "Used by the [CVidPoly Class](#CVidPoly Class)",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L646",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L646",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2850,8 +2850,8 @@
       "byteSize": 4,
       "memberCount": 2,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L712",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L712",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2866,8 +2866,8 @@
       "byteOffset": "0x0",
       "byteSize": 2,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L720",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L720",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2882,8 +2882,8 @@
       "byteOffset": "0x2",
       "byteSize": 2,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L722",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L722",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2898,8 +2898,8 @@
       "byteOffset": "0x8",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L658",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L658",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2914,8 +2914,8 @@
       "byteOffset": "0x18",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L664",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L664",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2930,8 +2930,8 @@
       "byteOffset": "0x20",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L666",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L666",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2946,8 +2946,8 @@
       "byteOffset": "0x10",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L662",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L662",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2962,8 +2962,8 @@
       "byteOffset": "0x0",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L656",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L656",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2976,8 +2976,8 @@
       "memberCount": 3,
       "documentationMarkdown": "Used by the [CVidTile Class](#CVidTile Class)",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L672",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L672",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -2992,8 +2992,8 @@
       "byteOffset": "0x0",
       "byteSize": 256,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L682",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L682",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3008,8 +3008,8 @@
       "byteOffset": "0x108",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L686",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L686",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3024,8 +3024,8 @@
       "byteOffset": "0x100",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L684",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L684",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3038,8 +3038,8 @@
       "memberCount": 8,
       "documentationMarkdown": "Used by the [CVisibilityMap Class](#CVisibilityMap Class)",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L728",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L728",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3054,8 +3054,8 @@
       "byteOffset": "0x20",
       "byteSize": 60,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L752",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L752",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3070,8 +3070,8 @@
       "byteOffset": "0x10",
       "byteSize": 1,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L746",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L746",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3086,8 +3086,8 @@
       "byteOffset": "0xE",
       "byteSize": 2,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L744",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L744",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3102,8 +3102,8 @@
       "byteOffset": "0x8",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L740",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L740",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3118,8 +3118,8 @@
       "byteOffset": "0xC",
       "byteSize": 2,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L742",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L742",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3134,8 +3134,8 @@
       "byteOffset": "0x0",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L738",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L738",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3150,8 +3150,8 @@
       "byteOffset": "0x18",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L750",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L750",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3166,8 +3166,8 @@
       "byteOffset": "0x68",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L758",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L758",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3179,8 +3179,8 @@
       "byteSize": 32,
       "memberCount": 6,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L764",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L764",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3195,8 +3195,8 @@
       "byteOffset": "0x0",
       "byteSize": 2,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L772",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L772",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3211,8 +3211,8 @@
       "byteOffset": "0x18",
       "byteSize": 1,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L782",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L782",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3227,8 +3227,8 @@
       "byteOffset": "0x2",
       "byteSize": 2,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L774",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L774",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3243,8 +3243,8 @@
       "byteOffset": "0x19",
       "byteSize": 1,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L784",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L784",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3259,8 +3259,8 @@
       "byteOffset": "0x8",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L778",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L778",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3275,8 +3275,8 @@
       "byteOffset": "0x10",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L780",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L780",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3288,8 +3288,8 @@
       "byteSize": 20,
       "memberCount": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L792",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L792",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3304,8 +3304,8 @@
       "byteOffset": "0xA",
       "byteSize": 6,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L804",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L804",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3320,8 +3320,8 @@
       "byteOffset": "0x8",
       "byteSize": 2,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L802",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L802",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3336,8 +3336,8 @@
       "byteOffset": "0x10",
       "byteSize": 2,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L806",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L806",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3352,8 +3352,8 @@
       "byteOffset": "0x0",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L800",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L800",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3366,8 +3366,8 @@
       "memberCount": 18,
       "documentationMarkdown": "Used by the [CVisualEffect Class](#CVisualEffect Class)",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L814",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L814",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3382,8 +3382,8 @@
       "byteOffset": "0x0",
       "byteSize": 96,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L824",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L824",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3398,8 +3398,8 @@
       "byteOffset": "0x60",
       "byteSize": 448,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L826",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L826",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3414,8 +3414,8 @@
       "byteOffset": "0x220",
       "byteSize": 56,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L828",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L828",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3430,8 +3430,8 @@
       "byteOffset": "0x310",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L854",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L854",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3446,8 +3446,8 @@
       "byteOffset": "0x2E8",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L844",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L844",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3462,8 +3462,8 @@
       "byteOffset": "0x2E4",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L842",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L842",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3478,8 +3478,8 @@
       "byteOffset": "0x2EC",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L846",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L846",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3494,8 +3494,8 @@
       "byteOffset": "0x2D0",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L836",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L836",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3510,8 +3510,8 @@
       "byteOffset": "0x2F0",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L848",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L848",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3526,8 +3526,8 @@
       "byteOffset": "0x2D4",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L838",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L838",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3542,8 +3542,8 @@
       "byteOffset": "0x2DC",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L840",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L840",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3558,8 +3558,8 @@
       "byteOffset": "0x2C8",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L834",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L834",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3574,8 +3574,8 @@
       "byteOffset": "0x31C",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L858",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L858",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3590,8 +3590,8 @@
       "byteOffset": "0x318",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L856",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L856",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3606,8 +3606,8 @@
       "byteOffset": "0x2F8",
       "byteSize": 16,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L850",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L850",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3622,8 +3622,8 @@
       "byteOffset": "0x258",
       "byteSize": 56,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L830",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L830",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3638,8 +3638,8 @@
       "byteOffset": "0x290",
       "byteSize": 56,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L832",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L832",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3654,8 +3654,8 @@
       "byteOffset": "0x308",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L852",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L852",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3667,8 +3667,8 @@
       "byteSize": 448,
       "memberCount": 12,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L864",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L864",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3683,8 +3683,8 @@
       "byteOffset": "0x30",
       "byteSize": 400,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L894",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L894",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3699,8 +3699,8 @@
       "byteOffset": "0x2C",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L892",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L892",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3715,8 +3715,8 @@
       "byteOffset": "0x24",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L888",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L888",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3731,8 +3731,8 @@
       "byteOffset": "0x18",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L884",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L884",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3747,8 +3747,8 @@
       "byteOffset": "0x28",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L890",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L890",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3763,8 +3763,8 @@
       "byteOffset": "0x14",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L882",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L882",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3779,8 +3779,8 @@
       "byteOffset": "0x10",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L880",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L880",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3795,8 +3795,8 @@
       "byteOffset": "0x4",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L874",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L874",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3811,8 +3811,8 @@
       "byteOffset": "0x0",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L872",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L872",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3827,8 +3827,8 @@
       "byteOffset": "0xC",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L878",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L878",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3843,8 +3843,8 @@
       "byteOffset": "0x8",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L876",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L876",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3859,8 +3859,8 @@
       "byteOffset": "0x1C",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L886",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L886",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3872,8 +3872,8 @@
       "byteSize": 16,
       "memberCount": 1,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L900",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L900",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3888,8 +3888,8 @@
       "byteOffset": "0x0",
       "byteSize": 16,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L908",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L908",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3902,8 +3902,8 @@
       "memberCount": 7,
       "documentationMarkdown": "Used by the [CVoice Class](#CVoice Class)",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L914",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L914",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3918,8 +3918,8 @@
       "byteOffset": "0x0",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L924",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L924",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3934,8 +3934,8 @@
       "byteOffset": "0x20",
       "byteSize": 1,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L936",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L936",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3950,8 +3950,8 @@
       "byteOffset": "0x10",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L928",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L928",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3966,8 +3966,8 @@
       "byteOffset": "0x18",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L932",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L932",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3982,8 +3982,8 @@
       "byteOffset": "0x1C",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L934",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L934",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -3998,8 +3998,8 @@
       "byteOffset": "0x14",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L930",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L930",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -4014,8 +4014,8 @@
       "byteOffset": "0x8",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L926",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L926",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -4027,8 +4027,8 @@
       "byteSize": 16,
       "memberCount": 2,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L944",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L944",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -4043,8 +4043,8 @@
       "byteOffset": "0x0",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L952",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L952",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -4059,8 +4059,8 @@
       "byteOffset": "0x8",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L956",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L956",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -4072,8 +4072,8 @@
       "byteSize": 16,
       "memberCount": 2,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L962",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L962",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -4088,8 +4088,8 @@
       "byteOffset": "0x0",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L970",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L970",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -4104,8 +4104,8 @@
       "byteOffset": "0x8",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L972",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L972",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -4117,8 +4117,8 @@
       "byteSize": 20,
       "memberCount": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L980",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L980",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -4133,8 +4133,8 @@
       "byteOffset": "0x0",
       "byteSize": 8,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L988",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L988",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -4149,8 +4149,8 @@
       "byteOffset": "0x8",
       "byteSize": 2,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L990",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L990",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -4165,8 +4165,8 @@
       "byteOffset": "0x10",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L996",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L996",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -4181,8 +4181,8 @@
       "byteOffset": "0xC",
       "byteSize": 4,
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L994",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CV/index.rst#L994",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     }
   ]

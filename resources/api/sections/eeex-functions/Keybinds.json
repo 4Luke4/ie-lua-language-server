@@ -1,11 +1,11 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-08-25T18:10:55.136Z",
+  "generatedAt": "2026-09-22T13:41:25.745Z",
   "source": {
     "id": "eeex-functions",
     "title": "EEex Functions",
-    "url": "https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions",
-    "commit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+    "url": "https://github.com/Bubb13/EEex-Docs/tree/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions",
+    "commit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
     "licenseStatus": "allowed"
   },
   "title": "Keybinds",
@@ -32,8 +32,8 @@
       ],
       "documentationMarkdown": "> **Summary**\n> Attempts to cast `resref` as the leader of the currently selected sprites.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| resref | string |  | The resref of the spell to cast. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| boolean | `true` if the casting was started successfully; `false` otherwise. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Keybinds/index.rst#L16",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Keybinds/index.rst#L16",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -56,8 +56,8 @@
       ],
       "documentationMarkdown": "> **Summary**\n> Attempts to cast `firstResref` → `secondResref` as the leader of the currently selected sprites.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| firstResref | string |  | The resref of the first spell to cast. <br/> This spell should invoke op214. |\n| secondResref | string |  | The resref of the second spell to cast. <br/> This spell should be provided by the previously invoked op214. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Keybinds/index.rst#L43",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Keybinds/index.rst#L43",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -81,8 +81,8 @@
       ],
       "documentationMarkdown": "> **Summary**\n> Returns a table representing the keybind with the given `id`.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| id | string |  | The unique id of the associated keybind. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| table \\| nil | See summary. |\n\n---\n\n#### **The Keybind Table**\n\n| Key | Value Type | Description |\n| --- | --- | --- |\n| callback | function | Function that is called when the conditions required by `fireType` are satisfied. |\n| fireType | EEex_Keybinds_FireType | The situation in which `callback` is invoked. |\n| keys | table | Table of keycodes defining the keybind's main sequence of keys.                                       <br/> These keys must be pressed in the defined order for the keybind to be satisfied. |\n| modifierKeys | table | Table of keycodes defining the keys that are required to be down when the main sequence is satisfied. <br/> Allowed keys include the left / right variants of Ctrl, Shift, and Alt. |\n\n---\n\n#### **EEex_Keybinds_FireType**\n\n| Ordinal Name | Description |\n| --- | --- |\n| UP | Fires when any key is released after the keybind has been satisfied. <br/> Additional key presses will cancel the satisfaction of the keybind. |\n| DOWN | Fires when the keybind has been satisfied. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Keybinds/index.rst#L64",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Keybinds/index.rst#L64",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -106,8 +106,8 @@
       ],
       "documentationMarkdown": "> **Summary**\n> Attempts to select the portrait in `portraitIndex`.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| portraitIndex | number |  | The index of the portrait to select. |\n| dontUnselect | boolean | `false` | If `true`, prevents the deselection of already-selected sprites. <br/> This is analogous to holding Shift in the original keybindings. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Keybinds/index.rst#L125",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Keybinds/index.rst#L125",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -130,8 +130,8 @@
       ],
       "documentationMarkdown": "> **Summary**\n> Updates the keybind with the given `id` with the fields present in `args`.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| id | string |  | The unique id of the associated keybind. |\n| args | table |  | A table containing fields used to update the keybind. <br/> See [The Keybind Table ](#the-keybind-table) for more details. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Keybinds/index.rst#L146",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Keybinds/index.rst#L146",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     }
   ]

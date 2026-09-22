@@ -1,11 +1,11 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-08-25T18:10:55.136Z",
+  "generatedAt": "2026-09-22T13:41:25.745Z",
   "source": {
     "id": "eeex-functions",
     "title": "EEex Functions",
-    "url": "https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions",
-    "commit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+    "url": "https://github.com/Bubb13/EEex-Docs/tree/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions",
+    "commit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
     "licenseStatus": "allowed"
   },
   "title": "Options",
@@ -19,8 +19,8 @@
       "signature": "EEex_Options_AddTab()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Options/index.rst#L16",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Options/index.rst#L16",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -49,8 +49,8 @@
       ],
       "documentationMarkdown": "> **Summary**\n> Checks if the option with the given `id` exists and is equal to the given `value`.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| id | string |  | The id of the option whose value is to be checked. |\n| value | `<non-nil>` |  | The value to check against the option. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| boolean | `true` if the option with `id` exists and it is equal to the given `value`; `false` otherwise. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Options/index.rst#L24",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Options/index.rst#L24",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -61,8 +61,8 @@
       "signature": "EEex_Options_Close()",
       "documentationMarkdown": "> **Summary**\n> Closes the \"EEex Options\" menu if it is currently open.",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Options/index.rst#L53",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Options/index.rst#L53",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -86,8 +86,8 @@
       ],
       "documentationMarkdown": "> **Summary**\n> Returns the option object with the given `id`.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| id | string |  | The id of the option to be fetched. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| EEex_Options_Option \\| nil | See summary / [The Option Table ](#the-option-table) for more details. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Options/index.rst#L64",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Options/index.rst#L64",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -111,8 +111,8 @@
       ],
       "documentationMarkdown": "> **Summary**\n> Returns a string representing the given `keybind` table.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| keybind | table |  | A table representing the keybind to marshal. <br/> See [The Keybind Table ](#the-keybind-table) for more details. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| string | See summary. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Options/index.rst#L91",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Options/index.rst#L91",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -123,8 +123,8 @@
       "signature": "EEex_Options_Open()",
       "documentationMarkdown": "> **Summary**\n> Opens the \"EEex Options\" menu if it is currently closed.",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Options/index.rst#L118",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Options/index.rst#L118",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -143,8 +143,8 @@
       "instanceName": "get",
       "documentationMarkdown": "> **Summary**\n> Returns the current, in-effect value of the option.\n\n> **Note**\n> Some options delay applying changes made to their value; these changes will only be visible at a later time, such as after a restart.\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| `<non-nil>` | See summary. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Options/index.rst#L174",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Options/index.rst#L174",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -163,8 +163,8 @@
       "instanceName": "getDefault",
       "documentationMarkdown": "> **Summary**\n> Returns the default value of the option.\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| `<non-nil>` | See summary. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Options/index.rst#L198",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Options/index.rst#L198",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -190,8 +190,8 @@
       "instanceName": "set",
       "documentationMarkdown": "> **Summary**\n> Sets the value of the option.\n\n> **Note**\n> Some options delay applying changes made to their value; these changes will only be visible at a later time, such as after a restart.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| newValue | `<any>` |  | The value to set the option to. <br/> If `nil`, sets the option to its default value. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| `<non-nil>` | Returns the value the option was set to after constraints were applied to `newValue`. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Options/index.rst#L217",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Options/index.rst#L217",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -218,8 +218,8 @@
       "instanceName": "new",
       "documentationMarkdown": "> **Summary**\n> Creates a new `EEex_Options_Option` instance.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| o | table | `{}` | The object to become the `EEex_Options_Option` instance. <br/> See [The Option Table ](#the-option-table) for more details. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| EEex_Options_Option | See summary. |\n\n---\n\n#### **The Option Table**\n\n| Key | Value Type | Description |\n| --- | --- | --- |\n| accessor | EEex_Options_Accessor | This field is currently undocumented. |\n| default | `<non-nil>` | This field is currently undocumented. |\n| requiresRestart | boolean | This field is currently undocumented. |\n| storage | EEex_Options_Private_Storage | This field is currently undocumented. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Options/index.rst#L129",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Options/index.rst#L129",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -248,8 +248,38 @@
       ],
       "documentationMarkdown": "> **Summary**\n> Registers `option` under `id`. Options must be registered to be functional.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| id | string |  | The unique id to register `option` under. |\n| option | EEex_Options_Option |  | The option being registered. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| EEex_Options_Option | Returns `option`. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Options/index.rst#L249",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Options/index.rst#L249",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Options_Set",
+      "name": "EEex_Options_Set",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Options_Set(id, value)",
+      "parameters": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "The id of the option whose value is to be set."
+        },
+        {
+          "name": "value",
+          "type": "<non-nil>",
+          "description": "The value to set the option to. If `nil`, sets the option to its default value."
+        }
+      ],
+      "returns": [
+        {
+          "type": "<any>",
+          "description": "The new value of the option, or `nil` if the option did not exist."
+        }
+      ],
+      "documentationMarkdown": "> **Summary**\n> If it exists, sets the option with the given `id` to `value`.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| id | string |  | The id of the option whose value is to be set. |\n| value | `<non-nil>` |  | The value to set the option to. If `nil`, sets the option to its default value. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| `<any>` | The new value of the option, or `nil` if the option did not exist. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Options/index.rst#L278",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -273,8 +303,8 @@
       ],
       "documentationMarkdown": "> **Summary**\n> Returns a table representing the given `keybindStr` string.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| keybindStr | string |  | A string representing the keybind to unmarshal. <br/> This string is of the format `<SDL key name>+<SDL key name>...\\|<UP or DOWN>` |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| table | See summary / [The Keybind Table ](#the-keybind-table) for more details. |",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Options/index.rst#L278",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Options/index.rst#L307",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     }
   ]

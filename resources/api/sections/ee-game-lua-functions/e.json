@@ -1,11 +1,11 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-08-25T18:10:55.136Z",
+  "generatedAt": "2026-09-22T13:41:25.745Z",
   "source": {
     "id": "ee-game-lua-functions",
     "title": "EE Game Lua Functions",
-    "url": "https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions",
-    "commit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+    "url": "https://github.com/Bubb13/EEex-Docs/tree/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions",
+    "commit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
     "licenseStatus": "allowed"
   },
   "title": "e",
@@ -21,8 +21,8 @@
       "instanceName": "CheckGUISong",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ne:CheckGUISong()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/e/e_CheckGUISong.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/e/e_CheckGUISong.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -35,8 +35,8 @@
       "instanceName": "FullScreen",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ne:FullScreen()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/e/e_FullScreen.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/e/e_FullScreen.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -49,8 +49,8 @@
       "instanceName": "GetActiveEngine",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ne:GetActiveEngine()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/e/e_GetActiveEngine.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/e/e_GetActiveEngine.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -63,8 +63,8 @@
       "instanceName": "GetEngineChapter",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ne:GetEngineChapter()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/e/e_GetEngineChapter.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/e/e_GetEngineChapter.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -77,8 +77,8 @@
       "instanceName": "GetEngineCharacter",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ne:GetEngineCharacter()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/e/e_GetEngineCharacter.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/e/e_GetEngineCharacter.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -91,8 +91,8 @@
       "instanceName": "GetEngineConnection",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ne:GetEngineConnection()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/e/e_GetEngineConnection.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/e/e_GetEngineConnection.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -105,8 +105,8 @@
       "instanceName": "GetEngineCreateChar",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ne:GetEngineCreateChar()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/e/e_GetEngineCreateChar.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/e/e_GetEngineCreateChar.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -119,8 +119,8 @@
       "instanceName": "GetEngineCreateParty",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ne:GetEngineCreateParty()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/e/e_GetEngineCreateParty.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/e/e_GetEngineCreateParty.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -133,8 +133,8 @@
       "instanceName": "GetEngineDLC",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ne:GetEngineDLC()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/e/e_GetEngineDLC.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/e/e_GetEngineDLC.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -147,8 +147,8 @@
       "instanceName": "GetEngineInventory",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ne:GetEngineInventory()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/e/e_GetEngineInventory.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/e/e_GetEngineInventory.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -161,8 +161,8 @@
       "instanceName": "GetEngineJournal",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ne:GetEngineJournal()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/e/e_GetEngineJournal.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/e/e_GetEngineJournal.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -175,8 +175,8 @@
       "instanceName": "GetEngineLoad",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ne:GetEngineLoad()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/e/e_GetEngineLoad.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/e/e_GetEngineLoad.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -189,8 +189,8 @@
       "instanceName": "GetEngineMap",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ne:GetEngineMap()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/e/e_GetEngineMap.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/e/e_GetEngineMap.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -203,8 +203,8 @@
       "instanceName": "GetEngineMovies",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ne:GetEngineMovies()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/e/e_GetEngineMovies.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/e/e_GetEngineMovies.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -217,8 +217,8 @@
       "instanceName": "GetEngineMultiPlayer",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ne:GetEngineMultiPlayer()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/e/e_GetEngineMultiPlayer.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/e/e_GetEngineMultiPlayer.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -231,8 +231,8 @@
       "instanceName": "GetEngineOptions",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ne:GetEngineOptions()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/e/e_GetEngineOptions.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/e/e_GetEngineOptions.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -245,8 +245,8 @@
       "instanceName": "GetEnginePriestSpell",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ne:GetEnginePriestSpell()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/e/e_GetEnginePriestSpell.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/e/e_GetEnginePriestSpell.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -259,8 +259,8 @@
       "instanceName": "GetEngineProjector",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ne:GetEngineProjector()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/e/e_GetEngineProjector.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/e/e_GetEngineProjector.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -273,8 +273,8 @@
       "instanceName": "GetEngineSave",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ne:GetEngineSave()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/e/e_GetEngineSave.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/e/e_GetEngineSave.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -287,8 +287,8 @@
       "instanceName": "GetEngineStart",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ne:GetEngineStart()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/e/e_GetEngineStart.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/e/e_GetEngineStart.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -301,8 +301,8 @@
       "instanceName": "GetEngineStore",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ne:GetEngineStore()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/e/e_GetEngineStore.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/e/e_GetEngineStore.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -315,8 +315,8 @@
       "instanceName": "GetEngineWizSpell",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ne:GetEngineWizSpell()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/e/e_GetEngineWizSpell.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/e/e_GetEngineWizSpell.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -329,8 +329,8 @@
       "instanceName": "GetEngineWorld",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ne:GetEngineWorld()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/e/e_GetEngineWorld.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/e/e_GetEngineWorld.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -343,8 +343,8 @@
       "instanceName": "GetEngineWorldMap",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ne:GetEngineWorldMap()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/e/e_GetEngineWorldMap.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/e/e_GetEngineWorldMap.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -357,8 +357,8 @@
       "instanceName": "GetObjectGame",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ne:GetObjectGame()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/e/e_GetObjectGame.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/e/e_GetObjectGame.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -371,8 +371,8 @@
       "instanceName": "GetSoundMixer",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ne:GetSoundMixer()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/e/e_GetSoundMixer.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/e/e_GetSoundMixer.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -385,8 +385,8 @@
       "instanceName": "GetVersionString",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ne:GetVersionString()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/e/e_GetVersionString.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/e/e_GetVersionString.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -399,8 +399,8 @@
       "instanceName": "IsAndroid",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ne:IsAndroid()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/e/e_IsAndroid.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/e/e_IsAndroid.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -413,8 +413,8 @@
       "instanceName": "IsIOS",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ne:IsIOS()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/e/e_IsIOS.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/e/e_IsIOS.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -427,8 +427,8 @@
       "instanceName": "IsTouchUI",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ne:IsTouchUI()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/e/e_IsTouchUI.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/e/e_IsTouchUI.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -441,8 +441,8 @@
       "instanceName": "SelectEngine",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ne:SelectEngine()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/e/e_SelectEngine.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/e/e_SelectEngine.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -455,8 +455,8 @@
       "instanceName": "SetDisableBrightest",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\ne:SetDisableBrightest()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/e/e_SetDisableBrightest.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/e/e_SetDisableBrightest.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     }
   ]
