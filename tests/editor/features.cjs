@@ -302,10 +302,11 @@ scenario('structures', async ({ extension }) => {
     assert.ok(help.includes(fragment));
   assert.ok((await hover(doc, 'CGameObject')).includes('m_objectType'));
   const field = new vscode.Position(2, 27);
-  const source = vscode.Uri.parse(
+  // Compared as written, not through Uri.parse().toString(), which would percent-encode the
+  // parentheses that the upstream path and the rendered hover link both keep literal.
+  const source =
     upstream(extension, 'ee-game-structures-x64') +
-      'EE%20Game%20Structures%20(x64)/CD/index.rst#L131',
-  ).toString();
+    'EE%20Game%20Structures%20(x64)/CD/index.rst#L131';
   assert.ok((await hoverAt(doc, field)).includes(source), 'hover renders the pinned source');
   assert.equal((await execute('executeDefinitionProvider', doc.uri, field))?.length ?? 0, 0);
   await replace(doc, '---@param sprite CGameSprite\nlocal function inspect(sprite)\n sprite.\nend');

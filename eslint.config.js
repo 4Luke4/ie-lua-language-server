@@ -57,7 +57,9 @@ module.exports = [
       'no-unreachable': 'error',
       'no-unused-vars': 'error',
       'no-var': 'error',
-      'prefer-const': 'error',
+      // Cleanup closures registered before the value exists read it first on purpose, which the
+      // rule's default treats as a missed const.
+      'prefer-const': ['error', { ignoreReadBeforeAssign: true }],
     },
   },
 ];
