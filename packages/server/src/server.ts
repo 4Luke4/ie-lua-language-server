@@ -830,9 +830,8 @@ function getWordAt(
 // behaviour for .menu documents. The URI extension is the fallback the protocol always carries.
 function documentLanguageId(document: TextDocument): IeLuaLanguageId {
   if (document.languageId === languageIds.menu) return languageIds.menu;
-  return /\.menu$/iu.test(document.uri.split(/[?#]/u)[0] ?? '')
-    ? languageIds.menu
-    : languageIds.lua;
+  const documentPath = document.uri.split(/[?#]/u)[0] ?? '';
+  return /\.menu$/iu.test(documentPath) ? languageIds.menu : languageIds.lua;
 }
 
 function formatDocument(document: TextDocument): TextEdit[] {
