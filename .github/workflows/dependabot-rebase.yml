@@ -10,8 +10,9 @@ on:
     - cron: '41 5 * * *'
   workflow_dispatch:
 
+# Everything below reads and writes pull requests and nothing else, so DEPENDABOT_REBASE_TOKEN needs
+# only "Pull requests: read and write" alongside the mandatory "Metadata: read".
 permissions:
-  contents: read
   pull-requests: write
 
 concurrency:
@@ -41,36 +42,46 @@ jobs:
 
           # mergeStateStatus is computed lazily and reports UNKNOWN while GitHub is still working it
           # out; only a confirmed BEHIND is actionable, and a later run retries the rest.
-          candidates="$(
+          behind="$(
             gh pr list \
               --repo "$GITHUB_REPOSITORY" \
               --state open \
               --limit 100 \
-              --json number,author,mergeStateStatus,headRefOid \
+              --json number,author,mergeStateStatus \
               --jq '.[]
                 | select(.author.login == "dependabot[bot]")
                 | select(.mergeStateStatus == "BEHIND")
-                | "\(.number) \(.headRefOid)"'
+                | .number'
           )"
 
-          if [[ -z "$candidates" ]]; then
+          if [[ -z "$behind" ]]; then
             echo "No Dependabot pull request is behind the base branch."
             exit 0
           fi
 
-          while read -r number head; do
+          while read -r number; do
             [[ -n "$number" ]] || continue
-            pushed="$(gh api "repos/$GITHUB_REPOSITORY/commits/$head" --jq '.commit.committer.date')"
             # Asking again for a head that has already been asked about would comment on every push
-            # to main. A request that postdates the current head has not been acted on yet.
-            asked="$(
-              gh api "repos/$GITHUB_REPOSITORY/issues/$number/comments" --paginate \
-                --jq '[.[] | select(.body | test("^@dependabot rebase[[:space:]]*$")) | .created_at] | max // ""'
+            # to main, so the current head's commit date is compared against the newest request.
+            # Both come from this one pull-request read, which is why the token needs no access to
+            # repository contents.
+            read -r pushed asked <<< "$(
+              gh pr view "$number" \
+                --repo "$GITHUB_REPOSITORY" \
+                --json headRefOid,commits,comments \
+                --jq '.headRefOid as $head
+                  | [.commits[] | select(.oid == $head) | .committedDate] as $pushed
+                  | [.comments[]
+                      | select(.body | test("^@dependabot rebase[[:space:]]*$"))
+                      | .createdAt] as $asked
+                  | "\($pushed[0] // "-") \(($asked | max) // "-")"'
             )"
-            if [[ -n "$asked" && "$asked" > "$pushed" ]]; then
-              echo "#$number: a rebase was already requested for $head"
+            # "-" means unknown: never asked, or a head this read could not resolve. Either way the
+            # request is worth making, because Dependabot ignores a redundant one.
+            if [[ "$asked" != "-" && "$pushed" != "-" && "$asked" > "$pushed" ]]; then
+              echo "#$number: a rebase was already requested for the current head"
               continue
             fi
             gh pr comment "$number" --repo "$GITHUB_REPOSITORY" --body '@dependabot rebase'
-            echo "#$number: requested a rebase of $head"
-          done <<< "$candidates"
+            echo "#$number: requested a rebase"
+          done <<< "$behind"
