@@ -7,4 +7,6 @@
   documentation rendering, and actual archive contents. Use synthetic fixtures, not game samples.
 - Retain parser fallback behavior and legacy API manifests. Keep document-close cancellation and
   subprocess cleanup explicit. Add comments only for non-obvious compatibility/lifecycle decisions.
+- Map between offsets and line/character through `shared/positions.ts`. It indexes line starts once
+  per document; hand-rolled scans in other modules silently diverge on CRLF and surrogate pairs.
 - Generated resources belong to the ingestion pipeline; do not manually manufacture upstream prose.

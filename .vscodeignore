@@ -29,6 +29,8 @@ eslint.config.js
 .gitmessage
 .stylua.toml
 
+CLAUDE.md
+**/CLAUDE.md
 AGENTS.md
 **/AGENTS.md
 scripts/**

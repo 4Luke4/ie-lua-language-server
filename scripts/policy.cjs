@@ -23,6 +23,38 @@ function validateLabels(definitions, rules) {
       `Missing label definition: ${name}`,
     );
 }
+// The manifest cannot import TypeScript, so the shared declarations are read back from source. This
+// keeps the contributed enum, the shipped index and the protocol legend tied to one definition
+// instead of four copies that only fail at runtime when they disagree.
+function sharedStringArray(source, name) {
+  const marker = `export const ${name} = [`;
+  const start = source.indexOf(marker);
+  assert.ok(start >= 0, `Missing shared declaration: ${name}`);
+  const end = source.indexOf('] as const;', start);
+  assert.ok(end > start, `Unterminated shared declaration: ${name}`);
+  const body = source.slice(start + marker.length, end);
+  return [...body.matchAll(/'([^']+)'/gu)].map((entry) => entry[1]);
+}
+function validateSharedContributions(pkg, sharedTypes, apiIndex) {
+  const sections = sharedStringArray(sharedTypes, 'sourceSectionIds');
+  const sources = pkg.contributes.configuration.properties['ieLua.symbolSources.enabled'];
+  assert.deepEqual(sources.items.enum, sections, 'Contributed source sections drifted');
+  assert.deepEqual(sources.default, sections, 'Default source sections drifted');
+  assert.deepEqual(
+    apiIndex.sections.map((section) => section.id),
+    sections,
+    'Shipped API sections drifted',
+  );
+  for (const [name, contribution] of [
+    ['semanticTokenTypes', pkg.contributes.semanticTokenTypes],
+    ['semanticTokenModifiers', pkg.contributes.semanticTokenModifiers],
+  ])
+    assert.deepEqual(
+      contribution.map((entry) => entry.id),
+      sharedStringArray(sharedTypes, name),
+      `Contributed ${name} drifted from the shared legend`,
+    );
+}
 function validateDeclaredLanguageServices(readme, inventory) {
   // The README language-services bullet is the published list of individually named services. It is
   // prose, so it is parsed back into names here: the six group markers alone would let a named
@@ -140,6 +172,11 @@ function main() {
       group,
     );
   validateDeclaredLanguageServices(readme, inventory);
+  validateSharedContributions(
+    pkg,
+    fs.readFileSync('packages/shared/src/types.ts', 'utf8'),
+    json('resources/api/api-index.json'),
+  );
   for (const { command } of pkg.contributes.commands)
     assert.ok(
       inventory.cases.some((c) => c.commands.includes(command)),
@@ -171,7 +208,7 @@ function main() {
   for (const language of ['ie-lua', 'ie-menu'])
     assert.equal(kate.servers[language].command.at(-1), '--stdio');
   for (const directory of ['.github', 'packages', 'resources/api'])
-    assert.ok(fs.existsSync(path.join(directory, 'AGENTS.md')));
+    assert.ok(fs.existsSync(path.join(directory, 'CLAUDE.md')));
   console.log('Repository policy passed');
 }
 function validateVerificationGraph(workflows) {

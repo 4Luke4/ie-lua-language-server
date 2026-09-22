@@ -52,13 +52,16 @@ async function completion(doc, position, expected) {
     `completion ${expected}`,
   );
 }
-async function hover(doc, word) {
+async function hoverAt(doc, position) {
   return markdown(
     await eventually(
-      () => execute('executeHoverProvider', doc.uri, at(doc, word, true)),
+      () => execute('executeHoverProvider', doc.uri, position),
       (r) => r?.length,
     ),
   );
+}
+async function hover(doc, word) {
+  return hoverAt(doc, at(doc, word, true));
 }
 async function signature(doc, position, expected) {
   const result = await eventually(
@@ -255,16 +258,14 @@ scenario('game-api', async ({ extension }) => {
   assert.equal(members.items.find((i) => label(i) === 'AddGold').detail, 'C:AddGold(Gold)');
   const call = await signature(doc, new vscode.Position(1, 10), 'C:AddGold(Gold)');
   assert.equal(call.signatures[0].parameters[0].label, 'Gold');
-  const definitions = await execute(
-    'executeDefinitionProvider',
-    doc.uri,
-    new vscode.Position(1, 4),
-  );
-  assert.equal(
-    (definitions[0].uri ?? definitions[0].targetUri).toString(),
+  const method = new vscode.Position(1, 4);
+  const source =
     upstream(extension, 'ee-game-lua-functions') +
-      'EE%20Game%20Lua%20Functions/C/C_AddGold.rst#L11',
-  );
+    'EE%20Game%20Lua%20Functions/C/C_AddGold.rst#L11';
+  assert.ok((await hoverAt(doc, method)).includes(source), 'hover renders the pinned source');
+  // Upstream documentation is not a document the editor can open, so the client opens it externally
+  // and offers no in-editor location rather than one that fails to resolve.
+  assert.equal((await execute('executeDefinitionProvider', doc.uri, method))?.length ?? 0, 0);
 });
 scenario('eeex-api', async () => {
   const doc = await document(
@@ -300,18 +301,13 @@ scenario('structures', async ({ extension }) => {
   for (const fragment of ['CDerivedStatsTemplate', '0x0', '752'])
     assert.ok(help.includes(fragment));
   assert.ok((await hover(doc, 'CGameObject')).includes('m_objectType'));
-  const definitions = await execute(
-    'executeDefinitionProvider',
-    doc.uri,
-    new vscode.Position(2, 27),
-  );
-  assert.equal(
-    (definitions[0].uri ?? definitions[0].targetUri).toString(),
-    vscode.Uri.parse(
-      upstream(extension, 'ee-game-structures-x64') +
-        'EE%20Game%20Structures%20(x64)/CD/index.rst#L131',
-    ).toString(),
-  );
+  const field = new vscode.Position(2, 27);
+  const source = vscode.Uri.parse(
+    upstream(extension, 'ee-game-structures-x64') +
+      'EE%20Game%20Structures%20(x64)/CD/index.rst#L131',
+  ).toString();
+  assert.ok((await hoverAt(doc, field)).includes(source), 'hover renders the pinned source');
+  assert.equal((await execute('executeDefinitionProvider', doc.uri, field))?.length ?? 0, 0);
   await replace(doc, '---@param sprite CGameSprite\nlocal function inspect(sprite)\n sprite.\nend');
   await completion(doc, new vscode.Position(2, 8), 'm_active');
 });

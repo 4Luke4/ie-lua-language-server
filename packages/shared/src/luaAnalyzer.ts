@@ -1,4 +1,4 @@
-import { createPositionMapper } from './positions';
+import { createLocationMapper, createOffsetMapper, createPositionMapper } from './positions';
 import { analyzeBindings, fallbackBindings } from './bindings';
 import { extractEmbeddedLua, getVirtualLuaText, mapVirtualOffsetToHost } from './menuExtractor';
 import { defaultSettings } from './settings';
@@ -176,10 +176,11 @@ function analyzeLuaText(
 
 function makeParseDiagnostic(text: string, error: unknown): LuaDiagnostic {
   const anyError = error as { message?: string; line?: number; column?: number; index?: number };
+  // luaparse reports either a byte index or a one-based line with a zero-based column.
   const offset =
     typeof anyError.index === 'number'
       ? anyError.index
-      : positionToOffset(text, {
+      : createOffsetMapper(text)({
           line: Math.max(0, (anyError.line ?? 1) - 1),
           character: Math.max(0, anyError.column ?? 0),
         });
@@ -188,43 +189,6 @@ function makeParseDiagnostic(text: string, error: unknown): LuaDiagnostic {
     code: 'lua-parse',
     message: anyError.message ?? 'Lua parse error.',
     severity: 'error',
-    location: {
-      offsetRange: {
-        start: offset,
-        end: Math.min(text.length, offset + 1),
-      },
-      range: {
-        start: offsetToPosition(text, offset),
-        end: offsetToPosition(text, Math.min(text.length, offset + 1)),
-      },
-    },
+    location: createLocationMapper(text)(offset, Math.min(text.length, offset + 1)),
   };
-}
-
-function offsetToPosition(text: string, offset: number): { line: number; character: number } {
-  let line = 0;
-  let lineStart = 0;
-  const boundedOffset = Math.max(0, Math.min(text.length, offset));
-  for (let index = 0; index < boundedOffset; index += 1) {
-    if (text.charCodeAt(index) === 10) {
-      line += 1;
-      lineStart = index + 1;
-    }
-  }
-  return {
-    line,
-    character: boundedOffset - lineStart,
-  };
-}
-
-function positionToOffset(text: string, position: { line: number; character: number }): number {
-  let line = 0;
-  let offset = 0;
-  while (line < position.line && offset < text.length) {
-    if (text.charCodeAt(offset) === 10) {
-      line += 1;
-    }
-    offset += 1;
-  }
-  return Math.min(text.length, offset + position.character);
 }

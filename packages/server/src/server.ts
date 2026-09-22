@@ -47,11 +47,15 @@ import {
   makeApiCallableView,
   makeDocumentation,
   mergeSettings,
+  languageIds,
   normalizeSettings,
+  semanticTokenModifiers,
+  semanticTokenTypes,
   shouldValidate,
   type AnalyzedDocument,
   type ApiIndex,
   type ApiSymbol,
+  type IeLuaLanguageId,
   type IeLuaSettings,
   type LuaDiagnostic,
   type SettingsInput,
@@ -95,8 +99,8 @@ connection.onInitialized(() => {
 });
 
 const semanticLegend: SemanticTokensLegend = {
-  tokenTypes: ['namespace', 'function', 'method', 'parameter', 'variable', 'property'],
-  tokenModifiers: ['declaration', 'readonly', 'deprecated'],
+  tokenTypes: [...semanticTokenTypes],
+  tokenModifiers: [...semanticTokenModifiers],
 };
 
 connection.onInitialize((params: InitializeParams): InitializeResult => {
@@ -113,7 +117,8 @@ connection.onInitialize((params: InitializeParams): InitializeResult => {
         },
       },
       completionProvider: {
-        resolveProvider: true,
+        // Completion items carry their detail and documentation already, so advertising resolve
+        // would only add a round trip per item the editor previews.
         triggerCharacters: ['.', ':'],
       },
       hoverProvider: true,
@@ -235,7 +240,6 @@ connection.onCompletion(async (params) => {
   ];
 });
 
-connection.onCompletionResolve((item) => item);
 
 connection.onHover(async (params) => {
   const document = getOpenDocument(params.textDocument.uri);
@@ -591,7 +595,7 @@ function analysisState(document: TextDocument): AnalysisState {
     state.settings = settings;
     return analyzeDocument({
       uri: document.uri,
-      languageId: document.languageId === 'ie-menu' ? 'ie-menu' : 'ie-lua',
+      languageId: documentLanguageId(document),
       text: document.getText(),
       settings,
       luaparse,
@@ -821,8 +825,20 @@ function getWordAt(
   return word.length > 0 ? word : undefined;
 }
 
+// VS Code sends the contributed ie-menu language id, but editors configured by hand often send
+// their own (lua, or the file's own mode), and a wrong id would silently disable every embedded-Lua
+// behaviour for .menu documents. The URI extension is the fallback the protocol always carries.
+function documentLanguageId(document: TextDocument): IeLuaLanguageId {
+  if (document.languageId === languageIds.menu) return languageIds.menu;
+  return /\.menu$/iu.test(document.uri.split(/[?#]/u)[0] ?? '')
+    ? languageIds.menu
+    : languageIds.lua;
+}
+
 function formatDocument(document: TextDocument): TextEdit[] {
-  if (document.languageId === 'ie-menu') {
+  // The formatter leaves .menu documents untouched, so an unrecognised language id must not make
+  // one look like plain Lua and get its host text rewritten.
+  if (documentLanguageId(document) === languageIds.menu) {
     return [];
   }
 
