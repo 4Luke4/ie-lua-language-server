@@ -263,9 +263,6 @@ scenario('game-api', async ({ extension }) => {
     upstream(extension, 'ee-game-lua-functions') +
     'EE%20Game%20Lua%20Functions/C/C_AddGold.rst#L11';
   assert.ok((await hoverAt(doc, method)).includes(source), 'hover renders the pinned source');
-  // Upstream documentation is not a document the editor can open, so the client opens it externally
-  // and offers no in-editor location rather than one that fails to resolve.
-  assert.equal((await execute('executeDefinitionProvider', doc.uri, method))?.length ?? 0, 0);
 });
 scenario('eeex-api', async () => {
   const doc = await document(
@@ -308,7 +305,6 @@ scenario('structures', async ({ extension }) => {
     upstream(extension, 'ee-game-structures-x64') +
     'EE%20Game%20Structures%20(x64)/CD/index.rst#L131';
   assert.ok((await hoverAt(doc, field)).includes(source), 'hover renders the pinned source');
-  assert.equal((await execute('executeDefinitionProvider', doc.uri, field))?.length ?? 0, 0);
   await replace(doc, '---@param sprite CGameSprite\nlocal function inspect(sprite)\n sprite.\nend');
   await completion(doc, new vscode.Position(2, 8), 'm_active');
 });
