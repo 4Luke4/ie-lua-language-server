@@ -1,7 +1,7 @@
 # Architecture and trust boundaries
 
-The VS Code client starts a bundled Node language server over IPC. Kate and other clients run
-the same bundle over stdio. Document contents, settings, and configured API manifests are inputs;
+The VS Code client starts a bundled Node language server over IPC. Every other supported editor
+runs the same bundle over stdio. Document contents, settings, and configured API manifests are inputs;
 the server parses Lua and embedded menu text but does not execute game scripts. Its formatter
 performs targeted whitespace deletions outside strings/comments without invoking workspace executables.
 Analysis captures immutable document text, session identity, version, and configuration/API generation;
@@ -34,5 +34,7 @@ unreleased entry, with a preparation warning. Existing tags/releases are never r
 local profiles, and raw environment dumps must not enter artifacts.
 
 Residual limits: this is not a sandbox for a compromised editor or local filesystem. Stdio tests
-cover the server contract used by Kate, not Kate GUI interactions. Hosted-runner matrices cover
-their reported OS and architecture, not every operating-system release or CPU architecture.
+cover the server contract every non-VS Code editor uses, not those editors' GUI interactions.
+Shipped client configurations in `editors/` are inert data: they are validated structurally and
+never executed by this repository. Hosted-runner matrices cover their reported OS and architecture,
+not every operating-system release or CPU architecture.

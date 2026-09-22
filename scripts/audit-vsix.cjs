@@ -35,7 +35,7 @@ async function auditVsix(file, expectedChannel, root = process.cwd()) {
     );
     assert.ok(
       !/(\.map|\.test\.js|\.d\.ts|\.pem|\.key)$/u.test(name) &&
-        !/(^|\/)(AGENTS\.md|plan\.md|specs\.md|\.env(?:\..*)?)$/u.test(name),
+        !/(^|\/)(CLAUDE\.md|AGENTS\.md|plan\.md|specs\.md|\.env(?:\..*)?)$/u.test(name),
       `Excluded file: ${name}`,
     );
   }

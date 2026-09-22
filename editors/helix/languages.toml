@@ -1,0 +1,39 @@
+# Helix configuration for the IE Lua language server.
+#
+# Merge these entries into your user file and replace the install path:
+#   Linux/macOS  ~/.config/helix/languages.toml
+#   Windows      %APPDATA%\helix\languages.toml
+# A project-local .helix/languages.toml works the same way.
+#
+# .lua files keep Helix's built-in Lua language and send the id "lua", which this server treats as
+# IE Lua; overriding it here would change the id for every Lua server you use. .menu files have no
+# built-in language, so their entry sets `language-id` to "ie-menu" explicitly, which is the id the
+# server's embedded-Lua handling depends on.
+#
+# `config` is delivered as the LSP initialization options, which this server accepts as a source of
+# ieLua.* settings.
+
+[language-server.ie-lua]
+command = "node"
+args = ["/absolute/path/to/ie-lua-language-server/dist/server/server.js", "--stdio"]
+
+[language-server.ie-lua.config.ieLua.validation]
+mode = "save"
+debounceMs = 300
+
+# Infinity Engine Lua reuses Helix's built-in Lua grammar and only adds this server to it.
+[[language]]
+name = "lua"
+language-servers = ["ie-lua"]
+
+# .menu files are a host format with embedded Lua regions. There is no grammar for them, so the
+# entry exists to route the file to the server; highlighting falls back to plain text.
+[[language]]
+name = "ie-menu"
+language-id = "ie-menu"
+scope = "source.ie-menu"
+file-types = ["menu"]
+comment-token = "//"
+indent = { tab-width = 2, unit = "  " }
+roots = [".git"]
+language-servers = ["ie-lua"]

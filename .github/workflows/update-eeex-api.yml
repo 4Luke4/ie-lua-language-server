@@ -101,7 +101,7 @@ jobs:
                   const content = fs.readFileSync(file, 'utf8');
                   JSON.parse(content);
                   entries.push({ path: `resources/api/${path.relative('generated', file).split(path.sep).join('/')}`, mode: '100644', type: 'blob', content });
-                } else if (entry.name !== 'AGENTS.md') throw new Error(`Unexpected generated file: ${file}`);
+                } else if (entry.name !== 'CLAUDE.md') throw new Error(`Unexpected generated file: ${file}`);
               }
             };
             visit('generated');

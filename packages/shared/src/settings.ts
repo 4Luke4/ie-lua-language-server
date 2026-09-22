@@ -1,3 +1,4 @@
+import { sourceSectionIds } from './types';
 import type {
   IeLuaSettings,
   LuaDialect,
@@ -30,14 +31,7 @@ export interface SettingsInput {
   };
 }
 
-export const allSourceSections: SourceSectionId[] = [
-  'ee-game-lua-functions',
-  'eeex-functions',
-  'ee-game-structures-x64',
-  'lua52',
-  'luajit',
-  'ee-utility-functions',
-];
+export const allSourceSections: SourceSectionId[] = [...sourceSectionIds];
 
 export const defaultSettings: IeLuaSettings = {
   dialect: 'lua52',

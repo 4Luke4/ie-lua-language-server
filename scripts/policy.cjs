@@ -23,6 +23,94 @@ function validateLabels(definitions, rules) {
       `Missing label definition: ${name}`,
     );
 }
+// The manifest cannot import TypeScript, so the shared declarations are read back from source. This
+// keeps the contributed enum, the shipped index and the protocol legend tied to one definition
+// instead of four copies that only fail at runtime when they disagree.
+function sharedStringArray(source, name) {
+  const marker = `export const ${name} = [`;
+  const start = source.indexOf(marker);
+  assert.ok(start >= 0, `Missing shared declaration: ${name}`);
+  const end = source.indexOf('] as const;', start);
+  assert.ok(end > start, `Unterminated shared declaration: ${name}`);
+  const body = source.slice(start + marker.length, end);
+  return [...body.matchAll(/'([^']+)'/gu)].map((entry) => entry[1]);
+}
+function validateEditorIntegrations() {
+  const manifest = json('editors/manifest.json');
+  const ids = manifest.editors.map((editor) => editor.id);
+  assert.equal(new Set(ids).size, ids.length, 'Duplicate editor id');
+  const directories = fs
+    .readdirSync('editors', { withFileTypes: true })
+    .filter((entry) => entry.isDirectory())
+    .map((entry) => entry.name);
+  assert.deepEqual(
+    [...directories].sort(),
+    [...ids].sort(),
+    'editors/ and its manifest list different editors',
+  );
+  for (const editor of manifest.editors) {
+    assert.ok(fs.existsSync(editor.guide), `Missing editor guide: ${editor.id}`);
+    if (!editor.config) {
+      // An editor with no shippable configuration must record why, so the gap stays documented
+      // rather than looking like an omission.
+      assert.ok(editor.limitation, `Unsupported editor without a stated limitation: ${editor.id}`);
+      continue;
+    }
+    assert.ok(fs.existsSync(editor.config), `Missing editor configuration: ${editor.id}`);
+    const config = fs.readFileSync(editor.config, 'utf8');
+    // Every client starts the same bundle over stdio and must name both language ids. A
+    // configuration that omits ie-menu leaves .menu documents without embedded Lua analysis.
+    for (const token of ['--stdio', 'ie-lua', 'ie-menu'])
+      assert.ok(config.includes(token), `${editor.config} does not declare ${token}`);
+  }
+  // Kate's example is JSON and Sublime's syntax is YAML, so both are parsed rather than only
+  // scanned; each editor would fail quietly on a malformed file.
+  const kate = json('editors/kate/lsp-client.example.json');
+  for (const language of ['ie-lua', 'ie-menu'])
+    assert.equal(kate.servers[language].command.at(-1), '--stdio');
+  readYaml('editors/sublime/IE Menu.sublime-syntax');
+}
+function validateSharedContributions(pkg, sharedTypes, apiIndex) {
+  const sections = sharedStringArray(sharedTypes, 'sourceSectionIds');
+  const sources = pkg.contributes.configuration.properties['ieLua.symbolSources.enabled'];
+  assert.deepEqual(sources.items.enum, sections, 'Contributed source sections drifted');
+  assert.deepEqual(sources.default, sections, 'Default source sections drifted');
+  assert.deepEqual(
+    apiIndex.sections.map((section) => section.id),
+    sections,
+    'Shipped API sections drifted',
+  );
+  for (const [name, contribution] of [
+    ['semanticTokenTypes', pkg.contributes.semanticTokenTypes],
+    ['semanticTokenModifiers', pkg.contributes.semanticTokenModifiers],
+  ])
+    assert.deepEqual(
+      contribution.map((entry) => entry.id),
+      sharedStringArray(sharedTypes, name),
+      `Contributed ${name} drifted from the shared legend`,
+    );
+}
+function validateDeclaredLanguageServices(readme, inventory) {
+  // The README language-services bullet is the published list of individually named services. It is
+  // prose, so it is parsed back into names here: the six group markers alone would let a named
+  // service disappear from either the README or the verification inventory unnoticed.
+  const bullet = readme.match(/^- (.+?)\.\s*<!-- feature: language-services -->$/mu);
+  assert.ok(bullet, 'README must declare the language services it provides');
+  const declared = bullet[1]
+    .split(/,\s*(?:and\s+)?/u)
+    .map((service) => service.trim().toLowerCase())
+    .filter(Boolean);
+  assert.deepEqual(
+    declared,
+    inventory.declaredLanguageServices,
+    'README language services and the verification inventory disagree',
+  );
+  for (const service of inventory.declaredLanguageServices)
+    assert.ok(
+      inventory.cases.some((c) => c.features.includes(service)),
+      `Declared language service without a verification case: ${service}`,
+    );
+}
 function validateVersions(version, pkg, lock, workspaces, changelog) {
   assert.match(version, /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$/u);
   assert.equal(pkg.version, version);
@@ -118,6 +206,12 @@ function main() {
       inventory.cases.some((c) => c.groups.includes(group)),
       group,
     );
+  validateDeclaredLanguageServices(readme, inventory);
+  validateSharedContributions(
+    pkg,
+    fs.readFileSync('packages/shared/src/types.ts', 'utf8'),
+    json('resources/api/api-index.json'),
+  );
   for (const { command } of pkg.contributes.commands)
     assert.ok(
       inventory.cases.some((c) => c.commands.includes(command)),
@@ -145,11 +239,9 @@ function main() {
       `README provenance does not match the API manifest: ${source.id}`,
     );
   }
-  const kate = json('editors/kate/lsp-client.example.json');
-  for (const language of ['ie-lua', 'ie-menu'])
-    assert.equal(kate.servers[language].command.at(-1), '--stdio');
+  validateEditorIntegrations();
   for (const directory of ['.github', 'packages', 'resources/api'])
-    assert.ok(fs.existsSync(path.join(directory, 'AGENTS.md')));
+    assert.ok(fs.existsSync(path.join(directory, 'CLAUDE.md')));
   console.log('Repository policy passed');
 }
 function validateVerificationGraph(workflows) {
@@ -163,6 +255,10 @@ function validateVerificationGraph(workflows) {
     byFile['verify.yml'].jobs.responsiveness,
     'Responsiveness is required release coverage',
   );
+  assert.ok(
+    byFile['verify.yml'].jobs.features,
+    'Declared feature coverage is required release coverage',
+  );
   const gate = byFile['ci.yml'].jobs.verify;
   assert.equal(gate.name, 'Verify');
   assert.equal(gate.needs, 'suite');
@@ -173,7 +269,7 @@ function validateVerificationGraph(workflows) {
     for (const job of Object.values(workflow.jobs)) {
       for (const step of job.steps ?? []) {
         assert.ok(
-          !/npm (?:test\b|run test:(?:editor|lsp)\b)|vsce package/u.test(step.run ?? ''),
+          !/npm (?:test\b|run test:(?:editor|lsp|features)\b)|vsce package/u.test(step.run ?? ''),
           `${file}: verification belongs in the shared suite`,
         );
       }

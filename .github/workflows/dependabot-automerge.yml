@@ -73,4 +73,8 @@ jobs:
           set -euo pipefail
           current_head="$(gh pr view "$PR_URL" --json headRefOid --jq '.headRefOid')"
           test "$current_head" = "$PR_HEAD_SHA"
-          gh pr merge "$PR_URL" --squash --match-head-commit "$PR_HEAD_SHA"
+          # The ruleset requires branches to be up to date, so an immediate merge is refused outright
+          # ("N of N required status checks are expected") whenever main has moved since these checks
+          # ran. Queueing the merge instead lets it complete once the branch is current, which the
+          # Dependabot rebase workflow arranges.
+          gh pr merge "$PR_URL" --auto --squash --match-head-commit "$PR_HEAD_SHA"

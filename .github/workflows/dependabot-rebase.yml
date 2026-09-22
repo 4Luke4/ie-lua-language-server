@@ -1,0 +1,90 @@
+name: Dependabot rebase
+
+# The main ruleset requires branches to be up to date before merging, and Dependabot only rebases on
+# its own when an update conflicts. A pull request that merely falls behind therefore stays
+# unmergeable until it is asked to rebase, which is what this workflow does when main moves.
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '41 5 * * *'
+  workflow_dispatch:
+
+# Everything below reads and writes pull requests and nothing else, so DEPENDABOT_REBASE_TOKEN needs
+# only "Pull requests: read and write" alongside the mandatory "Metadata: read".
+permissions:
+  pull-requests: write
+
+concurrency:
+  group: dependabot-rebase
+  cancel-in-progress: false
+
+jobs:
+  request-rebase:
+    name: Request a rebase for out-of-date updates
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Ask out-of-date Dependabot pull requests to rebase
+        # Dependabot rejects commands from github-actions[bot] ("only users with push access can use
+        # that command"), so the default GITHUB_TOKEN would post a comment that is silently ignored.
+        # A dedicated token is required, and its absence is reported rather than failing the run.
+        env:
+          GH_TOKEN: ${{ secrets.DEPENDABOT_REBASE_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [[ -z "${GH_TOKEN:-}" ]]; then
+            echo "::notice::DEPENDABOT_REBASE_TOKEN is not configured. Dependabot only honours rebase requests from an account with push access, so no rebase was requested."
+            exit 0
+          fi
+
+          # mergeStateStatus is computed lazily and reports UNKNOWN while GitHub is still working it
+          # out; only a confirmed BEHIND is actionable, and a later run retries the rest.
+          behind="$(
+            gh pr list \
+              --repo "$GITHUB_REPOSITORY" \
+              --state open \
+              --limit 100 \
+              --json number,author,mergeStateStatus \
+              --jq '.[]
+                | select(.author.login == "dependabot[bot]")
+                | select(.mergeStateStatus == "BEHIND")
+                | .number'
+          )"
+
+          if [[ -z "$behind" ]]; then
+            echo "No Dependabot pull request is behind the base branch."
+            exit 0
+          fi
+
+          while read -r number; do
+            [[ -n "$number" ]] || continue
+            # Asking again for a head that has already been asked about would comment on every push
+            # to main, so the current head's commit date is compared against the newest request.
+            # Both come from this one pull-request read, which is why the token needs no access to
+            # repository contents.
+            # The $head, $pushed and $asked below are jq variables, not shell ones, so the
+            # single quotes are deliberate.
+            # shellcheck disable=SC2016
+            read -r pushed asked <<< "$(
+              gh pr view "$number" \
+                --repo "$GITHUB_REPOSITORY" \
+                --json headRefOid,commits,comments \
+                --jq '.headRefOid as $head
+                  | [.commits[] | select(.oid == $head) | .committedDate] as $pushed
+                  | [.comments[]
+                      | select(.body | test("^@dependabot rebase[[:space:]]*$"))
+                      | .createdAt] as $asked
+                  | "\($pushed[0] // "-") \(($asked | max) // "-")"'
+            )"
+            # "-" means unknown: never asked, or a head this read could not resolve. Either way the
+            # request is worth making, because Dependabot ignores a redundant one.
+            if [[ "$asked" != "-" && "$pushed" != "-" && "$asked" > "$pushed" ]]; then
+              echo "#$number: a rebase was already requested for the current head"
+              continue
+            fi
+            gh pr comment "$number" --repo "$GITHUB_REPOSITORY" --body '@dependabot rebase'
+            echo "#$number: requested a rebase"
+          done <<< "$behind"

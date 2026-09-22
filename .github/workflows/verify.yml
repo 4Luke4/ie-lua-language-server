@@ -87,6 +87,37 @@ jobs:
           path: reports/
           retention-days: 7
 
+  features:
+    # Declared-feature coverage runs on the stdio transport every non-VS Code editor uses, so a
+    # service the README names cannot quietly stop answering on any supported platform.
+    name: Declared feature coverage (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, windows-2022, macos-14]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - run: npm ci --no-audit --progress=false
+      - run: npm run bundle
+      - run: npm run test:features
+        timeout-minutes: 5
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        if: always()
+        with:
+          name: features-${{ matrix.os }}
+          path: reports/
+          if-no-files-found: error
+          retention-days: 7
+
   package:
     name: Package both channels
     runs-on: ubuntu-24.04
