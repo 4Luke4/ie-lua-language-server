@@ -65,6 +65,9 @@ jobs:
             # to main, so the current head's commit date is compared against the newest request.
             # Both come from this one pull-request read, which is why the token needs no access to
             # repository contents.
+            # The $head, $pushed and $asked below are jq variables, not shell ones, so the
+            # single quotes are deliberate.
+            # shellcheck disable=SC2016
             read -r pushed asked <<< "$(
               gh pr view "$number" \
                 --repo "$GITHUB_REPOSITORY" \
