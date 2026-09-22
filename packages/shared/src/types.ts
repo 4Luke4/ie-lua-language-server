@@ -9,13 +9,31 @@ export type LuaDialect = 'lua52' | 'luajit';
 export type ValidationMode = 'manual' | 'save' | 'type' | 'saveAndType';
 export type UnknownGlobalSeverity = 'off' | 'hint' | 'warning';
 
-export type SourceSectionId =
-  | 'ee-game-lua-functions'
-  | 'eeex-functions'
-  | 'ee-game-structures-x64'
-  | 'lua52'
-  | 'luajit'
-  | 'ee-utility-functions';
+// The shipped API index, the ieLua.symbolSources.enabled contribution and the packaging audit must
+// agree on these six identifiers, so they are declared once and the union is derived from them.
+export const sourceSectionIds = [
+  'ee-game-lua-functions',
+  'eeex-functions',
+  'ee-game-structures-x64',
+  'lua52',
+  'luajit',
+  'ee-utility-functions',
+] as const;
+
+export type SourceSectionId = (typeof sourceSectionIds)[number];
+
+// Order is significant: the protocol encodes a token's type and modifiers as indexes into this
+// legend, so the server, the shared analysis types and the package contribution share one list.
+export const semanticTokenTypes = [
+  'namespace',
+  'function',
+  'method',
+  'parameter',
+  'variable',
+  'property',
+] as const;
+
+export const semanticTokenModifiers = ['declaration', 'readonly', 'deprecated'] as const;
 
 export type ApiSymbolKind =
   'function' | 'method' | 'module' | 'structure' | 'field' | 'variable' | 'keyword' | 'annotation';
@@ -208,8 +226,8 @@ export interface LuaDiagnostic {
 
 export interface SemanticTokenInfo {
   location: SourceLocation;
-  tokenType: 'namespace' | 'function' | 'method' | 'parameter' | 'variable' | 'property';
-  tokenModifiers: Array<'declaration' | 'readonly' | 'deprecated'>;
+  tokenType: (typeof semanticTokenTypes)[number];
+  tokenModifiers: Array<(typeof semanticTokenModifiers)[number]>;
 }
 
 export interface FoldInfo {

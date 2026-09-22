@@ -22,8 +22,8 @@ documentation:
           - SECURITY.md
           - THIRD_PARTY_NOTICES.md
           - docs/**
-          - '**/AGENTS.md'
-          - AGENTS.md
+          - '**/CLAUDE.md'
+          - CLAUDE.md
 
 javascript:
   - changed-files:

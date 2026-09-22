@@ -53,6 +53,19 @@ export async function activate(context: vscode.ExtensionContext): Promise<void> 
       fileEvents: vscode.workspace.createFileSystemWatcher('**/*.{lua,menu}'),
     },
     outputChannel,
+    middleware: {
+      // API symbols are defined in upstream documentation, so the server answers with the pinned
+      // https source URL. Handing that to the editor as a document location fails, because there is
+      // nothing to open as text. Open it the way Show API Source does and report no in-editor
+      // location, so the command resolves instead of failing silently.
+      provideDefinition: async (document, position, token, next) => {
+        const result = await next(document, position, token);
+        const external = externalDefinition(result);
+        if (!external) return result;
+        await vscode.env.openExternal(external);
+        return undefined;
+      },
+    },
   };
 
   client = new LanguageClient(
@@ -69,6 +82,17 @@ export async function activate(context: vscode.ExtensionContext): Promise<void> 
 export async function deactivate(): Promise<void> {
   await client?.stop();
   client = undefined;
+}
+
+// A definition answer is either a Location, a Definition array, or LocationLink entries. Only a
+// single http(s) target is treated as external; anything else is a real in-editor location and is
+// left for the editor to handle normally.
+function externalDefinition(result: vscode.ProviderResult<unknown>): vscode.Uri | undefined {
+  const entries = Array.isArray(result) ? result : result ? [result] : [];
+  if (entries.length !== 1) return undefined;
+  const entry = entries[0] as { uri?: vscode.Uri; targetUri?: vscode.Uri };
+  const uri = entry?.uri ?? entry?.targetUri;
+  return uri && ['http', 'https'].includes(uri.scheme) ? uri : undefined;
 }
 
 function registerCommands(context: vscode.ExtensionContext): void {

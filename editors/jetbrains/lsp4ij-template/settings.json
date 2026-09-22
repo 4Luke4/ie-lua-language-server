@@ -1,0 +1,8 @@
+{
+  "ieLua": {
+    "validation": {
+      "mode": "save",
+      "debounceMs": 300
+    }
+  }
+}

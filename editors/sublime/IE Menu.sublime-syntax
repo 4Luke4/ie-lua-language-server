@@ -1,0 +1,65 @@
+%YAML 1.2
+---
+# Infinity Engine .menu syntax for Sublime Text.
+#
+# Its only jobs are to give .menu buffers a base scope of source.ie-menu, which is what makes the LSP
+# package send the "ie-menu" language id, and to keep the embedded Lua regions visually distinct.
+# Analysis of those regions is the language server's responsibility, not this file's.
+name: IE Menu
+file_extensions:
+  - menu
+scope: source.ie-menu
+version: 2
+
+contexts:
+  main:
+    - include: comments
+    - include: lua-chunks
+    - include: strings
+    - include: keywords
+    - include: numbers
+
+  comments:
+    - match: //
+      scope: punctuation.definition.comment.ie-menu
+      push:
+        - meta_scope: comment.line.double-slash.ie-menu
+        - match: $\n?
+          pop: true
+
+  lua-chunks:
+    # Backtick-delimited chunks are the largest embedded Lua form; the server maps offsets inside
+    # them back to the host document.
+    - match: '`'
+      scope: punctuation.definition.string.begin.ie-menu
+      push:
+        - meta_scope: meta.embedded.block.lua.ie-menu
+        - meta_content_scope: source.lua.embedded.ie-menu
+        - match: '`'
+          scope: punctuation.definition.string.end.ie-menu
+          pop: true
+
+  strings:
+    - match: '"'
+      scope: punctuation.definition.string.begin.ie-menu
+      push:
+        - meta_scope: string.quoted.double.ie-menu
+        - match: \\.
+          scope: constant.character.escape.ie-menu
+        - match: '"'
+          scope: punctuation.definition.string.end.ie-menu
+          pop: true
+        - match: $\n?
+          pop: true
+
+  keywords:
+    - match: \b(menu|item|label|button|text|list|slider|scrollbar|template)\b
+      scope: keyword.declaration.ie-menu
+    - match: \b(action|actionDbl|actionAlt|onOpen|onopen|onClose|onclose|enabled|clickable|lua)\b
+      scope: keyword.control.ie-menu
+    - match: \b(true|false)\b
+      scope: constant.language.ie-menu
+
+  numbers:
+    - match: \b(0[xX][0-9a-fA-F]+|\d+(\.\d+)?)\b
+      scope: constant.numeric.ie-menu

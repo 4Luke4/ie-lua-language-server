@@ -1,15 +1,9 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
+import { sourceSectionIds } from '@ie-lua/shared';
 
 const repoRoot = path.resolve(__dirname, '../..');
-const expectedSections = [
-  'ee-game-lua-functions',
-  'eeex-functions',
-  'ee-game-structures-x64',
-  'lua52',
-  'luajit',
-  'ee-utility-functions',
-] as const;
+const expectedSections = sourceSectionIds;
 
 const splitSections = new Set([
   'ee-game-lua-functions',

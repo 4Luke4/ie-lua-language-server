@@ -7,16 +7,39 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [0.6.1] - Unreleased
 
+### Added
+
+- Verify every language service named in the README as its own case against the bundled stdio
+  server on Linux, Windows, and macOS, and fail the policy check when that list and the
+  verification inventory disagree.
+- Ask out-of-date Dependabot pull requests to rebase when the base branch moves, so the
+  up-to-date merge requirement stops leaving them unmergeable.
+- Ship client configurations and setup guides for Sublime Text, Neovim, Emacs, JetBrains IDEs,
+  Helix, Geany and Kate, and document what Zed and Notepad++ actually require. The policy check
+  validates every shipped configuration against the manifest in `editors/`.
+
 ### Fixed
 
 - Split pipe-separated upstream instance names into one callable alias each, unblocking EEex ingestion.
 - Derive pinned upstream revisions from the shipped API manifest instead of repeating them in
   installed-extension expectations and documented provenance.
+- Queue the Dependabot patch auto-merge instead of merging immediately, so a branch that falls
+  behind while its checks run no longer fails the job with a rule violation.
+- Recognise `.menu` documents by their file extension when a client sends a different language id,
+  so embedded Lua analysis and the formatter boundary no longer depend on the editor's naming.
+- Open an API symbol's upstream documentation externally on Go to Definition instead of returning a
+  location the editor cannot open.
 
 ### Changed
 
 - Refresh the EEex source sections to upstream 35445db, adding the UncapFPS namespace and
   raising EEex Functions from 297 to 313 symbols.
+- Replace the repository's `AGENTS.md` instruction files with equivalent `CLAUDE.md` files.
+- Declare the source section identifiers and semantic token legend once in the shared package and
+  check the manifest contributions against them.
+- Remove unused shared exports and fold three hand-rolled offset/position conversions into the
+  indexed mapper that already backs analysis.
+- Lint the CommonJS scripts and test harnesses, which no lint configuration previously matched.
 
 ## [0.6.0] - 2026-09-08
 

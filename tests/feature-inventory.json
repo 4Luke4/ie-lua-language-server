@@ -1,4 +1,18 @@
 {
+  "declaredLanguageServices": [
+    "completion",
+    "hover",
+    "signature help",
+    "go to definition",
+    "find references",
+    "same-file rename",
+    "diagnostics",
+    "formatting",
+    "document symbols",
+    "workspace symbols",
+    "semantic tokens",
+    "folding"
+  ],
   "readmeGroups": [
     "language-services",
     "scope-and-fallback",
@@ -21,9 +35,9 @@
       "features": [
         "completion",
         "hover",
-        "definition",
-        "references",
-        "rename",
+        "go to definition",
+        "find references",
+        "same-file rename",
         "document symbols",
         "workspace symbols",
         "semantic tokens",
