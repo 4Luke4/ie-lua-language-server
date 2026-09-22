@@ -22,8 +22,8 @@
   is published; publication remains manual and never targets an existing tag or release.
 - Runtime dependency notice obligations and any changed boundaries in SECURITY.md and the threat
   model are reviewed. Local game samples, development files, and secrets are absent from the VSIX.
-- Record remaining coverage limits explicitly: no Kate GUI automation, screen-reader usability
-  certification, or additional CPU architectures beyond the runner matrix.
+- Record remaining coverage limits explicitly: no GUI automation for any non-VS Code editor, no
+  screen-reader usability certification, and no CPU architectures beyond the runner matrix.
 
 Use the Actions UI to inspect failures and download VSIX, logs, and maintenance patches. Apply
 reviewed changes and rerun Actions; do not run verification, installation, or packaging locally.
