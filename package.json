@@ -275,6 +275,7 @@
     "publish:marketplace:pre-release": "vsce publish --pre-release --packagePath ./*.vsix",
     "verify": "npm run compile && npm run lint && npm run format:check && npm test && npm run bundle && npm run package:audit",
     "test:lsp": "node --test tests/lsp.test.cjs",
+    "test:features": "node --test tests/features.test.cjs",
     "test:editor": "node tests/editor/run.cjs",
     "policy:check": "node scripts/policy.cjs",
     "package:audit:vsix": "node scripts/audit-vsix.cjs",

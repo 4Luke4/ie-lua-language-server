@@ -6,6 +6,8 @@
   missing, cancelled, or skipped required coverage is not a pass.
 - Every scenario in the [feature inventory](../verification.md) passes for both package channels
   and both accessibility profiles. Downloadable reports identify the tested editor versions.
+- The declared feature coverage job reports every language service the README names as `passed` on
+  all three runners. A service that is renamed, dropped, or left unverified fails the policy check.
 - The responsiveness job completes all fixed workloads, with passing correctness checks and a
   downloadable report. Timings establish a baseline, not a latency or memory-use guarantee.
 - For 0.6.0, review the compatibility contract and acceptance record in [0.6.0.md](0.6.0.md).

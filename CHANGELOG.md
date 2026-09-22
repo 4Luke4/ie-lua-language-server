@@ -7,11 +7,21 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [0.6.1] - Unreleased
 
+### Added
+
+- Verify every language service named in the README as its own case against the bundled stdio
+  server on Linux, Windows, and macOS, and fail the policy check when that list and the
+  verification inventory disagree.
+- Ask out-of-date Dependabot pull requests to rebase when the base branch moves, so the
+  up-to-date merge requirement stops leaving them unmergeable.
+
 ### Fixed
 
 - Split pipe-separated upstream instance names into one callable alias each, unblocking EEex ingestion.
 - Derive pinned upstream revisions from the shipped API manifest instead of repeating them in
   installed-extension expectations and documented provenance.
+- Queue the Dependabot patch auto-merge instead of merging immediately, so a branch that falls
+  behind while its checks run no longer fails the job with a rule violation.
 
 ### Changed
 
