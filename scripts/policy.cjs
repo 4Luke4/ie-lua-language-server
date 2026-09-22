@@ -109,9 +109,8 @@ function main() {
     if (file.endsWith('.yml')) readYaml(file);
   }
   const inventory = json('tests/feature-inventory.json');
-  const groups = [
-    ...fs.readFileSync('README.md', 'utf8').matchAll(/<!-- feature: ([a-z-]+) -->/gu),
-  ].map((m) => m[1]);
+  const readme = fs.readFileSync('README.md', 'utf8');
+  const groups = [...readme.matchAll(/<!-- feature: ([a-z-]+) -->/gu)].map((m) => m[1]);
   assert.deepEqual(groups, inventory.readmeGroups, 'README feature inventory drift');
   assert.equal(new Set(inventory.cases.map((c) => c.id)).size, inventory.cases.length);
   for (const group of groups)
@@ -136,6 +135,15 @@ function main() {
   for (const grammar of pkg.contributes.grammars) {
     assert.ok(fs.existsSync(grammar.path));
     assert.equal(json(grammar.path).scopeName, grammar.scopeName);
+  }
+  // Documented provenance is a claim about the shipped data, so it is checked against the manifest
+  // rather than maintained by hand; a refresh that moves the pinned revision must move it here too.
+  for (const source of json('resources/api/api-index.json').sources) {
+    if (!source.url.startsWith('https://')) continue;
+    assert.ok(
+      readme.includes(`- ${source.title}: \`${source.url}\``),
+      `README provenance does not match the API manifest: ${source.id}`,
+    );
   }
   const kate = json('editors/kate/lsp-client.example.json');
   for (const language of ['ie-lua', 'ie-menu'])

@@ -10,6 +10,13 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Fixed
 
 - Split pipe-separated upstream instance names into one callable alias each, unblocking EEex ingestion.
+- Derive pinned upstream revisions from the shipped API manifest instead of repeating them in
+  installed-extension expectations and documented provenance.
+
+### Changed
+
+- Refresh the EEex source sections to upstream 35445db, adding the UncapFPS namespace and
+  raising EEex Functions from 297 to 313 symbols.
 
 ## [0.6.0] - 2026-09-08
 
