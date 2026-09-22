@@ -124,7 +124,21 @@ test('stdio server answers every declared language service', { timeout: 120000 }
     const location = Array.isArray(result) ? result[0] : result;
     assert.equal(location.uri, lexical.uri, 'Definition must resolve in the same document');
     assert.equal(location.range.start.line, 1, 'Definition must resolve to the declaration');
-    return { line: location.range.start.line };
+
+    // An API symbol is defined in upstream documentation, so the server answers with the pinned
+    // source URL rather than a file. The VS Code client turns that into an external open; other
+    // clients receive it as it is. Asserting it here keeps the contract on the protocol, where it
+    // belongs, instead of in an editor host that would launch a browser to check it.
+    const documented = await client.request('textDocument/definition', {
+      textDocument: api,
+      position: position(0, 5),
+    });
+    const target = Array.isArray(documented) ? documented[0] : documented;
+    assert.match(
+      target.uri,
+      /^https:\/\/github\.com\/Bubb13\/EEex-Docs\/blob\/[0-9a-f]{40}\/.+#L\d+$/u,
+    );
+    return { line: location.range.start.line, upstream: target.uri };
   });
 
   await feature(t, 'find references', async () => {

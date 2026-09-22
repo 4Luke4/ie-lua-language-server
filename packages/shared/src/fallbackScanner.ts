@@ -1,4 +1,4 @@
-import { createLocationMapper, createPositionMapper } from './positions';
+import { createLocationMapper } from './positions';
 import type {
   FoldInfo,
   ReferenceInfo,
@@ -100,17 +100,6 @@ export function scanLuaFallback(text: string, offsetBase = 0): FallbackScanResul
     folds: findFolds(text, offsetBase, mapLocation),
     semanticTokens,
   };
-}
-
-export function makeLocation(text: string, startOffset: number, endOffset: number): SourceLocation {
-  return createLocationMapper(text)(startOffset, endOffset);
-}
-
-export function offsetToPosition(
-  text: string,
-  offset: number,
-): { line: number; character: number } {
-  return createPositionMapper(text)(offset);
 }
 
 function findFolds(

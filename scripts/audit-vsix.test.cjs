@@ -49,7 +49,8 @@ test('archive audit checks shipped bytes and channel', async (t) => {
 for (const [name, change, error] of [
   ['missing runtime', (z) => z.remove('extension/dist/server/server.js'), /Missing archive/u],
   ['local sample', (z) => z.file('extension/samples/private.lua', 'secret'), /Development/u],
-  ['agent instructions', (z) => z.file('extension/AGENTS.md', 'instructions'), /Excluded/u],
+  ['agent instructions', (z) => z.file('extension/CLAUDE.md', 'instructions'), /Excluded/u],
+  ['legacy agent instructions', (z) => z.file('extension/AGENTS.md', 'old'), /Excluded/u],
   [
     'missing shard',
     (z) => z.remove('extension/resources/api/sections/test.json'),
