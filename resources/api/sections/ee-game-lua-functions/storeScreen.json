@@ -1,11 +1,11 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-08-25T18:10:55.136Z",
+  "generatedAt": "2026-09-22T13:41:25.745Z",
   "source": {
     "id": "ee-game-lua-functions",
     "title": "EE Game Lua Functions",
-    "url": "https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions",
-    "commit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+    "url": "https://github.com/Bubb13/EEex-Docs/tree/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions",
+    "commit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
     "licenseStatus": "allowed"
   },
   "title": "storeScreen",
@@ -21,8 +21,8 @@
       "instanceName": "GetGroupCost",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:GetGroupCost()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_GetGroupCost.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_GetGroupCost.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -35,8 +35,8 @@
       "instanceName": "GetIdentifyCost",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:GetIdentifyCost()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_GetIdentifyCost.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_GetIdentifyCost.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -49,8 +49,8 @@
       "instanceName": "GetMenuName",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:GetMenuName()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_GetMenuName.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_GetMenuName.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -63,8 +63,8 @@
       "instanceName": "GetPanelButtonEnabled",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:GetPanelButtonEnabled()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_GetPanelButtonEnabled.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_GetPanelButtonEnabled.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -77,8 +77,8 @@
       "instanceName": "GetPanelButtonId",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:GetPanelButtonId()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_GetPanelButtonId.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_GetPanelButtonId.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -91,8 +91,8 @@
       "instanceName": "GetPanelButtonPanelId",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:GetPanelButtonPanelId()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_GetPanelButtonPanelId.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_GetPanelButtonPanelId.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -105,8 +105,8 @@
       "instanceName": "GetPanelButtonSequence",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:GetPanelButtonSequence()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_GetPanelButtonSequence.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_GetPanelButtonSequence.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -119,8 +119,8 @@
       "instanceName": "GetPanelButtonToolTip",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:GetPanelButtonToolTip()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_GetPanelButtonToolTip.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_GetPanelButtonToolTip.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -133,8 +133,8 @@
       "instanceName": "GetRoomCost",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:GetRoomCost()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_GetRoomCost.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_GetRoomCost.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -147,8 +147,8 @@
       "instanceName": "GetRoomType",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:GetRoomType()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_GetRoomType.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_GetRoomType.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -161,8 +161,8 @@
       "instanceName": "GetSpellCost",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:GetSpellCost()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_GetSpellCost.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_GetSpellCost.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -175,8 +175,8 @@
       "instanceName": "GetStoreCost",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:GetStoreCost()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_GetStoreCost.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_GetStoreCost.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -189,8 +189,8 @@
       "instanceName": "GetStoreName",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:GetStoreName()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_GetStoreName.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_GetStoreName.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -203,8 +203,8 @@
       "instanceName": "IsBuyItemButtonClickable",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:IsBuyItemButtonClickable()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_IsBuyItemButtonClickable.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_IsBuyItemButtonClickable.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -217,8 +217,8 @@
       "instanceName": "IsBuySpellButtonClickable",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:IsBuySpellButtonClickable()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_IsBuySpellButtonClickable.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_IsBuySpellButtonClickable.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -231,8 +231,8 @@
       "instanceName": "IsCloseBagButtonClickable",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:IsCloseBagButtonClickable()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_IsCloseBagButtonClickable.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_IsCloseBagButtonClickable.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -245,8 +245,8 @@
       "instanceName": "IsContainer",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:IsContainer()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_IsContainer.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_IsContainer.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -259,8 +259,8 @@
       "instanceName": "IsDonateButtonClickable",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:IsDonateButtonClickable()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_IsDonateButtonClickable.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_IsDonateButtonClickable.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -273,8 +273,8 @@
       "instanceName": "IsDoneButtonClickable",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:IsDoneButtonClickable()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_IsDoneButtonClickable.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_IsDoneButtonClickable.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -287,8 +287,8 @@
       "instanceName": "IsIdentifyItemButtonClickable",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:IsIdentifyItemButtonClickable()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_IsIdentifyItemButtonClickable.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_IsIdentifyItemButtonClickable.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -301,8 +301,8 @@
       "instanceName": "IsMainCancelButtonClickable",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:IsMainCancelButtonClickable()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_IsMainCancelButtonClickable.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_IsMainCancelButtonClickable.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -315,8 +315,8 @@
       "instanceName": "IsMainDoneButtonClickable",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:IsMainDoneButtonClickable()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_IsMainDoneButtonClickable.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_IsMainDoneButtonClickable.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -329,8 +329,8 @@
       "instanceName": "IsRentRoomButtonClickable",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:IsRentRoomButtonClickable()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_IsRentRoomButtonClickable.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_IsRentRoomButtonClickable.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -343,8 +343,8 @@
       "instanceName": "IsRoomTypeClickable",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:IsRoomTypeClickable()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_IsRoomTypeClickable.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_IsRoomTypeClickable.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -357,8 +357,8 @@
       "instanceName": "IsSellItemButtonClickable",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:IsSellItemButtonClickable()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_IsSellItemButtonClickable.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_IsSellItemButtonClickable.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -371,8 +371,8 @@
       "instanceName": "IsSpriteOrderable",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:IsSpriteOrderable()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_IsSpriteOrderable.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_IsSpriteOrderable.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -385,8 +385,8 @@
       "instanceName": "IsStealEnabled",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:IsStealEnabled()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_IsStealEnabled.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_IsStealEnabled.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -399,8 +399,8 @@
       "instanceName": "IsStealItemButtonClickable",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:IsStealItemButtonClickable()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_IsStealItemButtonClickable.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_IsStealItemButtonClickable.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -413,8 +413,8 @@
       "instanceName": "OnBuyDrinkButtonClick",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:OnBuyDrinkButtonClick()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_OnBuyDrinkButtonClick.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_OnBuyDrinkButtonClick.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -427,8 +427,8 @@
       "instanceName": "OnBuyItemButtonClick",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:OnBuyItemButtonClick()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_OnBuyItemButtonClick.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_OnBuyItemButtonClick.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -441,8 +441,8 @@
       "instanceName": "OnBuySpellButtonClick",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:OnBuySpellButtonClick()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_OnBuySpellButtonClick.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_OnBuySpellButtonClick.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -455,8 +455,8 @@
       "instanceName": "OnCloseBagButtonClick",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:OnCloseBagButtonClick()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_OnCloseBagButtonClick.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_OnCloseBagButtonClick.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -469,8 +469,8 @@
       "instanceName": "OnDonateButtonClick",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:OnDonateButtonClick()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_OnDonateButtonClick.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_OnDonateButtonClick.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -483,8 +483,8 @@
       "instanceName": "OnIdentifyItemButtonClick",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:OnIdentifyItemButtonClick()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_OnIdentifyItemButtonClick.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_OnIdentifyItemButtonClick.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -497,8 +497,8 @@
       "instanceName": "OnMainDoneButtonClick",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:OnMainDoneButtonClick()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_OnMainDoneButtonClick.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_OnMainDoneButtonClick.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -511,8 +511,8 @@
       "instanceName": "OnRentRoomButtonClick",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:OnRentRoomButtonClick()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_OnRentRoomButtonClick.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_OnRentRoomButtonClick.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -525,8 +525,8 @@
       "instanceName": "OnSellItemButtonClick",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:OnSellItemButtonClick()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_OnSellItemButtonClick.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_OnSellItemButtonClick.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -539,8 +539,8 @@
       "instanceName": "OnStealItemButtonClick",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:OnStealItemButtonClick()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_OnStealItemButtonClick.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_OnStealItemButtonClick.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -553,8 +553,8 @@
       "instanceName": "OpenBag",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:OpenBag()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_OpenBag.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_OpenBag.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -567,8 +567,8 @@
       "instanceName": "RestParty",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:RestParty()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_RestParty.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_RestParty.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -581,8 +581,8 @@
       "instanceName": "SelectGroupItem",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:SelectGroupItem()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_SelectGroupItem.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_SelectGroupItem.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -595,8 +595,8 @@
       "instanceName": "SelectIdentifyItem",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:SelectIdentifyItem()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_SelectIdentifyItem.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_SelectIdentifyItem.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -609,8 +609,8 @@
       "instanceName": "SelectSpellItem",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:SelectSpellItem()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_SelectSpellItem.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_SelectSpellItem.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -623,8 +623,8 @@
       "instanceName": "SelectStoreItem",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:SelectStoreItem()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_SelectStoreItem.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_SelectStoreItem.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -637,8 +637,8 @@
       "instanceName": "SetGroupItemCount",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:SetGroupItemCount()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_SetGroupItemCount.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_SetGroupItemCount.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -651,8 +651,8 @@
       "instanceName": "SetRoomType",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:SetRoomType()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_SetRoomType.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_SetRoomType.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -665,8 +665,8 @@
       "instanceName": "SetStoreItemCount",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:SetStoreItemCount()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_SetStoreItemCount.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_SetStoreItemCount.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -679,8 +679,8 @@
       "instanceName": "UpdateBuyDrinksPanel",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:UpdateBuyDrinksPanel()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_UpdateBuyDrinksPanel.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_UpdateBuyDrinksPanel.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -693,8 +693,8 @@
       "instanceName": "UpdateBuySellPanel",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:UpdateBuySellPanel()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_UpdateBuySellPanel.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_UpdateBuySellPanel.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -707,8 +707,8 @@
       "instanceName": "UpdateBuySpellPanel",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:UpdateBuySpellPanel()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_UpdateBuySpellPanel.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_UpdateBuySpellPanel.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -721,8 +721,8 @@
       "instanceName": "UpdateDonatePanel",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:UpdateDonatePanel()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_UpdateDonatePanel.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_UpdateDonatePanel.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -735,8 +735,8 @@
       "instanceName": "UpdateIdentifyPanel",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:UpdateIdentifyPanel()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_UpdateIdentifyPanel.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_UpdateIdentifyPanel.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -749,8 +749,8 @@
       "instanceName": "UpdateRentRoomPanel",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:UpdateRentRoomPanel()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_UpdateRentRoomPanel.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_UpdateRentRoomPanel.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -763,8 +763,8 @@
       "instanceName": "UpdateStealPanel",
       "documentationMarkdown": "**Parameters**\n\n**Returns**\n\n**Notes**\n\n**Example**\n\n```lua\nstoreScreen:UpdateStealPanel()\n```\n\n**See Also**\n\n,",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_UpdateStealPanel.rst#L11",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions/storeScreen/storeScreen_UpdateStealPanel.rst#L11",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     }
   ]

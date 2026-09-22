@@ -1,11 +1,11 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-08-25T18:10:55.136Z",
+  "generatedAt": "2026-09-22T13:41:25.745Z",
   "source": {
     "id": "eeex-functions",
     "title": "EEex Functions",
-    "url": "https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions",
-    "commit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+    "url": "https://github.com/Bubb13/EEex-Docs/tree/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions",
+    "commit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
     "licenseStatus": "allowed"
   },
   "title": "Utility",
@@ -19,8 +19,8 @@
       "signature": "EEex_Utility_AlphanumericCompare()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst#L16",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Utility/index.rst#L16",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -31,8 +31,8 @@
       "signature": "EEex_Utility_AlphanumericSortTable()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst#L24",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Utility/index.rst#L24",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -43,8 +43,8 @@
       "signature": "EEex_Utility_ApplyIterator()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst#L32",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Utility/index.rst#L32",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -55,8 +55,8 @@
       "signature": "EEex_Utility_AugmentIterator()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst#L40",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Utility/index.rst#L40",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -67,8 +67,8 @@
       "signature": "EEex_Utility_CallIfExists()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst#L48",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Utility/index.rst#L48",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -79,8 +79,8 @@
       "signature": "EEex_Utility_CallSuper()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst#L56",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Utility/index.rst#L56",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -91,8 +91,8 @@
       "signature": "EEex_Utility_ChainIteratorGenerators()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst#L64",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Utility/index.rst#L64",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -103,8 +103,8 @@
       "signature": "EEex_Utility_ChainIteratorGeneratorsTable()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst#L72",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Utility/index.rst#L72",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -115,8 +115,8 @@
       "signature": "EEex_Utility_ChainIterators()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst#L80",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Utility/index.rst#L80",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -127,8 +127,8 @@
       "signature": "EEex_Utility_ChainIteratorsTable()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst#L88",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Utility/index.rst#L88",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -139,8 +139,8 @@
       "signature": "EEex_Utility_CollectIteratorValue()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst#L96",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Utility/index.rst#L96",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -151,8 +151,8 @@
       "signature": "EEex_Utility_CollectIteratorValues()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst#L104",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Utility/index.rst#L104",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -163,8 +163,8 @@
       "signature": "EEex_Utility_DeepCopy()",
       "documentationMarkdown": "> **Warning**\n> **Deprecated:** Use `EEex.DeepCopy` instead.",
       "documentationState": "documented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst#L112",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Utility/index.rst#L112",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -175,8 +175,8 @@
       "signature": "EEex_Utility_Default()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst#L121",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Utility/index.rst#L121",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -187,8 +187,8 @@
       "signature": "EEex_Utility_Eval()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst#L129",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Utility/index.rst#L129",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -199,8 +199,8 @@
       "signature": "EEex_Utility_FilterIterator()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst#L137",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Utility/index.rst#L137",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -211,8 +211,8 @@
       "signature": "EEex_Utility_Find()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst#L145",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Utility/index.rst#L145",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -223,8 +223,26 @@
       "signature": "EEex_Utility_FreeCPtrList()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst#L153",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Utility/index.rst#L153",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Utility_GetMicroseconds",
+      "name": "EEex_Utility_GetMicroseconds",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Utility_GetMicroseconds()",
+      "returns": [
+        {
+          "type": "number",
+          "description": "See summary."
+        }
+      ],
+      "documentationMarkdown": "> **Summary**\n> Returns the number of microseconds that have elapsed since EEex's initialization.\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| number | See summary. |",
+      "documentationState": "documented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Utility/index.rst#L161",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -235,8 +253,8 @@
       "signature": "EEex_Utility_GetOrCreate()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst#L161",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Utility/index.rst#L180",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -247,8 +265,8 @@
       "signature": "EEex_Utility_GetOrCreateTable()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst#L169",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Utility/index.rst#L188",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -259,8 +277,8 @@
       "signature": "EEex_Utility_IterateCPtrList()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst#L177",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Utility/index.rst#L196",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -271,8 +289,8 @@
       "signature": "EEex_Utility_IterateMapAsSorted()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst#L185",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Utility/index.rst#L204",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -283,8 +301,8 @@
       "signature": "EEex_Utility_MapIteratorValues()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst#L193",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Utility/index.rst#L212",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -295,8 +313,8 @@
       "signature": "EEex_Utility_MapToSortedTable()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst#L201",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Utility/index.rst#L220",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -307,8 +325,8 @@
       "signature": "EEex_Utility_Merge()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst#L209",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Utility/index.rst#L228",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -319,8 +337,8 @@
       "signature": "EEex_Utility_MutateIterator()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst#L217",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Utility/index.rst#L236",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -331,8 +349,8 @@
       "signature": "EEex_Utility_NewScope()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst#L225",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Utility/index.rst#L244",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -343,8 +361,8 @@
       "signature": "EEex_Utility_ProcessIteratorValues()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst#L233",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Utility/index.rst#L252",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -355,8 +373,8 @@
       "signature": "EEex_Utility_RangeIterator()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst#L241",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Utility/index.rst#L260",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -367,8 +385,8 @@
       "signature": "EEex_Utility_SelectIterator()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst#L249",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Utility/index.rst#L268",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -379,8 +397,8 @@
       "signature": "EEex_Utility_Split()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst#L257",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Utility/index.rst#L276",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -391,8 +409,8 @@
       "signature": "EEex_Utility_Switch()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst#L265",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Utility/index.rst#L284",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -403,8 +421,8 @@
       "signature": "EEex_Utility_TableIterator()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst#L273",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Utility/index.rst#L292",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -415,8 +433,20 @@
       "signature": "EEex_Utility_Ternary()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst#L281",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Utility/index.rst#L300",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Utility_TryCatch",
+      "name": "EEex_Utility_TryCatch",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Utility_TryCatch()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Utility/index.rst#L308",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -427,8 +457,20 @@
       "signature": "EEex_Utility_TryFinally()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst#L289",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Utility/index.rst#L316",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
+      "licenseStatus": "allowed"
+    },
+    {
+      "id": "eeex-functions:EEex_Utility_TryIgnore",
+      "name": "EEex_Utility_TryIgnore",
+      "kind": "function",
+      "sourceSection": "eeex-functions",
+      "signature": "EEex_Utility_TryIgnore()",
+      "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
+      "documentationState": "undocumented",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Utility/index.rst#L324",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -439,8 +481,8 @@
       "signature": "EEex_Utility_ValuesIterator()",
       "documentationMarkdown": "> **Warning**\n> This function is currently undocumented.",
       "documentationState": "undocumented",
-      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions/Utility/index.rst#L297",
-      "upstreamCommit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Utility/index.rst#L332",
+      "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     }
   ]

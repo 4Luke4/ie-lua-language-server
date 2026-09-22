@@ -1,26 +1,26 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-08-25T18:10:55.136Z",
+  "generatedAt": "2026-09-22T13:41:25.745Z",
   "sources": [
     {
       "id": "ee-game-lua-functions",
       "title": "EE Game Lua Functions",
-      "url": "https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Lua%20Functions",
-      "commit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "url": "https://github.com/Bubb13/EEex-Docs/tree/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions",
+      "commit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
       "id": "eeex-functions",
       "title": "EEex Functions",
-      "url": "https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EEex%20Functions",
-      "commit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "url": "https://github.com/Bubb13/EEex-Docs/tree/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions",
+      "commit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
       "id": "ee-game-structures-x64",
       "title": "EE Game Structures (x64)",
-      "url": "https://github.com/Bubb13/EEex-Docs/tree/b4d0acd776f5d3b8337afbd038d6128efce51cfd/source/EE%20Game%20Structures%20(x64)",
-      "commit": "b4d0acd776f5d3b8337afbd038d6128efce51cfd",
+      "url": "https://github.com/Bubb13/EEex-Docs/tree/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)",
+      "commit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
       "licenseStatus": "allowed"
     },
     {
@@ -268,7 +268,7 @@
         {
           "title": "GameState",
           "file": "sections/eeex-functions/GameState.json",
-          "symbolCount": 9,
+          "symbolCount": 13,
           "upstreamPath": "source/EEex Functions/GameState/index.rst"
         },
         {
@@ -286,7 +286,7 @@
         {
           "title": "Menu",
           "file": "sections/eeex-functions/Menu.json",
-          "symbolCount": 34,
+          "symbolCount": 38,
           "upstreamPath": "source/EEex Functions/Menu/index.rst"
         },
         {
@@ -298,13 +298,13 @@
         {
           "title": "Opcode",
           "file": "sections/eeex-functions/Opcode.json",
-          "symbolCount": 1,
+          "symbolCount": 2,
           "upstreamPath": "source/EEex Functions/Opcode/index.rst"
         },
         {
           "title": "Options",
           "file": "sections/eeex-functions/Options.json",
-          "symbolCount": 12,
+          "symbolCount": 13,
           "upstreamPath": "source/EEex Functions/Options/index.rst"
         },
         {
@@ -316,7 +316,7 @@
         {
           "title": "Resource",
           "file": "sections/eeex-functions/Resource.json",
-          "symbolCount": 45,
+          "symbolCount": 46,
           "upstreamPath": "source/EEex Functions/Resource/index.rst"
         },
         {
@@ -328,7 +328,7 @@
         {
           "title": "Sprite",
           "file": "sections/eeex-functions/Sprite.json",
-          "symbolCount": 64,
+          "symbolCount": 65,
           "upstreamPath": "source/EEex Functions/Sprite/index.rst"
         },
         {
@@ -344,9 +344,15 @@
           "upstreamPath": "source/EEex Functions/Trigger/index.rst"
         },
         {
+          "title": "UncapFPS",
+          "file": "sections/eeex-functions/UncapFPS.json",
+          "symbolCount": 1,
+          "upstreamPath": "source/EEex Functions/UncapFPS/index.rst"
+        },
+        {
           "title": "Utility",
           "file": "sections/eeex-functions/Utility.json",
-          "symbolCount": 36,
+          "symbolCount": 39,
           "upstreamPath": "source/EEex Functions/Utility/index.rst"
         },
         {
@@ -356,7 +362,7 @@
           "upstreamPath": "source/EEex Functions/Variable/index.rst"
         }
       ],
-      "symbolCount": 297,
+      "symbolCount": 313,
       "licenseStatus": "allowed"
     },
     {
