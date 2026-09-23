@@ -366,8 +366,14 @@ function auditFunctionSymbol(
     .map((name) => name.trim())
     .filter(Boolean);
   const parameterNames = (symbol.parameters ?? []).map((parameter) => parameter.name);
+  // Upstream names parameters it has not identified "???" and Lua varargs "...". Both are shown
+  // verbatim; "..." is only valid as the final parameter, exactly as in Lua itself.
+  const validName = (name: string | undefined, index: number): boolean =>
+    /^[A-Za-z_][A-Za-z0-9_]*$/u.test(name ?? '') ||
+    name === '???' ||
+    (name === '...' && index === parameterNames.length - 1);
   if (
-    parameterNames.some((name) => !name || !/^[A-Za-z_][A-Za-z0-9_]*$/u.test(name)) ||
+    !parameterNames.every(validName) ||
     signatureNames.join('\0') !== parameterNames.join('\0')
   ) {
     throw new Error(`Function section has inconsistent parameters: ${label}`);

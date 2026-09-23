@@ -31,7 +31,8 @@ export function parseGameFunctionSymbol(document: GameFunctionDocument): ApiSymb
   const signatureBlock = findFirstLiteralBlock(lines, titleIndex + 2);
   const sourceSignature = signatureBlock.lines.join('\n').trim();
   const callable = parseCallableSignature(sourceSignature, document.sourcePath);
-  const signature = `${callable.name}(${callable.parameterNames.join(', ')})`;
+  // The documented literal is shown exactly as published, spacing included.
+  const signature = sourceSignature;
   const legacyTitle = document.sourcePath
     .split('/')
     .at(-1)
@@ -382,6 +383,10 @@ export function renderRstMarkdown(source: string, sourcePath = '<rst>'): string 
     }
   }
 
+  // Docutils rejects a transition at the end of a document or section, so a trailing "----" only
+  // separates this entry from the next one. The hover draws its own rule before the source link.
+  while (output.length > 0 && (output.at(-1) === '' || output.at(-1) === '---')) output.pop();
+
   return output
     .join('\n')
     .replace(/\n{3,}/gu, '\n\n')
@@ -520,16 +525,17 @@ function parseCallableSignature(
     /^([A-Za-z_][A-Za-z0-9_]*(?:(?:[.:])[A-Za-z_][A-Za-z0-9_]*)*)\s*\(([^)]*)\)$/u,
   );
   if (!match?.[1]) throw new Error(`${sourcePath}: malformed callable signature ${signature}`);
-  const rawParameterNames = (match[2] ?? '')
+  const parameterNames = (match[2] ?? '')
     .split(',')
     .map((value) => value.trim())
     .filter(Boolean);
-  const usedNames = new Set<string>();
-  const parameterNames = rawParameterNames.map((value, index) => {
-    const name = isIdentifier(value) && !usedNames.has(value) ? value : `arg${index + 1}`;
-    usedNames.add(name);
-    return name;
-  });
+  // Upstream writes "..." for Lua varargs and "???" for a parameter nobody has identified yet. Both
+  // are kept verbatim rather than replaced with invented names; anything else unknown fails.
+  for (const name of parameterNames) {
+    if (!isIdentifier(name) && name !== '...' && name !== '???') {
+      throw new Error(`${sourcePath}: unsupported parameter ${name} in ${signature}`);
+    }
+  }
   return { name: match[1], parameterNames };
 }
 
@@ -662,9 +668,11 @@ function renderInline(value: string): string {
     )
     .replace(/:bold-italic:`([^`]+)`/gu, '***$1***')
     .replace(/:underline:`([^`]+)`/gu, '<u>$1</u>')
+    // Docutils drops the whitespace between a :ref: title and its "<target>", so the link text is
+    // "The Option Table", not "The Option Table ".
     .replace(
       /:ref:`([^`<]*)<([^`>]+)>`/gu,
-      (_match, label: string, target: string) => `[${label}](#${target})`,
+      (_match, label: string, target: string) => `[${label.trim()}](#${target.trim()})`,
     )
     .replace(/:ref:`([^`]+)`/gu, (_match, label: string) => `[${label}](#${label})`)
     .replace(/:ref:``/gu, '')
@@ -716,6 +724,6 @@ function capitalize(value: string): string {
   return value.slice(0, 1).toUpperCase() + value.slice(1);
 }
 
-function githubSourceUrl(commit: string, sourcePath: string, line: number): string {
+export function githubSourceUrl(commit: string, sourcePath: string, line: number): string {
   return `https://github.com/Bubb13/EEex-Docs/blob/${commit}/${sourcePath.split('/').map(encodeURIComponent).join('/')}#L${line}`;
 }
