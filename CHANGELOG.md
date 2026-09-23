@@ -15,6 +15,10 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Ship client configurations and setup guides for Sublime Text, Neovim, Emacs, JetBrains IDEs,
   Helix, Geany and Kate, and document what Zed and Notepad++ actually require. The policy check
   validates every shipped configuration against the manifest in `editors/`.
+- Hold hovers to the published documentation: the declared-feature and installed-extension suites
+  compare representative hovers from all six sources byte for byte with the pinned upstream text,
+  and every shipped hover is audited for Markdown that would render differently from its source.
+- Complete and hover members that EEex structures inherit from the structures they extend.
 
 ### Fixed
 
@@ -27,6 +31,19 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   so embedded Lua analysis and the formatter boundary no longer depend on the editor's naming.
 - Open an API symbol's upstream documentation externally on Go to Definition instead of returning a
   location the editor cannot open.
+- Stop the required Pinned API regeneration job from failing on the anonymous GitHub API rate
+  limit: it now reads every upstream input from pinned local checkouts and a verified archive.
+- Keep Dependabot's simultaneous push and pull-request edit from leaving a cancelled required
+  commit-message check, and let the patch auto-merge judge every run for the head instead of
+  whichever run was listed first.
+- Show published signatures verbatim, including `...` varargs and upstream's `???` markers,
+  instead of invented `arg1`-style names, with unambiguous signature-help parameter ranges.
+- Render Lua 5.2 and LuaJIT help exactly as published: typographic characters, superscripts,
+  tables, alternative call forms, and links are kept instead of being flattened or dropped.
+- Resolve every upstream cross-reference to its pinned source line instead of a dead in-page
+  link, drop the doubled rule before the source link, and let VS Code render the documentation's
+  inline HTML.
+- Stop offering and hovering EEex `baseclass_<n>` layout rows as if they were readable members.
 
 ### Changed
 
@@ -38,6 +55,8 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Remove unused shared exports and fold three hand-rolled offset/position conversions into the
   indexed mapper that already backs analysis.
 - Lint the CommonJS scripts and test harnesses, which no lint configuration previously matched.
+- Generate Lua 5.2 help from the official 5.2.4 release archive and LuaJIT help from the LuaJIT
+  repository at a pinned commit, so all six sections are regenerated and verified reproducibly.
 
 ## [0.6.0] - 2026-09-08
 
