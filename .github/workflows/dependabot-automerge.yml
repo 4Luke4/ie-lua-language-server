@@ -37,31 +37,55 @@ jobs:
         run: |
           set -euo pipefail
 
+          # Lists every run of one workflow for the pull request's current head.
+          runs_for() {
+            gh run list \
+              --repo "$GITHUB_REPOSITORY" \
+              --workflow "$1" \
+              --event pull_request \
+              --commit "$PR_HEAD_SHA" \
+              --limit 50 \
+              --json databaseId,status,conclusion
+          }
+
           for workflow in ci.yml codeql.yml dependency-review.yml conventional-commits.yml; do
-            run_id=""
+            found=""
             for _ in {1..30}; do
-              run_id="$(
-                gh run list \
-                  --repo "$GITHUB_REPOSITORY" \
-                  --workflow "$workflow" \
-                  --event pull_request \
-                  --commit "$PR_HEAD_SHA" \
-                  --limit 1 \
-                  --json databaseId \
-                  --jq '.[0].databaseId // empty'
-              )"
-              if [[ -n "$run_id" ]]; then
+              found="$(runs_for "$workflow" | jq -r '.[].databaseId')"
+              if [[ -n "$found" ]]; then
                 break
               fi
               sleep 10
             done
 
-            if [[ -z "$run_id" ]]; then
+            if [[ -z "$found" ]]; then
               echo "No $workflow run found for commit $PR_HEAD_SHA." >&2
               exit 1
             fi
 
-            gh run watch "$run_id" --repo "$GITHUB_REPOSITORY" --exit-status
+            # One head can have several runs of the same workflow, because Dependabot's push and its
+            # edit of the pull request arrive together. Judging whichever run a listing returned
+            # first is how a superseded, cancelled run once failed this job, so every run is awaited
+            # and the whole set is judged. gh run watch does its own polling until a run completes.
+            while :; do
+              pending="$(runs_for "$workflow" | jq -r '.[] | select(.status != "completed") | .databaseId')"
+              if [[ -z "$pending" ]]; then
+                break
+              fi
+              while read -r run_id; do
+                gh run watch "$run_id" --repo "$GITHUB_REPOSITORY" > /dev/null
+              done <<< "$pending"
+            done
+
+            # A cancelled run is only a superseded duplicate when a run for the same head succeeded;
+            # any other outcome, or no success at all, keeps the update out of the merge queue.
+            conclusions="$(runs_for "$workflow" | jq -r '.[].conclusion')"
+            unexpected="$(grep -vxE 'success|cancelled' <<< "$conclusions" || true)"
+            if [[ -n "$unexpected" ]] || ! grep -qx success <<< "$conclusions"; then
+              echo "$workflow did not pass for commit $PR_HEAD_SHA:" >&2
+              echo "$conclusions" >&2
+              exit 1
+            fi
           done
       - name: Squash-merge verified patch update
         if: steps.metadata.outputs.update-type == 'version-update:semver-patch'
@@ -75,6 +99,6 @@ jobs:
           test "$current_head" = "$PR_HEAD_SHA"
           # The ruleset requires branches to be up to date, so an immediate merge is refused outright
           # ("N of N required status checks are expected") whenever main has moved since these checks
-          # ran. Queueing the merge instead lets it complete once the branch is current, which the
-          # Dependabot rebase workflow arranges.
+          # ran. Queueing the merge instead lets it complete once the branch is current; a maintainer
+          # brings a behind update up to date with an "@dependabot rebase" comment.
           gh pr merge "$PR_URL" --auto --squash --match-head-commit "$PR_HEAD_SHA"
