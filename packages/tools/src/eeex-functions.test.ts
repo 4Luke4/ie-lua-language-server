@@ -215,6 +215,17 @@ void test('game signatures keep varargs and published spacing, and reject unknow
   );
 });
 
+void test(':ref: targets may nest angle brackets and titles lose the space before them', () => {
+  assert.equal(
+    renderRstMarkdown('Reads :ref:`uiItem\\:\\:bam<uiItem::<unnamed_type_bam>>`.resref here.'),
+    'Reads [uiItem::bam](#uiItem::<unnamed_type_bam>).resref here.',
+  );
+  assert.equal(
+    renderRstMarkdown('See :ref:`The Option Table <the-option-table>` and :ref:`EEex_Plain`.'),
+    'See [The Option Table](#the-option-table) and [EEex_Plain](#EEex_Plain).',
+  );
+});
+
 void test('a trailing RST transition separates entries and is not rendered', () => {
   assert.equal(renderRstMarkdown('Body text.\n\n----\n'), 'Body text.');
   assert.equal(renderRstMarkdown('First.\n\n----\n\nSecond.\n\n----'), 'First.\n\n---\n\nSecond.');

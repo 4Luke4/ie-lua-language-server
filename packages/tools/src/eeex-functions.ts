@@ -668,13 +668,7 @@ function renderInline(value: string): string {
     )
     .replace(/:bold-italic:`([^`]+)`/gu, '***$1***')
     .replace(/:underline:`([^`]+)`/gu, '<u>$1</u>')
-    // Docutils drops the whitespace between a :ref: title and its "<target>", so the link text is
-    // "The Option Table", not "The Option Table ".
-    .replace(
-      /:ref:`([^`<]*)<([^`>]+)>`/gu,
-      (_match, label: string, target: string) => `[${label.trim()}](#${target.trim()})`,
-    )
-    .replace(/:ref:`([^`]+)`/gu, (_match, label: string) => `[${label}](#${label})`)
+    .replace(/:ref:`([^`]+)`/gu, (_match, text: string) => renderRefRole(text))
     .replace(/:ref:``/gu, '')
     .replace(/`([^`<]+) <(https?:\/\/[^>]+)>`_/gu, '[$1]($2)')
     .replace(/``([^`]+)``/gu, '`$1`')
@@ -686,6 +680,28 @@ function renderInline(value: string): string {
     throw new Error(`unsupported RST substitution ${unsupportedSubstitution}`);
   }
   return rendered;
+}
+
+// A :ref: role names its target in a trailing "<...>", and upstream targets can contain angle
+// brackets themselves ("uiItem::bam<uiItem::<unnamed_type_bam>>" links to the label
+// "uiItem::<unnamed_type_bam>"). The target therefore starts at the "<" that balances the final
+// ">". Whitespace before it is dropped, as docutils does ("The Option Table <the-option-table>").
+// Without a trailing target, the text is both the link text and the target.
+function renderRefRole(text: string): string {
+  if (text.endsWith('>')) {
+    let depth = 0;
+    for (let index = text.length - 1; index >= 0; index -= 1) {
+      if (text[index] === '>') depth += 1;
+      if (text[index] === '<') depth -= 1;
+      if (depth === 0) {
+        const label = text.slice(0, index).trim();
+        const target = text.slice(index + 1, -1).trim();
+        if (label && target) return `[${label}](#${target})`;
+        break;
+      }
+    }
+  }
+  return `[${text}](#${text})`;
 }
 
 function plainInline(value: string): string {
