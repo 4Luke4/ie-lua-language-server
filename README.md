@@ -29,7 +29,7 @@ This extension targets:
 - Embedded Lua analysis in `.menu` files for backtick chunks, `lua "..."` expressions, action/open/close/escape blocks, and `enabled`/`clickable` expressions. <!-- feature: embedded-lua -->
 - Source-driven API data from official sources only, with immutable upstream provenance. <!-- feature: source-provenance -->
 - Full EE Game Lua and EEex function completion, hover, signature help, and source definitions, including namespace members, colon methods, typed instance aliases, parameter defaults, return values, warnings, notes, examples, and tables. <!-- feature: function-api -->
-- Full EE Game Structures (x64) layout metadata: structure and field completion, annotation-aware member resolution, chained field hover, exact source definitions, types, offsets, and byte sizes. <!-- feature: structure-api -->
+- Full EE Game Structures (x64) layout metadata: structure and field completion, annotation-aware member resolution, members inherited from extended structures, chained field hover, exact source definitions, types, offsets, and byte sizes. <!-- feature: structure-api -->
 
 ## Stable 0.6.x contract and current limits
 
@@ -181,7 +181,7 @@ Open a draft PR to run CI. Compilation, formatting, tests, packaging, and API ge
 exclusively in GitHub Actions. Download verified VSIX files and maintenance patches from the run.
 The language server runs as a separate process over IPC from the VS Code extension client.
 
-The docs-ingestion step fetches official Lua 5.2, LuaJIT, EE Game Lua Function, and EEex Function documentation at build time and stores the source wording as Markdown for hover, completion, and signature-help previews. RST presentation is converted to equivalent VS Code Markdown while paragraphs, emphasis, lists, tables, admonitions, links, code blocks, and visible punctuation are retained.
+The docs-ingestion step reads official Lua 5.2, LuaJIT, EE Game Lua Function, and EEex Function documentation from pinned inputs and stores the source wording as Markdown for hover, completion, and signature-help previews: the Lua 5.2.4 release archive verified against its published SHA-256, and the LuaJIT and EEex-Docs repositories at fixed commits. RST and HTML presentation is converted to equivalent VS Code Markdown while paragraphs, emphasis, lists, tables, admonitions, superscripts, code blocks, typographic characters, and visible punctuation are retained, published signatures are shown verbatim, and cross-references become links to the pinned upstream location. The declared-feature suite compares representative hovers from every source byte for byte with the pinned sources and audits every shipped hover for Markdown that would render differently.
 
 Generated API data uses a schema-v3 manifest for auditability. `resources/api/api-index.json` retains the six logical source sections and lists every data file with its symbol count and, for EE/EEex data, its exact upstream category path. The three EEex-backed sources mirror the top-level categories in the pinned upstream toctrees, including explicit empty shards:
 
@@ -191,7 +191,7 @@ Generated API data uses a schema-v3 manifest for auditability. `resources/api/ap
 
 Lua 5.2, LuaJIT, and optional local utility metadata remain single-file sections under `resources/api/sections/`. Category filenames are derived deterministically from upstream names rather than maintained as a hardcoded list.
 
-The Actions ingestion job sets `IE_LUA_FETCH_EEEX=1` to refresh EEex metadata. The generator resolves the latest `dev` revision by default; set `IE_LUA_EEEX_COMMIT` to a full commit SHA for a reproducible run. Function ingestion discovers every standalone EE Game function page, every game function defined directly in a category index, and every `EEex_*` function anchor from the pinned tree. It rejects incomplete or malformed input and records exact commit-and-line provenance. Structure help includes names, fields, types, offsets, byte sizes, upstream narrative, and pinned source lines.
+The Actions ingestion job sets `IE_LUA_FETCH_EEEX=1` to refresh EEex metadata. The generator resolves the latest `dev` revision by default; set `IE_LUA_EEEX_COMMIT` to a full commit SHA for a reproducible run. In Actions, `.github/actions/upstream-docs` checks out EEex-Docs and LuaJIT at their pinned commits and downloads the verified Lua archive, and the generator reads them through `IE_LUA_EEEX_DOCS_ROOT`, `IE_LUA_LUAJIT_DOCS_ROOT`, and `IE_LUA_LUA52_MANUAL` instead of calling the GitHub API. The Lua and LuaJIT pins live in `packages/tools/upstream-pins.json`. Function ingestion discovers every standalone EE Game function page, every game function defined directly in a category index, and every `EEex_*` function anchor from the pinned tree. It rejects incomplete or malformed input and records exact commit-and-line provenance. Structure help includes names, fields, types, offsets, byte sizes, upstream narrative, and pinned source lines.
 
 The scheduled **Update EEex API data** workflow checks the upstream repository daily. When its revision changes, the workflow regenerates and verifies the API data on a dedicated branch and opens a pull request for review; it never executes upstream code.
 
@@ -210,8 +210,8 @@ The shipped API index is generated from these official sources:
 - EE Game Lua Functions: `https://github.com/Bubb13/EEex-Docs/tree/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Lua%20Functions`
 - EEex Functions: `https://github.com/Bubb13/EEex-Docs/tree/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions`
 - EE Game Structures (x64): `https://github.com/Bubb13/EEex-Docs/tree/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)`
-- Lua 5.2: `https://www.lua.org/manual/5.2/`
-- LuaJIT: `https://luajit.org/`
+- Lua 5.2: `https://www.lua.org/ftp/lua-5.2.4.tar.gz`
+- LuaJIT: `https://github.com/LuaJIT/LuaJIT/tree/c6ffc141a8762b41703f9287d63d93622a13dd8f/doc`
 - EE Utility Functions: local, untracked `samples/util.lua` only when explicitly enabled for docs ingestion.
 
 Bundled third-party documentation attribution is recorded in `THIRD_PARTY_NOTICES.md`.

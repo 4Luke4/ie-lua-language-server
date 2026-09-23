@@ -2,6 +2,7 @@ const vscode = require('vscode');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
+const fidelity = require('../hover-fidelity.json');
 // The pinned upstream revision belongs to the shipped API data, not to this test. Reading it back
 // from the installed extension keeps definition assertions exact while letting a data refresh move
 // the revision without editing expectations here.
@@ -43,6 +44,10 @@ const at = (doc, word, last = false) =>
   doc.positionAt(last ? doc.getText().lastIndexOf(word) : doc.getText().indexOf(word));
 const execute = (name, ...args) => vscode.commands.executeCommand(`vscode.${name}`, ...args);
 const label = (item) => (typeof item.label === 'string' ? item.label : item.label.label);
+// VS Code advertises offset parameter labels, so the server answers with [start, end) ranges into
+// the signature label; this reads back the text a user sees highlighted.
+const parameterText = (signature, parameter) =>
+  typeof parameter.label === 'string' ? parameter.label : signature.label.slice(...parameter.label);
 const markdown = (hovers) =>
   hovers.flatMap((h) => h.contents.map((c) => (typeof c === 'string' ? c : c.value))).join('\n');
 async function completion(doc, position, expected) {
@@ -248,16 +253,17 @@ scenario('game-api', async ({ extension }) => {
   const doc = await document('Infinity_DisplayString(\nC:AddGold(\n');
   const completions = await completion(doc, new vscode.Position(0, 0), 'Infinity_DisplayString');
   const item = completions.items.find((i) => label(i) === 'Infinity_DisplayString');
-  assert.equal(item.detail, 'Infinity_DisplayString(arg1)');
+  // Upstream publishes the vararg as "...", which is shown instead of an invented name.
+  assert.equal(item.detail, 'Infinity_DisplayString(...)');
   assert.equal(item.insertText ?? label(item), 'Infinity_DisplayString');
   const help = await hover(doc, 'Infinity_DisplayString');
   for (const fragment of ['Displays to the screen', '**Notes**', '```lua', '20000000 + 1'])
     assert.ok(help.includes(fragment));
-  await signature(doc, new vscode.Position(0, 23), 'Infinity_DisplayString(arg1)');
+  await signature(doc, new vscode.Position(0, 23), 'Infinity_DisplayString(...)');
   const members = await completion(doc, new vscode.Position(1, 2), 'AddGold');
   assert.equal(members.items.find((i) => label(i) === 'AddGold').detail, 'C:AddGold(Gold)');
   const call = await signature(doc, new vscode.Position(1, 10), 'C:AddGold(Gold)');
-  assert.equal(call.signatures[0].parameters[0].label, 'Gold');
+  assert.equal(parameterText(call.signatures[0], call.signatures[0].parameters[0]), 'Gold');
   const method = new vscode.Position(1, 4);
   const source =
     upstream(extension, 'ee-game-lua-functions') +
@@ -273,7 +279,7 @@ scenario('eeex-api', async () => {
   const help = await signature(doc, new vscode.Position(2, 16), 'object:isSprite(allowDead)');
   assert.equal(help.activeParameter, 0);
   assert.deepEqual(
-    help.signatures[0].parameters.map((p) => p.label),
+    help.signatures[0].parameters.map((p) => parameterText(help.signatures[0], p)),
     ['allowDead'],
   );
   assert.ok(help.signatures[0].documentation.value.includes('false'));
@@ -291,19 +297,30 @@ scenario('eeex-api', async () => {
 });
 scenario('structures', async ({ extension }) => {
   const doc = await document(
-    '---@type CGameSprite\nlocal sprite\nsprite.m_derivedStats.baseclass_0\nCGameObject\n',
+    '---@type CGameSprite\nlocal sprite\nsprite.m_derivedStats.m_nMaxHitPoints\nCGameObject\nsprite.baseclass_0\n',
   );
-  await completion(doc, new vscode.Position(2, 7), 'm_derivedStats');
-  const help = await hover(doc, 'sprite.m_derivedStats.baseclass_0');
-  for (const fragment of ['CDerivedStatsTemplate', '0x0', '752'])
+  // CGameSprite extends CGameAIBase, which extends CGameObject; baseclass_<n> rows record that
+  // inheritance and are not members, so inherited members complete directly and the rows do not.
+  const members = await completion(doc, new vscode.Position(2, 7), 'm_derivedStats');
+  assert.ok(members.items.some((i) => label(i) === 'm_objectType'));
+  assert.equal(
+    members.items.some((i) => /^baseclass_\d+$/u.test(label(i))),
+    false,
+  );
+  const help = await hover(doc, 'sprite.m_derivedStats.m_nMaxHitPoints');
+  for (const fragment of ['CDerivedStatsTemplate.m_nMaxHitPoints', '**Offset:**'])
     assert.ok(help.includes(fragment));
   assert.ok((await hover(doc, 'CGameObject')).includes('m_objectType'));
+  assert.equal(
+    (await execute('executeHoverProvider', doc.uri, new vscode.Position(4, 10))).length,
+    0,
+  );
   const field = new vscode.Position(2, 27);
   // Compared as written, not through Uri.parse().toString(), which would percent-encode the
   // parentheses that the upstream path and the rendered hover link both keep literal.
   const source =
     upstream(extension, 'ee-game-structures-x64') +
-    'EE%20Game%20Structures%20(x64)/CD/index.rst#L131';
+    'EE%20Game%20Structures%20(x64)/CD/index.rst#L233';
   assert.ok((await hoverAt(doc, field)).includes(source), 'hover renders the pinned source');
   await replace(doc, '---@param sprite CGameSprite\nlocal function inspect(sprite)\n sprite.\nend');
   await completion(doc, new vscode.Position(2, 8), 'm_active');
@@ -598,6 +615,32 @@ scenario('packaged-grammar', async ({ extension }) => {
     }
   } finally {
     registry.dispose();
+  }
+});
+scenario('hover-fidelity', async ({ extension }) => {
+  // The same byte-exact expectations as the stdio suite, observed through the installed extension:
+  // what VS Code receives must be the pinned upstream text, with HTML rendering enabled for the
+  // tags upstream uses and command links still disabled.
+  const eeex = upstream(extension, 'ee-game-structures-x64').match(/blob\/([0-9a-f]{40})\//u)?.[1];
+  assert.ok(eeex, 'Installed API data must pin EEex-Docs');
+  for (const entry of fidelity.cases) {
+    const doc = await document(entry.text);
+    const position = new vscode.Position(entry.position.line, entry.position.character);
+    const hovers = await eventually(
+      () => execute('executeHoverProvider', doc.uri, position),
+      (r) => r?.length,
+      `${entry.id} hover`,
+    );
+    const contents = hovers.flatMap((h) => h.contents);
+    assert.equal(contents.length, 1, `${entry.id}: exactly one hover section`);
+    const [content] = contents;
+    assert.equal(
+      content.value,
+      entry.expected.join('\n').replaceAll('{eeex}', eeex),
+      `${entry.id}: the hover must match the pinned upstream text exactly`,
+    );
+    assert.equal(content.supportHtml, true, `${entry.id}: documentation HTML must render`);
+    assert.notEqual(content.isTrusted, true, `${entry.id}: documentation must not run commands`);
   }
 });
 module.exports = { cases, eventually };

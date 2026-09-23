@@ -125,10 +125,10 @@
         {
           "name": "args",
           "type": "table",
-          "description": "A table containing fields used to update the keybind. <br/> See [The Keybind Table ](#the-keybind-table) for more details."
+          "description": "A table containing fields used to update the keybind. <br/> See [The Keybind Table](https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Keybinds/index.rst#L92) for more details."
         }
       ],
-      "documentationMarkdown": "> **Summary**\n> Updates the keybind with the given `id` with the fields present in `args`.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| id | string |  | The unique id of the associated keybind. |\n| args | table |  | A table containing fields used to update the keybind. <br/> See [The Keybind Table ](#the-keybind-table) for more details. |",
+      "documentationMarkdown": "> **Summary**\n> Updates the keybind with the given `id` with the fields present in `args`.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| id | string |  | The unique id of the associated keybind. |\n| args | table |  | A table containing fields used to update the keybind. <br/> See [The Keybind Table](https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Keybinds/index.rst#L92) for more details. |",
       "documentationState": "documented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Keybinds/index.rst#L146",
       "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",

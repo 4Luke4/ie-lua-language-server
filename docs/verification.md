@@ -26,6 +26,7 @@ unit tests and real stdio requests provide additional algorithm and protocol cov
 | Formatting                 | Exact text edits, idempotence, current config-path behavior and unchanged menu text                    |
 | Commands and activation    | Real files, open-document validation, reloading changed installed data, picker cancellation and output |
 | Packaged grammars          | Tokenization using the grammar files actually shipped in the VSIX                                      |
+| Hover fidelity             | Byte-exact hovers for every source, rendered HTML enabled, command links disabled                      |
 
 The required **Declared feature coverage** job runs one named case per declared service against the
 bundled stdio server on Linux, Windows, and macOS, and records each outcome with its evidence in
@@ -33,6 +34,23 @@ bundled stdio server on Linux, Windows, and macOS, and records each outcome with
 each named service still answers with a real result on the transport non-VS Code editors use, while
 behavioural regressions stay in the stdio and installed-extension suites. A missing or failed
 service fails the job.
+
+Hover is additionally held to the published text. `tests/hover-fidelity.json` records, for
+representative symbols from all six sources and every formatting construct they use, the complete
+hover Markdown written from the pinned upstream source: verbatim signatures including `...` and
+`???`, typographic characters, emphasis, superscripts, lists, grid and HTML tables, admonitions,
+literal blocks, and cross-references resolved to pinned upstream lines. The declared-feature job
+compares each one byte for byte over stdio, and the installed-extension suite compares the same
+expectations as VS Code receives them. The job also audits the hover of every shipped symbol for
+Markdown that would render differently from its source: leftover RST, in-page links that lead
+nowhere, relative links, HTML tags editors strip, undecoded entities, doubled rules, or a missing
+final source link.
+
+The required **Pinned API regeneration** job regenerates all six sections from pinned local inputs
+and requires the committed data to match byte for byte. `.github/actions/upstream-docs` checks out
+EEex-Docs and LuaJIT at their pinned commits and downloads the Lua 5.2.4 archive, accepting it only
+when its SHA-256 matches `packages/tools/upstream-pins.json`; no GitHub API call or token is
+involved, so anonymous rate limits cannot fail the job.
 
 Caches contain npm downloads, exact editor distributions, and versioned actionlint binaries. They
 never substitute for compilation, tests, regeneration, archive audits, or fresh editor profiles.

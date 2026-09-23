@@ -140,7 +140,9 @@ async function connect(options = {}) {
   const initialized = await request('initialize', {
     processId: process.pid,
     rootUri: null,
-    capabilities: { workspace: { configuration: true } },
+    // Callers add client capabilities (for example signature-help label offsets) to exercise the
+    // server paths that only a capable editor reaches; configuration support is always declared.
+    capabilities: { workspace: { configuration: true }, ...options.capabilities },
     initializationOptions: options.initializationOptions,
   }).catch((error) => {
     child.kill();

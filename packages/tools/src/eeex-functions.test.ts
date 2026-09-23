@@ -166,8 +166,78 @@ void test('game functions normalize explicit upstream unknown parameters positio
     ].join('\n'),
   });
 
-  assert.equal(symbol.signature, 'Infinity_Unknown(arg1, arg2)');
-  assert.deepEqual(symbol.parameters, [{ name: 'arg1' }, { name: 'arg2' }]);
+  // "???" is upstream's own marker for an unidentified parameter; it is shown, not renamed.
+  assert.equal(symbol.signature, 'Infinity_Unknown(???,???)');
+  assert.deepEqual(symbol.parameters, [{ name: '???' }, { name: '???' }]);
+});
+
+void test('game signatures keep varargs and published spacing, and reject unknown tokens', () => {
+  const page = (signature: string, parameters: string[]): string =>
+    [
+      '.. _Infinity_Show:',
+      '',
+      'Infinity_Show',
+      '^^^^^^^^^^^^^',
+      '',
+      '::',
+      '',
+      `   ${signature}`,
+      '',
+      '**Parameters**',
+      '',
+      ...parameters,
+    ].join('\n');
+  const sourcePath = 'source/EE Game Lua Functions/Infinity/index.rst';
+
+  const vararg = parseGameFunctionSymbol({
+    commit,
+    sourcePath,
+    text: page('Infinity_Show(...)', ['* *...* - values to show']),
+  });
+  assert.equal(vararg.signature, 'Infinity_Show(...)');
+  assert.deepEqual(vararg.parameters, [{ name: '...', description: 'values to show' }]);
+
+  const packed = parseGameFunctionSymbol({
+    commit,
+    sourcePath,
+    text: page('Infinity_Show(x,y)', ['* *x* - column', '* *y* - row']),
+  });
+  assert.equal(packed.signature, 'Infinity_Show(x,y)');
+
+  assert.throws(
+    () =>
+      parseGameFunctionSymbol({
+        commit,
+        sourcePath,
+        text: page('Infinity_Show([opt])', ['* *opt* - optional']),
+      }),
+    /unsupported parameter \[opt\]/u,
+  );
+});
+
+void test(':ref: targets may nest angle brackets and titles lose the space before them', () => {
+  assert.equal(
+    renderRstMarkdown('Reads :ref:`uiItem\\:\\:bam<uiItem::<unnamed_type_bam>>`.resref here.'),
+    'Reads [uiItem::bam](#uiItem::<unnamed_type_bam>).resref here.',
+  );
+  assert.equal(
+    renderRstMarkdown('See :ref:`The Option Table <the-option-table>` and :ref:`EEex_Plain`.'),
+    'See [The Option Table](#the-option-table) and [EEex_Plain](#EEex_Plain).',
+  );
+});
+
+void test('angle brackets in RST prose stay text while code and rendered tags keep meaning', () => {
+  assert.equal(
+    renderRstMarkdown(
+      'The range [0, <max id in .IDS>] with ``<any>`` and :raw-html:`<br/>` :underline:`kept`.',
+    ),
+    'The range [0, &lt;max id in .IDS>] with `<any>` and <br/> <u>kept</u>.',
+  );
+});
+
+void test('a trailing RST transition separates entries and is not rendered', () => {
+  assert.equal(renderRstMarkdown('Body text.\n\n----\n'), 'Body text.');
+  assert.equal(renderRstMarkdown('First.\n\n----\n\nSecond.\n\n----'), 'First.\n\n---\n\nSecond.');
 });
 
 void test('indented RST quotations render as Markdown blockquotes', () => {

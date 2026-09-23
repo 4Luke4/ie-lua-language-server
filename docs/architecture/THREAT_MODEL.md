@@ -12,11 +12,17 @@ is not a filesystem sandbox against symlinks or a malicious local owner. Invalid
 manifests are skipped after runtime shape validation. Startup uses an empty API index if no candidate
 loads; failed reloads retain the last good index. Replacement is atomic, and errors report candidate
 paths without logging JSON excerpts or document contents. Markdown is
-returned as documentation, without enabling trusted command links.
+returned as documentation, without enabling trusted command links. The VS Code client lets hovers
+render inline HTML so the `<br/>`, `<sup>`, `<u>`, and `<pre>` tags in upstream documentation
+display; VS Code still sanitizes that HTML against its own allowlist, and command links stay off.
 
 Documentation ingestion reads pinned upstream text and converts it to generated metadata and
 Markdown. It never runs upstream build scripts. Source identity, category counts, source lines,
-and generated-file integrity are audited. Local game samples are excluded from releases.
+and generated-file integrity are audited. Local game samples are excluded from releases. In
+Actions, the upstream inputs are third-party checkouts at pinned commits and one release archive
+accepted only on a SHA-256 match; they are fetched with persisted credentials removed, read as data
+under `.cache/`, and never executed. Checkout reads refuse symbolic links and verify the pinned
+commit from the checkout's own HEAD before any file is parsed.
 
 Dependencies execute during installation/building in disposable GitHub-hosted runners. PR
 verification has read-only repository access and no publication credentials. Label and merge

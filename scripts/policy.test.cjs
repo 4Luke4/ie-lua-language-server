@@ -7,6 +7,7 @@ const {
   validateVersions,
   validateWorkflows,
   validateVerificationGraph,
+  validateCompositeActions,
 } = require('./policy.cjs');
 const { validateRelease, parseDryRun, validateChangelog } = require('./release-policy.cjs');
 
@@ -45,6 +46,19 @@ test('CodeQL pins and privileged checkout boundaries are enforced', () => {
   const unsafe = structuredClone(workflow);
   unsafe.jobs.test.steps.push({ uses: `actions/checkout@${'a'.repeat(40)}` });
   assert.throws(() => validateWorkflows([['test', unsafe]]));
+});
+test('composite actions are held to the immutable pin rule', () => {
+  const action = {
+    runs: {
+      using: 'composite',
+      steps: [{ uses: `actions/checkout@${'a'.repeat(40)}` }, { run: 'true', shell: 'bash' }],
+    },
+  };
+  validateCompositeActions([['action.yml', action]]);
+  const mutable = structuredClone(action);
+  mutable.runs.steps.push({ uses: 'actions/checkout@v7' });
+  assert.throws(() => validateCompositeActions([['action.yml', mutable]]), /immutable action/u);
+  assert.throws(() => validateCompositeActions([['action.yml', { runs: { using: 'node24' } }]]));
 });
 test('version validation catches stale workspace, lockfile, changelog, and editor baseline', () => {
   const read = (p) => JSON.parse(fs.readFileSync(p, 'utf8'));

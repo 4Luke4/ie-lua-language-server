@@ -6,6 +6,10 @@ const path = require('node:path');
 const { pathToFileURL } = require('node:url');
 const { connect } = require('./lsp-client.cjs');
 const inventory = require('./feature-inventory.json');
+const fidelity = require('./hover-fidelity.json');
+// The compiled shared package is what the bundled server renders hovers with, so the all-symbol
+// audit below checks the same Markdown an editor receives.
+const shared = require(path.resolve('dist/shared/index.js'));
 
 // This suite is a coverage gate rather than a second regression suite: it proves that each
 // language service the README names individually still answers with a real result over the stdio
@@ -30,6 +34,73 @@ async function open(client, name, text, languageId = 'ie-lua') {
   // issues the request it actually cares about.
   await client.request('textDocument/documentSymbol', { textDocument: { uri: document.uri } });
   return { uri: document.uri };
+}
+
+// The pinned EEex-Docs revision belongs to the shipped data, so expectations name it '{eeex}' and a
+// data refresh that only moves the revision does not have to rewrite them.
+function expectedHover(entry) {
+  const manifest = JSON.parse(fs.readFileSync('resources/api/api-index.json', 'utf8'));
+  const eeex = manifest.sources.find((source) => source.id === 'ee-game-structures-x64')?.commit;
+  assert.match(eeex ?? '', /^[0-9a-f]{40}$/u, 'The shipped manifest must pin EEex-Docs');
+  return entry.expected.join('\n').replaceAll('{eeex}', eeex);
+}
+
+// Tags VS Code renders in hovers once the client enables supportHtml; anything else is stripped.
+const renderedTags = new Set(['br', 'pre', 'sup', 'u']);
+
+// Markdown that editors would render differently from the published source. Code blocks and code
+// spans show their text literally, so only the surrounding prose is inspected.
+function hoverProblems(symbol, markdown) {
+  const problems = [];
+  if (markdown.split('\n').filter((line) => line.startsWith('```')).length % 2 !== 0) {
+    problems.push('unbalanced code fence');
+  }
+  const prose = markdown.replace(/^```[^\n]*\n[\s\S]*?\n```$/gmu, '').replace(/`[^`\n]*`/gu, '');
+  if (/``|:[A-Za-z][\w-]*:`|^\.\. [A-Za-z_]/mu.test(prose)) problems.push('RST markup in prose');
+  if (prose.includes('](#')) problems.push('in-page link that leads nowhere in a hover');
+  for (const [, url] of prose.matchAll(/\]\(([^)\s]*)/gu)) {
+    if (!/^https?:\/\//u.test(url)) problems.push(`relative link ${url}`);
+  }
+  for (const [, tag] of prose.matchAll(/<\/?([A-Za-z][A-Za-z0-9-]*)(?:\s[^<>]*)?\/?>/gu)) {
+    if (!renderedTags.has(tag.toLowerCase())) problems.push(`HTML <${tag}> would be stripped`);
+  }
+  // "&lt;" is how the converters write a literal "<" in prose ("the range [0, &lt;max id in .IDS>]"),
+  // so Markdown shows the bracket instead of reading a tag; any other entity is a decoding gap.
+  if (/&(?!lt;)(?:[A-Za-z]+|#\d+|#x[0-9A-Fa-f]+);/u.test(prose)) {
+    problems.push('undecoded HTML entity');
+  }
+  if (/^---\n\n---$/mu.test(markdown)) problems.push('consecutive horizontal rules');
+  const source = `\n\n---\n\nSource: [${symbol.upstreamUrl}](${symbol.upstreamUrl})`;
+  if (!markdown.endsWith(source) || markdown.split('\nSource: [').length !== 2) {
+    problems.push('source link is not the single final line');
+  }
+  return problems;
+}
+
+// Every shipped symbol an editor can hover, which excludes the baseclass_<n> rows that record
+// structure inheritance rather than readable members.
+function auditShippedHovers() {
+  const manifest = JSON.parse(fs.readFileSync('resources/api/api-index.json', 'utf8'));
+  const problems = [];
+  let count = 0;
+  for (const section of manifest.sections) {
+    for (const { file } of section.files) {
+      const shard = JSON.parse(fs.readFileSync(path.join('resources/api', file), 'utf8'));
+      for (const symbol of shard.symbols) {
+        if (shared.isBaseClassField(symbol)) continue;
+        count += 1;
+        for (const problem of hoverProblems(symbol, shared.makeDocumentation(symbol))) {
+          problems.push(`${symbol.id}: ${problem}`);
+        }
+      }
+    }
+  }
+  assert.deepEqual(
+    problems.slice(0, 40),
+    [],
+    `${problems.length} shipped hovers would not render as their source reads`,
+  );
+  return count;
 }
 
 function save() {
@@ -104,7 +175,28 @@ test('stdio server answers every declared language service', { timeout: 120000 }
       position: position(1, 11),
     });
     assert.match(hover.contents.value, /hello/u);
-    return { markdownLength: hover.contents.value.length };
+
+    // API hovers must reproduce the pinned upstream documentation exactly: wording, typography,
+    // code, tables, admonitions and links, for every source section and formatting construct.
+    const exact = [];
+    for (const entry of fidelity.cases) {
+      const document = await open(client, `ie-features-hover-${entry.id}.lua`, entry.text);
+      const result = await client.request('textDocument/hover', {
+        textDocument: document,
+        position: entry.position,
+      });
+      assert.deepEqual(
+        result?.contents,
+        { kind: 'markdown', value: expectedHover(entry) },
+        `${entry.id}: the hover must match the pinned upstream text exactly`,
+      );
+      exact.push(entry.id);
+    }
+    return {
+      markdownLength: hover.contents.value.length,
+      exactHovers: exact,
+      auditedHovers: auditShippedHovers(),
+    };
   });
 
   await feature(t, 'signature help', async () => {

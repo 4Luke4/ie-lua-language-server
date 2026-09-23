@@ -19,7 +19,7 @@
       "signature": "struct C2DArray (56 bytes)",
       "byteSize": 56,
       "memberCount": 7,
-      "documentationMarkdown": "The class that uses this structure is [C2DArray Class](#C2DArray Class)",
+      "documentationMarkdown": "The class that uses this structure is [C2DArray Class](https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Classes%20(x86)/C2DArray/index.rst#L1)",
       "documentationState": "documented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/C2/index.rst#L14",
       "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",

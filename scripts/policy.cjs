@@ -167,6 +167,19 @@ function validateWorkflows(workflows) {
   }
   assert.equal(codeqlPins.size, 1, 'All CodeQL actions must use one revision');
 }
+// Local composite actions run inside the jobs that call them, so their steps are held to the same
+// immutable-pin rule as workflow steps. Without this a composite could reintroduce a mutable
+// third-party reference that the workflow check above never sees.
+function validateCompositeActions(actions) {
+  for (const [file, action] of actions) {
+    assert.equal(action.runs?.using, 'composite', `${file}: only composite local actions are used`);
+    for (const step of action.runs.steps ?? []) {
+      if (step.uses && !step.uses.startsWith('./')) {
+        assert.match(step.uses, /^[^@]+@[a-f0-9]{40}$/u, `${file}: immutable action required`);
+      }
+    }
+  }
+}
 function main() {
   const pkg = json('package.json');
   validateVersions(
@@ -183,6 +196,13 @@ function main() {
     .map((f) => [f, readYaml(`.github/workflows/${f}`)]);
   validateWorkflows(workflows);
   validateVerificationGraph(workflows);
+  validateCompositeActions(
+    fs
+      .readdirSync('.github/actions', { withFileTypes: true })
+      .filter((entry) => entry.isDirectory())
+      .map((entry) => `.github/actions/${entry.name}/action.yml`)
+      .map((file) => [file, readYaml(file)]),
+  );
   for (const file of [
     'SECURITY.md',
     'docs/architecture/THREAT_MODEL.md',
@@ -282,5 +302,6 @@ module.exports = {
   validateVersions,
   validateWorkflows,
   validateVerificationGraph,
+  validateCompositeActions,
 };
 if (require.main === module) main();

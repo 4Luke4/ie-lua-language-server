@@ -93,7 +93,8 @@
         "chained hover",
         "layout types, offsets and sizes",
         "structure narrative",
-        "field definitions"
+        "field definitions",
+        "base-type inheritance"
       ],
       "commands": [],
       "settings": []
@@ -179,6 +180,18 @@
       "id": "packaged-grammar",
       "groups": ["embedded-lua"],
       "features": ["packaged TextMate grammars"],
+      "commands": [],
+      "settings": []
+    },
+    {
+      "id": "hover-fidelity",
+      "groups": ["function-api", "structure-api", "source-provenance"],
+      "features": [
+        "exact hover prose",
+        "verbatim signatures",
+        "rendered documentation HTML",
+        "resolved upstream links"
+      ],
       "commands": [],
       "settings": []
     }

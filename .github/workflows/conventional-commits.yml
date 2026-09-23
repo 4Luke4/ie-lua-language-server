@@ -12,9 +12,11 @@ permissions:
   contents: read
   pull-requests: read
 
-concurrency:
-  group: conventional-commits-${{ github.event.pull_request.number }}
-  cancel-in-progress: true
+# No concurrency group on purpose. Dependabot force-pushes (synchronize) and edits the pull request
+# (edited) within the same second; with cancel-in-progress one of the two runs was cancelled after
+# its check run already existed, leaving a CANCELLED "Validate commit messages" entry beside the
+# SUCCESS one and failing the required-check rollup. This job is read-only, idempotent and takes
+# seconds, so letting every run finish is cheaper than any cancellation scheme.
 
 jobs:
   validate:
@@ -42,7 +44,14 @@ jobs:
                 : [`${commit.sha.slice(0, 7)}  ${header || '<empty message>'}`];
             });
 
-            const title = context.payload.pull_request.title;
+            // Read the title as it is now rather than from the event payload, so overlapping runs for
+            // one head all judge the same title and cannot leave a stale verdict behind.
+            const { data: pull } = await github.rest.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.issue.number,
+            });
+            const title = pull.title;
             if (title.length > 100 || !conventionalHeader.test(title)) invalid.push(`PR title: ${title}`);
 
             if (invalid.length > 0) {

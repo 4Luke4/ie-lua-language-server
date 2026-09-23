@@ -1,0 +1,89 @@
+name: Pinned upstream documentation
+description: >-
+  Materialises every pinned upstream documentation input that API regeneration reads, as inert data
+  under .cache/, and exports the IE_LUA_* variables that point the ingestion tool at it.
+
+# Why this exists: regeneration used to call the GitHub REST API and raw.githubusercontent.com
+# anonymously, and hosted runners share the 60-requests-per-hour anonymous REST limit per IP, so the
+# required "Pinned API regeneration" job failed at random with "403 rate limit exceeded". Git
+# checkouts and one release download are not subject to that limit, and nothing here hands a token
+# to repository code: actions/checkout consumes the job token itself and persist-credentials: false
+# removes it again before any later step runs.
+#
+# Trust boundary: everything fetched here is third-party documentation. It is parsed as data by
+# packages/tools/src/ingest-docs.ts and is never executed, built, or sourced. The Lua archive is
+# accepted only after its SHA-256 matches the pin recorded in packages/tools/upstream-pins.json,
+# and only the manual page is extracted from it.
+
+inputs:
+  eeex-commit:
+    description: Full 40-character Bubb13/EEex-Docs commit to check out.
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Resolve pinned revisions
+      id: pins
+      shell: bash
+      env:
+        EEEX_COMMIT: ${{ inputs.eeex-commit }}
+      run: |
+        set -euo pipefail
+        # Every value below reaches a checkout ref, a URL, or a path, so each one is validated
+        # against its exact expected shape before it is used anywhere.
+        pins=packages/tools/upstream-pins.json
+        luajit_repository="$(jq -er '.luajit.repository' "$pins")"
+        luajit_commit="$(jq -er '.luajit.commit' "$pins")"
+        lua52_url="$(jq -er '.lua52.url' "$pins")"
+        lua52_sha256="$(jq -er '.lua52.sha256' "$pins")"
+        [[ "$EEEX_COMMIT" =~ ^[0-9a-f]{40}$ ]]
+        [[ "$luajit_repository" == LuaJIT/LuaJIT ]]
+        [[ "$luajit_commit" =~ ^[0-9a-f]{40}$ ]]
+        [[ "$lua52_url" =~ ^https://www\.lua\.org/ftp/lua-5\.2\.[0-9]+\.tar\.gz$ ]]
+        [[ "$lua52_sha256" =~ ^[0-9a-f]{64}$ ]]
+        {
+          echo "luajit-repository=$luajit_repository"
+          echo "luajit-commit=$luajit_commit"
+          echo "lua52-url=$lua52_url"
+          echo "lua52-sha256=$lua52_sha256"
+        } >> "$GITHUB_OUTPUT"
+
+    - name: Check out EEex-Docs at the pinned commit
+      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      with:
+        repository: Bubb13/EEex-Docs
+        ref: ${{ inputs.eeex-commit }}
+        path: .cache/eeex-docs
+        persist-credentials: false
+
+    - name: Check out the LuaJIT documentation at the pinned commit
+      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      with:
+        repository: ${{ steps.pins.outputs.luajit-repository }}
+        ref: ${{ steps.pins.outputs.luajit-commit }}
+        path: .cache/luajit
+        persist-credentials: false
+        # Only the HTML documentation is read; the sources are never needed.
+        sparse-checkout: doc
+
+    - name: Download and verify the Lua 5.2 reference manual
+      shell: bash
+      env:
+        LUA52_URL: ${{ steps.pins.outputs.lua52-url }}
+        LUA52_SHA256: ${{ steps.pins.outputs.lua52-sha256 }}
+      run: |
+        set -euo pipefail
+        mkdir -p .cache/lua52
+        archive=.cache/lua52/lua.tar.gz
+        # No redirect following: the pinned URL must answer directly, and the digest below is the
+        # identity check regardless of what the server returns.
+        curl --fail --silent --show-error --retry 3 --output "$archive" "$LUA52_URL"
+        echo "$LUA52_SHA256  $archive" | sha256sum --check --strict -
+        release="$(basename "$LUA52_URL" .tar.gz)"
+        tar -xzf "$archive" -C .cache/lua52 "$release/doc/manual.html"
+        {
+          echo "IE_LUA_EEEX_DOCS_ROOT=$GITHUB_WORKSPACE/.cache/eeex-docs"
+          echo "IE_LUA_LUAJIT_DOCS_ROOT=$GITHUB_WORKSPACE/.cache/luajit"
+          echo "IE_LUA_LUA52_MANUAL=$GITHUB_WORKSPACE/.cache/lua52/$release/doc/manual.html"
+        } >> "$GITHUB_ENV"

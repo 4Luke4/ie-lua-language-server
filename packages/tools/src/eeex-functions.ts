@@ -31,7 +31,8 @@ export function parseGameFunctionSymbol(document: GameFunctionDocument): ApiSymb
   const signatureBlock = findFirstLiteralBlock(lines, titleIndex + 2);
   const sourceSignature = signatureBlock.lines.join('\n').trim();
   const callable = parseCallableSignature(sourceSignature, document.sourcePath);
-  const signature = `${callable.name}(${callable.parameterNames.join(', ')})`;
+  // The documented literal is shown exactly as published, spacing included.
+  const signature = sourceSignature;
   const legacyTitle = document.sourcePath
     .split('/')
     .at(-1)
@@ -382,6 +383,10 @@ export function renderRstMarkdown(source: string, sourcePath = '<rst>'): string 
     }
   }
 
+  // Docutils rejects a transition at the end of a document or section, so a trailing "----" only
+  // separates this entry from the next one. The hover draws its own rule before the source link.
+  while (output.length > 0 && (output.at(-1) === '' || output.at(-1) === '---')) output.pop();
+
   return output
     .join('\n')
     .replace(/\n{3,}/gu, '\n\n')
@@ -520,16 +525,17 @@ function parseCallableSignature(
     /^([A-Za-z_][A-Za-z0-9_]*(?:(?:[.:])[A-Za-z_][A-Za-z0-9_]*)*)\s*\(([^)]*)\)$/u,
   );
   if (!match?.[1]) throw new Error(`${sourcePath}: malformed callable signature ${signature}`);
-  const rawParameterNames = (match[2] ?? '')
+  const parameterNames = (match[2] ?? '')
     .split(',')
     .map((value) => value.trim())
     .filter(Boolean);
-  const usedNames = new Set<string>();
-  const parameterNames = rawParameterNames.map((value, index) => {
-    const name = isIdentifier(value) && !usedNames.has(value) ? value : `arg${index + 1}`;
-    usedNames.add(name);
-    return name;
-  });
+  // Upstream writes "..." for Lua varargs and "???" for a parameter nobody has identified yet. Both
+  // are kept verbatim rather than replaced with invented names; anything else unknown fails.
+  for (const name of parameterNames) {
+    if (!isIdentifier(name) && name !== '...' && name !== '???') {
+      throw new Error(`${sourcePath}: unsupported parameter ${name} in ${signature}`);
+    }
+  }
   return { name: match[1], parameterNames };
 }
 
@@ -662,11 +668,7 @@ function renderInline(value: string): string {
     )
     .replace(/:bold-italic:`([^`]+)`/gu, '***$1***')
     .replace(/:underline:`([^`]+)`/gu, '<u>$1</u>')
-    .replace(
-      /:ref:`([^`<]*)<([^`>]+)>`/gu,
-      (_match, label: string, target: string) => `[${label}](#${target})`,
-    )
-    .replace(/:ref:`([^`]+)`/gu, (_match, label: string) => `[${label}](#${label})`)
+    .replace(/:ref:`([^`]+)`/gu, (_match, text: string) => renderRefRole(text))
     .replace(/:ref:``/gu, '')
     .replace(/`([^`<]+) <(https?:\/\/[^>]+)>`_/gu, '[$1]($2)')
     .replace(/``([^`]+)``/gu, '`$1`')
@@ -677,7 +679,37 @@ function renderInline(value: string): string {
   if (unsupportedSubstitution) {
     throw new Error(`unsupported RST substitution ${unsupportedSubstitution}`);
   }
-  return rendered;
+  // Upstream prose uses angle brackets as text ("the range [0, <max id in .IDS>]"). Markdown would
+  // read them as an HTML tag, which editors strip, so they become the "&lt;" entity, which Markdown
+  // renders as "<". An entity rather than a backslash escape keeps table-cell backslash escaping
+  // independent of it. Code spans, link targets, and the tags the :raw-html: and :underline: roles
+  // produce keep their meaning.
+  return rendered.replace(
+    /(`[^`]*`|\]\([^)]*\)|<\/?(?:br|pre|u)\s*\/?>)|</gu,
+    (_match, kept: string | undefined) => kept ?? '&lt;',
+  );
+}
+
+// A :ref: role names its target in a trailing "<...>", and upstream targets can contain angle
+// brackets themselves ("uiItem::bam<uiItem::<unnamed_type_bam>>" links to the label
+// "uiItem::<unnamed_type_bam>"). The target therefore starts at the "<" that balances the final
+// ">". Whitespace before it is dropped, as docutils does ("The Option Table <the-option-table>").
+// Without a trailing target, the text is both the link text and the target.
+function renderRefRole(text: string): string {
+  if (text.endsWith('>')) {
+    let depth = 0;
+    for (let index = text.length - 1; index >= 0; index -= 1) {
+      if (text[index] === '>') depth += 1;
+      if (text[index] === '<') depth -= 1;
+      if (depth === 0) {
+        const label = text.slice(0, index).trim();
+        const target = text.slice(index + 1, -1).trim();
+        if (label && target) return `[${label}](#${target})`;
+        break;
+      }
+    }
+  }
+  return `[${text}](#${text})`;
 }
 
 function plainInline(value: string): string {
@@ -716,6 +748,6 @@ function capitalize(value: string): string {
   return value.slice(0, 1).toUpperCase() + value.slice(1);
 }
 
-function githubSourceUrl(commit: string, sourcePath: string, line: number): string {
+export function githubSourceUrl(commit: string, sourcePath: string, line: number): string {
   return `https://github.com/Bubb13/EEex-Docs/blob/${commit}/${sourcePath.split('/').map(encodeURIComponent).join('/')}#L${line}`;
 }
