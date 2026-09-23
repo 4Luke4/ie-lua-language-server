@@ -63,7 +63,8 @@ function hoverProblems(symbol, markdown) {
   for (const [, url] of prose.matchAll(/\]\(([^)\s]*)/gu)) {
     if (!/^https?:\/\//u.test(url)) problems.push(`relative link ${url}`);
   }
-  for (const [, tag] of prose.matchAll(/<\/?([A-Za-z][A-Za-z0-9-]*)(?:\s[^<>]*)?\/?>/gu)) {
+  // A backslash-escaped "\<" is literal text ("the range [0, \<max id in .IDS>]"), not a tag.
+  for (const [, tag] of prose.matchAll(/(?<!\\)<\/?([A-Za-z][A-Za-z0-9-]*)(?:\s[^<>]*)?\/?>/gu)) {
     if (!renderedTags.has(tag.toLowerCase())) problems.push(`HTML <${tag}> would be stripped`);
   }
   if (/&(?:[A-Za-z]+|#\d+|#x[0-9A-Fa-f]+);/u.test(prose)) problems.push('undecoded HTML entity');
