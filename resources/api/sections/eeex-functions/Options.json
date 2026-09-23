@@ -81,10 +81,10 @@
       "returns": [
         {
           "type": "EEex_Options_Option | nil",
-          "description": "See summary / [The Option Table ](#the-option-table) for more details."
+          "description": "See summary / [The Option Table](https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Options/index.rst#L157) for more details."
         }
       ],
-      "documentationMarkdown": "> **Summary**\n> Returns the option object with the given `id`.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| id | string |  | The id of the option to be fetched. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| EEex_Options_Option \\| nil | See summary / [The Option Table ](#the-option-table) for more details. |",
+      "documentationMarkdown": "> **Summary**\n> Returns the option object with the given `id`.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| id | string |  | The id of the option to be fetched. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| EEex_Options_Option \\| nil | See summary / [The Option Table](https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Options/index.rst#L157) for more details. |",
       "documentationState": "documented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Options/index.rst#L64",
       "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
@@ -100,7 +100,7 @@
         {
           "name": "keybind",
           "type": "table",
-          "description": "A table representing the keybind to marshal. <br/> See [The Keybind Table ](#the-keybind-table) for more details."
+          "description": "A table representing the keybind to marshal. <br/> See [The Keybind Table](https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Keybinds/index.rst#L92) for more details."
         }
       ],
       "returns": [
@@ -109,7 +109,7 @@
           "description": "See summary."
         }
       ],
-      "documentationMarkdown": "> **Summary**\n> Returns a string representing the given `keybind` table.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| keybind | table |  | A table representing the keybind to marshal. <br/> See [The Keybind Table ](#the-keybind-table) for more details. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| string | See summary. |",
+      "documentationMarkdown": "> **Summary**\n> Returns a string representing the given `keybind` table.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| keybind | table |  | A table representing the keybind to marshal. <br/> See [The Keybind Table](https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Keybinds/index.rst#L92) for more details. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| string | See summary. |",
       "documentationState": "documented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Options/index.rst#L91",
       "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
@@ -205,7 +205,7 @@
           "name": "o",
           "type": "table",
           "defaultValue": "{}",
-          "description": "The object to become the `EEex_Options_Option` instance. <br/> See [The Option Table ](#the-option-table) for more details."
+          "description": "The object to become the `EEex_Options_Option` instance. <br/> See [The Option Table](https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Options/index.rst#L157) for more details."
         }
       ],
       "returns": [
@@ -216,7 +216,7 @@
       ],
       "containerName": "EEex_Options_Option",
       "instanceName": "new",
-      "documentationMarkdown": "> **Summary**\n> Creates a new `EEex_Options_Option` instance.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| o | table | `{}` | The object to become the `EEex_Options_Option` instance. <br/> See [The Option Table ](#the-option-table) for more details. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| EEex_Options_Option | See summary. |\n\n---\n\n#### **The Option Table**\n\n| Key | Value Type | Description |\n| --- | --- | --- |\n| accessor | EEex_Options_Accessor | This field is currently undocumented. |\n| default | `<non-nil>` | This field is currently undocumented. |\n| requiresRestart | boolean | This field is currently undocumented. |\n| storage | EEex_Options_Private_Storage | This field is currently undocumented. |",
+      "documentationMarkdown": "> **Summary**\n> Creates a new `EEex_Options_Option` instance.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| o | table | `{}` | The object to become the `EEex_Options_Option` instance. <br/> See [The Option Table](https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Options/index.rst#L157) for more details. |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| EEex_Options_Option | See summary. |\n\n---\n\n#### **The Option Table**\n\n| Key | Value Type | Description |\n| --- | --- | --- |\n| accessor | EEex_Options_Accessor | This field is currently undocumented. |\n| default | `<non-nil>` | This field is currently undocumented. |\n| requiresRestart | boolean | This field is currently undocumented. |\n| storage | EEex_Options_Private_Storage | This field is currently undocumented. |",
       "documentationState": "documented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Options/index.rst#L129",
       "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
@@ -298,10 +298,10 @@
       "returns": [
         {
           "type": "table",
-          "description": "See summary / [The Keybind Table ](#the-keybind-table) for more details."
+          "description": "See summary / [The Keybind Table](https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Keybinds/index.rst#L92) for more details."
         }
       ],
-      "documentationMarkdown": "> **Summary**\n> Returns a table representing the given `keybindStr` string.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| keybindStr | string |  | A string representing the keybind to unmarshal. <br/> This string is of the format `<SDL key name>+<SDL key name>...\\|<UP or DOWN>` |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| table | See summary / [The Keybind Table ](#the-keybind-table) for more details. |",
+      "documentationMarkdown": "> **Summary**\n> Returns a table representing the given `keybindStr` string.\n\n**Parameters:**\n\n| **Name** | **Type** | **Default Value** | **Description** |\n| --- | --- | --- | --- |\n| keybindStr | string |  | A string representing the keybind to unmarshal. <br/> This string is of the format `<SDL key name>+<SDL key name>...\\|<UP or DOWN>` |\n\n**Return Values:**\n\n| **Type** | **Description** |\n| --- | --- |\n| table | See summary / [The Keybind Table](https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Keybinds/index.rst#L92) for more details. |",
       "documentationState": "documented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EEex%20Functions/Options/index.rst#L307",
       "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",

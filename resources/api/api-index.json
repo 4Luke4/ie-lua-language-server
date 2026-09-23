@@ -26,13 +26,15 @@
     {
       "id": "lua52",
       "title": "Lua 5.2",
-      "url": "https://www.lua.org/manual/5.2/",
+      "url": "https://www.lua.org/ftp/lua-5.2.4.tar.gz",
+      "sha256": "b9e2e4aad6789b3b63a056d442f7b39f0ecfca3ae0f1fc0ae4e9614401b69f4b",
       "licenseStatus": "allowed"
     },
     {
       "id": "luajit",
       "title": "LuaJIT",
-      "url": "https://luajit.org/",
+      "url": "https://github.com/LuaJIT/LuaJIT/tree/c6ffc141a8762b41703f9287d63d93622a13dd8f/doc",
+      "commit": "c6ffc141a8762b41703f9287d63d93622a13dd8f",
       "licenseStatus": "allowed"
     },
     {

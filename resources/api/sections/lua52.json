@@ -1,10 +1,11 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-08-25T18:10:55.136Z",
+  "generatedAt": "2026-09-22T13:41:25.745Z",
   "source": {
     "id": "lua52",
     "title": "Lua 5.2",
-    "url": "https://www.lua.org/manual/5.2/",
+    "url": "https://www.lua.org/ftp/lua-5.2.4.tar.gz",
+    "sha256": "b9e2e4aad6789b3b63a056d442f7b39f0ecfca3ae0f1fc0ae4e9614401b69f4b",
     "licenseStatus": "allowed"
   },
   "title": "Lua 5.2",
@@ -15,7 +16,7 @@
       "kind": "variable",
       "sourceSection": "lua52",
       "signature": "_G",
-      "documentationMarkdown": "A global variable (not a function) that holds the global environment (see section2.2). Lua itself does not use this variable; changing its value does not affect any environment, nor vice-versa.",
+      "documentationMarkdown": "A global variable (not a function) that holds the global environment (see [§2.2](https://www.lua.org/manual/5.2/manual.html#2.2)). Lua itself does not use this variable; changing its value does not affect any environment, nor vice-versa.",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-_G",
       "licenseStatus": "allowed"
@@ -69,7 +70,7 @@
       "name": "bit32.band",
       "kind": "function",
       "sourceSection": "lua52",
-      "signature": "bit32.band (...)",
+      "signature": "bit32.band (···)",
       "documentationMarkdown": "Returns the bitwise *and* of its operands.",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-bit32.band",
@@ -91,7 +92,7 @@
       "name": "bit32.bor",
       "kind": "function",
       "sourceSection": "lua52",
-      "signature": "bit32.bor (...)",
+      "signature": "bit32.bor (···)",
       "documentationMarkdown": "Returns the bitwise *or* of its operands.",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-bit32.bor",
@@ -102,7 +103,7 @@
       "name": "bit32.btest",
       "kind": "function",
       "sourceSection": "lua52",
-      "signature": "bit32.btest (...)",
+      "signature": "bit32.btest (···)",
       "documentationMarkdown": "Returns a boolean signaling whether the bitwise *and* of its operands is different from zero.",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-bit32.btest",
@@ -113,7 +114,7 @@
       "name": "bit32.bxor",
       "kind": "function",
       "sourceSection": "lua52",
-      "signature": "bit32.bxor (...)",
+      "signature": "bit32.bxor (···)",
       "documentationMarkdown": "Returns the bitwise *exclusive or* of its operands.",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-bit32.bxor",
@@ -158,7 +159,7 @@
       "kind": "function",
       "sourceSection": "lua52",
       "signature": "bit32.replace (n, v, field [, width])",
-      "documentationMarkdown": "Returns a copy of `n` with the bits `field` to `field + width - 1` replaced by the value `v`. See `bit32.extract` for details about `field` and `width`.",
+      "documentationMarkdown": "Returns a copy of `n` with the bits `field` to `field + width - 1` replaced by the value `v`. See [`bit32.extract`](https://www.lua.org/manual/5.2/manual.html#pdf-bit32.extract) for details about `field` and `width`.",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-bit32.replace",
       "licenseStatus": "allowed"
@@ -191,7 +192,7 @@
       "kind": "function",
       "sourceSection": "lua52",
       "signature": "collectgarbage ([opt [, arg]])",
-      "documentationMarkdown": "This function is a generic interface to the garbage collector. It performs different functions according to its first argument, `opt`:\n\n- **\"`collect`\": ** performs a full garbage-collection cycle. This is the default option.\n- **\"`stop`\": ** stops automatic execution of the garbage collector. The collector will run only when explicitly invoked, until a call to restart it.\n- **\"`restart`\": ** restarts automatic execution of the garbage collector.\n- **\"`count`\": ** returns the total memory in use by Lua (in Kbytes) and a second value with the total memory in bytes modulo 1024. The first value has a fractional part, so the following equality is always true:\n\n```lua\nk, b = collectgarbage(\"count\")\nassert(k*1024 == math.floor(k)*1024 + b)\n```\n\n(The second result is useful when Lua is compiled with a non floating-point type for numbers.) - **\"`step`\": ** performs a garbage-collection step. The step \"size\" is controlled by `arg` (larger values mean more steps) in a non-specified way. If you want to control the step size you must experimentally tune the value of `arg`. Returns **true** if the step finished a collection cycle. - **\"`setpause`\": ** sets `arg` as the new value for the *pause* of the collector (see section2.5). Returns the previous value for *pause*. - **\"`setstepmul`\": ** sets `arg` as the new value for the *step multiplier* of the collector (see section2.5). Returns the previous value for *step*. - **\"`isrunning`\": ** returns a boolean that tells whether the collector is running (i.e., not stopped). - **\"`generational`\": ** changes the collector to generational mode. This is an experimental feature (see section2.5). - **\"`incremental`\": ** changes the collector to incremental mode. This is the default mode.",
+      "documentationMarkdown": "This function is a generic interface to the garbage collector. It performs different functions according to its first argument, `opt`:\n\n- **\"`collect`\":** performs a full garbage-collection cycle. This is the default option.\n- **\"`stop`\":** stops automatic execution of the garbage collector. The collector will run only when explicitly invoked, until a call to restart it.\n- **\"`restart`\":** restarts automatic execution of the garbage collector.\n- **\"`count`\":** returns the total memory in use by Lua (in Kbytes) and a second value with the total memory in bytes modulo 1024. The first value has a fractional part, so the following equality is always true:\n\n  ```lua\n  k, b = collectgarbage(\"count\")\n  assert(k*1024 == math.floor(k)*1024 + b)\n  ```\n\n  (The second result is useful when Lua is compiled with a non floating-point type for numbers.)\n- **\"`step`\":** performs a garbage-collection step. The step \"size\" is controlled by `arg` (larger values mean more steps) in a non-specified way. If you want to control the step size you must experimentally tune the value of `arg`. Returns **true** if the step finished a collection cycle.\n- **\"`setpause`\":** sets `arg` as the new value for the *pause* of the collector (see [§2.5](https://www.lua.org/manual/5.2/manual.html#2.5)). Returns the previous value for *pause*.\n- **\"`setstepmul`\":** sets `arg` as the new value for the *step multiplier* of the collector (see [§2.5](https://www.lua.org/manual/5.2/manual.html#2.5)). Returns the previous value for *step*.\n- **\"`isrunning`\":** returns a boolean that tells whether the collector is running (i.e., not stopped).\n- **\"`generational`\":** changes the collector to generational mode. This is an experimental feature (see [§2.5](https://www.lua.org/manual/5.2/manual.html#2.5)).\n- **\"`incremental`\":** changes the collector to incremental mode. This is the default mode.",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-collectgarbage",
       "licenseStatus": "allowed"
@@ -202,7 +203,7 @@
       "kind": "module",
       "sourceSection": "lua52",
       "signature": "debug",
-      "documentationMarkdown": "This library provides the functionality of the debug interface (section4.9) to Lua programs. You should exert care when using this library. Several of its functions violate basic assumptions about Lua code (e.g., that variables local to a function cannot be accessed from outside; that userdata metatables cannot be changed by Lua code; that Lua programs do not crash) and therefore can compromise otherwise secure code. Moreover, some functions in this library may be slow.",
+      "documentationMarkdown": "This library provides the functionality of the debug interface ([§4.9](https://www.lua.org/manual/5.2/manual.html#4.9)) to Lua programs. You should exert care when using this library. Several of its functions violate basic assumptions about Lua code (e.g., that variables local to a function cannot be accessed from outside; that userdata metatables cannot be changed by Lua code; that Lua programs do not crash) and therefore can compromise otherwise secure code. Moreover, some functions in this library may be slow.",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#6.10",
       "licenseStatus": "allowed"
@@ -224,7 +225,7 @@
       "kind": "function",
       "sourceSection": "lua52",
       "signature": "debug.gethook ([thread])",
-      "documentationMarkdown": "Returns the current hook settings of the thread, as three values: the current hook function, the current hook mask, and the current hook count (as set by the `debug.sethook` function).",
+      "documentationMarkdown": "Returns the current hook settings of the thread, as three values: the current hook function, the current hook mask, and the current hook count (as set by the [`debug.sethook`](https://www.lua.org/manual/5.2/manual.html#pdf-debug.sethook) function).",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-debug.gethook",
       "licenseStatus": "allowed"
@@ -235,7 +236,7 @@
       "kind": "function",
       "sourceSection": "lua52",
       "signature": "debug.getinfo ([thread,] f [, what])",
-      "documentationMarkdown": "Returns a table with information about a function. You can give the function directly or you can give a number as the value of `f`, which means the function running at level `f` of the call stack of the given thread: level 0 is the current function (`getinfo` itself); level 1 is the function that called `getinfo` (except for tail calls, which do not count on the stack); and so on. If `f` is a number larger than the number of active functions, then `getinfo` returns **nil**.\n\nThe returned table can contain all the fields returned by `lua_getinfo`, with the string `what` describing which fields to fill in. The default for `what` is to get all information available, except the table of valid lines. If present, the option '`f`' adds a field named `func` with the function itself. If present, the option '`L`' adds a field named `activelines` with the table of valid lines.\n\nFor instance, the expression `debug.getinfo(1,\"n\").name` returns a table with a name for the current function, if a reasonable name can be found, and the expression `debug.getinfo(print)` returns a table with all available information about the `print` function.",
+      "documentationMarkdown": "Returns a table with information about a function. You can give the function directly or you can give a number as the value of `f`, which means the function running at level `f` of the call stack of the given thread: level 0 is the current function (`getinfo` itself); level 1 is the function that called `getinfo` (except for tail calls, which do not count on the stack); and so on. If `f` is a number larger than the number of active functions, then `getinfo` returns **nil**.\n\nThe returned table can contain all the fields returned by [`lua_getinfo`](https://www.lua.org/manual/5.2/manual.html#lua_getinfo), with the string `what` describing which fields to fill in. The default for `what` is to get all information available, except the table of valid lines. If present, the option '`f`' adds a field named `func` with the function itself. If present, the option '`L`' adds a field named `activelines` with the table of valid lines.\n\nFor instance, the expression `debug.getinfo(1,\"n\").name` returns a table with a name for the current function, if a reasonable name can be found, and the expression `debug.getinfo(print)` returns a table with all available information about the [`print`](https://www.lua.org/manual/5.2/manual.html#pdf-print) function.",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-debug.getinfo",
       "licenseStatus": "allowed"
@@ -246,7 +247,7 @@
       "kind": "function",
       "sourceSection": "lua52",
       "signature": "debug.getlocal ([thread,] f, local)",
-      "documentationMarkdown": "This function returns the name and the value of the local variable with index `local` of the function at level `f` of the stack. This function accesses not only explicit local variables, but also parameters, temporaries, etc.\n\nThe first parameter or local variable has index 1, and so on, until the last active variable. Negative indices refer to vararg parameters; -1 is the first vararg parameter. The function returns **nil** if there is no variable with the given index, and raises an error when called with a level out of range. (You can call `debug.getinfo` to check whether the level is valid.)\n\nVariable names starting with '`(`' (open parenthesis) represent internal variables (loop control variables, temporaries, varargs, and C function locals).\n\nThe parameter `f` may also be a function. In that case, `getlocal` returns only the name of function parameters.",
+      "documentationMarkdown": "This function returns the name and the value of the local variable with index `local` of the function at level `f` of the stack. This function accesses not only explicit local variables, but also parameters, temporaries, etc.\n\nThe first parameter or local variable has index 1, and so on, until the last active variable. Negative indices refer to vararg parameters; -1 is the first vararg parameter. The function returns **nil** if there is no variable with the given index, and raises an error when called with a level out of range. (You can call [`debug.getinfo`](https://www.lua.org/manual/5.2/manual.html#pdf-debug.getinfo) to check whether the level is valid.)\n\nVariable names starting with '`(`' (open parenthesis) represent internal variables (loop control variables, temporaries, varargs, and C function locals).\n\nThe parameter `f` may also be a function. In that case, `getlocal` returns only the name of function parameters.",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-debug.getlocal",
       "licenseStatus": "allowed"
@@ -268,7 +269,7 @@
       "kind": "function",
       "sourceSection": "lua52",
       "signature": "debug.getregistry ()",
-      "documentationMarkdown": "Returns the registry table (see section4.5).",
+      "documentationMarkdown": "Returns the registry table (see [§4.5](https://www.lua.org/manual/5.2/manual.html#4.5)).",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-debug.getregistry",
       "licenseStatus": "allowed"
@@ -301,7 +302,7 @@
       "kind": "function",
       "sourceSection": "lua52",
       "signature": "debug.sethook ([thread,] hook, mask [, count])",
-      "documentationMarkdown": "Sets the given function as a hook. The string `mask` and the number `count` describe when the hook will be called. The string mask may have any combination of the following characters, with the given meaning:\n\n- **'`c`': ** the hook is called every time Lua calls a function;\n- **'`r`': ** the hook is called every time Lua returns from a function;\n- **'`l`': ** the hook is called every time Lua enters a new line of code.\n\nMoreover, with a `count` different from zero, the hook is called also after every `count` instructions.\n\nWhen called without arguments, `debug.sethook` turns off the hook.\n\nWhen the hook is called, its first parameter is a string describing the event that has triggered its call: `\"call\"` (or `\"tail call\"`), `\"return\"`, `\"line\"`, and `\"count\"`. For line events, the hook also gets the new line number as its second parameter. Inside a hook, you can call `getinfo` with level 2 to get more information about the running function (level 0 is the `getinfo` function, and level 1 is the hook function).",
+      "documentationMarkdown": "Sets the given function as a hook. The string `mask` and the number `count` describe when the hook will be called. The string mask may have any combination of the following characters, with the given meaning:\n\n- **'`c`':** the hook is called every time Lua calls a function;\n- **'`r`':** the hook is called every time Lua returns from a function;\n- **'`l`':** the hook is called every time Lua enters a new line of code.\n\nMoreover, with a `count` different from zero, the hook is called also after every `count` instructions.\n\nWhen called without arguments, [`debug.sethook`](https://www.lua.org/manual/5.2/manual.html#pdf-debug.sethook) turns off the hook.\n\nWhen the hook is called, its first parameter is a string describing the event that has triggered its call: `\"call\"` (or `\"tail call\"`), `\"return\"`, `\"line\"`, and `\"count\"`. For line events, the hook also gets the new line number as its second parameter. Inside a hook, you can call `getinfo` with level 2 to get more information about the running function (level 0 is the `getinfo` function, and level 1 is the hook function).",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-debug.sethook",
       "licenseStatus": "allowed"
@@ -312,7 +313,7 @@
       "kind": "function",
       "sourceSection": "lua52",
       "signature": "debug.setlocal ([thread,] level, local, value)",
-      "documentationMarkdown": "This function assigns the value `value` to the local variable with index `local` of the function at level `level` of the stack. The function returns **nil** if there is no local variable with the given index, and raises an error when called with a `level` out of range. (You can call `getinfo` to check whether the level is valid.) Otherwise, it returns the name of the local variable.\n\nSee `debug.getlocal` for more information about variable indices and names.",
+      "documentationMarkdown": "This function assigns the value `value` to the local variable with index `local` of the function at level `level` of the stack. The function returns **nil** if there is no local variable with the given index, and raises an error when called with a `level` out of range. (You can call `getinfo` to check whether the level is valid.) Otherwise, it returns the name of the local variable.\n\nSee [`debug.getlocal`](https://www.lua.org/manual/5.2/manual.html#pdf-debug.getlocal) for more information about variable indices and names.",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-debug.setlocal",
       "licenseStatus": "allowed"
@@ -400,7 +401,7 @@
       "kind": "function",
       "sourceSection": "lua52",
       "signature": "error (message [, level])",
-      "documentationMarkdown": "Terminates the last protected function called and returns `message` as the error message. Function `error` never returns.\n\nUsually, `error` adds some information about the error position at the beginning of the message, if the message is a string. The `level` argument specifies how to get the error position. With level 1 (the default), the error position is where the `error` function was called. Level 2 points the error to where the function that called `error` was called; and so on. Passing a level 0 avoids the addition of error position information to the message.",
+      "documentationMarkdown": "Terminates the last protected function called and returns `message` as the error message. Function `error` never returns.\n\nUsually, `error` adds some information about the error position at the beginning of the message, if the message is a string. The `level` argument specifies how to get the error position. With level 1 (the default), the error position is where the `error` function was called. Level 2 points the error to where the function that called `error` was called; and so on. Passing a level 0 avoids the addition of error position information to the message.",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-error",
       "licenseStatus": "allowed"
@@ -433,7 +434,7 @@
       "kind": "keyword",
       "sourceSection": "lua52",
       "signature": "and",
-      "documentationMarkdown": "The following keywords are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
+      "documentationMarkdown": "The following *keywords* are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#3.1",
       "licenseStatus": "allowed"
@@ -444,7 +445,7 @@
       "kind": "keyword",
       "sourceSection": "lua52",
       "signature": "break",
-      "documentationMarkdown": "The following keywords are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
+      "documentationMarkdown": "The following *keywords* are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#3.1",
       "licenseStatus": "allowed"
@@ -455,7 +456,7 @@
       "kind": "keyword",
       "sourceSection": "lua52",
       "signature": "do",
-      "documentationMarkdown": "The following keywords are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
+      "documentationMarkdown": "The following *keywords* are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#3.1",
       "licenseStatus": "allowed"
@@ -466,7 +467,7 @@
       "kind": "keyword",
       "sourceSection": "lua52",
       "signature": "else",
-      "documentationMarkdown": "The following keywords are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
+      "documentationMarkdown": "The following *keywords* are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#3.1",
       "licenseStatus": "allowed"
@@ -477,7 +478,7 @@
       "kind": "keyword",
       "sourceSection": "lua52",
       "signature": "elseif",
-      "documentationMarkdown": "The following keywords are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
+      "documentationMarkdown": "The following *keywords* are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#3.1",
       "licenseStatus": "allowed"
@@ -488,7 +489,7 @@
       "kind": "keyword",
       "sourceSection": "lua52",
       "signature": "end",
-      "documentationMarkdown": "The following keywords are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
+      "documentationMarkdown": "The following *keywords* are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#3.1",
       "licenseStatus": "allowed"
@@ -499,7 +500,7 @@
       "kind": "keyword",
       "sourceSection": "lua52",
       "signature": "false",
-      "documentationMarkdown": "The following keywords are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
+      "documentationMarkdown": "The following *keywords* are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#3.1",
       "licenseStatus": "allowed"
@@ -510,7 +511,7 @@
       "kind": "keyword",
       "sourceSection": "lua52",
       "signature": "for",
-      "documentationMarkdown": "The following keywords are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
+      "documentationMarkdown": "The following *keywords* are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#3.1",
       "licenseStatus": "allowed"
@@ -521,7 +522,7 @@
       "kind": "keyword",
       "sourceSection": "lua52",
       "signature": "function",
-      "documentationMarkdown": "The following keywords are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
+      "documentationMarkdown": "The following *keywords* are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#3.1",
       "licenseStatus": "allowed"
@@ -532,7 +533,7 @@
       "kind": "keyword",
       "sourceSection": "lua52",
       "signature": "goto",
-      "documentationMarkdown": "The following keywords are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
+      "documentationMarkdown": "The following *keywords* are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#3.1",
       "licenseStatus": "allowed"
@@ -543,7 +544,7 @@
       "kind": "keyword",
       "sourceSection": "lua52",
       "signature": "if",
-      "documentationMarkdown": "The following keywords are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
+      "documentationMarkdown": "The following *keywords* are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#3.1",
       "licenseStatus": "allowed"
@@ -554,7 +555,7 @@
       "kind": "keyword",
       "sourceSection": "lua52",
       "signature": "in",
-      "documentationMarkdown": "The following keywords are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
+      "documentationMarkdown": "The following *keywords* are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#3.1",
       "licenseStatus": "allowed"
@@ -565,7 +566,7 @@
       "kind": "keyword",
       "sourceSection": "lua52",
       "signature": "local",
-      "documentationMarkdown": "The following keywords are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
+      "documentationMarkdown": "The following *keywords* are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#3.1",
       "licenseStatus": "allowed"
@@ -576,7 +577,7 @@
       "kind": "keyword",
       "sourceSection": "lua52",
       "signature": "nil",
-      "documentationMarkdown": "The following keywords are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
+      "documentationMarkdown": "The following *keywords* are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#3.1",
       "licenseStatus": "allowed"
@@ -587,7 +588,7 @@
       "kind": "keyword",
       "sourceSection": "lua52",
       "signature": "not",
-      "documentationMarkdown": "The following keywords are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
+      "documentationMarkdown": "The following *keywords* are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#3.1",
       "licenseStatus": "allowed"
@@ -598,7 +599,7 @@
       "kind": "keyword",
       "sourceSection": "lua52",
       "signature": "or",
-      "documentationMarkdown": "The following keywords are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
+      "documentationMarkdown": "The following *keywords* are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#3.1",
       "licenseStatus": "allowed"
@@ -609,7 +610,7 @@
       "kind": "keyword",
       "sourceSection": "lua52",
       "signature": "repeat",
-      "documentationMarkdown": "The following keywords are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
+      "documentationMarkdown": "The following *keywords* are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#3.1",
       "licenseStatus": "allowed"
@@ -620,7 +621,7 @@
       "kind": "keyword",
       "sourceSection": "lua52",
       "signature": "return",
-      "documentationMarkdown": "The following keywords are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
+      "documentationMarkdown": "The following *keywords* are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#3.1",
       "licenseStatus": "allowed"
@@ -631,7 +632,7 @@
       "kind": "keyword",
       "sourceSection": "lua52",
       "signature": "then",
-      "documentationMarkdown": "The following keywords are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
+      "documentationMarkdown": "The following *keywords* are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#3.1",
       "licenseStatus": "allowed"
@@ -642,7 +643,7 @@
       "kind": "keyword",
       "sourceSection": "lua52",
       "signature": "true",
-      "documentationMarkdown": "The following keywords are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
+      "documentationMarkdown": "The following *keywords* are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#3.1",
       "licenseStatus": "allowed"
@@ -653,7 +654,7 @@
       "kind": "keyword",
       "sourceSection": "lua52",
       "signature": "until",
-      "documentationMarkdown": "The following keywords are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
+      "documentationMarkdown": "The following *keywords* are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#3.1",
       "licenseStatus": "allowed"
@@ -664,7 +665,7 @@
       "kind": "keyword",
       "sourceSection": "lua52",
       "signature": "while",
-      "documentationMarkdown": "The following keywords are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
+      "documentationMarkdown": "The following *keywords* are reserved and cannot be used as names:\n\n```lua\nand       break     do        else      elseif    end\nfalse     for       function  goto      if        in\nlocal     nil       not       or        repeat    return\nthen      true      until     while\n```",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#3.1",
       "licenseStatus": "allowed"
@@ -675,7 +676,7 @@
       "kind": "function",
       "sourceSection": "lua52",
       "signature": "load (ld [, source [, mode [, env]]])",
-      "documentationMarkdown": "Loads a chunk.\n\nIf `ld` is a string, the chunk is this string. If `ld` is a function, `load` calls it repeatedly to get the chunk pieces. Each call to `ld` must return a string that concatenates with previous results. A return of an empty string, **nil**, or no value signals the end of the chunk.\n\nIf there are no syntactic errors, returns the compiled chunk as a function; otherwise, returns **nil** plus the error message.\n\nIf the resulting function has upvalues, the first upvalue is set to the value of `env`, if that parameter is given, or to the value of the global environment. (When you load a main chunk, the resulting function will always have exactly one upvalue, the `_ENV` variable (see section2.2). When you load a binary chunk created from a function (see `string.dump`), the resulting function can have arbitrary upvalues.)\n\n`source` is used as the source of the chunk for error messages and debug information (see section4.9). When absent, it defaults to `ld`, if `ld` is a string, or to \"`=(load)`\" otherwise.\n\nThe string `mode` controls whether the chunk can be text or binary (that is, a precompiled chunk). It may be the string \"`b`\" (only binary chunks), \"`t`\" (only text chunks), or \"`bt`\" (both binary and text). The default is \"`bt`\".",
+      "documentationMarkdown": "Loads a chunk.\n\nIf `ld` is a string, the chunk is this string. If `ld` is a function, `load` calls it repeatedly to get the chunk pieces. Each call to `ld` must return a string that concatenates with previous results. A return of an empty string, **nil**, or no value signals the end of the chunk.\n\nIf there are no syntactic errors, returns the compiled chunk as a function; otherwise, returns **nil** plus the error message.\n\nIf the resulting function has upvalues, the first upvalue is set to the value of `env`, if that parameter is given, or to the value of the global environment. (When you load a main chunk, the resulting function will always have exactly one upvalue, the `_ENV` variable (see [§2.2](https://www.lua.org/manual/5.2/manual.html#2.2)). When you load a binary chunk created from a function (see [`string.dump`](https://www.lua.org/manual/5.2/manual.html#pdf-string.dump)), the resulting function can have arbitrary upvalues.)\n\n`source` is used as the source of the chunk for error messages and debug information (see [§4.9](https://www.lua.org/manual/5.2/manual.html#4.9)). When absent, it defaults to `ld`, if `ld` is a string, or to \"`=(load)`\" otherwise.\n\nThe string `mode` controls whether the chunk can be text or binary (that is, a precompiled chunk). It may be the string \"`b`\" (only binary chunks), \"`t`\" (only text chunks), or \"`bt`\" (both binary and text). The default is \"`bt`\".",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-load",
       "licenseStatus": "allowed"
@@ -686,7 +687,7 @@
       "kind": "function",
       "sourceSection": "lua52",
       "signature": "loadfile ([filename [, mode [, env]]])",
-      "documentationMarkdown": "Similar to `load`, but gets the chunk from file `filename` or from the standard input, if no file name is given.",
+      "documentationMarkdown": "Similar to [`load`](https://www.lua.org/manual/5.2/manual.html#pdf-load), but gets the chunk from file `filename` or from the standard input, if no file name is given.",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-loadfile",
       "licenseStatus": "allowed"
@@ -697,7 +698,7 @@
       "kind": "module",
       "sourceSection": "lua52",
       "signature": "math",
-      "documentationMarkdown": "This library is an interface to the standard C math library. It provides all its functions inside the table `math`.",
+      "documentationMarkdown": "This library is an interface to the standard C math library. It provides all its functions inside the table `math`.",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#6.6",
       "licenseStatus": "allowed"
@@ -807,7 +808,7 @@
       "kind": "function",
       "sourceSection": "lua52",
       "signature": "math.exp (x)",
-      "documentationMarkdown": "Returns the value *ex*.",
+      "documentationMarkdown": "Returns the value *e<sup>x</sup>*.",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-math.exp",
       "licenseStatus": "allowed"
@@ -840,7 +841,7 @@
       "kind": "function",
       "sourceSection": "lua52",
       "signature": "math.frexp (x)",
-      "documentationMarkdown": "Returns `m` and `e` such that *x = m2e*, `e` is an integer and the absolute value of `m` is in the range *[0.5, 1)* (or zero when `x` is zero).",
+      "documentationMarkdown": "Returns `m` and `e` such that *x = m2<sup>e</sup>*, `e` is an integer and the absolute value of `m` is in the range *[0.5, 1)* (or zero when `x` is zero).",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-math.frexp",
       "licenseStatus": "allowed"
@@ -862,7 +863,7 @@
       "kind": "function",
       "sourceSection": "lua52",
       "signature": "math.ldexp (m, e)",
-      "documentationMarkdown": "Returns *m2e* (`e` should be an integer).",
+      "documentationMarkdown": "Returns *m2<sup>e</sup>* (`e` should be an integer).",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-math.ldexp",
       "licenseStatus": "allowed"
@@ -883,7 +884,7 @@
       "name": "math.max",
       "kind": "function",
       "sourceSection": "lua52",
-      "signature": "math.max (x, ...)",
+      "signature": "math.max (x, ···)",
       "documentationMarkdown": "Returns the maximum value among its arguments.",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-math.max",
@@ -894,7 +895,7 @@
       "name": "math.min",
       "kind": "function",
       "sourceSection": "lua52",
-      "signature": "math.min (x, ...)",
+      "signature": "math.min (x, ···)",
       "documentationMarkdown": "Returns the minimum value among its arguments.",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-math.min",
@@ -917,7 +918,7 @@
       "kind": "variable",
       "sourceSection": "lua52",
       "signature": "math.pi",
-      "documentationMarkdown": "The value of *&pi;*.",
+      "documentationMarkdown": "The value of *π*.",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-math.pi",
       "licenseStatus": "allowed"
@@ -928,7 +929,7 @@
       "kind": "function",
       "sourceSection": "lua52",
       "signature": "math.pow (x, y)",
-      "documentationMarkdown": "Returns *xy*. (You can also use the expression `x^y` to compute this value.)",
+      "documentationMarkdown": "Returns *x<sup>y</sup>*. (You can also use the expression `x^y` to compute this value.)",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-math.pow",
       "licenseStatus": "allowed"
@@ -950,7 +951,7 @@
       "kind": "function",
       "sourceSection": "lua52",
       "signature": "math.random ([m [, n]])",
-      "documentationMarkdown": "This function is an interface to the simple pseudo-random generator function `rand` provided by Standard C. (No guarantees can be given for its statistical properties.)\n\nWhen called without arguments, returns a uniform pseudo-random real number in the range *[0,1)*. When called with an integer number `m`, `math.random` returns a uniform pseudo-random integer in the range *[1, m]*. When called with two integer numbers `m` and `n`, `math.random` returns a uniform pseudo-random integer in the range *[m, n]*.",
+      "documentationMarkdown": "This function is an interface to the simple pseudo-random generator function `rand` provided by Standard C. (No guarantees can be given for its statistical properties.)\n\nWhen called without arguments, returns a uniform pseudo-random real number in the range *[0,1)*. When called with an integer number `m`, `math.random` returns a uniform pseudo-random integer in the range *[1, m]*. When called with two integer numbers `m` and `n`, `math.random` returns a uniform pseudo-random integer in the range *[m, n]*.",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-math.random",
       "licenseStatus": "allowed"
@@ -1038,7 +1039,7 @@
       "kind": "function",
       "sourceSection": "lua52",
       "signature": "pairs (t)",
-      "documentationMarkdown": "If `t` has a metamethod `__pairs`, calls it with `t` as argument and returns the first three results from the call.\n\nOtherwise, returns three values: the `next` function, the table `t`, and **nil**, so that the construction\n\n```lua\nfor k,v in pairs(t) do body end\n```\n\nwill iterate over all key-value pairs of table `t`.\n\nSee function `next` for the caveats of modifying the table during its traversal.",
+      "documentationMarkdown": "If `t` has a metamethod `__pairs`, calls it with `t` as argument and returns the first three results from the call.\n\nOtherwise, returns three values: the [`next`](https://www.lua.org/manual/5.2/manual.html#pdf-next) function, the table `t`, and **nil**, so that the construction\n\n```lua\nfor k,v in pairs(t) do body end\n```\n\nwill iterate over all key–value pairs of table `t`.\n\nSee function [`next`](https://www.lua.org/manual/5.2/manual.html#pdf-next) for the caveats of modifying the table during its traversal.",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-pairs",
       "licenseStatus": "allowed"
@@ -1048,8 +1049,8 @@
       "name": "pcall",
       "kind": "function",
       "sourceSection": "lua52",
-      "signature": "pcall (f [, arg1, ...])",
-      "documentationMarkdown": "Calls function `f` with the given arguments in *protected mode*. This means that any error inside `f` is not propagated; instead, `pcall` catches the error and returns a status code. Its first result is the status code (a boolean), which is true if the call succeeds without errors. In such case, `pcall` also returns all results from the call, after this first result. In case of any error, `pcall` returns **false** plus the error message.",
+      "signature": "pcall (f [, arg1, ···])",
+      "documentationMarkdown": "Calls function `f` with the given arguments in *protected mode*. This means that any error inside `f` is not propagated; instead, `pcall` catches the error and returns a status code. Its first result is the status code (a boolean), which is true if the call succeeds without errors. In such case, `pcall` also returns all results from the call, after this first result. In case of any error, `pcall` returns **false** plus the error message.",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-pcall",
       "licenseStatus": "allowed"
@@ -1059,8 +1060,8 @@
       "name": "print",
       "kind": "function",
       "sourceSection": "lua52",
-      "signature": "print (...)",
-      "documentationMarkdown": "Receives any number of arguments and prints their values to `stdout`, using the `tostring` function to convert each argument to a string. `print` is not intended for formatted output, but only as a quick way to show a value, for instance for debugging. For complete control over the output, use `string.format` and `io.write`.",
+      "signature": "print (···)",
+      "documentationMarkdown": "Receives any number of arguments and prints their values to `stdout`, using the [`tostring`](https://www.lua.org/manual/5.2/manual.html#pdf-tostring) function to convert each argument to a string. `print` is not intended for formatted output, but only as a quick way to show a value, for instance for debugging. For complete control over the output, use [`string.format`](https://www.lua.org/manual/5.2/manual.html#pdf-string.format) and [`io.write`](https://www.lua.org/manual/5.2/manual.html#pdf-io.write).",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-print",
       "licenseStatus": "allowed"
@@ -1114,7 +1115,7 @@
       "name": "select",
       "kind": "function",
       "sourceSection": "lua52",
-      "signature": "select (index, ...)",
+      "signature": "select (index, ···)",
       "documentationMarkdown": "If `index` is a number, returns all arguments after argument number `index`; a negative number indexes from the end (-1 is the last argument). Otherwise, `index` must be the string `\"#\"`, and `select` returns the total number of extra arguments it received.",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-select",
@@ -1126,7 +1127,7 @@
       "kind": "function",
       "sourceSection": "lua52",
       "signature": "setmetatable (table, metatable)",
-      "documentationMarkdown": "Sets the metatable for the given table. (You cannot change the metatable of other types from Lua, only from C.) If `metatable` is **nil**, removes the metatable of the given table. If the original metatable has a `\"__metatable\"` field, raises an error.\n\nThis function returns `table`.",
+      "documentationMarkdown": "Sets the metatable for the given table. (You cannot change the metatable of other types from Lua, only from C.) If `metatable` is **nil**, removes the metatable of the given table. If the original metatable has a `\"__metatable\"` field, raises an error.\n\nThis function returns `table`.",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-setmetatable",
       "licenseStatus": "allowed"
@@ -1137,7 +1138,7 @@
       "kind": "module",
       "sourceSection": "lua52",
       "signature": "string",
-      "documentationMarkdown": "This library provides generic functions for string manipulation, such as finding and extracting substrings, and pattern matching. When indexing a string in Lua, the first character is at position 1 (not at 0, as in C). Indices are allowed to be negative and are interpreted as indexing backwards, from the end of the string. Thus, the last character is at position -1, and so on.",
+      "documentationMarkdown": "This library provides generic functions for string manipulation, such as finding and extracting substrings, and pattern matching. When indexing a string in Lua, the first character is at position 1 (not at 0, as in C). Indices are allowed to be negative and are interpreted as indexing backwards, from the end of the string. Thus, the last character is at position -1, and so on.",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#6.4",
       "licenseStatus": "allowed"
@@ -1148,7 +1149,7 @@
       "kind": "function",
       "sourceSection": "lua52",
       "signature": "string.byte (s [, i [, j]])",
-      "documentationMarkdown": "Returns the internal numerical codes of the characters `s[i]`, `s[i+1]`, ..., `s[j]`. The default value for `i` is 1; the default value for `j` is `i`. These indices are corrected following the same rules of function `string.sub`.\n\nNumerical codes are not necessarily portable across platforms.",
+      "documentationMarkdown": "Returns the internal numerical codes of the characters `s[i]`, `s[i+1]`, ..., `s[j]`. The default value for `i` is 1; the default value for `j` is `i`. These indices are corrected following the same rules of function [`string.sub`](https://www.lua.org/manual/5.2/manual.html#pdf-string.sub).\n\nNumerical codes are not necessarily portable across platforms.",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-string.byte",
       "licenseStatus": "allowed"
@@ -1158,7 +1159,7 @@
       "name": "string.char",
       "kind": "function",
       "sourceSection": "lua52",
-      "signature": "string.char (...)",
+      "signature": "string.char (···)",
       "documentationMarkdown": "Receives zero or more integers. Returns a string with length equal to the number of arguments, in which each character has the internal numerical code equal to its corresponding argument.\n\nNumerical codes are not necessarily portable across platforms.",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-string.char",
@@ -1170,7 +1171,7 @@
       "kind": "function",
       "sourceSection": "lua52",
       "signature": "string.dump (function)",
-      "documentationMarkdown": "Returns a string containing a binary representation of the given function, so that a later `load` on this string returns a copy of the function (but with new upvalues).",
+      "documentationMarkdown": "Returns a string containing a binary representation of the given function, so that a later [`load`](https://www.lua.org/manual/5.2/manual.html#pdf-load) on this string returns a copy of the function (but with new upvalues).",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-string.dump",
       "licenseStatus": "allowed"
@@ -1181,7 +1182,7 @@
       "kind": "function",
       "sourceSection": "lua52",
       "signature": "string.find (s, pattern [, init [, plain]])",
-      "documentationMarkdown": "Looks for the first match of `pattern` in the string `s`. If it finds a match, then `find` returns the indices of `s` where this occurrence starts and ends; otherwise, it returns **nil**. A third, optional numerical argument `init` specifies where to start the search; its default value is 1 and can be negative. A value of **true** as a fourth, optional argument `plain` turns off the pattern matching facilities, so the function does a plain \"find substring\" operation, with no characters in `pattern` being considered magic. Note that if `plain` is given, then `init` must be given as well.\n\nIf the pattern has captures, then in a successful match the captured values are also returned, after the two indices.",
+      "documentationMarkdown": "Looks for the first match of `pattern` in the string `s`. If it finds a match, then `find` returns the indices of `s` where this occurrence starts and ends; otherwise, it returns **nil**. A third, optional numerical argument `init` specifies where to start the search; its default value is 1 and can be negative. A value of **true** as a fourth, optional argument `plain` turns off the pattern matching facilities, so the function does a plain \"find substring\" operation, with no characters in `pattern` being considered magic. Note that if `plain` is given, then `init` must be given as well.\n\nIf the pattern has captures, then in a successful match the captured values are also returned, after the two indices.",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-string.find",
       "licenseStatus": "allowed"
@@ -1191,8 +1192,8 @@
       "name": "string.format",
       "kind": "function",
       "sourceSection": "lua52",
-      "signature": "string.format (formatstring, ...)",
-      "documentationMarkdown": "Returns a formatted version of its variable number of arguments following the description given in its first argument (which must be a string). The format string follows the same rules as the ISO C function `sprintf`. The only differences are that the options/modifiers `*`, `h`, `L`, `l`, `n`, and `p` are not supported and that there is an extra option, `q`. The `q` option formats a string between double quotes, using escape sequences when necessary to ensure that it can safely be read back by the Lua interpreter. For instance, the call\n\n```lua\nstring.format('%q', 'a string with \"quotes\" and \\n new line')\n```\n\nmay produce the string:\n\n```lua\n\"a string with \\\"quotes\\\" and \\\n new line\"\n```\n\nOptions `A` and `a` (when available), `E`, `e`, `f`, `G`, and `g` all expect a number as argument. Options `c`, `d`, `i`, `o`, `u`, `X`, and `x` also expect a number, but the range of that number may be limited by the underlying C implementation. For options `o`, `u`, `X`, and `x`, the number cannot be negative. Option `q` expects a string; option `s` expects a string without embedded zeros. If the argument to option `s` is not a string, it is converted to one following the same rules of `tostring`.",
+      "signature": "string.format (formatstring, ···)",
+      "documentationMarkdown": "Returns a formatted version of its variable number of arguments following the description given in its first argument (which must be a string). The format string follows the same rules as the ISO C function `sprintf`. The only differences are that the options/modifiers `*`, `h`, `L`, `l`, `n`, and `p` are not supported and that there is an extra option, `q`. The `q` option formats a string between double quotes, using escape sequences when necessary to ensure that it can safely be read back by the Lua interpreter. For instance, the call\n\n```lua\nstring.format('%q', 'a string with \"quotes\" and \\n new line')\n```\n\nmay produce the string:\n\n```lua\n\"a string with \\\"quotes\\\" and \\\n new line\"\n```\n\nOptions `A` and `a` (when available), `E`, `e`, `f`, `G`, and `g` all expect a number as argument. Options `c`, `d`, `i`, `o`, `u`, `X`, and `x` also expect a number, but the range of that number may be limited by the underlying C implementation. For options `o`, `u`, `X`, and `x`, the number cannot be negative. Option `q` expects a string; option `s` expects a string without embedded zeros. If the argument to option `s` is not a string, it is converted to one following the same rules of [`tostring`](https://www.lua.org/manual/5.2/manual.html#pdf-tostring).",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-string.format",
       "licenseStatus": "allowed"
@@ -1214,7 +1215,7 @@
       "kind": "function",
       "sourceSection": "lua52",
       "signature": "string.gsub (s, pattern, repl [, n])",
-      "documentationMarkdown": "Returns a copy of `s` in which all (or the first `n`, if given) occurrences of the `pattern` have been replaced by a replacement string specified by `repl`, which can be a string, a table, or a function. `gsub` also returns, as its second value, the total number of matches that occurred. The name `gsub` comes from *Global SUBstitution*.\n\nIf `repl` is a string, then its value is used for replacement. The character `%` works as an escape character: any sequence in `repl` of the form `%d`, with *d* between 1 and 9, stands for the value of the *d*-th captured substring. The sequence `%0` stands for the whole match. The sequence `%%` stands for a single `%`.\n\nIf `repl` is a table, then the table is queried for every match, using the first capture as the key.\n\nIf `repl` is a function, then this function is called every time a match occurs, with all captured substrings passed as arguments, in order.\n\nIn any case, if the pattern specifies no captures, then it behaves as if the whole pattern was inside a capture.\n\nIf the value returned by the table query or by the function call is a string or a number, then it is used as the replacement string; otherwise, if it is **false** or **nil**, then there is no replacement (that is, the original match is kept in the string).\n\nHere are some examples:\n\n```lua\nx = string.gsub(\"hello world\", \"(%w+)\", \"%1 %1\")\n--> x=\"hello hello world world\"\n\nx = string.gsub(\"hello world\", \"%w+\", \"%0 %0\", 1)\n--> x=\"hello hello world\"\n\nx = string.gsub(\"hello world from Lua\", \"(%w+)%s*(%w+)\", \"%2 %1\")\n--> x=\"world hello Lua from\"\n\nx = string.gsub(\"home = $HOME, user = $USER\", \"%$(%w+)\", os.getenv)\n--> x=\"home = /home/roberto, user = roberto\"\n\nx = string.gsub(\"4+5 = $return 4+5$\", \"%$(.-)%$\", function (s)\n      return load(s)()\n    end)\n--> x=\"4+5 = 9\"\n\nlocal t = {name=\"lua\", version=\"5.2\"}\nx = string.gsub(\"$name-$version.tar.gz\", \"%$(%w+)\", t)\n--> x=\"lua-5.2.tar.gz\"\n```",
+      "documentationMarkdown": "Returns a copy of `s` in which all (or the first `n`, if given) occurrences of the `pattern` have been replaced by a replacement string specified by `repl`, which can be a string, a table, or a function. `gsub` also returns, as its second value, the total number of matches that occurred. The name `gsub` comes from *Global SUBstitution*.\n\nIf `repl` is a string, then its value is used for replacement. The character `%` works as an escape character: any sequence in `repl` of the form `%d`, with *d* between 1 and 9, stands for the value of the *d*-th captured substring. The sequence `%0` stands for the whole match. The sequence `%%` stands for a single `%`.\n\nIf `repl` is a table, then the table is queried for every match, using the first capture as the key.\n\nIf `repl` is a function, then this function is called every time a match occurs, with all captured substrings passed as arguments, in order.\n\nIn any case, if the pattern specifies no captures, then it behaves as if the whole pattern was inside a capture.\n\nIf the value returned by the table query or by the function call is a string or a number, then it is used as the replacement string; otherwise, if it is **false** or **nil**, then there is no replacement (that is, the original match is kept in the string).\n\nHere are some examples:\n\n```lua\nx = string.gsub(\"hello world\", \"(%w+)\", \"%1 %1\")\n--> x=\"hello hello world world\"\n\nx = string.gsub(\"hello world\", \"%w+\", \"%0 %0\", 1)\n--> x=\"hello hello world\"\n\nx = string.gsub(\"hello world from Lua\", \"(%w+)%s*(%w+)\", \"%2 %1\")\n--> x=\"world hello Lua from\"\n\nx = string.gsub(\"home = $HOME, user = $USER\", \"%$(%w+)\", os.getenv)\n--> x=\"home = /home/roberto, user = roberto\"\n\nx = string.gsub(\"4+5 = $return 4+5$\", \"%$(.-)%$\", function (s)\n      return load(s)()\n    end)\n--> x=\"4+5 = 9\"\n\nlocal t = {name=\"lua\", version=\"5.2\"}\nx = string.gsub(\"$name-$version.tar.gz\", \"%$(%w+)\", t)\n--> x=\"lua-5.2.tar.gz\"\n```",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-string.gsub",
       "licenseStatus": "allowed"
@@ -1247,7 +1248,7 @@
       "kind": "function",
       "sourceSection": "lua52",
       "signature": "string.match (s, pattern [, init])",
-      "documentationMarkdown": "Looks for the first *match* of `pattern` in the string `s`. If it finds one, then `match` returns the captures from the pattern; otherwise it returns **nil**. If `pattern` specifies no captures, then the whole match is returned. A third, optional numerical argument `init` specifies where to start the search; its default value is 1 and can be negative.",
+      "documentationMarkdown": "Looks for the first *match* of `pattern` in the string `s`. If it finds one, then `match` returns the captures from the pattern; otherwise it returns **nil**. If `pattern` specifies no captures, then the whole match is returned. A third, optional numerical argument `init` specifies where to start the search; its default value is 1 and can be negative.",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-string.match",
       "licenseStatus": "allowed"
@@ -1313,7 +1314,7 @@
       "kind": "function",
       "sourceSection": "lua52",
       "signature": "table.concat (list [, sep [, i [, j]]])",
-      "documentationMarkdown": "Given a list where all elements are strings or numbers, returns the string `list[i]..sep..list[i+1] ... sep..list[j]`. The default value for `sep` is the empty string, the default for `i` is 1, and the default for `j` is `#list`. If `i` is greater than `j`, returns the empty string.",
+      "documentationMarkdown": "Given a list where all elements are strings or numbers, returns the string `list[i]..sep..list[i+1] ··· sep..list[j]`. The default value for `sep` is the empty string, the default for `i` is 1, and the default for `j` is `#list`. If `i` is greater than `j`, returns the empty string.",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-table.concat",
       "licenseStatus": "allowed"
@@ -1324,7 +1325,7 @@
       "kind": "function",
       "sourceSection": "lua52",
       "signature": "table.insert (list, [pos,] value)",
-      "documentationMarkdown": "Inserts element `value` at position `pos` in `list`, shifting up the elements `list[pos], list[pos+1], ..., list[#list]`. The default value for `pos` is `#list+1`, so that a call `table.insert(t,x)` inserts `x` at the end of list `t`.",
+      "documentationMarkdown": "Inserts element `value` at position `pos` in `list`, shifting up the elements `list[pos], list[pos+1], ···, list[#list]`. The default value for `pos` is `#list+1`, so that a call `table.insert(t,x)` inserts `x` at the end of list `t`.",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-table.insert",
       "licenseStatus": "allowed"
@@ -1334,7 +1335,7 @@
       "name": "table.pack",
       "kind": "function",
       "sourceSection": "lua52",
-      "signature": "table.pack (...)",
+      "signature": "table.pack (···)",
       "documentationMarkdown": "Returns a new table with all parameters stored into keys 1, 2, etc. and with a field \"`n`\" with the total number of parameters. Note that the resulting table may not be a sequence.",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-table.pack",
@@ -1346,7 +1347,7 @@
       "kind": "function",
       "sourceSection": "lua52",
       "signature": "table.remove (list [, pos])",
-      "documentationMarkdown": "Removes from `list` the element at position `pos`, returning the value of the removed element. When `pos` is an integer between 1 and `#list`, it shifts down the elements `list[pos+1], list[pos+2], ..., list[#list]` and erases element `list[#list]`; The index `pos` can also be 0 when `#list` is 0, or `#list + 1`; in those cases, the function erases the element `list[pos]`.\n\nThe default value for `pos` is `#list`, so that a call `table.remove(t)` removes the last element of list `t`.",
+      "documentationMarkdown": "Removes from `list` the element at position `pos`, returning the value of the removed element. When `pos` is an integer between 1 and `#list`, it shifts down the elements `list[pos+1], list[pos+2], ···, list[#list]` and erases element `list[#list]`; The index `pos` can also be 0 when `#list` is 0, or `#list + 1`; in those cases, the function erases the element `list[pos]`.\n\nThe default value for `pos` is `#list`, so that a call `table.remove(t)` removes the last element of list `t`.",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-table.remove",
       "licenseStatus": "allowed"
@@ -1368,7 +1369,7 @@
       "kind": "function",
       "sourceSection": "lua52",
       "signature": "table.unpack (list [, i [, j]])",
-      "documentationMarkdown": "Returns the elements from the given table. This function is equivalent to\n\n```lua\nreturn list[i], list[i+1], ..., list[j]\n```\n\nBy default, `i` is 1 and `j` is `#list`.",
+      "documentationMarkdown": "Returns the elements from the given table. This function is equivalent to\n\n```lua\nreturn list[i], list[i+1], ···, list[j]\n```\n\nBy default, `i` is 1 and `j` is `#list`.",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-table.unpack",
       "licenseStatus": "allowed"
@@ -1379,7 +1380,7 @@
       "kind": "function",
       "sourceSection": "lua52",
       "signature": "tonumber (e [, base])",
-      "documentationMarkdown": "When called with no `base`, `tonumber` tries to convert its argument to a number. If the argument is already a number or a string convertible to a number (see section3.4.2), then `tonumber` returns this number; otherwise, it returns **nil**.\n\nWhen called with `base`, then `e` should be a string to be interpreted as an integer numeral in that base. The base may be any integer between 2 and 36, inclusive. In bases above 10, the letter '`A`' (in either upper or lower case) represents 10, '`B`' represents 11, and so forth, with '`Z`' representing 35. If the string `e` is not a valid numeral in the given base, the function returns **nil**.",
+      "documentationMarkdown": "When called with no `base`, `tonumber` tries to convert its argument to a number. If the argument is already a number or a string convertible to a number (see [§3.4.2](https://www.lua.org/manual/5.2/manual.html#3.4.2)), then `tonumber` returns this number; otherwise, it returns **nil**.\n\nWhen called with `base`, then `e` should be a string to be interpreted as an integer numeral in that base. The base may be any integer between 2 and 36, inclusive. In bases above 10, the letter '`A`' (in either upper or lower case) represents 10, '`B`' represents 11, and so forth, with '`Z`' representing 35. If the string `e` is not a valid numeral in the given base, the function returns **nil**.",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-tonumber",
       "licenseStatus": "allowed"
@@ -1390,7 +1391,7 @@
       "kind": "function",
       "sourceSection": "lua52",
       "signature": "tostring (v)",
-      "documentationMarkdown": "Receives a value of any type and converts it to a string in a reasonable format. (For complete control of how numbers are converted, use `string.format`.)\n\nIf the metatable of `v` has a `\"__tostring\"` field, then `tostring` calls the corresponding value with `v` as argument, and uses the result of the call as its result.",
+      "documentationMarkdown": "Receives a value of any type and converts it to a string in a reasonable format. (For complete control of how numbers are converted, use [`string.format`](https://www.lua.org/manual/5.2/manual.html#pdf-string.format).)\n\nIf the metatable of `v` has a `\"__tostring\"` field, then `tostring` calls the corresponding value with `v` as argument, and uses the result of the call as its result.",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-tostring",
       "licenseStatus": "allowed"
@@ -1411,8 +1412,8 @@
       "name": "xpcall",
       "kind": "function",
       "sourceSection": "lua52",
-      "signature": "xpcall (f, msgh [, arg1, ...])",
-      "documentationMarkdown": "This function is similar to `pcall`, except that it sets a new message handler `msgh`.",
+      "signature": "xpcall (f, msgh [, arg1, ···])",
+      "documentationMarkdown": "This function is similar to [`pcall`](https://www.lua.org/manual/5.2/manual.html#pdf-pcall), except that it sets a new message handler `msgh`.",
       "documentationState": "documented",
       "upstreamUrl": "https://www.lua.org/manual/5.2/manual.html#pdf-xpcall",
       "licenseStatus": "allowed"

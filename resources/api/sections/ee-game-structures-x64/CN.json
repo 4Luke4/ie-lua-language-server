@@ -19,7 +19,7 @@
       "signature": "struct CNetwork (3064 bytes)",
       "byteSize": 3064,
       "memberCount": 56,
-      "documentationMarkdown": "Used by the [CNetwork Class](#CNetwork Class)",
+      "documentationMarkdown": "Used by the [CNetwork Class](https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Classes%20(x86)/CNetwork/index.rst#L1)",
       "documentationState": "documented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CN/index.rst#L17",
       "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",

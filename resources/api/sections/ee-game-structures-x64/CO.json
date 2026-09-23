@@ -186,7 +186,7 @@
       "signature": "struct CObList (56 bytes)",
       "byteSize": 56,
       "memberCount": 7,
-      "documentationMarkdown": "Used by the [CObList Class](#CObList Class)",
+      "documentationMarkdown": "Used by the [CObList Class](https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Classes%20(x86)/CObList/index.rst#L1)",
       "documentationState": "documented",
       "upstreamUrl": "https://github.com/Bubb13/EEex-Docs/blob/35445db362f56095156e3b43aa8f6f0f50f728a0/source/EE%20Game%20Structures%20(x64)/CO/index.rst#L43",
       "upstreamCommit": "35445db362f56095156e3b43aa8f6f0f50f728a0",
