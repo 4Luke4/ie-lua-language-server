@@ -297,11 +297,7 @@
       "id": "eeex-titled-ref",
       "symbol": "eeex-functions:EEex_Options_Option.new",
       "upstream": "EEex-Docs source/EEex Functions/Options/index.rst lines 129-170",
-      "constructs": [
-        "titled :ref: link",
-        "default value",
-        "mid-entry rule and section heading"
-      ],
+      "constructs": ["titled :ref: link", "default value", "mid-entry rule and section heading"],
       "text": "EEex_Options_Option.new({})\n",
       "position": { "line": 0, "character": 21 },
       "expected": [
@@ -346,11 +342,7 @@
       "id": "structure-narrative",
       "symbol": "ee-game-structures-x64:CGameObject",
       "upstream": "EEex-Docs source/EE Game Structures (x64)/CG/index.rst lines 8026-8111",
-      "constructs": [
-        "layout facts",
-        "link into an uningested section",
-        "narrative table"
-      ],
+      "constructs": ["layout facts", "link into an uningested section", "narrative table"],
       "text": "CGameObject\n",
       "position": { "line": 0, "character": 3 },
       "expected": [

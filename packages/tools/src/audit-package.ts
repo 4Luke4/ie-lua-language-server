@@ -372,10 +372,7 @@ function auditFunctionSymbol(
     /^[A-Za-z_][A-Za-z0-9_]*$/u.test(name ?? '') ||
     name === '???' ||
     (name === '...' && index === parameterNames.length - 1);
-  if (
-    !parameterNames.every(validName) ||
-    signatureNames.join('\0') !== parameterNames.join('\0')
-  ) {
+  if (!parameterNames.every(validName) || signatureNames.join('\0') !== parameterNames.join('\0')) {
     throw new Error(`Function section has inconsistent parameters: ${label}`);
   }
   if (symbol.returns?.some((value) => !value.type && !value.description)) {

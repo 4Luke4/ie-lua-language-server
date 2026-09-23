@@ -206,7 +206,10 @@ const derivedDocument = ['---@type CDerived', 'local object', ''].join('\n');
 void test('baseclass rows are inheritance, not members', () => {
   const baseRow = inheritance.symbols.find((symbol) => symbol.name === 'CDerived.baseclass_0')!;
   assert.equal(isBaseClassField(baseRow), true);
-  assert.equal(isBaseClassField(inheritance.symbols.find((s) => s.name === 'CRoot.m_root')!), false);
+  assert.equal(
+    isBaseClassField(inheritance.symbols.find((s) => s.name === 'CRoot.m_root')!),
+    false,
+  );
   assert.equal(findApiSymbol(inheritance, defaultSettings, 'CDerived.baseclass_0'), undefined);
   assert.equal(
     findApiSymbolForExpression(
