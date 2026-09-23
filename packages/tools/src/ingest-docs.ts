@@ -279,7 +279,9 @@ export interface LuaJitPage {
 function readPinnedLuaJitPages(pins: UpstreamPins): LuaJitPage[] {
   const root = process.env.IE_LUA_LUAJIT_DOCS_ROOT?.trim();
   if (!root) {
-    throw new Error('IE_LUA_LUAJIT_DOCS_ROOT must point at a LuaJIT checkout at the pinned commit.');
+    throw new Error(
+      'IE_LUA_LUAJIT_DOCS_ROOT must point at a LuaJIT checkout at the pinned commit.',
+    );
   }
   verifyLocalCommit(root, pins.luajit.commit);
   return luaJitExtensionPages.map((page) => ({
@@ -482,7 +484,11 @@ async function fetchEeexShards(eeexCommit: string): Promise<GeneratedShard[]> {
   const localRoot = process.env.IE_LUA_EEEX_DOCS_ROOT?.trim();
   if (localRoot) {
     for (const entry of rootTree.tree) {
-      if (entry.type === 'blob' && entry.path.startsWith('source/') && entry.path.endsWith('.rst')) {
+      if (
+        entry.type === 'blob' &&
+        entry.path.startsWith('source/') &&
+        entry.path.endsWith('.rst')
+      ) {
         anchors.record(entry.path, fs.readFileSync(path.resolve(localRoot, entry.path), 'utf8'));
       }
     }
@@ -1074,7 +1080,8 @@ export function htmlToMarkdown(html: string, baseUrl: string): string {
     .replace(/<span class="ext">&raquo;<\/span>(?:&nbsp;)?/gu, '')
     .replace(
       /<pre(?:\s+[^>]*)?>([\s\S]*?)<\/pre>/giu,
-      (_match, code: string) => `\n\n${kept.add(`\`\`\`lua\n${normalizePreText(code)}\n\`\`\``)}\n\n`,
+      (_match, code: string) =>
+        `\n\n${kept.add(`\`\`\`lua\n${normalizePreText(code)}\n\`\`\``)}\n\n`,
     )
     .replace(
       /<table(?:\s+[^>]*)?>([\s\S]*?)<\/table>/giu,
@@ -1115,7 +1122,8 @@ function htmlListItem(html: string, baseUrl: string, kept: ProtectedMarkdown): s
 // CommonMark only opens and closes emphasis next to non-space text, so "<b>opt: </b>" must become
 // "**opt:** " rather than "**opt: **", which renders its asterisks literally.
 function emphasize(marker: string, text: string): string {
-  const [, before = '', inner = '', after = ''] = text.match(/^([ \t\r\n]*)([\s\S]*?)([ \t\r\n]*)$/u) ?? [];
+  const [, before = '', inner = '', after = ''] =
+    text.match(/^([ \t\r\n]*)([\s\S]*?)([ \t\r\n]*)$/u) ?? [];
   return inner ? `${before}${marker}${inner}${marker}${after}` : text;
 }
 
@@ -1123,9 +1131,12 @@ function emphasize(marker: string, text: string): string {
 function htmlTableToMarkdown(html: string, baseUrl: string, kept: ProtectedMarkdown): string {
   const rows = [...html.matchAll(/<tr(?:\s+[^>]*)?>([\s\S]*?)<\/tr>/giu)].map((row) =>
     // GFM splits cells on every unescaped "|", code spans included, so the escape is applied to the
-    // cell's final text rather than to the prose around protected spans.
+    // cell's final text rather than to the prose around protected spans. Backslashes are escaped in
+    // the same pass, as the RST table converter does, so a "\" before a "|" cannot undo the escape.
     [...(row[1] ?? '').matchAll(/<t[dh](?:\s+[^>]*)?>([\s\S]*?)<\/t[dh]>/giu)].map((cell) =>
-      kept.restore(collapseSpace(inlineMarkdown(cell[1] ?? '', baseUrl, kept))).replace(/\|/gu, '\\|'),
+      kept
+        .restore(collapseSpace(inlineMarkdown(cell[1] ?? '', baseUrl, kept)))
+        .replace(/[\\|]/gu, (character) => `\\${character}`),
     ),
   );
   const width = rows[0]?.length ?? 0;
@@ -1166,8 +1177,9 @@ function inlineMarkdown(html: string, baseUrl: string, kept: ProtectedMarkdown):
       link(attributes, collapseSpace(decodeHtml(stripTags(value)))),
     );
   // A decoded "&lt;" is text. Left bare, Markdown would read it as the start of an HTML tag, which
-  // editors strip; the tags a hover should render are all still placeholders at this point.
-  return decodeHtml(stripTags(result)).replace(/</gu, '\\<');
+  // editors strip, so it is written back as the entity, which Markdown renders as "<". The tags a
+  // hover should render are all still placeholders at this point.
+  return decodeHtml(stripTags(result)).replace(/</gu, '&lt;');
 }
 
 // Signatures are shown in a code block, so a heading's <br> (LuaJIT lists alternative call forms

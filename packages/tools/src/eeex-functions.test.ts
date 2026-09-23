@@ -231,7 +231,7 @@ void test('angle brackets in RST prose stay text while code and rendered tags ke
     renderRstMarkdown(
       'The range [0, <max id in .IDS>] with ``<any>`` and :raw-html:`<br/>` :underline:`kept`.',
     ),
-    'The range [0, \\<max id in .IDS>] with `<any>` and <br/> <u>kept</u>.',
+    'The range [0, &lt;max id in .IDS>] with `<any>` and <br/> <u>kept</u>.',
   );
 });
 

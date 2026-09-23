@@ -55,19 +55,20 @@ function hoverProblems(symbol, markdown) {
   if (markdown.split('\n').filter((line) => line.startsWith('```')).length % 2 !== 0) {
     problems.push('unbalanced code fence');
   }
-  const prose = markdown
-    .replace(/^```[^\n]*\n[\s\S]*?\n```$/gmu, '')
-    .replace(/`[^`\n]*`/gu, '');
+  const prose = markdown.replace(/^```[^\n]*\n[\s\S]*?\n```$/gmu, '').replace(/`[^`\n]*`/gu, '');
   if (/``|:[A-Za-z][\w-]*:`|^\.\. [A-Za-z_]/mu.test(prose)) problems.push('RST markup in prose');
   if (prose.includes('](#')) problems.push('in-page link that leads nowhere in a hover');
   for (const [, url] of prose.matchAll(/\]\(([^)\s]*)/gu)) {
     if (!/^https?:\/\//u.test(url)) problems.push(`relative link ${url}`);
   }
-  // A backslash-escaped "\<" is literal text ("the range [0, \<max id in .IDS>]"), not a tag.
-  for (const [, tag] of prose.matchAll(/(?<!\\)<\/?([A-Za-z][A-Za-z0-9-]*)(?:\s[^<>]*)?\/?>/gu)) {
+  for (const [, tag] of prose.matchAll(/<\/?([A-Za-z][A-Za-z0-9-]*)(?:\s[^<>]*)?\/?>/gu)) {
     if (!renderedTags.has(tag.toLowerCase())) problems.push(`HTML <${tag}> would be stripped`);
   }
-  if (/&(?:[A-Za-z]+|#\d+|#x[0-9A-Fa-f]+);/u.test(prose)) problems.push('undecoded HTML entity');
+  // "&lt;" is how the converters write a literal "<" in prose ("the range [0, &lt;max id in .IDS>]"),
+  // so Markdown shows the bracket instead of reading a tag; any other entity is a decoding gap.
+  if (/&(?!lt;)(?:[A-Za-z]+|#\d+|#x[0-9A-Fa-f]+);/u.test(prose)) {
+    problems.push('undecoded HTML entity');
+  }
   if (/^---\n\n---$/mu.test(markdown)) problems.push('consecutive horizontal rules');
   const source = `\n\n---\n\nSource: [${symbol.upstreamUrl}](${symbol.upstreamUrl})`;
   if (!markdown.endsWith(source) || markdown.split('\nSource: [').length !== 2) {

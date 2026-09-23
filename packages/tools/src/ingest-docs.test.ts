@@ -97,7 +97,10 @@ void test('local checkouts list like the Git tree API and must sit at the pinned
 
 void test(':ref: links resolve to the one pinned line that defines them, or become plain text', () => {
   const anchors = new AnchorRegistry();
-  anchors.record('source/EE Game Lua Functions/C/C_AddSpell.rst', '.. _C_AddSpell:\n\nC\\:AddSpell');
+  anchors.record(
+    'source/EE Game Lua Functions/C/C_AddSpell.rst',
+    '.. _C_AddSpell:\n\nC\\:AddSpell',
+  );
   anchors.record('source/A/index.rst', 'Intro\n\n.. _Twice:\n');
   anchors.record('source/B/index.rst', '.. _twice:\n');
   anchors.record('source/C/index.rst', '.. _CAOEEntry\\:\\:AOEType:\n');
@@ -221,7 +224,7 @@ void test('HTML list items keep their code blocks, bold closes before spaces, an
       '  (The second result is useful.)',
       '- **"`step`":** performs a step.',
       '',
-      'a \\<b> c',
+      'a &lt;b> c',
     ].join('\n'),
   );
 });
@@ -254,7 +257,10 @@ void test('Lua 5.2 symbols render the manual text, including the keyword introdu
     'The following *keywords* are reserved and cannot be used as names:\n\n```lua\nand       break\n```',
   );
   assert.equal(byId('lua52:pcall')?.signature, 'pcall (f [, arg1, ···])');
-  assert.equal(byId('lua52:pcall')?.documentationMarkdown, 'Calls function `f` in *protected mode*.');
+  assert.equal(
+    byId('lua52:pcall')?.documentationMarkdown,
+    'Calls function `f` in *protected mode*.',
+  );
   assert.equal(
     byId('lua52:pcall')?.upstreamUrl,
     'https://www.lua.org/manual/5.2/manual.html#pdf-pcall',
