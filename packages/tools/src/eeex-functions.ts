@@ -679,7 +679,13 @@ function renderInline(value: string): string {
   if (unsupportedSubstitution) {
     throw new Error(`unsupported RST substitution ${unsupportedSubstitution}`);
   }
-  return rendered;
+  // Upstream prose uses angle brackets as text ("the range [0, <max id in .IDS>]"). Markdown would
+  // read them as an HTML tag, which editors strip, so they are escaped. Code spans, link targets,
+  // and the tags the :raw-html: and :underline: roles produce keep their meaning.
+  return rendered.replace(
+    /(`[^`]*`|\]\([^)]*\)|<\/?(?:br|pre|u)\s*\/?>)|</gu,
+    (_match, kept: string | undefined) => kept ?? '\\<',
+  );
 }
 
 // A :ref: role names its target in a trailing "<...>", and upstream targets can contain angle
@@ -711,8 +717,10 @@ function plainInline(value: string): string {
     .trim();
 }
 
+// Literal backslashes are doubled so a cell shows them; the "\<" escapes renderInline adds for
+// prose angle brackets are already Markdown and are left as they are.
 function escapeTableCell(value: string): string {
-  return value.replace(/\\/gu, '\\\\').replace(/\|/gu, '\\|').replace(/\n/gu, '<br/>');
+  return value.replace(/\\(?!<)/gu, '\\\\').replace(/\|/gu, '\\|').replace(/\n/gu, '<br/>');
 }
 
 function unescapeRst(value: string): string {

@@ -1082,10 +1082,10 @@ export function htmlToMarkdown(html: string, baseUrl: string): string {
     )
     .replace(/<ul(?:\s+[^>]*)?>([\s\S]*?)<\/ul>/giu, (_match, listHtml: string) => {
       const items = [...listHtml.matchAll(/<li(?:\s+[^>]*)?>([\s\S]*?)<\/li>/giu)].map((item) =>
-        collapseSpace(inlineMarkdown(item[1] ?? '', baseUrl, kept)),
+        htmlListItem(item[1] ?? '', baseUrl, kept),
       );
       // Protected like tables, so item text is not decoded a second time with the page.
-      return `\n\n${kept.add(items.map((item) => `- ${item}`).join('\n'))}\n\n`;
+      return `\n\n${kept.add(items.join('\n'))}\n\n`;
     })
     .replace(
       /<h[4-6](?:\s+[^>]*)?>([\s\S]*?)<\/h[4-6]>/giu,
@@ -1097,6 +1097,26 @@ export function htmlToMarkdown(html: string, baseUrl: string): string {
     .replace(/<\/?(?:h[1-6]|div|span|small|tr|td|th|tbody|thead)(?:\s+[^>]*)?>/giu, '\n\n');
 
   return kept.restore(normalizeMarkdown(inlineMarkdown(markdown, baseUrl, kept)));
+}
+
+// A list item can hold several paragraphs and a code block, as collectgarbage's "count" option
+// does. Its blocks are rendered like any fragment and indented under the bullet, which is how
+// Markdown keeps them inside the item instead of running a code fence into the bullet's line.
+function htmlListItem(html: string, baseUrl: string, kept: ProtectedMarkdown): string {
+  const blocks = kept.restore(
+    normalizeMarkdown(inlineMarkdown(html.replace(/<p(?:\s+[^>]*)?>/giu, '\n\n'), baseUrl, kept)),
+  );
+  return blocks
+    .split('\n')
+    .map((line, index) => (index === 0 ? `- ${line}` : line ? `  ${line}` : ''))
+    .join('\n');
+}
+
+// CommonMark only opens and closes emphasis next to non-space text, so "<b>opt: </b>" must become
+// "**opt:** " rather than "**opt: **", which renders its asterisks literally.
+function emphasize(marker: string, text: string): string {
+  const [, before = '', inner = '', after = ''] = text.match(/^([ \t\r\n]*)([\s\S]*?)([ \t\r\n]*)$/u) ?? [];
+  return inner ? `${before}${marker}${inner}${marker}${after}` : text;
 }
 
 // Upstream tables use their first row as the header, as ffi.abi's parameter table does.
@@ -1140,12 +1160,14 @@ function inlineMarkdown(html: string, baseUrl: string, kept: ProtectedMarkdown):
     // are kept as HTML. They are protected before emphasis, which strips the tags it encloses.
     .replace(/<sup>/giu, () => kept.add('<sup>'))
     .replace(/<\/sup>/giu, () => kept.add('</sup>'))
-    .replace(/<em>([\s\S]*?)<\/em>/giu, (_match, value: string) => `*${stripTags(value)}*`)
-    .replace(/<b>([\s\S]*?)<\/b>/giu, (_match, value: string) => `**${stripTags(value)}**`)
+    .replace(/<em>([\s\S]*?)<\/em>/giu, (_match, value: string) => emphasize('*', stripTags(value)))
+    .replace(/<b>([\s\S]*?)<\/b>/giu, (_match, value: string) => emphasize('**', stripTags(value)))
     .replace(/<a\s+([^>]*)>([\s\S]*?)<\/a>/giu, (_match, attributes: string, value: string) =>
       link(attributes, collapseSpace(decodeHtml(stripTags(value)))),
     );
-  return decodeHtml(stripTags(result));
+  // A decoded "&lt;" is text. Left bare, Markdown would read it as the start of an HTML tag, which
+  // editors strip; the tags a hover should render are all still placeholders at this point.
+  return decodeHtml(stripTags(result)).replace(/</gu, '\\<');
 }
 
 // Signatures are shown in a code block, so a heading's <br> (LuaJIT lists alternative call forms

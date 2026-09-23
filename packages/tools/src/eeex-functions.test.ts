@@ -226,6 +226,15 @@ void test(':ref: targets may nest angle brackets and titles lose the space befor
   );
 });
 
+void test('angle brackets in RST prose stay text while code and rendered tags keep meaning', () => {
+  assert.equal(
+    renderRstMarkdown(
+      'The range [0, <max id in .IDS>] with ``<any>`` and :raw-html:`<br/>` :underline:`kept`.',
+    ),
+    'The range [0, \\<max id in .IDS>] with `<any>` and <br/> <u>kept</u>.',
+  );
+});
+
 void test('a trailing RST transition separates entries and is not rendered', () => {
   assert.equal(renderRstMarkdown('Body text.\n\n----\n'), 'Body text.');
   assert.equal(renderRstMarkdown('First.\n\n----\n\nSecond.\n\n----'), 'First.\n\n---\n\nSecond.');

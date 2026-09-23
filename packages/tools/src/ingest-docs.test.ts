@@ -191,6 +191,41 @@ void test('HTML tables, lists, breaks and LuaJIT link chrome convert to their Ma
   );
 });
 
+void test('HTML list items keep their code blocks, bold closes before spaces, and < stays text', () => {
+  assert.equal(
+    htmlToMarkdown(
+      [
+        '<ul>',
+        '<li><b>"<code>count</code>": </b>',
+        'returns the total memory',
+        'so the following equality is always true:',
+        '',
+        '<pre>',
+        '     k, b = collectgarbage("count")',
+        '</pre><p>',
+        '(The second result is useful.)',
+        '</li>',
+        '<li><b>"<code>step</code>": </b> performs a step.</li>',
+        '</ul>',
+        '<p>a &lt;b&gt; c</p>',
+      ].join('\n'),
+      'https://www.lua.org/manual/5.2/manual.html',
+    ),
+    [
+      '- **"`count`":** returns the total memory so the following equality is always true:',
+      '',
+      '  ```lua',
+      '  k, b = collectgarbage("count")',
+      '  ```',
+      '',
+      '  (The second result is useful.)',
+      '- **"`step`":** performs a step.',
+      '',
+      'a \\<b> c',
+    ].join('\n'),
+  );
+});
+
 void test('Lua 5.2 symbols render the manual text, including the keyword introduction', () => {
   const section = (number: string, title: string, body: string): string =>
     `<h2>${number} &ndash; <a name="${number}">${title}</a></h2>\n${body}\n`;
