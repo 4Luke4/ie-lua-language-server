@@ -221,6 +221,18 @@ jobs:
           cache-dependency-path: package-lock.json
       - run: npm ci --no-audit --progress=false
       - run: npm run compile
+      # Regeneration reads every upstream input from a pinned local copy instead of the network API,
+      # so the job cannot fail on the anonymous REST rate limit and no token reaches PR code.
+      - name: Resolve the pinned EEex revision
+        id: eeex
+        run: |
+          commit="$(jq -er '.sources[] | select(.id == "ee-game-structures-x64") | .commit' resources/api/api-index.json)"
+          [[ "$commit" =~ ^[0-9a-f]{40}$ ]]
+          echo "commit=$commit" >> "$GITHUB_OUTPUT"
+      - name: Fetch pinned upstream documentation
+        uses: ./.github/actions/upstream-docs
+        with:
+          eeex-commit: ${{ steps.eeex.outputs.commit }}
       - run: node scripts/regenerate.cjs
       - run: npx --no-install prettier --write resources/api
       - name: Require reproducible committed data

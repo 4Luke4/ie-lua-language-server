@@ -162,7 +162,10 @@ export interface ApiSource {
   id: SourceSectionId;
   title: string;
   url: string;
+  /** Upstream repository commit the section was generated from. */
   commit?: string;
+  /** SHA-256 of the release archive the section was generated from (sources without a repository). */
+  sha256?: string;
   licenseStatus: LicenseStatus;
 }
 

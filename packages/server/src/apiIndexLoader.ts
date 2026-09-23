@@ -90,7 +90,9 @@ export function loadApiIndexFromManifest(manifestPath: string): ApiIndex {
   array(manifest.sources);
   for (const source of manifest.sources) {
     record(source);
-    strings(source, ['title', 'url'], ['commit']);
+    // sha256 identifies sources pinned by release archive rather than by commit (Lua 5.2); both
+    // are optional so manifests written before either existed still load.
+    strings(source, ['title', 'url'], ['commit', 'sha256']);
     choice(source.id, allSourceSections);
     choice(source.licenseStatus, ['allowed', 'unknown']);
   }

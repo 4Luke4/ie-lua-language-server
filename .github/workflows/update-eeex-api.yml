@@ -45,6 +45,13 @@ jobs:
         run: npm ci --no-audit --progress=false
       - if: steps.revision.outputs.changed == 'true'
         run: npm run compile
+      # The generator reads pinned local copies of every upstream input; see the action for why the
+      # network API is no longer used during generation.
+      - name: Fetch pinned upstream documentation
+        if: steps.revision.outputs.changed == 'true'
+        uses: ./.github/actions/upstream-docs
+        with:
+          eeex-commit: ${{ steps.revision.outputs.commit }}
       - if: steps.revision.outputs.changed == 'true'
         env:
           IE_LUA_EEEX_COMMIT: ${{ steps.revision.outputs.commit }}
