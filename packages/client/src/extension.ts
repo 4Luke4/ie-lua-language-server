@@ -53,6 +53,13 @@ export async function activate(context: vscode.ExtensionContext): Promise<void> 
       fileEvents: vscode.workspace.createFileSystemWatcher('**/*.{lua,menu}'),
     },
     outputChannel,
+    // Upstream documentation uses a few inline HTML tags with no Markdown equivalent: <br/> inside
+    // table cells, <sup> for exponents, <u>, <pre>. With supportHtml off, VS Code strips them and
+    // table cells run together. VS Code still sanitizes rendered HTML against its own allowlist, and
+    // isTrusted stays unset, so documentation can never run command links.
+    markdown: {
+      supportHtml: true,
+    },
     middleware: {
       // API symbols are defined in upstream documentation, so the server answers with the pinned
       // https source URL. Handing that to the editor as a document location fails, because there is

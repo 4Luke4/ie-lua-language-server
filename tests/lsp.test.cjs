@@ -137,6 +137,67 @@ test(
 );
 
 test(
+  'published signatures, offset parameter labels, and inherited structure members',
+  { timeout: 60000 },
+  async (t) => {
+    const client = await connect({
+      quiet: true,
+      capabilities: {
+        textDocument: {
+          signatureHelp: {
+            signatureInformation: { parameterInformation: { labelOffsetSupport: true } },
+          },
+        },
+      },
+    });
+    t.after(() => client.close());
+    const doc = await open(
+      client,
+      'ie-inheritance.lua',
+      'Infinity_LuaConsoleInput(\n---@type CGameSprite\nlocal sprite\nsprite.m_objectType\nsprite.baseclass_0\nsprite.\n',
+    );
+
+    // Upstream publishes "(???,???)" verbatim; offsets keep the two identical names distinct.
+    const help = await client.request('textDocument/signatureHelp', {
+      textDocument: doc,
+      position: position(0, 25),
+    });
+    assert.equal(help.signatures[0].label, 'Infinity_LuaConsoleInput(???,???)');
+    assert.deepEqual(
+      help.signatures[0].parameters.map((parameter) => parameter.label),
+      [
+        [25, 28],
+        [29, 32],
+      ],
+    );
+
+    // CGameSprite extends CGameAIBase, which extends CGameObject: inherited members resolve on the
+    // derived usertype, while the baseclass_<n> rows that record the inheritance are not members.
+    const inherited = await client.request('textDocument/hover', {
+      textDocument: doc,
+      position: position(3, 10),
+    });
+    assert.match(inherited.contents.value, /^### `CGameObject\.m_objectType`/u);
+    assert.equal(
+      await client.request('textDocument/hover', { textDocument: doc, position: position(4, 10) }),
+      null,
+    );
+    const labels = (
+      await client.request('textDocument/completion', {
+        textDocument: doc,
+        position: position(5, 7),
+      })
+    ).map((item) => item.label);
+    assert.ok(labels.includes('m_objectType'), 'CGameObject members complete on a CGameSprite');
+    assert.ok(labels.includes('m_active'), 'direct members still complete');
+    assert.equal(
+      labels.some((label) => /^baseclass_\d+$/u.test(label)),
+      false,
+    );
+  },
+);
+
+test(
   'diagnostic modes, configuration updates, and document close',
   { timeout: 60000 },
   async (t) => {

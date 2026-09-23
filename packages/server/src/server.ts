@@ -46,6 +46,7 @@ import {
   findApiSymbolForExpression,
   makeApiCallableView,
   makeDocumentation,
+  parameterLabelOffsets,
   mergeSettings,
   languageIds,
   normalizeSettings,
@@ -82,6 +83,10 @@ let stopped = false;
 const scheduler = new DebouncedValidationScheduler();
 
 let hasConfigurationCapability = false;
+// Offset parameter labels keep signature help unambiguous when a published signature repeats a
+// name ("???,???") or a name also occurs earlier in the label. Clients that cannot read them get
+// plain names, as before.
+let hasParameterLabelOffsets = false;
 let initializationSettings: SettingsInput | undefined;
 const startupApi = loadApiIndex();
 let apiIndex: ApiIndex = startupApi.index ?? emptyApiIndex;
@@ -105,6 +110,10 @@ const semanticLegend: SemanticTokensLegend = {
 
 connection.onInitialize((params: InitializeParams): InitializeResult => {
   hasConfigurationCapability = Boolean(params.capabilities.workspace?.configuration);
+  hasParameterLabelOffsets = Boolean(
+    params.capabilities.textDocument?.signatureHelp?.signatureInformation?.parameterInformation
+      ?.labelOffsetSupport,
+  );
   initializationSettings = readInitializationSettings(params.initializationOptions);
 
   return {
@@ -317,8 +326,14 @@ connection.onSignatureHelp(async (params) => {
       value: makeDocumentation(apiSymbol),
     },
   };
-  const parameters = callableView.parameters.map((parameter) => ({
-    label: parameter.name,
+  const offsets = hasParameterLabelOffsets
+    ? parameterLabelOffsets(
+        callableView.signature,
+        callableView.parameters.map((parameter) => parameter.name),
+      )
+    : undefined;
+  const parameters = callableView.parameters.map((parameter, index) => ({
+    label: offsets?.[index] ?? parameter.name,
     ...(parameter.description
       ? {
           // Parameter descriptions contain upstream Markdown such as code spans and links.
