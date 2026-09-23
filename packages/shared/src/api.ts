@@ -22,7 +22,7 @@ export function findApiSymbol(
   name: string,
 ): ApiSymbol | undefined {
   const symbols = filterApiSymbols(index, settings);
-  const exactMatch = symbols.find((symbol) => symbol.name === name);
+  const exactMatch = symbols.find((symbol) => symbol.name === name && !isBaseClassField(symbol));
   if (exactMatch) {
     return exactMatch;
   }
@@ -85,14 +85,7 @@ export function findApiSymbolForExpression(
     return callableMatch;
   }
   const structureName = resolveStructureName(symbols, receiver, documentText, offset);
-  return structureName
-    ? symbols.find(
-        (symbol) =>
-          symbol.kind === 'field' &&
-          symbol.containerName === structureName &&
-          symbol.instanceName === memberName,
-      )
-    : undefined;
+  return structureName ? findStructureField(symbols, structureName, memberName) : undefined;
 }
 
 export function findApiStructureMembers(
@@ -104,21 +97,30 @@ export function findApiStructureMembers(
 ): ApiSymbol[] {
   const symbols = filterApiSymbols(index, settings);
   const directMembers = symbols.filter(
-    (symbol) => symbol.containerName === receiver && symbol.instanceName,
+    (symbol) =>
+      symbol.containerName === receiver && symbol.instanceName && !isBaseClassField(symbol),
   );
   const structureName = resolveStructureName(symbols, receiver, documentText, offset);
   const annotatedType = inferAnnotationType(receiver, documentText, offset);
   const resolvedType = annotatedType ?? structureName;
-  const typedMembers = resolvedType
-    ? symbols.filter(
-        (symbol) =>
-          (symbol.kind === 'field' && symbol.containerName === structureName) ||
-          symbol.callableAliases?.some(
-            (alias) => alias.receiverType && typesMatch(alias.receiverType, resolvedType),
-          ),
-      )
-    : [];
-  return uniqueSymbols([...directMembers, ...typedMembers]);
+  // A structure also offers everything it extends; see structureLineage.
+  const receiverTypes = structureName
+    ? structureLineage(symbols, structureName)
+    : resolvedType
+      ? [resolvedType]
+      : [];
+  const methods = symbols.filter((symbol) =>
+    symbol.callableAliases?.some(
+      (alias) =>
+        alias.receiverType !== undefined &&
+        receiverTypes.some((receiverType) => typesMatch(alias.receiverType!, receiverType)),
+    ),
+  );
+  return uniqueSymbols([
+    ...directMembers,
+    ...(structureName ? lineageFields(symbols, structureName) : []),
+    ...methods,
+  ]);
 }
 
 export interface ApiCallableView {
@@ -143,6 +145,33 @@ export function makeApiCallableView(
     signature: `${expression}(${visibleParameters.map((parameter) => parameter.name).join(', ')})`,
     parameters: visibleParameters,
   };
+}
+
+/**
+ * Locates each parameter inside a signature's own parameter list, as [start, end) UTF-16 offsets
+ * for LSP parameter labels.
+ *
+ * Searching the whole label for a name finds the first occurrence anywhere, which is wrong when
+ * the callable's own name contains it or when a published name repeats, as in
+ * "Infinity_LuaConsoleInput(???,???)". Returns undefined when any parameter cannot be located, so
+ * the caller can fall back to plain names.
+ */
+export function parameterLabelOffsets(
+  signature: string,
+  names: readonly string[],
+): Array<[number, number]> | undefined {
+  const open = signature.indexOf('(');
+  const close = signature.lastIndexOf(')');
+  if (open === -1 || close < open) return undefined;
+  const offsets: Array<[number, number]> = [];
+  let cursor = open + 1;
+  for (const name of names) {
+    const start = name ? signature.indexOf(name, cursor) : -1;
+    if (start === -1 || start + name.length > close) return undefined;
+    offsets.push([start, start + name.length]);
+    cursor = start + name.length;
+  }
+  return offsets;
 }
 
 export function makeDocumentation(symbol: ApiSymbol): string {
@@ -200,12 +229,7 @@ function resolveStructureName(
   }
 
   for (const memberName of parts) {
-    const field = symbols.find(
-      (symbol) =>
-        symbol.kind === 'field' &&
-        symbol.containerName === structureName &&
-        symbol.instanceName === memberName,
-    );
+    const field = findStructureField(symbols, structureName, memberName);
     structureName = field?.dataType
       ? findReferencedStructureName(symbols, field.dataType)
       : undefined;
@@ -225,19 +249,121 @@ function findCallableMember(
   offset: number,
 ): ApiSymbol | undefined {
   const direct = symbols.find(
-    (symbol) => symbol.containerName === receiver && symbol.instanceName === memberName,
+    (symbol) =>
+      symbol.containerName === receiver &&
+      symbol.instanceName === memberName &&
+      !isBaseClassField(symbol),
   );
   if (direct) return direct;
 
   const annotatedType = inferAnnotationType(receiver, documentText, offset);
+  // An annotated receiver accepts methods of every structure it extends, nearest first.
+  const annotatedStructure = annotatedType
+    ? findReferencedStructureName(symbols, annotatedType)
+    : undefined;
+  const receiverTypes = annotatedStructure
+    ? structureLineage(symbols, annotatedStructure)
+    : annotatedType
+      ? [annotatedType]
+      : undefined;
   const aliasMatches = symbols.filter((symbol) =>
     symbol.callableAliases?.some(
       (alias) =>
         alias.name === memberName &&
-        (!annotatedType || !alias.receiverType || typesMatch(alias.receiverType, annotatedType)),
+        (!receiverTypes ||
+          !alias.receiverType ||
+          receiverTypes.some((receiverType) => typesMatch(alias.receiverType!, receiverType))),
     ),
   );
+  for (const receiverType of receiverTypes ?? []) {
+    const atLevel = aliasMatches.filter((symbol) =>
+      symbol.callableAliases?.some(
+        (alias) =>
+          alias.name === memberName &&
+          alias.receiverType !== undefined &&
+          typesMatch(alias.receiverType, receiverType),
+      ),
+    );
+    if (atLevel.length > 0) return atLevel.length === 1 ? atLevel[0] : undefined;
+  }
   return aliasMatches.length === 1 ? aliasMatches[0] : undefined;
+}
+
+/**
+ * EEex documents structure inheritance as layout rows named baseclass_<n> whose type is the base
+ * structure. They are not members a script can read: the base structure's members are reached
+ * directly on the derived one, so these rows are never offered, hovered, or resolved as fields.
+ */
+export function isBaseClassField(symbol: ApiSymbol): boolean {
+  return symbol.kind === 'field' && /^baseclass_\d+$/u.test(symbol.instanceName ?? '');
+}
+
+/**
+ * A structure followed by every structure it extends, nearest first and depth-first in
+ * baseclass_<n> order. A base whose type is not a documented structure (for example an undocumented
+ * template instantiation) contributes nothing rather than guessed members, and cycles are cut.
+ */
+function structureLineage(symbols: ApiSymbol[], structureName: string): string[] {
+  const lineage: string[] = [];
+  const visit = (name: string): void => {
+    if (lineage.includes(name)) return;
+    lineage.push(name);
+    const bases = symbols
+      .filter((symbol) => symbol.containerName === name && isBaseClassField(symbol))
+      .sort((left, right) => baseClassIndex(left) - baseClassIndex(right));
+    for (const base of bases) {
+      const baseName = base.dataType
+        ? findReferencedStructureName(symbols, base.dataType)
+        : undefined;
+      if (baseName) visit(baseName);
+    }
+  };
+  visit(structureName);
+  return lineage;
+}
+
+function baseClassIndex(symbol: ApiSymbol): number {
+  return Number.parseInt(symbol.instanceName?.slice('baseclass_'.length) ?? '0', 10);
+}
+
+// The nearest declaration of a member name wins, as it would on the usertype at runtime.
+function findStructureField(
+  symbols: ApiSymbol[],
+  structureName: string,
+  memberName: string,
+): ApiSymbol | undefined {
+  for (const name of structureLineage(symbols, structureName)) {
+    const field = symbols.find(
+      (symbol) =>
+        symbol.kind === 'field' &&
+        symbol.containerName === name &&
+        symbol.instanceName === memberName &&
+        !isBaseClassField(symbol),
+    );
+    if (field) return field;
+  }
+  return undefined;
+}
+
+function lineageFields(symbols: ApiSymbol[], structureName: string): ApiSymbol[] {
+  const seen = new Set<string>();
+  const fields: ApiSymbol[] = [];
+  for (const name of structureLineage(symbols, structureName)) {
+    for (const symbol of symbols) {
+      if (
+        symbol.kind !== 'field' ||
+        symbol.containerName !== name ||
+        !symbol.instanceName ||
+        isBaseClassField(symbol) ||
+        seen.has(symbol.instanceName)
+      ) {
+        continue;
+      }
+      seen.add(symbol.instanceName);
+      fields.push(symbol);
+    }
+  }
+  return fields;
 }
 
 function uniqueSymbols(symbols: ApiSymbol[]): ApiSymbol[] {
