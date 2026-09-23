@@ -296,11 +296,11 @@
     {
       "id": "eeex-titled-ref",
       "symbol": "eeex-functions:EEex_Options_Option.new",
-      "upstream": "EEex-Docs source/EEex Functions/Options/index.rst lines 129-155",
+      "upstream": "EEex-Docs source/EEex Functions/Options/index.rst lines 129-170",
       "constructs": [
         "titled :ref: link",
         "default value",
-        "trailing section rule"
+        "mid-entry rule and section heading"
       ],
       "text": "EEex_Options_Option.new({})\n",
       "position": { "line": 0, "character": 21 },
@@ -325,6 +325,17 @@
         "| **Type** | **Description** |",
         "| --- | --- |",
         "| EEex_Options_Option | See summary. |",
+        "",
+        "---",
+        "",
+        "#### **The Option Table**",
+        "",
+        "| Key | Value Type | Description |",
+        "| --- | --- | --- |",
+        "| accessor | EEex_Options_Accessor | This field is currently undocumented. |",
+        "| default | `<non-nil>` | This field is currently undocumented. |",
+        "| requiresRestart | boolean | This field is currently undocumented. |",
+        "| storage | EEex_Options_Private_Storage | This field is currently undocumented. |",
         "",
         "---",
         "",
