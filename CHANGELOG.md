@@ -12,8 +12,6 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Verify every language service named in the README as its own case against the bundled stdio
   server on Linux, Windows, and macOS, and fail the policy check when that list and the
   verification inventory disagree.
-- Ask out-of-date Dependabot pull requests to rebase when the base branch moves, so the
-  up-to-date merge requirement stops leaving them unmergeable.
 - Ship client configurations and setup guides for Sublime Text, Neovim, Emacs, JetBrains IDEs,
   Helix, Geany and Kate, and document what Zed and Notepad++ actually require. The policy check
   validates every shipped configuration against the manifest in `editors/`.
