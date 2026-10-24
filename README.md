@@ -1,1 +1,1 @@
-# IE-Lua-Language-Server
+# IE Lua Language Server
